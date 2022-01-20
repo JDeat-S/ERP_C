@@ -7,7 +7,7 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="ERP_CONFORT" default="default" basedir=".">
+<project name="ERP_CONFORT 2022" default="default" basedir=".">
     <description>Builds, tests, and runs the project Programa de Nomina CONFORT.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
@@ -71,7 +71,7 @@
 
     -->
     <target name="-post-jar">
-    <property name="store.jar.name" value="ERP CONFORT"/>
+    <property name="store.jar.name" value="ERP CONFORT 2022"/>
 
     <property name="store.dir" value="Programa"/>
     <property name="store.jar" value="${store.dir}/${store.jar.name}.jar"/>

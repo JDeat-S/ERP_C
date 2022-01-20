@@ -71,7 +71,7 @@ public class Logica_SQL extends ConexionSQL {
         ConexionSQL cc = new ConexionSQL();
         Connection con = cc.conexion();
         String SQL = "SELECT u.`Usuario`, u.`Ventana de acceso`, u.`P1`, u.`P2`, u.`P3`, u.`P4`, u.`P5`,"
-                + " u.`P6`, u.`P7`, u.`P8`, u.`P9`, t.`Tipo de usuario` FROM "
+                + " u.`P6`, u.`P7`, u.`P8`, u.`P9`, u.`P10`, t.`Tipo de usuario` FROM "
                 + "`admin.tou` AS u INNER JOIN `admin.usuarios` AS t ON t.`Tipo"
                 + " de usuario`=u.`Usuario` Where t.`Tipo de usuario` LIKE '%" + LP.getNombreusuario() + "%'";
         try {
@@ -91,6 +91,7 @@ public class Logica_SQL extends ConexionSQL {
                 LP.setP7(rs.getInt(9));
                 LP.setP8(rs.getInt(10));
                 LP.setP9(rs.getInt(11));
+                LP.setP10(rs.getInt(12));
                 ps.isClosed();
                 return true;
 

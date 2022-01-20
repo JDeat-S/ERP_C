@@ -16,6 +16,17 @@ public class Logica_permisos {
     private int P5;
     private int P6;
     private int P7;
+    private int P8;
+    private int P9;
+    private int P10;
+
+    public int getP10() {
+        return P10;
+    }
+
+    public void setP10(int P10) {
+        this.P10 = P10;
+    }
 
     public String getNombreusuario() {
         return nombreusuario;
@@ -112,7 +123,5 @@ public class Logica_permisos {
     public void setP9(int P9) {
         this.P9 = P9;
     }
-    private int P8;
-    private int P9;
 
 }

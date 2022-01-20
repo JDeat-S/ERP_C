@@ -1,10 +1,11 @@
 package Admin;
 
-import ColoresT.ColorNSD;
-import ColoresT.ColorSDS;
+import Nomina.*;
+import ColoresT.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
-import ColoresT.ColorZyS;
+import Logicas.*;
+import RH.*;
 import java.sql.ResultSetMetaData;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -31,10 +32,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     ColorZyS colores = new ColorZyS();
     ColorNSD colorNSD = new ColorNSD();
     ColorSDS colorSDS = new ColorSDS();
+    Logica_usuarios usr;
+    Logica_permisos LP;
 
-    /**
-     * Creates new form AltasZyS_3
-     */
     public AltasZyS_3() {
         initComponents();
 
@@ -67,10 +67,45 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         TServ.setDefaultRenderer(TServ.getColumnClass(0), colores);
         TStatusServ.setDefaultRenderer(TStatusServ.getColumnClass(0), colorSDS);
         setIconImage(new ImageIcon(AltasZyS_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-
     }
 
-    
+    public AltasZyS_3(Logica_usuarios usr, Logica_permisos LP) {
+        initComponents();
+        this.usr = usr;
+        this.LP = LP;
+        this.setExtendedState(6);
+        this.setLocationRelativeTo(null);
+        IDS.setVisible(false);
+        IDZ.setVisible(false);
+        idZona.setVisible(false);
+        NZS.setVisible(false);
+        Filtros.setVisible(false);
+        SabadoT.setEnabled(false);
+        DomingoT.setEnabled(false);
+        Otrotxt.setEnabled(false);
+        Costo.setVisible(false);
+        Fil = new ButtonGroup();
+        Fil.add(FPNDS);
+        Fil.add(FPNDZ);
+        Costo.setVisible(false);
+        //El combobox jala datos de la base de datos
+        FiltrosZonas zz = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
+        FiltroZ.setModel(modelzonas);
+        mostrarzonas();
+        mostrarServicios();
+        compartirZ();
+        ContarServ();
+        nds();
+        SDS();
+        TNDS.setDefaultRenderer(TNDS.getColumnClass(0), colorNSD);
+        TServ.setDefaultRenderer(TServ.getColumnClass(0), colores);
+        TStatusServ.setDefaultRenderer(TStatusServ.getColumnClass(0), colorSDS);
+        setIconImage(new ImageIcon(AltasZyS_3.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setTitle("Zonas y servicios # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+                + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
+    }
+
     @SuppressWarnings("unchecked")
 //Contar filas
     public void ContarServ() {
@@ -237,7 +272,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
     public void AgregarZ() {
 
-        String SQL = "INSERT INTO `confort`.`zona` (`Zonas`) VALUES (?)";
+        String SQL = "INSERT INTO `zona` (`Zonas`) VALUES (?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -391,8 +426,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             };
 //Nombre de la tabla
             TStatusServ.setModel(modelo);
-            PreparedStatement ps ;
-            ResultSet rs ;
+            PreparedStatement ps;
+            ResultSet rs;
 
             String sql = "select `Status`, COUNT(`Status`) as sts FROM `servicio`"
                     + " GROUP BY 1 HAVING COUNT(`Status`) > 1;";
@@ -669,7 +704,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         IDZ = new javax.swing.JTextField();
         EliminarZ = new javax.swing.JButton();
         ModZ = new javax.swing.JButton();
-        Volver1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -683,7 +717,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         NS = new javax.swing.JTextArea();
         ModS = new javax.swing.JButton();
         idZona = new javax.swing.JTextField();
-        Volver = new javax.swing.JButton();
         NZS = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         Otrotxt = new javax.swing.JTextField();
@@ -714,7 +747,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         PNDS = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         TServ = new javax.swing.JTable();
-        Volver2 = new javax.swing.JButton();
         FPNDS = new javax.swing.JRadioButton();
         FPNDZ = new javax.swing.JRadioButton();
         Filtros = new javax.swing.JPanel();
@@ -730,6 +762,33 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         TNDS = new javax.swing.JTable();
         jScrollPane10 = new javax.swing.JScrollPane();
         TStatusServ = new javax.swing.JTable();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Menuadm = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        ODT1 = new javax.swing.JMenuItem();
+        CNQ1 = new javax.swing.JMenuItem();
+        PRESQ1 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        CDA1 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        CDA4 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        General = new javax.swing.JMenuItem();
+        Estadias = new javax.swing.JMenuItem();
+        Torteria = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        ADMV2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zonas y Servicios");
@@ -800,14 +859,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
 
-        Volver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
-        Volver1.setText("Volver");
-        Volver1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Volver1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -827,20 +878,16 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(AgregarZ)
                         .addGap(30, 30, 30)
                         .addComponent(ModZ)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BZ, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EliminarZ)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Volver1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 376, Short.MAX_VALUE)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 270, Short.MAX_VALUE))
+                        .addComponent(EliminarZ))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 534, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -850,8 +897,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(BZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(EliminarZ)
-                    .addComponent(Volver1))
+                    .addComponent(EliminarZ))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -919,14 +965,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         ModS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModSActionPerformed(evt);
-            }
-        });
-
-        Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
-        Volver.setText(" Volver");
-        Volver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverActionPerformed(evt);
             }
         });
 
@@ -1119,14 +1157,12 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(126, 126, 126)
                         .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 298, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BZS, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Volver))
+                        .addComponent(BZS, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
@@ -1137,8 +1173,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(BZS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(Volver))
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -1179,14 +1214,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
         jScrollPane9.setViewportView(TServ);
-
-        Volver2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
-        Volver2.setText("Volver");
-        Volver2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Volver2ActionPerformed(evt);
-            }
-        });
 
         FPNDS.setText("Filtrar por nombre de servicio");
         FPNDS.addActionListener(new java.awt.event.ActionListener() {
@@ -1303,9 +1330,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(FPNDZ)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(87, 87, 87)
-                        .addComponent(Volver2)
-                        .addContainerGap(2051, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(PNDSLayout.createSequentialGroup()
                         .addGroup(PNDSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PNDSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1317,7 +1342,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                                 .addComponent(TdServ)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 2726, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 15, Short.MAX_VALUE))))
         );
         PNDSLayout.setVerticalGroup(
             PNDSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1328,7 +1353,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     .addGroup(PNDSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(PNDSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Volver2)
                             .addComponent(FPNDS)
                             .addComponent(FPNDZ))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1351,6 +1375,197 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tabla Detallada de servicios", jScrollPane8);
 
+        Menuadm.setText("Todas las ventanas");
+
+        jMenu5.setText("Area Nomina");
+
+        jMenu6.setText("Nomina quincenal");
+
+        ODT1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ODT1.setText("Ordenes de taller");
+        ODT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(ODT1);
+
+        CNQ1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CNQ1.setText("Nomina IMSS");
+        CNQ1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CNQ1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(CNQ1);
+
+        PRESQ1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        PRESQ1.setText("Prestamos");
+        PRESQ1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PRESQ1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(PRESQ1);
+
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem8.setText("Nomina General");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem8);
+
+        CDA1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA1.setText("Caja de ahorro");
+        CDA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(CDA1);
+
+        jMenu5.add(jMenu6);
+
+        jMenu7.setText("Semanal");
+
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem9.setText("Nomina Semanal IMSS");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem9);
+
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem10.setText("Prestamos Semanales");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem10);
+
+        jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem11.setText("Nomina Semanal General");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem11);
+
+        CDA4.setText("Caja de ahorro");
+        CDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA4ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(CDA4);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(ODT2);
+
+        jMenu5.add(jMenu7);
+
+        jMenuItem12.setText("Listas de asistencia");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem12);
+
+        Menuadm.add(jMenu5);
+
+        jMenu8.setText("Area RH");
+
+        General.setText("Empleados General");
+        General.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeneralActionPerformed(evt);
+            }
+        });
+        jMenu8.add(General);
+
+        Estadias.setText("Alumno de estadia");
+        Estadias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadiasActionPerformed(evt);
+            }
+        });
+        jMenu8.add(Estadias);
+
+        Torteria.setText("Empleados Torteria");
+        Torteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TorteriaActionPerformed(evt);
+            }
+        });
+        jMenu8.add(Torteria);
+
+        jMenu9.setText("Semanales");
+
+        jMenuItem13.setText("Inturbide");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem13);
+
+        jMenuItem14.setText("Tehuantepec");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem14);
+
+        jMenuItem15.setText("PTE titla");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem15);
+
+        jMenu8.add(jMenu9);
+
+        Depositos.setText("Depositos");
+
+        jMenuItem16.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem16.setText("Depositos C/ IMSS");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        Depositos.add(jMenuItem16);
+
+        jMenu8.add(Depositos);
+
+        Menuadm.add(jMenu8);
+
+        ADMV2.setText("Usuarios");
+        ADMV2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADMV2ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ADMV2);
+
+        jMenuBar1.add(Menuadm);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1359,7 +1574,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
 
         pack();
@@ -1396,16 +1611,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         BS.setText("");
         BStext.setVisible(true);
     }//GEN-LAST:event_FPNDSActionPerformed
-
-    private void Volver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver2ActionPerformed
-        // TODO add your handling code here:
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a la ventana de administrador?");
-        if (i == 0) {
-            VentanaADM_3 regr = new VentanaADM_3();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_Volver2ActionPerformed
 
     private void TServMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TServMouseClicked
         try {
@@ -1635,16 +1840,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_SabActionPerformed
 
-    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        // TODO add your handling code here:
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a la ventana de administrador?");
-        if (i == 0) {
-            VentanaADM_3 regr = new VentanaADM_3();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_VolverActionPerformed
-
     private void ModSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModSActionPerformed
         // TODO add your handling code here:
         modS();
@@ -1668,16 +1863,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         idZona.setText(String.valueOf(ZSh.getValueAt(seleccionar, 0)));
         NZS.setText(String.valueOf(ZSh.getValueAt(seleccionar, 1)));
     }//GEN-LAST:event_ZShMouseClicked
-
-    private void Volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver1ActionPerformed
-        // TODO add your handling code here:
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres a la ventana de administrador?");
-        if (i == 0) {
-            VentanaADM_3 regr = new VentanaADM_3();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_Volver1ActionPerformed
 
     private void ModZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModZActionPerformed
         // TODO add your handling code here:
@@ -1736,6 +1921,121 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_CbxcostoItemStateChanged
 
+    private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT1ActionPerformed
+
+    private void CNQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQ1ActionPerformed
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQ1ActionPerformed
+
+    private void PRESQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQ1ActionPerformed
+        PresQ_5 regr = new PresQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESQ1ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void CDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA1ActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA1ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        NominaS_5 regr = new NominaS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        PresS_5 regr = new PresS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        Listas_5 regr = new Listas_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
+
+        Empleados_4 RH = new Empleados_4(usr, LP);
+        RH.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GeneralActionPerformed
+
+    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
+        Estadias_4 regr = new Estadias_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EstadiasActionPerformed
+
+    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
+        Tortas_4 regr = new Tortas_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TorteriaActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        PT_4 regr = new PT_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        Depositos_4 regr = new Depositos_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void ADMV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV2ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ADMV2ActionPerformed
+
+    private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA4ActionPerformed
+
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1780,6 +2080,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ADMV2;
     private javax.swing.JTextField Abre;
     private javax.swing.JButton AgregarZ;
     private javax.swing.JButton AgrergarS;
@@ -1789,29 +2090,39 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextField BZ;
     private javax.swing.JTextField BZS;
     private javax.swing.JLabel BZtext;
+    private javax.swing.JMenuItem CDA1;
+    private javax.swing.JMenuItem CDA4;
+    private javax.swing.JMenuItem CNQ1;
     private javax.swing.JComboBox<String> Cbxcosto;
     private javax.swing.JTextField Cierra;
     private javax.swing.JTextField Costo;
+    private javax.swing.JMenu Depositos;
     private javax.swing.JRadioButton Dom;
     private javax.swing.JTextField DomingoT;
     private javax.swing.JButton EliminarServ;
     private javax.swing.JButton EliminarZ;
+    private javax.swing.JMenuItem Estadias;
     private javax.swing.JRadioButton FPNDS;
     private javax.swing.JRadioButton FPNDZ;
     private javax.swing.JComboBox<String> FiltroZ;
     private javax.swing.JPanel Filtros;
+    private javax.swing.JMenuItem General;
     private javax.swing.JTextField Horario;
     private javax.swing.JLabel HorarioSYD;
     private javax.swing.JTextField IDS;
     private javax.swing.JTextField IDZ;
+    private javax.swing.JMenu Menuadm;
     private javax.swing.JButton ModS;
     private javax.swing.JButton ModZ;
     private javax.swing.JTextArea NS;
     private javax.swing.JTextArea NZ;
     private javax.swing.JTextField NZS;
+    private javax.swing.JMenuItem ODT1;
+    private javax.swing.JMenuItem ODT2;
     private javax.swing.JRadioButton Otro;
     private javax.swing.JTextField Otrotxt;
     private javax.swing.JPanel PNDS;
+    private javax.swing.JMenuItem PRESQ1;
     private javax.swing.JRadioButton Sab;
     private javax.swing.JTextField SabadoT;
     private javax.swing.JComboBox<String> StatusServ;
@@ -1822,9 +2133,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTable TStatusServ;
     private javax.swing.JTable TablaZona;
     private javax.swing.JLabel TdServ;
-    private javax.swing.JButton Volver;
-    private javax.swing.JButton Volver1;
-    private javax.swing.JButton Volver2;
+    private javax.swing.JMenuItem Torteria;
     private javax.swing.JTable ZSh;
     private botones.BotonWeb botonWeb2;
     private javax.swing.JTextField idZona;
@@ -1841,6 +2150,21 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;

@@ -1,9 +1,15 @@
 package Nomina;
 
+import VentanasDReportes.RepNom_7;
+import Admin.*;
 import Conexion.ConexionSQL;
+import RH.*;
 import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import Inicio.Inicio_1;
+import Logicas.Logica_permisos;
+import Logicas.Logica_usuarios;
+import VentanasDReportes.RepNomSem_7;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.awt.print.PrinterException;
@@ -39,12 +45,26 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     Connection con = cc.conexion();
     ButtonGroup DAB;
     Calendar fecha_actual = new GregorianCalendar();
-    double DS, DD, DL, DM, DMi, DJ, DV;
-    double AS, AD, AL, AM, AMi, AJ, AV;
+    double DS, DM, DMi, DJ, DV,
+            AS, AD, AL, AM, AMi, AJ, AV,
+            dd, in, dv, df, dft,
+            DO1, DO2, R1, R2, dt1, dt2, dt3, dt4, DL1, DL2, dt5,
+            dt6, F1, F2, FJ1, FJ2, FJ3, FJ4, FJ5, dt7, R3, R4, R5, R6, R7,
+            DO3, DO4, DO5, DO6, DO7, DL3, DL4, DL5, DL6, DL7, FJ6, FJ7,
+            DSGS1, DSGS2, DSGS3, DSGS4, DSGS5, DSGS6, DSGS7,
+            F3, F4, F5, F6, F7,
+            dd2, in2, dv2, df2, dft2,
+            dd3, in3, dv3, df3, dft3,
+            dd4, in4, dv4, df4, dft4,
+            dd5, in5, dv5, df5, dft5,
+            dd6, in6, dv6, df6, dft6,
+            dd7, in7, dv7, df7, dft7;
+
+    Logica_usuarios usr;
+    Logica_permisos LP;
 
     public NominaS_simss_5() {
         initComponents();
-
         DAB = new ButtonGroup();
         DAB.add(Bsi);
         DAB.add(Bno);
@@ -354,7 +374,373 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         FunMD();
         setIconImage(new ImageIcon(NominaS_simss_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sumaDep();
+        sharecdanom();
+        sharepresnom();
+        shareODTnom();
+    }
 
+    public NominaS_simss_5(Logica_usuarios usr, Logica_permisos LP) {
+        initComponents();
+        this.usr = usr;
+        this.LP = LP;
+        DAB = new ButtonGroup();
+        DAB.add(Bsi);
+        DAB.add(Bno);
+        // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
+        FiltrosZonas zz8 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
+        FZservicio8.setModel(modelzonas8);
+        FiltrosZonas FSZP8 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP8 = new DefaultComboBoxModel(FSZP8.mostrarzonas());
+        FiltroSZP8.setModel(modelFSZP8);
+        FiltrosZonas zz7 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas7 = new DefaultComboBoxModel(zz7.mostrarzonas());
+        FZservicio7.setModel(modelzonas7);
+        FiltrosZonas zz6 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas6 = new DefaultComboBoxModel(zz6.mostrarzonas());
+        FZservicio6.setModel(modelzonas6);
+        FiltrosZonas zz5 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas5 = new DefaultComboBoxModel(zz5.mostrarzonas());
+        FZservicio5.setModel(modelzonas5);
+        FiltrosZonas zz4 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas4 = new DefaultComboBoxModel(zz4.mostrarzonas());
+        FZservicio4.setModel(modelzonas4);
+        FiltrosZonas zz3 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas3 = new DefaultComboBoxModel(zz3.mostrarzonas());
+        FZservicio3.setModel(modelzonas3);
+        FiltrosZonas zz2 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas2 = new DefaultComboBoxModel(zz2.mostrarzonas());
+        FZservicio2.setModel(modelzonas2);
+        FiltrosZonas zz1 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas1 = new DefaultComboBoxModel(zz1.mostrarzonas());
+        FZservicio1.setModel(modelzonas1);
+        FiltrosZonas zz = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
+        FZservicio.setModel(modelzonas);
+        FiltrosZonas FSZP7 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP7 = new DefaultComboBoxModel(FSZP7.mostrarzonas());
+        FiltroSZP7.setModel(modelFSZP7);
+        FiltrosZonas FSZP6 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP6 = new DefaultComboBoxModel(FSZP6.mostrarzonas());
+        FiltroSZP6.setModel(modelFSZP6);
+        FiltrosZonas FSZP5 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP5 = new DefaultComboBoxModel(FSZP5.mostrarzonas());
+        FiltroSZP5.setModel(modelFSZP5);
+        FiltrosZonas FSZP4 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP4 = new DefaultComboBoxModel(FSZP4.mostrarzonas());
+        FiltroSZP4.setModel(modelFSZP4);
+        FiltrosZonas FSZP3 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP3 = new DefaultComboBoxModel(FSZP3.mostrarzonas());
+        FiltroSZP3.setModel(modelFSZP3);
+        FiltrosZonas FSZP2 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP2 = new DefaultComboBoxModel(FSZP2.mostrarzonas());
+        FiltroSZP2.setModel(modelFSZP2);
+        FiltrosZonas FSZP1 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP1 = new DefaultComboBoxModel(FSZP1.mostrarzonas());
+        FiltroSZP1.setModel(modelFSZP1);
+        FiltrosZonas FSZP = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP = new DefaultComboBoxModel(FSZP.mostrarzonas());
+        FiltroSZP.setModel(modelFSZP);
+        FiltrosZonas FZS = new FiltrosZonas();
+        DefaultComboBoxModel MODELFZS = new DefaultComboBoxModel(FZS.mostrarzonas());
+        FZservicio.setModel(MODELFZS);
+        //</editor-fold>
+        año.setCalendar(fecha_actual);
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(6);
+        // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        Bono.setVisible(false);
+        busp8.setVisible(false);
+        BAppag8.setVisible(false);
+        Bampag8.setVisible(false);
+        LabelBEP8.setVisible(false);
+        LabelBQP8.setVisible(false);
+        FiltroQP8.setVisible(false);
+        FiltroServP8.setVisible(false);
+        LabelBSP8.setVisible(false);
+        FiltroSZP8.setVisible(false);
+        LabelSZP8.setVisible(false);
+        filtroNDFP8.setVisible(false);
+        LabelNDFP8.setVisible(false);
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
+        LabelBE.setVisible(false);
+        LabelBQ.setVisible(false);
+        LabelBS.setVisible(false);
+        LabelSZ.setVisible(false);
+        Nominab.setVisible(false);
+        FiltroSnomina.setVisible(false);
+        FiltroSnomina.setSelectedIndex(0);
+        FZservicio.setVisible(false);
+        FZservicio.setSelectedIndex(0);
+        FiltroQuincenanomina.setVisible(false);
+        FiltroQuincenanomina.setSelectedIndex(0);
+        FiltroNDF.setVisible(false);
+        LabelBNDF.setVisible(false);
+        busp.setVisible(false);
+        LabelBEP.setVisible(false);
+        FiltroQP.setVisible(false);
+        FiltroServP.setVisible(false);
+        FiltroSZP.setVisible(false);
+        filtroNDFP.setVisible(false);
+        LabelBQP.setVisible(false);
+        LabelBSP.setVisible(false);
+        LabelSZP.setVisible(false);
+        LabelNDFP.setVisible(false);
+        Filtro1.setVisible(false);
+        BNameNom.setVisible(false);
+        BAPNom.setVisible(false);
+        BAMNom.setVisible(false);
+        FApT.setVisible(false);
+        FAmT.setVisible(false);
+        BAppag.setVisible(false);
+        Bampag.setVisible(false);
+        busp7.setVisible(false);
+        BAppag7.setVisible(false);
+        Bampag7.setVisible(false);
+        LabelBEP7.setVisible(false);
+        LabelBQP7.setVisible(false);
+        FiltroQP7.setVisible(false);
+        FiltroServP7.setVisible(false);
+        LabelBSP7.setVisible(false);
+        FiltroSZP7.setVisible(false);
+        LabelSZP7.setVisible(false);
+        filtroNDFP7.setVisible(false);
+        LabelNDFP7.setVisible(false);
+        busp6.setVisible(false);
+        BAppag6.setVisible(false);
+        Bampag6.setVisible(false);
+        LabelBEP6.setVisible(false);
+        LabelBQP6.setVisible(false);
+        FiltroQP6.setVisible(false);
+        FiltroServP6.setVisible(false);
+        LabelBSP6.setVisible(false);
+        FiltroSZP6.setVisible(false);
+        LabelSZP6.setVisible(false);
+        filtroNDFP6.setVisible(false);
+        LabelNDFP6.setVisible(false);
+        busp5.setVisible(false);
+        BAppag5.setVisible(false);
+        Bampag5.setVisible(false);
+        LabelBEP5.setVisible(false);
+        LabelBQP5.setVisible(false);
+        FiltroQP5.setVisible(false);
+        FiltroServP5.setVisible(false);
+        LabelBSP5.setVisible(false);
+        FiltroSZP5.setVisible(false);
+        LabelSZP5.setVisible(false);
+        filtroNDFP5.setVisible(false);
+        LabelNDFP5.setVisible(false);
+        busp4.setVisible(false);
+        BAppag4.setVisible(false);
+        Bampag4.setVisible(false);
+        LabelBEP4.setVisible(false);
+        LabelBQP4.setVisible(false);
+        FiltroQP4.setVisible(false);
+        FiltroServP4.setVisible(false);
+        LabelBSP4.setVisible(false);
+        FiltroSZP4.setVisible(false);
+        LabelSZP4.setVisible(false);
+        filtroNDFP4.setVisible(false);
+        LabelNDFP4.setVisible(false);
+        busp3.setVisible(false);
+        BAppag3.setVisible(false);
+        Bampag3.setVisible(false);
+        LabelBEP3.setVisible(false);
+        LabelBQP3.setVisible(false);
+        FiltroQP3.setVisible(false);
+        FiltroServP3.setVisible(false);
+        LabelBSP3.setVisible(false);
+        FiltroSZP3.setVisible(false);
+        LabelSZP3.setVisible(false);
+        filtroNDFP3.setVisible(false);
+        LabelNDFP3.setVisible(false);
+        busp2.setVisible(false);
+        BAppag2.setVisible(false);
+        Bampag2.setVisible(false);
+        LabelBEP2.setVisible(false);
+        LabelBQP2.setVisible(false);
+        FiltroQP2.setVisible(false);
+        FiltroServP2.setVisible(false);
+        LabelBSP2.setVisible(false);
+        FiltroSZP2.setVisible(false);
+        LabelSZP2.setVisible(false);
+        filtroNDFP2.setVisible(false);
+        LabelNDFP2.setVisible(false);
+        busp1.setVisible(false);
+        BAppag1.setVisible(false);
+        Bampag1.setVisible(false);
+        LabelBEP1.setVisible(false);
+        LabelBQP1.setVisible(false);
+        FiltroQP1.setVisible(false);
+        FiltroServP1.setVisible(false);
+        LabelBSP1.setVisible(false);
+        FiltroSZP1.setVisible(false);
+        LabelSZP1.setVisible(false);
+        filtroNDFP1.setVisible(false);
+        LabelNDFP1.setVisible(false);
+        busp.setVisible(false);
+        BAppag.setVisible(false);
+        Bampag.setVisible(false);
+        LabelBEP.setVisible(false);
+        LabelBQP.setVisible(false);
+        FiltroQP.setVisible(false);
+        FiltroServP.setVisible(false);
+        LabelBSP.setVisible(false);
+        FiltroSZP.setVisible(false);
+        LabelSZP.setVisible(false);
+        filtroNDFP.setVisible(false);
+        LabelNDFP.setVisible(false);
+        LabelBE1.setVisible(false);
+        LabelSZ1.setVisible(false);
+        FApT1.setVisible(false);
+        FAmT1.setVisible(false);
+        Nominab1.setVisible(false);
+        FiltroSnomina1.setVisible(false);
+        LabelBS1.setVisible(false);
+        FZservicio1.setVisible(false);
+        LabelSZ.setVisible(false);
+        FiltroQuincenanomina1.setVisible(false);
+        LabelBQ1.setVisible(false);
+        FiltroNDF1.setVisible(false);
+        LabelBNDF1.setVisible(false);
+        LabelBE2.setVisible(false);
+        FApT2.setVisible(false);
+        FAmT2.setVisible(false);
+        Nominab2.setVisible(false);
+        FiltroSnomina2.setVisible(false);
+        LabelBS2.setVisible(false);
+        FZservicio2.setVisible(false);
+        LabelSZ2.setVisible(false);
+        FiltroQuincenanomina2.setVisible(false);
+        LabelBQ2.setVisible(false);
+        FiltroNDF2.setVisible(false);
+        LabelBNDF2.setVisible(false);
+        LabelBE3.setVisible(false);
+        FApT3.setVisible(false);
+        FAmT3.setVisible(false);
+        Nominab3.setVisible(false);
+        FiltroSnomina3.setVisible(false);
+        LabelBS3.setVisible(false);
+        FZservicio3.setVisible(false);
+        LabelSZ3.setVisible(false);
+        FiltroQuincenanomina3.setVisible(false);
+        LabelBQ3.setVisible(false);
+        FiltroNDF3.setVisible(false);
+        LabelBNDF3.setVisible(false);
+        LabelBE4.setVisible(false);
+        FApT4.setVisible(false);
+        FAmT4.setVisible(false);
+        Nominab4.setVisible(false);
+        FiltroSnomina4.setVisible(false);
+        LabelBS4.setVisible(false);
+        FZservicio4.setVisible(false);
+        LabelSZ4.setVisible(false);
+        FiltroQuincenanomina4.setVisible(false);
+        LabelBQ4.setVisible(false);
+        FiltroNDF4.setVisible(false);
+        LabelBNDF4.setVisible(false);
+        LabelBE5.setVisible(false);
+        FApT5.setVisible(false);
+        FAmT5.setVisible(false);
+        Nominab5.setVisible(false);
+        FiltroSnomina5.setVisible(false);
+        LabelBS5.setVisible(false);
+        FZservicio5.setVisible(false);
+        LabelSZ5.setVisible(false);
+        FiltroQuincenanomina5.setVisible(false);
+        LabelBQ5.setVisible(false);
+        FiltroNDF5.setVisible(false);
+        LabelBNDF5.setVisible(false);
+        LabelBE6.setVisible(false);
+        FApT6.setVisible(false);
+        FAmT6.setVisible(false);
+        Nominab6.setVisible(false);
+        FiltroSnomina6.setVisible(false);
+        LabelBS6.setVisible(false);
+        FZservicio6.setVisible(false);
+        LabelSZ6.setVisible(false);
+        FiltroQuincenanomina6.setVisible(false);
+        LabelBQ6.setVisible(false);
+        FiltroNDF6.setVisible(false);
+        LabelBNDF6.setVisible(false);
+        LabelBE7.setVisible(false);
+        FApT7.setVisible(false);
+        FAmT7.setVisible(false);
+        Nominab7.setVisible(false);
+        FiltroSnomina7.setVisible(false);
+        LabelBS7.setVisible(false);
+        FZservicio7.setVisible(false);
+        LabelSZ7.setVisible(false);
+        FiltroQuincenanomina7.setVisible(false);
+        LabelBQ7.setVisible(false);
+        FiltroNDF7.setVisible(false);
+        LabelBNDF7.setVisible(false);
+        //</editor-fold>
+        shareN();
+        sharepresnom();
+        FunMD();
+        setIconImage(new ImageIcon(NominaS_simss_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        sumaDep();
+        sharecdanom();
+        sharepresnom();
+        shareODTnom();
+        setTitle("Nomina Semanal General. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+                + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
+        switch (LP.getVDA()) {
+            case 0 -> {
+            }
+            case 1 -> {
+                Menuadm.setVisible(false);
+
+            }
+            case 2 -> {
+                Menuadm.setVisible(false);
+                if (LP.getP1() == 0) {
+                    ODT.setVisible(false);
+                }
+                if (LP.getP2() == 0) {
+                    CDA.setVisible(false);
+                }
+                if (LP.getP3() == 0) {
+                    LDA.setVisible(false);
+                }
+                if (LP.getP4() == 0) {
+                    Reportes.setVisible(false);
+                }
+                if (LP.getP5() == 0) {
+                    NomDetallada.setVisible(false);
+                }
+                if (LP.getP6() == 0) {
+                    NomPagos.setVisible(false);
+                }
+                if (LP.getP7() == 0) {
+                    PRES.setVisible(false);
+                }
+                if (LP.getP8() == 0) {
+                    //Nomsem.setVisible(false);
+                    NomSemGen.setVisible(false);
+                }
+                if (LP.getP9() == 0) {
+                    PresSem.setVisible(false);
+                }
+                if (LP.getP10() == 0) {
+                    Modm.setVisible(false);
+                }
+            }
+            default -> {
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -368,17 +754,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         Fvier = new com.toedter.calendar.JDateChooser();
-        SabT = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        VieT = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         Fmier = new com.toedter.calendar.JDateChooser();
-        JueT = new javax.swing.JComboBox<>();
-        MierT = new javax.swing.JComboBox<>();
         Fmar = new com.toedter.calendar.JDateChooser();
-        MarT = new javax.swing.JComboBox<>();
-        LunT = new javax.swing.JComboBox<>();
         FLun = new com.toedter.calendar.JDateChooser();
         Fsab = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
@@ -390,7 +770,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         FDom = new com.toedter.calendar.JDateChooser();
         jLabel22 = new javax.swing.JLabel();
-        DomT = new javax.swing.JComboBox<>();
         año = new com.toedter.calendar.JDateChooser();
         jLabel23 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
@@ -398,6 +777,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         LS = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         FDP = new com.toedter.calendar.JDateChooser();
+        SabT = new javax.swing.JComboBox<>();
+        MierT = new javax.swing.JComboBox<>();
+        VieT = new javax.swing.JComboBox<>();
+        JueT = new javax.swing.JComboBox<>();
+        LunT = new javax.swing.JComboBox<>();
+        DomT = new javax.swing.JComboBox<>();
+        MarT = new javax.swing.JComboBox<>();
         jPanel12 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         NDL = new javax.swing.JTextField();
@@ -433,66 +819,163 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         share = new javax.swing.JTable();
         Filtro1 = new javax.swing.JLabel();
         BNameNom = new javax.swing.JTextField();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        HE = new javax.swing.JTextField();
-        jLabel87 = new javax.swing.JLabel();
-        Rembolso = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        THE = new javax.swing.JTextField();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        DDes = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        DT = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        Pago = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        obs = new javax.swing.JTextArea();
         jLabel19 = new javax.swing.JLabel();
         PH = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel56 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        RI = new javax.swing.JTextField();
-        jLabel50 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        SHPresnom = new javax.swing.JTable();
-        jLabel141 = new javax.swing.JLabel();
-        Pagadoprenom = new javax.swing.JTextField();
-        jLabel140 = new javax.swing.JLabel();
-        NumPrenom = new javax.swing.JTextField();
-        jLabel131 = new javax.swing.JLabel();
-        NSprenom = new javax.swing.JTextField();
-        jLabel148 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
-        Pendienteprenom = new javax.swing.JTextField();
-        Presp = new javax.swing.JTextField();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        jLabel126 = new javax.swing.JLabel();
-        jLabel154 = new javax.swing.JLabel();
-        jLabel156 = new javax.swing.JLabel();
-        jLabel158 = new javax.swing.JLabel();
-        jLabel163 = new javax.swing.JLabel();
-        jLabel164 = new javax.swing.JLabel();
-        jLabel165 = new javax.swing.JLabel();
-        jLabel166 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        ISR = new javax.swing.JTextField();
+        Clean = new javax.swing.JButton();
+        jPanel28 = new javax.swing.JPanel();
+        Dpi = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        Ddv = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        DD = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        DL = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        dt = new javax.swing.JLabel();
+        LabelDSGS = new javax.swing.JLabel();
+        DSGS = new javax.swing.JLabel();
+        jLabel135 = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
+        PDDDV = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        PDDD = new javax.swing.JLabel();
+        pds = new javax.swing.JLabel();
+        jLabel128 = new javax.swing.JLabel();
+        PDDL = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        PDDT = new javax.swing.JLabel();
+        jLabel136 = new javax.swing.JLabel();
+        PDDDDSGS = new javax.swing.JTextField();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel261 = new javax.swing.JLabel();
+        DO = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        apy = new javax.swing.JTextField();
+        jLabel76 = new javax.swing.JLabel();
+        Lugar = new javax.swing.JTextField();
+        FJ = new javax.swing.JLabel();
+        Rembolso = new javax.swing.JTextField();
+        jLabel87 = new javax.swing.JLabel();
+        ADD = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        R = new javax.swing.JLabel();
+        jLabel138 = new javax.swing.JLabel();
+        PCR = new javax.swing.JLabel();
+        jLabel182 = new javax.swing.JLabel();
+        jLabel183 = new javax.swing.JLabel();
+        DF = new javax.swing.JLabel();
+        DFT = new javax.swing.JLabel();
+        jLabel184 = new javax.swing.JLabel();
+        jLabel185 = new javax.swing.JLabel();
+        PDDF = new javax.swing.JLabel();
+        PDDFT = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        RF = new javax.swing.JTextField();
+        HE = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
-        ADN = new javax.swing.JTextField();
+        THE = new javax.swing.JTextField();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel134 = new javax.swing.JLabel();
+        F = new javax.swing.JLabel();
+        jLabel262 = new javax.swing.JLabel();
+        jLabel137 = new javax.swing.JLabel();
+        DPF = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        DI = new javax.swing.JTextField();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        SHPresnom = new javax.swing.JTable();
+        jLabel144 = new javax.swing.JLabel();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        SHCDAnom = new javax.swing.JTable();
+        cda = new javax.swing.JTextField();
+        jLabel263 = new javax.swing.JLabel();
+        jLabel145 = new javax.swing.JLabel();
+        jLabel146 = new javax.swing.JLabel();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        SHODTnom = new javax.swing.JTable();
+        jLabel264 = new javax.swing.JLabel();
+        Odtp = new javax.swing.JTextField();
+        jLabel130 = new javax.swing.JLabel();
+        QAcdanom = new javax.swing.JTextField();
+        jLabel132 = new javax.swing.JLabel();
+        NCDANom = new javax.swing.JTextField();
+        jLabel139 = new javax.swing.JLabel();
+        TACDANOM = new javax.swing.JTextField();
+        jLabel131 = new javax.swing.JLabel();
+        NumPrenom = new javax.swing.JTextField();
+        jLabel140 = new javax.swing.JLabel();
+        Pagadoprenom = new javax.swing.JTextField();
+        jLabel141 = new javax.swing.JLabel();
+        Pendienteprenom = new javax.swing.JTextField();
+        jLabel142 = new javax.swing.JLabel();
+        PagODTnom = new javax.swing.JTextField();
+        jLabel143 = new javax.swing.JLabel();
+        NODTnom = new javax.swing.JTextField();
+        jLabel147 = new javax.swing.JLabel();
+        PenODTnom = new javax.swing.JTextField();
+        jLabel265 = new javax.swing.JLabel();
+        Presp = new javax.swing.JTextField();
+        jLabel148 = new javax.swing.JLabel();
+        NSprenom = new javax.swing.JTextField();
+        jLabel149 = new javax.swing.JLabel();
+        NSODTnom = new javax.swing.JTextField();
+        jLabel266 = new javax.swing.JLabel();
+        RI = new javax.swing.JTextField();
+        jLabel267 = new javax.swing.JLabel();
+        RF = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        ISR = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         deposito = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         AgregarNP = new javax.swing.JButton();
         Modm = new javax.swing.JButton();
-        Clean = new javax.swing.JButton();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel127 = new javax.swing.JLabel();
+        jLabel155 = new javax.swing.JLabel();
+        jLabel157 = new javax.swing.JLabel();
+        jLabel160 = new javax.swing.JLabel();
+        jLabel168 = new javax.swing.JLabel();
+        jLabel169 = new javax.swing.JLabel();
+        jLabel170 = new javax.swing.JLabel();
+        jLabel171 = new javax.swing.JLabel();
+        Pbs = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        DVT = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        Fdb = new javax.swing.JTextField();
+        jLabel79 = new javax.swing.JLabel();
+        Sancion = new javax.swing.JTextField();
+        jLabel82 = new javax.swing.JLabel();
+        Chamarra = new javax.swing.JTextField();
+        jLabel85 = new javax.swing.JLabel();
+        Chaleco = new javax.swing.JTextField();
+        jLabel77 = new javax.swing.JLabel();
+        Fde = new javax.swing.JTextField();
+        jLabel80 = new javax.swing.JLabel();
+        Grua = new javax.swing.JTextField();
+        jLabel83 = new javax.swing.JLabel();
+        Pantalon = new javax.swing.JTextField();
+        jLabel86 = new javax.swing.JLabel();
+        Credencial = new javax.swing.JTextField();
+        jLabel78 = new javax.swing.JLabel();
+        Bp = new javax.swing.JTextField();
+        jLabel81 = new javax.swing.JLabel();
+        Playera = new javax.swing.JTextField();
+        jLabel84 = new javax.swing.JLabel();
+        Corbata = new javax.swing.JTextField();
+        jLabel167 = new javax.swing.JLabel();
+        ADN = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        obs = new javax.swing.JTextArea();
         NomDetallada = new javax.swing.JScrollPane();
         PestanañasND = new javax.swing.JTabbedPane();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -894,19 +1377,52 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         MTDsum8 = new javax.swing.JLabel();
         Imprimir9 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        Menuadm = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        ODT1 = new javax.swing.JMenuItem();
+        CNQ1 = new javax.swing.JMenuItem();
+        PRESQ = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        CDA1 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        CDA3 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        General = new javax.swing.JMenuItem();
+        Estadias = new javax.swing.JMenuItem();
+        Torteria = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        ZYS = new javax.swing.JMenuItem();
+        ADMV2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        NomSemGen = new javax.swing.JMenuItem();
+        PresSem = new javax.swing.JMenuItem();
+        CDA2 = new javax.swing.JMenuItem();
+        ODT3 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
+        CNQ = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
         PRES = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        CNQ = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        LDA = new javax.swing.JMenuItem();
+        Reportes = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Nomina Semanal IMSS");
+        setTitle("Nomina Semanal General");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -914,53 +1430,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jLabel4.setText("Jueves");
 
-        SabT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D" }));
-        SabT.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                SabTItemStateChanged(evt);
-            }
-        });
-
         jLabel1.setText("Lunes");
 
         jLabel2.setText("Martes");
 
-        VieT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D" }));
-        VieT.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                VieTItemStateChanged(evt);
-            }
-        });
-
         jLabel3.setText("Miercoles");
-
-        JueT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D" }));
-        JueT.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                JueTItemStateChanged(evt);
-            }
-        });
-
-        MierT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D" }));
-        MierT.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                MierTItemStateChanged(evt);
-            }
-        });
-
-        MarT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D" }));
-        MarT.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                MarTItemStateChanged(evt);
-            }
-        });
-
-        LunT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D" }));
-        LunT.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                LunTItemStateChanged(evt);
-            }
-        });
 
         jLabel5.setText("Viernes");
 
@@ -986,13 +1460,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jLabel22.setText("Domingo");
 
-        DomT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D" }));
-        DomT.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                DomTItemStateChanged(evt);
-            }
-        });
-
         año.setDateFormatString("yyyy");
         año.setMinSelectableDate(new java.util.Date(-62135744314000L));
 
@@ -1016,59 +1483,98 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jLabel32.setText("Fecha de pago");
 
+        SabT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D", "V", "I", "F", "FJ", "DT", " ", "R", "DSGS", "DF", "DFT" }));
+        SabT.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                SabTItemStateChanged(evt);
+            }
+        });
+
+        MierT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D", "V", "I", "F", "FJ", "DT", " ", "R", "DSGS", "DF", "DFT" }));
+        MierT.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                MierTItemStateChanged(evt);
+            }
+        });
+
+        VieT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D", "V", "I", "F", "FJ", "DT", " ", "R", "DSGS", "DF", "DFT" }));
+        VieT.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                VieTItemStateChanged(evt);
+            }
+        });
+
+        JueT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D", "V", "I", "F", "FJ", "DT", " ", "R", "DSGS", "DF", "DFT" }));
+        JueT.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                JueTItemStateChanged(evt);
+            }
+        });
+
+        LunT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D", "V", "I", "F", "FJ", "DT", " ", "R", "DSGS", "DF", "DFT" }));
+        LunT.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                LunTItemStateChanged(evt);
+            }
+        });
+
+        DomT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D", "V", "I", "F", "FJ", "DT", " ", "R", "DSGS", "DF", "DFT" }));
+        DomT.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                DomTItemStateChanged(evt);
+            }
+        });
+
+        MarT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "A", "D", "V", "I", "F", "FJ", "DT", " ", "R", "DSGS", "DF", "DFT" }));
+        MarT.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                MarTItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(Fsab, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FDom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel22)
-                        .addGap(50, 50, 50))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(SabT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(DomT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel1)
-                        .addGap(117, 117, 117)
-                        .addComponent(jLabel2)
-                        .addGap(97, 97, 97)
-                        .addComponent(jLabel3)
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(56, 56, 56))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(LS)
-                                .addGap(363, 363, 363)
-                                .addComponent(jLabel23)
+                                .addComponent(Fsab, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FLun, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(LunT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(50, 50, 50)))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FDom, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel22)
+                                .addGap(50, 50, 50)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel1)
+                                .addGap(117, 117, 117)
+                                .addComponent(jLabel2)
+                                .addGap(97, 97, 97)
+                                .addComponent(jLabel3)
+                                .addGap(103, 103, 103)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5)
+                                .addGap(56, 56, 56))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(LS)
+                                        .addGap(363, 363, 363)
+                                        .addComponent(jLabel23)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(FLun, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(6, 6, 6)
                                         .addComponent(Fmar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1076,26 +1582,33 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(FJuev, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Fvier, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(65, 65, 65)
-                                        .addComponent(MarT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(95, 95, 95)
-                                        .addComponent(MierT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(115, 115, 115)
-                                        .addComponent(JueT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(87, 87, 87)
-                                        .addComponent(VieT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel32)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(214, 214, 214)))
+                                        .addComponent(Fvier, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(214, 214, 214))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(SabT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76)
+                        .addComponent(DomT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LunT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)
+                        .addComponent(MarT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(75, 75, 75)
+                        .addComponent(MierT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
+                        .addComponent(JueT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(VieT, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Bsi)
                     .addComponent(Bno)
@@ -1119,20 +1632,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel22))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Fsab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FDom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SabT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DomT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(FDom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1145,14 +1654,17 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                                     .addComponent(Fmar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Fmier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(FJuev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Fvier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(LunT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MarT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MierT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JueT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(VieT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(Fvier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DomT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JueT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(LunT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MarT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(VieT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(SabT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MierT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1377,18 +1889,96 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
         });
 
-        jPanel11.setBackground(new java.awt.Color(204, 255, 255));
+        jLabel19.setText("Por hora:");
 
-        jLabel17.setText("Horas extras:");
+        PH.setText("0");
 
-        HE.setText("0");
-        HE.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                HEKeyReleased(evt);
+        jLabel52.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel52.setText("Datos de empledo.");
+
+        Clean.setText("Limpiar campos");
+        Clean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CleanActionPerformed(evt);
             }
         });
 
-        jLabel87.setText("Rembolso:");
+        jPanel28.setBackground(new java.awt.Color(204, 255, 255));
+
+        Dpi.setText("0");
+
+        jLabel105.setText("Dias de incapacidad:");
+
+        Ddv.setText("0");
+
+        jLabel107.setText("Dias de vacaciones:");
+
+        DD.setText("0");
+
+        jLabel103.setText("Dias descansados:");
+
+        jLabel43.setText("Dias Laborados:");
+
+        DL.setText("0");
+
+        jLabel16.setText("Descansos Trabajados:");
+
+        dt.setText("0");
+
+        LabelDSGS.setText("Descanso sin goce de sueldo:");
+
+        DSGS.setText("0");
+
+        jLabel135.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel135.setText("Ingresos:");
+
+        jLabel104.setText("Pago de seguro:");
+
+        PDDDV.setText("0");
+
+        jLabel49.setText("Pago de dias de vacaciones:");
+
+        jLabel88.setText("Pago de dias descansados:");
+
+        PDDD.setText("0");
+
+        pds.setText("0");
+
+        jLabel128.setText("Pago de dias laborados:");
+
+        PDDL.setText("0");
+
+        jLabel21.setText("Pago de descansos trabajados:");
+
+        PDDT.setText("0");
+
+        jLabel136.setText("Pago de dias de DSGS:");
+
+        PDDDDSGS.setText("0");
+        PDDDDSGS.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PDDDDSGSKeyReleased(evt);
+            }
+        });
+
+        jLabel55.setText("Faltas Justificadas:");
+
+        jLabel261.setText("Descanso Otorgado:");
+
+        DO.setText("0");
+
+        jLabel17.setText("Apoyo:");
+
+        apy.setText("0");
+        apy.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                apyKeyReleased(evt);
+            }
+        });
+
+        jLabel76.setText("Lugar:");
+
+        FJ.setText("0");
 
         Rembolso.setText("0");
         Rembolso.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1397,127 +1987,281 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel20.setText("Total horas extra:");
+        jLabel87.setText("Rembolso:");
 
-        THE.setText("0");
-
-        jLabel55.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel55.setText("Ingresos");
-
-        jLabel49.setText("Dias descansados:");
-
-        DDes.setText("0");
-
-        jLabel21.setText("Dias trabajados:");
-
-        DT.setText("0");
-
-        jLabel25.setText("Pago de dias descansado y trabajados");
-
-        Pago.setText("0");
-
-        jLabel16.setText("Observaciones:");
-
-        obs.setColumns(20);
-        obs.setLineWrap(true);
-        obs.setRows(5);
-        jScrollPane11.setViewportView(obs);
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel49)
-                            .addComponent(jLabel87))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(DDes)
-                                .addGap(77, 77, 77)
-                                .addComponent(jLabel25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Pago))
-                            .addComponent(DT)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(HE, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(Rembolso, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(THE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(jLabel55)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel55)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(DDes)
-                    .addComponent(jLabel25)
-                    .addComponent(Pago))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(DT))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(HE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20)
-                            .addComponent(THE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel87)
-                            .addComponent(Rembolso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel16)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-
-        jLabel19.setText("Por hora:");
-
-        PH.setText("0");
-
-        jLabel52.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel52.setText("Datos de empledo.");
-
-        jPanel8.setBackground(new java.awt.Color(204, 255, 255));
-
-        jLabel56.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel56.setText("Egresos");
-
-        jLabel24.setText("Retencion Infonavit");
-
-        RI.setText("0");
-        RI.addKeyListener(new java.awt.event.KeyAdapter() {
+        ADD.setText("0");
+        ADD.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                RIKeyReleased(evt);
+                ADDKeyReleased(evt);
             }
         });
 
-        jLabel50.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel50.setText("Prestamos");
+        jLabel25.setText("Adicionales:");
+
+        jLabel20.setText("Dias con retardos:");
+
+        R.setText("0");
+
+        jLabel138.setText("Pago con retardos:");
+
+        PCR.setText("0");
+
+        jLabel182.setText("Dias festivos:");
+
+        jLabel183.setText("Dias festivos trabajados:");
+
+        DF.setText("0");
+
+        DFT.setText("0");
+
+        jLabel184.setText("Pago de dias festivos:");
+
+        jLabel185.setText("Pago de dias festivos trabajados:");
+
+        PDDF.setText("0");
+
+        PDDFT.setText("0");
+
+        jLabel41.setText("Horas extras:");
+
+        HE.setText("0");
+        HE.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                HEKeyReleased(evt);
+            }
+        });
+
+        jLabel42.setText("Total horas extra:");
+
+        THE.setText("0");
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dt))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(jLabel43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DL))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(jLabel103)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DD))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(jLabel107)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Ddv))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel105))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Dpi)
+                            .addComponent(R))))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel55)
+                            .addComponent(LabelDSGS)
+                            .addComponent(jLabel261)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel76)
+                            .addComponent(jLabel182)
+                            .addComponent(jLabel183)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel42))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel28Layout.createSequentialGroup()
+                                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel28Layout.createSequentialGroup()
+                                        .addComponent(DFT)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                        .addComponent(jLabel185))
+                                    .addGroup(jPanel28Layout.createSequentialGroup()
+                                        .addComponent(DF)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel184))
+                                    .addGroup(jPanel28Layout.createSequentialGroup()
+                                        .addComponent(DSGS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel88)
+                                            .addComponent(jLabel49)
+                                            .addComponent(jLabel104)
+                                            .addComponent(jLabel128)
+                                            .addComponent(jLabel21)
+                                            .addComponent(jLabel136)
+                                            .addComponent(jLabel138))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PDDDV)
+                                    .addComponent(PDDD)
+                                    .addComponent(pds)
+                                    .addComponent(PDDL)
+                                    .addComponent(PDDT)
+                                    .addComponent(PCR)
+                                    .addComponent(PDDDDSGS, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PDDF)
+                                    .addComponent(PDDFT)))
+                            .addGroup(jPanel28Layout.createSequentialGroup()
+                                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(THE, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(HE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
+                                    .addComponent(FJ)
+                                    .addComponent(DO)
+                                    .addGroup(jPanel28Layout.createSequentialGroup()
+                                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(apy, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                            .addComponent(Lugar, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(49, 49, 49)
+                                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel87)
+                                            .addComponent(jLabel25))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Rembolso, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ADD, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addGap(202, 202, 202)
+                        .addComponent(jLabel135)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel135)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(R)
+                    .addComponent(jLabel138)
+                    .addComponent(PCR))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Dpi)
+                    .addComponent(jLabel105)
+                    .addComponent(jLabel104)
+                    .addComponent(pds))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Ddv)
+                    .addComponent(jLabel107)
+                    .addComponent(jLabel49)
+                    .addComponent(PDDDV))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DD)
+                    .addComponent(jLabel103)
+                    .addComponent(jLabel88)
+                    .addComponent(PDDD))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(DL)
+                    .addComponent(jLabel128)
+                    .addComponent(PDDL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(dt)
+                    .addComponent(jLabel21)
+                    .addComponent(PDDT))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelDSGS)
+                    .addComponent(DSGS)
+                    .addComponent(jLabel136)
+                    .addComponent(PDDDDSGS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel55)
+                            .addComponent(FJ))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel261)
+                            .addComponent(DO))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel182)
+                            .addComponent(DF)
+                            .addComponent(jLabel184)
+                            .addComponent(PDDF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel183)
+                            .addComponent(DFT)
+                            .addComponent(jLabel185)
+                            .addComponent(PDDFT))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(apy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel76)
+                            .addComponent(Lugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel87)
+                            .addComponent(Rembolso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel25)
+                            .addComponent(ADD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(HE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(THE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jPanel11.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel134.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel134.setText("Egresos:");
+
+        F.setText("0");
+
+        jLabel262.setText("Dias con faltas:");
+
+        jLabel137.setText("Descuento por faltas:");
+
+        DPF.setText("0");
+
+        jLabel24.setText("Desc IMSS:");
+
+        DI.setText("26.98");
+        DI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DIActionPerformed(evt);
+            }
+        });
+        DI.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                DIKeyReleased(evt);
+            }
+        });
 
         SHPresnom.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1535,25 +2279,108 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 SHPresnomMouseClicked(evt);
             }
         });
-        jScrollPane5.setViewportView(SHPresnom);
+        jScrollPane24.setViewportView(SHPresnom);
 
-        jLabel141.setText("Pendiente:");
+        jLabel144.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel144.setText("Prestamos:");
 
-        Pagadoprenom.setText("0");
+        SHCDAnom.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        SHCDAnom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SHCDAnomMouseClicked(evt);
+            }
+        });
+        jScrollPane25.setViewportView(SHCDAnom);
 
-        jLabel140.setText("Pagado:");
+        cda.setText("0");
+        cda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                cdaKeyReleased(evt);
+            }
+        });
 
-        NumPrenom.setText("0");
+        jLabel263.setText("Ahorro por Sem:");
+
+        jLabel145.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel145.setText("Caja de ahorro:");
+
+        jLabel146.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel146.setText("Orden de Taller:");
+
+        SHODTnom.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        SHODTnom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SHODTnomMouseClicked(evt);
+            }
+        });
+        jScrollPane26.setViewportView(SHODTnom);
+
+        jLabel264.setText("Orden de taller:");
+
+        Odtp.setText("0");
+        Odtp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                OdtpKeyReleased(evt);
+            }
+        });
+
+        jLabel130.setText("Qnas ahorradas:");
+
+        QAcdanom.setText("0");
+
+        jLabel132.setText("# caja:");
+
+        NCDANom.setText("0");
+
+        jLabel139.setText("Total ahorrado:");
+
+        TACDANOM.setText("0");
 
         jLabel131.setText("# Prestamo:");
 
-        NSprenom.setText("0");
+        NumPrenom.setText("0");
 
-        jLabel148.setText("# semana:");
+        jLabel140.setText("Pagado:");
 
-        jLabel75.setText("Pago de prestamo:");
+        Pagadoprenom.setText("0");
+
+        jLabel141.setText("Pendiente:");
 
         Pendienteprenom.setText("0");
+
+        jLabel142.setText("Pagado:");
+
+        PagODTnom.setText("0");
+
+        jLabel143.setText("# de orden:");
+
+        NODTnom.setText("0");
+
+        jLabel147.setText("Pendiente:");
+
+        PenODTnom.setText("0");
+
+        jLabel265.setText("Pago de prestamo:");
 
         Presp.setText("0");
         Presp.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1562,103 +2389,24 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
         });
 
-        jPanel21.setBackground(new java.awt.Color(204, 255, 255));
+        jLabel148.setText("# Semana:");
 
-        jLabel51.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel51.setText("Dias festivos.");
+        NSprenom.setText("0");
 
-        jLabel73.setText("- 1o. de enero.");
+        jLabel149.setText("# Semana:");
 
-        jLabel126.setText("- El primer lunes de febrero en conmemoración del 5 de febrero");
+        NSODTnom.setText("0");
 
-        jLabel154.setText("- El tercer lunes de marzo en conmemoración del 21 de marzo");
+        jLabel266.setText("Retencion infonavit:");
 
-        jLabel156.setText("- 1o. de mayo");
-
-        jLabel158.setText("- 16 de septiembre");
-
-        jLabel163.setText("- El tercer lunes de noviembre en conmemoración del 20 de noviembre;");
-
-        jLabel164.setText("- El 1o. de diciembre de cada seis años, cuando corresponda a la transmisión del Poder Ejecutivo Federal");
-
-        jLabel165.setText("- 25 de diciembre");
-
-        jLabel166.setText("- El que determinen las leyes federales y locales electorales, en el caso de elecciones ordinarias, para efectuar la jornada electoral");
-
-        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
-        jPanel21.setLayout(jPanel21Layout);
-        jPanel21Layout.setHorizontalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel158))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(jLabel51))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel73))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel126))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel164))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel156))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel154))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel163))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel165))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel166)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel21Layout.setVerticalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel51)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel73)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel126)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel154)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel156)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel158)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel163)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel164)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel165)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel166)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jLabel40.setText("ISR");
-
-        ISR.setText("0");
-        ISR.addKeyListener(new java.awt.event.KeyAdapter() {
+        RI.setText("0");
+        RI.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                ISRKeyReleased(evt);
+                RIKeyReleased(evt);
             }
         });
 
-        jLabel41.setText("Fonacot");
+        jLabel267.setText("fonacot:");
 
         RF.setText("0");
         RF.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1667,99 +2415,152 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel42.setText("Adelanto de nomina:");
+        jLabel45.setText("ISR");
 
-        ADN.setText("0");
-        ADN.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                ADNKeyReleased(evt);
-            }
-        });
+        ISR.setText("0");
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(232, 232, 232)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel56)
-                            .addComponent(jLabel50)))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(jLabel145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(jLabel146))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                        .addGap(263, 263, 263)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel144)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jLabel134))))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel131)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NumPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel148)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NSprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel140)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Pagadoprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel141)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Pendienteprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel75)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(676, Short.MAX_VALUE))
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel40)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel41)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel42)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane26)
+                            .addComponent(jScrollPane24)
+                            .addComponent(jScrollPane25, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addComponent(jLabel262)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(F)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel137)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DPF))
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(jLabel24)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel266)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel267)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel45)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addComponent(jLabel132)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NCDANom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel263)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel130)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(QAcdanom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel139)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TACDANOM, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addComponent(jLabel143)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel149)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NSODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel142)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PagODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel147)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PenODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel264)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addComponent(jLabel131)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NumPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel148)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NSprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel140)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Pagadoprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel141)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Pendienteprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel265)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 63, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel56)
+                .addComponent(jLabel134)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel262)
+                    .addComponent(F)
+                    .addComponent(jLabel137)
+                    .addComponent(DPF))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
+                    .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel266)
                     .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel40)
-                    .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41)
+                    .addComponent(jLabel267)
                     .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel42)
-                    .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel50)
+                    .addComponent(jLabel45)
+                    .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel144)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel75)
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel265)
                         .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel131)
                         .addComponent(NumPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel140)
@@ -1769,8 +2570,36 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                         .addComponent(jLabel148)
                         .addComponent(NSprenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jLabel145)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel263)
+                    .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel130)
+                    .addComponent(QAcdanom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel132)
+                    .addComponent(NCDANom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel139)
+                    .addComponent(TACDANOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel146)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel264)
+                    .addComponent(jLabel142)
+                    .addComponent(PagODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel143)
+                    .addComponent(NODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel147)
+                    .addComponent(PenODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel149)
+                    .addComponent(NSODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel9.setBackground(new java.awt.Color(153, 255, 153));
@@ -1808,7 +2637,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 .addComponent(deposito)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(356, Short.MAX_VALUE)
+                .addContainerGap(86, Short.MAX_VALUE)
                 .addComponent(AgregarNP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Modm)
@@ -1828,12 +2657,333 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Clean.setText("jButton1");
-        Clean.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CleanActionPerformed(evt);
+        jPanel22.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel50.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel50.setText("Dias festivos.");
+
+        jLabel91.setText("- 1o. de enero.");
+
+        jLabel127.setText("- El primer lunes de febrero en conmemoración del 5 de febrero");
+
+        jLabel155.setText("- El tercer lunes de marzo en conmemoración del 21 de marzo");
+
+        jLabel157.setText("- 1o. de mayo");
+
+        jLabel160.setText("- 16 de septiembre");
+
+        jLabel168.setText("- El tercer lunes de noviembre en conmemoración del 20 de noviembre;");
+
+        jLabel169.setText("- El 1o. de diciembre de cada seis años, cuando corresponda a la transmisión del Poder Ejecutivo Federal");
+
+        jLabel170.setText("- 25 de diciembre");
+
+        jLabel171.setText("- El que determinen las leyes federales y locales electorales, en el caso de elecciones ordinarias, para efectuar la jornada electoral");
+
+        Pbs.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel40.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel40.setText("Descuentos varios:");
+
+        jLabel89.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel89.setText("Total de descuentos varios:");
+
+        DVT.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        DVT.setText("0");
+
+        jLabel75.setText("Faltantes de boleto:");
+
+        Fdb.setText("0");
+        Fdb.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FdbKeyReleased(evt);
             }
         });
+
+        jLabel79.setText("Sancion:");
+
+        Sancion.setText("0");
+        Sancion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SancionKeyReleased(evt);
+            }
+        });
+
+        jLabel82.setText("Chamarra:");
+
+        Chamarra.setText("0");
+        Chamarra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ChamarraKeyReleased(evt);
+            }
+        });
+
+        jLabel85.setText("Chaleco:");
+
+        Chaleco.setText("0");
+        Chaleco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ChalecoKeyReleased(evt);
+            }
+        });
+
+        jLabel77.setText("Faltante de efectivo:");
+
+        Fde.setText("0");
+        Fde.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FdeKeyReleased(evt);
+            }
+        });
+
+        jLabel80.setText("Grua:");
+
+        Grua.setText("0");
+        Grua.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GruaKeyReleased(evt);
+            }
+        });
+
+        jLabel83.setText("Pantalon:");
+
+        Pantalon.setText("0");
+        Pantalon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PantalonKeyReleased(evt);
+            }
+        });
+
+        jLabel86.setText("Credencial:");
+
+        Credencial.setText("0");
+        Credencial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CredencialKeyReleased(evt);
+            }
+        });
+
+        jLabel78.setText("Boleto perdido:");
+
+        Bp.setText("0");
+        Bp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BpKeyReleased(evt);
+            }
+        });
+
+        jLabel81.setText("Playera:");
+
+        Playera.setText("0");
+        Playera.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                PlayeraKeyReleased(evt);
+            }
+        });
+
+        jLabel84.setText("Corbata:");
+
+        Corbata.setText("0");
+        Corbata.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CorbataKeyReleased(evt);
+            }
+        });
+
+        jLabel167.setText("Adelanto de nomina:");
+
+        ADN.setText("0");
+        ADN.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ADNKeyReleased(evt);
+            }
+        });
+
+        jLabel44.setText("Concepto");
+
+        javax.swing.GroupLayout PbsLayout = new javax.swing.GroupLayout(Pbs);
+        Pbs.setLayout(PbsLayout);
+        PbsLayout.setHorizontalGroup(
+            PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PbsLayout.createSequentialGroup()
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PbsLayout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(jLabel40))
+                    .addGroup(PbsLayout.createSequentialGroup()
+                        .addComponent(jLabel89)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DVT))
+                    .addGroup(PbsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel79)
+                            .addComponent(jLabel75)
+                            .addComponent(jLabel82)
+                            .addComponent(jLabel85)
+                            .addComponent(jLabel77)
+                            .addComponent(jLabel80)
+                            .addComponent(jLabel83)
+                            .addComponent(jLabel86)
+                            .addComponent(jLabel78)
+                            .addComponent(jLabel81)
+                            .addComponent(jLabel84)
+                            .addComponent(jLabel167))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Grua, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fde, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Chaleco, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Chamarra, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Sancion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Fdb, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Pantalon, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Credencial, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Bp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Playera, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Corbata, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PbsLayout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel44)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PbsLayout.setVerticalGroup(
+            PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PbsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel40)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel75)
+                    .addComponent(Fdb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel79)
+                    .addComponent(Sancion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel82)
+                    .addComponent(Chamarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel85)
+                    .addComponent(Chaleco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel77)
+                    .addComponent(Fde, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel80)
+                    .addComponent(Grua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel83)
+                    .addComponent(Pantalon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel86)
+                    .addComponent(Credencial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel78)
+                    .addComponent(Bp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel81)
+                    .addComponent(Playera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel84)
+                    .addComponent(Corbata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel167)
+                    .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PbsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel89)
+                    .addComponent(DVT))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel160))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addComponent(jLabel50))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel91))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel127))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel169))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel157))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel155))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel168))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel170))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel171))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Pbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addComponent(Pbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel91)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel127)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel155)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel157)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel160)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel168)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel169)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel170)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel171)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel51.setText("Observaciones:");
+
+        obs.setColumns(20);
+        obs.setLineWrap(true);
+        obs.setRows(5);
+        jScrollPane27.setViewportView(obs);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1880,13 +3030,24 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(14, 14, 14)
-                                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addGap(67, 67, 67)
+                                                        .addComponent(jLabel51)))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addComponent(jLabel52)
@@ -1921,14 +3082,22 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                     .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel51)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1960,7 +3129,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ.setText("Buscar Semana:");
 
@@ -2140,7 +3309,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ1.setText("Buscar Semana:");
 
@@ -2321,7 +3490,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ2.setText("Buscar Semana:");
 
@@ -2502,7 +3671,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ3.setText("Buscar Semana:");
 
@@ -2683,7 +3852,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ4.setText("Buscar Semana:");
 
@@ -2864,7 +4033,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ5.setText("Buscar Semana:");
 
@@ -3045,7 +4214,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ6.setText("Buscar Semana:");
 
@@ -3226,7 +4395,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ7.setText("Buscar Semana:");
 
@@ -3407,7 +4576,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         });
 
         botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCNominaSem.php");
+        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ8.setText("Buscar Semana:");
 
@@ -3656,7 +4825,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb2.setToolTipText("");
-        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         jLabel30.setText("Monto total en fila deposito:");
 
@@ -3842,7 +5011,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb16.setToolTipText("");
-        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         jLabel31.setText("Monto total en fila deposito:");
 
@@ -4027,7 +5196,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb17.setToolTipText("");
-        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         jLabel33.setText("Monto total en fila deposito:");
 
@@ -4212,7 +5381,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb18.setToolTipText("");
-        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         jLabel34.setText("Monto total en fila deposito:");
 
@@ -4397,7 +5566,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb19.setToolTipText("");
-        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         jLabel35.setText("Monto total en fila deposito:");
 
@@ -4582,7 +5751,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb20.setToolTipText("");
-        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         Imprimir5.setText("Imprimir tabla");
         Imprimir5.addActionListener(new java.awt.event.ActionListener() {
@@ -4767,7 +5936,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb21.setToolTipText("");
-        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         jLabel37.setText("Monto total en fila deposito:");
 
@@ -4952,7 +6121,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb22.setToolTipText("");
-        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         jLabel38.setText("Monto total en fila deposito:");
 
@@ -5137,7 +6306,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         botonWeb25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         botonWeb25.setToolTipText("");
-        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaSemSIMSS/EPCPagosNominaSem.php");
+        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
 
         jLabel39.setText("Monto total en fila deposito:");
 
@@ -5238,9 +6407,244 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tablas de pagos", NomPagos);
 
-        jMenu1.setText("Cambiar a:");
+        Menuadm.setText("Todas las ventanas");
 
-        jMenu2.setText("Nomina quincenal");
+        jMenu5.setText("Area Nomina");
+
+        jMenu6.setText("Nomina quincenal");
+
+        ODT1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ODT1.setText("Ordenes de taller");
+        ODT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(ODT1);
+
+        CNQ1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CNQ1.setText("Nomina IMSS");
+        CNQ1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CNQ1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(CNQ1);
+
+        PRESQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        PRESQ.setText("Prestamos");
+        PRESQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PRESQActionPerformed(evt);
+            }
+        });
+        jMenu6.add(PRESQ);
+
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem7.setText("Nomina General");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem7);
+
+        CDA1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA1.setText("Caja de ahorro");
+        CDA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA1ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(CDA1);
+
+        jMenu5.add(jMenu6);
+
+        jMenu7.setText("Semanal");
+
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem8.setText("Nomina Semanal IMSS");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem8);
+
+        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem9.setText("Prestamos Semanales");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem9);
+
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMenuItem10.setText("Nomina Semanal General");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem10);
+
+        CDA3.setText("Caja de ahorro");
+        CDA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA3ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(CDA3);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(ODT2);
+
+        jMenu5.add(jMenu7);
+
+        jMenuItem11.setText("Listas de asistencia");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem11);
+
+        Menuadm.add(jMenu5);
+
+        jMenu8.setText("Area RH");
+
+        General.setText("Empleados General");
+        General.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeneralActionPerformed(evt);
+            }
+        });
+        jMenu8.add(General);
+
+        Estadias.setText("Alumno de estadia");
+        Estadias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadiasActionPerformed(evt);
+            }
+        });
+        jMenu8.add(Estadias);
+
+        Torteria.setText("Empleados Torteria");
+        Torteria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TorteriaActionPerformed(evt);
+            }
+        });
+        jMenu8.add(Torteria);
+
+        jMenu9.setText("Semanales");
+
+        jMenuItem12.setText("Inturbide");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem12);
+
+        jMenuItem13.setText("Tehuantepec");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem13);
+
+        jMenuItem14.setText("PTE titla");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem14);
+
+        jMenu8.add(jMenu9);
+
+        Depositos.setText("Depositos");
+
+        jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem15.setText("Depositos C/ IMSS");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        Depositos.add(jMenuItem15);
+
+        jMenu8.add(Depositos);
+
+        Menuadm.add(jMenu8);
+
+        ZYS.setText("Zonas y Servicios");
+        ZYS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ZYSActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ZYS);
+
+        ADMV2.setText("Usuarios");
+        ADMV2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADMV2ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(ADMV2);
+
+        jMenuBar1.add(Menuadm);
+
+        jMenu3.setText("Cambiar a:");
+
+        jMenu10.setText("Semanal");
+
+        NomSemGen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        NomSemGen.setText("Nomina Semanal IMSS");
+        NomSemGen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomSemGenActionPerformed(evt);
+            }
+        });
+        jMenu10.add(NomSemGen);
+
+        PresSem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        PresSem.setText("Prestamos Semanales");
+        PresSem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PresSemActionPerformed(evt);
+            }
+        });
+        jMenu10.add(PresSem);
+
+        CDA2.setText("Caja de ahorro");
+        CDA2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA2ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(CDA2);
+
+        ODT3.setText("Ordenes de taller");
+        ODT3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT3ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(ODT3);
+
+        jMenu3.add(jMenu10);
+
+        jMenu11.setText("Nomina quincenal");
 
         ODT.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         ODT.setText("Ordenes de taller");
@@ -5249,34 +6653,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 ODTActionPerformed(evt);
             }
         });
-        jMenu2.add(ODT);
-
-        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        CDA.setText("Caja de ahorro");
-        CDA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CDAActionPerformed(evt);
-            }
-        });
-        jMenu2.add(CDA);
-
-        PRES.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        PRES.setText("Prestamos");
-        PRES.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PRESActionPerformed(evt);
-            }
-        });
-        jMenu2.add(PRES);
-
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem2.setText("Nomina General");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem2);
+        jMenu11.add(ODT);
 
         CNQ.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         CNQ.setText("Nomina IMSS");
@@ -5285,35 +6662,66 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 CNQActionPerformed(evt);
             }
         });
-        jMenu2.add(CNQ);
+        jMenu11.add(CNQ);
 
-        jMenu1.add(jMenu2);
-
-        jMenuItem1.setText("Prestamos Sem");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA.setText("Caja de ahorro");
+        CDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                CDAActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu11.add(CDA);
 
-        jMenuItem3.setText("Semanal General");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        PRES.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        PRES.setText("Prestamos");
+        PRES.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                PRESActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu11.add(PRES);
 
-        jMenuItem5.setText("Listas de asistencia");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem4.setText("Nomina General");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem5);
+        jMenu11.add(jMenuItem4);
 
-        jMenuBar1.add(jMenu1);
+        jMenu3.add(jMenu11);
+
+        LDA.setText("Listas de asistencia");
+        LDA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDAActionPerformed(evt);
+            }
+        });
+        jMenu3.add(LDA);
+
+        jMenuBar1.add(jMenu3);
+
+        Reportes.setText("Reportes");
+
+        jMenuItem6.setText("Reportes de nomina");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        Reportes.add(jMenuItem6);
+
+        jMenuItem16.setText("Reportes de nomina sem");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        Reportes.add(jMenuItem16);
+
+        jMenuBar1.add(Reportes);
 
         setJMenuBar(jMenuBar1);
 
@@ -5321,15 +6729,296 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1259, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1380, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //Agregar pago ODT
+    public void AgregarPagoODT() {
+
+        String SQL = "INSERT INTO `nominasem.pagos.odt` (`#Lista`, `# de orden`, "
+                + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
+                + " `Servicio`, `Semana`, `# Semana`, `pagado`, `pendiente`, "
+                + "`Pago de odt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NODTnom.getText()));
+            pst.setInt(3, Integer.parseInt(NE.getText()));
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
+            pst.setString(6, name.getText());
+            pst.setString(7, Zon.getText());
+            pst.setString(8, ServN.getText());
+            pst.setString(9, Semana.getSelectedItem().toString());
+            pst.setString(10, NSODTnom.getText());
+            pst.setString(11, PagODTnom.getText());
+            pst.setString(12, PenODTnom.getText());
+            pst.setString(13, Odtp.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Pago de orden en agregado");
+
+        } catch (HeadlessException | SQLException error_agregar_pdodt) {
+            JOptionPane.showMessageDialog(null, "Error al agregar pago de orden: " + error_agregar_pdodt.getMessage());
+        }
+    }
+
+//Agregar pago CDA
+    public void AgregarPagoCDA() {
+
+        String SQL = "INSERT INTO `nominasem.pagos.cda` (`#Lista`, `#caja`, `#empleado`, `Apellido P`,"
+                + " `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Semana`, `Caja de ahorro`,"
+                + " `Observaciones`, `Sem aportadas`, `# de recibo de pago`) VALUES (?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, '', ?, '')";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NCDANom.getText()));
+            pst.setInt(3, Integer.parseInt(NE.getText()));
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
+            pst.setString(6, name.getText());
+            pst.setString(7, Zon.getText());
+            pst.setString(8, ServN.getText());
+            pst.setString(9, Semana.getSelectedItem().toString());
+            pst.setString(10, cda.getText());
+            pst.setString(11, QAcdanom.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Pago de caja de ahorro en agregado");
+
+        } catch (HeadlessException | SQLException error_add_pdcda) {
+            JOptionPane.showMessageDialog(null, "Error al agregar pago de caja de ahorro: " + error_add_pdcda.getMessage());
+        }
+    }
+
+//auto ODT
+    public void PagoODT() {
+        String Otropagoodt = PenODTnom.getText();
+
+        if (Otropagoodt.equals("0.0")) {
+            String SQL = "UPDATE `nominasem.odt` SET `Status` = 'Pagado', `Sem pagadas` = ?,"
+                    + " `Pagado` = ?, `Pendiente` = ? WHERE `nominasem.odt`.`idTaller` = ?";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setString(1, PagODTnom.getText());
+                pst.setString(2, PenODTnom.getText());
+                pst.setString(3, NSODTnom.getText());
+                pst.setInt(4, Integer.parseInt(NODTnom.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Abono de orden de taller agregado.");
+
+            } catch (HeadlessException | SQLException error_auto_odt) {
+                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller: " + error_auto_odt.getMessage());
+            }
+        } else if (Otropagoodt.equals(PenODTnom.getText())) {
+            String SQL = "UPDATE `nominasem.odt` SET `Status` = 'Debe', `Pagado` = ?, `Pendiente` = ?, "
+                    + "`Quincenas pagadas` = ? WHERE `nominasem.odt`.`idTaller` = ?";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setString(1, PagODTnom.getText());
+                pst.setString(2, PenODTnom.getText());
+                pst.setString(3, NSODTnom.getText());
+                pst.setInt(4, Integer.parseInt(NODTnom.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Abono de orden de taller en agregado.");
+
+            } catch (HeadlessException | SQLException error_auto_odt) {
+                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller en: " + error_auto_odt.getMessage());
+            }
+        }
+
+    }
+
+    public void shareODTnom() {
+        String FiltroN = BNameNom.getText();
+        String FAP = BAPNom.getText();
+        String FAM = BAMNom.getText();
+        String where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`";
+
+        if (!"".equals(FiltroN)) {
+            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%' AND `Status` LIKE '%Debe%'";
+        } else if (!"".equals(FAP)) {
+            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%' AND `Status` LIKE '%Debe%'";
+        } else if (!"".equals(FAM)) {
+            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Por Semana`,"
+                    + " `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%' ";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            SHODTnom.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Orden");
+            modelo.addColumn("Apellido P");//2
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Pago por Qna");
+            modelo.addColumn("Qnas pagadas");//6
+            modelo.addColumn("Pagado");
+            modelo.addColumn("Pendiente");//8
+
+//ANCHOS
+            int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPQ*/ 50,
+                /*QP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                SHODTnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+        } catch (SQLException error_sh_odt) {
+            JOptionPane.showMessageDialog(null, "Error al compartir ordenes de taller con nomina: " + error_sh_odt.getMessage());
+
+        }
+
+    }
+
+    public void editarCDAdnom() {
+
+        String SQL = "UPDATE `nominasem.cajadeahorro` SET "
+                + " `Semanas Ahorradas` = ?, `Total Ahorrado` = ? WHERE `nominasem.cajadeahorro`.`#caja` = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setString(1, QAcdanom.getText());
+            pst.setString(2, TACDANOM.getText());
+            pst.setInt(3, Integer.parseInt(NCDANom.getText()));
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Abono de caja de ahorro en agregado");
+
+        } catch (HeadlessException | SQLException error_auto_cda) {
+            JOptionPane.showMessageDialog(null, "Error al abonar Caja de ahorro: " + error_auto_cda.getMessage());
+        }
+    }
+
+    public void sharecdanom() {
+        String FiltroN = BNameNom.getText();
+        String FAP = BAPNom.getText();
+        String FAM = BAMNom.getText();
+        String where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
+                + " FROM `nominasem.cajadeahorro`";
+
+        if (!"".equals(FiltroN)) {
+            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado`"
+                    + "  FROM `nomina.cajadeahorro`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
+                    + " FROM `nominasem.cajadeahorro`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
+                    + " FROM `nominasem.cajadeahorro`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            SHCDAnom.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Caja");
+            modelo.addColumn("Apellido P");//2
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Ahorro por Qna");
+            modelo.addColumn("Qnas ahorradas");//6
+            modelo.addColumn("Total ahorrado");
+
+//ANCHOS
+            int[] anchos = {/*NF*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*APQ*/ 50,
+                /*QA*/ 50, /*TA*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                SHCDAnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+        } catch (SQLException error_sh_cda_nom) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
+
+        }
+
+    }
 
     public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
         boolean fitWidth = true;
@@ -5410,7 +7099,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -5439,14 +7128,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -5455,8 +7186,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -5479,7 +7215,74 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         }
 
     }
-    //mostrar datos pagos nomina
+
+//Descuentos varios
+    public void desv() {
+        double desv1 = Double.parseDouble(this.Fdb.getText());
+        double desv2 = Double.parseDouble(this.Fde.getText());
+        double desv3 = Double.parseDouble(this.Bp.getText());
+        double desv4 = Double.parseDouble(this.Sancion.getText());
+        double desv5 = Double.parseDouble(this.Grua.getText());
+        double desv6 = Double.parseDouble(this.Playera.getText());
+        double desv7 = Double.parseDouble(this.Chamarra.getText());
+        double desv8 = Double.parseDouble(this.Corbata.getText());
+        double desv9 = Double.parseDouble(this.Pantalon.getText());
+        double desv10 = Double.parseDouble(this.Chaleco.getText());
+        double desv11 = Double.parseDouble(this.Credencial.getText());
+        double desv12 = Double.parseDouble(this.ADN.getText());
+
+        double total = desv1 + desv2 + desv3 + desv4 + desv5 + desv6 + desv7
+                + desv8 + desv9 + desv10 + desv11 + desv12;
+        this.DVT.setText("" + total + "");
+    }
+
+//descanso sin gose de sueldo
+    public void DSGS() {
+
+        double total = DSGS1 + DSGS2 + DSGS3 + DSGS4 + DSGS5 + DSGS6 + DSGS7;
+        this.DSGS.setText("" + total + "");
+    }
+// Dia laborado
+
+    public void DL() {
+        double total = DL1 + DL2 + DL3 + DL4 + DL5 + DL6 + DL7;
+        DL.setText("" + total + "");
+
+    }
+//descanso trabajado
+
+    public void DT() {
+
+        double total = dt1 + dt2 + dt3 + dt4 + dt5 + dt6 + dt7;
+        this.dt.setText("" + total + "");
+    }
+//falta
+
+    public void F() {
+
+        double total = F1 + F2 + F3 + F4 + F5 + F6 + F7;
+        this.F.setText("" + total + "");
+    }
+//Falta justificada
+
+    public void FJ() {
+        double total = FJ1 + FJ2 + FJ3 + FJ4 + FJ5 + FJ6 + FJ7;
+        this.FJ.setText("" + total + "");
+    }
+//retardos
+
+    public void R() {
+
+        double total = R1 + R2 + R3 + R4 + R5 + R6 + R7;
+        this.R.setText("" + total + "");
+    }
+//Descanso otorgado
+
+    public void DO() {
+
+        double total = DO1 + DO2 + DO3 + DO4 + DO5 + DO6 + DO7;
+        this.DO.setText("" + total + "");
+    }
 
     public void MDPagosnomCSS() {
 
@@ -5759,7 +7562,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -5788,14 +7591,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -5804,8 +7649,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -5874,7 +7724,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -5903,14 +7753,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -5919,8 +7811,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -5948,7 +7845,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     public void MDNFT() {
         //Buscar empleado
         String FiltroN = Nominab2.getText();
-        String SQL = "select * from `nominasem.detallada.foraneos toluca`";
+        String SQL = "select * from `nominasem.detallada.foraneos toluca.simss`";
         String FAPNom = FApT2.getText();
         String FAMNom = FAmT2.getText();
         String FiltroSnom = FiltroSnomina2.getSelectedItem().toString();
@@ -5956,17 +7853,17 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF2.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select * from `nominasem.detallada.foraneos toluca` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select * from `nominasem.detallada.foraneos toluca.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select * from `nominasem.detallada.foraneos toluca` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos toluca.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select * from `nominasem.detallada.foraneos toluca` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos toluca.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select * from `nominasem.detallada.foraneos toluca` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos toluca.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select * from `nominasem.detallada.foraneos toluca` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos toluca.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select * from `nominasem.detallada.foraneos toluca` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select * from `nominasem.detallada.foraneos toluca.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -5990,7 +7887,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -6019,14 +7916,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -6035,8 +7974,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6105,7 +8049,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -6134,14 +8078,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -6150,8 +8136,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6221,7 +8212,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -6250,14 +8241,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -6266,8 +8299,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6337,7 +8375,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -6366,14 +8404,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -6382,8 +8462,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6453,7 +8538,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -6482,14 +8567,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -6498,8 +8625,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6569,7 +8701,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -6598,14 +8730,56 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
             modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de dias de vacaciones");//36
+            modelo.addColumn("Dias descansados");
+            modelo.addColumn("Pago de dias descansados");//36
+            modelo.addColumn("Dias Laborados");
+            modelo.addColumn("Pago de dias laborados");//38
+            modelo.addColumn("Descansos Trabajados");
+            modelo.addColumn("Pago de descansos trabajados");//40
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");//42
+            modelo.addColumn("Faltas Justificadas");
+            modelo.addColumn("Descanso Otorgado");//44
+            modelo.addColumn("Dias festivos");
+            modelo.addColumn("Pago por dias festivos");//46
+            modelo.addColumn("Dias festivos trabajados");
+            modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
-            modelo.addColumn("Total horas extra");//30
-            modelo.addColumn("Retencion infonavit");
-            modelo.addColumn("ISR");
-            modelo.addColumn("Fonacot");
-            modelo.addColumn("Adelanto");
-            modelo.addColumn("Prestamos");//32
+            modelo.addColumn("total de horas extra");
+            modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
+            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");//50
+            modelo.addColumn("Desc IMSS");
+            modelo.addColumn("Infonavit");//12
+            modelo.addColumn("Fonacot");//12
+            modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
+            modelo.addColumn("Faltantes de boleto");//54
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");//56
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");//58
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");//60 
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");//62
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");//64
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de DV");
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -6614,8 +8788,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, 40/*FDP*/, 55/*HE*/, 40/*THE*/, 50/*RI*/, /*ISR*/ 50, /*FON*/ 50, /*ADN*/ 50,
-                50/*PRE*/, 75/*REM*/, 55/*DE*/, 600/*Obs*/};
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
+                /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -6735,7 +8914,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                 + " `Cuenta de banco`, `Servicio`,"
                 + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`";
+                + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco.simss`";
         String FiltroSpago = FiltroServP.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP.getText();
@@ -6744,37 +8923,37 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                     + " `Cuenta de banco`, `Servicio`,"
                     + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
             SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                     + " `Cuenta de banco`, `Servicio`,"
                     + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
             SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                     + " `Cuenta de banco`, `Servicio`,"
                     + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
             SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                     + " `Cuenta de banco`, `Servicio`,"
                     + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
             SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                     + " `Cuenta de banco`, `Servicio`,"
                     + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
             SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, "
                     + " `Cuenta de banco`, `Servicio`,"
                     + " `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`,"
-                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco`"
+                    + " `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos acapulco.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -6956,28 +9135,28 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         String FiltroN = busp2.getText();
         String FAPpago = BAppag2.getText();
         String FAMpago = Bampag2.getText();
-        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`";
+        String SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca.simss`";
         String FiltroSpago = FiltroServP2.getSelectedItem().toString();
         String FiltroQuinpago = FiltroQP2.getSelectedItem().toString();
         String FiltrosNDF = filtroNDFP2.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAPpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca.simss`"
                     + " Where `Apellido P` LIKE '%" + FAPpago + "%'";
         } else if (!"".equals(FAMpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca.simss`"
                     + " Where `Apellido M` LIKE '%" + FAMpago + "%'";
         } else if (!"".equals(FiltrosNDF)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca.simss`"
                     + " Where `#lista` LIKE '%" + FiltrosNDF + "%'";
         } else if (!"".equals(FiltroSpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca.simss`"
                     + " where `Servicio` LIKE '%" + FiltroSpago + "%'";
         } else if (!"".equals(FiltroQuinpago)) {
-            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca`"
+            SQL = "SELECT `#Lista`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Cuenta de banco`, `Servicio`, `año`, `Fecha sabado`, `Fecha viernes`, `Fecha de pago`, `Sueldo`, `Deposito`, `Observaciones` FROM `nominasem.detallada.foraneos toluca.simss`"
                     + " Where `Semana` LIKE '%" + FiltroQuinpago + "%'";
         }
 
@@ -7500,18 +9679,27 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 // nomina semanal
     public void editarNS() {
 
-        String SQL = "UPDATE `nominasem.detallada." + Zon.getText() + ".simss` SET `#Lista` = ?, `#Empleado` = ?,  `Apellido P` = ?,"
-                + " `Apellido M` = ?, `Nombre(s)` = ?, `Bono` = ?,"
-                + " `Cuenta de banco` = ?, `Banco` = ?, `Zona` = ?,"
-                + " `Servicio` = ?, `Sueldo` = ?, `Por dia` = ?, `Por hora` = ?,"
-                + " `año` = ?, `Semana` = ?, `Fecha sabado` = ?, `Fecha domingo` = ?,"
-                + " `Fecha lunes` = ?, `Fecha martes` = ?, `Fecha miercoles` = ?,"
-                + " `Fecha jueves` = ?, `Fecha viernes` = ?, `Sabado` = ?, "
-                + "`Domingo` = ?, `Lunes` = ?, `Martes` = ?, `Miercoles` = ?,"
-                + " `Jueves` = ?, `Viernes` = ?, `Fecha de pago` = ?, `Horas extras` = ?,"
-                + " `Total horas extra` = ?, `Retencion infonavit` = ?, `ISR` = ?, `Fonacot` = ?, "
-                + " `Adelanto de nomina` = ?, `Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
-                + "`Observaciones` = ? WHERE `nominasem.detallada." + Zon.getText() + ".simss`.`#Lista` = ?";
+        String SQL = "UPDATE `nominasem.detallada." + Zon.getText() + ".simss` SET"
+                + " `#Lista` = ?, `#Empleado` = ?, `Nombre(s)` = ?, `Apellido P` = ?, "
+                + "`Apellido M` = ?, `Bono` = ?, `Cuenta de banco` = ?, `Banco` = ?, `Zona` = ?,"
+                + " `Servicio` = ?, `Sueldo` = ?, `Por dia` = ?, `Por hora` = ?, `año` = ?,"
+                + " `Semana` = ?, `Fecha sabado` = ?, `Fecha domingo` = ?, `Fecha lunes` = ?, "
+                + "`Fecha martes` = ?, `Fecha miercoles` = ?, `Fecha jueves` = ?, `Fecha viernes` = ?,"
+                + " `Sabado` = ?, `Domingo` = ?, `Lunes` = ?, `Martes` = ?, `Miercoles` = ?, `Jueves` = ?, "
+                + "`Viernes` = ?, `Fecha de pago` = ?, `Dias con retardos` = ?, `Pago con retardos` = ?,"
+                + " `Dias de incapacidad` = ?, `Pago de seguro` = ?, `Dias de vacaciones` = ?,"
+                + " `Pago de Dias de vacaciones` = ?, `Dias descansados` = ?, `Pago de dias descansados` = ?,"
+                + " `Dias Laborados` = ?, `Pago de dias laborados` = ?, `Descansos trabajados` = ?, "
+                + "`Pago de Descansos trabajados` = ?, `Dias de DSGS` = ?, `Pago de Dias de DSGS` = ?, "
+                + "`Faltas justificadas` = ?, `Descanso otorgado` = ?, `Dias festivos` = ?, "
+                + "`Pago de Dias festivos` = ?, `Dias festivos trabajados` = ?, `Pago de Dias festivos trabajados` = ?, "
+                + "`Apoyo` = ?, `Rembolso` = ?, `Lugar` = ?, `Adicionales` = ?, `Horas extra` = ?, "
+                + "`Total de horas extra` = ?, `Dias con faltas` = ?, `pago de Dias con faltas` = ?, `"
+                + "IMSS` = ?, `Infonavit` = ?, `Fonacot` = ?, `ISR` = ?, `Pago de prestamo` = ?, "
+                + "`Caja de ahorro` = ?, `Pago de ODT` = ?, `Faltantes de boleto` = ?, `Sancion` = ?, "
+                + "`Chamarra` = ?, `Chaleco` = ?, `Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, "
+                + "`Credencial` = ?, `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, `Adelanto de Nomina` = ?, `Total de descuentos` = ?, `Deposito` = ?, `Observaciones` = ?"
+                + " WHERE `nominasem.detallada." + Zon.getText() + ".simss`.`#Lista` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -7546,48 +9734,120 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             pst.setString(28, JueT.getSelectedItem().toString());
             pst.setString(29, VieT.getSelectedItem().toString());
             pst.setString(30, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
-            pst.setString(31, HE.getText());
-            pst.setString(32, THE.getText());
-            pst.setString(33, RI.getText());
-            pst.setString(34, ISR.getText());
-            pst.setString(35, RF.getText());
-            pst.setString(36, ADN.getText());
-            pst.setString(37, Presp.getText());
-            pst.setString(38, Rembolso.getText());
-            pst.setString(39, deposito.getText());
-            pst.setString(40, obs.getText());
-            pst.setInt(41, Integer.parseInt(NDL.getText()));
+            pst.setString(31, R.getText());
+            pst.setString(32, PCR.getText());
+            pst.setString(33, Dpi.getText());
+            pst.setString(34, pds.getText());
+            pst.setString(35, Ddv.getText());
+            pst.setString(36, PDDDV.getText());
+            pst.setString(37, DD.getText());
+            pst.setString(38, PDDD.getText());
+            pst.setString(39, DL.getText());
+            pst.setString(40, PDDL.getText());
+            pst.setString(41, dt.getText());
+            pst.setString(42, PDDT.getText());
+            pst.setString(43, DSGS.getText());
+            pst.setString(44, PDDDDSGS.getText());
+            pst.setString(45, FJ.getText());
+            pst.setString(46, DO.getText());
+            pst.setString(47, DF.getText());
+            pst.setString(48, PDDF.getText());
+            pst.setString(49, DFT.getText());
+            pst.setString(50, PDDFT.getText());
+            pst.setString(51, apy.getText());
+            pst.setString(52, Rembolso.getText());
+            pst.setString(53, Lugar.getText());
+            pst.setString(54, ADD.getText());
+            pst.setString(55, HE.getText());
+            pst.setString(56, THE.getText());
+            pst.setString(57, F.getText());
+            pst.setString(58, DPF.getText());
+            pst.setString(59, DI.getText());
+            pst.setString(60, RI.getText());
+            pst.setString(61, RF.getText());
+            pst.setString(62, ISR.getText());
+            pst.setString(63, Presp.getText());
+            pst.setString(64, cda.getText());
+            pst.setString(65, Odtp.getText());
+            pst.setString(66, Fdb.getText());
+            pst.setString(67, Sancion.getText());
+            pst.setString(68, Chamarra.getText());
+            pst.setString(69, Chaleco.getText());
+            pst.setString(70, Fde.getText());
+            pst.setString(71, Grua.getText());
+            pst.setString(72, Pantalon.getText());
+            pst.setString(73, Credencial.getText());
+            pst.setString(74, Bp.getText());
+            pst.setString(75, Playera.getText());
+            pst.setString(76, Corbata.getText());
+            pst.setString(77, ADN.getText());
+            pst.setString(78, DVT.getText());
+            pst.setString(79, deposito.getText());
+            pst.setString(80, obs.getText());
+            pst.setInt(81, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
 
             DAB.clearSelection();
-            ADN.setText("0");
             ISR.setText("0");
+            RI.setText("0");
             RF.setText("0");
+            PH.setText("0");
+            HE.setText("0");
+            THE.setText("0");
+            DAB.clearSelection();
+            NSprenom.setText("0");
+            ADN.setText("0");
+            QAcdanom.setText("0");
+            NODTnom.setText("0");
+            NCDANom.setText("0");
+            NCDANom.setText("0");
             NDL.setText("0");
+            NE.setText("0");
             Ap.setText("");
             am.setText("");
             name.setText("");
             Bono.setText("0");
+            Bono1.setText("0");
             cta.setText("");
             ban.setText("");
             Zon.setText("");
             ServN.setText("");
             sueldo.setText("0");
             pd.setText("0");
-            PH.setText("0");
-            HE.setText("0");
-            THE.setText("0");
-            RI.setText("0");
+            Fdb.setText("0");
+            Fde.setText("0");
+            Bp.setText("0");
+            Sancion.setText("0");
+            Grua.setText("0");
+            Playera.setText("0");
+            Chamarra.setText("0");
+            Pantalon.setText("0");
+            Corbata.setText("0");
+            Chaleco.setText("0");
+            Credencial.setText("0");
+            DVT.setText("0");
+            apy.setText("0");
+            Lugar.setText("");
+            DI.setText("26.98");
+            cda.setText("0");
             Presp.setText("0");
             obs.setText("");
+            ADD.setText("0");
             Rembolso.setText("0");
             deposito.setText("0");
+            Odtp.setText("0");
             NumPrenom.setText("0");
             NSprenom.setText("0");
             Pagadoprenom.setText("0");
             Pendienteprenom.setText("0");
+            TACDANOM.setText("0");
+            NODTnom.setText("0");
+            NSODTnom.setText("0");
+            PagODTnom.setText("0");
+            PenODTnom.setText("0");
+            QAcdanom.setText("0");
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar nomina: " + e.getMessage());
@@ -7597,15 +9857,28 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 //Agregar nomina semanal
     public void AgregarNs() {
 
-        String SQL = "INSERT INTO `nominasem.detallada." + Zon.getText() + ".simss` (`#Lista`, `#Empleado`, `Apellido P`, `Apellido M`,"
-                + " `Nombre(s)`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`,"
-                + " `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,"
-                + " `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, "
-                + "`Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, "
-                + "`Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Horas extras`,"
-                + " `Total horas extra`, `Retencion infonavit`, `ISR`, `Fonacot`, `Adelanto de nomina`, `Prestamos`, `Rembolso`, "
-                + " `Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `nominasem.detallada." + Zon.getText() + ".simss` "
+                + "(`#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                + " `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, "
+                + "`Por dia`, `Por hora`, `año`, `Semana`, `Fecha sabado`, `Fecha domingo`, "
+                + "`Fecha lunes`, `Fecha martes`, `Fecha miercoles`, `Fecha jueves`, "
+                + "`Fecha viernes`, `Sabado`, `Domingo`, `Lunes`, `Martes`, `Miercoles`, "
+                + "`Jueves`, `Viernes`, `Fecha de pago`, `Dias con retardos`, `Pago con retardos`, "
+                + "`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`,"
+                + " `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`,"
+                + " `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, "
+                + "`Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,"
+                + " `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, "
+                + "`Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`,"
+                + " `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`,"
+                + " `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`,"
+                + " `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`,"
+                + " `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`,"
+                + " `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, "
+                + "`Adelanto de Nomina`, `Total de descuentos`, `Deposito`, `Observaciones`) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -7639,20 +9912,61 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             pst.setString(28, JueT.getSelectedItem().toString());
             pst.setString(29, VieT.getSelectedItem().toString());
             pst.setString(30, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
-            pst.setString(31, HE.getText());
-            pst.setString(32, THE.getText());
-            pst.setString(33, RI.getText());
-            pst.setString(34, ISR.getText());
-            pst.setString(35, RF.getText());
-            pst.setString(36, ADN.getText());
-            pst.setString(37, Presp.getText());
-            pst.setString(38, Rembolso.getText());
-            pst.setString(39, deposito.getText());
-            pst.setString(40, obs.getText());
+            pst.setString(31, R.getText());
+            pst.setString(32, PCR.getText());
+            pst.setString(33, Dpi.getText());
+            pst.setString(34, pds.getText());
+            pst.setString(35, Ddv.getText());
+            pst.setString(36, PDDDV.getText());
+            pst.setString(37, DD.getText());
+            pst.setString(38, PDDD.getText());
+            pst.setString(39, DL.getText());
+            pst.setString(40, PDDL.getText());
+            pst.setString(41, dt.getText());
+            pst.setString(42, PDDT.getText());
+            pst.setString(43, DSGS.getText());
+            pst.setString(44, PDDDDSGS.getText());
+            pst.setString(45, FJ.getText());
+            pst.setString(46, DO.getText());
+            pst.setString(47, DF.getText());
+            pst.setString(48, PDDF.getText());
+            pst.setString(49, DFT.getText());
+            pst.setString(50, PDDFT.getText());
+            pst.setString(51, apy.getText());
+            pst.setString(52, Rembolso.getText());
+            pst.setString(53, Lugar.getText());
+            pst.setString(54, ADD.getText());
+            pst.setString(55, HE.getText());
+            pst.setString(56, THE.getText());
+            pst.setString(57, F.getText());
+            pst.setString(58, DPF.getText());
+            pst.setString(59, DI.getText());
+            pst.setString(60, RI.getText());
+            pst.setString(61, RF.getText());
+            pst.setString(62, ISR.getText());
+            pst.setString(63, Presp.getText());
+            pst.setString(64, cda.getText());
+            pst.setString(65, Odtp.getText());
+            pst.setString(66, Fdb.getText());
+            pst.setString(67, Sancion.getText());
+            pst.setString(68, Chamarra.getText());
+            pst.setString(69, Chaleco.getText());
+            pst.setString(70, Fde.getText());
+            pst.setString(71, Grua.getText());
+            pst.setString(72, Pantalon.getText());
+            pst.setString(73, Credencial.getText());
+            pst.setString(74, Bp.getText());
+            pst.setString(75, Playera.getText());
+            pst.setString(76, Corbata.getText());
+            pst.setString(77, ADN.getText());
+            pst.setString(78, DVT.getText());
+            pst.setString(79, deposito.getText());
+            pst.setString(80, obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Semanal Agregada");
 
+            //operacion para pago de Pres
             double QPREP = Double.parseDouble(this.NSprenom.getText());
             double QPREPT = QPREP + 1;
             NSprenom.setText("" + QPREPT);
@@ -7663,37 +9977,96 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             Pagadoprenom.setText("" + TP);
             double TPEN = PENPN - PP;
             Pendienteprenom.setText("" + TPEN);
-            Pagopres();
+
+            //Operacion para pago ODT
+            double QODTP = Double.parseDouble(this.NSODTnom.getText());
+            double QODTPT = QODTP + 1;
+            NSODTnom.setText("" + QODTPT);
+            double PODTN = Double.parseDouble(this.PagODTnom.getText());
+            double ODTPN = Double.parseDouble(this.PenODTnom.getText());
+            double ODTP = Double.parseDouble(this.Odtp.getText());
+            double TODT = PODTN + ODTP;
+            PagODTnom.setText("" + TODT);
+            double TODTT = ODTPN - ODTP;
+            PenODTnom.setText("" + TODTT);
+
+//operacion para agregar abono CDA
+            double APQna = Double.parseDouble(this.cda.getText());
+            double QA = Double.parseDouble(this.QAcdanom.getText());
+            double QAT = QA + 1;
+            QAcdanom.setText("" + QAT);
+            double totalahorrado = APQna * (QAT);
+            TACDANOM.setText("" + totalahorrado);
+            AgregarPagoODT();
+            editarCDAdnom();
+            AgregarPagoCDA();
             AgregarPagoPres();
+            Pagopres();
+            PagoODT();
+            shareODTnom();
             sharepresnom();
+            sharecdanom();
             FunMD();
+
             DAB.clearSelection();
-            NDL.setText("0");
-            ADN.setText("0");
             ISR.setText("0");
+            RI.setText("0");
             RF.setText("0");
+            PH.setText("0");
+            HE.setText("0");
+            THE.setText("0");
+            DAB.clearSelection();
+            NSprenom.setText("0");
+            ADN.setText("0");
+            QAcdanom.setText("0");
+            NODTnom.setText("0");
+            NCDANom.setText("0");
+            NCDANom.setText("0");
+            NDL.setText("0");
+            NE.setText("0");
             Ap.setText("");
             am.setText("");
             name.setText("");
             Bono.setText("0");
+            Bono1.setText("0");
             cta.setText("");
             ban.setText("");
             Zon.setText("");
             ServN.setText("");
             sueldo.setText("0");
             pd.setText("0");
-            PH.setText("0");
-            HE.setText("0");
-            THE.setText("0");
-            RI.setText("0");
+            Fdb.setText("0");
+            Fde.setText("0");
+            Bp.setText("0");
+            Sancion.setText("0");
+            Grua.setText("0");
+            Playera.setText("0");
+            Chamarra.setText("0");
+            Pantalon.setText("0");
+            Corbata.setText("0");
+            Chaleco.setText("0");
+            Credencial.setText("0");
+            DVT.setText("0");
+            apy.setText("0");
+            Lugar.setText("");
+            DI.setText("26.98");
+            cda.setText("0");
             Presp.setText("0");
             obs.setText("");
+            ADD.setText("0");
             Rembolso.setText("0");
             deposito.setText("0");
+            Odtp.setText("0");
             NumPrenom.setText("0");
             NSprenom.setText("0");
             Pagadoprenom.setText("0");
             Pendienteprenom.setText("0");
+            TACDANOM.setText("0");
+            NODTnom.setText("0");
+            NSODTnom.setText("0");
+            PagODTnom.setText("0");
+            PenODTnom.setText("0");
+            QAcdanom.setText("0");
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al Agregar Nomina: " + e.getMessage());
@@ -7779,24 +10152,51 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }
 
     public void deposito() {
-        double d111 = Double.parseDouble(this.DT.getText());
-        double d22 = Double.parseDouble(this.DDes.getText());
-        double d7 = Double.parseDouble(this.pd.getText());
-        double totalP = ((d7 * d111) + (d7 * d22));
-        this.Pago.setText("" + totalP + "");
+        //por dia
+        PH.setText("" + Double.parseDouble(pd.getText()) / 8);
 
-        double d1 = Double.parseDouble(this.THE.getText());
-        double d2 = Double.parseDouble(this.RI.getText());
-        double d6 = Double.parseDouble(this.Pago.getText());
-        double d8 = Double.parseDouble(this.Presp.getText());
-        double d9 = Double.parseDouble(this.Rembolso.getText());
-        double d10 = Double.parseDouble(this.Bono.getText());
-        double d11 = (d1 + d10 + d9 + d6);
-        double d12 = (d2 + d8);
-        double total = d11 - d12 - Double.parseDouble(ISR.getText()) - Double.parseDouble(RF.getText()) - Double.parseDouble(ADN.getText());
+//incapacidad
+        pds.setText("" + Double.parseDouble(Dpi.getText()) * Double.parseDouble(pd.getText()));
+
+//vacaciones
+        PDDDV.setText("" + Double.parseDouble(Ddv.getText()) * Double.parseDouble(pd.getText()));
+//descanso
+        PDDD.setText("" + Double.parseDouble(DD.getText()) * Double.parseDouble(pd.getText()));
+//dia laborado
+        PDDL.setText("" + Double.parseDouble(DL.getText()) * Double.parseDouble(pd.getText()));
+
+        //Dia festivo
+        PDDF.setText("" + Double.parseDouble(DF.getText()) * Double.parseDouble(pd.getText()));
+
+        //dia festivo laborado
+        PDDFT.setText("" + (3 * Double.parseDouble(pd.getText())) * Double.parseDouble(DFT.getText()));
+
+//descanso
+        PDDT.setText("" + (2 * Double.parseDouble(pd.getText())) * Double.parseDouble(dt.getText()));
+//faltas
+        DPF.setText("" + ((350 * Double.parseDouble(F.getText())) - (Double.parseDouble(pd.getText()) * Double.parseDouble(F.getText()))));
+//retardo
+        PCR.setText("" + ((Double.parseDouble(pd.getText()) * Double.parseDouble(R.getText())) - (Double.parseDouble(R.getText()) * 50)));
+//hora extra
+        this.THE.setText("" + Double.parseDouble(this.HE.getText()) * Double.parseDouble(this.PH.getText()));
+
+//ingresos
+        double Ingresos = (Double.parseDouble(this.PDDDDSGS.getText())
+                + Double.parseDouble(this.Bono.getText()) + Double.parseDouble(this.Rembolso.getText())
+                + Double.parseDouble(this.PDDT.getText()) + Double.parseDouble(this.ADD.getText())
+                + Double.parseDouble(this.apy.getText()) + Double.parseDouble(this.PDDD.getText())
+                + Double.parseDouble(this.PCR.getText()) + Double.parseDouble(this.PDDFT.getText())
+                + Double.parseDouble(this.PDDF.getText()) + Double.parseDouble(this.PDDL.getText())
+                + Double.parseDouble(this.PDDDV.getText()) + Double.parseDouble(this.THE.getText()));
+
+        double Egresos = (Double.parseDouble(this.DVT.getText())
+                + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
+                + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
+                + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
+                + Double.parseDouble(RF.getText()) + Double.parseDouble(ISR.getText()));
 
         DecimalFormat dDeposito = new DecimalFormat("#.00");
-        this.deposito.setText(dDeposito.format(total));
+        this.deposito.setText(dDeposito.format(Ingresos - Egresos));
 
     }
 
@@ -7897,29 +10297,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         shareN();
     }//GEN-LAST:event_BNameNomKeyReleased
 
-    private void RIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RIKeyReleased
-
-        deposito();
-    }//GEN-LAST:event_RIKeyReleased
-
-    private void HEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HEKeyReleased
-        double d1 = Double.parseDouble(this.HE.getText());
-        double d2 = Double.parseDouble(this.PH.getText());
-        double total = d1 * d2;
-        this.THE.setText("" + total + "");
-        deposito();
-    }//GEN-LAST:event_HEKeyReleased
-
-    private void PrespKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrespKeyReleased
-
-        deposito();
-    }//GEN-LAST:event_PrespKeyReleased
-
-    private void RembolsoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RembolsoKeyReleased
-
-        deposito();
-    }//GEN-LAST:event_RembolsoKeyReleased
-
     private void AgregarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarNPActionPerformed
 
         AgregarNs();
@@ -7943,52 +10320,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         Bono.setText(Bonosi);
         deposito();
     }//GEN-LAST:event_BsiActionPerformed
-
-    private void DomTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DomTItemStateChanged
-        String dt = (String) DomT.getSelectedItem();
-        if (dt.equals(".")) {
-            DD = 0;
-            AD = 0;
-        }
-        if (dt.equals("A")) {
-            DD = 0;
-            AD = 1;
-
-        }
-        if (dt.equals("D")) {
-            DD = 1;
-            AD = 0;
-
-        }
-        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
-        DDes.setText("" + descanso);
-        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
-        DT.setText("" + asistencia);
-        deposito();
-    }//GEN-LAST:event_DomTItemStateChanged
-
-    private void SabTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SabTItemStateChanged
-        String dt = (String) SabT.getSelectedItem();
-        if (dt.equals(".")) {
-            DS = 0;
-            AS = 0;
-        }
-        if (dt.equals("A")) {
-            DS = 0;
-            AS = 1;
-
-        }
-        if (dt.equals("D")) {
-            DS = 1;
-            AS = 0;
-
-        }
-        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
-        DDes.setText("" + descanso);
-        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
-        DT.setText("" + asistencia);
-        deposito();
-    }//GEN-LAST:event_SabTItemStateChanged
 
     private void SemanaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SemanaItemStateChanged
         double d1 = Double.parseDouble(sueldo.getText());
@@ -8017,167 +10348,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         Fvier.setCalendar(null);
         FDP.setCalendar(null);
     }//GEN-LAST:event_LSActionPerformed
-
-    private void LunTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LunTItemStateChanged
-        String dt = (String) LunT.getSelectedItem();
-        if (dt.equals(".")) {
-            DL = 0;
-            AL = 0;
-        }
-        if (dt.equals("A")) {
-            DL = 0;
-            AL = 1;
-
-        }
-        if (dt.equals("D")) {
-            DL = 1;
-            AL = 0;
-
-        }
-        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
-        DDes.setText("" + descanso);
-        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
-        DT.setText("" + asistencia);
-        deposito();
-    }//GEN-LAST:event_LunTItemStateChanged
-
-    private void MarTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MarTItemStateChanged
-        String dt = (String) MarT.getSelectedItem();
-        if (dt.equals(".")) {
-            DM = 0;
-            AM = 0;
-        }
-        if (dt.equals("A")) {
-            DM = 0;
-            AM = 1;
-
-        }
-        if (dt.equals("D")) {
-            DM = 1;
-            AM = 0;
-
-        }
-        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
-        DDes.setText("" + descanso);
-        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
-        DT.setText("" + asistencia);
-        deposito();
-    }//GEN-LAST:event_MarTItemStateChanged
-
-    private void MierTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MierTItemStateChanged
-        String dt = (String) MierT.getSelectedItem();
-        if (dt.equals(".")) {
-            DMi = 0;
-            AMi = 0;
-        }
-        if (dt.equals("A")) {
-            DL = 0;
-            AMi = 1;
-
-        }
-        if (dt.equals("D")) {
-            DL = 1;
-            AMi = 0;
-
-        }
-        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
-        DDes.setText("" + descanso);
-        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
-        DT.setText("" + asistencia);
-        deposito();
-    }//GEN-LAST:event_MierTItemStateChanged
-
-    private void JueTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JueTItemStateChanged
-        String dt = (String) JueT.getSelectedItem();
-        if (dt.equals(".")) {
-            DJ = 0;
-            AJ = 0;
-        }
-        if (dt.equals("A")) {
-            DJ = 0;
-            AJ = 1;
-
-        }
-        if (dt.equals("D")) {
-            DJ = 1;
-            AJ = 0;
-
-        }
-        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
-        DDes.setText("" + descanso);
-        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
-        DT.setText("" + asistencia);
-        deposito();
-    }//GEN-LAST:event_JueTItemStateChanged
-
-    private void VieTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_VieTItemStateChanged
-        String dt = (String) VieT.getSelectedItem();
-        if (dt.equals(".")) {
-            DV = 0;
-            AV = 0;
-        }
-        if (dt.equals("A")) {
-            DV = 0;
-            AV = 1;
-
-        }
-        if (dt.equals("D")) {
-            DV = 1;
-            AV = 0;
-
-        }
-        double descanso = DS + DD + DL + DM + DMi + DJ + DV;
-        DDes.setText("" + descanso);
-        double asistencia = AS + AD + AL + AM + AMi + AJ + AV;
-        DT.setText("" + asistencia);
-        deposito();
-    }//GEN-LAST:event_VieTItemStateChanged
-
-    private void SHPresnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHPresnomMouseClicked
-        int fila = SHPresnom.getSelectedRow();
-        NumPrenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 0)));
-        Presp.setText(String.valueOf(SHPresnom.getValueAt(fila, 4)));
-        NSprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 5)));
-        Pagadoprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 6)));
-        Pendienteprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 7)));
-        deposito();
-    }//GEN-LAST:event_SHPresnomMouseClicked
-
-    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        ODTQ_5 regr = new ODTQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ODTActionPerformed
-
-    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        CDAQ_5 regr = new CDAQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_CDAActionPerformed
-
-    private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
-        PresQ_5 regr = new PresQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_PRESActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_CNQActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        PresS_5 regr = new PresS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
 
@@ -13351,7 +15521,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             HE.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
             THE.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
             RI.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
+            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
             RF.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
             ADN.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
             Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
@@ -13367,6 +15537,68 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
     private void CleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CleanActionPerformed
         DAB.clearSelection();
+        ISR.setText("0");
+        RI.setText("0");
+        RF.setText("0");
+        PH.setText("0");
+        HE.setText("0");
+        THE.setText("0");
+        DAB.clearSelection();
+        NSprenom.setText("0");
+        ADN.setText("0");
+        QAcdanom.setText("0");
+        NODTnom.setText("0");
+        NCDANom.setText("0");
+        NCDANom.setText("0");
+        NDL.setText("0");
+        NE.setText("0");
+        Ap.setText("");
+        am.setText("");
+        name.setText("");
+        Bono.setText("0");
+        Bono1.setText("0");
+        cta.setText("");
+        ban.setText("");
+        Zon.setText("");
+        ServN.setText("");
+        sueldo.setText("0");
+        pd.setText("0");
+        Fdb.setText("0");
+        Fde.setText("0");
+        Bp.setText("0");
+        Sancion.setText("0");
+        Grua.setText("0");
+        Playera.setText("0");
+        Chamarra.setText("0");
+        Pantalon.setText("0");
+        Corbata.setText("0");
+        Chaleco.setText("0");
+        Credencial.setText("0");
+        DVT.setText("0");
+        apy.setText("0");
+        Lugar.setText("");
+        DI.setText("26.98");
+        cda.setText("0");
+        Presp.setText("0");
+        obs.setText("");
+        ADD.setText("0");
+        Rembolso.setText("0");
+        deposito.setText("0");
+        Odtp.setText("0");
+        NumPrenom.setText("0");
+        NSprenom.setText("0");
+        Pagadoprenom.setText("0");
+        Pendienteprenom.setText("0");
+        TACDANOM.setText("0");
+        NODTnom.setText("0");
+        NSODTnom.setText("0");
+        PagODTnom.setText("0");
+        PenODTnom.setText("0");
+        QAcdanom.setText("0");
+        DAB.clearSelection();
+        ISR.setText("0");
+        ADN.setText("0");
+        RF.setText("0");
         NDL.setText("0");
         Ap.setText("");
         am.setText("");
@@ -13387,34 +15619,1872 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         Rembolso.setText("0");
         deposito.setText("0");
         NumPrenom.setText("0");
-        NSprenom.setText("0");
+        Pagadoprenom.setText("0");
         Pagadoprenom.setText("0");
         Pendienteprenom.setText("0");
     }//GEN-LAST:event_CleanActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        NominaS_5 regr = new NominaS_5();
+    private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_ODT1ActionPerformed
 
-    private void ISRKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ISRKeyReleased
+    private void CNQ1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQ1ActionPerformed
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQ1ActionPerformed
+
+    private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
+        PresQ_5 regr = new PresQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESQActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void CDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA1ActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA1ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        PresS_5 regr = new PresS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        Listas_5 regr = new Listas_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
+
+        Empleados_4 RH = new Empleados_4(usr, LP);
+        RH.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_GeneralActionPerformed
+
+    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
+        Estadias_4 regr = new Estadias_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EstadiasActionPerformed
+
+    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
+        Tortas_4 regr = new Tortas_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TorteriaActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        PT_4 regr = new PT_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        Depositos_4 regr = new Depositos_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
+        AltasZyS_3 regr = new AltasZyS_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ZYSActionPerformed
+
+    private void NomSemGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomSemGenActionPerformed
+        NominaS_5 regr = new NominaS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_NomSemGenActionPerformed
+
+    private void PresSemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PresSemActionPerformed
+        PresS_5 regr = new PresS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PresSemActionPerformed
+
+    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODTActionPerformed
+
+    private void PRESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESActionPerformed
+        PresQ_5 regr = new PresQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
+        Listas_5 regr = new Listas_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDAActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        RepNom_7 regr = new RepNom_7(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDAActionPerformed
+
+    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQActionPerformed
+
+    private void ADMV2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV2ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ADMV2ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        RepNomSem_7 regr = new RepNomSem_7();
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void SabTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SabTItemStateChanged
+        String D1 = (String) SabT.getSelectedItem();
+
+        if (D1.equals(".")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("A")) {
+            DL1 = 1;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("D")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 1;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("V")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 1;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("I")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 1;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("F")) {
+            DL1 = 0;
+            F1 = 1;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("FJ")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 1;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("DT")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 1;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals(" ")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 1;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("R")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 1;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("DSGS")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 1;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 0;
+
+        }
+        if (D1.equals("DF")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 1;
+            dft = 0;
+
+        }
+        if (D1.equals("DFT")) {
+            DL1 = 0;
+            F1 = 0;
+            FJ1 = 0;
+            dt1 = 0;
+            DO1 = 0;
+            R1 = 0;
+            DSGS1 = 0;
+            dv = 0;
+            dd = 0;
+            in = 0;
+            df = 0;
+            dft = 1;
+
+        }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7;
+        Dpi.setText(("" + totalin));
+        double totaldf = df + df2 + df3 + df4 + df5 + df6 + df7;
+        DF.setText("" + totaldf);
+        double totaldft = dft + dft2 + dft3 + dft4 + dft5 + dft6 + dft7;
+        DFT.setText("" + totaldft);
+        DL();
+        DT();
+        F();
+        FJ();
+        R();
+        DO();
+        DSGS();
+
         deposito();
-    }//GEN-LAST:event_ISRKeyReleased
+    }//GEN-LAST:event_SabTItemStateChanged
+
+    private void MierTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MierTItemStateChanged
+        String D5 = (String) MierT.getSelectedItem();
+
+        if (D5.equals(".")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("A")) {
+            DL5 = 1;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("D")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 1;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("V")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 1;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("I")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 1;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("F")) {
+            DL5 = 0;
+            F5 = 1;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("FJ")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 1;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("DT")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 1;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals(" ")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 1;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("R")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 1;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("DSGS")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 1;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 0;
+
+        }
+        if (D5.equals("DF")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 1;
+            dft5 = 0;
+
+        }
+        if (D5.equals("DFT")) {
+            DL5 = 0;
+            F5 = 0;
+            FJ5 = 0;
+            dt5 = 0;
+            DO5 = 0;
+            R5 = 0;
+            DSGS5 = 0;
+            dv5 = 0;
+            dd5 = 0;
+            in5 = 0;
+            df5 = 0;
+            dft5 = 1;
+
+        }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7;
+        Dpi.setText(("" + totalin));
+        double totaldf = df + df2 + df3 + df4 + df5 + df6 + df7;
+        DF.setText("" + totaldf);
+        double totaldft = dft + dft2 + dft3 + dft4 + dft5 + dft6 + dft7;
+        DFT.setText("" + totaldft);
+        DL();
+        DT();
+        F();
+        FJ();
+        R();
+        DO();
+        DSGS();
+        deposito();
+    }//GEN-LAST:event_MierTItemStateChanged
+
+    private void VieTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_VieTItemStateChanged
+        String D7 = (String) VieT.getSelectedItem();
+
+        if (D7.equals(".")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("A")) {
+            DL7 = 1;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("D")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 1;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("V")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 1;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("I")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 1;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("F")) {
+            DL7 = 0;
+            F7 = 1;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("FJ")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 1;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("DT")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 1;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals(" ")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 1;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("R")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 1;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("DSGS")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 1;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 0;
+
+        }
+        if (D7.equals("DF")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 1;
+            dft7 = 0;
+
+        }
+        if (D7.equals("DFT")) {
+            DL7 = 0;
+            F7 = 0;
+            FJ7 = 0;
+            dt7 = 0;
+            DO7 = 0;
+            R7 = 0;
+            DSGS7 = 0;
+            dv7 = 0;
+            dd7 = 0;
+            in7 = 0;
+            df7 = 0;
+            dft7 = 1;
+
+        }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7;
+        Dpi.setText(("" + totalin));
+        double totaldf = df + df2 + df3 + df4 + df5 + df6 + df7;
+        DF.setText("" + totaldf);
+        double totaldft = dft + dft2 + dft3 + dft4 + dft5 + dft6 + dft7;
+        DFT.setText("" + totaldft);
+        DL();
+        DT();
+        F();
+        FJ();
+        R();
+        DO();
+        DSGS();
+
+        deposito();
+    }//GEN-LAST:event_VieTItemStateChanged
+
+    private void JueTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JueTItemStateChanged
+        String D6 = (String) JueT.getSelectedItem();
+
+        if (D6.equals(".")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("A")) {
+            DL6 = 1;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("D")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 1;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("V")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 1;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("I")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 1;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("F")) {
+            DL6 = 0;
+            F6 = 1;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("FJ")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 1;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("DT")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 1;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals(" ")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 1;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("R")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 1;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("DSGS")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 1;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 0;
+
+        }
+        if (D6.equals("DF")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 1;
+            dft6 = 0;
+
+        }
+        if (D6.equals("DFT")) {
+            DL6 = 0;
+            F6 = 0;
+            FJ6 = 0;
+            dt6 = 0;
+            DO6 = 0;
+            R6 = 0;
+            DSGS6 = 0;
+            dv6 = 0;
+            dd6 = 0;
+            in6 = 0;
+            df6 = 0;
+            dft6 = 1;
+
+        }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7;
+        Dpi.setText(("" + totalin));
+        double totaldf = df + df2 + df3 + df4 + df5 + df6 + df7;
+        DF.setText("" + totaldf);
+        double totaldft = dft + dft2 + dft3 + dft4 + dft5 + dft6 + dft7;
+        DFT.setText("" + totaldft);
+        DL();
+        DT();
+        F();
+        FJ();
+        R();
+        DO();
+        DSGS();
+
+        deposito();
+    }//GEN-LAST:event_JueTItemStateChanged
+
+    private void LunTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LunTItemStateChanged
+        String D3 = (String) LunT.getSelectedItem();
+
+        if (D3.equals(".")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("A")) {
+            DL3 = 1;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("D")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 1;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("V")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 1;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("I")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 1;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("F")) {
+            DL3 = 0;
+            F3 = 1;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("FJ")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 1;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("DT")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 1;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals(" ")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 1;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("R")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 1;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("DSGS")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 1;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 0;
+
+        }
+        if (D3.equals("DF")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 1;
+            dft3 = 0;
+
+        }
+        if (D3.equals("DFT")) {
+            DL3 = 0;
+            F3 = 0;
+            FJ3 = 0;
+            dt3 = 0;
+            DO3 = 0;
+            R3 = 0;
+            DSGS3 = 0;
+            dv3 = 0;
+            dd3 = 0;
+            in3 = 0;
+            df3 = 0;
+            dft3 = 1;
+
+        }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7;
+        Dpi.setText(("" + totalin));
+        double totaldf = df + df2 + df3 + df4 + df5 + df6 + df7;
+        DF.setText("" + totaldf);
+        double totaldft = dft + dft2 + dft3 + dft4 + dft5 + dft6 + dft7;
+        DFT.setText("" + totaldft);
+        DL();
+        DT();
+        F();
+        FJ();
+        R();
+        DO();
+        DSGS();
+
+        deposito();
+    }//GEN-LAST:event_LunTItemStateChanged
+
+    private void DomTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DomTItemStateChanged
+        String D2 = (String) DomT.getSelectedItem();
+
+        if (D2.equals(".")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("A")) {
+            DL2 = 1;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("D")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 1;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("V")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 1;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("I")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 1;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("F")) {
+            DL2 = 0;
+            F2 = 1;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("FJ")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 1;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("DT")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 1;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals(" ")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 1;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("R")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 1;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("DSGS")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 1;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 0;
+
+        }
+        if (D2.equals("DF")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 1;
+            dft2 = 0;
+
+        }
+        if (D2.equals("DFT")) {
+            DL2 = 0;
+            F2 = 0;
+            FJ2 = 0;
+            dt2 = 0;
+            DO2 = 0;
+            R2 = 0;
+            DSGS2 = 0;
+            dv2 = 0;
+            dd2 = 0;
+            in2 = 0;
+            df2 = 0;
+            dft2 = 1;
+
+        }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7;
+        Dpi.setText(("" + totalin));
+        double totaldf = df + df2 + df3 + df4 + df5 + df6 + df7;
+        DF.setText("" + totaldf);
+        double totaldft = dft + dft2 + dft3 + dft4 + dft5 + dft6 + dft7;
+        DFT.setText("" + totaldft);
+        DL();
+        DT();
+        F();
+        FJ();
+        R();
+        DO();
+        DSGS();
+
+        deposito();
+    }//GEN-LAST:event_DomTItemStateChanged
+
+    private void MarTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MarTItemStateChanged
+        String D4 = (String) MarT.getSelectedItem();
+
+        if (D4.equals(".")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("A")) {
+            DL4 = 1;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("D")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 1;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("V")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 1;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("I")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 1;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("F")) {
+            DL4 = 0;
+            F4 = 1;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("FJ")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 1;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("DT")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 1;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals(" ")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 1;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("R")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 1;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("DSGS")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 1;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 0;
+
+        }
+        if (D4.equals("DF")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 1;
+            dft4 = 0;
+
+        }
+        if (D4.equals("DFT")) {
+            DL4 = 0;
+            F4 = 0;
+            FJ4 = 0;
+            dt4 = 0;
+            DO4 = 0;
+            R4 = 0;
+            DSGS4 = 0;
+            dv4 = 0;
+            dd4 = 0;
+            in4 = 0;
+            df4 = 0;
+            dft4 = 1;
+
+        }
+        double totaldv = dv + dv2 + dv3 + dv4 + dv5 + dv6 + dv7;
+        Ddv.setText("" + totaldv);
+        double totaldd = dd + dd2 + dd3 + dd4 + dd5 + dd6 + dd7;
+        DD.setText("" + totaldd);
+        double totalin = in + in2 + in3 + in4 + in5 + in6 + in7;
+        Dpi.setText(("" + totalin));
+        double totaldf = df + df2 + df3 + df4 + df5 + df6 + df7;
+        DF.setText("" + totaldf);
+        double totaldft = dft + dft2 + dft3 + dft4 + dft5 + dft6 + dft7;
+        DFT.setText("" + totaldft);
+        DL();
+        DT();
+        F();
+        FJ();
+        R();
+        DO();
+        DSGS();
+
+        deposito();
+    }//GEN-LAST:event_MarTItemStateChanged
+
+    private void PDDDDSGSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PDDDDSGSKeyReleased
+        deposito();
+    }//GEN-LAST:event_PDDDDSGSKeyReleased
+
+    private void apyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apyKeyReleased
+        deposito();
+    }//GEN-LAST:event_apyKeyReleased
+
+    private void RembolsoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RembolsoKeyReleased
+        deposito();
+    }//GEN-LAST:event_RembolsoKeyReleased
+
+    private void ADDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADDKeyReleased
+        deposito();
+    }//GEN-LAST:event_ADDKeyReleased
+
+    private void HEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HEKeyReleased
+
+        deposito();
+    }//GEN-LAST:event_HEKeyReleased
+
+    private void DIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DIActionPerformed
+
+    }//GEN-LAST:event_DIActionPerformed
+
+    private void DIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DIKeyReleased
+        deposito();
+    }//GEN-LAST:event_DIKeyReleased
+
+    private void SHPresnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHPresnomMouseClicked
+        int fila = SHPresnom.getSelectedRow();
+        NumPrenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 0)));
+        Presp.setText(String.valueOf(SHPresnom.getValueAt(fila, 4)));
+        NSprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 5)));
+        Pagadoprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 6)));
+        Pendienteprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 7)));
+        deposito();
+    }//GEN-LAST:event_SHPresnomMouseClicked
+
+    private void SHCDAnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHCDAnomMouseClicked
+        int fila = SHCDAnom.getSelectedRow();
+        NCDANom.setText(String.valueOf(SHCDAnom.getValueAt(fila, 0)));
+        cda.setText(String.valueOf(SHCDAnom.getValueAt(fila, 4)));
+        QAcdanom.setText(String.valueOf(SHCDAnom.getValueAt(fila, 5)));
+        TACDANOM.setText(String.valueOf(SHCDAnom.getValueAt(fila, 6)));
+        deposito();
+    }//GEN-LAST:event_SHCDAnomMouseClicked
+
+    private void cdaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cdaKeyReleased
+        deposito();
+    }//GEN-LAST:event_cdaKeyReleased
+
+    private void SHODTnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHODTnomMouseClicked
+        int fila = SHODTnom.getSelectedRow();
+        NODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 0)));
+        Odtp.setText(String.valueOf(SHODTnom.getValueAt(fila, 4)));
+        NSODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 5)));
+        PagODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 6)));
+        PenODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 7)));
+        deposito();
+    }//GEN-LAST:event_SHODTnomMouseClicked
+
+    private void OdtpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OdtpKeyReleased
+        deposito();
+    }//GEN-LAST:event_OdtpKeyReleased
+
+    private void PrespKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrespKeyReleased
+        deposito();
+    }//GEN-LAST:event_PrespKeyReleased
+
+    private void RIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RIKeyReleased
+        deposito();
+    }//GEN-LAST:event_RIKeyReleased
 
     private void RFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RFKeyReleased
         deposito();
     }//GEN-LAST:event_RFKeyReleased
 
+    private void FdbKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdbKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_FdbKeyReleased
+
+    private void SancionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SancionKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_SancionKeyReleased
+
+    private void ChamarraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ChamarraKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_ChamarraKeyReleased
+
+    private void ChalecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ChalecoKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_ChalecoKeyReleased
+
+    private void FdeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdeKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_FdeKeyReleased
+
+    private void GruaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GruaKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_GruaKeyReleased
+
+    private void PantalonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PantalonKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_PantalonKeyReleased
+
+    private void CredencialKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CredencialKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_CredencialKeyReleased
+
+    private void BpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BpKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_BpKeyReleased
+
+    private void PlayeraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PlayeraKeyReleased
+
+        desv();
+        deposito();
+    }//GEN-LAST:event_PlayeraKeyReleased
+
+    private void CorbataKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorbataKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_CorbataKeyReleased
+
     private void ADNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADNKeyReleased
+        desv();
         deposito();
     }//GEN-LAST:event_ADNKeyReleased
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        Listas_5 regr = new Listas_5();
+    private void CDA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA2ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_CDA2ActionPerformed
+
+    private void CDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA3ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA3ActionPerformed
+
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
+    private void ODT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT3ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -13439,6 +17509,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         //</editor-fold>
 
@@ -13449,6 +17523,8 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ADD;
+    private javax.swing.JMenuItem ADMV2;
     private javax.swing.JTextField ADN;
     private javax.swing.JButton AgregarNP;
     private javax.swing.JTextField Ap;
@@ -13476,9 +17552,14 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JRadioButton Bno;
     private javax.swing.JTextField Bono;
     private javax.swing.JTextField Bono1;
+    private javax.swing.JTextField Bp;
     private javax.swing.JRadioButton Bsi;
     private javax.swing.JMenuItem CDA;
+    private javax.swing.JMenuItem CDA1;
+    private javax.swing.JMenuItem CDA2;
+    private javax.swing.JMenuItem CDA3;
     private javax.swing.JMenuItem CNQ;
+    private javax.swing.JMenuItem CNQ1;
     private javax.swing.JButton CS;
     private javax.swing.JButton CS10;
     private javax.swing.JButton CS11;
@@ -13498,10 +17579,24 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JButton CS7;
     private javax.swing.JButton CS8;
     private javax.swing.JButton CS9;
+    private javax.swing.JTextField Chaleco;
+    private javax.swing.JTextField Chamarra;
     private javax.swing.JButton Clean;
-    private javax.swing.JLabel DDes;
-    private javax.swing.JLabel DT;
+    private javax.swing.JTextField Corbata;
+    private javax.swing.JTextField Credencial;
+    private javax.swing.JLabel DD;
+    private javax.swing.JLabel DF;
+    private javax.swing.JLabel DFT;
+    private javax.swing.JTextField DI;
+    private javax.swing.JLabel DL;
+    private javax.swing.JLabel DO;
+    private javax.swing.JLabel DPF;
+    private javax.swing.JLabel DSGS;
+    private javax.swing.JLabel DVT;
+    private javax.swing.JLabel Ddv;
+    private javax.swing.JMenu Depositos;
     private javax.swing.JComboBox<String> DomT;
+    private javax.swing.JLabel Dpi;
     private javax.swing.JButton Eliminar;
     private javax.swing.JButton Eliminar1;
     private javax.swing.JButton Eliminar2;
@@ -13511,6 +17606,8 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JButton Eliminar6;
     private javax.swing.JButton Eliminar7;
     private javax.swing.JButton Eliminar8;
+    private javax.swing.JMenuItem Estadias;
+    private javax.swing.JLabel F;
     private javax.swing.JTextField FAmT;
     private javax.swing.JTextField FAmT1;
     private javax.swing.JTextField FAmT2;
@@ -13531,6 +17628,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT8;
     private com.toedter.calendar.JDateChooser FDP;
     private com.toedter.calendar.JDateChooser FDom;
+    private javax.swing.JLabel FJ;
     private com.toedter.calendar.JDateChooser FJuev;
     private com.toedter.calendar.JDateChooser FLun;
     private javax.swing.JComboBox<String> FZservicio;
@@ -13542,6 +17640,8 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FZservicio6;
     private javax.swing.JComboBox<String> FZservicio7;
     private javax.swing.JComboBox<String> FZservicio8;
+    private javax.swing.JTextField Fdb;
+    private javax.swing.JTextField Fde;
     private javax.swing.JLabel Filtro1;
     private javax.swing.JTextField FiltroNDF;
     private javax.swing.JTextField FiltroNDF1;
@@ -13620,6 +17720,8 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fmier;
     private com.toedter.calendar.JDateChooser Fsab;
     private com.toedter.calendar.JDateChooser Fvier;
+    private javax.swing.JMenuItem General;
+    private javax.swing.JTextField Grua;
     private javax.swing.JTextField HE;
     private javax.swing.JTextField ISR;
     private javax.swing.JButton Imprimir;
@@ -13632,6 +17734,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JButton Imprimir7;
     private javax.swing.JButton Imprimir9;
     private javax.swing.JComboBox<String> JueT;
+    private javax.swing.JMenuItem LDA;
     private javax.swing.JButton LS;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBE1;
@@ -13696,6 +17799,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBSP6;
     private javax.swing.JLabel LabelBSP7;
     private javax.swing.JLabel LabelBSP8;
+    private javax.swing.JLabel LabelDSGS;
     private javax.swing.JLabel LabelNDFP;
     private javax.swing.JLabel LabelNDFP1;
     private javax.swing.JLabel LabelNDFP2;
@@ -13723,6 +17827,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZP6;
     private javax.swing.JLabel LabelSZP7;
     private javax.swing.JLabel LabelSZP8;
+    private javax.swing.JTextField Lugar;
     private javax.swing.JComboBox<String> LunT;
     private javax.swing.JLabel MTDsum;
     private javax.swing.JLabel MTDsum1;
@@ -13734,13 +17839,18 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel MTDsum7;
     private javax.swing.JLabel MTDsum8;
     private javax.swing.JComboBox<String> MarT;
+    private javax.swing.JMenu Menuadm;
     private javax.swing.JComboBox<String> MierT;
     private javax.swing.JButton Modm;
+    private javax.swing.JTextField NCDANom;
     private javax.swing.JTextField NDL;
     private javax.swing.JTextField NE;
+    private javax.swing.JTextField NODTnom;
+    private javax.swing.JTextField NSODTnom;
     private javax.swing.JTextField NSprenom;
     private javax.swing.JScrollPane NomDetallada;
     private javax.swing.JScrollPane NomPagos;
+    private javax.swing.JMenuItem NomSemGen;
     private javax.swing.JTextField Nominab;
     private javax.swing.JTextField Nominab1;
     private javax.swing.JTextField Nominab2;
@@ -13752,21 +17862,46 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab8;
     private javax.swing.JTextField NumPrenom;
     private javax.swing.JMenuItem ODT;
+    private javax.swing.JMenuItem ODT1;
+    private javax.swing.JMenuItem ODT2;
+    private javax.swing.JMenuItem ODT3;
+    private javax.swing.JTextField Odtp;
+    private javax.swing.JLabel PCR;
+    private javax.swing.JLabel PDDD;
+    private javax.swing.JTextField PDDDDSGS;
+    private javax.swing.JLabel PDDDV;
+    private javax.swing.JLabel PDDF;
+    private javax.swing.JLabel PDDFT;
+    private javax.swing.JLabel PDDL;
+    private javax.swing.JLabel PDDT;
     private javax.swing.JTextField PH;
     private javax.swing.JMenuItem PRES;
+    private javax.swing.JMenuItem PRESQ;
+    private javax.swing.JTextField PagODTnom;
     private javax.swing.JTextField Pagadoprenom;
-    private javax.swing.JLabel Pago;
+    private javax.swing.JTextField Pantalon;
+    private javax.swing.JPanel Pbs;
+    private javax.swing.JTextField PenODTnom;
     private javax.swing.JTextField Pendienteprenom;
     private javax.swing.JTabbedPane PestanañasND;
     private javax.swing.JTabbedPane PestañasPagos;
+    private javax.swing.JTextField Playera;
+    private javax.swing.JMenuItem PresSem;
     private javax.swing.JTextField Presp;
+    private javax.swing.JTextField QAcdanom;
+    private javax.swing.JLabel R;
     private javax.swing.JTextField RF;
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
+    private javax.swing.JMenu Reportes;
+    private javax.swing.JTable SHCDAnom;
+    private javax.swing.JTable SHODTnom;
     private javax.swing.JTable SHPresnom;
     private javax.swing.JComboBox<String> SabT;
+    private javax.swing.JTextField Sancion;
     private javax.swing.JComboBox<String> Semana;
     private javax.swing.JTextField ServN;
+    private javax.swing.JTextField TACDANOM;
     private javax.swing.JTextField THE;
     private javax.swing.JScrollPane TPagos;
     private javax.swing.JScrollPane TPagos1;
@@ -13786,9 +17921,12 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom6;
     private javax.swing.JTable Tnom7;
     private javax.swing.JTable Tnom8;
+    private javax.swing.JMenuItem Torteria;
     private javax.swing.JComboBox<String> VieT;
+    private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
     private javax.swing.JTextField am;
+    private javax.swing.JTextField apy;
     private com.toedter.calendar.JDateChooser año;
     private javax.swing.JTextField ban;
     private botones.BotonWeb botonWeb1;
@@ -13818,8 +17956,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTextField busp6;
     private javax.swing.JTextField busp7;
     private javax.swing.JTextField busp8;
+    private javax.swing.JTextField cda;
     private javax.swing.JTextField cta;
     private javax.swing.JLabel deposito;
+    private javax.swing.JLabel dt;
     private javax.swing.JTextField filtroNDFP;
     private javax.swing.JTextField filtroNDFP1;
     private javax.swing.JTextField filtroNDFP2;
@@ -13831,26 +17971,47 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTextField filtroNDFP8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel126;
+    private javax.swing.JLabel jLabel127;
+    private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel131;
+    private javax.swing.JLabel jLabel132;
+    private javax.swing.JLabel jLabel134;
+    private javax.swing.JLabel jLabel135;
+    private javax.swing.JLabel jLabel136;
+    private javax.swing.JLabel jLabel137;
+    private javax.swing.JLabel jLabel138;
+    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
+    private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
+    private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel147;
     private javax.swing.JLabel jLabel148;
+    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel154;
-    private javax.swing.JLabel jLabel156;
-    private javax.swing.JLabel jLabel158;
+    private javax.swing.JLabel jLabel155;
+    private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel159;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel163;
-    private javax.swing.JLabel jLabel164;
-    private javax.swing.JLabel jLabel165;
-    private javax.swing.JLabel jLabel166;
+    private javax.swing.JLabel jLabel160;
+    private javax.swing.JLabel jLabel167;
+    private javax.swing.JLabel jLabel168;
+    private javax.swing.JLabel jLabel169;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel170;
+    private javax.swing.JLabel jLabel171;
     private javax.swing.JLabel jLabel176;
     private javax.swing.JLabel jLabel177;
     private javax.swing.JLabel jLabel178;
@@ -13858,6 +18019,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel180;
     private javax.swing.JLabel jLabel181;
+    private javax.swing.JLabel jLabel182;
+    private javax.swing.JLabel jLabel183;
+    private javax.swing.JLabel jLabel184;
+    private javax.swing.JLabel jLabel185;
     private javax.swing.JLabel jLabel186;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -13868,6 +18033,13 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel261;
+    private javax.swing.JLabel jLabel262;
+    private javax.swing.JLabel jLabel263;
+    private javax.swing.JLabel jLabel264;
+    private javax.swing.JLabel jLabel265;
+    private javax.swing.JLabel jLabel266;
+    private javax.swing.JLabel jLabel267;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -13886,6 +18058,9 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
@@ -13893,7 +18068,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
@@ -13905,20 +18079,47 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -13931,7 +18132,8 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
@@ -13943,11 +18145,9 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
@@ -13961,6 +18161,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
     private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane30;
@@ -13971,7 +18175,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane35;
     private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
@@ -13989,6 +18192,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTable pago7;
     private javax.swing.JTable pago8;
     private javax.swing.JTextField pd;
+    private javax.swing.JLabel pds;
     private javax.swing.JTable share;
     private javax.swing.JTextField sueldo;
     // End of variables declaration//GEN-END:variables
