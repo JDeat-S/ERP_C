@@ -217,6 +217,8 @@ public final class PresS_5 extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
+        CDA3 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -234,6 +236,8 @@ public final class PresS_5 extends javax.swing.JFrame {
         jMenu10 = new javax.swing.JMenu();
         Nomsem = new javax.swing.JMenuItem();
         NomSemGen = new javax.swing.JMenuItem();
+        CDA2 = new javax.swing.JMenuItem();
+        ODT3 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
         CNQ = new javax.swing.JMenuItem();
@@ -865,6 +869,22 @@ public final class PresS_5 extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem11);
 
+        CDA3.setText("Caja de ahorro");
+        CDA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA3ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(CDA3);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(ODT2);
+
         jMenu5.add(jMenu7);
 
         jMenuItem12.setText("Listas de asistencia");
@@ -985,6 +1005,22 @@ public final class PresS_5 extends javax.swing.JFrame {
             }
         });
         jMenu10.add(NomSemGen);
+
+        CDA2.setText("Caja de ahorro");
+        CDA2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA2ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(CDA2);
+
+        ODT3.setText("Ordenes de taller");
+        ODT3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT3ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(ODT3);
 
         jMenu4.add(jMenu10);
 
@@ -1961,6 +1997,30 @@ public final class PresS_5 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
+    private void CDA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA2ActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA2ActionPerformed
+
+    private void CDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA3ActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA3ActionPerformed
+
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
+    private void ODT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT3ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2008,6 +2068,8 @@ public final class PresS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Busapshpre;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA1;
+    private javax.swing.JMenuItem CDA2;
+    private javax.swing.JMenuItem CDA3;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenuItem CNQ1;
     private javax.swing.JButton CS4;
@@ -2039,6 +2101,8 @@ public final class PresS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Num;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT1;
+    private javax.swing.JMenuItem ODT2;
+    private javax.swing.JMenuItem ODT3;
     private javax.swing.JMenuItem PRES;
     private javax.swing.JMenuItem PRESQ1;
     private javax.swing.JTextField PS;

@@ -629,6 +629,8 @@ public final class CDAS_5 extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
+        CDA3 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -1437,6 +1439,22 @@ public final class CDAS_5 extends javax.swing.JFrame {
             }
         });
         jMenu7.add(jMenuItem11);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(ODT2);
+
+        CDA3.setText("Caja de ahorro");
+        CDA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA3ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(CDA3);
 
         jMenu5.add(jMenu7);
 
@@ -2264,6 +2282,18 @@ public final class CDAS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_CDAActionPerformed
 
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
+    private void CDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA3ActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2313,6 +2343,7 @@ public final class CDAS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Busnamecdash;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA1;
+    private javax.swing.JMenuItem CDA3;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenuItem CNQ1;
     private javax.swing.JTextField CajaA;
@@ -2347,6 +2378,7 @@ public final class CDAS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Numcda;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT1;
+    private javax.swing.JMenuItem ODT2;
     private javax.swing.JComboBox<String> Obs1cda;
     private javax.swing.JTextArea Obscda;
     private javax.swing.JTextField PPF;

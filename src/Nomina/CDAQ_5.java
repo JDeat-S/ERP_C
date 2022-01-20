@@ -649,6 +649,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         NomSemGen = new javax.swing.JMenuItem();
         PresSem = new javax.swing.JMenuItem();
         CDA2 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
         CNQ = new javax.swing.JMenuItem();
@@ -1585,6 +1586,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         });
         jMenu10.add(CDA2);
 
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(ODT2);
+
         jMenu4.add(jMenu10);
 
         jMenu11.setText("Nomina quincenal");
@@ -2276,6 +2285,12 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CDA3ActionPerformed
 
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2358,6 +2373,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField Numcda;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT1;
+    private javax.swing.JMenuItem ODT2;
     private javax.swing.JComboBox<String> Obs1cda;
     private javax.swing.JTextArea Obscda;
     private javax.swing.JTextField PPF;

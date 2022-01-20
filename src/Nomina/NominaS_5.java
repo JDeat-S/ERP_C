@@ -1390,6 +1390,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         CDA3 = new javax.swing.JMenuItem();
+        ODT3 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -1408,6 +1409,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         NomSemGen = new javax.swing.JMenuItem();
         PresSem = new javax.swing.JMenuItem();
         CDA2 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
         CNQ = new javax.swing.JMenuItem();
@@ -6495,6 +6497,14 @@ public final class NominaS_5 extends javax.swing.JFrame {
         });
         jMenu7.add(CDA3);
 
+        ODT3.setText("Ordenes de taller");
+        ODT3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT3ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(ODT3);
+
         jMenu5.add(jMenu7);
 
         jMenuItem11.setText("Listas de asistencia");
@@ -6623,6 +6633,14 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
         jMenu10.add(CDA2);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(ODT2);
 
         jMenu3.add(jMenu10);
 
@@ -17456,6 +17474,18 @@ public final class NominaS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_CDA3ActionPerformed
 
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
+    private void ODT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT3ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -17827,6 +17857,8 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NumPrenom;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT1;
+    private javax.swing.JMenuItem ODT2;
+    private javax.swing.JMenuItem ODT3;
     private javax.swing.JTextField Odtp;
     private javax.swing.JLabel PCR;
     private javax.swing.JLabel PDDD;
