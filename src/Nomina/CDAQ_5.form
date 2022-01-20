@@ -927,7 +927,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel110">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Ahorro por Qna:"/>
+                        <Property name="text" type="java.lang.String" value="Ahorro por Semana:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel120">
@@ -937,7 +937,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel111">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Qnas ahorradas:"/>
+                        <Property name="text" type="java.lang.String" value="Sem ahorradas:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel112">

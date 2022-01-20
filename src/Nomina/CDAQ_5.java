@@ -749,11 +749,11 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
         TIAP.setText("0");
 
-        jLabel110.setText("Ahorro por Qna:");
+        jLabel110.setText("Ahorro por Semana:");
 
         jLabel120.setText("Total a pagar:");
 
-        jLabel111.setText("Qnas ahorradas:");
+        jLabel111.setText("Sem ahorradas:");
 
         jLabel112.setText("Total ahorrado:");
 

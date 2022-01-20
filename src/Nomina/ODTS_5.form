@@ -1155,7 +1155,7 @@
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel71">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Quincenas a pagar:"/>
+                    <Property name="text" type="java.lang.String" value="Semanas a pagar:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="QAP">
@@ -1163,30 +1163,30 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="25">
                         <StringItem index="0" value="."/>
-                        <StringItem index="1" value="1 Quincena"/>
-                        <StringItem index="2" value="2 Quincenas"/>
-                        <StringItem index="3" value="3 Quincenas"/>
-                        <StringItem index="4" value="4 Quincenas"/>
-                        <StringItem index="5" value="5 Quincenas"/>
-                        <StringItem index="6" value="6 Quincenas"/>
-                        <StringItem index="7" value="7 Quincenas"/>
-                        <StringItem index="8" value="8 Quincenas"/>
-                        <StringItem index="9" value="9 Quincenas"/>
-                        <StringItem index="10" value="10 Quincenas"/>
-                        <StringItem index="11" value="11 Quincenas"/>
-                        <StringItem index="12" value="12 Quincenas"/>
-                        <StringItem index="13" value="13 Quincenas"/>
-                        <StringItem index="14" value="14 Quincenas"/>
-                        <StringItem index="15" value="15 Quincenas"/>
-                        <StringItem index="16" value="16 Quincenas"/>
-                        <StringItem index="17" value="17 Quincenas"/>
-                        <StringItem index="18" value="18 Quincenas"/>
-                        <StringItem index="19" value="19 Quincenas"/>
-                        <StringItem index="20" value="20 Quincenas"/>
-                        <StringItem index="21" value="21 Quincenas"/>
-                        <StringItem index="22" value="22 Quincenas"/>
-                        <StringItem index="23" value="23 Quincenas"/>
-                        <StringItem index="24" value="24 Quincenas"/>
+                        <StringItem index="1" value="1 Semana"/>
+                        <StringItem index="2" value="2 Semanas"/>
+                        <StringItem index="3" value="3 Semanas"/>
+                        <StringItem index="4" value="4 Semanas"/>
+                        <StringItem index="5" value="5 Semanas"/>
+                        <StringItem index="6" value="6 Semanas"/>
+                        <StringItem index="7" value="7 Semanas"/>
+                        <StringItem index="8" value="8 Semanas"/>
+                        <StringItem index="9" value="9 Semanas"/>
+                        <StringItem index="10" value="10 Semanas"/>
+                        <StringItem index="11" value="11 Semanas"/>
+                        <StringItem index="12" value="12 Semanas"/>
+                        <StringItem index="13" value="13 Semanas"/>
+                        <StringItem index="14" value="14 Semanas"/>
+                        <StringItem index="15" value="15 Semanas"/>
+                        <StringItem index="16" value="16 Semanas"/>
+                        <StringItem index="17" value="17 Semanas"/>
+                        <StringItem index="18" value="18 Semanas"/>
+                        <StringItem index="19" value="19 Semanas"/>
+                        <StringItem index="20" value="20 Semanas"/>
+                        <StringItem index="21" value="21 Semanas"/>
+                        <StringItem index="22" value="22 Semanas"/>
+                        <StringItem index="23" value="23 Semanas"/>
+                        <StringItem index="24" value="24 Semanas"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1199,7 +1199,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel72">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Por Quincena:"/>
+                    <Property name="text" type="java.lang.String" value="Por Semana:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="PQT">
@@ -1249,7 +1249,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel151">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Quincenas pagadas:"/>
+                    <Property name="text" type="java.lang.String" value="Semanas pagadas:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="QPodt">
