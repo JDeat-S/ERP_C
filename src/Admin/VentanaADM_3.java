@@ -287,6 +287,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        CDA4 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -931,6 +933,22 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             }
         });
         jMenu4.add(jMenuItem4);
+
+        CDA4.setText("Caja de ahorro");
+        CDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA4ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(CDA4);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ODT2);
 
         jMenu2.add(jMenu4);
 
@@ -2156,6 +2174,18 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
+    private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA4ActionPerformed
+
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2198,6 +2228,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Apadduser;
     private javax.swing.JPanel Btnpduadd;
     private javax.swing.JMenuItem CDA;
+    private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenu Depositos;
     private javax.swing.JMenuItem Estadias;
@@ -2210,6 +2241,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Nameadduser;
     private javax.swing.JTextField NumP;
     private javax.swing.JMenuItem ODT;
+    private javax.swing.JMenuItem ODT2;
     private javax.swing.JCheckBox P10Nom;
     private javax.swing.JCheckBox P1Nom;
     private javax.swing.JCheckBox P1RH;

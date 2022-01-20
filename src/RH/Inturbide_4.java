@@ -3211,6 +3211,8 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        CDA4 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         General1 = new javax.swing.JMenuItem();
@@ -3221,7 +3223,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
-        ADMV3 = new javax.swing.JMenuItem();
+        ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         General2 = new javax.swing.JMenuItem();
         Alumnos = new javax.swing.JMenuItem();
@@ -5702,6 +5704,22 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         });
         jMenu4.add(jMenuItem8);
 
+        CDA4.setText("Caja de ahorro");
+        CDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA4ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(CDA4);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ODT2);
+
         jMenu2.add(jMenu4);
 
         jMenuItem9.setText("Listas de asistencia");
@@ -5778,13 +5796,13 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         });
         Menuadm.add(ZYS);
 
-        ADMV3.setText("Usuarios");
-        ADMV3.addActionListener(new java.awt.event.ActionListener() {
+        ADMV1.setText("Usuarios");
+        ADMV1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ADMV3ActionPerformed(evt);
+                ADMV1ActionPerformed(evt);
             }
         });
-        Menuadm.add(ADMV3);
+        Menuadm.add(ADMV1);
 
         jMenuBar1.add(Menuadm);
 
@@ -8162,103 +8180,6 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         }
     }//GEN-LAST:event_jLabel38MousePressed
 
-    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
-        ODTQ_5 regr = new ODTQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ODTActionPerformed
-
-    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
-        NominaQ_5 regr = new NominaQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_CNQActionPerformed
-
-    private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
-        PresQ_5 regr = new PresQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_PRESQActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        NominaQSiMSS_5 regr = new NominaQSiMSS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
-
-    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
-        CDAQ_5 regr = new CDAQ_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_CDAActionPerformed
-
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        NominaS_5 regr = new NominaS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
-
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        PresS_5 regr = new PresS_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
-
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        NominaS_simss_5 regr = new NominaS_simss_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
-
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        Listas_5 regr = new Listas_5();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
-    private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
-
-        Empleados_4 RH = new Empleados_4(usr, LP);
-        RH.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_General1ActionPerformed
-
-    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
-        Estadias_4 regr = new Estadias_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_EstadiasActionPerformed
-
-    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
-        Tortas_4 regr = new Tortas_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_TorteriaActionPerformed
-
-    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Inturbide_4 regr = new Inturbide_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem10ActionPerformed
-
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        PT_4 regr = new PT_4();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
-
-    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
-        AltasZyS_3 regr = new AltasZyS_3();
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_ZYSActionPerformed
-
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
 
         Estadias_4 regr = new Estadias_4();
@@ -8297,11 +8218,120 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         this.dispose();
     }//GEN-LAST:event_General2ActionPerformed
 
-    private void ADMV3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV3ActionPerformed
-        VentanaADM_3 regr = new VentanaADM_3();
+    private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
+        ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ADMV3ActionPerformed
+    }//GEN-LAST:event_ODTActionPerformed
+
+    private void CNQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CNQActionPerformed
+        NominaQ_5 regr = new NominaQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CNQActionPerformed
+
+    private void PRESQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRESQActionPerformed
+        PresQ_5 regr = new PresQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PRESQActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        NominaQSiMSS_5 regr = new NominaQSiMSS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDAActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        NominaS_5 regr = new NominaS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        PresS_5 regr = new PresS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        NominaS_simss_5 regr = new NominaS_simss_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA4ActionPerformed
+
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        Listas_5 regr = new Listas_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
+
+        Empleados_4 RH = new Empleados_4(usr, LP);
+        RH.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_General1ActionPerformed
+
+    private void EstadiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadiasActionPerformed
+        Estadias_4 regr = new Estadias_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EstadiasActionPerformed
+
+    private void TorteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TorteriaActionPerformed
+        Tortas_4 regr = new Tortas_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TorteriaActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        PT_4 regr = new PT_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void ZYSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZYSActionPerformed
+        AltasZyS_3 regr = new AltasZyS_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ZYSActionPerformed
+
+    private void ADMV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV1ActionPerformed
+        VentanaADM_3 regr = new VentanaADM_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ADMV1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -8349,12 +8379,11 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem ADMV1;
-    private javax.swing.JMenuItem ADMV2;
-    private javax.swing.JMenuItem ADMV3;
     private javax.swing.JMenuItem Alumnos;
     private javax.swing.JLabel AutoFecha;
     private javax.swing.JLabel Autohora;
     private javax.swing.JMenuItem CDA;
+    private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JTextField Concepto;
     private javax.swing.JTextField Concepto1;
@@ -8549,6 +8578,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField NPadron8;
     private javax.swing.JTextField NPadron9;
     private javax.swing.JMenuItem ODT;
+    private javax.swing.JMenuItem ODT2;
     private javax.swing.JTextField ObsV;
     private javax.swing.JTextField ObsV1;
     private javax.swing.JTextField ObsV2;

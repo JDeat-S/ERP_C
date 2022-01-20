@@ -3772,6 +3772,8 @@ public final class Depositos_4 extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        CDA4 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         General1 = new javax.swing.JMenuItem();
@@ -7495,6 +7497,22 @@ public final class Depositos_4 extends javax.swing.JFrame {
             }
         });
         jMenu4.add(jMenuItem8);
+
+        CDA4.setText("Caja de ahorro");
+        CDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA4ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(CDA4);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ODT2);
 
         jMenu2.add(jMenu4);
 
@@ -11785,6 +11803,18 @@ public final class Depositos_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV1ActionPerformed
 
+    private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA4ActionPerformed
+
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -11838,6 +11868,7 @@ public final class Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Bonodep;
     private javax.swing.JTextField Bp;
     private javax.swing.JMenuItem CDA;
+    private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JButton CS10;
     private javax.swing.JButton CS11;
@@ -12066,6 +12097,7 @@ public final class Depositos_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab6;
     private javax.swing.JTextField Nominab7;
     private javax.swing.JMenuItem ODT;
+    private javax.swing.JMenuItem ODT2;
     private javax.swing.JTextArea Obsdeposito;
     private javax.swing.JTextField Odtp;
     private javax.swing.JTextField PCR;

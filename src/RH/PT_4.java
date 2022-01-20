@@ -3211,6 +3211,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        CDA4 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         General1 = new javax.swing.JMenuItem();
@@ -5702,6 +5704,22 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         });
         jMenu4.add(jMenuItem8);
 
+        CDA4.setText("Caja de ahorro");
+        CDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA4ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(CDA4);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(ODT2);
+
         jMenu2.add(jMenu4);
 
         jMenuItem9.setText("Listas de asistencia");
@@ -8162,6 +8180,44 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         }
     }//GEN-LAST:event_jLabel38MousePressed
 
+    private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
+
+        Estadias_4 regr = new Estadias_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_AlumnosActionPerformed
+
+    private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
+
+        Tortas_4 regr = new Tortas_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EmpleadosTActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Depositos_4 regr = new Depositos_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        PT_4 regr = new PT_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
         ODTQ_5 regr = new ODTQ_5(usr, LP);
         regr.setVisible(true);
@@ -8209,6 +8265,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA4ActionPerformed
+
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         Listas_5 regr = new Listas_5(usr, LP);
@@ -8258,44 +8326,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ZYSActionPerformed
-
-    private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
-
-        Estadias_4 regr = new Estadias_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_AlumnosActionPerformed
-
-    private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
-
-        Tortas_4 regr = new Tortas_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_EmpleadosTActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Depositos_4 regr = new Depositos_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        PT_4 regr = new PT_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void ADMV1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADMV1ActionPerformed
         VentanaADM_3 regr = new VentanaADM_3(usr, LP);
@@ -8353,6 +8383,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel AutoFecha;
     private javax.swing.JLabel Autohora;
     private javax.swing.JMenuItem CDA;
+    private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JTextField Concepto;
     private javax.swing.JTextField Concepto1;
@@ -8546,6 +8577,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField NPadron8;
     private javax.swing.JTextField NPadron9;
     private javax.swing.JMenuItem ODT;
+    private javax.swing.JMenuItem ODT2;
     private javax.swing.JTextField ObsV;
     private javax.swing.JTextField ObsV1;
     private javax.swing.JTextField ObsV2;

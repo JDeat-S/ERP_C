@@ -775,6 +775,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
+        CDA4 = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -1455,6 +1457,22 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem11);
 
+        CDA4.setText("Caja de ahorro");
+        CDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA4ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(CDA4);
+
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(ODT2);
+
         jMenu5.add(jMenu7);
 
         jMenuItem12.setText("Listas de asistencia");
@@ -2006,6 +2024,18 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV2ActionPerformed
 
+    private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA4ActionPerformed
+
+    private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
+        ODTS_5 regr = new ODTS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ODT2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2061,6 +2091,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextField BZS;
     private javax.swing.JLabel BZtext;
     private javax.swing.JMenuItem CDA1;
+    private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ1;
     private javax.swing.JComboBox<String> Cbxcosto;
     private javax.swing.JTextField Cierra;
@@ -2087,6 +2118,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextArea NZ;
     private javax.swing.JTextField NZS;
     private javax.swing.JMenuItem ODT1;
+    private javax.swing.JMenuItem ODT2;
     private javax.swing.JRadioButton Otro;
     private javax.swing.JTextField Otrotxt;
     private javax.swing.JPanel PNDS;
