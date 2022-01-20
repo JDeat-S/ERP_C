@@ -2119,7 +2119,7 @@
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="jLabel149" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="NQODTnom" min="-2" pref="80" max="-2" attributes="0"/>
+                                                      <Component id="NSODTnom" min="-2" pref="80" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="jLabel142" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
@@ -2238,7 +2238,7 @@
                                   <Component id="jLabel147" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PenODTnom" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel149" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="NQODTnom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NSODTnom" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -2354,7 +2354,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel263">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Ahorro por Qna:"/>
+                        <Property name="text" type="java.lang.String" value="Ahorro por Sem:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel145">
@@ -2525,10 +2525,10 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel149">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="# Quincena:"/>
+                        <Property name="text" type="java.lang.String" value="# Semana:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="NQODTnom">
+                    <Component class="javax.swing.JTextField" name="NSODTnom">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>

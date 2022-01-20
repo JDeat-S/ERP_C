@@ -45,9 +45,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
     Connection con = cc.conexion();
     ButtonGroup DAB;
     Calendar fecha_actual = new GregorianCalendar();
-    double DS, DM, DMi, DJ, DV;
-    double AS, AD, AL, AM, AMi, AJ, AV;
-    double dd, in, dv, df, dft,
+    double DS, DM, DMi, DJ, DV,
+            AS, AD, AL, AM, AMi, AJ, AV,
+            dd, in, dv, df, dft,
             DO1, DO2, R1, R2, dt1, dt2, dt3, dt4, DL1, DL2, dt5,
             dt6, F1, F2, FJ1, FJ2, FJ3, FJ4, FJ5, dt7, R3, R4, R5, R6, R7,
             DO3, DO4, DO5, DO6, DO7, DL3, DL4, DL5, DL6, DL7, FJ6, FJ7,
@@ -65,7 +65,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
     public NominaS_5() {
         initComponents();
-
         DAB = new ButtonGroup();
         DAB.add(Bsi);
         DAB.add(Bno);
@@ -375,7 +374,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FunMD();
         setIconImage(new ImageIcon(NominaS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sumaDep();
-
+        sharecdanom();
+        sharepresnom();
+        shareODTnom();
     }
 
     public NominaS_5(Logica_usuarios usr, Logica_permisos LP) {
@@ -691,6 +692,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FunMD();
         setIconImage(new ImageIcon(NominaS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sumaDep();
+        sharecdanom();
+        sharepresnom();
+        shareODTnom();
         setTitle("Nomina Semanal IMSS. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
@@ -917,7 +921,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         jLabel148 = new javax.swing.JLabel();
         NSprenom = new javax.swing.JTextField();
         jLabel149 = new javax.swing.JLabel();
-        NQODTnom = new javax.swing.JTextField();
+        NSODTnom = new javax.swing.JTextField();
         jLabel266 = new javax.swing.JLabel();
         RI = new javax.swing.JTextField();
         jLabel267 = new javax.swing.JLabel();
@@ -2301,7 +2305,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        jLabel263.setText("Ahorro por Qna:");
+        jLabel263.setText("Ahorro por Sem:");
 
         jLabel145.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel145.setText("Caja de ahorro:");
@@ -2385,9 +2389,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
         NSprenom.setText("0");
 
-        jLabel149.setText("# Quincena:");
+        jLabel149.setText("# Semana:");
 
-        NQODTnom.setText("0");
+        NSODTnom.setText("0");
 
         jLabel266.setText("Retencion infonavit:");
 
@@ -2486,7 +2490,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel149)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NQODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(NSODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel142)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2590,7 +2594,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel147)
                     .addComponent(PenODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel149)
-                    .addComponent(NQODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NSODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -6699,6 +6703,287 @@ public final class NominaS_5 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Agregar pago ODT
+    public void AgregarPagoODT() {
+
+        String SQL = "INSERT INTO `nominasem.pagos.odt` (`#Lista`, `# de orden`, "
+                + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
+                + " `Servicio`, `Semana`, `# Semana`, `pagado`, `pendiente`, "
+                + "`Pago de odt`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NODTnom.getText()));
+            pst.setInt(3, Integer.parseInt(NE.getText()));
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
+            pst.setString(6, name.getText());
+            pst.setString(7, Zon.getText());
+            pst.setString(8, ServN.getText());
+            pst.setString(9, Semana.getSelectedItem().toString());
+            pst.setString(10, NSODTnom.getText());
+            pst.setString(11, PagODTnom.getText());
+            pst.setString(12, PenODTnom.getText());
+            pst.setString(13, Odtp.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Pago de orden en agregado");
+
+        } catch (HeadlessException | SQLException error_agregar_pdodt) {
+            JOptionPane.showMessageDialog(null, "Error al agregar pago de orden: " + error_agregar_pdodt.getMessage());
+        }
+    }
+
+//Agregar pago CDA
+    public void AgregarPagoCDA() {
+
+        String SQL = "INSERT INTO `nominasem.pagos.cda` (`#Lista`, `#caja`, `#empleado`, `Apellido P`,"
+                + " `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Semana`, `Caja de ahorro`,"
+                + " `Observaciones`, `Sem aportadas`, `# de recibo de pago`) VALUES (?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, '', ?, '')";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(NDL.getText()));
+            pst.setInt(2, Integer.parseInt(NCDANom.getText()));
+            pst.setInt(3, Integer.parseInt(NE.getText()));
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
+            pst.setString(6, name.getText());
+            pst.setString(7, Zon.getText());
+            pst.setString(8, ServN.getText());
+            pst.setString(9, Semana.getSelectedItem().toString());
+            pst.setString(10, cda.getText());
+            pst.setString(11, QAcdanom.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Pago de caja de ahorro en agregado");
+
+        } catch (HeadlessException | SQLException error_add_pdcda) {
+            JOptionPane.showMessageDialog(null, "Error al agregar pago de caja de ahorro: " + error_add_pdcda.getMessage());
+        }
+    }
+
+//auto ODT
+    public void PagoODT() {
+        String Otropagoodt = PenODTnom.getText();
+
+        if (Otropagoodt.equals("0.0")) {
+            String SQL = "UPDATE `nominasem.odt` SET `Status` = 'Pagado', `Sem pagadas` = ?,"
+                    + " `Pagado` = ?, `Pendiente` = ? WHERE `nominasem.odt`.`idTaller` = ?";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setString(1, PagODTnom.getText());
+                pst.setString(2, PenODTnom.getText());
+                pst.setString(3, NSODTnom.getText());
+                pst.setInt(4, Integer.parseInt(NODTnom.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Abono de orden de taller agregado.");
+
+            } catch (HeadlessException | SQLException error_auto_odt) {
+                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller: " + error_auto_odt.getMessage());
+            }
+        } else if (Otropagoodt.equals(PenODTnom.getText())) {
+            String SQL = "UPDATE `nominasem.odt` SET `Status` = 'Debe', `Pagado` = ?, `Pendiente` = ?, "
+                    + "`Quincenas pagadas` = ? WHERE `nominasem.odt`.`idTaller` = ?";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setString(1, PagODTnom.getText());
+                pst.setString(2, PenODTnom.getText());
+                pst.setString(3, NSODTnom.getText());
+                pst.setInt(4, Integer.parseInt(NODTnom.getText()));
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Abono de orden de taller en agregado.");
+
+            } catch (HeadlessException | SQLException error_auto_odt) {
+                JOptionPane.showMessageDialog(null, "Error al abonar orden de taller en: " + error_auto_odt.getMessage());
+            }
+        }
+
+    }
+
+    public void shareODTnom() {
+        String FiltroN = BNameNom.getText();
+        String FAP = BAPNom.getText();
+        String FAM = BAMNom.getText();
+        String where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`";
+
+        if (!"".equals(FiltroN)) {
+            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%' AND `Status` LIKE '%Debe%'";
+        } else if (!"".equals(FAP)) {
+            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%' AND `Status` LIKE '%Debe%'";
+        } else if (!"".equals(FAM)) {
+            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Por Semana`,"
+                    + " `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%' ";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            SHODTnom.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Orden");
+            modelo.addColumn("Apellido P");//2
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Pago por Qna");
+            modelo.addColumn("Qnas pagadas");//6
+            modelo.addColumn("Pagado");
+            modelo.addColumn("Pendiente");//8
+
+//ANCHOS
+            int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPQ*/ 50,
+                /*QP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                SHODTnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+        } catch (SQLException error_sh_odt) {
+            JOptionPane.showMessageDialog(null, "Error al compartir ordenes de taller con nomina: " + error_sh_odt.getMessage());
+
+        }
+
+    }
+
+    public void editarCDAdnom() {
+
+        String SQL = "UPDATE `nominasem.cajadeahorro` SET "
+                + " `Semanas Ahorradas` = ?, `Total Ahorrado` = ? WHERE `nominasem.cajadeahorro`.`#caja` = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setString(1, QAcdanom.getText());
+            pst.setString(2, TACDANOM.getText());
+            pst.setInt(3, Integer.parseInt(NCDANom.getText()));
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Abono de caja de ahorro en agregado");
+
+        } catch (HeadlessException | SQLException error_auto_cda) {
+            JOptionPane.showMessageDialog(null, "Error al abonar Caja de ahorro: " + error_auto_cda.getMessage());
+        }
+    }
+
+    public void sharecdanom() {
+        String FiltroN = BNameNom.getText();
+        String FAP = BAPNom.getText();
+        String FAM = BAMNom.getText();
+        String where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                + " `Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
+                + " FROM `nominasem.cajadeahorro`";
+
+        if (!"".equals(FiltroN)) {
+            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+                    + " `Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado`"
+                    + "  FROM `nomina.cajadeahorro`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FAP)) {
+            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
+                    + " FROM `nominasem.cajadeahorro`"
+                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
+        } else if (!"".equals(FAM)) {
+            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
+                    + " FROM `nominasem.cajadeahorro`"
+                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            SHCDAnom.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Caja");
+            modelo.addColumn("Apellido P");//2
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");//4
+            modelo.addColumn("Ahorro por Qna");
+            modelo.addColumn("Qnas ahorradas");//6
+            modelo.addColumn("Total ahorrado");
+
+//ANCHOS
+            int[] anchos = {/*NF*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*APQ*/ 50,
+                /*QA*/ 50, /*TA*/ 60};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                SHCDAnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+        } catch (SQLException error_sh_cda_nom) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
+
+        }
+
+    }
+
     public void utilJTablePrint(JTable jTable, String header, String footer, boolean showPrintDialog) {
         boolean fitWidth = true;
         boolean interactive = true;
@@ -9358,18 +9643,27 @@ public final class NominaS_5 extends javax.swing.JFrame {
 // nomina semanal
     public void editarNS() {
 
-        String SQL = "UPDATE `nominasem.detallada." + Zon.getText() + "` SET `#Lista` = ?, `#Empleado` = ?,  `Apellido P` = ?,"
-                + " `Apellido M` = ?, `Nombre(s)` = ?, `Bono` = ?,"
-                + " `Cuenta de banco` = ?, `Banco` = ?, `Zona` = ?,"
-                + " `Servicio` = ?, `Sueldo` = ?, `Por dia` = ?, `Por hora` = ?,"
-                + " `año` = ?, `Semana` = ?, `Fecha sabado` = ?, `Fecha domingo` = ?,"
-                + " `Fecha lunes` = ?, `Fecha martes` = ?, `Fecha miercoles` = ?,"
-                + " `Fecha jueves` = ?, `Fecha viernes` = ?, `Sabado` = ?, "
-                + "`Domingo` = ?, `Lunes` = ?, `Martes` = ?, `Miercoles` = ?,"
-                + " `Jueves` = ?, `Viernes` = ?, `Fecha de pago` = ?, `Horas extras` = ?,"
-                + " `Total horas extra` = ?, `Retencion infonavit` = ?, `ISR` = ?, `Fonacot` = ?, "
-                + " `Adelanto de nomina` = ?, `Prestamos` = ?, `Rembolso` = ?, `Deposito` = ?, "
-                + "`Observaciones` = ? WHERE `nominasem.detallada." + Zon.getText() + "`.`#Lista` = ?";
+        String SQL = "UPDATE `nominasem.detallada." + Zon.getText() + "` SET "
+                + " `#Lista` = ?, `#Empleado` = ?, `Nombre(s)` = ?, `Apellido P` = ?, "
+                + "`Apellido M` = ?, `Bono` = ?, `Cuenta de banco` = ?, `Banco` = ?, `Zona` = ?,"
+                + " `Servicio` = ?, `Sueldo` = ?, `Por dia` = ?, `Por hora` = ?, `año` = ?,"
+                + " `Semana` = ?, `Fecha sabado` = ?, `Fecha domingo` = ?, `Fecha lunes` = ?, "
+                + "`Fecha martes` = ?, `Fecha miercoles` = ?, `Fecha jueves` = ?, `Fecha viernes` = ?,"
+                + " `Sabado` = ?, `Domingo` = ?, `Lunes` = ?, `Martes` = ?, `Miercoles` = ?, `Jueves` = ?, "
+                + "`Viernes` = ?, `Fecha de pago` = ?, `Dias con retardos` = ?, `Pago con retardos` = ?,"
+                + " `Dias de incapacidad` = ?, `Pago de seguro` = ?, `Dias de vacaciones` = ?,"
+                + " `Pago de Dias de vacaciones` = ?, `Dias descansados` = ?, `Pago de dias descansados` = ?,"
+                + " `Dias Laborados` = ?, `Pago de dias laborados` = ?, `Descansos trabajados` = ?, "
+                + "`Pago de Descansos trabajados` = ?, `Dias de DSGS` = ?, `Pago de Dias de DSGS` = ?, "
+                + "`Faltas justificadas` = ?, `Descanso otorgado` = ?, `Dias festivos` = ?, "
+                + "`Pago de Dias festivos` = ?, `Dias festivos trabajados` = ?, `Pago de Dias festivos trabajados` = ?, "
+                + "`Apoyo` = ?, `Rembolso` = ?, `Lugar` = ?, `Adicionales` = ?, `Horas extra` = ?, "
+                + "`Total de horas extra` = ?, `Dias con faltas` = ?, `pago de Dias con faltas` = ?, `"
+                + "IMSS` = ?, `Infonavit` = ?, `Fonacot` = ?, `ISR` = ?, `Pago de prestamo` = ?, "
+                + "`Caja de ahorro` = ?, `Pago de ODT` = ?, `Faltantes de boleto` = ?, `Sancion` = ?, "
+                + "`Chamarra` = ?, `Chaleco` = ?, `Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, "
+                + "`Credencial` = ?, `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, `Adelanto de Nomina` = ?, `Total de descuentos` = ?, `Deposito` = ?, `Observaciones` = ?"
+                + " WHERE `nominasem.detallada." + Zon.getText() + "`.`#Lista` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -9514,7 +9808,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             Pendienteprenom.setText("0");
             TACDANOM.setText("0");
             NODTnom.setText("0");
-            NQODTnom.setText("0");
+            NSODTnom.setText("0");
             PagODTnom.setText("0");
             PenODTnom.setText("0");
             QAcdanom.setText("0");
@@ -9637,9 +9931,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Nomina Semanal Agregada");
 
             //operacion para pago de Pres
-            double QPREP = Double.parseDouble(this.NQprenom.getText());
+            double QPREP = Double.parseDouble(this.NSprenom.getText());
             double QPREPT = QPREP + 1;
-            NQprenom.setText("" + QPREPT);
+            NSprenom.setText("" + QPREPT);
             double PPN = Double.parseDouble(this.Pagadoprenom.getText());
             double PENPN = Double.parseDouble(this.Pendienteprenom.getText());
             double PP = Double.parseDouble(this.Presp.getText());
@@ -9649,9 +9943,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
             Pendienteprenom.setText("" + TPEN);
 
             //Operacion para pago ODT
-            double QODTP = Double.parseDouble(this.NQODTnom.getText());
+            double QODTP = Double.parseDouble(this.NSODTnom.getText());
             double QODTPT = QODTP + 1;
-            NQODTnom.setText("" + QODTPT);
+            NSODTnom.setText("" + QODTPT);
             double PODTN = Double.parseDouble(this.PagODTnom.getText());
             double ODTPN = Double.parseDouble(this.PenODTnom.getText());
             double ODTP = Double.parseDouble(this.Odtp.getText());
@@ -9733,7 +10027,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             Pendienteprenom.setText("0");
             TACDANOM.setText("0");
             NODTnom.setText("0");
-            NQODTnom.setText("0");
+            NSODTnom.setText("0");
             PagODTnom.setText("0");
             PenODTnom.setText("0");
             QAcdanom.setText("0");
@@ -15261,7 +15555,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         Pendienteprenom.setText("0");
         TACDANOM.setText("0");
         NODTnom.setText("0");
-        NQODTnom.setText("0");
+        NSODTnom.setText("0");
         PagODTnom.setText("0");
         PenODTnom.setText("0");
         QAcdanom.setText("0");
@@ -17049,7 +17343,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         int fila = SHODTnom.getSelectedRow();
         NODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 0)));
         Odtp.setText(String.valueOf(SHODTnom.getValueAt(fila, 4)));
-        NQODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 5)));
+        NSODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 5)));
         PagODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 6)));
         PenODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 7)));
         deposito();
@@ -17484,7 +17778,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField NDL;
     private javax.swing.JTextField NE;
     private javax.swing.JTextField NODTnom;
-    private javax.swing.JTextField NQODTnom;
+    private javax.swing.JTextField NSODTnom;
     private javax.swing.JTextField NSprenom;
     private javax.swing.JScrollPane NomDetallada;
     private javax.swing.JScrollPane NomPagos;
