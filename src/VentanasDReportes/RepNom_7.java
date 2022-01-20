@@ -6502,7 +6502,7 @@ public class RepNom_7 extends javax.swing.JFrame {
             }
         });
 
-        CbxTDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Todas las quincenas", "Quincenal", "Todas las Nominas detalladas", "Todas las Nominas detalladas S/IMSS", "Nominas Detalladas por quincena", "Nominas Detalladas por quincena S/IMSS" }));
+        CbxTDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Todas las quincenas (Pagos)", "Quincenal (Pagos)", "Todas las Nominas detalladas", "Todas las Nominas detalladas S/IMSS", "Nominas Detalladas por quincena", "Nominas Detalladas por quincena S/IMSS" }));
         CbxTDR.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CbxTDRItemStateChanged(evt);

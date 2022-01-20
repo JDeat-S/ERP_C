@@ -6818,7 +6818,7 @@ public class RepNomSem_7 extends javax.swing.JFrame {
             }
         });
 
-        CbxTDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Todas las Semanas", "Semanales", "Todas las Nominas detalladas", "Todas las Nominas detalladas S/IMSS", "Nominas Detalladas por Semanas", "Nominas Detalladas por Semanas S/IMSS" }));
+        CbxTDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Todas las Semanas (Pagos)", "Semanales (Pagos)", "Todas las Nominas detalladas", "Todas las Nominas detalladas S/IMSS", "Nominas Detalladas por Semanas", "Nominas Detalladas por Semanas S/IMSS" }));
         CbxTDR.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CbxTDRItemStateChanged(evt);

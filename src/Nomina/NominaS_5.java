@@ -2040,7 +2040,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(dt))
                     .addGroup(jPanel28Layout.createSequentialGroup()
                         .addComponent(jLabel43)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DL))
                     .addGroup(jPanel28Layout.createSequentialGroup()
                         .addComponent(jLabel103)
@@ -6778,7 +6778,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -6806,17 +6806,20 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -6826,18 +6829,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -6851,9 +6857,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -6862,7 +6865,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
@@ -7238,7 +7241,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -7266,17 +7269,20 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -7286,18 +7292,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -7311,9 +7320,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -7322,13 +7328,14 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -7396,7 +7403,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -7423,17 +7430,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Martes");
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
-            modelo.addColumn("Viernes");//28            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Viernes");//28
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -7443,18 +7454,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -7468,9 +7482,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -7479,7 +7490,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
@@ -7555,7 +7566,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -7583,17 +7594,20 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
-                        modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -7603,18 +7617,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -7628,9 +7645,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -7639,7 +7653,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
@@ -7714,7 +7728,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -7742,17 +7756,20 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
-                        modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -7762,18 +7779,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -7787,9 +7807,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -7798,7 +7815,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
@@ -7874,7 +7891,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -7902,17 +7919,20 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -7922,18 +7942,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -7947,9 +7970,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -7958,13 +7978,14 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
                 /*DPF*/ 120, /*DI*/ 50, /*RI*/ 80,/*FON*/ 80,/*FDB*/ 80, /*ISR*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*AdN*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, 600/*Obs*/};
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -8033,7 +8054,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -8061,17 +8082,20 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
-                        modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -8081,18 +8105,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -8106,9 +8133,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -8117,7 +8141,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
@@ -8193,7 +8217,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -8221,17 +8245,20 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
-                        modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -8241,18 +8268,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -8266,9 +8296,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -8277,7 +8304,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
@@ -8353,7 +8380,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# lista");//1
-            modelo.addColumn("# de Empleado");//1
+            modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
@@ -8381,17 +8408,20 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Miercoles");//26
             modelo.addColumn("Jueves");
             modelo.addColumn("Viernes");//28
-                        modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago de seguro");//32
+            modelo.addColumn("Fecha de pago");
+            modelo.addColumn("Dias con retardos");
+            modelo.addColumn("Pago con retardos");//32
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago de seguro");//34
             modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de dias de vacaciones");//34
+            modelo.addColumn("Pago de dias de vacaciones");//36
             modelo.addColumn("Dias descansados");
             modelo.addColumn("Pago de dias descansados");//36
             modelo.addColumn("Dias Laborados");
             modelo.addColumn("Pago de dias laborados");//38
             modelo.addColumn("Descansos Trabajados");
             modelo.addColumn("Pago de descansos trabajados");//40
-            modelo.addColumn("Descanso sin goce de sueldo");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de dias de DSGS");//42
             modelo.addColumn("Faltas Justificadas");
             modelo.addColumn("Descanso Otorgado");//44
@@ -8401,18 +8431,21 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos trabajados");//48
             modelo.addColumn("Horas extra");
             modelo.addColumn("total de horas extra");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");//52
             modelo.addColumn("Apoyo");
-            modelo.addColumn("Lugar");//46
             modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//46
             modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");//50
             modelo.addColumn("Desc IMSS");
             modelo.addColumn("Infonavit");//12
             modelo.addColumn("Fonacot");//12
             modelo.addColumn("ISR");
+            modelo.addColumn("Pago de prestamo");//66
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Faltantes de boleto");//54
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");//56
@@ -8426,9 +8459,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             modelo.addColumn("Corbata");//64
             modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Total de DV");
-            modelo.addColumn("Pago de prestamo");//66
-            modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");//68
             modelo.addColumn("Deposito");//34
             modelo.addColumn("Observaciones");
 
@@ -8437,7 +8467,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 25/*ph*/, 35/*año*/, 35/*semana*/, 35/*FS*/, 35/*FD*/, 35/*FL*/,
                 35/*FM*/, 35/*FMIER*/, 35/*FJ*/, 35/*FV*/,
                 35/*S*/, 35/*D*/, 35/*L*/, 35/*M*/, /*MIER*/ 35, 35/*J*/,
-                25/*V*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                25/*V*/, 25/*FDP*/, 25/*FDP*/, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
                 /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
                 /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90, /*DF*/ 80, 100,/*DFT*/ 80, /*HE*/ 80, /*PHE*/ 80, 100,/*RETARDOS*/ 65,
                 /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*FALT*/ 45,
