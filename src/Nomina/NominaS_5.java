@@ -2130,7 +2130,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addGroup(jPanel28Layout.createSequentialGroup()
                         .addGap(202, 202, 202)
                         .addComponent(jLabel135)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel28Layout.setVerticalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -9404,48 +9404,120 @@ public final class NominaS_5 extends javax.swing.JFrame {
             pst.setString(28, JueT.getSelectedItem().toString());
             pst.setString(29, VieT.getSelectedItem().toString());
             pst.setString(30, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
-            pst.setString(31, HE.getText());
-            pst.setString(32, THE.getText());
-            pst.setString(33, RI.getText());
-            pst.setString(34, ISR.getText());
-            pst.setString(35, RF.getText());
-            pst.setString(36, ADN.getText());
-            pst.setString(37, Presp.getText());
-            pst.setString(38, Rembolso.getText());
-            pst.setString(39, deposito.getText());
-            pst.setString(40, obs.getText());
-            pst.setInt(41, Integer.parseInt(NDL.getText()));
+            pst.setString(31, R.getText());
+            pst.setString(32, PCR.getText());
+            pst.setString(33, Dpi.getText());
+            pst.setString(34, pds.getText());
+            pst.setString(35, Ddv.getText());
+            pst.setString(36, PDDDV.getText());
+            pst.setString(37, DD.getText());
+            pst.setString(38, PDDD.getText());
+            pst.setString(39, DL.getText());
+            pst.setString(40, PDDL.getText());
+            pst.setString(41, dt.getText());
+            pst.setString(42, PDDT.getText());
+            pst.setString(43, DSGS.getText());
+            pst.setString(44, PDDDDSGS.getText());
+            pst.setString(45, FJ.getText());
+            pst.setString(46, DO.getText());
+            pst.setString(47, DF.getText());
+            pst.setString(48, PDDF.getText());
+            pst.setString(49, DFT.getText());
+            pst.setString(50, PDDFT.getText());
+            pst.setString(51, apy.getText());
+            pst.setString(52, Rembolso.getText());
+            pst.setString(53, Lugar.getText());
+            pst.setString(54, ADD.getText());
+            pst.setString(55, HE.getText());
+            pst.setString(56, THE.getText());
+            pst.setString(57, F.getText());
+            pst.setString(58, DPF.getText());
+            pst.setString(59, DI.getText());
+            pst.setString(60, RI.getText());
+            pst.setString(61, RF.getText());
+            pst.setString(62, ISR.getText());
+            pst.setString(63, Presp.getText());
+            pst.setString(64, cda.getText());
+            pst.setString(65, Odtp.getText());
+            pst.setString(66, Fdb.getText());
+            pst.setString(67, Sancion.getText());
+            pst.setString(68, Chamarra.getText());
+            pst.setString(69, Chaleco.getText());
+            pst.setString(70, Fde.getText());
+            pst.setString(71, Grua.getText());
+            pst.setString(72, Pantalon.getText());
+            pst.setString(73, Credencial.getText());
+            pst.setString(74, Bp.getText());
+            pst.setString(75, Playera.getText());
+            pst.setString(76, Corbata.getText());
+            pst.setString(77, ADN.getText());
+            pst.setString(78, DVT.getText());
+            pst.setString(79, deposito.getText());
+            pst.setString(80, obs.getText());
+            pst.setInt(81, Integer.parseInt(NDL.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Modificada");
 
             DAB.clearSelection();
-            ADN.setText("0");
             ISR.setText("0");
+            RI.setText("0");
             RF.setText("0");
+            PH.setText("0");
+            HE.setText("0");
+            THE.setText("0");
+            DAB.clearSelection();
+            NSprenom.setText("0");
+            ADN.setText("0");
+            QAcdanom.setText("0");
+            NODTnom.setText("0");
+            NCDANom.setText("0");
+            NCDANom.setText("0");
             NDL.setText("0");
+            NE.setText("0");
             Ap.setText("");
             am.setText("");
             name.setText("");
             Bono.setText("0");
+            Bono1.setText("0");
             cta.setText("");
             ban.setText("");
             Zon.setText("");
             ServN.setText("");
             sueldo.setText("0");
             pd.setText("0");
-            PH.setText("0");
-            HE.setText("0");
-            THE.setText("0");
-            RI.setText("0");
+            Fdb.setText("0");
+            Fde.setText("0");
+            Bp.setText("0");
+            Sancion.setText("0");
+            Grua.setText("0");
+            Playera.setText("0");
+            Chamarra.setText("0");
+            Pantalon.setText("0");
+            Corbata.setText("0");
+            Chaleco.setText("0");
+            Credencial.setText("0");
+            DVT.setText("0");
+            apy.setText("0");
+            Lugar.setText("");
+            DI.setText("26.98");
+            cda.setText("0");
             Presp.setText("0");
             obs.setText("");
+            ADD.setText("0");
             Rembolso.setText("0");
             deposito.setText("0");
+            Odtp.setText("0");
             NumPrenom.setText("0");
             NSprenom.setText("0");
             Pagadoprenom.setText("0");
             Pendienteprenom.setText("0");
+            TACDANOM.setText("0");
+            NODTnom.setText("0");
+            NQODTnom.setText("0");
+            PagODTnom.setText("0");
+            PenODTnom.setText("0");
+            QAcdanom.setText("0");
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar nomina: " + e.getMessage());
@@ -9455,15 +9527,28 @@ public final class NominaS_5 extends javax.swing.JFrame {
 //Agregar nomina semanal
     public void AgregarNs() {
 
-        String SQL = "INSERT INTO `nominasem.detallada." + Zon.getText() + "` (`#Lista`, `#Empleado`, `Apellido P`, `Apellido M`,"
-                + " `Nombre(s)`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`,"
-                + " `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,"
-                + " `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, "
-                + "`Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, "
-                + "`Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Horas extras`,"
-                + " `Total horas extra`, `Retencion infonavit`, `ISR`, `Fonacot`, `Adelanto de nomina`, `Prestamos`, `Rembolso`, "
-                + " `Deposito`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `nominasem.detallada." + Zon.getText() + "` "
+                + "(`#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`,"
+                + " `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, "
+                + "`Por dia`, `Por hora`, `año`, `Semana`, `Fecha sabado`, `Fecha domingo`, "
+                + "`Fecha lunes`, `Fecha martes`, `Fecha miercoles`, `Fecha jueves`, "
+                + "`Fecha viernes`, `Sabado`, `Domingo`, `Lunes`, `Martes`, `Miercoles`, "
+                + "`Jueves`, `Viernes`, `Fecha de pago`, `Dias con retardos`, `Pago con retardos`, "
+                + "`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`,"
+                + " `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`,"
+                + " `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, "
+                + "`Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,"
+                + " `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, "
+                + "`Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`,"
+                + " `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`,"
+                + " `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`,"
+                + " `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`,"
+                + " `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`,"
+                + " `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, "
+                + "`Adelanto de Nomina`, `Total de descuentos`, `Deposito`, `Observaciones`) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -9497,23 +9582,64 @@ public final class NominaS_5 extends javax.swing.JFrame {
             pst.setString(28, JueT.getSelectedItem().toString());
             pst.setString(29, VieT.getSelectedItem().toString());
             pst.setString(30, ((JTextField) FDP.getDateEditor().getUiComponent()).getText());
-            pst.setString(31, HE.getText());
-            pst.setString(32, THE.getText());
-            pst.setString(33, RI.getText());
-            pst.setString(34, ISR.getText());
-            pst.setString(35, RF.getText());
-            pst.setString(36, ADN.getText());
-            pst.setString(37, Presp.getText());
-            pst.setString(38, Rembolso.getText());
-            pst.setString(39, deposito.getText());
-            pst.setString(40, obs.getText());
+            pst.setString(31, R.getText());
+            pst.setString(32, PCR.getText());
+            pst.setString(33, Dpi.getText());
+            pst.setString(34, pds.getText());
+            pst.setString(35, Ddv.getText());
+            pst.setString(36, PDDDV.getText());
+            pst.setString(37, DD.getText());
+            pst.setString(38, PDDD.getText());
+            pst.setString(39, DL.getText());
+            pst.setString(40, PDDL.getText());
+            pst.setString(41, dt.getText());
+            pst.setString(42, PDDT.getText());
+            pst.setString(43, DSGS.getText());
+            pst.setString(44, PDDDDSGS.getText());
+            pst.setString(45, FJ.getText());
+            pst.setString(46, DO.getText());
+            pst.setString(47, DF.getText());
+            pst.setString(48, PDDF.getText());
+            pst.setString(49, DFT.getText());
+            pst.setString(50, PDDFT.getText());
+            pst.setString(51, apy.getText());
+            pst.setString(52, Rembolso.getText());
+            pst.setString(53, Lugar.getText());
+            pst.setString(54, ADD.getText());
+            pst.setString(55, HE.getText());
+            pst.setString(56, THE.getText());
+            pst.setString(57, F.getText());
+            pst.setString(58, DPF.getText());
+            pst.setString(59, DI.getText());
+            pst.setString(60, RI.getText());
+            pst.setString(61, RF.getText());
+            pst.setString(62, ISR.getText());
+            pst.setString(63, Presp.getText());
+            pst.setString(64, cda.getText());
+            pst.setString(65, Odtp.getText());
+            pst.setString(66, Fdb.getText());
+            pst.setString(67, Sancion.getText());
+            pst.setString(68, Chamarra.getText());
+            pst.setString(69, Chaleco.getText());
+            pst.setString(70, Fde.getText());
+            pst.setString(71, Grua.getText());
+            pst.setString(72, Pantalon.getText());
+            pst.setString(73, Credencial.getText());
+            pst.setString(74, Bp.getText());
+            pst.setString(75, Playera.getText());
+            pst.setString(76, Corbata.getText());
+            pst.setString(77, ADN.getText());
+            pst.setString(78, DVT.getText());
+            pst.setString(79, deposito.getText());
+            pst.setString(80, obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Nomina Semanal Agregada");
 
-            double QPREP = Double.parseDouble(this.Pagadoprenom.getText());
+            //operacion para pago de Pres
+            double QPREP = Double.parseDouble(this.NQprenom.getText());
             double QPREPT = QPREP + 1;
-            Pagadoprenom.setText("" + QPREPT);
+            NQprenom.setText("" + QPREPT);
             double PPN = Double.parseDouble(this.Pagadoprenom.getText());
             double PENPN = Double.parseDouble(this.Pendienteprenom.getText());
             double PP = Double.parseDouble(this.Presp.getText());
@@ -9521,37 +9647,96 @@ public final class NominaS_5 extends javax.swing.JFrame {
             Pagadoprenom.setText("" + TP);
             double TPEN = PENPN - PP;
             Pendienteprenom.setText("" + TPEN);
-            Pagopres();
+
+            //Operacion para pago ODT
+            double QODTP = Double.parseDouble(this.NQODTnom.getText());
+            double QODTPT = QODTP + 1;
+            NQODTnom.setText("" + QODTPT);
+            double PODTN = Double.parseDouble(this.PagODTnom.getText());
+            double ODTPN = Double.parseDouble(this.PenODTnom.getText());
+            double ODTP = Double.parseDouble(this.Odtp.getText());
+            double TODT = PODTN + ODTP;
+            PagODTnom.setText("" + TODT);
+            double TODTT = ODTPN - ODTP;
+            PenODTnom.setText("" + TODTT);
+
+//operacion para agregar abono CDA
+            double APQna = Double.parseDouble(this.cda.getText());
+            double QA = Double.parseDouble(this.QAcdanom.getText());
+            double QAT = QA + 1;
+            QAcdanom.setText("" + QAT);
+            double totalahorrado = APQna * (QAT);
+            TACDANOM.setText("" + totalahorrado);
+            AgregarPagoODT();
+            editarCDAdnom();
+            AgregarPagoCDA();
             AgregarPagoPres();
+            Pagopres();
+            PagoODT();
+            shareODTnom();
             sharepresnom();
+            sharecdanom();
             FunMD();
+
             DAB.clearSelection();
-            NDL.setText("0");
-            ADN.setText("0");
             ISR.setText("0");
+            RI.setText("0");
             RF.setText("0");
+            PH.setText("0");
+            HE.setText("0");
+            THE.setText("0");
+            DAB.clearSelection();
+            NSprenom.setText("0");
+            ADN.setText("0");
+            QAcdanom.setText("0");
+            NODTnom.setText("0");
+            NCDANom.setText("0");
+            NCDANom.setText("0");
+            NDL.setText("0");
+            NE.setText("0");
             Ap.setText("");
             am.setText("");
             name.setText("");
             Bono.setText("0");
+            Bono1.setText("0");
             cta.setText("");
             ban.setText("");
             Zon.setText("");
             ServN.setText("");
             sueldo.setText("0");
             pd.setText("0");
-            PH.setText("0");
-            HE.setText("0");
-            THE.setText("0");
-            RI.setText("0");
+            Fdb.setText("0");
+            Fde.setText("0");
+            Bp.setText("0");
+            Sancion.setText("0");
+            Grua.setText("0");
+            Playera.setText("0");
+            Chamarra.setText("0");
+            Pantalon.setText("0");
+            Corbata.setText("0");
+            Chaleco.setText("0");
+            Credencial.setText("0");
+            DVT.setText("0");
+            apy.setText("0");
+            Lugar.setText("");
+            DI.setText("26.98");
+            cda.setText("0");
             Presp.setText("0");
             obs.setText("");
+            ADD.setText("0");
             Rembolso.setText("0");
             deposito.setText("0");
+            Odtp.setText("0");
             NumPrenom.setText("0");
             NSprenom.setText("0");
             Pagadoprenom.setText("0");
             Pendienteprenom.setText("0");
+            TACDANOM.setText("0");
+            NODTnom.setText("0");
+            NQODTnom.setText("0");
+            PagODTnom.setText("0");
+            PenODTnom.setText("0");
+            QAcdanom.setText("0");
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al Agregar Nomina: " + e.getMessage());
@@ -15021,6 +15206,65 @@ public final class NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tnom8MouseClicked
 
     private void CleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CleanActionPerformed
+        DAB.clearSelection();
+        ISR.setText("0");
+        RI.setText("0");
+        RF.setText("0");
+        PH.setText("0");
+        HE.setText("0");
+        THE.setText("0");
+        DAB.clearSelection();
+        NSprenom.setText("0");
+        ADN.setText("0");
+        QAcdanom.setText("0");
+        NODTnom.setText("0");
+        NCDANom.setText("0");
+        NCDANom.setText("0");
+        NDL.setText("0");
+        NE.setText("0");
+        Ap.setText("");
+        am.setText("");
+        name.setText("");
+        Bono.setText("0");
+        Bono1.setText("0");
+        cta.setText("");
+        ban.setText("");
+        Zon.setText("");
+        ServN.setText("");
+        sueldo.setText("0");
+        pd.setText("0");
+        Fdb.setText("0");
+        Fde.setText("0");
+        Bp.setText("0");
+        Sancion.setText("0");
+        Grua.setText("0");
+        Playera.setText("0");
+        Chamarra.setText("0");
+        Pantalon.setText("0");
+        Corbata.setText("0");
+        Chaleco.setText("0");
+        Credencial.setText("0");
+        DVT.setText("0");
+        apy.setText("0");
+        Lugar.setText("");
+        DI.setText("26.98");
+        cda.setText("0");
+        Presp.setText("0");
+        obs.setText("");
+        ADD.setText("0");
+        Rembolso.setText("0");
+        deposito.setText("0");
+        Odtp.setText("0");
+        NumPrenom.setText("0");
+        NSprenom.setText("0");
+        Pagadoprenom.setText("0");
+        Pendienteprenom.setText("0");
+        TACDANOM.setText("0");
+        NODTnom.setText("0");
+        NQODTnom.setText("0");
+        PagODTnom.setText("0");
+        PenODTnom.setText("0");
+        QAcdanom.setText("0");
         DAB.clearSelection();
         ISR.setText("0");
         ADN.setText("0");
