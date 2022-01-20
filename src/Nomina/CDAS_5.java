@@ -19,14 +19,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class CDAQ_5 extends javax.swing.JFrame {
+public final class CDAS_5 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public CDAQ_5() {
+    public CDAS_5() {
         initComponents();
         MDCDA();
         sumaTA();
@@ -46,11 +46,11 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         FilAMPCDA.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(CDAQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(CDAS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
-    public CDAQ_5(Logica_usuarios usr, Logica_permisos LP) {
+    public CDAS_5(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -72,8 +72,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         FilAMPCDA.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(CDAQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        setTitle("Nomina: Caja de ahorro. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+        setIconImage(new ImageIcon(CDAS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setTitle("Nomina: Caja de ahorro Semanal. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
             case 0 -> {
@@ -194,7 +194,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
     public void MODPAGOCDA() {
 
-        String SQL = "UPDATE `nomina.pagos.cda` SET `Caja de ahorro` = ?, `Observaciones` = ?, "
+        String SQL = "UPDATE `nominasem.pagos.cda` SET `Caja de ahorro` = ?, `Observaciones` = ?, "
                 + "`Qnas aportadas` = ?, `# de recibo de pago`"
                 + " = ? WHERE `nomina.pagos.cda`.`#Folio` = ?";
 
@@ -226,16 +226,16 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         String FiltroN = FilnamePCDA.getText();
         String FAP = FilAPPCDA.getText();
         String FAM = FilAMPCDA.getText();
-        String where = "SELECT * FROM `nomina.pagos.cda`";
+        String where = "SELECT * FROM `nominasem.pagos.cda`";
 
         if (!"".equals(FiltroN)) {
-            where = "SELECT * FROM `nomina.pagos.cda`"
+            where = "SELECT * FROM `nominasem.pagos.cda`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            where = "SELECT * FROM `nomina.pagos.cda`"
+            where = "SELECT * FROM `nominasem.pagos.cda`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            where = "SELECT * FROM `nomina.pagos.cda`"
+            where = "SELECT * FROM `nominasem.pagos.cda`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         }
 
@@ -301,14 +301,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     //Editar CDA
     public void editarCDA() {
 
-        String SQL = "UPDATE `nomina.cajadeahorro` SET `#caja` = ?,"
+        String SQL = "UPDATE `nominasem.cajadeahorro` SET `#caja` = ?,"
                 + " `#exp_Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?,"
                 + " `Nombre(s)` = ?, `Zona` = ?, `Servicio` = ?, "
                 + "`Ahorro por quincena` = ?, `Quincenas Ahorradas` = ?,"
                 + " `Total Ahorrado` = ?, `caja anticipada` = ?, `total a pagar` = ?, "
                 + "`% interes` = ?, `interes a pagar` = ?, `Por final pagar` = ?, "
                 + "`Status` = ?, `Observacion 1` = ?, `Observaciones` = ? WHERE "
-                + "`nomina.cajadeahorro`.`#caja` = ?";
+                + "`nominasem.cajadeahorro`.`#caja` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -365,7 +365,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     //agregar caja de ahorro
     public void AgregarCDA() {
 
-        String SQL = "INSERT INTO `nomina.cajadeahorro` (`#caja`, `#exp_Empleado`,"
+        String SQL = "INSERT INTO `nominasem.cajadeahorro` (`#caja`, `#exp_Empleado`,"
                 + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
                 + " `Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado`,"
                 + " `caja anticipada`, `total a pagar`, `% interes`, `interes a pagar`,"
@@ -443,14 +443,14 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         String Share = BusnameCDA.getText();
         String ShareAP = FilAPCDA.getText();
         String ShareAM = FillAMCDA.getText();
-        String where = "select * from `nomina.cajadeahorro`";
+        String where = "select * from `nominasem.cajadeahorro`";
 
         if (!"".equals(Share)) {
-            where = " select * from `nomina.cajadeahorro` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+            where = " select * from `nominasem.cajadeahorro` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
         } else if (!"".equals(ShareAP)) {
-            where = " select * from `nomina.cajadeahorro` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+            where = " select * from `nominasem.cajadeahorro` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
         } else if (!"".equals(ShareAM)) {
-            where = " select * from `nomina.cajadeahorro` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+            where = " select * from `nominasem.cajadeahorro` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
         }
 
         try {
@@ -629,7 +629,6 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
-        CDA3 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -648,12 +647,12 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         Nomsem = new javax.swing.JMenuItem();
         NomSemGen = new javax.swing.JMenuItem();
         PresSem = new javax.swing.JMenuItem();
-        CDA2 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
         CNQ = new javax.swing.JMenuItem();
         PRES = new javax.swing.JMenuItem();
         NomGen = new javax.swing.JMenuItem();
+        CDA = new javax.swing.JMenuItem();
         LDA = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -1439,14 +1438,6 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem11);
 
-        CDA3.setText("Caja de ahorro");
-        CDA3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CDA3ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(CDA3);
-
         jMenu5.add(jMenu7);
 
         jMenuItem12.setText("Listas de asistencia");
@@ -1577,14 +1568,6 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         });
         jMenu10.add(PresSem);
 
-        CDA2.setText("Caja de ahorro");
-        CDA2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CDA2ActionPerformed(evt);
-            }
-        });
-        jMenu10.add(CDA2);
-
         jMenu4.add(jMenu10);
 
         jMenu11.setText("Nomina quincenal");
@@ -1624,6 +1607,15 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             }
         });
         jMenu11.add(NomGen);
+
+        CDA.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA.setText("Caja de ahorro");
+        CDA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDAActionPerformed(evt);
+            }
+        });
+        jMenu11.add(CDA);
 
         jMenu4.add(jMenu11);
 
@@ -1913,7 +1905,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         try {
 
             int filaseleccionada = Tablacda.getSelectedRow();
-            String sql = "delete from nomina.cajadeahorro where #caja=" + Tablacda.getValueAt(filaseleccionada, 0);
+            String sql = "delete from nominasem.cajadeahorro where #caja=" + Tablacda.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
@@ -2120,7 +2112,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void CDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA1ActionPerformed
-        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        CDAS_5 regr = new CDAS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDA1ActionPerformed
@@ -2266,15 +2258,11 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
-    private void CDA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA2ActionPerformed
-        CDAS_5 regr = new CDAS_5(usr, LP);
+    private void CDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDAActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_CDA2ActionPerformed
-
-    private void CDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CDA3ActionPerformed
+    }//GEN-LAST:event_CDAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2293,20 +2281,22 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CDAS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CDAS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CDAS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CDAQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CDAS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new CDAQ_5().setVisible(true);
+            new CDAS_5().setVisible(true);
         });
     }
 
@@ -2321,9 +2311,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BusAPcdash;
     private javax.swing.JTextField BusnameCDA;
     private javax.swing.JTextField Busnamecdash;
+    private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA1;
-    private javax.swing.JMenuItem CDA2;
-    private javax.swing.JMenuItem CDA3;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenuItem CNQ1;
     private javax.swing.JTextField CajaA;

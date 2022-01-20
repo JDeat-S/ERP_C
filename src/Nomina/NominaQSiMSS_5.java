@@ -5125,6 +5125,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        CDA2 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -5143,6 +5144,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         Nomsem = new javax.swing.JMenuItem();
         NomSemGen = new javax.swing.JMenuItem();
         PresSem = new javax.swing.JMenuItem();
+        CDA4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ODT = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
@@ -10413,6 +10415,14 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem10);
 
+        CDA2.setText("Caja de ahorro");
+        CDA2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA2ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(CDA2);
+
         jMenu5.add(jMenu7);
 
         jMenuItem11.setText("Listas de asistencia");
@@ -10542,6 +10552,14 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
             }
         });
         jMenu3.add(PresSem);
+
+        CDA4.setText("Caja de ahorro");
+        CDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CDA4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(CDA4);
 
         jMenu1.add(jMenu3);
 
@@ -23062,6 +23080,18 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
+    private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA4ActionPerformed
+
+    private void CDA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA2ActionPerformed
+        CDAS_5 regr = new CDAS_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -24160,6 +24190,8 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
     private javax.swing.JRadioButton Bsi;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA1;
+    private javax.swing.JMenuItem CDA2;
+    private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JButton CS;
     private javax.swing.JButton CS10;
