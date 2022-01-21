@@ -7,6 +7,8 @@ import Admin.*;
 import RH.*;
 import Conexion.ConexionSQL;
 import Logicas.*;
+import Logicas.BDNomS.Logica_bd_NomCDAS;
+import Logicas.BDNomS.Logica_bd_pagosCDAS;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -2264,12 +2266,12 @@ public final class CDAS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ADMV2ActionPerformed
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
-        Logica_bd_NomCDAQ obj = new Logica_bd_NomCDAQ();
+        Logica_bd_NomCDAS obj = new Logica_bd_NomCDAS();
         obj.BDRH();
     }//GEN-LAST:event_jLabel4MousePressed
 
     private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
-        Logica_bd_pagosCDAQ obj = new Logica_bd_pagosCDAQ();
+        Logica_bd_pagosCDAS obj = new Logica_bd_pagosCDAS();
         obj.BDRH();
     }//GEN-LAST:event_jLabel5MousePressed
 
