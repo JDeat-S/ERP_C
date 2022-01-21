@@ -1,7 +1,11 @@
 package RH;
 
-import Nomina.PresS_5;
-import Nomina.ODTQ_5;
+import Nomina.ModulosS.CDAS_5;
+import Nomina.ModulosS.ODTS_5;
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.PresQ_5;
+import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosQ.ODTQ_5;
 import Nomina.NominaS_simss_5;
 import Nomina.NominaS_5;
 import Nomina.NominaQSiMSS_5;

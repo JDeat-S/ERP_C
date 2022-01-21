@@ -1,5 +1,7 @@
-package Nomina;
+package Nomina.ModulosS;
 
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.PresQ_5;
 import VentanasDReportes.*;
 import Admin.*;
 import Conexion.ConexionSQL;
@@ -9,6 +11,11 @@ import Logicas.BDNomQ.Logica_bd_NomODTQ;
 import Logicas.BDNomQ.Logica_bd_pagosODTQ;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
+import Nomina.Listas_5;
+import Nomina.NominaQSiMSS_5;
+import Nomina.NominaQ_5;
+import Nomina.NominaS_5;
+import Nomina.NominaS_simss_5;
 import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,7 +31,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class ODTQ_5 extends javax.swing.JFrame {
+public final class ODTS_5 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -38,7 +45,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public ODTQ_5() {
+    public ODTS_5() {
         initComponents();
         MDT();
         LabelODT1.setVisible(false);
@@ -63,11 +70,11 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         sharetp();
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(ODTQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(ODTS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
 
     }
 
-    public ODTQ_5(Logica_usuarios usr, Logica_permisos LP) {
+    public ODTS_5(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -94,7 +101,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         sharetp();
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(ODTQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(ODTS_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         setTitle("Nomina: Orden de taller. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
@@ -238,7 +245,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         } else {
             Iat = ".";
         }
-        String SQL = "INSERT INTO `nomina.odt` (`idTaller`, `Fecha de expedicion`,"
+        String SQL = "INSERT INTO `nominasem.odt` (`idTaller`, `Fecha de expedicion`,"
                 + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
                 + " `Marca`, `Modelo`, `Placas`, `Color`, `# de piezas`, `Daño`,"
                 + " `Costo total`, `Ingreso a taller`, `Status`, `Pago a`, `Importe a descontar`, `Quincenas a pagar`,"
@@ -319,14 +326,14 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         } else {
             Iat = "Si";
         }
-        String SQL = "UPDATE `nomina.odt` SET `idTaller` = ?, "
+        String SQL = "UPDATE `nominasem.odt` SET `idTaller` = ?, "
                 + "`Fecha de expedicion` = ?, `Apellido P` = ?,"
                 + " `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?,"
                 + " `Servicio` = ?, `Marca` = ?, `Modelo` = ?, `Placas` = ?,"
                 + " `Color` = ?, `# de piezas` = ?, `Daño` = ?, `Costo total` = ?,"
                 + " `Ingreso a taller` = ?, `Status` = ?, `Pago a` = ?, `Importe a descontar` = ?, `Quincenas a pagar` = ?, "
                 + " `Pagado` = ?, `Pendiente` = ?, `Por quincenas` = ?, `Forma de pago` = ?,"
-                + " `Quincenas pagadas` = ?, `Observaciones` = ? WHERE `nomina.odt`.`idTaller` = ?";
+                + " `Quincenas pagadas` = ?, `Observaciones` = ? WHERE `nominasem.odt`.`idTaller` = ?";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -399,14 +406,14 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         String Share = Fnameodt.getText();
         String ShareAP = FilApodt.getText();
         String ShareAM = FilAmodt.getText();
-        String where = "select * from `nomina.odt`";
+        String where = "select * from `nominasem.odt`";
 
         if (!"".equals(Share)) {
-            where = " select * from `nomina.odt` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+            where = " select * from `nominasem.odt` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
         } else if (!"".equals(ShareAP)) {
-            where = " select * from `nomina.odt` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+            where = " select * from `nominasen.odt` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
         } else if (!"".equals(ShareAM)) {
-            where = " select * from `nomina.odt` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+            where = " select * from `nominasem.odt` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
         }
 
         try {
@@ -519,7 +526,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         try {
 
             int filaseleccionada = OdT.getSelectedRow();
-            String sql = "delete from `nomina.odt` where idtaller=" + OdT.getValueAt(filaseleccionada, 0);
+            String sql = "delete from `nominasem.odt` where idtaller=" + OdT.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
@@ -537,16 +544,16 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         String FiltroN = FilnamePODT.getText();
         String FAP = FilApPODT.getText();
         String FAM = FilAmPODT.getText();
-        String where = "SELECT * FROM `nomina.pagos.odt`";
+        String where = "SELECT * FROM `nominasem.pagos.odt`";
 
         if (!"".equals(FiltroN)) {
-            where = "SELECT * FROM `nomina.pagos.odt`"
+            where = "SELECT * FROM `nominasem.pagos.odt`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            where = "SELECT * FROM `nomina.pagos.odt`"
+            where = "SELECT * FROM `nominasem.pagos.odt`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            where = "SELECT * FROM `nomina.pagos.odt`"
+            where = "SELECT * FROM `nominasem.pagos.odt`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         }
 
@@ -745,8 +752,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
-        CDA4 = new javax.swing.JMenuItem();
-        ODT2 = new javax.swing.JMenuItem();
+        CDA3 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
@@ -765,13 +771,13 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         Nomsem = new javax.swing.JMenuItem();
         NomSemGen = new javax.swing.JMenuItem();
         PresSem = new javax.swing.JMenuItem();
-        CDA3 = new javax.swing.JMenuItem();
-        ODT3 = new javax.swing.JMenuItem();
+        CDA2 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
         CNQ = new javax.swing.JMenuItem();
         PRES = new javax.swing.JMenuItem();
         NomGen = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
+        ODT2 = new javax.swing.JMenuItem();
         LDA = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -1051,16 +1057,16 @@ public final class ODTQ_5 extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        jLabel71.setText("Quincenas a pagar:");
+        jLabel71.setText("Semanas a pagar:");
 
-        QAP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "1 Quincena", "2 Quincenas", "3 Quincenas", "4 Quincenas", "5 Quincenas", "6 Quincenas", "7 Quincenas", "8 Quincenas", "9 Quincenas", "10 Quincenas", "11 Quincenas", "12 Quincenas", "13 Quincenas", "14 Quincenas", "15 Quincenas", "16 Quincenas", "17 Quincenas", "18 Quincenas", "19 Quincenas", "20 Quincenas", "21 Quincenas", "22 Quincenas", "23 Quincenas", "24 Quincenas" }));
+        QAP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "1 Semana", "2 Semanas", "3 Semanas", "4 Semanas", "5 Semanas", "6 Semanas", "7 Semanas", "8 Semanas", "9 Semanas", "10 Semanas", "11 Semanas", "12 Semanas", "13 Semanas", "14 Semanas", "15 Semanas", "16 Semanas", "17 Semanas", "18 Semanas", "19 Semanas", "20 Semanas", "21 Semanas", "22 Semanas", "23 Semanas", "24 Semanas" }));
         QAP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 QAPItemStateChanged(evt);
             }
         });
 
-        jLabel72.setText("Por Quincena:");
+        jLabel72.setText("Por Semana:");
 
         CS6.setText("Cerrar sesion");
         CS6.addActionListener(new java.awt.event.ActionListener() {
@@ -1090,7 +1096,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
 
         jLabel32.setText("Filtros:");
 
-        jLabel151.setText("Quincenas pagadas:");
+        jLabel151.setText("Semanas pagadas:");
 
         QPodt.setText("0");
 
@@ -1573,21 +1579,14 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         });
         jMenu7.add(jMenuItem11);
 
-        CDA4.setText("Caja de ahorro");
-        CDA4.addActionListener(new java.awt.event.ActionListener() {
+        CDA3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA3.setText("Caja de ahorro");
+        CDA3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CDA4ActionPerformed(evt);
+                CDA3ActionPerformed(evt);
             }
         });
-        jMenu7.add(CDA4);
-
-        ODT2.setText("Ordenes de taller");
-        ODT2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ODT2ActionPerformed(evt);
-            }
-        });
-        jMenu7.add(ODT2);
+        jMenu7.add(CDA3);
 
         jMenu5.add(jMenu7);
 
@@ -1719,21 +1718,14 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         });
         jMenu10.add(PresSem);
 
-        CDA3.setText("Caja de ahorro");
-        CDA3.addActionListener(new java.awt.event.ActionListener() {
+        CDA2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        CDA2.setText("Caja de ahorro");
+        CDA2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CDA3ActionPerformed(evt);
+                CDA2ActionPerformed(evt);
             }
         });
-        jMenu10.add(CDA3);
-
-        ODT3.setText("Ordenes de taller");
-        ODT3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ODT3ActionPerformed(evt);
-            }
-        });
-        jMenu10.add(ODT3);
+        jMenu10.add(CDA2);
 
         jMenu4.add(jMenu10);
 
@@ -1774,6 +1766,15 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             }
         });
         jMenu11.add(CDA);
+
+        ODT2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ODT2.setText("Ordenes de taller");
+        ODT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ODT2ActionPerformed(evt);
+            }
+        });
+        jMenu11.add(ODT2);
 
         jMenu4.add(jMenu11);
 
@@ -1889,7 +1890,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("1 Quincena")) {
+        if (dt.equals("1 Semana")) {
             Q1.setText("" + Q01 + "");
             Q2.setText("0");
             Q3.setText("0");
@@ -1915,7 +1916,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("2 Quincenas")) {
+        if (dt.equals("2 Semanas")) {
             Q1.setText("0");
             Q2.setText("" + Q02 + "");
             Q3.setText("0");
@@ -1941,7 +1942,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("3 Quincenas")) {
+        if (dt.equals("3 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("" + Q03 + "");
@@ -1968,7 +1969,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q24.setText("0");
         }
 
-        if (dt.equals("4 Quincenas")) {
+        if (dt.equals("4 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -1994,7 +1995,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("5 Quincenas")) {
+        if (dt.equals("5 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2020,7 +2021,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("6 Quincenas")) {
+        if (dt.equals("6 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2046,7 +2047,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("7 Quincenas")) {
+        if (dt.equals("7 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2072,7 +2073,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("8 Quincenas")) {
+        if (dt.equals("8 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2098,7 +2099,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("9 Quincenas")) {
+        if (dt.equals("9 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2124,7 +2125,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("10 Quincenas")) {
+        if (dt.equals("10 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2150,7 +2151,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("11 Quincenas")) {
+        if (dt.equals("11 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2176,7 +2177,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("12 Quincenas")) {
+        if (dt.equals("12 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2202,7 +2203,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("13 Quincenas")) {
+        if (dt.equals("13 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2228,7 +2229,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("14 Quincenas")) {
+        if (dt.equals("14 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2254,7 +2255,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("15 Quincenas")) {
+        if (dt.equals("15 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2280,7 +2281,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("16 Quincenas")) {
+        if (dt.equals("16 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2306,7 +2307,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("17 Quincenas")) {
+        if (dt.equals("17 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2332,7 +2333,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("18 Quincenas")) {
+        if (dt.equals("18 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2358,7 +2359,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("19 Quincenas")) {
+        if (dt.equals("19 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2384,7 +2385,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("20 Quincenas")) {
+        if (dt.equals("20 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2410,7 +2411,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("21 Quincenas")) {
+        if (dt.equals("21 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2436,7 +2437,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("22 Quincenas")) {
+        if (dt.equals("22 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2462,7 +2463,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("0");
             Q24.setText("0");
         }
-        if (dt.equals("23 Quincenas")) {
+        if (dt.equals("23 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2488,7 +2489,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
             Q23.setText("" + Q023 + "");
             Q24.setText("0");
         }
-        if (dt.equals("24 Quincenas")) {
+        if (dt.equals("24 Semanas")) {
             Q1.setText("0");
             Q2.setText("0");
             Q3.setText("0");
@@ -2801,7 +2802,7 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_FilAmPODTKeyReleased
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
-        ODTQ_5 regr = new ODTQ_5(usr, LP);
+        ODTS_5 regr = new ODTS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT1ActionPerformed
@@ -2977,27 +2978,23 @@ public final class ODTQ_5 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
+    private void CDA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA2ActionPerformed
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CDA2ActionPerformed
+
     private void CDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA3ActionPerformed
-        CDAS_5 regr = new CDAS_5(usr, LP);
+        CDAQ_5 regr = new CDAQ_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDA3ActionPerformed
-
-    private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
-        CDAS_5 regr = new CDAS_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_CDA4ActionPerformed
 
     private void ODT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT2ActionPerformed
         ODTS_5 regr = new ODTS_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT2ActionPerformed
-
-    private void ODT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ODT3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3016,20 +3013,22 @@ public final class ODTQ_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ODTQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ODTS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ODTQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ODTS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ODTQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ODTS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ODTQ_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ODTS_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new ODTQ_5().setVisible(true);
+            new ODTS_5().setVisible(true);
         });
     }
 
@@ -3043,8 +3042,8 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BusnameODT;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA1;
+    private javax.swing.JMenuItem CDA2;
     private javax.swing.JMenuItem CDA3;
-    private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JMenuItem CNQ1;
     private javax.swing.JButton CS6;
@@ -3083,7 +3082,6 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem Nomsem;
     private javax.swing.JMenuItem ODT1;
     private javax.swing.JMenuItem ODT2;
-    private javax.swing.JMenuItem ODT3;
     private javax.swing.JTextArea Observaciones;
     private javax.swing.JTable OdT;
     private javax.swing.JTextField PQT;

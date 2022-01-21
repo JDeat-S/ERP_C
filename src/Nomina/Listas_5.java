@@ -1,5 +1,9 @@
 package Nomina;
 
+import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.ODTQ_5;
+import Nomina.ModulosQ.PresQ_5;
 import VentanasDReportes.*;
 import Admin.*;
 import Conexion.ConexionSQL;

@@ -1,5 +1,11 @@
 package Admin;
 
+import Nomina.ModulosS.CDAS_5;
+import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosS.ODTS_5;
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.ODTQ_5;
+import Nomina.ModulosQ.PresQ_5;
 import RH.*;
 import Nomina.*;
 import Conexion.ConexionSQL;

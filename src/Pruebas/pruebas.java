@@ -1,5 +1,9 @@
 package Pruebas;
 
+import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.ODTQ_5;
+import Nomina.ModulosQ.PresQ_5;
 import Nomina.*;
 import VentanasDReportes.RepNom_7;
 import Admin.*;

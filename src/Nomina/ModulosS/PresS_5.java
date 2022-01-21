@@ -1,5 +1,8 @@
-package Nomina;
+package Nomina.ModulosS;
 
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.ODTQ_5;
+import Nomina.ModulosQ.PresQ_5;
 import Logicas.BDNomS.Logica_bd_pagosPresS;
 import Logicas.BDNomS.Logica_bd_NomPresS;
 import VentanasDReportes.*;
@@ -8,6 +11,11 @@ import RH.*;
 import Conexion.ConexionSQL;
 import Inicio.Inicio_1;
 import Logicas.*;
+import Nomina.Listas_5;
+import Nomina.NominaQSiMSS_5;
+import Nomina.NominaQ_5;
+import Nomina.NominaS_5;
+import Nomina.NominaS_simss_5;
 import java.awt.HeadlessException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
