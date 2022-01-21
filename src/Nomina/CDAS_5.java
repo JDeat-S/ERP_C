@@ -1925,7 +1925,7 @@ public final class CDAS_5 extends javax.swing.JFrame {
         try {
 
             int filaseleccionada = Tablacda.getSelectedRow();
-            String sql = "delete from nominasem.cajadeahorro where #caja=" + Tablacda.getValueAt(filaseleccionada, 0);
+            String sql = "delete from `nominasem.cajadeahorro` where #caja=" + Tablacda.getValueAt(filaseleccionada, 0);
             java.sql.Statement st = con.createStatement();
             int n = st.executeUpdate(sql);
             if (n >= 0) {
