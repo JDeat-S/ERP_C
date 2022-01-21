@@ -1,5 +1,7 @@
 package Nomina;
 
+import Logicas.BDNomS.Logica_bd_pagosPresS;
+import Logicas.BDNomS.Logica_bd_NomPresS;
 import VentanasDReportes.*;
 import Admin.*;
 import RH.*;

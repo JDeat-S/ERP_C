@@ -1,5 +1,6 @@
 package VentanasDReportes;
 
+import Logicas.BDNomQ.Logica_bd_NomODTQ;
 import Filtros.FiltrosZonas;
 import Logicas.*;
 import java.awt.Color;
@@ -7383,11 +7384,11 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 try {
                     throw e;
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Logica_bd_NomODTQ.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Logica_bd_NomODTQ.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -7730,11 +7731,11 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 try {
                     throw e;
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Logica_bd_NomODTQ.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Logica_bd_NomODTQ.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -8079,11 +8080,11 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 try {
                     throw e;
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Logica_bd_NomODTQ.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Logica_bd_NomODTQ.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -8427,11 +8428,11 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                 try {
                     throw e;
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Logica_bd_NomODTQ.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Logica_bd_NomODT.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Logica_bd_NomODTQ.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }

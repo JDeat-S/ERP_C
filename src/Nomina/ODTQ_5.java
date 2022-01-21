@@ -5,8 +5,8 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import RH.*;
 import Inicio.Inicio_1;
-import Logicas.Logica_bd_NomODT;
-import Logicas.Logica_bd_pagosODT;
+import Logicas.BDNomQ.Logica_bd_NomODTQ;
+import Logicas.BDNomQ.Logica_bd_pagosODTQ;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import java.awt.HeadlessException;
@@ -2963,12 +2963,12 @@ public final class ODTQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ADMV2ActionPerformed
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
-        Logica_bd_NomODT obj = new Logica_bd_NomODT();
+        Logica_bd_NomODTQ obj = new Logica_bd_NomODTQ();
         obj.BDRH();
     }//GEN-LAST:event_jLabel1MousePressed
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
-        Logica_bd_pagosODT obj = new Logica_bd_pagosODT();
+        Logica_bd_pagosODTQ obj = new Logica_bd_pagosODTQ();
         obj.BDRH();
     }//GEN-LAST:event_jLabel2MousePressed
 

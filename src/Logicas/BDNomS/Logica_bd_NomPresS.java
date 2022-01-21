@@ -1,4 +1,4 @@
-package Logicas;
+package Logicas.BDNomS;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -26,13 +26,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public class Logica_bd_NomCDA {
+public class Logica_bd_NomPresS {
 
     public void BDRH() {
 
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Reporte de Caja"));
+        chooser.setSelectedFile(new File("Reporte de Prestamos Semanales"));
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
@@ -54,10 +54,10 @@ public class Logica_bd_NomCDA {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `nomina.cajadeahorro`");
+            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `nominasem.prestamosem`");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
-                XSSFSheet spreadsheet = libro.createSheet("Datos CDA");
+                XSSFSheet spreadsheet = libro.createSheet("Datos Prestamos S");
 
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
@@ -88,7 +88,7 @@ public class Logica_bd_NomCDA {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-                cell.setCellValue("Consecutivo Caja de ahorro");
+                cell.setCellValue("Consecutivo Prestamos Semanales");
                 cell.setCellStyle(Encabezado);
 
                 spreadsheet.addMergedRegion(
@@ -101,116 +101,129 @@ public class Logica_bd_NomCDA {
                 );
                 row = spreadsheet.createRow(1);
                 cell = row.createCell(0);
-                cell.setCellValue("# Caja");
+                cell.setCellValue("# Prestamo");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(1);
-                cell.setCellValue("# Empleado");
+                cell.setCellValue("Fecha de Solicitud");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(2);
-                cell.setCellValue("Apellido P");
+                cell.setCellValue("Mes");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(3);
-                cell.setCellValue("Apellido M");
+                cell.setCellValue("Apellido P");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(4);
-                cell.setCellValue("Nombre(s)");
+                cell.setCellValue("Apellido M");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(5);
-                cell.setCellValue("Zona");
+                cell.setCellValue("Nombre(s)");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(6);
-                cell.setCellValue("Servicios");
+                cell.setCellValue("Zona");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(7);
-                cell.setCellValue("Ahorro Por quincena");
+                cell.setCellValue("Servicio");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(8);
-                cell.setCellValue("Quincenas ahorradas");
+                cell.setCellValue("Cantidad");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(9);
-                cell.setCellValue("Total ahorrado");
+                cell.setCellValue("Tiempo");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(10);
-                cell.setCellValue("caja anticipada");
+                cell.setCellValue("Interes");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(11);
-                cell.setCellValue("Total a pagar");
+                cell.setCellValue("Monto total");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(12);
-                cell.setCellValue("% interes");
+                cell.setCellValue("Por quincena");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(13);
-                cell.setCellValue("Interes a pagar");
+                cell.setCellValue("Carpeta de descuentos");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(14);
-                cell.setCellValue("por final a pagar");
+                cell.setCellValue("Fecha liberado");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(15);
                 cell.setCellValue("Status");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(16);
-                cell.setCellValue("Observacion 1");
+                cell.setCellValue("Metodo");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(17);
-                cell.setCellValue("Observaciones");
+                cell.setCellValue("Semanas Pagadas");
                 cell.setCellStyle(Contenido);
+                cell = row.createCell(18);
+                cell.setCellValue("Pendiente");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(19);
+                cell.setCellValue("Pagado");
+                cell.setCellStyle(Contenido);
+
                 int i = 2;
 
                 while (resultSetRH.next()) {
                     row = spreadsheet.createRow(i);
                     cell = row.createCell(0);
-                    cell.setCellValue(resultSetRH.getInt("#caja"));
+                    cell.setCellValue(resultSetRH.getInt(1));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
-                    cell.setCellValue(resultSetRH.getString("#exp_Empleado"));
+                    cell.setCellValue(resultSetRH.getString(2));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(2);
-                    cell.setCellValue(resultSetRH.getString("Apellido P"));
+                    cell.setCellValue(resultSetRH.getString(3));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(3);
-                    cell.setCellValue(resultSetRH.getString("Apellido M"));
+                    cell.setCellValue(resultSetRH.getString(4));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(4);
-                    cell.setCellValue(resultSetRH.getString("Nombre(s)"));
+                    cell.setCellValue(resultSetRH.getString(5));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(5);
-                    cell.setCellValue(resultSetRH.getString("Zona"));
+                    cell.setCellValue(resultSetRH.getString(6));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
-                    cell.setCellValue(resultSetRH.getString("Servicio"));
+                    cell.setCellValue(resultSetRH.getString(7));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    cell.setCellValue(resultSetRH.getString("Ahorro por quincena"));
+                    cell.setCellValue(resultSetRH.getString(8));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
-                    cell.setCellValue(resultSetRH.getString("Quincenas Ahorradas"));
+                    cell.setCellValue(resultSetRH.getString(9));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(9);
-                    cell.setCellValue(resultSetRH.getString("Total Ahorrado"));
+                    cell.setCellValue(resultSetRH.getString(10));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(10);
-                    cell.setCellValue(resultSetRH.getString("caja anticipada"));
+                    cell.setCellValue(resultSetRH.getString(11));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(11);
-                    cell.setCellValue(resultSetRH.getString("total a pagar"));
+                    cell.setCellValue(resultSetRH.getString(12));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(12);
-                    cell.setCellValue(resultSetRH.getString("% interes"));
+                    cell.setCellValue(resultSetRH.getString(13));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(13);
-                    cell.setCellValue(resultSetRH.getString("interes a pagar"));
+                    cell.setCellValue(resultSetRH.getString(14));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(14);
-                    cell.setCellValue(resultSetRH.getString("Por final pagar"));
+                    cell.setCellValue(resultSetRH.getString(15));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(15);
-                    cell.setCellValue(resultSetRH.getString("Status"));
+                    cell.setCellValue(resultSetRH.getString(16));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(16);
                     cell.setCellValue(resultSetRH.getString(17));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(17);
                     cell.setCellValue(resultSetRH.getString(18));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(18);
+                    cell.setCellValue(resultSetRH.getString(19));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(19);
+                    cell.setCellValue(resultSetRH.getString(20));
                     cell.setCellStyle(Contenido);
                     
                     i++;
@@ -235,11 +248,11 @@ public class Logica_bd_NomCDA {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Logica_bd_NomCDA.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Logica_bd_NomPresS.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Logica_bd_NomCDA.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Logica_bd_NomPresS.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

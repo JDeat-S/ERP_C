@@ -1,5 +1,6 @@
 package RH;
 
+import Logicas.BDRH.Logica_bd_RH;
 import Nomina.*;
 import Admin.*;
 import Conexion.ConexionSQL;

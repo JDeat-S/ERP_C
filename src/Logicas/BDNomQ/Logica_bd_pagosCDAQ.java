@@ -1,4 +1,4 @@
-package Logicas;
+package Logicas.BDNomQ;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -26,13 +26,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public class Logica_bd_pagosODT {
+public class Logica_bd_pagosCDAQ {
 
     public void BDRH() {
 
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Reporte de Pagos ODT"));
+        chooser.setSelectedFile(new File("Reporte de Pagos Caja"));
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
@@ -54,10 +54,10 @@ public class Logica_bd_pagosODT {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `nomina.pagos.odt`");
+            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `nomina.pagos.cda`");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
-                XSSFSheet spreadsheet = libro.createSheet("Datos pagos ODT");
+                XSSFSheet spreadsheet = libro.createSheet("Datos pagos CDA");
 
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
@@ -88,7 +88,7 @@ public class Logica_bd_pagosODT {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-                cell.setCellValue("Pagos de Orden de taller");
+                cell.setCellValue("Pagos de Caja de ahorro");
                 cell.setCellStyle(Encabezado);
 
                 spreadsheet.addMergedRegion(
@@ -107,7 +107,7 @@ public class Logica_bd_pagosODT {
                 cell.setCellValue("# Lista");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(2);
-                cell.setCellValue("# Orden");
+                cell.setCellValue("# Caja");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(3);
                 cell.setCellValue("# Empleado");
@@ -131,16 +131,16 @@ public class Logica_bd_pagosODT {
                 cell.setCellValue("Quincena");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(10);
-                cell.setCellValue("# Quincena");
+                cell.setCellValue("Caja de ahorro");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(11);
-                cell.setCellValue("Pagado");
+                cell.setCellValue("Total a pagar");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(12);
-                cell.setCellValue("Pendente");
+                cell.setCellValue("Quincenas aportadas");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(13);
-                cell.setCellValue("Pago de orden");
+                cell.setCellValue("# Recibo de pago");
                 cell.setCellStyle(Contenido);
                 int i = 2;
 
@@ -210,11 +210,11 @@ public class Logica_bd_pagosODT {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Logica_bd_pagosODT.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Logica_bd_pagosCDAQ.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Logica_bd_pagosODT.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Logica_bd_pagosCDAQ.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

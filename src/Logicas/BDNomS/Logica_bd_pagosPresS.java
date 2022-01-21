@@ -1,4 +1,4 @@
-package Logicas;
+package Logicas.BDNomS;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -26,13 +26,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public class Logica_bd_NomPresS {
+public class Logica_bd_pagosPresS {
 
     public void BDRH() {
 
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Reporte de Prestamos Semanales"));
+        chooser.setSelectedFile(new File("Reporte de Pagos Prestamos Semanales"));
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
@@ -54,10 +54,10 @@ public class Logica_bd_NomPresS {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `nominasem.prestamosem`");
+            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `nomina.pagos.prestamosem`");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
-                XSSFSheet spreadsheet = libro.createSheet("Datos Prestamos S");
+                XSSFSheet spreadsheet = libro.createSheet("Datos pagos PresQ");
 
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
@@ -88,7 +88,7 @@ public class Logica_bd_NomPresS {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-                cell.setCellValue("Consecutivo Prestamos Semanales");
+                cell.setCellValue("Pagos de Prestamos Semanales");
                 cell.setCellStyle(Encabezado);
 
                 spreadsheet.addMergedRegion(
@@ -101,66 +101,48 @@ public class Logica_bd_NomPresS {
                 );
                 row = spreadsheet.createRow(1);
                 cell = row.createCell(0);
-                cell.setCellValue("# Prestamo");
+                cell.setCellValue("# Folio");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(1);
-                cell.setCellValue("Fecha de Solicitud");
+                cell.setCellValue("# Lista");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(2);
-                cell.setCellValue("Mes");
+                cell.setCellValue("# Prestamo");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(3);
-                cell.setCellValue("Apellido P");
+                cell.setCellValue("# Empleado");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(4);
-                cell.setCellValue("Apellido M");
+                cell.setCellValue("Apellido P");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(5);
-                cell.setCellValue("Nombre(s)");
+                cell.setCellValue("Apellido M");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(6);
-                cell.setCellValue("Zona");
+                cell.setCellValue("Nombre(s)");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(7);
-                cell.setCellValue("Servicio");
+                cell.setCellValue("Zona");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(8);
-                cell.setCellValue("Cantidad");
+                cell.setCellValue("Servicio");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(9);
-                cell.setCellValue("Tiempo");
+                cell.setCellValue("Semana");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(10);
-                cell.setCellValue("Interes");
+                cell.setCellValue("# Semana");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(11);
-                cell.setCellValue("Monto total");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(12);
-                cell.setCellValue("Por quincena");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(13);
-                cell.setCellValue("Carpeta de descuentos");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(14);
-                cell.setCellValue("Fecha liberado");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(15);
-                cell.setCellValue("Status");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(16);
-                cell.setCellValue("Metodo");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(17);
-                cell.setCellValue("Semanas Pagadas");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(18);
-                cell.setCellValue("Pendiente");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(19);
                 cell.setCellValue("Pagado");
                 cell.setCellStyle(Contenido);
-
+                cell = row.createCell(12);
+                cell.setCellValue("Pendiente");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(13);
+                cell.setCellValue("Pago");
+                cell.setCellStyle(Contenido);
+                
                 int i = 2;
 
                 while (resultSetRH.next()) {
@@ -207,25 +189,6 @@ public class Logica_bd_NomPresS {
                     cell = row.createCell(13);
                     cell.setCellValue(resultSetRH.getString(14));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(14);
-                    cell.setCellValue(resultSetRH.getString(15));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(15);
-                    cell.setCellValue(resultSetRH.getString(16));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(16);
-                    cell.setCellValue(resultSetRH.getString(17));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(17);
-                    cell.setCellValue(resultSetRH.getString(18));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(18);
-                    cell.setCellValue(resultSetRH.getString(19));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(19);
-                    cell.setCellValue(resultSetRH.getString(20));
-                    cell.setCellStyle(Contenido);
-                    
                     i++;
                 }
 
@@ -248,11 +211,11 @@ public class Logica_bd_NomPresS {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Logica_bd_NomPresS.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Logica_bd_pagosPresS.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Logica_bd_NomPresS.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Logica_bd_pagosPresS.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

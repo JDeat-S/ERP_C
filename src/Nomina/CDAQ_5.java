@@ -1,5 +1,7 @@
 package Nomina;
 
+import Logicas.BDNomQ.Logica_bd_pagosCDAQ;
+import Logicas.BDNomQ.Logica_bd_NomCDAQ;
 import VentanasDReportes.*;
 import Admin.*;
 import RH.*;
@@ -2261,12 +2263,12 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ADMV2ActionPerformed
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
-        Logica_bd_NomCDA obj = new Logica_bd_NomCDA();
+        Logica_bd_NomCDAQ obj = new Logica_bd_NomCDAQ();
         obj.BDRH();
     }//GEN-LAST:event_jLabel4MousePressed
 
     private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
-        Logica_bd_pagosCDA obj = new Logica_bd_pagosCDA();
+        Logica_bd_pagosCDAQ obj = new Logica_bd_pagosCDAQ();
         obj.BDRH();
     }//GEN-LAST:event_jLabel5MousePressed
 
