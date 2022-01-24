@@ -4325,6 +4325,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe20KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe20KeyTyped(evt);
+            }
         });
 
         jLabel21.setText("Fecha");
@@ -4391,8 +4394,11 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
         Importe27.setText("0");
         Importe27.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe27KeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe27KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe27KeyTyped(evt);
             }
         });
 
@@ -6308,45 +6314,47 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_ImporteKeyReleased
 
     private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe1KeyReleased
 
     private void Importe2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe2KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe2KeyReleased
 
     private void Importe3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe3KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe3KeyReleased
 
     private void Importe4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe4KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe4KeyReleased
 
     private void Importe5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe5KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe5KeyReleased
 
     private void Importe6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe6KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe6KeyReleased
 
     private void Importe8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe8KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe8KeyReleased
 
     private void Importe9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe9KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe9KeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -7034,38 +7042,47 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     private void Importe10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe10KeyReleased
 
     private void Importe11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe11KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe11KeyReleased
 
     private void Importe12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe12KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe12KeyReleased
 
     private void Importe13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe13KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe13KeyReleased
 
     private void Importe14KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe14KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe14KeyReleased
 
     private void Importe15KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe15KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe15KeyReleased
 
     private void Importe16KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe16KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe16KeyReleased
 
     private void Importe18KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe18KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe18KeyReleased
 
     private void Importe19KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe19KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe19KeyReleased
 
     private void Mas9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas9ActionPerformed
@@ -7266,42 +7283,47 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     private void Importe20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe20KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe20KeyReleased
 
     private void Importe21KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe21KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe21KeyReleased
 
     private void Importe22KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe22KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe22KeyReleased
 
     private void Importe23KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe23KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe23KeyReleased
 
     private void Importe24KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe24KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe24KeyReleased
 
     private void Importe25KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe25KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe25KeyReleased
 
     private void Importe26KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe26KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe26KeyReleased
-
-    private void Importe27KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyPressed
-        Operaciones();
-    }//GEN-LAST:event_Importe27KeyPressed
 
     private void Importe28KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe28KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe28KeyReleased
 
     private void Importe29KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe29KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe29KeyReleased
 
     private void Menos18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos18ActionPerformed
@@ -7502,40 +7524,47 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     private void Importe30KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe30KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe30KeyReleased
 
     private void Importe31KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe31KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe31KeyReleased
 
     private void Importe32KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe32KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe32KeyReleased
 
     private void Importe33KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe33KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe33KeyReleased
 
     private void Importe34KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe34KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe34KeyReleased
 
     private void Importe35KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe35KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe35KeyReleased
 
     private void Importe37KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe37KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe37KeyReleased
 
     private void Importe38KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe38KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe38KeyReleased
 
     private void Importe39KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe39KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe39KeyReleased
 
     private void Menos27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos27ActionPerformed
@@ -8702,6 +8731,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     private void Importe17KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe17KeyReleased
 
     private void Importe30KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe30KeyTyped
@@ -8828,6 +8858,23 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         if ((car < '0' || car > '9') && (car < '.' || car > '.'))
             evt.consume();
     }//GEN-LAST:event_Importe39KeyTyped
+
+    private void Importe20KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe20KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe20KeyTyped
+
+    private void Importe27KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyReleased
+        ColorDB();
+        Operaciones();
+    }//GEN-LAST:event_Importe27KeyReleased
+
+    private void Importe27KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyTyped
+                char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe27KeyTyped
 
     /**
      * @param args the command line arguments
