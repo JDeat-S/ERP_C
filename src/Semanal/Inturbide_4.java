@@ -70,6 +70,15 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     public Inturbide_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        NVale1.setVisible(false);
+        NVale2.setVisible(false);
+        NVale3.setVisible(false);
+        NVale4.setVisible(false);
+        NVale5.setVisible(false);
+        NVale6.setVisible(false);
+        NVale7.setVisible(false);
+        NVale8.setVisible(false);
+        NVale9.setVisible(false);
         NPadron1.setVisible(false);
         NPadron2.setVisible(false);
         NPadron3.setVisible(false);
@@ -285,6 +294,15 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         this.usr = usr;
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        NVale1.setVisible(false);
+        NVale2.setVisible(false);
+        NVale3.setVisible(false);
+        NVale4.setVisible(false);
+        NVale5.setVisible(false);
+        NVale6.setVisible(false);
+        NVale7.setVisible(false);
+        NVale8.setVisible(false);
+        NVale9.setVisible(false);
         NPadron1.setVisible(false);
         NPadron2.setVisible(false);
         NPadron3.setVisible(false);
@@ -3177,6 +3195,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         Mas35 = new javax.swing.JButton();
         Menos35 = new javax.swing.JButton();
         NVale = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         TMG = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -3230,6 +3249,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel12 = new javax.swing.JLabel();
         TDV = new javax.swing.JLabel();
         DBe = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -3281,6 +3301,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ImporteKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ImporteKeyTyped(evt);
+            }
         });
 
         Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
@@ -3314,12 +3337,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe1KeyTyped(evt);
+            }
         });
 
         Importe2.setText("0");
         Importe2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe2KeyTyped(evt);
             }
         });
 
@@ -3328,12 +3357,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe3KeyTyped(evt);
+            }
         });
 
         Importe4.setText("0");
         Importe4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe4KeyTyped(evt);
             }
         });
 
@@ -3342,6 +3377,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe5KeyTyped(evt);
+            }
         });
 
         Importe6.setText("0");
@@ -3349,12 +3387,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe6KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe6KeyTyped(evt);
+            }
         });
 
         Importe7.setText("0");
         Importe7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe7KeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe7KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe7KeyTyped(evt);
             }
         });
 
@@ -3363,12 +3407,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe8KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe8KeyTyped(evt);
+            }
         });
 
         Importe9.setText("0");
         Importe9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe9KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe9KeyTyped(evt);
             }
         });
 
@@ -3749,6 +3799,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe10KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe10KeyTyped(evt);
+            }
         });
 
         jLabel15.setText("Fecha");
@@ -3906,12 +3959,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe11KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe11KeyTyped(evt);
+            }
         });
 
         Importe12.setText("0");
         Importe12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe12KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe12KeyTyped(evt);
             }
         });
 
@@ -3920,12 +3979,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe13KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe13KeyTyped(evt);
+            }
         });
 
         Importe14.setText("0");
         Importe14.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe14KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe14KeyTyped(evt);
             }
         });
 
@@ -3934,6 +3999,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe15KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe15KeyTyped(evt);
+            }
         });
 
         Importe16.setText("0");
@@ -3941,12 +4009,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe16KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe16KeyTyped(evt);
+            }
         });
 
         Importe17.setText("0");
         Importe17.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe17KeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe17KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe17KeyTyped(evt);
             }
         });
 
@@ -3955,12 +4029,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe18KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe18KeyTyped(evt);
+            }
         });
 
         Importe19.setText("0");
         Importe19.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe19KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe19KeyTyped(evt);
             }
         });
 
@@ -4760,6 +4840,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe30KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe30KeyTyped(evt);
+            }
         });
 
         Fecha30.setDateFormatString("dd MMM yyyy ");
@@ -4844,6 +4927,60 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         });
 
         Fecha32.setDateFormatString("dd MMM yyyy ");
+
+        NVale1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale1KeyTyped(evt);
+            }
+        });
+
+        NVale2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale2KeyTyped(evt);
+            }
+        });
+
+        NVale3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale3KeyTyped(evt);
+            }
+        });
+
+        NVale4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale4KeyTyped(evt);
+            }
+        });
+
+        NVale5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale5KeyTyped(evt);
+            }
+        });
+
+        NVale6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale6KeyTyped(evt);
+            }
+        });
+
+        NVale7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale7KeyTyped(evt);
+            }
+        });
+
+        NVale8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale8KeyTyped(evt);
+            }
+        });
+
+        NVale9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale9KeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -5105,76 +5242,84 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        NVale.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NValeKeyTyped(evt);
+            }
+        });
+
+        jLabel42.setText("# Vale");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel25))
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabel28))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(141, 141, 141)
-                                .addComponent(jLabel28))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(222, 222, 222)
-                                .addComponent(jLabel11)
-                                .addGap(83, 83, 83)
-                                .addComponent(jLabel29))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel42))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(9, 9, 9)
-                                        .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel25)
+                                        .addGap(119, 119, 119)
+                                        .addComponent(jLabel11)
+                                        .addGap(83, 83, 83)
+                                        .addComponent(jLabel29))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(Mas27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(Mas27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas28)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas29)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas33)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas34)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas35))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(Menos27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos28)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos29)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos33)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos34)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos35)))))))
+                                .addComponent(Mas28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas35))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(Menos27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos35)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -5186,7 +5331,8 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
                     .addComponent(jLabel29)
-                    .addComponent(jLabel11))
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel42))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5520,6 +5666,8 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         DBe.setEditable(false);
         DBe.setText("0");
 
+        jLabel41.setText("Cuando sale de resultado menor a 0 significa que es saldo a favor.");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -5573,7 +5721,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                                             .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                             .addComponent(TDV)
                                             .addComponent(DBe))
-                                        .addGap(200, 200, 200))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel41)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(TDIDP)
@@ -5588,9 +5738,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                                             .addComponent(AutoFecha)
                                             .addComponent(Autohora)))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, 0)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(140, 140, 140)
                                         .addComponent(jLabel34)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(NDS)
@@ -5606,7 +5756,6 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel33)
@@ -5651,21 +5800,14 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
-                            .addComponent(DBe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DBe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel41))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
                             .addComponent(NDS)
-                            .addComponent(jButton1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5678,8 +5820,16 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel37)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel37))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -6161,11 +6311,6 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         Operaciones();
 
     }//GEN-LAST:event_Importe6KeyReleased
-
-    private void Importe7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyPressed
-        Operaciones();
-
-    }//GEN-LAST:event_Importe7KeyPressed
 
     private void Importe8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe8KeyReleased
         Operaciones();
@@ -6888,10 +7033,6 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         Operaciones();
     }//GEN-LAST:event_Importe16KeyReleased
 
-    private void Importe17KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyPressed
-        Operaciones();
-    }//GEN-LAST:event_Importe17KeyPressed
-
     private void Importe18KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe18KeyReleased
         Operaciones();
     }//GEN-LAST:event_Importe18KeyReleased
@@ -7375,6 +7516,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Importe39KeyReleased
 
     private void Menos27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos27ActionPerformed
+        NVale1.setVisible(false);
         Fecha31.setVisible(false);
         ObsV1.setVisible(false);
         Importe31.setVisible(false);
@@ -7384,6 +7526,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos27ActionPerformed
 
     private void Mas27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas27ActionPerformed
+        NVale1.setVisible(true);
         Fecha31.setVisible(true);
         ObsV1.setVisible(true);
         Importe31.setVisible(true);
@@ -7393,6 +7536,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas27ActionPerformed
 
     private void Menos28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos28ActionPerformed
+        NVale2.setVisible(false);
         Fecha32.setVisible(false);
         ObsV2.setVisible(false);
         Importe32.setVisible(false);
@@ -7403,6 +7547,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos28ActionPerformed
 
     private void Mas28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas28ActionPerformed
+        NVale2.setVisible(true);
         Fecha32.setVisible(true);
         ObsV2.setVisible(true);
         Importe32.setVisible(true);
@@ -7413,6 +7558,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas28ActionPerformed
 
     private void Mas29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas29ActionPerformed
+        NVale3.setVisible(true);
         Fecha33.setVisible(true);
         ObsV3.setVisible(true);
         Importe33.setVisible(true);
@@ -7424,6 +7570,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas29ActionPerformed
 
     private void Menos29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos29ActionPerformed
+        NVale3.setVisible(false);
         Fecha33.setVisible(false);
         ObsV3.setVisible(false);
         Importe33.setVisible(false);
@@ -7434,6 +7581,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos29ActionPerformed
 
     private void Menos30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos30ActionPerformed
+        NVale4.setVisible(false);
         Fecha34.setVisible(false);
         ObsV4.setVisible(false);
         Importe34.setVisible(false);
@@ -7444,6 +7592,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos30ActionPerformed
 
     private void Mas30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas30ActionPerformed
+        NVale4.setVisible(true);
         Fecha34.setVisible(true);
         ObsV4.setVisible(true);
         Importe34.setVisible(true);
@@ -7454,6 +7603,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas30ActionPerformed
 
     private void Menos31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos31ActionPerformed
+        NVale5.setVisible(false);
         Fecha35.setVisible(false);
         ObsV5.setVisible(false);
         Importe35.setVisible(false);
@@ -7464,6 +7614,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos31ActionPerformed
 
     private void Menos32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos32ActionPerformed
+        NVale6.setVisible(false);
         Fecha36.setVisible(false);
         ObsV6.setVisible(false);
         Importe36.setVisible(false);
@@ -7474,6 +7625,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos32ActionPerformed
 
     private void Mas31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas31ActionPerformed
+        NVale5.setVisible(true);
         Fecha35.setVisible(true);
         ObsV5.setVisible(true);
         Importe35.setVisible(true);
@@ -7484,6 +7636,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas31ActionPerformed
 
     private void Menos33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos33ActionPerformed
+        NVale7.setVisible(false);
         Fecha37.setVisible(false);
         ObsV7.setVisible(false);
         Importe37.setVisible(false);
@@ -7494,6 +7647,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos33ActionPerformed
 
     private void Mas32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas32ActionPerformed
+        NVale6.setVisible(true);
         Fecha36.setVisible(true);
         ObsV6.setVisible(true);
         Importe36.setVisible(true);
@@ -7504,6 +7658,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas32ActionPerformed
 
     private void Mas33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas33ActionPerformed
+        NVale7.setVisible(true);
         Fecha37.setVisible(true);
         ObsV7.setVisible(true);
         Importe37.setVisible(true);
@@ -7514,6 +7669,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas33ActionPerformed
 
     private void Menos34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos34ActionPerformed
+        NVale8.setVisible(false);
         Fecha38.setVisible(false);
         ObsV8.setVisible(false);
         Importe38.setVisible(false);
@@ -7524,6 +7680,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos34ActionPerformed
 
     private void Menos35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos35ActionPerformed
+        NVale9.setVisible(false);
         Fecha39.setVisible(false);
         ObsV9.setVisible(false);
         Importe39.setVisible(false);
@@ -7534,6 +7691,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos35ActionPerformed
 
     private void Mas34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas34ActionPerformed
+        NVale8.setVisible(true);
         Fecha38.setVisible(true);
         ObsV8.setVisible(true);
         Importe38.setVisible(true);
@@ -7544,6 +7702,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas34ActionPerformed
 
     private void Mas35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas35ActionPerformed
+        NVale9.setVisible(true);
         Fecha39.setVisible(true);
         ObsV9.setVisible(true);
         Importe39.setVisible(true);
@@ -8396,6 +8555,198 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         this.dispose();
     }//GEN-LAST:event_ADMV1ActionPerformed
 
+    private void ImporteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_ImporteKeyTyped
+
+    private void Importe1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe1KeyTyped
+
+    private void Importe2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe2KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe2KeyTyped
+
+    private void Importe3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe3KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe3KeyTyped
+
+    private void Importe4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe4KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();    }//GEN-LAST:event_Importe4KeyTyped
+
+    private void Importe5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe5KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();    }//GEN-LAST:event_Importe5KeyTyped
+
+    private void Importe6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe6KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe6KeyTyped
+
+    private void Importe7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyReleased
+        Operaciones();
+    }//GEN-LAST:event_Importe7KeyReleased
+
+    private void Importe7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe7KeyTyped
+
+    private void Importe8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe8KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe8KeyTyped
+
+    private void Importe9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe9KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe9KeyTyped
+
+    private void Importe10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe10KeyTyped
+
+    private void Importe11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe11KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe11KeyTyped
+
+    private void Importe12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe12KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe12KeyTyped
+
+    private void Importe13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe13KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe13KeyTyped
+
+    private void Importe14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe14KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe14KeyTyped
+
+    private void Importe15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe15KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe15KeyTyped
+
+    private void Importe16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe16KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe16KeyTyped
+
+    private void Importe17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe17KeyTyped
+
+    private void Importe18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe18KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe18KeyTyped
+
+    private void Importe19KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe19KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe19KeyTyped
+
+    private void Importe17KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyReleased
+        Operaciones();
+    }//GEN-LAST:event_Importe17KeyReleased
+
+    private void Importe30KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe30KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe30KeyTyped
+
+    private void NValeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NValeKeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NValeKeyTyped
+
+    private void NVale1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale1KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale1KeyTyped
+
+    private void NVale2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale2KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale2KeyTyped
+
+    private void NVale3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale3KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale3KeyTyped
+
+    private void NVale4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale4KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale4KeyTyped
+
+    private void NVale5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale5KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale5KeyTyped
+
+    private void NVale6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale6KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale6KeyTyped
+
+    private void NVale7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale7KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale7KeyTyped
+
+    private void NVale8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale8KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale8KeyTyped
+
+    private void NVale9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale9KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale9KeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -8736,6 +9087,8 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
