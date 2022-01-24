@@ -3214,6 +3214,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe32KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe32KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe37">
@@ -3222,6 +3223,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe37KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe37KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe31">
@@ -3230,6 +3232,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe31KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe31KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe33">
@@ -3238,6 +3241,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe33KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe33KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV4">
@@ -3255,6 +3259,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe34KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe34KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV3">
@@ -3302,6 +3307,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe35KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe35KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe38">
@@ -3310,6 +3316,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe38KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe38KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV2">
@@ -3320,6 +3327,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe39KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe39KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV8">
@@ -3329,7 +3337,8 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe36KeyPressed"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe36KeyReleased"/>
+                            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Importe36KeyTyped"/>
                           </Events>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha32">

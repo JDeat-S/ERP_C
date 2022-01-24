@@ -4852,12 +4852,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe32KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe32KeyTyped(evt);
+            }
         });
 
         Importe37.setText("0");
         Importe37.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe37KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe37KeyTyped(evt);
             }
         });
 
@@ -4866,12 +4872,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe31KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe31KeyTyped(evt);
+            }
         });
 
         Importe33.setText("0");
         Importe33.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe33KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe33KeyTyped(evt);
             }
         });
 
@@ -4881,6 +4893,9 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         Importe34.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe34KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe34KeyTyped(evt);
             }
         });
 
@@ -4903,12 +4918,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe35KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe35KeyTyped(evt);
+            }
         });
 
         Importe38.setText("0");
         Importe38.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe38KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe38KeyTyped(evt);
             }
         });
 
@@ -4917,12 +4938,18 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe39KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe39KeyTyped(evt);
+            }
         });
 
         Importe36.setText("0");
         Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe36KeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe36KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe36KeyTyped(evt);
             }
         });
 
@@ -7499,10 +7526,6 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         Operaciones();
     }//GEN-LAST:event_Importe35KeyReleased
 
-    private void Importe36KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe36KeyPressed
-        Operaciones();
-    }//GEN-LAST:event_Importe36KeyPressed
-
     private void Importe37KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe37KeyReleased
         Operaciones();
     }//GEN-LAST:event_Importe37KeyReleased
@@ -8746,6 +8769,65 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         if ((car < '0' || car > '9'))
             evt.consume();
     }//GEN-LAST:event_NVale9KeyTyped
+
+    private void Importe31KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe31KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe31KeyTyped
+
+    private void Importe32KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe32KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe32KeyTyped
+
+    private void Importe33KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe33KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe33KeyTyped
+
+    private void Importe34KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe34KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe34KeyTyped
+
+    private void Importe35KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe35KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe35KeyTyped
+
+    private void Importe36KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe36KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe36KeyTyped
+
+    private void Importe36KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe36KeyReleased
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_Importe36KeyReleased
+
+    private void Importe37KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe37KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe37KeyTyped
+
+    private void Importe38KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe38KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe38KeyTyped
+
+    private void Importe39KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe39KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe39KeyTyped
 
     /**
      * @param args the command line arguments
