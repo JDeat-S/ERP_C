@@ -1,5 +1,8 @@
 package RH;
 
+import Semanal.PT_4;
+import Semanal.Tehueantepec_4;
+import Semanal.Inturbide_4;
 import Nomina.ModulosS.CDAS_5;
 import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosS.PresS_5;

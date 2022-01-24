@@ -1,8 +1,8 @@
-package RH;
+package Semanal;
 
 import Nomina.ModulosS.CDAS_5;
-import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
@@ -11,7 +11,11 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-import Nomina.NominaQ_5;
+import RH.Depositos_4;
+import RH.Empleados_4;
+import RH.Estadias_4;
+import RH.Tortas_4;
+import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -49,7 +53,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable {
+public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     /**
      * Creates new form Sem_4
@@ -63,7 +67,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public Tehueantepec_4() {
+    public Inturbide_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         NPadron1.setVisible(false);
@@ -271,12 +275,12 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         AutoFecha.setText("" + timeStamp);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(Tehueantepec_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Inturbide_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
         MDsem();
     }
 
-    public Tehueantepec_4(Logica_usuarios usr, Logica_permisos LP) {
+    public Inturbide_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -486,10 +490,10 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         AutoFecha.setText("" + timeStamp);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(Tehueantepec_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Inturbide_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
         MDsem();
-        setTitle("Semanal Tehuantepec # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+        setTitle("Semanal Inturbide # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
             case 0 -> {
@@ -529,15 +533,26 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         }
     }
 
+    public void ColorDB() {
+        double DB = Double.parseDouble(DBe.getText());
+        if (DB <= 0) {
+            DBe.setBackground(Color.green);
+
+        } else {
+            DBe.setBackground(Color.RED);
+
+        }
+    }
+
     public void MDsem() {
         //Buscar empleado
         String sem = txtsem.getText();
         /*String ShareAP = BusAPcdash.getText();
         String ShareAM = BusAMcdash.getText();*/
-        String SQL = "SELECT * FROM `rh.semanal.tehuantepec.nsem`";
+        String SQL = "SELECT * FROM `rh.semanal.inturbide.nsem`";
 
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.tehuantepec.nsem` where `#Nsem` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.nsem` where `#Nsem` LIKE '%" + sem + "%'";
         }
         /*else if (!"".equals(ShareAP)) {
             where = " select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
@@ -602,9 +617,9 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.tehuantepec.scc` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.tehuantepec.scc` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -655,9 +670,9 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.tehuantepec.pen` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.tehuantepec.pen` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -709,9 +724,9 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.tehuantepec.gast` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.tehuantepec.gast` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -763,9 +778,9 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.tehuantepec.val` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.tehuantepec.val` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -960,7 +975,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
     public void ADDSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
-        String SQL = "INSERT INTO `rh.semanal.tehuantepec.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
+        String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
                 + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`,"
                 + " `el entrega`, `Debe`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
@@ -990,7 +1005,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
     public void Addscc() {
         if (Mas.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1008,7 +1023,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas1.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1031,7 +1046,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas2.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1060,7 +1075,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas3.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1094,7 +1109,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas4.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1133,7 +1148,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas5.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1177,7 +1192,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas6.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1226,7 +1241,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas7.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1280,7 +1295,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1339,7 +1354,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Menos8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
@@ -1407,7 +1422,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
     public void Addval() {
         if (Mas27.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1425,7 +1440,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas28.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1448,7 +1463,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas29.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1477,7 +1492,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas30.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1511,7 +1526,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas31.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1550,7 +1565,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas32.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1594,7 +1609,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas33.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1643,7 +1658,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas34.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1697,7 +1712,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1756,7 +1771,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Menos35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
@@ -1824,7 +1839,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
     public void Addspen() {
         if (Mas9.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1843,7 +1858,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas10.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1868,7 +1883,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas11.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1900,7 +1915,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas12.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1938,7 +1953,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas13.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1981,7 +1996,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas14.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2031,7 +2046,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas15.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2087,7 +2102,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas16.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2149,7 +2164,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas17.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2217,7 +2232,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Menos17.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
@@ -2295,7 +2310,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
     public void Addsgast() {
         if (Mas18.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -2314,7 +2329,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas19.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -2339,7 +2354,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas20.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2371,7 +2386,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas21.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2409,7 +2424,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas22.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2453,7 +2468,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas23.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2503,7 +2518,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas24.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2559,7 +2574,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas25.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2621,7 +2636,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Mas26.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2689,7 +2704,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         }
         if (Menos26.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
@@ -2882,7 +2897,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
     }
 
     public void MostrarNDS() {
-        String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'rh.semanal.tehuantepec.nsem'";
+        String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'rh.semanal.inturbide.nsem'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
@@ -2915,8 +2930,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        TDIDS = new javax.swing.JLabel();
         Servicio1 = new javax.swing.JComboBox<>();
         Servicio2 = new javax.swing.JComboBox<>();
         Servicio3 = new javax.swing.JComboBox<>();
@@ -2971,8 +2984,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        TDIDP = new javax.swing.JLabel();
         Mas9 = new javax.swing.JButton();
         Menos11 = new javax.swing.JButton();
         Menos10 = new javax.swing.JButton();
@@ -3097,8 +3108,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         Menos25 = new javax.swing.JButton();
         Menos26 = new javax.swing.JButton();
         Mas26 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        TDG = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         TDSYP = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -3107,8 +3116,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         jPanel5 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        TDV = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         ObsV = new javax.swing.JTextField();
@@ -3142,6 +3149,15 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         ObsV1 = new javax.swing.JTextField();
         ObsV7 = new javax.swing.JTextField();
         ObsV5 = new javax.swing.JTextField();
+        NVale1 = new javax.swing.JTextField();
+        NVale2 = new javax.swing.JTextField();
+        NVale3 = new javax.swing.JTextField();
+        NVale4 = new javax.swing.JTextField();
+        NVale5 = new javax.swing.JTextField();
+        NVale6 = new javax.swing.JTextField();
+        NVale7 = new javax.swing.JTextField();
+        NVale8 = new javax.swing.JTextField();
+        NVale9 = new javax.swing.JTextField();
         Mas27 = new javax.swing.JButton();
         Menos27 = new javax.swing.JButton();
         Mas28 = new javax.swing.JButton();
@@ -3160,12 +3176,12 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         Mas34 = new javax.swing.JButton();
         Mas35 = new javax.swing.JButton();
         Menos35 = new javax.swing.JButton();
+        NVale = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         TMG = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         EEntrega = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        DBe = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         Autohora = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -3205,6 +3221,15 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        TDIDS = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        TDIDP = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        TDG = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        TDV = new javax.swing.JLabel();
+        DBe = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -3238,16 +3263,16 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         Depositos = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         Semanales = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Semanal Tehuantepec");
+        setTitle("Semanal Inturbide");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("Servicios c/cobro Tehuantepec");
+        jLabel10.setText("Servicios c/cobro ITURBIDE");
 
         Fecha.setDateFormatString("dd MMM yyyy ");
 
@@ -3265,12 +3290,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         jLabel3.setText("Servicio");
 
         jLabel4.setText("Importe");
-
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel5.setText("Total de importe de servicios:");
-
-        TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDIDS.setText("0");
 
         Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
 
@@ -3571,10 +3590,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(PanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TDIDS))
-                                    .addGroup(PanelLayout.createSequentialGroup()
                                         .addComponent(Mas)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Mas1)
@@ -3624,10 +3639,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5)
-                                .addComponent(TDIDS))
+                            .addComponent(jLabel4)
                             .addComponent(jLabel3))
                         .addGap(3, 3, 3)))
                 .addGap(3, 3, 3)
@@ -3744,12 +3756,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         jLabel16.setText("Servicio");
 
         jLabel17.setText("Importe");
-
-        jLabel18.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel18.setText("Total de importe de pensiones:");
-
-        TDIDP.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDIDP.setText("0");
 
         Mas9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas9.addActionListener(new java.awt.event.ActionListener() {
@@ -4124,18 +4130,12 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                                     .addComponent(Servicio10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(Panel2Layout.createSequentialGroup()
-                                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel26))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel17)
-                                            .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(Panel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TDIDP))))
+                                    .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel26))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(Panel2Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4190,11 +4190,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                         .addComponent(jLabel15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel18)
-                                .addComponent(TDIDP))
-                            .addComponent(jLabel13))
+                        .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4616,12 +4612,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel7.setText("Total de Gastos:");
-
-        TDG.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDG.setText("0");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -4645,10 +4635,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                                     .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TDG))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(Importe20, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4703,11 +4689,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel19)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(TDG)))
+                .addComponent(jLabel19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -4768,12 +4750,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("Vales");
-
-        jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel12.setText("Total de Vales:");
-
-        TDV.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDV.setText("0");
 
         jLabel29.setText("Importe");
 
@@ -4874,7 +4850,18 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NVale1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4934,9 +4921,13 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(Fecha31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Fecha31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NVale1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Fecha32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Fecha32, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NVale2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4954,23 +4945,37 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(NVale3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Fecha34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(NVale4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Fecha35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(NVale5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NVale6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NVale7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NVale8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NVale9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -5114,11 +5119,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(141, 141, 141)
-                                .addComponent(jLabel28)
-                                .addGap(170, 170, 170)
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TDV))
+                                .addComponent(jLabel28))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(222, 222, 222)
                                 .addComponent(jLabel11)
@@ -5127,7 +5128,9 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(66, 66, 66)
+                                        .addGap(9, 9, 9)
+                                        .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5178,10 +5181,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel12)
-                    .addComponent(TDV))
+                .addComponent(jLabel28)
                 .addGap(1, 1, 1)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
@@ -5189,11 +5189,13 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                     .addComponent(jLabel11))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -5224,7 +5226,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         jScrollPane5.setViewportView(jPanel5);
 
-        jLabel27.setText("Total restando gastos:");
+        jLabel27.setText("Total menos gastos:");
 
         TMG.setText("0");
 
@@ -5238,8 +5240,6 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         });
 
         jLabel31.setText("Debe:");
-
-        DBe.setText("0");
 
         jLabel32.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel32.setText("Hora:");
@@ -5493,6 +5493,33 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         jLabel37.setText("TV: Total de vales");
 
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel5.setText("Total de importe de servicios:");
+
+        TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDIDS.setText("0");
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel18.setText("Total de importe de pensiones:");
+
+        TDIDP.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDIDP.setText("0");
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel7.setText("Total de Gastos:");
+
+        TDG.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDG.setText("0");
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel12.setText("Total de Vales:");
+
+        TDV.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDV.setText("0");
+
+        DBe.setEditable(false);
+        DBe.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -5506,102 +5533,130 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(199, 199, 199)
-                                .addComponent(jLabel34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NDS))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(322, 322, 322)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 333, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel35)
+                                    .addComponent(jLabel36)
+                                    .addComponent(jLabel37))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel31))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel18)
+                                        .addComponent(jLabel7)
+                                        .addComponent(jLabel27)
+                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel30)
+                                        .addComponent(jLabel31)
+                                        .addComponent(jLabel12))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jLabel5)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(TDG)
+                                            .addComponent(TMG)
+                                            .addComponent(DE)
+                                            .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                            .addComponent(TDV)
+                                            .addComponent(DBe))
+                                        .addGap(200, 200, 200))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(TDIDP)
+                                            .addComponent(TDSYP)
+                                            .addComponent(TDIDS))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(TMG)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel32))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(TDSYP)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel33)))
+                                            .addComponent(jLabel32)
+                                            .addComponent(jLabel33))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(AutoFecha)
-                                            .addComponent(Autohora))
-                                        .addGap(92, 92, 92))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(EEntrega, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(DBe, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(DE, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(Autohora)))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton1)
-                                            .addComponent(jLabel24)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel35)
-                                            .addComponent(jLabel36)
-                                            .addComponent(jLabel37))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                .addContainerGap())))))
+                                        .addGap(140, 140, 140)
+                                        .addComponent(jLabel34)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(NDS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton1)
+                                        .addGap(186, 186, 186))
+                                    .addComponent(jLabel1))
+                                .addGap(112, 112, 112)))
+                        .addGap(51, 51, 51))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(TDSYP)
                             .addComponent(jLabel33)
-                            .addComponent(AutoFecha))
+                            .addComponent(AutoFecha)
+                            .addComponent(jLabel5)
+                            .addComponent(TDIDS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel32)
+                                    .addComponent(Autohora))
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel18)
+                                    .addComponent(TDIDP))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(TDSYP))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(TDG))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(TMG)
-                            .addComponent(jLabel32)
-                            .addComponent(Autohora))
+                            .addComponent(TMG))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(DE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(TDV))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30)
                             .addComponent(EEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
-                            .addComponent(DBe))
+                            .addComponent(DBe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
-                            .addComponent(NDS))))
+                            .addComponent(NDS)
+                            .addComponent(jButton1))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -5858,13 +5913,13 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         Semanales.setText("Semanales");
 
-        jMenuItem2.setText("Inturbide");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setText("Tehuantepec");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        Semanales.add(jMenuItem2);
+        Semanales.add(jMenuItem3);
 
         jMenuItem4.setText("PTE titla");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -5886,7 +5941,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 941, Short.MAX_VALUE)
         );
 
         pack();
@@ -6157,13 +6212,13 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
 
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
 
@@ -6795,11 +6850,11 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Tehueantepec_4.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Tehueantepec_4.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         MostrarNDS();
@@ -7500,6 +7555,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
     private void EEntregaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EEntregaKeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_EEntregaKeyReleased
 
     private void txtsemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsemKeyReleased
@@ -7541,13 +7597,13 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.tehuantepec.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
 
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
 
@@ -7636,7 +7692,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO TEHUANTEPEC");
+                    cell.setCellValue("SERVICIO C/COBRO INTURBIDE");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);
@@ -7748,6 +7804,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total restando gastos"));
                     cell.setCellStyle(Contenido);
+                    cell = row.createCell(11);
 
                     row = spreadsheet.createRow(5);
                     cell = row.createCell(3);
@@ -8178,48 +8235,47 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Tehueantepec_4.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Tehueantepec_4.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel38MousePressed
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
 
-        Estadias_4 regr = new Estadias_4(usr, LP);
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Tortas_4 regr = new Tortas_4(usr, LP);
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Depositos_4 regr = new Depositos_4(usr, LP);
+        Depositos_4 regr = new Depositos_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Tehueantepec_4 regr = new Tehueantepec_4();
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        PT_4 regr = new PT_4(usr, LP);
+        PT_4 regr = new PT_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void General2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General2ActionPerformed
-
         Empleados_4 RH = new Empleados_4(usr, LP);
         RH.setVisible(true);
         this.dispose();
@@ -8358,33 +8414,21 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tehueantepec_4.class
+            java.util.logging.Logger.getLogger(Inturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tehueantepec_4.class
+            java.util.logging.Logger.getLogger(Inturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tehueantepec_4.class
+            java.util.logging.Logger.getLogger(Inturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tehueantepec_4.class
+            java.util.logging.Logger.getLogger(Inturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -8392,7 +8436,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Tehueantepec_4().setVisible(true);
+            new Inturbide_4().setVisible(true);
         });
     }
 
@@ -8414,7 +8458,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
     private javax.swing.JTextField Concepto7;
     private javax.swing.JTextField Concepto8;
     private javax.swing.JTextField Concepto9;
-    private javax.swing.JLabel DBe;
+    private javax.swing.JTextField DBe;
     private javax.swing.JLabel DE;
     private javax.swing.JMenu Depositos;
     private javax.swing.JTextField EEntrega;
@@ -8596,6 +8640,16 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
     private javax.swing.JTextField NPadron7;
     private javax.swing.JTextField NPadron8;
     private javax.swing.JTextField NPadron9;
+    private javax.swing.JTextField NVale;
+    private javax.swing.JTextField NVale1;
+    private javax.swing.JTextField NVale2;
+    private javax.swing.JTextField NVale3;
+    private javax.swing.JTextField NVale4;
+    private javax.swing.JTextField NVale5;
+    private javax.swing.JTextField NVale6;
+    private javax.swing.JTextField NVale7;
+    private javax.swing.JTextField NVale8;
+    private javax.swing.JTextField NVale9;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT2;
     private javax.swing.JTextField ObsV;
@@ -8698,7 +8752,7 @@ public final class Tehueantepec_4 extends javax.swing.JFrame implements Runnable
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;

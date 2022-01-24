@@ -1,5 +1,8 @@
 package Nomina.ModulosS;
 
+import Semanal.PT_4;
+import Semanal.Tehueantepec_4;
+import Semanal.Inturbide_4;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.PresQ_5;
 import VentanasDReportes.*;
