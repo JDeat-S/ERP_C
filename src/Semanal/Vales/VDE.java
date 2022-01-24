@@ -14,7 +14,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.JFileChooser;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -27,11 +29,18 @@ public class VDE extends javax.swing.JFrame {
     Logica_usuarios usr;
     Logica_permisos LP;
     Calendar fecha_actual = new GregorianCalendar();
+    private final String[] UNIDADES = {"", "un ", "dos ", "tres ", "cuatro ", "cinco ", "seis ", "siete ", "ocho ", "nueve "};
+    private final String[] DECENAS = {"diez ", "once ", "doce ", "trece ", "catorce ", "quince ", "dieciseis ",
+        "diecisiete ", "dieciocho ", "diecinueve", "veinte ", "treinta ", "cuarenta ",
+        "cincuenta ", "sesenta ", "setenta ", "ochenta ", "noventa "};
+    private final String[] CENTENAS = {"", "ciento ", "doscientos ", "trecientos ", "cuatrocientos ", "quinientos ", "seiscientos ",
+        "setecientos ", "ochocientos ", "novecientos "};
 
     public VDE() {
         initComponents();
         Fecha.setCalendar(fecha_actual);
         this.setLocationRelativeTo(null);
+
     }
 
     public VDE(Logica_usuarios usr, Logica_permisos LP) {
@@ -41,6 +50,112 @@ public class VDE extends javax.swing.JFrame {
         this.LP = LP;
         this.setLocationRelativeTo(null);
 
+    }
+
+    public String Convertir(String numero, boolean mayusculas) {
+        String literal = "";
+        String parte_decimal;
+        //si el numero utiliza (.) en lugar de (,) -> se reemplaza
+        numero = numero.replace(".", ",");
+        //si el numero no tiene parte decimal, se le agrega ,00
+        if (numero.indexOf(",") == -1) {
+            numero = numero + ",00";
+        }
+        //se valida formato de entrada -> 0,00 y 999 999 999,00
+        if (Pattern.matches("\\d{1,9},\\d{1,2}", numero)) {
+            //se divide el numero 0000000,00 -> entero y decimal
+            String Num[] = numero.split(",");
+            //de da formato al numero decimal
+            parte_decimal = ", " + Num[1] + " Pesos";
+            //se convierte el numero a literal
+            if (Integer.parseInt(Num[0]) == 0) {//si el valor es cero
+                literal = "cero ";
+            } else if (Integer.parseInt(Num[0]) > 999999) {//si es millon
+                literal = getMillones(Num[0]);
+            } else if (Integer.parseInt(Num[0]) > 999) {//si es miles
+                literal = getMiles(Num[0]);
+            } else if (Integer.parseInt(Num[0]) > 99) {//si es centena
+                literal = getCentenas(Num[0]);
+            } else if (Integer.parseInt(Num[0]) > 9) {//si es decena
+                literal = getDecenas(Num[0]);
+            } else {//sino unidades -> 9
+                literal = getUnidades(Num[0]);
+            }
+            //devuelve el resultado en mayusculas o minusculas
+            if (mayusculas) {
+                return (literal + parte_decimal).toUpperCase();
+            } else {
+                return (literal + parte_decimal);
+            }
+        } else {//error, no se puede convertir
+            return literal = null;
+        }
+    }
+
+    /* funciones para convertir los numeros a literales */
+    private String getUnidades(String numero) {// 1 - 9
+        //si tuviera algun 0 antes se lo quita -> 09 = 9 o 009=9
+        String num = numero.substring(numero.length() - 1);
+        return UNIDADES[Integer.parseInt(num)];
+    }
+
+    private String getDecenas(String num) {// 99                        
+        int n = Integer.parseInt(num);
+        if (n < 10) {//para casos como -> 01 - 09
+            return getUnidades(num);
+        } else if (n > 19) {//para 20...99
+            String u = getUnidades(num);
+            if (u.equals("")) { //para 20,30,40,50,60,70,80,90
+                return DECENAS[Integer.parseInt(num.substring(0, 1)) + 8];
+            } else {
+                return DECENAS[Integer.parseInt(num.substring(0, 1)) + 8] + "y " + u;
+            }
+        } else {//numeros entre 11 y 19
+            return DECENAS[n - 10];
+        }
+    }
+
+    private String getCentenas(String num) {// 999 o 099
+        if (Integer.parseInt(num) > 99) {//es centena
+            if (Integer.parseInt(num) == 100) {//caso especial
+                return " cien ";
+            } else {
+                return CENTENAS[Integer.parseInt(num.substring(0, 1))] + getDecenas(num.substring(1));
+            }
+        } else {//por Ej. 099 
+            //se quita el 0 antes de convertir a decenas
+            return getDecenas(Integer.parseInt(num) + "");
+        }
+    }
+
+    private String getMiles(String numero) {// 999 999
+        //obtiene las centenas
+        String c = numero.substring(numero.length() - 3);
+        //obtiene los miles
+        String m = numero.substring(0, numero.length() - 3);
+        String n = "";
+        //se comprueba que miles tenga valor entero
+        if (Integer.parseInt(m) > 0) {
+            n = getCentenas(m);
+            return n + "mil " + getCentenas(c);
+        } else {
+            return "" + getCentenas(c);
+        }
+
+    }
+
+    private String getMillones(String numero) { //000 000 000        
+        //se obtiene los miles
+        String miles = numero.substring(numero.length() - 6);
+        //se obtiene los millones
+        String millon = numero.substring(0, numero.length() - 6);
+        String n = "";
+        if (millon.length() > 1) {
+            n = getCentenas(millon) + "millones ";
+        } else {
+            n = getUnidades(millon) + "millon ";
+        }
+        return n + getMiles(miles);
     }
 
     @SuppressWarnings("unchecked")
@@ -59,13 +174,14 @@ public class VDE extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         RD = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        ImporteEsc = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         Concepto = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         En = new javax.swing.JTextField();
         Fecha = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ImporteEsc = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -157,6 +273,11 @@ public class VDE extends javax.swing.JFrame {
         jLabel2.setText("Importe");
 
         Importe.setText("0");
+        Importe.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ImporteKeyReleased(evt);
+            }
+        });
 
         jLabel3.setText("Recibi de:");
 
@@ -175,6 +296,11 @@ public class VDE extends javax.swing.JFrame {
             }
         });
 
+        ImporteEsc.setColumns(20);
+        ImporteEsc.setLineWrap(true);
+        ImporteEsc.setRows(5);
+        jScrollPane1.setViewportView(ImporteEsc);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -184,9 +310,7 @@ public class VDE extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ImporteEsc, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(82, 82, 82)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,23 +321,25 @@ public class VDE extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(NV, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RD, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NV, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RD, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addComponent(jButton1)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(274, 274, 274)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,13 +360,17 @@ public class VDE extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(ImporteEsc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
                             .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(En, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(71, 71, 71)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(185, Short.MAX_VALUE))
         );
 
@@ -305,10 +435,12 @@ public class VDE extends javax.swing.JFrame {
             try (FileOutputStream archivo = new FileOutputStream(archivoTXT)) {
                 try {
                     try (PrintWriter writer = new PrintWriter(archivo)) {
-                        writer.println("CONFORT SERVICE PRESTIGE DE MEXICO S.A DE C.V");
-                        writer.println("RECIBO DE DINERO");
-                        writer.println("Bueno por: " + Importe.getText()+"      Num de vale:"+ NV.getText());
-                        writer.println("Cantidad de:" + ImporteEsc.getText());
+                        writer.println("                    CONFORT SERVICE PRESTIGE DE MEXICO S.A DE C.V");
+                        writer.println("                                RECIBO DE DINERO");
+                        writer.println("Bueno por: " + Importe.getText() + "                    Num de vale: " + NV.getText());
+                        writer.println("Cantidad de: " + ImporteEsc.getText());
+                        writer.println("Concpeto: " + Concepto.getText());
+                        writer.println("En: " + En.getText() + " " + ((JTextField) Fecha.getDateEditor().getUiComponent()).getText());
                     }
                 } catch (Exception e) {
                 }
@@ -323,6 +455,10 @@ public class VDE extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
+        ImporteEsc.setText(Convertir(Importe.getText(), true));
+    }//GEN-LAST:event_ImporteKeyReleased
 
     /**
      * @param args the command line arguments
@@ -365,7 +501,7 @@ public class VDE extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser Fecha;
     private javax.swing.JPanel Harder1;
     private javax.swing.JTextField Importe;
-    private javax.swing.JTextField ImporteEsc;
+    private javax.swing.JTextArea ImporteEsc;
     private javax.swing.JLabel Move;
     private javax.swing.JTextField NV;
     private javax.swing.JTextField RD;
@@ -378,6 +514,7 @@ public class VDE extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel txtbtnexit;
     // End of variables declaration//GEN-END:variables
 }
