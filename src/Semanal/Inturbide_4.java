@@ -1440,14 +1440,14 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
     public void Addval() {
         if (Mas27.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1458,19 +1458,22 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas28.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + " (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1481,25 +1484,28 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas29.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + " (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1510,30 +1516,34 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas30.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1544,35 +1554,40 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas31.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
+                pst.setString(30, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1583,40 +1598,46 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas32.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1627,45 +1648,52 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas33.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NDS.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(33, ObsV6.getText());
-                pst.setString(34, Importe36.getText());
-                pst.setString(35, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
+                pst.setInt(37, Integer.parseInt(NVale6.getText()));
+                pst.setInt(38, Integer.parseInt(NDS.getText()));
+                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(40, ObsV6.getText());
+                pst.setString(41, Importe36.getText());
+                pst.setString(42, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1676,50 +1704,58 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas34.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NDS.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(33, ObsV6.getText());
-                pst.setString(34, Importe36.getText());
-                pst.setString(35, TDV.getText());
-                pst.setInt(36, Integer.parseInt(NDS.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(38, ObsV7.getText());
-                pst.setString(39, Importe37.getText());
-                pst.setString(40, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
+                pst.setInt(37, Integer.parseInt(NVale6.getText()));
+                pst.setInt(38, Integer.parseInt(NDS.getText()));
+                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(40, ObsV6.getText());
+                pst.setString(41, Importe36.getText());
+                pst.setString(42, TDV.getText());
+                pst.setInt(43, Integer.parseInt(NVale7.getText()));
+                pst.setInt(44, Integer.parseInt(NDS.getText()));
+                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(46, ObsV7.getText());
+                pst.setString(47, Importe37.getText());
+                pst.setString(48, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1730,55 +1766,65 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NDS.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(33, ObsV6.getText());
-                pst.setString(34, Importe36.getText());
-                pst.setString(35, TDV.getText());
-                pst.setInt(36, Integer.parseInt(NDS.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(38, ObsV7.getText());
-                pst.setString(39, Importe37.getText());
-                pst.setString(40, TDV.getText());
-                pst.setInt(41, Integer.parseInt(NDS.getText()));
-                pst.setString(42, DateFormat.getDateInstance().format(Fecha38.getDate()));
-                pst.setString(43, ObsV8.getText());
-                pst.setString(44, Importe38.getText());
-                pst.setString(45, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
+                pst.setInt(37, Integer.parseInt(NVale6.getText()));
+                pst.setInt(38, Integer.parseInt(NDS.getText()));
+                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(40, ObsV6.getText());
+                pst.setString(41, Importe36.getText());
+                pst.setString(42, TDV.getText());
+                pst.setInt(43, Integer.parseInt(NVale7.getText()));
+                pst.setInt(44, Integer.parseInt(NDS.getText()));
+                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(46, ObsV7.getText());
+                pst.setString(47, Importe37.getText());
+                pst.setString(48, TDV.getText());
+                pst.setInt(49, Integer.parseInt(NVale8.getText()));
+                pst.setInt(50, Integer.parseInt(NDS.getText()));
+                pst.setString(51, DateFormat.getDateInstance().format(Fecha38.getDate()));
+                pst.setString(52, ObsV8.getText());
+                pst.setString(53, Importe38.getText());
+                pst.setString(54, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1789,61 +1835,71 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NDS.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(33, ObsV6.getText());
-                pst.setString(34, Importe36.getText());
-                pst.setString(35, TDV.getText());
-                pst.setInt(36, Integer.parseInt(NDS.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(38, ObsV7.getText());
-                pst.setString(39, Importe37.getText());
-                pst.setString(40, TDV.getText());
-                pst.setInt(41, Integer.parseInt(NDS.getText()));
-                pst.setString(42, DateFormat.getDateInstance().format(Fecha38.getDate()));
-                pst.setString(43, ObsV8.getText());
-                pst.setString(44, Importe38.getText());
-                pst.setString(45, TDV.getText());
-                pst.setInt(46, Integer.parseInt(NDS.getText()));
-                pst.setString(47, DateFormat.getDateInstance().format(Fecha39.getDate()));
-                pst.setString(48, ObsV9.getText());
-                pst.setString(49, Importe39.getText());
-                pst.setString(50, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
+                pst.setInt(37, Integer.parseInt(NVale6.getText()));
+                pst.setInt(38, Integer.parseInt(NDS.getText()));
+                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(40, ObsV6.getText());
+                pst.setString(41, Importe36.getText());
+                pst.setString(42, TDV.getText());
+                pst.setInt(43, Integer.parseInt(NVale7.getText()));
+                pst.setInt(44, Integer.parseInt(NDS.getText()));
+                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(46, ObsV7.getText());
+                pst.setString(47, Importe37.getText());
+                pst.setString(48, TDV.getText());
+                pst.setInt(49, Integer.parseInt(NVale8.getText()));
+                pst.setInt(50, Integer.parseInt(NDS.getText()));
+                pst.setString(51, DateFormat.getDateInstance().format(Fecha38.getDate()));
+                pst.setString(52, ObsV8.getText());
+                pst.setString(53, Importe38.getText());
+                pst.setString(54, TDV.getText());
+                pst.setInt(55, Integer.parseInt(NVale9.getText()));
+                pst.setInt(56, Integer.parseInt(NDS.getText()));
+                pst.setString(57, DateFormat.getDateInstance().format(Fecha39.getDate()));
+                pst.setString(58, ObsV9.getText());
+                pst.setString(59, Importe39.getText());
+                pst.setString(60, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -8871,7 +8927,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Importe27KeyReleased
 
     private void Importe27KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyTyped
-                char car = evt.getKeyChar();
+        char car = evt.getKeyChar();
         if ((car < '0' || car > '9') && (car < '.' || car > '.'))
             evt.consume();
     }//GEN-LAST:event_Importe27KeyTyped
