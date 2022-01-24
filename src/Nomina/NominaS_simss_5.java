@@ -935,10 +935,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         ISR = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
-        deposito = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         AgregarNP = new javax.swing.JButton();
         Modm = new javax.swing.JButton();
+        deposito = new javax.swing.JTextField();
         jPanel22 = new javax.swing.JPanel();
         jLabel50 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
@@ -2257,12 +2257,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jLabel24.setText("Desc IMSS:");
 
-        DI.setText("26.98");
-        DI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DIActionPerformed(evt);
-            }
-        });
+        DI.setText("0");
         DI.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 DIKeyReleased(evt);
@@ -2610,9 +2605,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(153, 255, 153));
 
-        deposito.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        deposito.setText("0");
-
         jLabel15.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel15.setText("Deposito");
 
@@ -2632,31 +2624,34 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
         });
 
+        deposito.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(deposito)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
-                .addComponent(AgregarNP)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Modm)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deposito))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addGap(0, 80, Short.MAX_VALUE)
+                        .addComponent(AgregarNP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Modm)))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
-                    .addComponent(deposito))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                    .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgregarNP)
                     .addComponent(Modm))
@@ -6812,7 +6807,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         String Otropagoodt = PenODTnom.getText();
 
         if (Otropagoodt.equals("0.0")) {
-            String SQL = "UPDATE `nominasem.odt` SET `Status` = 'Pagado', `Sem pagadas` = ?,"
+            String SQL = "UPDATE `nominasem.odt` SET `Status` = 'Pagado', `Semanas pagadas` = ?,"
                     + " `Pagado` = ?, `Pendiente` = ? WHERE `nominasem.odt`.`idTaller` = ?";
 
             try {
@@ -7376,7 +7371,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
     public void AgregarPagoPres() {
 
-        String SQL = "INSERT INTO `nomina.pagos.prestamosem` (`#Lista`, `#prestamo`, "
+        String SQL = "INSERT INTO `nominasem.pagos.prestamosem` (`#Lista`, `#prestamo`, "
                 + "`#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                 + " `Servicio`, `Semana`, `# semana`, `pagado`, `pendiente`, "
                 + "`Pago de prestamo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -9836,7 +9831,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             DVT.setText("0");
             apy.setText("0");
             Lugar.setText("");
-            DI.setText("26.98");
+            DI.setText("0");
             cda.setText("0");
             Presp.setText("0");
             obs.setText("");
@@ -10055,7 +10050,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             DVT.setText("0");
             apy.setText("0");
             Lugar.setText("");
-            DI.setText("26.98");
+            DI.setText("0");
             cda.setText("0");
             Presp.setText("0");
             obs.setText("");
@@ -15583,7 +15578,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         DVT.setText("0");
         apy.setText("0");
         Lugar.setText("");
-        DI.setText("26.98");
+        DI.setText("0");
         cda.setText("0");
         Presp.setText("0");
         obs.setText("");
@@ -17350,10 +17345,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_HEKeyReleased
 
-    private void DIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DIActionPerformed
-
-    }//GEN-LAST:event_DIActionPerformed
-
     private void DIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DIKeyReleased
         deposito();
     }//GEN-LAST:event_DIKeyReleased
@@ -17964,7 +17955,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTextField busp8;
     private javax.swing.JTextField cda;
     private javax.swing.JTextField cta;
-    private javax.swing.JLabel deposito;
+    private javax.swing.JTextField deposito;
     private javax.swing.JLabel dt;
     private javax.swing.JTextField filtroNDFP;
     private javax.swing.JTextField filtroNDFP1;
