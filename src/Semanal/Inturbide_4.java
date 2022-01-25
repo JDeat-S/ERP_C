@@ -1136,7 +1136,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO PUENTE TITLA");
+                    cell.setCellValue("SERVICIO C/COBRO INTURBIDE");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);
@@ -9444,7 +9444,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4();
+        Tehuantepec_4 regr = new Tehuantepec_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -9553,7 +9553,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        Tehuantepec_4 regr = new Tehuantepec_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed

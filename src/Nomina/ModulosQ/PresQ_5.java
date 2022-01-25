@@ -1,7 +1,7 @@
 package Nomina.ModulosQ;
 
 import Semanal.PT_4;
-import Semanal.Tehueantepec_4;
+import Semanal.Tehuantepec_4;
 import Semanal.Inturbide_4;
 import VentanasDReportes.*;
 import Admin.*;
@@ -2031,7 +2031,7 @@ public final class PresQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        Tehuantepec_4 regr = new Tehuantepec_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem14ActionPerformed
