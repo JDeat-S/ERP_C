@@ -46,7 +46,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
     public AltasZyS_3() {
         initComponents();
-
+        MostrarServSem();
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         IDS.setVisible(false);
@@ -80,6 +80,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
     public AltasZyS_3(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
+        MostrarServSem();
         this.usr = usr;
         this.LP = LP;
         this.setExtendedState(6);
@@ -116,6 +117,138 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+
+    public void MostrarServSem() {
+        
+        try {
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//nombre tabla
+            TServInt.setModel(modelo);
+
+            PreparedStatement ps;
+            ResultSet rs;
+
+            String sql = "SELECT * FROM `servicios.inturbide`" ;
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Servicio");
+            modelo.addColumn("Nombre de Servicio");
+
+//Anchos
+            int[] anchos = {30, 200};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //nombre tabla
+                TServInt.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de inturbide: \n" + e.getMessage());
+
+        }
+
+        try {
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//nombre tabla
+            TServPte.setModel(modelo);
+
+            PreparedStatement ps;
+            ResultSet rs;
+
+            String sql = "SELECT * FROM `servicios.puente titla`" ;
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Servicio");
+            modelo.addColumn("Nombre de Servicio");
+
+//Anchos
+            int[] anchos = {30, 200};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //nombre tabla
+                TServPte.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de puente titla: \n" + e.getMessage());
+
+        }
+
+        try {
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//nombre tabla
+            TServTehua.setModel(modelo);
+
+            PreparedStatement ps;
+            ResultSet rs;
+
+            String sql = "SELECT * FROM `servicios.tehuantepec`" ;
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Servicio");
+            modelo.addColumn("Nombre de Servicio");
+
+//Anchos
+            int[] anchos = {30, 200};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //nombre tabla
+                TServTehua.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de Tehuantepec: \n" + e.getMessage());
+
+        }
+    }
 //Contar filas
     public void ContarServ() {
         int filas = TServ.getRowCount();
@@ -603,6 +736,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         try {
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
@@ -610,8 +744,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 //nombre tabla
             TablaZona.setModel(modelo);
 
-            PreparedStatement ps = null;
-            ResultSet rs = null;
+            PreparedStatement ps;
+            ResultSet rs;
 
             String sql = "select * from zona" + where;
             ps = con.prepareStatement(sql);
@@ -775,7 +909,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TServInt = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -783,10 +917,10 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        TServTehua = new javax.swing.JTable();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        TServPte = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -1402,7 +1536,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel8.setText("Servicio a registrar:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TServInt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1413,7 +1547,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane12.setViewportView(jTable1);
+        jScrollPane12.setViewportView(TServInt);
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setText("Servicios en Inturbide.");
@@ -1427,7 +1561,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel17.setText("Servicios en Puente titla.");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TServTehua.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1438,12 +1572,12 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane13.setViewportView(jTable2);
+        jScrollPane13.setViewportView(TServTehua);
 
         jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel18.setText("Servicios en Tehuantepec.");
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        TServPte.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1454,7 +1588,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane14.setViewportView(jTable3);
+        jScrollPane14.setViewportView(TServPte);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -2283,6 +2417,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> TDS;
     private javax.swing.JTable TNDS;
     private javax.swing.JTable TServ;
+    private javax.swing.JTable TServInt;
+    private javax.swing.JTable TServPte;
+    private javax.swing.JTable TServTehua;
     private javax.swing.JTable TStatusServ;
     private javax.swing.JTable TablaZona;
     private javax.swing.JLabel TdServ;
@@ -2344,9 +2481,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
