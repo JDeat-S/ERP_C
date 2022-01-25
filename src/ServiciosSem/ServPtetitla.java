@@ -13,7 +13,7 @@ public class ServPtetitla {
     int id;
     String nombre;
 
-    public int getId() {
+        public int getId() {
         return id;
     }
 
@@ -34,15 +34,17 @@ public class ServPtetitla {
         return this.nombre;
     }
 
-    public Vector<ServPtetitla> mostrarservicio(int idServ) {
+    public Vector<ServPtetitla> mostrarserv() {
 
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        Vector<ServPtetitla> datos = new Vector<ServPtetitla>();
-        ServPtetitla dat = null;
+        PreparedStatement ps;
+        ResultSet rs;
+        
+
+        Vector<ServPtetitla> datos = new Vector<>();
+        ServPtetitla dat;
         try {
 
-            String sql = "SELECT * FROM servicio WHERE idZona=" + idServ;
+            String sql = "SELECT * FROM `servicios.ptetitla`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -53,7 +55,7 @@ public class ServPtetitla {
 
             while (rs.next()) {
                 dat = new ServPtetitla();
-                dat.setId(rs.getInt("idServ"));
+                dat.setId(rs.getInt("#Serv"));
                 dat.setNombre(rs.getString("Servicio"));
                 datos.add(dat);
             }
@@ -62,5 +64,6 @@ public class ServPtetitla {
             System.err.println("Error consulta: " + ex.getMessage());
         }
         return datos;
+        
     }
 }

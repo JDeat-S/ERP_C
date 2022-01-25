@@ -35,17 +35,17 @@ public class ServInturbide {
         return this.nombre;
     }
 
-    public Vector<ServInturbide> mostrarzonas() {
+    public Vector<ServInturbide> mostrarserv() {
 
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+        PreparedStatement ps;
+        ResultSet rs;
         
 
-        Vector<ServInturbide> datos = new Vector<ServInturbide>();
-        ServInturbide dat = null;
+        Vector<ServInturbide> datos = new Vector<>();
+        ServInturbide dat;
         try {
 
-            String sql = "SELECT * FROM zona";
+            String sql = "SELECT * FROM `servicios.inturbide`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -56,8 +56,8 @@ public class ServInturbide {
 
             while (rs.next()) {
                 dat = new ServInturbide();
-                dat.setId(rs.getInt("idZona"));
-                dat.setNombre(rs.getString("Zonas"));
+                dat.setId(rs.getInt("#Serv"));
+                dat.setNombre(rs.getString("Servicio"));
                 datos.add(dat);
             }
             rs.close();

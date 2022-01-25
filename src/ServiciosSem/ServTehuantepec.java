@@ -34,15 +34,17 @@ public class ServTehuantepec {
         return this.nombre;
     }
 
-    public Vector<ServTehuantepec> mostrarservicio(int idServ) {
+    public Vector<ServTehuantepec> mostrarserv() {
 
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        Vector<ServTehuantepec> datos = new Vector<ServTehuantepec>();
-        ServTehuantepec dat = null;
+        PreparedStatement ps;
+        ResultSet rs;
+        
+
+        Vector<ServTehuantepec> datos = new Vector<>();
+        ServTehuantepec dat;
         try {
 
-            String sql = "SELECT * FROM servicio WHERE idZona=" + idServ;
+            String sql = "SELECT * FROM `servicios.tehuantepec`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -53,7 +55,7 @@ public class ServTehuantepec {
 
             while (rs.next()) {
                 dat = new ServTehuantepec();
-                dat.setId(rs.getInt("idServ"));
+                dat.setId(rs.getInt("#Serv"));
                 dat.setNombre(rs.getString("Servicio"));
                 datos.add(dat);
             }
@@ -62,5 +64,6 @@ public class ServTehuantepec {
             System.err.println("Error consulta: " + ex.getMessage());
         }
         return datos;
+        
     }
 }
