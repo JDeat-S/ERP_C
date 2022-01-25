@@ -70,6 +70,16 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     public Inturbide_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        Otro.setVisible(false);
+        Otro1.setVisible(false);
+        Otro2.setVisible(false);
+        Otro3.setVisible(false);
+        Otro4.setVisible(false);
+        Otro5.setVisible(false);
+        Otro6.setVisible(false);
+        Otro7.setVisible(false);
+        Otro8.setVisible(false);
+        Otro9.setVisible(false);
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         Fecha2.setCalendar(fecha_actual);
@@ -334,6 +344,16 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         this.usr = usr;
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        Otro.setVisible(false);
+        Otro1.setVisible(false);
+        Otro2.setVisible(false);
+        Otro3.setVisible(false);
+        Otro4.setVisible(false);
+        Otro5.setVisible(false);
+        Otro6.setVisible(false);
+        Otro7.setVisible(false);
+        Otro8.setVisible(false);
+        Otro9.setVisible(false);
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         Fecha2.setCalendar(fecha_actual);
@@ -1102,13 +1122,64 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }
 
     public void Addscc() {
+        String SV, SV1, SV2, SV3, SV4, SV5, SV6, SV7, SV8, SV9;
+        if (Servicio.getSelectedItem().toString().equals("Otro")) {
+            SV = Otro.getText();
+        } else {
+            SV = Servicio.getSelectedItem().toString();
+        }
+        if (Servicio1.getSelectedItem().toString().equals("Otro")) {
+            SV1 = Otro1.getText();
+        } else {
+            SV1 = Servicio1.getSelectedItem().toString();
+        }
+        if (Servicio2.getSelectedItem().toString().equals("Otro")) {
+            SV2 = Otro2.getText();
+        } else {
+            SV2 = Servicio2.getSelectedItem().toString();
+        }
+        if (Servicio3.getSelectedItem().toString().equals("Otro")) {
+            SV3 = Otro3.getText();
+        } else {
+            SV3 = Servicio3.getSelectedItem().toString();
+        }
+        if (Servicio4.getSelectedItem().toString().equals("Otro")) {
+            SV4 = Otro4.getText();
+        } else {
+            SV4 = Servicio4.getSelectedItem().toString();
+        }
+        if (Servicio5.getSelectedItem().toString().equals("Otro")) {
+            SV5 = Otro5.getText();
+        } else {
+            SV5 = Servicio5.getSelectedItem().toString();
+        }
+        if (Servicio6.getSelectedItem().toString().equals("Otro")) {
+            SV6 = Otro6.getText();
+        } else {
+            SV6 = Servicio6.getSelectedItem().toString();
+        }
+        if (Servicio7.getSelectedItem().toString().equals("Otro")) {
+            SV7 = Otro7.getText();
+        } else {
+            SV7 = Servicio7.getSelectedItem().toString();
+        }
+        if (Servicio8.getSelectedItem().toString().equals("Otro")) {
+            SV8 = Otro8.getText();
+        } else {
+            SV8 = Servicio8.getSelectedItem().toString();
+        }
+        if (Servicio9.getSelectedItem().toString().equals("Otro")) {
+            SV9 = Otro9.getText();
+        } else {
+            SV9 = Servicio9.getSelectedItem().toString();
+        }
         if (Mas.isVisible()) {
             String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
 
@@ -1126,12 +1197,12 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
 
@@ -1150,17 +1221,17 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
 
@@ -1179,22 +1250,22 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
 
@@ -1213,27 +1284,27 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
 
@@ -1252,32 +1323,32 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
 
@@ -1296,37 +1367,37 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
                 pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
 
@@ -1345,42 +1416,42 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
                 pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
                 pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(38, SV7);
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
 
@@ -1399,47 +1470,47 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
                 pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
                 pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(38, SV7);
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
                 pst.setInt(41, Integer.parseInt(NDS.getText()));
                 pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
-                pst.setString(43, Servicio8.getSelectedItem().toString());
+                pst.setString(43, SV8);
                 pst.setString(44, Importe8.getText());
                 pst.setString(45, TDIDS.getText());
 
@@ -1459,52 +1530,52 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
                 pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
                 pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(38, SV7);
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
                 pst.setInt(41, Integer.parseInt(NDS.getText()));
                 pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
-                pst.setString(43, Servicio8.getSelectedItem().toString());
+                pst.setString(43, SV8);
                 pst.setString(44, Importe8.getText());
                 pst.setString(45, TDIDS.getText());
                 pst.setInt(46, Integer.parseInt(NDS.getText()));
                 pst.setString(47, DateFormat.getDateInstance().format(Fecha9.getDate()));
-                pst.setString(48, Servicio9.getSelectedItem().toString());
+                pst.setString(48, SV9);
                 pst.setString(49, Importe9.getText());
                 pst.setString(50, TDIDS.getText());
 
@@ -3129,6 +3200,16 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         Mas7 = new javax.swing.JButton();
         Menos8 = new javax.swing.JButton();
         Mas8 = new javax.swing.JButton();
+        Otro = new javax.swing.JTextField();
+        Otro1 = new javax.swing.JTextField();
+        Otro2 = new javax.swing.JTextField();
+        Otro3 = new javax.swing.JTextField();
+        Otro4 = new javax.swing.JTextField();
+        Otro5 = new javax.swing.JTextField();
+        Otro6 = new javax.swing.JTextField();
+        Otro7 = new javax.swing.JTextField();
+        Otro8 = new javax.swing.JTextField();
+        Otro9 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         Panel2 = new javax.swing.JPanel();
@@ -3443,6 +3524,11 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         });
 
         Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ServicioItemStateChanged(evt);
+            }
+        });
 
         jLabel2.setText("Fecha");
 
@@ -3451,22 +3537,67 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel4.setText("Importe");
 
         Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio1ItemStateChanged(evt);
+            }
+        });
 
         Servicio2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio2ItemStateChanged(evt);
+            }
+        });
 
         Servicio3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio3ItemStateChanged(evt);
+            }
+        });
 
         Servicio4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio4ItemStateChanged(evt);
+            }
+        });
 
         Servicio5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio5ItemStateChanged(evt);
+            }
+        });
 
         Servicio6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio6ItemStateChanged(evt);
+            }
+        });
 
         Servicio7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio7ItemStateChanged(evt);
+            }
+        });
 
         Servicio8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio8ItemStateChanged(evt);
+            }
+        });
 
         Servicio9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio9.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio9ItemStateChanged(evt);
+            }
+        });
 
         Importe1.setText("0");
         Importe1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -3732,21 +3863,31 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
@@ -3754,9 +3895,13 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                                     .addGroup(PanelLayout.createSequentialGroup()
                                         .addComponent(Servicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Otro4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Importe4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(PanelLayout.createSequentialGroup()
                                         .addComponent(Servicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Otro3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Importe3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(PanelLayout.createSequentialGroup()
@@ -3766,11 +3911,20 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                                             .addComponent(Servicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel4)
-                                            .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(PanelLayout.createSequentialGroup()
+                                                .addComponent(Otro1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(PanelLayout.createSequentialGroup()
+                                                .addComponent(Otro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel4)
+                                                    .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                     .addGroup(PanelLayout.createSequentialGroup()
                                         .addComponent(Servicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Otro2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3824,72 +3978,82 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(jLabel2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
                         .addGap(3, 3, 3)))
                 .addGap(3, 3, 3)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Servicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Servicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Otro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(6, 6, 6)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Importe5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5497,11 +5661,12 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 .addContainerGap()
                 .addComponent(jLabel28)
                 .addGap(1, 1, 1)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel29)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel42))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel29)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel42)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5883,17 +6048,6 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(TDG)
-                                            .addComponent(TMG)
-                                            .addComponent(DE)
-                                            .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                            .addComponent(TDV)
-                                            .addComponent(DBe))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel41)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(TDIDP)
                                             .addComponent(TDSYP)
@@ -5905,19 +6059,26 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(AutoFecha)
-                                            .addComponent(Autohora)))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(Autohora)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel34)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(TDG)
+                                            .addComponent(TMG)
+                                            .addComponent(DE)
+                                            .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                            .addComponent(TDV)
+                                            .addComponent(DBe))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NDS)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton1)
-                                        .addGap(186, 186, 186))
-                                    .addComponent(jLabel1))
-                                .addGap(112, 112, 112)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton1)
+                                            .addComponent(jLabel41)
+                                            .addComponent(jLabel1))
+                                        .addGap(0, 8, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NDS)
+                                .addGap(411, 411, 411)))
                         .addGap(51, 51, 51))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -9012,6 +9173,86 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             evt.consume();
     }//GEN-LAST:event_Importe27KeyTyped
 
+    private void ServicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ServicioItemStateChanged
+        if (Servicio.getSelectedItem().toString().equals("Otro")) {
+            Otro.setVisible(true);
+        } else {
+            Otro.setVisible(false);
+        }
+    }//GEN-LAST:event_ServicioItemStateChanged
+
+    private void Servicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio1ItemStateChanged
+        if (Servicio1.getSelectedItem().toString().equals("Otro")) {
+            Otro1.setVisible(true);
+        } else {
+            Otro1.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio1ItemStateChanged
+
+    private void Servicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio2ItemStateChanged
+        if (Servicio2.getSelectedItem().toString().equals("Otro")) {
+            Otro2.setVisible(true);
+        } else {
+            Otro2.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio2ItemStateChanged
+
+    private void Servicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio3ItemStateChanged
+        if (Servicio3.getSelectedItem().toString().equals("Otro")) {
+            Otro3.setVisible(true);
+        } else {
+            Otro3.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio3ItemStateChanged
+
+    private void Servicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio4ItemStateChanged
+        if (Servicio4.getSelectedItem().toString().equals("Otro")) {
+            Otro4.setVisible(true);
+        } else {
+            Otro4.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio4ItemStateChanged
+
+    private void Servicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio5ItemStateChanged
+        if (Servicio5.getSelectedItem().toString().equals("Otro")) {
+            Otro5.setVisible(true);
+        } else {
+            Otro5.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio5ItemStateChanged
+
+    private void Servicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio6ItemStateChanged
+        if (Servicio6.getSelectedItem().toString().equals("Otro")) {
+            Otro6.setVisible(true);
+        } else {
+            Otro6.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio6ItemStateChanged
+
+    private void Servicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio7ItemStateChanged
+        if (Servicio7.getSelectedItem().toString().equals("Otro")) {
+            Otro7.setVisible(true);
+        } else {
+            Otro7.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio7ItemStateChanged
+
+    private void Servicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio8ItemStateChanged
+        if (Servicio8.getSelectedItem().toString().equals("Otro")) {
+            Otro8.setVisible(true);
+        } else {
+            Otro8.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio8ItemStateChanged
+
+    private void Servicio9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio9ItemStateChanged
+        if (Servicio9.getSelectedItem().toString().equals("Otro")) {
+            Otro9.setVisible(true);
+        } else {
+            Otro9.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio9ItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -9278,6 +9519,16 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField ObsV7;
     private javax.swing.JTextField ObsV8;
     private javax.swing.JTextField ObsV9;
+    private javax.swing.JTextField Otro;
+    private javax.swing.JTextField Otro1;
+    private javax.swing.JTextField Otro2;
+    private javax.swing.JTextField Otro3;
+    private javax.swing.JTextField Otro4;
+    private javax.swing.JTextField Otro5;
+    private javax.swing.JTextField Otro6;
+    private javax.swing.JTextField Otro7;
+    private javax.swing.JTextField Otro8;
+    private javax.swing.JTextField Otro9;
     private javax.swing.JMenuItem PRESQ;
     private javax.swing.JPanel Panel;
     private javax.swing.JPanel Panel2;
