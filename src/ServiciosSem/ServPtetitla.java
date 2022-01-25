@@ -44,7 +44,7 @@ public class ServPtetitla {
         ServPtetitla dat;
         try {
 
-            String sql = "SELECT * FROM `servicios.ptetitla`";
+            String sql = "SELECT * FROM `servicios.puente titla`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
