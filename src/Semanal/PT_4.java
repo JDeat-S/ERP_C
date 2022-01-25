@@ -1,8 +1,8 @@
 package Semanal;
 
 import Nomina.ModulosS.CDAS_5;
-import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
@@ -15,6 +15,8 @@ import RH.Depositos_4;
 import RH.Empleados_4;
 import RH.Estadias_4;
 import RH.Tortas_4;
+import ServiciosSem.ServInturbide;
+import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.HeadlessException;
 import java.io.File;
@@ -34,6 +36,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -69,6 +72,65 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     public PT_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        Otro.setVisible(false);
+        Otro1.setVisible(false);
+        Otro2.setVisible(false);
+        Otro3.setVisible(false);
+        Otro4.setVisible(false);
+        Otro5.setVisible(false);
+        Otro6.setVisible(false);
+        Otro7.setVisible(false);
+        Otro8.setVisible(false);
+        Otro9.setVisible(false);
+        Fecha.setCalendar(fecha_actual);
+        Fecha1.setCalendar(fecha_actual);
+        Fecha2.setCalendar(fecha_actual);
+        Fecha3.setCalendar(fecha_actual);
+        Fecha4.setCalendar(fecha_actual);
+        Fecha5.setCalendar(fecha_actual);
+        Fecha6.setCalendar(fecha_actual);
+        Fecha7.setCalendar(fecha_actual);
+        Fecha8.setCalendar(fecha_actual);
+        Fecha9.setCalendar(fecha_actual);
+        Fecha10.setCalendar(fecha_actual);
+        Fecha11.setCalendar(fecha_actual);
+        Fecha12.setCalendar(fecha_actual);
+        Fecha13.setCalendar(fecha_actual);
+        Fecha14.setCalendar(fecha_actual);
+        Fecha15.setCalendar(fecha_actual);
+        Fecha16.setCalendar(fecha_actual);
+        Fecha17.setCalendar(fecha_actual);
+        Fecha18.setCalendar(fecha_actual);
+        Fecha19.setCalendar(fecha_actual);
+        Fecha20.setCalendar(fecha_actual);
+        Fecha21.setCalendar(fecha_actual);
+        Fecha22.setCalendar(fecha_actual);
+        Fecha23.setCalendar(fecha_actual);
+        Fecha24.setCalendar(fecha_actual);
+        Fecha25.setCalendar(fecha_actual);
+        Fecha26.setCalendar(fecha_actual);
+        Fecha27.setCalendar(fecha_actual);
+        Fecha28.setCalendar(fecha_actual);
+        Fecha29.setCalendar(fecha_actual);
+        Fecha30.setCalendar(fecha_actual);
+        Fecha31.setCalendar(fecha_actual);
+        Fecha32.setCalendar(fecha_actual);
+        Fecha33.setCalendar(fecha_actual);
+        Fecha34.setCalendar(fecha_actual);
+        Fecha35.setCalendar(fecha_actual);
+        Fecha36.setCalendar(fecha_actual);
+        Fecha37.setCalendar(fecha_actual);
+        Fecha38.setCalendar(fecha_actual);
+        Fecha39.setCalendar(fecha_actual);
+        NVale1.setVisible(false);
+        NVale2.setVisible(false);
+        NVale3.setVisible(false);
+        NVale4.setVisible(false);
+        NVale5.setVisible(false);
+        NVale6.setVisible(false);
+        NVale7.setVisible(false);
+        NVale8.setVisible(false);
+        NVale9.setVisible(false);
         NPadron1.setVisible(false);
         NPadron2.setVisible(false);
         NPadron3.setVisible(false);
@@ -268,6 +330,36 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Importe39.setVisible(false);
 
         // </editor-fold>     
+        ServInturbide zz = new ServInturbide();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarserv());
+        Servicio.setModel(modelzonas);
+        ServInturbide zz1 = new ServInturbide();
+        DefaultComboBoxModel modelzonas1 = new DefaultComboBoxModel(zz1.mostrarserv());
+        Servicio1.setModel(modelzonas1);
+        ServInturbide zz2 = new ServInturbide();
+        DefaultComboBoxModel modelzonas2 = new DefaultComboBoxModel(zz2.mostrarserv());
+        Servicio2.setModel(modelzonas2);
+        ServInturbide zz3 = new ServInturbide();
+        DefaultComboBoxModel modelzonas3 = new DefaultComboBoxModel(zz3.mostrarserv());
+        Servicio3.setModel(modelzonas3);
+        ServInturbide zz4 = new ServInturbide();
+        DefaultComboBoxModel modelzonas4 = new DefaultComboBoxModel(zz4.mostrarserv());
+        Servicio4.setModel(modelzonas4);
+        ServInturbide zz5 = new ServInturbide();
+        DefaultComboBoxModel modelzonas5 = new DefaultComboBoxModel(zz5.mostrarserv());
+        Servicio5.setModel(modelzonas5);
+        ServInturbide zz6 = new ServInturbide();
+        DefaultComboBoxModel modelzonas6 = new DefaultComboBoxModel(zz6.mostrarserv());
+        Servicio6.setModel(modelzonas6);
+        ServInturbide zz7 = new ServInturbide();
+        DefaultComboBoxModel modelzonas7 = new DefaultComboBoxModel(zz7.mostrarserv());
+        Servicio7.setModel(modelzonas7);
+        ServInturbide zz8 = new ServInturbide();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarserv());
+        Servicio8.setModel(modelzonas8);
+        ServInturbide zz9 = new ServInturbide();
+        DefaultComboBoxModel modelzonas9 = new DefaultComboBoxModel(zz9.mostrarserv());
+        Servicio9.setModel(modelzonas9);
         h1 = new Thread((Runnable) this);
         h1.start();
         String timeStamp = new SimpleDateFormat("EEEE, dd/MMMM/yyyy").format(Calendar.getInstance().getTime());
@@ -284,6 +376,65 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         this.usr = usr;
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        Otro.setVisible(false);
+        Otro1.setVisible(false);
+        Otro2.setVisible(false);
+        Otro3.setVisible(false);
+        Otro4.setVisible(false);
+        Otro5.setVisible(false);
+        Otro6.setVisible(false);
+        Otro7.setVisible(false);
+        Otro8.setVisible(false);
+        Otro9.setVisible(false);
+        Fecha.setCalendar(fecha_actual);
+        Fecha1.setCalendar(fecha_actual);
+        Fecha2.setCalendar(fecha_actual);
+        Fecha3.setCalendar(fecha_actual);
+        Fecha4.setCalendar(fecha_actual);
+        Fecha5.setCalendar(fecha_actual);
+        Fecha6.setCalendar(fecha_actual);
+        Fecha7.setCalendar(fecha_actual);
+        Fecha8.setCalendar(fecha_actual);
+        Fecha9.setCalendar(fecha_actual);
+        Fecha10.setCalendar(fecha_actual);
+        Fecha11.setCalendar(fecha_actual);
+        Fecha12.setCalendar(fecha_actual);
+        Fecha13.setCalendar(fecha_actual);
+        Fecha14.setCalendar(fecha_actual);
+        Fecha15.setCalendar(fecha_actual);
+        Fecha16.setCalendar(fecha_actual);
+        Fecha17.setCalendar(fecha_actual);
+        Fecha18.setCalendar(fecha_actual);
+        Fecha19.setCalendar(fecha_actual);
+        Fecha20.setCalendar(fecha_actual);
+        Fecha21.setCalendar(fecha_actual);
+        Fecha22.setCalendar(fecha_actual);
+        Fecha23.setCalendar(fecha_actual);
+        Fecha24.setCalendar(fecha_actual);
+        Fecha25.setCalendar(fecha_actual);
+        Fecha26.setCalendar(fecha_actual);
+        Fecha27.setCalendar(fecha_actual);
+        Fecha28.setCalendar(fecha_actual);
+        Fecha29.setCalendar(fecha_actual);
+        Fecha30.setCalendar(fecha_actual);
+        Fecha31.setCalendar(fecha_actual);
+        Fecha32.setCalendar(fecha_actual);
+        Fecha33.setCalendar(fecha_actual);
+        Fecha34.setCalendar(fecha_actual);
+        Fecha35.setCalendar(fecha_actual);
+        Fecha36.setCalendar(fecha_actual);
+        Fecha37.setCalendar(fecha_actual);
+        Fecha38.setCalendar(fecha_actual);
+        Fecha39.setCalendar(fecha_actual);
+        NVale1.setVisible(false);
+        NVale2.setVisible(false);
+        NVale3.setVisible(false);
+        NVale4.setVisible(false);
+        NVale5.setVisible(false);
+        NVale6.setVisible(false);
+        NVale7.setVisible(false);
+        NVale8.setVisible(false);
+        NVale9.setVisible(false);
         NPadron1.setVisible(false);
         NPadron2.setVisible(false);
         NPadron3.setVisible(false);
@@ -483,6 +634,36 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Importe39.setVisible(false);
 
         // </editor-fold>     
+        ServInturbide zz = new ServInturbide();
+        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarserv());
+        Servicio.setModel(modelzonas);
+        ServInturbide zz1 = new ServInturbide();
+        DefaultComboBoxModel modelzonas1 = new DefaultComboBoxModel(zz1.mostrarserv());
+        Servicio1.setModel(modelzonas1);
+        ServInturbide zz2 = new ServInturbide();
+        DefaultComboBoxModel modelzonas2 = new DefaultComboBoxModel(zz2.mostrarserv());
+        Servicio2.setModel(modelzonas2);
+        ServInturbide zz3 = new ServInturbide();
+        DefaultComboBoxModel modelzonas3 = new DefaultComboBoxModel(zz3.mostrarserv());
+        Servicio3.setModel(modelzonas3);
+        ServInturbide zz4 = new ServInturbide();
+        DefaultComboBoxModel modelzonas4 = new DefaultComboBoxModel(zz4.mostrarserv());
+        Servicio4.setModel(modelzonas4);
+        ServInturbide zz5 = new ServInturbide();
+        DefaultComboBoxModel modelzonas5 = new DefaultComboBoxModel(zz5.mostrarserv());
+        Servicio5.setModel(modelzonas5);
+        ServInturbide zz6 = new ServInturbide();
+        DefaultComboBoxModel modelzonas6 = new DefaultComboBoxModel(zz6.mostrarserv());
+        Servicio6.setModel(modelzonas6);
+        ServInturbide zz7 = new ServInturbide();
+        DefaultComboBoxModel modelzonas7 = new DefaultComboBoxModel(zz7.mostrarserv());
+        Servicio7.setModel(modelzonas7);
+        ServInturbide zz8 = new ServInturbide();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarserv());
+        Servicio8.setModel(modelzonas8);
+        ServInturbide zz9 = new ServInturbide();
+        DefaultComboBoxModel modelzonas9 = new DefaultComboBoxModel(zz9.mostrarserv());
+        Servicio9.setModel(modelzonas9);
         h1 = new Thread((Runnable) this);
         h1.start();
         String timeStamp = new SimpleDateFormat("EEEE, dd/MMMM/yyyy").format(Calendar.getInstance().getTime());
@@ -492,7 +673,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         setIconImage(new ImageIcon(PT_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
         MDsem();
-        setTitle("Semanal Puente ticla # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+        setTitle("Semanal Inturbide # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
             case 0 -> {
@@ -532,15 +713,1000 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         }
     }
 
+    public void Reporte2() {
+        JFileChooser chooser1 = new JFileChooser();
+        FileNameExtensionFilter filter1 = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+        chooser1.setSelectedFile(new File("Ingresos y egresos Semanal No. " + NDS.getText()));
+        chooser1.setFileFilter(filter1);
+        chooser1.setDialogTitle("Guardar archivo");
+        chooser1.setAcceptAllFileFilterUsed(false);
+        if (chooser1.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            String ruta = chooser1.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+        }
+        try {
+            String ruta = chooser1.getSelectedFile().toString().concat(".xlsx");
+            File archivoXLS = new File(ruta);
+            if (archivoXLS.exists()) {
+                archivoXLS.delete();
+            }
+            archivoXLS.createNewFile();
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection(
+                    "jdbc:mysql://192.168.1.170:3306/confort2022",
+                    "Servidor",
+                    "Confort1022"
+            );
+
+            Statement statementscc = connect.createStatement();
+            Statement statementpen = connect.createStatement();
+            Statement statementgast = connect.createStatement();
+            Statement statementval = connect.createStatement();
+            Statement statementNsem = connect.createStatement();
+
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
+
+            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                XSSFWorkbook libro = new XSSFWorkbook();
+                XSSFSheet spreadsheet = libro.createSheet(("Ingresos y egresos"));
+
+                XSSFCellStyle Encabezado = libro.createCellStyle();
+                Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle Contenido = libro.createCellStyle();
+                Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                XSSFRow row = spreadsheet.createRow((short) 0);
+                XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+                spreadsheet.createRow(3);
+                spreadsheet.createRow(4);
+                spreadsheet.createRow(5);
+                spreadsheet.createRow(6);
+                spreadsheet.createRow(7);
+                spreadsheet.createRow(8);
+                spreadsheet.createRow(9);
+                spreadsheet.createRow(10);
+                spreadsheet.createRow(11);
+                spreadsheet.createRow(12);
+                spreadsheet.createRow(13);
+                spreadsheet.createRow(14);
+
+                int i = 3;
+                while (NSem.next()) {
+
+                    cell.setCellValue("Ingresos y egresos Semanal No. " + NDS.getText() + " de " + AutoFecha.getText());
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    0, //first row (0-based)
+                                    0, //last row (0-based)
+                                    0, //first column (0-based)
+                                    12 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(1);
+                    cell = row.createCell(0);
+                    cell.setCellValue("Servicios con cobro");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    0, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
+                    cell = row.createCell(4);
+                    cell.setCellValue("Pensiones");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+
+                    cell = row.createCell(7);
+                    cell.setCellValue("Gastos");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    7, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+
+                    cell = row.createCell(10);
+                    cell.setCellValue("Vales");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    10, //first column (0-based)
+                                    12 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(2);
+                    cell = row.createCell(0);
+                    cell.setCellValue("# Semanal");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(1);
+                    cell.setCellValue("Fecha");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(2);
+                    cell.setCellValue("Servicio");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(3);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(4);
+                    cell.setCellValue("Servicio");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(5);
+                    cell.setCellValue("# de padron");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(6);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(7);
+                    cell.setCellValue("Concepto");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue("Lista de asistencia");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(10);
+                    cell.setCellValue("# vale");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(11);
+                    cell.setCellValue("Observacion");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(12);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Encabezado);
+
+                    row = spreadsheet.getRow(i);
+                    cell = row.createCell(0);
+                    cell.setCellValue(NSem.getString("#Nsem"));
+                    cell = row.createCell(1);
+                    cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+                i = 3;
+
+                while (scc.next()) {
+                    row = spreadsheet.getRow(i);
+
+                    cell = row.createCell(2);
+                    cell.setCellValue(scc.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellValue(scc.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+                i = 3;
+
+                while (pen.next()) {
+                    row = spreadsheet.getRow(i);
+                    cell = row.createCell(4);
+                    cell.setCellValue(pen.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue(pen.getString("# de padron"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellValue(pen.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+                i = 3;
+
+                while (gast.next()) {
+                    row = spreadsheet.getRow(i);
+                    cell = row.createCell(7);
+                    cell.setCellValue(gast.getString(4));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellValue(gast.getString(5));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellValue(gast.getString(6));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+                i = 3;
+                while (val.next()) {
+                    row = spreadsheet.getRow(i);
+                    cell = row.createCell(10);
+                    cell.setCellValue(val.getString(1));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(11);
+                    cell.setCellValue(val.getString(4));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue(val.getString(5));
+                    cell.setCellStyle(Contenido);
+                    i++;
+
+                }
+
+                spreadsheet.getPrintSetup();
+                spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
+                spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
+                spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                spreadsheet.setVerticallyCenter(true);
+                libro.write(archivo);
+            }
+            Desktop.getDesktop().open(archivoXLS);
+        } catch (IOException | NumberFormatException e) {
+
+            try {
+                throw e;
+            } catch (IOException | NumberFormatException ex) {
+                Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void Reporte1() {
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+        chooser.setSelectedFile(new File("Semanal No. " + NDS.getText()));
+        chooser.setFileFilter(filter);
+        chooser.setDialogTitle("Guardar archivo");
+        chooser.setAcceptAllFileFilterUsed(false);
+        if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+        }
+        try {
+            String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+            File archivoXLS = new File(ruta);
+            if (archivoXLS.exists()) {
+                archivoXLS.delete();
+            }
+            archivoXLS.createNewFile();
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection(
+                    "jdbc:mysql://192.168.1.170:3306/confort2022",
+                    "Servidor",
+                    "Confort1022"
+            );
+
+            Statement statementscc = connect.createStatement();
+            Statement statementpen = connect.createStatement();
+            Statement statementgast = connect.createStatement();
+            Statement statementval = connect.createStatement();
+            Statement statementNsem = connect.createStatement();
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
+
+            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                XSSFWorkbook libro = new XSSFWorkbook();
+                XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
+
+                XSSFCellStyle Encabezado = libro.createCellStyle();
+                Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle Contenido = libro.createCellStyle();
+                Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                XSSFRow row = spreadsheet.createRow((short) 0);
+                XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+
+//  int i = 2;
+                while (NSem.next()) {
+
+                    cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    0, //first row (0-based)
+                                    0, //last row (0-based)
+                                    0, //first column (0-based)
+                                    5 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellValue(NSem.getString("MMM/YY"));
+
+                    row = spreadsheet.createRow(1);
+                    cell = row.createCell(2);
+                    cell.setCellValue("Reporte General de Zona");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    2, //first column (0-based)
+                                    5 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(2);
+                    cell = row.createCell(2);
+                    cell.setCellValue("Zona Sur 1");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    2, //first row (0-based)
+                                    2, //last row (0-based)
+                                    2, //first column (0-based)
+                                    5 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(7);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    7, //first row (0-based)
+                                    7, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("SERVICIO C/COBRO PUENTE TITLA");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(8);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    8, //first row (0-based)
+                                    8, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("SERVICIO");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(4);
+                    cell.setCellValue("INICIO");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("TERMINO");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.setColumnWidth(6, 3000);
+                    cell = row.createCell(6);
+                    cell.setCellValue("# REPORTE");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("IMPORTE");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total de servicios y pensiones");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(11);
+                    cell.setCellValue("el entrega");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue(NSem.getString("el entrega"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(3);
+                    cell = row.createCell(6);
+                    cell.setCellValue(NSem.getString("#Nsem"));
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total restando gastos");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(11);
+                    cell.setCellValue("Debe");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue(NSem.getString("Debe"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(4);
+                    cell = row.createCell(3);
+                    cell.setCellValue("FECHA: ");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    4, //first row (0-based)
+                                    4, //last row (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+
+                    cell = row.createCell(4);
+                    cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total restando gastos");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(11);
+
+                    row = spreadsheet.createRow(5);
+                    cell = row.createCell(3);
+                    cell.setCellValue("HORA: ");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    5, //first row (0-based)
+                                    5, //last row (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(4);
+                    cell.setCellValue(NSem.getString("hora"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Debe entregar");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Debe entregar"));
+                    cell.setCellStyle(Contenido);
+
+                    NSem.isClosed();
+                }
+                int i = 9;
+                while (scc.next()) {
+                    row = spreadsheet.createRow(i);
+                    spreadsheet.setColumnWidth(0, 3500);
+                    cell = row.createCell(0);
+                    cell.setCellValue(scc.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    i, //first row (0-based)
+                                    i, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(scc.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(scc.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    i++;
+
+                    row = spreadsheet.createRow(i);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(scc.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    scc.isClosed();
+                    statementscc.isClosed();
+
+                }
+                int x = 22;
+
+                while (pen.next()) {
+                    row = spreadsheet.createRow(20);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    20, //first row (0-based)
+                                    20, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("PENSIONES");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(21);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    21, //first row (0-based)
+                                    21, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("SERVICIO");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("# de padron");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    21, //first row (0-based)
+                                    21, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("IMPORTE");
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(pen.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(pen.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("# de padron");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(5);
+                    cell.setCellValue(pen.getString("# de padron"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(pen.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(pen.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    pen.isClosed();
+
+                }
+                x = 35;
+
+                while (gast.next()) {
+                    row = spreadsheet.createRow(33);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    33, //first row (0-based)
+                                    33, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("GASTOS");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(34);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    34, //first row (0-based)
+                                    34, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("Concepto");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    34, //first row (0-based)
+                                    34, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("# LISTA");
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(gast.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    4 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(gast.getString("Concepto"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue(gast.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    5, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(gast.getString("#Lista"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(gast.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    gast.isClosed();
+
+                }
+                x = 48;
+
+                while (val.next()) {
+                    row = spreadsheet.createRow(46);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    46, //first row (0-based)
+                                    46, //last row (0-based)
+                                    0, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(0);
+                    cell.setCellValue("VALES");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(47);
+                    cell = row.createCell(0);
+                    cell.setCellValue("FECHA");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    47, //first row (0-based)
+                                    47, //last row (0-based)
+                                    1, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(0);
+                    cell.setCellValue(val.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    x, //first row (0-based)
+                                    x, //last row (0-based)
+                                    1, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellValue(val.getString("Observaciones"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(val.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    x++;
+
+                    row = spreadsheet.createRow(x);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell.setCellValue("TOTAL: ");
+                    cell = row.createCell(7);
+                    cell.setCellValue(val.getString("Total"));
+                    cell.setCellStyle(Contenido);
+                    pen.isClosed();
+
+                }
+
+                spreadsheet.getPrintSetup();
+                spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
+                spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
+                spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                spreadsheet.setVerticallyCenter(true);
+                libro.write(archivo);
+            }
+            Desktop.getDesktop().open(archivoXLS);
+        } catch (IOException | NumberFormatException e) {
+
+            try {
+                throw e;
+            } catch (IOException | NumberFormatException ex) {
+                Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void ColorDB() {
+        double DB = Double.parseDouble(DBe.getText());
+        if (DB <= 0) {
+            DBe.setBackground(Color.green);
+
+        } else {
+            DBe.setBackground(Color.RED);
+
+        }
+    }
+
     public void MDsem() {
         //Buscar empleado
         String sem = txtsem.getText();
         /*String ShareAP = BusAPcdash.getText();
         String ShareAM = BusAMcdash.getText();*/
-        String SQL = "SELECT * FROM `rh.semanal.ptetitla.nsem`";
+        String SQL = "SELECT * FROM `rh.semanal.inturbide.nsem`";
 
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.ptetitla.nsem` where `#Nsem` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.nsem` where `#Nsem` LIKE '%" + sem + "%'";
         }
         /*else if (!"".equals(ShareAP)) {
             where = " select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
@@ -605,9 +1771,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.ptetitla.scc` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.ptetitla.scc` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -658,9 +1824,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.ptetitla.pen` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.ptetitla.pen` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -712,9 +1878,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.ptetitla.gast` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.ptetitla.gast` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -766,9 +1932,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         }
 
-        SQL = "SELECT * FROM `rh.semanal.ptetitla.val` where `Semanal` LIKE '%" + sem + "%'";
+        SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
-            SQL = "SELECT * FROM `rh.semanal.ptetitla.val` where `Semanal` LIKE '%" + sem + "%'";
+            SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
         }
 
         try {
@@ -822,46 +1988,46 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }
 
     public void limpiar() {
-        Fecha.setDate(null);
-        Fecha1.setDate(null);
-        Fecha2.setDate(null);
-        Fecha3.setDate(null);
-        Fecha4.setDate(null);
-        Fecha5.setDate(null);
-        Fecha6.setDate(null);
-        Fecha7.setDate(null);
-        Fecha8.setDate(null);
-        Fecha9.setDate(null);
-        Fecha10.setDate(null);
-        Fecha11.setDate(null);
-        Fecha12.setDate(null);
-        Fecha13.setDate(null);
-        Fecha14.setDate(null);
-        Fecha15.setDate(null);
-        Fecha16.setDate(null);
-        Fecha17.setDate(null);
-        Fecha18.setDate(null);
-        Fecha19.setDate(null);
-        Fecha20.setDate(null);
-        Fecha21.setDate(null);
-        Fecha22.setDate(null);
-        Fecha23.setDate(null);
-        Fecha24.setDate(null);
-        Fecha25.setDate(null);
-        Fecha26.setDate(null);
-        Fecha27.setDate(null);
-        Fecha28.setDate(null);
-        Fecha29.setDate(null);
-        Fecha30.setDate(null);
-        Fecha31.setDate(null);
-        Fecha32.setDate(null);
-        Fecha33.setDate(null);
-        Fecha34.setDate(null);
-        Fecha35.setDate(null);
-        Fecha36.setDate(null);
-        Fecha37.setDate(null);
-        Fecha38.setDate(null);
-        Fecha39.setDate(null);
+        Fecha.setCalendar(fecha_actual);
+        Fecha1.setCalendar(fecha_actual);
+        Fecha2.setCalendar(fecha_actual);
+        Fecha3.setCalendar(fecha_actual);
+        Fecha4.setCalendar(fecha_actual);
+        Fecha5.setCalendar(fecha_actual);
+        Fecha6.setCalendar(fecha_actual);
+        Fecha7.setCalendar(fecha_actual);
+        Fecha8.setCalendar(fecha_actual);
+        Fecha9.setCalendar(fecha_actual);
+        Fecha10.setCalendar(fecha_actual);
+        Fecha11.setCalendar(fecha_actual);
+        Fecha12.setCalendar(fecha_actual);
+        Fecha13.setCalendar(fecha_actual);
+        Fecha14.setCalendar(fecha_actual);
+        Fecha15.setCalendar(fecha_actual);
+        Fecha16.setCalendar(fecha_actual);
+        Fecha17.setCalendar(fecha_actual);
+        Fecha18.setCalendar(fecha_actual);
+        Fecha19.setCalendar(fecha_actual);
+        Fecha20.setCalendar(fecha_actual);
+        Fecha21.setCalendar(fecha_actual);
+        Fecha22.setCalendar(fecha_actual);
+        Fecha23.setCalendar(fecha_actual);
+        Fecha24.setCalendar(fecha_actual);
+        Fecha25.setCalendar(fecha_actual);
+        Fecha26.setCalendar(fecha_actual);
+        Fecha27.setCalendar(fecha_actual);
+        Fecha28.setCalendar(fecha_actual);
+        Fecha29.setCalendar(fecha_actual);
+        Fecha30.setCalendar(fecha_actual);
+        Fecha31.setCalendar(fecha_actual);
+        Fecha32.setCalendar(fecha_actual);
+        Fecha33.setCalendar(fecha_actual);
+        Fecha34.setCalendar(fecha_actual);
+        Fecha35.setCalendar(fecha_actual);
+        Fecha36.setCalendar(fecha_actual);
+        Fecha37.setCalendar(fecha_actual);
+        Fecha38.setCalendar(fecha_actual);
+        Fecha39.setCalendar(fecha_actual);
         Servicio3.setSelectedIndex(0);
         Importe3.setText("0");
         NPadron3.setText("");
@@ -963,7 +2129,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void ADDSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
-        String SQL = "INSERT INTO `rh.semanal.ptetitla.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
+        String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
                 + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`,"
                 + " `el entrega`, `Debe`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
@@ -992,13 +2158,64 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }
 
     public void Addscc() {
+        String SV, SV1, SV2, SV3, SV4, SV5, SV6, SV7, SV8, SV9;
+        if (Servicio.getSelectedItem().toString().equals("Otro")) {
+            SV = Otro.getText();
+        } else {
+            SV = Servicio.getSelectedItem().toString();
+        }
+        if (Servicio1.getSelectedItem().toString().equals("Otro")) {
+            SV1 = Otro1.getText();
+        } else {
+            SV1 = Servicio1.getSelectedItem().toString();
+        }
+        if (Servicio2.getSelectedItem().toString().equals("Otro")) {
+            SV2 = Otro2.getText();
+        } else {
+            SV2 = Servicio2.getSelectedItem().toString();
+        }
+        if (Servicio3.getSelectedItem().toString().equals("Otro")) {
+            SV3 = Otro3.getText();
+        } else {
+            SV3 = Servicio3.getSelectedItem().toString();
+        }
+        if (Servicio4.getSelectedItem().toString().equals("Otro")) {
+            SV4 = Otro4.getText();
+        } else {
+            SV4 = Servicio4.getSelectedItem().toString();
+        }
+        if (Servicio5.getSelectedItem().toString().equals("Otro")) {
+            SV5 = Otro5.getText();
+        } else {
+            SV5 = Servicio5.getSelectedItem().toString();
+        }
+        if (Servicio6.getSelectedItem().toString().equals("Otro")) {
+            SV6 = Otro6.getText();
+        } else {
+            SV6 = Servicio6.getSelectedItem().toString();
+        }
+        if (Servicio7.getSelectedItem().toString().equals("Otro")) {
+            SV7 = Otro7.getText();
+        } else {
+            SV7 = Servicio7.getSelectedItem().toString();
+        }
+        if (Servicio8.getSelectedItem().toString().equals("Otro")) {
+            SV8 = Otro8.getText();
+        } else {
+            SV8 = Servicio8.getSelectedItem().toString();
+        }
+        if (Servicio9.getSelectedItem().toString().equals("Otro")) {
+            SV9 = Otro9.getText();
+        } else {
+            SV9 = Servicio9.getSelectedItem().toString();
+        }
         if (Mas.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
 
@@ -1011,17 +2228,17 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas1.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
 
@@ -1034,23 +2251,23 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas2.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
 
@@ -1063,28 +2280,28 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas3.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
 
@@ -1097,33 +2314,33 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas4.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
 
@@ -1136,38 +2353,38 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas5.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
 
@@ -1180,43 +2397,43 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas6.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
                 pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
 
@@ -1229,48 +2446,48 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas7.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
                 pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
                 pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(38, SV7);
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
 
@@ -1283,53 +2500,53 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
                 pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
                 pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(38, SV7);
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
                 pst.setInt(41, Integer.parseInt(NDS.getText()));
                 pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
-                pst.setString(43, Servicio8.getSelectedItem().toString());
+                pst.setString(43, SV8);
                 pst.setString(44, Importe8.getText());
                 pst.setString(45, TDIDS.getText());
 
@@ -1342,59 +2559,59 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos8.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
                 pst.setString(2, DateFormat.getDateInstance().format(Fecha.getDate()));
-                pst.setString(3, Servicio.getSelectedItem().toString());
+                pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
                 pst.setInt(6, Integer.parseInt(NDS.getText()));
                 pst.setString(7, DateFormat.getDateInstance().format(Fecha1.getDate()));
-                pst.setString(8, Servicio1.getSelectedItem().toString());
+                pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
                 pst.setInt(11, Integer.parseInt(NDS.getText()));
                 pst.setString(12, DateFormat.getDateInstance().format(Fecha2.getDate()));
-                pst.setString(13, Servicio2.getSelectedItem().toString());
+                pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
                 pst.setInt(16, Integer.parseInt(NDS.getText()));
                 pst.setString(17, DateFormat.getDateInstance().format(Fecha3.getDate()));
-                pst.setString(18, Servicio3.getSelectedItem().toString());
+                pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
                 pst.setInt(21, Integer.parseInt(NDS.getText()));
                 pst.setString(22, DateFormat.getDateInstance().format(Fecha4.getDate()));
-                pst.setString(23, Servicio4.getSelectedItem().toString());
+                pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
                 pst.setString(27, DateFormat.getDateInstance().format(Fecha5.getDate()));
-                pst.setString(28, Servicio5.getSelectedItem().toString());
+                pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
                 pst.setInt(31, Integer.parseInt(NDS.getText()));
                 pst.setString(32, DateFormat.getDateInstance().format(Fecha6.getDate()));
-                pst.setString(33, Servicio6.getSelectedItem().toString());
+                pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
                 pst.setInt(36, Integer.parseInt(NDS.getText()));
                 pst.setString(37, DateFormat.getDateInstance().format(Fecha7.getDate()));
-                pst.setString(38, Servicio7.getSelectedItem().toString());
+                pst.setString(38, SV7);
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
                 pst.setInt(41, Integer.parseInt(NDS.getText()));
                 pst.setString(42, DateFormat.getDateInstance().format(Fecha8.getDate()));
-                pst.setString(43, Servicio8.getSelectedItem().toString());
+                pst.setString(43, SV8);
                 pst.setString(44, Importe8.getText());
                 pst.setString(45, TDIDS.getText());
                 pst.setInt(46, Integer.parseInt(NDS.getText()));
                 pst.setString(47, DateFormat.getDateInstance().format(Fecha9.getDate()));
-                pst.setString(48, Servicio9.getSelectedItem().toString());
+                pst.setString(48, SV9);
                 pst.setString(49, Importe9.getText());
                 pst.setString(50, TDIDS.getText());
 
@@ -1410,14 +2627,15 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Addval() {
         if (Mas27.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1428,19 +2646,22 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas28.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + " (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1451,25 +2672,28 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas29.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + " (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1480,30 +2704,34 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas30.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe1.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1514,35 +2742,40 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas31.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
+                pst.setString(30, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1553,40 +2786,46 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas32.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1597,45 +2836,52 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas33.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NDS.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(33, ObsV6.getText());
-                pst.setString(34, Importe36.getText());
-                pst.setString(35, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
+                pst.setInt(37, Integer.parseInt(NVale6.getText()));
+                pst.setInt(38, Integer.parseInt(NDS.getText()));
+                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(40, ObsV6.getText());
+                pst.setString(41, Importe36.getText());
+                pst.setString(42, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1646,50 +2892,58 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas34.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NDS.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(33, ObsV6.getText());
-                pst.setString(34, Importe36.getText());
-                pst.setString(35, TDV.getText());
-                pst.setInt(36, Integer.parseInt(NDS.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(38, ObsV7.getText());
-                pst.setString(39, Importe37.getText());
-                pst.setString(40, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
+                pst.setInt(37, Integer.parseInt(NVale6.getText()));
+                pst.setInt(38, Integer.parseInt(NDS.getText()));
+                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(40, ObsV6.getText());
+                pst.setString(41, Importe36.getText());
+                pst.setString(42, TDV.getText());
+                pst.setInt(43, Integer.parseInt(NVale7.getText()));
+                pst.setInt(44, Integer.parseInt(NDS.getText()));
+                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(46, ObsV7.getText());
+                pst.setString(47, Importe37.getText());
+                pst.setString(48, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1700,55 +2954,65 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NDS.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(33, ObsV6.getText());
-                pst.setString(34, Importe36.getText());
-                pst.setString(35, TDV.getText());
-                pst.setInt(36, Integer.parseInt(NDS.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(38, ObsV7.getText());
-                pst.setString(39, Importe37.getText());
-                pst.setString(40, TDV.getText());
-                pst.setInt(41, Integer.parseInt(NDS.getText()));
-                pst.setString(42, DateFormat.getDateInstance().format(Fecha38.getDate()));
-                pst.setString(43, ObsV8.getText());
-                pst.setString(44, Importe38.getText());
-                pst.setString(45, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
+                pst.setInt(37, Integer.parseInt(NVale6.getText()));
+                pst.setInt(38, Integer.parseInt(NDS.getText()));
+                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(40, ObsV6.getText());
+                pst.setString(41, Importe36.getText());
+                pst.setString(42, TDV.getText());
+                pst.setInt(43, Integer.parseInt(NVale7.getText()));
+                pst.setInt(44, Integer.parseInt(NDS.getText()));
+                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(46, ObsV7.getText());
+                pst.setString(47, Importe37.getText());
+                pst.setString(48, TDV.getText());
+                pst.setInt(49, Integer.parseInt(NVale8.getText()));
+                pst.setInt(50, Integer.parseInt(NDS.getText()));
+                pst.setString(51, DateFormat.getDateInstance().format(Fecha38.getDate()));
+                pst.setString(52, ObsV8.getText());
+                pst.setString(53, Importe38.getText());
+                pst.setString(54, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1759,61 +3023,71 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.val` (`Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?), (?, ?, ?, ?, ?)"
-                    + ", (?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(NDS.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha30.getDate()));
-                pst.setString(3, ObsV.getText());
-                pst.setString(4, Importe30.getText());
-                pst.setString(5, TDV.getText());
-                pst.setInt(6, Integer.parseInt(NDS.getText()));
-                pst.setString(7, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(8, ObsV1.getText());
-                pst.setString(9, Importe31.getText());
-                pst.setString(10, TDV.getText());
-                pst.setInt(11, Integer.parseInt(NDS.getText()));
-                pst.setString(12, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(13, ObsV2.getText());
-                pst.setString(14, Importe32.getText());
-                pst.setString(15, TDV.getText());
-                pst.setInt(16, Integer.parseInt(NDS.getText()));
-                pst.setString(17, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(18, ObsV3.getText());
-                pst.setString(19, Importe33.getText());
-                pst.setString(20, TDV.getText());
-                pst.setInt(21, Integer.parseInt(NDS.getText()));
-                pst.setString(22, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(23, ObsV4.getText());
-                pst.setString(24, Importe34.getText());
-                pst.setString(25, TDV.getText());
+                pst.setInt(1, Integer.parseInt(NVale.getText()));
+                pst.setInt(2, Integer.parseInt(NDS.getText()));
+                pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
+                pst.setString(4, ObsV.getText());
+                pst.setString(5, Importe30.getText());
+                pst.setString(6, TDV.getText());
+                pst.setInt(7, Integer.parseInt(NVale1.getText()));
+                pst.setInt(8, Integer.parseInt(NDS.getText()));
+                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(10, ObsV1.getText());
+                pst.setString(11, Importe31.getText());
+                pst.setString(12, TDV.getText());
+                pst.setInt(13, Integer.parseInt(NVale2.getText()));
+                pst.setInt(14, Integer.parseInt(NDS.getText()));
+                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(16, ObsV2.getText());
+                pst.setString(17, Importe32.getText());
+                pst.setString(18, TDV.getText());
+                pst.setInt(19, Integer.parseInt(NVale3.getText()));
+                pst.setInt(20, Integer.parseInt(NDS.getText()));
+                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(22, ObsV3.getText());
+                pst.setString(23, Importe33.getText());
+                pst.setString(24, TDV.getText());
+                pst.setInt(25, Integer.parseInt(NVale4.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(28, ObsV5.getText());
-                pst.setString(29, Importe35.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(28, ObsV4.getText());
+                pst.setString(29, Importe34.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NDS.getText()));
-                pst.setString(32, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(33, ObsV6.getText());
-                pst.setString(34, Importe36.getText());
-                pst.setString(35, TDV.getText());
-                pst.setInt(36, Integer.parseInt(NDS.getText()));
-                pst.setString(37, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(38, ObsV7.getText());
-                pst.setString(39, Importe37.getText());
-                pst.setString(40, TDV.getText());
-                pst.setInt(41, Integer.parseInt(NDS.getText()));
-                pst.setString(42, DateFormat.getDateInstance().format(Fecha38.getDate()));
-                pst.setString(43, ObsV8.getText());
-                pst.setString(44, Importe38.getText());
-                pst.setString(45, TDV.getText());
-                pst.setInt(46, Integer.parseInt(NDS.getText()));
-                pst.setString(47, DateFormat.getDateInstance().format(Fecha39.getDate()));
-                pst.setString(48, ObsV9.getText());
-                pst.setString(49, Importe39.getText());
-                pst.setString(50, TDV.getText());
+                pst.setInt(31, Integer.parseInt(NVale5.getText()));
+                pst.setInt(32, Integer.parseInt(NDS.getText()));
+                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(34, ObsV5.getText());
+                pst.setString(35, Importe35.getText());
+                pst.setString(36, TDV.getText());
+                pst.setInt(37, Integer.parseInt(NVale6.getText()));
+                pst.setInt(38, Integer.parseInt(NDS.getText()));
+                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(40, ObsV6.getText());
+                pst.setString(41, Importe36.getText());
+                pst.setString(42, TDV.getText());
+                pst.setInt(43, Integer.parseInt(NVale7.getText()));
+                pst.setInt(44, Integer.parseInt(NDS.getText()));
+                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(46, ObsV7.getText());
+                pst.setString(47, Importe37.getText());
+                pst.setString(48, TDV.getText());
+                pst.setInt(49, Integer.parseInt(NVale8.getText()));
+                pst.setInt(50, Integer.parseInt(NDS.getText()));
+                pst.setString(51, DateFormat.getDateInstance().format(Fecha38.getDate()));
+                pst.setString(52, ObsV8.getText());
+                pst.setString(53, Importe38.getText());
+                pst.setString(54, TDV.getText());
+                pst.setInt(55, Integer.parseInt(NVale9.getText()));
+                pst.setInt(56, Integer.parseInt(NDS.getText()));
+                pst.setString(57, DateFormat.getDateInstance().format(Fecha39.getDate()));
+                pst.setString(58, ObsV9.getText());
+                pst.setString(59, Importe39.getText());
+                pst.setString(60, TDV.getText());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
@@ -1827,7 +3101,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Addspen() {
         if (Mas9.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1846,7 +3120,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas10.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -1871,7 +3145,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas11.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1903,7 +3177,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas12.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1941,7 +3215,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas13.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -1984,7 +3258,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas14.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2034,7 +3308,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas15.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2090,7 +3364,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas16.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2152,7 +3426,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas17.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2220,7 +3494,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos17.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.ptetitla.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
@@ -2298,7 +3572,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Addsgast() {
         if (Mas18.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -2317,7 +3591,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas19.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NDS.getText()));
@@ -2342,7 +3616,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas20.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2374,7 +3648,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas21.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2412,7 +3686,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas22.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2456,7 +3730,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas23.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2506,7 +3780,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas24.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2562,7 +3836,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas25.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2624,7 +3898,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Mas26.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2692,7 +3966,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         }
         if (Menos26.isVisible()) {
-            String SQL = " INSERT INTO `rh.semanal.ptetitla.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
+            String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)"
                     + ", (?, ?, ?, ?, ?, ?)";
             try {
@@ -2885,7 +4159,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }
 
     public void MostrarNDS() {
-        String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'rh.semanal.ptetitla.nsem'";
+        String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022' AND TABLE_NAME = 'rh.semanal.inturbide.nsem'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
@@ -2918,8 +4192,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        TDIDS = new javax.swing.JLabel();
         Servicio1 = new javax.swing.JComboBox<>();
         Servicio2 = new javax.swing.JComboBox<>();
         Servicio3 = new javax.swing.JComboBox<>();
@@ -2965,6 +4237,16 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Mas7 = new javax.swing.JButton();
         Menos8 = new javax.swing.JButton();
         Mas8 = new javax.swing.JButton();
+        Otro = new javax.swing.JTextField();
+        Otro1 = new javax.swing.JTextField();
+        Otro2 = new javax.swing.JTextField();
+        Otro3 = new javax.swing.JTextField();
+        Otro4 = new javax.swing.JTextField();
+        Otro5 = new javax.swing.JTextField();
+        Otro6 = new javax.swing.JTextField();
+        Otro7 = new javax.swing.JTextField();
+        Otro8 = new javax.swing.JTextField();
+        Otro9 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         Panel2 = new javax.swing.JPanel();
@@ -2974,8 +4256,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        TDIDP = new javax.swing.JLabel();
         Mas9 = new javax.swing.JButton();
         Menos11 = new javax.swing.JButton();
         Menos10 = new javax.swing.JButton();
@@ -3100,8 +4380,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Menos25 = new javax.swing.JButton();
         Menos26 = new javax.swing.JButton();
         Mas26 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        TDG = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         TDSYP = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -3110,8 +4388,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jPanel5 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        TDV = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         ObsV = new javax.swing.JTextField();
@@ -3145,6 +4421,15 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         ObsV1 = new javax.swing.JTextField();
         ObsV7 = new javax.swing.JTextField();
         ObsV5 = new javax.swing.JTextField();
+        NVale1 = new javax.swing.JTextField();
+        NVale2 = new javax.swing.JTextField();
+        NVale3 = new javax.swing.JTextField();
+        NVale4 = new javax.swing.JTextField();
+        NVale5 = new javax.swing.JTextField();
+        NVale6 = new javax.swing.JTextField();
+        NVale7 = new javax.swing.JTextField();
+        NVale8 = new javax.swing.JTextField();
+        NVale9 = new javax.swing.JTextField();
         Mas27 = new javax.swing.JButton();
         Menos27 = new javax.swing.JButton();
         Mas28 = new javax.swing.JButton();
@@ -3163,12 +4448,13 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Mas34 = new javax.swing.JButton();
         Mas35 = new javax.swing.JButton();
         Menos35 = new javax.swing.JButton();
+        NVale = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         TMG = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         EEntrega = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        DBe = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         Autohora = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -3208,6 +4494,16 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        TDIDS = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        TDIDP = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        TDG = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        TDV = new javax.swing.JLabel();
+        DBe = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -3235,22 +4531,22 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         ZYS = new javax.swing.JMenuItem();
         ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        General2 = new javax.swing.JMenuItem();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
         Depositos = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         Semanales = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Semanal Puente titla");
+        setTitle("Semanal Inturbide");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("Servicios c/cobro Puente Titla");
+        jLabel10.setText("Servicios c/cobro ITURBIDE");
 
         Fecha.setDateFormatString("dd MMM yyyy ");
 
@@ -3259,9 +4555,17 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ImporteKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                ImporteKeyTyped(evt);
+            }
         });
 
-        Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
+        Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ServicioItemStateChanged(evt);
+            }
+        });
 
         jLabel2.setText("Fecha");
 
@@ -3269,34 +4573,76 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel4.setText("Importe");
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel5.setText("Total de importe de servicios:");
+        Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio1ItemStateChanged(evt);
+            }
+        });
 
-        TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDIDS.setText("0");
+        Servicio2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio2ItemStateChanged(evt);
+            }
+        });
 
-        Servicio1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
+        Servicio3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio3ItemStateChanged(evt);
+            }
+        });
 
-        Servicio2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
+        Servicio4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio4ItemStateChanged(evt);
+            }
+        });
 
-        Servicio3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
+        Servicio5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio5.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio5ItemStateChanged(evt);
+            }
+        });
 
-        Servicio4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
+        Servicio6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio6ItemStateChanged(evt);
+            }
+        });
 
-        Servicio5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
+        Servicio7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio7ItemStateChanged(evt);
+            }
+        });
 
-        Servicio6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
+        Servicio8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio8ItemStateChanged(evt);
+            }
+        });
 
-        Servicio7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
-
-        Servicio8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
-
-        Servicio9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pte titla x 1 dia", "Pte titla x 12 hrs", "Pte titla x hora", "Pte titla baño" }));
+        Servicio9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio9.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio9ItemStateChanged(evt);
+            }
+        });
 
         Importe1.setText("0");
         Importe1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe1KeyTyped(evt);
             }
         });
 
@@ -3305,12 +4651,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe2KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe2KeyTyped(evt);
+            }
         });
 
         Importe3.setText("0");
         Importe3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe3KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe3KeyTyped(evt);
             }
         });
 
@@ -3319,12 +4671,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe4KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe4KeyTyped(evt);
+            }
         });
 
         Importe5.setText("0");
         Importe5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe5KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe5KeyTyped(evt);
             }
         });
 
@@ -3333,12 +4691,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe6KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe6KeyTyped(evt);
+            }
         });
 
         Importe7.setText("0");
         Importe7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe7KeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe7KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe7KeyTyped(evt);
             }
         });
 
@@ -3347,12 +4711,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe8KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe8KeyTyped(evt);
+            }
         });
 
         Importe9.setText("0");
         Importe9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe9KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe9KeyTyped(evt);
             }
         });
 
@@ -3530,21 +4900,31 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addComponent(Servicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Otro5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Importe5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PanelLayout.createSequentialGroup()
@@ -3552,9 +4932,13 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                     .addGroup(PanelLayout.createSequentialGroup()
                                         .addComponent(Servicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Otro4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Importe4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(PanelLayout.createSequentialGroup()
                                         .addComponent(Servicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Otro3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Importe3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(PanelLayout.createSequentialGroup()
@@ -3564,19 +4948,24 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                             .addComponent(Servicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel4)
-                                            .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(PanelLayout.createSequentialGroup()
+                                                .addComponent(Otro1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(PanelLayout.createSequentialGroup()
+                                                .addComponent(Otro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel4)
+                                                    .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                     .addGroup(PanelLayout.createSequentialGroup()
                                         .addComponent(Servicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Otro2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelLayout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TDIDS))
                                     .addGroup(PanelLayout.createSequentialGroup()
                                         .addComponent(Mas)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3626,75 +5015,82 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(jLabel2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5)
-                                .addComponent(TDIDS))
-                            .addComponent(jLabel3))
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
                         .addGap(3, 3, 3)))
                 .addGap(3, 3, 3)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Importe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Servicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Servicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Otro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(6, 6, 6)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Importe5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(Fecha8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Servicio9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Importe9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Otro9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3740,6 +5136,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe10KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe10KeyTyped(evt);
+            }
         });
 
         jLabel15.setText("Fecha");
@@ -3747,12 +5146,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jLabel16.setText("Servicio");
 
         jLabel17.setText("Importe");
-
-        jLabel18.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel18.setText("Total de importe de pensiones:");
-
-        TDIDP.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDIDP.setText("0");
 
         Mas9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/37770.png"))); // NOI18N
         Mas9.addActionListener(new java.awt.event.ActionListener() {
@@ -3903,12 +5296,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe11KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe11KeyTyped(evt);
+            }
         });
 
         Importe12.setText("0");
         Importe12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe12KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe12KeyTyped(evt);
             }
         });
 
@@ -3917,12 +5316,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe13KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe13KeyTyped(evt);
+            }
         });
 
         Importe14.setText("0");
         Importe14.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe14KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe14KeyTyped(evt);
             }
         });
 
@@ -3931,6 +5336,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe15KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe15KeyTyped(evt);
+            }
         });
 
         Importe16.setText("0");
@@ -3938,12 +5346,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe16KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe16KeyTyped(evt);
+            }
         });
 
         Importe17.setText("0");
         Importe17.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe17KeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe17KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe17KeyTyped(evt);
             }
         });
 
@@ -3952,12 +5366,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe18KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe18KeyTyped(evt);
+            }
         });
 
         Importe19.setText("0");
         Importe19.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe19KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe19KeyTyped(evt);
             }
         });
 
@@ -4127,18 +5547,12 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                     .addComponent(Servicio10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(Panel2Layout.createSequentialGroup()
-                                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel26))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel17)
-                                            .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(Panel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TDIDP))))
+                                    .addComponent(NPadron, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel26))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(Importe10, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(Panel2Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4193,11 +5607,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(jLabel15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel18)
-                                .addComponent(TDIDP))
-                            .addComponent(jLabel13))
+                        .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -4251,6 +5661,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Importe20.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe20KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe20KeyTyped(evt);
             }
         });
 
@@ -4318,8 +5731,11 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         Importe27.setText("0");
         Importe27.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe27KeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe27KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe27KeyTyped(evt);
             }
         });
 
@@ -4619,12 +6035,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel7.setText("Total de Gastos:");
-
-        TDG.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDG.setText("0");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -4648,10 +6058,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                     .addComponent(Concepto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TDG))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(Importe20, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4706,11 +6112,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel19)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(TDG)))
+                .addComponent(jLabel19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
@@ -4772,12 +6174,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("Vales");
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel12.setText("Total de Vales:");
-
-        TDV.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        TDV.setText("0");
-
         jLabel29.setText("Importe");
 
         jLabel11.setText("Observaciones");
@@ -4786,6 +6182,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Importe30.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe30KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe30KeyTyped(evt);
             }
         });
 
@@ -4796,12 +6195,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe32KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe32KeyTyped(evt);
+            }
         });
 
         Importe37.setText("0");
         Importe37.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe37KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe37KeyTyped(evt);
             }
         });
 
@@ -4810,12 +6215,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe31KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe31KeyTyped(evt);
+            }
         });
 
         Importe33.setText("0");
         Importe33.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe33KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe33KeyTyped(evt);
             }
         });
 
@@ -4825,6 +6236,9 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Importe34.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe34KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe34KeyTyped(evt);
             }
         });
 
@@ -4847,12 +6261,18 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe35KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe35KeyTyped(evt);
+            }
         });
 
         Importe38.setText("0");
         Importe38.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe38KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe38KeyTyped(evt);
             }
         });
 
@@ -4861,23 +6281,103 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Importe39KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe39KeyTyped(evt);
+            }
         });
 
         Importe36.setText("0");
         Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Importe36KeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe36KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe36KeyTyped(evt);
             }
         });
 
         Fecha32.setDateFormatString("dd MMM yyyy ");
+
+        NVale1.setText("0");
+        NVale1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale1KeyTyped(evt);
+            }
+        });
+
+        NVale2.setText("0");
+        NVale2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale2KeyTyped(evt);
+            }
+        });
+
+        NVale3.setText("0");
+        NVale3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale3KeyTyped(evt);
+            }
+        });
+
+        NVale4.setText("0");
+        NVale4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale4KeyTyped(evt);
+            }
+        });
+
+        NVale5.setText("0");
+        NVale5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale5KeyTyped(evt);
+            }
+        });
+
+        NVale6.setText("0");
+        NVale6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale6KeyTyped(evt);
+            }
+        });
+
+        NVale7.setText("0");
+        NVale7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale7KeyTyped(evt);
+            }
+        });
+
+        NVale8.setText("0");
+        NVale8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale8KeyTyped(evt);
+            }
+        });
+
+        NVale9.setText("0");
+        NVale9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale9KeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NVale1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NVale9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4937,9 +6437,13 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(Fecha31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Fecha31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NVale1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Fecha32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Fecha32, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NVale2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(ObsV1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4957,23 +6461,37 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ObsV7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(Fecha33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(NVale3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Fecha34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(NVale4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Fecha35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(NVale5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NVale6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NVale7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ObsV8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NVale8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Fecha39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(ObsV9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NVale9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -5103,100 +6621,108 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        NVale.setText("0");
+        NVale.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NValeKeyTyped(evt);
+            }
+        });
+
+        jLabel42.setText("# Vale");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel25))
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabel28))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(141, 141, 141)
-                                .addComponent(jLabel28)
-                                .addGap(170, 170, 170)
-                                .addComponent(jLabel12)
+                                .addGap(9, 9, 9)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel42))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TDV))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(222, 222, 222)
-                                .addComponent(jLabel11)
-                                .addGap(83, 83, 83)
-                                .addComponent(jLabel29))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(66, 66, 66)
+                                        .addComponent(jLabel25)
+                                        .addGap(119, 119, 119)
+                                        .addComponent(jLabel11)
+                                        .addGap(83, 83, 83)
+                                        .addComponent(jLabel29))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(Mas27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(Mas27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas28)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas29)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas33)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas34)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Mas35))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(Menos27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos28)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos29)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos33)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos34)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Menos35)))))))
+                                .addComponent(Mas28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mas35))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(Menos27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos28)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Menos35)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel12)
-                    .addComponent(TDV))
+                .addComponent(jLabel28)
                 .addGap(1, 1, 1)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(jLabel29)
-                    .addComponent(jLabel11))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel29)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel42)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -5227,7 +6753,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         jScrollPane5.setViewportView(jPanel5);
 
-        jLabel27.setText("Total restando gastos:");
+        jLabel27.setText("Total menos gastos:");
 
         TMG.setText("0");
 
@@ -5241,8 +6767,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         });
 
         jLabel31.setText("Debe:");
-
-        DBe.setText("0");
 
         jLabel32.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel32.setText("Hora:");
@@ -5496,6 +7020,35 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel37.setText("TV: Total de vales");
 
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel5.setText("Total de importe de servicios:");
+
+        TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDIDS.setText("0");
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel18.setText("Total de importe de pensiones:");
+
+        TDIDP.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDIDP.setText("0");
+
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel7.setText("Total de Gastos:");
+
+        TDG.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDG.setText("0");
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel12.setText("Total de Vales:");
+
+        TDV.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        TDV.setText("0");
+
+        DBe.setEditable(false);
+        DBe.setText("0");
+
+        jLabel41.setText("Cuando sale de resultado menor a 0 significa que es saldo a favor.");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -5509,111 +7062,129 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(199, 199, 199)
-                                .addComponent(jLabel34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NDS))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(322, 322, 322)
-                                .addComponent(jLabel1)))
-                        .addGap(0, 333, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel35)
+                                    .addComponent(jLabel36)
+                                    .addComponent(jLabel37))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel31))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel18)
+                                        .addComponent(jLabel7)
+                                        .addComponent(jLabel27)
+                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel30)
+                                        .addComponent(jLabel31)
+                                        .addComponent(jLabel12))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(TMG)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel32))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(TDSYP)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel33)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(AutoFecha)
-                                            .addComponent(Autohora))
-                                        .addGap(92, 92, 92))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(EEntrega, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(DBe, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(DE, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jLabel5)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(TDIDP)
+                                            .addComponent(TDSYP)
+                                            .addComponent(TDIDS))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel32)
+                                            .addComponent(jLabel33))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(AutoFecha)
+                                            .addComponent(Autohora)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(TDG)
+                                            .addComponent(TMG)
+                                            .addComponent(DE)
+                                            .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                            .addComponent(TDV)
+                                            .addComponent(DBe))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jButton1)
-                                            .addComponent(jLabel24)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel35)
-                                            .addComponent(jLabel36)
-                                            .addComponent(jLabel37))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                .addContainerGap())))))
+                                            .addComponent(jLabel41)
+                                            .addComponent(jLabel1))
+                                        .addGap(0, 8, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NDS)
+                                .addGap(411, 411, 411)))
+                        .addGap(51, 51, 51))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(TDSYP)
                             .addComponent(jLabel33)
-                            .addComponent(AutoFecha))
+                            .addComponent(AutoFecha)
+                            .addComponent(jLabel5)
+                            .addComponent(TDIDS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel32)
+                                    .addComponent(Autohora))
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel18)
+                                    .addComponent(TDIDP))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(TDSYP))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(TDG))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(TMG)
-                            .addComponent(jLabel32)
-                            .addComponent(Autohora))
+                            .addComponent(TMG))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(DE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(TDV))
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30)
                             .addComponent(EEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
-                            .addComponent(DBe))
+                            .addComponent(DBe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel41))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
-                            .addComponent(NDS))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NDS)
+                            .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5626,8 +7197,16 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel37)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel37))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -5818,6 +7397,14 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         jMenu1.setText("Cambiar a:");
 
+        General2.setText("Empleados General");
+        General2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                General2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(General2);
+
         Alumnos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         Alumnos.setText("Alumnos estadia");
         Alumnos.addActionListener(new java.awt.event.ActionListener() {
@@ -5853,14 +7440,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         Semanales.setText("Semanales");
 
-        jMenuItem2.setText("Inturbide");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        Semanales.add(jMenuItem2);
-
         jMenuItem3.setText("Tehuantepec");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -5889,7 +7468,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 941, Short.MAX_VALUE)
         );
 
         pack();
@@ -6079,50 +7658,47 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_ImporteKeyReleased
 
     private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe1KeyReleased
 
     private void Importe2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe2KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe2KeyReleased
 
     private void Importe3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe3KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe3KeyReleased
 
     private void Importe4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe4KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe4KeyReleased
 
     private void Importe5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe5KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe5KeyReleased
 
     private void Importe6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe6KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe6KeyReleased
-
-    private void Importe7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyPressed
-        Operaciones();
-
-    }//GEN-LAST:event_Importe7KeyPressed
 
     private void Importe8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe8KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe8KeyReleased
 
     private void Importe9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe9KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe9KeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -6131,721 +7707,54 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Addsgast();
         Addspen();
         Addval();
-        JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Semanal No. " + NDS.getText() + " de " + AutoFecha.getText()));
-        chooser.setFileFilter(filter);
-        chooser.setDialogTitle("Guardar archivo");
-        chooser.setAcceptAllFileFilterUsed(false);
-        if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
-        }
-        try {
-            String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
-            File archivoXLS = new File(ruta);
-            if (archivoXLS.exists()) {
-                archivoXLS.delete();
-            }
-            archivoXLS.createNewFile();
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connect = DriverManager.getConnection(
-                    "jdbc:mysql://192.168.1.170:3306/confort",
-                    "Servidor",
-                    "Confort1022"
-            );
-
-            Statement statementscc = connect.createStatement();
-            Statement statementpen = connect.createStatement();
-            Statement statementgast = connect.createStatement();
-            Statement statementval = connect.createStatement();
-            Statement statementNsem = connect.createStatement();
-            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.ptetitla.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
-            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.ptetitla.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
-
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
-                XSSFWorkbook libro = new XSSFWorkbook();
-                XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
-
-                XSSFCellStyle Encabezado = libro.createCellStyle();
-                Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
-                Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-
-                XSSFCellStyle Stilodd = libro.createCellStyle();
-
-                Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-                Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-                Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
-                Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
-                Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
-                XSSFCellStyle StiloEEEE = libro.createCellStyle();
-
-                StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-                StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
-                StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
-                StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
-                StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
-                XSSFCellStyle Contenido = libro.createCellStyle();
-                Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
-                Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-                Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
-                Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
-                Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
-                Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
-                XSSFRow row = spreadsheet.createRow((short) 0);
-                XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-
-//  int i = 2;
-                while (NSem.next()) {
-
-                    cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
-                    cell.setCellStyle(Encabezado);
-
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    0, //first row (0-based)
-                                    0, //last row (0-based)
-                                    0, //first column (0-based)
-                                    5 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(6);
-                    cell.setCellValue(NSem.getString("MMM/YY"));
-
-                    row = spreadsheet.createRow(1);
-                    cell = row.createCell(2);
-                    cell.setCellValue("Reporte General de Zona");
-                    cell.setCellStyle(Encabezado);
-
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    1, //first row (0-based)
-                                    1, //last row (0-based)
-                                    2, //first column (0-based)
-                                    5 //last column (0-based)
-                            )
-                    );
-
-                    row = spreadsheet.createRow(2);
-                    cell = row.createCell(2);
-                    cell.setCellValue("Zona Sur 1");
-                    cell.setCellStyle(Encabezado);
-
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    2, //first row (0-based)
-                                    2, //last row (0-based)
-                                    2, //first column (0-based)
-                                    5 //last column (0-based)
-                            )
-                    );
-
-                    row = spreadsheet.createRow(7);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    7, //first row (0-based)
-                                    7, //last row (0-based)
-                                    0, //first column (0-based)
-                                    7 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO PUENTE TITLA");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(1);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(8);
-                    cell = row.createCell(0);
-                    cell.setCellValue("FECHA");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    8, //first row (0-based)
-                                    8, //last row (0-based)
-                                    1, //first column (0-based)
-                                    3 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellValue("SERVICIO");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(4);
-                    cell.setCellValue("INICIO");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellValue("TERMINO");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.setColumnWidth(6, 3000);
-                    cell = row.createCell(6);
-                    cell.setCellValue("# REPORTE");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue("IMPORTE");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(8);
-                    cell.setCellValue("Total de servicios y pensiones");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(11);
-                    cell.setCellValue("el entrega");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(12);
-                    cell.setCellValue(NSem.getString("el entrega"));
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(3);
-                    cell = row.createCell(6);
-                    cell.setCellValue(NSem.getString("#Nsem"));
-                    cell = row.createCell(8);
-                    cell.setCellValue("Total restando gastos");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total restando gastos"));
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(11);
-                    cell.setCellValue("Debe");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(12);
-                    cell.setCellValue(NSem.getString("Debe"));
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(4);
-                    cell = row.createCell(3);
-                    cell.setCellValue("FECHA: ");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    4, //first row (0-based)
-                                    4, //last row (0-based)
-                                    4, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-
-                    cell = row.createCell(4);
-                    cell.setCellValue(NSem.getString("Fecha"));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(8);
-                    cell.setCellValue("Total restando gastos");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total restando gastos"));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(11);
-
-                    row = spreadsheet.createRow(5);
-                    cell = row.createCell(3);
-                    cell.setCellValue("HORA: ");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    5, //first row (0-based)
-                                    5, //last row (0-based)
-                                    4, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(4);
-                    cell.setCellValue(NSem.getString("hora"));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(8);
-                    cell.setCellValue("Debe entregar");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Debe entregar"));
-                    cell.setCellStyle(Contenido);
-
-                    NSem.isClosed();
-                }
-                int i = 9;
-                while (scc.next()) {
-                    row = spreadsheet.createRow(i);
-                    spreadsheet.setColumnWidth(0, 3500);
-                    cell = row.createCell(0);
-                    cell.setCellValue(scc.getString("Fecha"));
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    i, //first row (0-based)
-                                    i, //last row (0-based)
-                                    1, //first column (0-based)
-                                    3 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellValue(scc.getString("Servicio"));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue(scc.getString("Importe"));
-                    cell.setCellStyle(Contenido);
-                    i++;
-
-                    row = spreadsheet.createRow(i);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell.setCellValue("TOTAL: ");
-                    cell = row.createCell(7);
-                    cell.setCellValue(scc.getString("Total"));
-                    cell.setCellStyle(Contenido);
-                    scc.isClosed();
-                    statementscc.isClosed();
-
-                }
-                int x = 22;
-
-                while (pen.next()) {
-                    row = spreadsheet.createRow(20);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    20, //first row (0-based)
-                                    20, //last row (0-based)
-                                    0, //first column (0-based)
-                                    7 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(0);
-                    cell.setCellValue("PENSIONES");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(1);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(21);
-                    cell = row.createCell(0);
-                    cell.setCellValue("FECHA");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    21, //first row (0-based)
-                                    21, //last row (0-based)
-                                    1, //first column (0-based)
-                                    4 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellValue("SERVICIO");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellValue("# de padron");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    21, //first row (0-based)
-                                    21, //last row (0-based)
-                                    5, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue("IMPORTE");
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(x);
-                    cell = row.createCell(0);
-                    cell.setCellValue(pen.getString("Fecha"));
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    x, //first row (0-based)
-                                    x, //last row (0-based)
-                                    1, //first column (0-based)
-                                    4 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellValue(pen.getString("Servicio"));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell.setCellValue("# de padron");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    x, //first row (0-based)
-                                    x, //last row (0-based)
-                                    5, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(5);
-                    cell.setCellValue(pen.getString("# de padron"));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue(pen.getString("Importe"));
-                    cell.setCellStyle(Contenido);
-                    x++;
-
-                    row = spreadsheet.createRow(x);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell.setCellValue("TOTAL: ");
-                    cell = row.createCell(7);
-                    cell.setCellValue(pen.getString("Total"));
-                    cell.setCellStyle(Contenido);
-                    pen.isClosed();
-
-                }
-                x = 35;
-
-                while (gast.next()) {
-                    row = spreadsheet.createRow(33);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    33, //first row (0-based)
-                                    33, //last row (0-based)
-                                    0, //first column (0-based)
-                                    7 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(0);
-                    cell.setCellValue("GASTOS");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(1);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(34);
-                    cell = row.createCell(0);
-                    cell.setCellValue("FECHA");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    34, //first row (0-based)
-                                    34, //last row (0-based)
-                                    1, //first column (0-based)
-                                    4 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellValue("Concepto");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellValue("Importe");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    34, //first row (0-based)
-                                    34, //last row (0-based)
-                                    5, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue("# LISTA");
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(x);
-                    cell = row.createCell(0);
-                    cell.setCellValue(gast.getString("Fecha"));
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    x, //first row (0-based)
-                                    x, //last row (0-based)
-                                    1, //first column (0-based)
-                                    4 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellValue(gast.getString("Concepto"));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellValue(gast.getString("Importe"));
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    x, //first row (0-based)
-                                    x, //last row (0-based)
-                                    5, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue(gast.getString("#Lista"));
-                    cell.setCellStyle(Contenido);
-                    x++;
-
-                    row = spreadsheet.createRow(x);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell.setCellValue("TOTAL: ");
-                    cell = row.createCell(7);
-                    cell.setCellValue(gast.getString("Total"));
-                    cell.setCellStyle(Contenido);
-                    gast.isClosed();
-
-                }
-                x = 48;
-
-                while (val.next()) {
-                    row = spreadsheet.createRow(46);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    46, //first row (0-based)
-                                    46, //last row (0-based)
-                                    0, //first column (0-based)
-                                    7 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(0);
-                    cell.setCellValue("VALES");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(1);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(47);
-                    cell = row.createCell(0);
-                    cell.setCellValue("FECHA");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    47, //first row (0-based)
-                                    47, //last row (0-based)
-                                    1, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellValue("Observaciones");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue("Importe");
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(x);
-                    cell = row.createCell(0);
-                    cell.setCellValue(val.getString("Fecha"));
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    x, //first row (0-based)
-                                    x, //last row (0-based)
-                                    1, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellValue(val.getString("Observaciones"));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue(val.getString("Importe"));
-                    cell.setCellStyle(Contenido);
-                    x++;
-
-                    row = spreadsheet.createRow(x);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell.setCellValue("TOTAL: ");
-                    cell = row.createCell(7);
-                    cell.setCellValue(val.getString("Total"));
-                    cell.setCellStyle(Contenido);
-                    pen.isClosed();
-
-                }
-
-                spreadsheet.getPrintSetup();
-                spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
-                spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
-                spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
-                spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
-                spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
-                spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
-                spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
-                spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-
-                spreadsheet.setVerticallyCenter(true);
-                libro.write(archivo);
-            }
-            Desktop.getDesktop().open(archivoXLS);
-        } catch (IOException | NumberFormatException e) {
-
-            try {
-                throw e;
-            } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        Reporte1();
+        Reporte2();
         MostrarNDS();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Importe10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe10KeyReleased
 
     private void Importe11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe11KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe11KeyReleased
 
     private void Importe12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe12KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe12KeyReleased
 
     private void Importe13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe13KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe13KeyReleased
 
     private void Importe14KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe14KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe14KeyReleased
 
     private void Importe15KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe15KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe15KeyReleased
 
     private void Importe16KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe16KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe16KeyReleased
-
-    private void Importe17KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyPressed
-        Operaciones();
-    }//GEN-LAST:event_Importe17KeyPressed
 
     private void Importe18KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe18KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe18KeyReleased
 
     private void Importe19KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe19KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe19KeyReleased
 
     private void Mas9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas9ActionPerformed
@@ -7046,42 +7955,47 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     private void Importe20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe20KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe20KeyReleased
 
     private void Importe21KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe21KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe21KeyReleased
 
     private void Importe22KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe22KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe22KeyReleased
 
     private void Importe23KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe23KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe23KeyReleased
 
     private void Importe24KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe24KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe24KeyReleased
 
     private void Importe25KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe25KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe25KeyReleased
 
     private void Importe26KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe26KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe26KeyReleased
-
-    private void Importe27KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyPressed
-        Operaciones();
-    }//GEN-LAST:event_Importe27KeyPressed
 
     private void Importe28KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe28KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe28KeyReleased
 
     private void Importe29KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe29KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe29KeyReleased
 
     private void Menos18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos18ActionPerformed
@@ -7282,47 +8196,51 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     private void Importe30KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe30KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe30KeyReleased
 
     private void Importe31KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe31KeyReleased
         Operaciones();
-
+        ColorDB();
     }//GEN-LAST:event_Importe31KeyReleased
 
     private void Importe32KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe32KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe32KeyReleased
 
     private void Importe33KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe33KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe33KeyReleased
 
     private void Importe34KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe34KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe34KeyReleased
 
     private void Importe35KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe35KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe35KeyReleased
-
-    private void Importe36KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe36KeyPressed
-        Operaciones();
-    }//GEN-LAST:event_Importe36KeyPressed
 
     private void Importe37KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe37KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe37KeyReleased
 
     private void Importe38KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe38KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe38KeyReleased
 
     private void Importe39KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe39KeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_Importe39KeyReleased
 
     private void Menos27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos27ActionPerformed
+        NVale1.setVisible(false);
         Fecha31.setVisible(false);
         ObsV1.setVisible(false);
         Importe31.setVisible(false);
@@ -7332,6 +8250,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos27ActionPerformed
 
     private void Mas27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas27ActionPerformed
+        NVale1.setVisible(true);
         Fecha31.setVisible(true);
         ObsV1.setVisible(true);
         Importe31.setVisible(true);
@@ -7341,6 +8260,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas27ActionPerformed
 
     private void Menos28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos28ActionPerformed
+        NVale2.setVisible(false);
         Fecha32.setVisible(false);
         ObsV2.setVisible(false);
         Importe32.setVisible(false);
@@ -7351,6 +8271,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos28ActionPerformed
 
     private void Mas28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas28ActionPerformed
+        NVale2.setVisible(true);
         Fecha32.setVisible(true);
         ObsV2.setVisible(true);
         Importe32.setVisible(true);
@@ -7361,6 +8282,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas28ActionPerformed
 
     private void Mas29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas29ActionPerformed
+        NVale3.setVisible(true);
         Fecha33.setVisible(true);
         ObsV3.setVisible(true);
         Importe33.setVisible(true);
@@ -7372,6 +8294,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas29ActionPerformed
 
     private void Menos29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos29ActionPerformed
+        NVale3.setVisible(false);
         Fecha33.setVisible(false);
         ObsV3.setVisible(false);
         Importe33.setVisible(false);
@@ -7382,6 +8305,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos29ActionPerformed
 
     private void Menos30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos30ActionPerformed
+        NVale4.setVisible(false);
         Fecha34.setVisible(false);
         ObsV4.setVisible(false);
         Importe34.setVisible(false);
@@ -7392,6 +8316,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos30ActionPerformed
 
     private void Mas30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas30ActionPerformed
+        NVale4.setVisible(true);
         Fecha34.setVisible(true);
         ObsV4.setVisible(true);
         Importe34.setVisible(true);
@@ -7402,6 +8327,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas30ActionPerformed
 
     private void Menos31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos31ActionPerformed
+        NVale5.setVisible(false);
         Fecha35.setVisible(false);
         ObsV5.setVisible(false);
         Importe35.setVisible(false);
@@ -7412,6 +8338,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos31ActionPerformed
 
     private void Menos32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos32ActionPerformed
+        NVale6.setVisible(false);
         Fecha36.setVisible(false);
         ObsV6.setVisible(false);
         Importe36.setVisible(false);
@@ -7422,6 +8349,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos32ActionPerformed
 
     private void Mas31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas31ActionPerformed
+        NVale5.setVisible(true);
         Fecha35.setVisible(true);
         ObsV5.setVisible(true);
         Importe35.setVisible(true);
@@ -7432,6 +8360,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas31ActionPerformed
 
     private void Menos33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos33ActionPerformed
+        NVale7.setVisible(false);
         Fecha37.setVisible(false);
         ObsV7.setVisible(false);
         Importe37.setVisible(false);
@@ -7442,6 +8371,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos33ActionPerformed
 
     private void Mas32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas32ActionPerformed
+        NVale6.setVisible(true);
         Fecha36.setVisible(true);
         ObsV6.setVisible(true);
         Importe36.setVisible(true);
@@ -7452,6 +8382,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas32ActionPerformed
 
     private void Mas33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas33ActionPerformed
+        NVale7.setVisible(true);
         Fecha37.setVisible(true);
         ObsV7.setVisible(true);
         Importe37.setVisible(true);
@@ -7462,6 +8393,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas33ActionPerformed
 
     private void Menos34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos34ActionPerformed
+        NVale8.setVisible(false);
         Fecha38.setVisible(false);
         ObsV8.setVisible(false);
         Importe38.setVisible(false);
@@ -7472,6 +8404,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos34ActionPerformed
 
     private void Menos35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos35ActionPerformed
+        NVale9.setVisible(false);
         Fecha39.setVisible(false);
         ObsV9.setVisible(false);
         Importe39.setVisible(false);
@@ -7482,6 +8415,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos35ActionPerformed
 
     private void Mas34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas34ActionPerformed
+        NVale8.setVisible(true);
         Fecha38.setVisible(true);
         ObsV8.setVisible(true);
         Importe38.setVisible(true);
@@ -7492,6 +8426,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas34ActionPerformed
 
     private void Mas35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas35ActionPerformed
+        NVale9.setVisible(true);
         Fecha39.setVisible(true);
         ObsV9.setVisible(true);
         Importe39.setVisible(true);
@@ -7503,6 +8438,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     private void EEntregaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EEntregaKeyReleased
         Operaciones();
+        ColorDB();
     }//GEN-LAST:event_EEntregaKeyReleased
 
     private void txtsemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsemKeyReleased
@@ -7534,7 +8470,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
-                    "jdbc:mysql://192.168.1.170:3306/confort",
+                    "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
@@ -7544,11 +8480,11 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.ptetitla.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
-            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.ptetitla.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
 
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
@@ -7639,7 +8575,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO PUENTE TITLA");
+                    cell.setCellValue("SERVICIO C/COBRO INTURBIDE");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);
@@ -8188,45 +9124,342 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        JFileChooser chooser1 = new JFileChooser();
+        FileNameExtensionFilter filter1 = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+        chooser1.setSelectedFile(new File("Ingresos y egresos Semanal No. " + SemSl.getText()));
+        chooser1.setFileFilter(filter1);
+        chooser1.setDialogTitle("Guardar archivo");
+        chooser1.setAcceptAllFileFilterUsed(false);
+        if (chooser1.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            String ruta = chooser1.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+        }
+        try {
+            String ruta = chooser1.getSelectedFile().toString().concat(".xlsx");
+            File archivoXLS = new File(ruta);
+            if (archivoXLS.exists()) {
+                archivoXLS.delete();
+            }
+            archivoXLS.createNewFile();
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection(
+                    "jdbc:mysql://192.168.1.170:3306/confort2022",
+                    "Servidor",
+                    "Confort1022"
+            );
+
+            Statement statementscc = connect.createStatement();
+            Statement statementpen = connect.createStatement();
+            Statement statementgast = connect.createStatement();
+            Statement statementval = connect.createStatement();
+            Statement statementNsem = connect.createStatement();
+
+            ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
+            ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
+
+            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                XSSFWorkbook libro = new XSSFWorkbook();
+                XSSFSheet spreadsheet = libro.createSheet(("Ingresos y egresos"));
+
+                XSSFCellStyle Encabezado = libro.createCellStyle();
+                Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle Contenido = libro.createCellStyle();
+                Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                XSSFRow row = spreadsheet.createRow((short) 0);
+                XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+
+                spreadsheet.createRow(3);
+                spreadsheet.createRow(4);
+                spreadsheet.createRow(5);
+                spreadsheet.createRow(6);
+                spreadsheet.createRow(7);
+                spreadsheet.createRow(8);
+                spreadsheet.createRow(9);
+                spreadsheet.createRow(10);
+                spreadsheet.createRow(11);
+                spreadsheet.createRow(12);
+                spreadsheet.createRow(13);
+                spreadsheet.createRow(14);
+
+                int i = 3;
+                while (NSem.next()) {
+
+                    cell.setCellValue("Ingresos y egresos Semanal No. " + NDS.getText() + " de " + AutoFecha.getText());
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    0, //first row (0-based)
+                                    0, //last row (0-based)
+                                    0, //first column (0-based)
+                                    12 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(1);
+                    cell = row.createCell(0);
+                    cell.setCellValue("Servicios con cobro");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    0, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+
+                    cell = row.createCell(4);
+                    cell.setCellValue("Pensiones");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+
+                    cell = row.createCell(7);
+                    cell.setCellValue("Gastos");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    7, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+
+                    cell = row.createCell(10);
+                    cell.setCellValue("Vales");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    10, //first column (0-based)
+                                    12 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(2);
+                    cell = row.createCell(0);
+                    cell.setCellValue("# Semanal");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(1);
+                    cell.setCellValue("Fecha");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(2);
+                    cell.setCellValue("Servicio");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(3);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(4);
+                    cell.setCellValue("Servicio");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(5);
+                    cell.setCellValue("# de padron");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(6);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(7);
+                    cell.setCellValue("Concepto");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue("Lista de asistencia");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(10);
+                    cell.setCellValue("# vale");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(11);
+                    cell.setCellValue("Observacion");
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(12);
+                    cell.setCellValue("Importe");
+                    cell.setCellStyle(Encabezado);
+
+                    row = spreadsheet.getRow(i);
+                    cell = row.createCell(0);
+                    cell.setCellValue(NSem.getString("#Nsem"));
+                    cell = row.createCell(1);
+                    cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+                i = 3;
+
+                while (scc.next()) {
+                    row = spreadsheet.getRow(i);
+
+                    cell = row.createCell(2);
+                    cell.setCellValue(scc.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellValue(scc.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+                i = 3;
+
+                while (pen.next()) {
+                    row = spreadsheet.getRow(i);
+                    cell = row.createCell(4);
+                    cell.setCellValue(pen.getString("Servicio"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue(pen.getString("# de padron"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellValue(pen.getString("Importe"));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+                i = 3;
+
+                while (gast.next()) {
+                    row = spreadsheet.getRow(i);
+                    cell = row.createCell(7);
+                    cell.setCellValue(gast.getString(4));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellValue(gast.getString(5));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellValue(gast.getString(6));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+                i = 3;
+                while (val.next()) {
+                    row = spreadsheet.getRow(i);
+                    cell = row.createCell(10);
+                    cell.setCellValue(val.getString(1));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(11);
+                    cell.setCellValue(val.getString(4));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue(val.getString(5));
+                    cell.setCellStyle(Contenido);
+                    i++;
+
+                }
+
+                spreadsheet.getPrintSetup();
+                spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
+                spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.49); // Margen (abajo)  
+                spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                spreadsheet.setVerticallyCenter(true);
+                libro.write(archivo);
+            }
+            Desktop.getDesktop().open(archivoXLS);
+        } catch (IOException | NumberFormatException e) {
+
+            try {
+                throw e;
+            } catch (IOException | NumberFormatException ex) {
+                Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel38MousePressed
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
 
-        Estadias_4 regr = new Estadias_4(usr, LP);
+        Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Tortas_4 regr = new Tortas_4(usr, LP);
+        Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Depositos_4 regr = new Depositos_4(usr, LP);
+        Depositos_4 regr = new Depositos_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        Tehueantepec_4 regr = new Tehueantepec_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        PT_4 regr = new PT_4(usr, LP);
+        PT_4 regr = new PT_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void General2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General2ActionPerformed
+        Empleados_4 RH = new Empleados_4(usr, LP);
+        RH.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_General2ActionPerformed
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
         ODTQ_5 regr = new ODTQ_5(usr, LP);
@@ -8314,7 +9547,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_TorteriaActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        PT_4 regr = new PT_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
@@ -8342,6 +9575,355 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ADMV1ActionPerformed
+
+    private void ImporteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_ImporteKeyTyped
+
+    private void Importe1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe1KeyTyped
+
+    private void Importe2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe2KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe2KeyTyped
+
+    private void Importe3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe3KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe3KeyTyped
+
+    private void Importe4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe4KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();    }//GEN-LAST:event_Importe4KeyTyped
+
+    private void Importe5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe5KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();    }//GEN-LAST:event_Importe5KeyTyped
+
+    private void Importe6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe6KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe6KeyTyped
+
+    private void Importe7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyReleased
+        Operaciones();
+    }//GEN-LAST:event_Importe7KeyReleased
+
+    private void Importe7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe7KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe7KeyTyped
+
+    private void Importe8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe8KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe8KeyTyped
+
+    private void Importe9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe9KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe9KeyTyped
+
+    private void Importe10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe10KeyTyped
+
+    private void Importe11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe11KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe11KeyTyped
+
+    private void Importe12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe12KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe12KeyTyped
+
+    private void Importe13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe13KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe13KeyTyped
+
+    private void Importe14KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe14KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe14KeyTyped
+
+    private void Importe15KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe15KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe15KeyTyped
+
+    private void Importe16KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe16KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe16KeyTyped
+
+    private void Importe17KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe17KeyTyped
+
+    private void Importe18KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe18KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe18KeyTyped
+
+    private void Importe19KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe19KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe19KeyTyped
+
+    private void Importe17KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe17KeyReleased
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_Importe17KeyReleased
+
+    private void Importe30KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe30KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe30KeyTyped
+
+    private void NValeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NValeKeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NValeKeyTyped
+
+    private void NVale1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale1KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale1KeyTyped
+
+    private void NVale2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale2KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale2KeyTyped
+
+    private void NVale3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale3KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale3KeyTyped
+
+    private void NVale4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale4KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale4KeyTyped
+
+    private void NVale5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale5KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale5KeyTyped
+
+    private void NVale6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale6KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale6KeyTyped
+
+    private void NVale7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale7KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale7KeyTyped
+
+    private void NVale8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale8KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale8KeyTyped
+
+    private void NVale9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale9KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale9KeyTyped
+
+    private void Importe31KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe31KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe31KeyTyped
+
+    private void Importe32KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe32KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe32KeyTyped
+
+    private void Importe33KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe33KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe33KeyTyped
+
+    private void Importe34KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe34KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe34KeyTyped
+
+    private void Importe35KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe35KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe35KeyTyped
+
+    private void Importe36KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe36KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe36KeyTyped
+
+    private void Importe36KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe36KeyReleased
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_Importe36KeyReleased
+
+    private void Importe37KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe37KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe37KeyTyped
+
+    private void Importe38KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe38KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe38KeyTyped
+
+    private void Importe39KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe39KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe39KeyTyped
+
+    private void Importe20KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe20KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe20KeyTyped
+
+    private void Importe27KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyReleased
+        ColorDB();
+        Operaciones();
+    }//GEN-LAST:event_Importe27KeyReleased
+
+    private void Importe27KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe27KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe27KeyTyped
+
+    private void ServicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ServicioItemStateChanged
+        if (Servicio.getSelectedItem().toString().equals("Otro")) {
+            Otro.setVisible(true);
+        } else {
+            Otro.setVisible(false);
+        }
+    }//GEN-LAST:event_ServicioItemStateChanged
+
+    private void Servicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio1ItemStateChanged
+        if (Servicio1.getSelectedItem().toString().equals("Otro")) {
+            Otro1.setVisible(true);
+        } else {
+            Otro1.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio1ItemStateChanged
+
+    private void Servicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio2ItemStateChanged
+        if (Servicio2.getSelectedItem().toString().equals("Otro")) {
+            Otro2.setVisible(true);
+        } else {
+            Otro2.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio2ItemStateChanged
+
+    private void Servicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio3ItemStateChanged
+        if (Servicio3.getSelectedItem().toString().equals("Otro")) {
+            Otro3.setVisible(true);
+        } else {
+            Otro3.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio3ItemStateChanged
+
+    private void Servicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio4ItemStateChanged
+        if (Servicio4.getSelectedItem().toString().equals("Otro")) {
+            Otro4.setVisible(true);
+        } else {
+            Otro4.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio4ItemStateChanged
+
+    private void Servicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio5ItemStateChanged
+        if (Servicio5.getSelectedItem().toString().equals("Otro")) {
+            Otro5.setVisible(true);
+        } else {
+            Otro5.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio5ItemStateChanged
+
+    private void Servicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio6ItemStateChanged
+        if (Servicio6.getSelectedItem().toString().equals("Otro")) {
+            Otro6.setVisible(true);
+        } else {
+            Otro6.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio6ItemStateChanged
+
+    private void Servicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio7ItemStateChanged
+        if (Servicio7.getSelectedItem().toString().equals("Otro")) {
+            Otro7.setVisible(true);
+        } else {
+            Otro7.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio7ItemStateChanged
+
+    private void Servicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio8ItemStateChanged
+        if (Servicio8.getSelectedItem().toString().equals("Otro")) {
+            Otro8.setVisible(true);
+        } else {
+            Otro8.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio8ItemStateChanged
+
+    private void Servicio9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio9ItemStateChanged
+        if (Servicio9.getSelectedItem().toString().equals("Otro")) {
+            Otro9.setVisible(true);
+        } else {
+            Otro9.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio9ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -8380,6 +9962,10 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
@@ -8405,7 +9991,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField Concepto7;
     private javax.swing.JTextField Concepto8;
     private javax.swing.JTextField Concepto9;
-    private javax.swing.JLabel DBe;
+    private javax.swing.JTextField DBe;
     private javax.swing.JLabel DE;
     private javax.swing.JMenu Depositos;
     private javax.swing.JTextField EEntrega;
@@ -8452,6 +10038,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private com.toedter.calendar.JDateChooser Fecha8;
     private com.toedter.calendar.JDateChooser Fecha9;
     private javax.swing.JMenuItem General1;
+    private javax.swing.JMenuItem General2;
     private javax.swing.JTextField Importe;
     private javax.swing.JTextField Importe1;
     private javax.swing.JTextField Importe10;
@@ -8586,6 +10173,16 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField NPadron7;
     private javax.swing.JTextField NPadron8;
     private javax.swing.JTextField NPadron9;
+    private javax.swing.JTextField NVale;
+    private javax.swing.JTextField NVale1;
+    private javax.swing.JTextField NVale2;
+    private javax.swing.JTextField NVale3;
+    private javax.swing.JTextField NVale4;
+    private javax.swing.JTextField NVale5;
+    private javax.swing.JTextField NVale6;
+    private javax.swing.JTextField NVale7;
+    private javax.swing.JTextField NVale8;
+    private javax.swing.JTextField NVale9;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT2;
     private javax.swing.JTextField ObsV;
@@ -8598,6 +10195,16 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField ObsV7;
     private javax.swing.JTextField ObsV8;
     private javax.swing.JTextField ObsV9;
+    private javax.swing.JTextField Otro;
+    private javax.swing.JTextField Otro1;
+    private javax.swing.JTextField Otro2;
+    private javax.swing.JTextField Otro3;
+    private javax.swing.JTextField Otro4;
+    private javax.swing.JTextField Otro5;
+    private javax.swing.JTextField Otro6;
+    private javax.swing.JTextField Otro7;
+    private javax.swing.JTextField Otro8;
+    private javax.swing.JTextField Otro9;
     private javax.swing.JMenuItem PRESQ;
     private javax.swing.JPanel Panel;
     private javax.swing.JPanel Panel2;
@@ -8672,6 +10279,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -8688,7 +10297,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
