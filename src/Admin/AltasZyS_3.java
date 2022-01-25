@@ -118,8 +118,30 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
 
+    public void AgregarServSem() {
+
+        String SQL = "INSERT INTO `servicios." + Semcbx.getSelectedItem().toString() + "` (`#Serv`, `Servicio`) VALUES (?, ?)";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NServSem.getText()));
+            pst.setString(2, SAR.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Servicio semanal en " + Semcbx.getSelectedItem().toString() + " agregado.");
+            MostrarServSem();
+
+            Semcbx.setSelectedIndex(0);
+            NServSem.setText("0");
+            SAR.setText("");
+            
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al agregar servicio semanal en " + Semcbx.getSelectedItem().toString() + " : \n" + e.getMessage());
+        }
+    }
+
     public void MostrarServSem() {
-        
+
         try {
             DefaultTableModel modelo = new DefaultTableModel() {
                 @Override
@@ -133,7 +155,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            String sql = "SELECT * FROM `servicios.inturbide`" ;
+            String sql = "SELECT * FROM `servicios.inturbide`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -176,7 +198,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            String sql = "SELECT * FROM `servicios.puente titla`" ;
+            String sql = "SELECT * FROM `servicios.puente titla`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -219,7 +241,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            String sql = "SELECT * FROM `servicios.tehuantepec`" ;
+            String sql = "SELECT * FROM `servicios.tehuantepec`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -249,6 +271,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         }
     }
+
 //Contar filas
     public void ContarServ() {
         int filas = TServ.getRowCount();
@@ -910,10 +933,10 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
         TServInt = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
+        SAR = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Semcbx = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
@@ -921,6 +944,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jScrollPane14 = new javax.swing.JScrollPane();
         TServPte = new javax.swing.JTable();
+        jLabel19 = new javax.swing.JLabel();
+        NServSem = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -1554,9 +1579,14 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jLabel13.setText("Semanal en el que aparecera el servicio:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "puente titla", "inturbide", "tehuantepec" }));
+        Semcbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "puente titla", "inturbide", "tehuantepec" }));
 
         jButton1.setText("Agregar Servicio");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel17.setText("Servicios en Puente titla.");
@@ -1590,6 +1620,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         ));
         jScrollPane14.setViewportView(TServPte);
 
+        jLabel19.setText("# Servicio:");
+
+        NServSem.setEditable(false);
+        NServSem.setText("0");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1604,7 +1639,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel13)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(Semcbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jButton1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1619,9 +1654,13 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                         .addComponent(jLabel17)
                         .addGap(267, 267, 267))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NServSem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SAR, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel10)
                         .addGap(260, 260, 260))))
@@ -1635,8 +1674,12 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(NServSem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1644,7 +1687,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Semcbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2323,6 +2366,10 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ODT2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       AgregarServSem();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2402,6 +2449,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JButton ModS;
     private javax.swing.JButton ModZ;
     private javax.swing.JTextArea NS;
+    private javax.swing.JTextField NServSem;
     private javax.swing.JTextArea NZ;
     private javax.swing.JTextField NZS;
     private javax.swing.JMenuItem ODT1;
@@ -2410,8 +2458,10 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Otrotxt;
     private javax.swing.JPanel PNDS;
     private javax.swing.JMenuItem PRESQ1;
+    private javax.swing.JTextField SAR;
     private javax.swing.JRadioButton Sab;
     private javax.swing.JTextField SabadoT;
+    private javax.swing.JComboBox<String> Semcbx;
     private javax.swing.JComboBox<String> StatusServ;
     private javax.swing.JTextField Supervisor;
     private javax.swing.JComboBox<String> TDS;
@@ -2428,7 +2478,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private botones.BotonWeb botonWeb2;
     private javax.swing.JTextField idZona;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2439,6 +2488,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2481,6 +2531,5 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
