@@ -15,6 +15,7 @@ import RH.Depositos_4;
 import RH.Empleados_4;
 import RH.Estadias_4;
 import RH.Tortas_4;
+import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
 import ServiciosSem.ServInturbide;
 import java.awt.Color;
@@ -4541,6 +4542,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Semanal Inturbide");
@@ -4548,7 +4550,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("Servicios c/cobro ITURBIDE");
+        jLabel10.setText("Servicios c/cobro Puente titla");
 
         Fecha.setDateFormatString("dd MMM yyyy ");
 
@@ -7466,6 +7468,14 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         });
         Semanales.add(jMenuItem13);
 
+        jMenuItem14.setText("Reimprimir vale");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem14);
+
         jMenuBar1.add(Semanales);
 
         setJMenuBar(jMenuBar1);
@@ -9938,8 +9948,12 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         VDE regr = new VDE();
         regr.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        Rvales regr = new Rvales();
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -10314,6 +10328,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
