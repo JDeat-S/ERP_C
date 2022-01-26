@@ -25,8 +25,7 @@ public class Inicio_1 extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setIconImage(new ImageIcon(Inicio_1.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        JOptionPane.showMessageDialog(null, "Algunas funciones no funcionan correctamente: \n"
-                + "RH: Todas las ventanas de semanales por cambios");
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -218,7 +217,7 @@ public class Inicio_1 extends javax.swing.JFrame {
         Backgraund.add(Btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 110, 40));
 
         VerERP.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        VerERP.setText("Ver 2.1.1");
+        VerERP.setText("Ver 2.2.0");
         VerERP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Backgraund.add(VerERP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 454, 80, 20));
 

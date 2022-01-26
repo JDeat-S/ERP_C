@@ -1,18 +1,25 @@
 package Semanal.Vales;
 
+import Conexion.ConexionSQL;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.HeadlessException;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -30,6 +37,8 @@ public class VDE extends javax.swing.JFrame implements Printable {
         "cincuenta ", "sesenta ", "setenta ", "ochenta ", "noventa "};
     private final String[] CENTENAS = {"", "ciento ", "doscientos ", "trecientos ", "cuatrocientos ", "quinientos ", "seiscientos ",
         "setecientos ", "ochocientos ", "novecientos "};
+    ConexionSQL cc = new ConexionSQL();
+    Connection con = cc.conexion();
 
     public VDE() {
         initComponents();
@@ -47,6 +56,43 @@ public class VDE extends javax.swing.JFrame implements Printable {
         this.LP = LP;
         this.setLocationRelativeTo(null);
 
+    }
+
+    public void AgregarServSem() {
+
+        String SQL = "IINSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NV.getText()));
+            pst.setString(2, Importe.getText());
+            pst.setString(3, RD.getText());
+            pst.setString(4, Concepto.getText());
+            pst.setString(5, En.getText());
+            pst.setString(6, ((JTextField) Fecha.getDateEditor().getUiComponent()).getText());
+            pst.setString(7, ImporteEsc.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Vale agregado.");
+
+            NV.setText("0");
+            Importe.setText("");
+            RD.setText("");
+            Concepto.setText("");
+            En.setText("");
+            Fecha.setDate(null);
+            ImporteEsc.setText("");
+            NV1.setText("0");
+            Importe1.setText("");
+            RD1.setText("");
+            Concepto1.setText("");
+            En1.setText("");
+            Fecha1.setDate(null);
+            ImporteEsc1.setText("");
+            
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al agregar vale");
+        }
     }
 
     public String Convertir(String numero, boolean mayusculas) {
@@ -156,17 +202,19 @@ public class VDE extends javax.swing.JFrame implements Printable {
     }
 
     @Override
-     public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-        if (pageIndex > 0) return NO_SUCH_PAGE;
-        Graphics2D g2d = (Graphics2D)graphics;
+    public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+        if (pageIndex > 0) {
+            return NO_SUCH_PAGE;
+        }
+        Graphics2D g2d = (Graphics2D) graphics;
         //Punto donde empezará a imprimir dentro la pagina (100, 50)
-        g2d.translate(  pageFormat.getImageableX()+100,
-                        pageFormat.getImageableY()+50);
-        g2d.scale(0.50,0.50); //Reducción de la impresión al 50%
+        g2d.translate(pageFormat.getImageableX() + 100,
+                pageFormat.getImageableY() + 50);
+        g2d.scale(0.50, 0.50); //Reducción de la impresión al 50%
         jPanel1.printAll(graphics);
-        return PAGE_EXISTS;               
+        return PAGE_EXISTS;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -346,7 +394,7 @@ public class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
 
         RD.setBorder(null);
-        jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 70, 160, -1));
+        jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 70, 160, 20));
 
         jLabel4.setText("Cantidad de:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
@@ -355,12 +403,22 @@ public class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         Concepto.setBorder(null);
-        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 130, -1));
+        Concepto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ConceptoKeyReleased(evt);
+            }
+        });
+        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 130, 20));
 
         jLabel6.setText("En:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
 
         En.setBorder(null);
+        En.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EnKeyReleased(evt);
+            }
+        });
         jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 89, 20));
 
         Fecha.setDateFormatString("'A' d 'de' MMMM 'de' y");
@@ -418,11 +476,11 @@ public class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel12.setText("Recibi de:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
 
         RD1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         RD1.setBorder(null);
-        jPanel2.add(RD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 160, 20));
+        jPanel2.add(RD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 170, 20));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel13.setText("Cantidad de:");
@@ -494,7 +552,7 @@ public class VDE extends javax.swing.JFrame implements Printable {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -536,29 +594,38 @@ public class VDE extends javax.swing.JFrame implements Printable {
     }//GEN-LAST:event_Harder1MousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         try {
+        try {
             PrinterJob job = PrinterJob.getPrinterJob();
             job.setPrintable((Printable) this);
             job.printDialog();
             job.print();
-        } catch (PrinterException ex) { }       
+        } catch (PrinterException ex) {
+        }
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
-Importe1.setText(Importe.getText());
+        Importe1.setText(Importe.getText());
         ImporteEsc.setText(Convertir(Importe.getText(), true));
         ImporteEsc1.setText(ImporteEsc.getText());
     }//GEN-LAST:event_ImporteKeyReleased
 
     private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
-       ImporteEsc1.setText(Convertir(Importe1.getText(), true));
+        ImporteEsc1.setText(Convertir(Importe1.getText(), true));
     }//GEN-LAST:event_Importe1KeyReleased
 
     private void NVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVKeyReleased
-       NV1.setText(NV.getText());
+        NV1.setText(NV.getText());
     }//GEN-LAST:event_NVKeyReleased
+
+    private void ConceptoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConceptoKeyReleased
+        Concepto1.setText(Concepto.getText());
+    }//GEN-LAST:event_ConceptoKeyReleased
+
+    private void EnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EnKeyReleased
+        En1.setText(En.getText());
+    }//GEN-LAST:event_EnKeyReleased
 
     /**
      * @param args the command line arguments
@@ -580,7 +647,7 @@ Importe1.setText(Importe.getText());
             java.util.logging.Logger.getLogger(VDE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */
