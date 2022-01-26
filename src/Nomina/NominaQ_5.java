@@ -1,5 +1,14 @@
 package Nomina;
 
+import Semanal.PT_4;
+import Semanal.Tehuantepec_4;
+import Semanal.Inturbide_4;
+import Nomina.ModulosS.CDAS_5;
+import Nomina.ModulosS.ODTS_5;
+import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.ODTQ_5;
+import Nomina.ModulosQ.PresQ_5;
 import VentanasDReportes.RepNom_7;
 import RH.*;
 import Admin.*;
@@ -22845,7 +22854,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        Tehuantepec_4 regr = new Tehuantepec_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem13ActionPerformed

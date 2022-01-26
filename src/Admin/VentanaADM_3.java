@@ -1,5 +1,14 @@
 package Admin;
 
+import Semanal.PT_4;
+import Semanal.Tehuantepec_4;
+import Semanal.Inturbide_4;
+import Nomina.ModulosS.CDAS_5;
+import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosS.ODTS_5;
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.ODTQ_5;
+import Nomina.ModulosQ.PresQ_5;
 import RH.*;
 import Nomina.*;
 import Conexion.ConexionSQL;
@@ -1137,7 +1146,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        Tehuantepec_4 regr = new Tehuantepec_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed

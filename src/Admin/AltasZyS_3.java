@@ -1,5 +1,14 @@
 package Admin;
 
+import Semanal.PT_4;
+import Semanal.Tehuantepec_4;
+import Semanal.Inturbide_4;
+import Nomina.ModulosS.CDAS_5;
+import Nomina.ModulosS.ODTS_5;
+import Nomina.ModulosS.PresS_5;
+import Nomina.ModulosQ.CDAQ_5;
+import Nomina.ModulosQ.ODTQ_5;
+import Nomina.ModulosQ.PresQ_5;
 import Nomina.*;
 import ColoresT.*;
 import Conexion.ConexionSQL;
@@ -37,7 +46,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
     public AltasZyS_3() {
         initComponents();
-
+        MostrarServSem();
         this.setExtendedState(6);
         this.setLocationRelativeTo(null);
         IDS.setVisible(false);
@@ -71,6 +80,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
     public AltasZyS_3(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
+        MostrarServSem();
         this.usr = usr;
         this.LP = LP;
         this.setExtendedState(6);
@@ -107,6 +117,183 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+
+    public void ModsServSem() {
+
+        String SQL = "UPDATE `servicios." + Semcbx.getSelectedItem().toString() + "`  SET `#Serv` = ?, `Servicio` = ? WHERE `servicios." + Semcbx.getSelectedItem().toString() + "`.`#Serv` = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NServSem.getText()));
+            pst.setString(2, SAR.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Servicio semanal en " + Semcbx.getSelectedItem().toString() + " modificado.");
+            MostrarServSem();
+
+            Semcbx.setSelectedIndex(0);
+            NServSem.setText("0");
+            SAR.setText("");
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al modificar servicio semanal en " + Semcbx.getSelectedItem().toString() + " : \n" + e.getMessage());
+        }
+    }
+
+    public void AgregarServSem() {
+
+        String SQL = "INSERT INTO `servicios." + Semcbx.getSelectedItem().toString() + "` (`#Serv`, `Servicio`) VALUES (?, ?)";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NServSem.getText()));
+            pst.setString(2, SAR.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Servicio semanal en " + Semcbx.getSelectedItem().toString() + " agregado.");
+            MostrarServSem();
+
+            Semcbx.setSelectedIndex(0);
+            NServSem.setText("0");
+            SAR.setText("");
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al agregar servicio semanal en " + Semcbx.getSelectedItem().toString() + " : \n" + e.getMessage());
+        }
+    }
+
+    public void MostrarServSem() {
+
+        try {
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//nombre tabla
+            TServInt.setModel(modelo);
+
+            PreparedStatement ps;
+            ResultSet rs;
+
+            String sql = "SELECT * FROM `servicios.inturbide`";
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Servicio");
+            modelo.addColumn("Nombre de Servicio");
+
+//Anchos
+            int[] anchos = {30, 200};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //nombre tabla
+                TServInt.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de inturbide: \n" + e.getMessage());
+
+        }
+
+        try {
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//nombre tabla
+            TServPte.setModel(modelo);
+
+            PreparedStatement ps;
+            ResultSet rs;
+
+            String sql = "SELECT * FROM `servicios.puente titla`";
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Servicio");
+            modelo.addColumn("Nombre de Servicio");
+
+//Anchos
+            int[] anchos = {30, 200};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //nombre tabla
+                TServPte.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de puente titla: \n" + e.getMessage());
+
+        }
+
+        try {
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//nombre tabla
+            TServTehua.setModel(modelo);
+
+            PreparedStatement ps;
+            ResultSet rs;
+
+            String sql = "SELECT * FROM `servicios.tehuantepec`";
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Servicio");
+            modelo.addColumn("Nombre de Servicio");
+
+//Anchos
+            int[] anchos = {30, 200};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //nombre tabla
+                TServTehua.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de Tehuantepec: \n" + e.getMessage());
+
+        }
+    }
+
 //Contar filas
     public void ContarServ() {
         int filas = TServ.getRowCount();
@@ -594,6 +781,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         try {
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
@@ -601,8 +789,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 //nombre tabla
             TablaZona.setModel(modelo);
 
-            PreparedStatement ps = null;
-            ResultSet rs = null;
+            PreparedStatement ps;
+            ResultSet rs;
 
             String sql = "select * from zona" + where;
             ps = con.prepareStatement(sql);
@@ -762,6 +950,25 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         TNDS = new javax.swing.JTable();
         jScrollPane10 = new javax.swing.JScrollPane();
         TStatusServ = new javax.swing.JTable();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        TServInt = new javax.swing.JTable();
+        SAR = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        Semcbx = new javax.swing.JComboBox<>();
+        ADDservsem = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        TServTehua = new javax.swing.JTable();
+        jLabel18 = new javax.swing.JLabel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        TServPte = new javax.swing.JTable();
+        jLabel19 = new javax.swing.JLabel();
+        NServSem = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -1374,6 +1581,172 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jScrollPane8.setViewportView(PNDS);
 
         jTabbedPane1.addTab("Tabla Detallada de servicios", jScrollPane8);
+
+        jLabel8.setText("Servicio a registrar:");
+
+        TServInt.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        TServInt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TServIntMousePressed(evt);
+            }
+        });
+        jScrollPane12.setViewportView(TServInt);
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel10.setText("Servicios en Inturbide.");
+
+        jLabel13.setText("Semanal en el que aparecera el servicio:");
+
+        Semcbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "puente titla", "inturbide", "tehuantepec" }));
+
+        ADDservsem.setText("Agregar Servicio");
+        ADDservsem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADDservsemActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel17.setText("Servicios en Puente titla.");
+
+        TServTehua.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        TServTehua.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TServTehuaMousePressed(evt);
+            }
+        });
+        jScrollPane13.setViewportView(TServTehua);
+
+        jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel18.setText("Servicios en Tehuantepec.");
+
+        TServPte.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        TServPte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TServPteMousePressed(evt);
+            }
+        });
+        jScrollPane14.setViewportView(TServPte);
+
+        jLabel19.setText("# Servicio:");
+
+        NServSem.setEditable(false);
+        NServSem.setText("0");
+
+        jButton1.setText("Modificar Servicio");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ADDservsem)
+                                    .addComponent(jLabel13))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Semcbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(0, 707, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(139, 139, 139))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel17)
+                        .addGap(267, 267, 267))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NServSem, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SAR, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10)
+                        .addGap(260, 260, 260))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel18)
+                .addGap(253, 253, 253))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(NServSem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(SAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(Semcbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ADDservsem)
+                            .addComponent(jButton1))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(203, Short.MAX_VALUE))
+        );
+
+        jScrollPane11.setViewportView(jPanel3);
+
+        jTabbedPane1.addTab("Alta de Servicios semanales", jScrollPane11);
 
         Menuadm.setText("Todas las ventanas");
 
@@ -2001,7 +2374,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        Tehueantepec_4 regr = new Tehueantepec_4(usr, LP);
+        Tehuantepec_4 regr = new Tehuantepec_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem14ActionPerformed
@@ -2035,6 +2408,31 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ODT2ActionPerformed
+
+    private void ADDservsemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDservsemActionPerformed
+        AgregarServSem();
+    }//GEN-LAST:event_ADDservsemActionPerformed
+
+    private void TServIntMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TServIntMousePressed
+        int seleccionar = TServInt.getSelectedRow();
+        NServSem.setText(String.valueOf(TServInt.getValueAt(seleccionar, 0)));
+        SAR.setText(String.valueOf(TServInt.getValueAt(seleccionar, 1)));
+        Semcbx.setSelectedIndex(2);
+    }//GEN-LAST:event_TServIntMousePressed
+
+    private void TServPteMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TServPteMousePressed
+        int seleccionar = TServPte.getSelectedRow();
+        NServSem.setText(String.valueOf(TServPte.getValueAt(seleccionar, 0)));
+        SAR.setText(String.valueOf(TServPte.getValueAt(seleccionar, 1)));
+        Semcbx.setSelectedIndex(1);
+    }//GEN-LAST:event_TServPteMousePressed
+
+    private void TServTehuaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TServTehuaMousePressed
+        int seleccionar = TServTehua.getSelectedRow();
+        NServSem.setText(String.valueOf(TServTehua.getValueAt(seleccionar, 0)));
+        SAR.setText(String.valueOf(TServTehua.getValueAt(seleccionar, 1)));
+        Semcbx.setSelectedIndex(3);
+    }//GEN-LAST:event_TServTehuaMousePressed
 
     /**
      * @param args the command line arguments
@@ -2080,6 +2478,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADDservsem;
     private javax.swing.JMenuItem ADMV2;
     private javax.swing.JTextField Abre;
     private javax.swing.JButton AgregarZ;
@@ -2115,6 +2514,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JButton ModS;
     private javax.swing.JButton ModZ;
     private javax.swing.JTextArea NS;
+    private javax.swing.JTextField NServSem;
     private javax.swing.JTextArea NZ;
     private javax.swing.JTextField NZS;
     private javax.swing.JMenuItem ODT1;
@@ -2123,13 +2523,18 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Otrotxt;
     private javax.swing.JPanel PNDS;
     private javax.swing.JMenuItem PRESQ1;
+    private javax.swing.JTextField SAR;
     private javax.swing.JRadioButton Sab;
     private javax.swing.JTextField SabadoT;
+    private javax.swing.JComboBox<String> Semcbx;
     private javax.swing.JComboBox<String> StatusServ;
     private javax.swing.JTextField Supervisor;
     private javax.swing.JComboBox<String> TDS;
     private javax.swing.JTable TNDS;
     private javax.swing.JTable TServ;
+    private javax.swing.JTable TServInt;
+    private javax.swing.JTable TServPte;
+    private javax.swing.JTable TServTehua;
     private javax.swing.JTable TStatusServ;
     private javax.swing.JTable TablaZona;
     private javax.swing.JLabel TdServ;
@@ -2137,18 +2542,25 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JTable ZSh;
     private botones.BotonWeb botonWeb2;
     private javax.swing.JTextField idZona;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
@@ -2167,9 +2579,14 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
