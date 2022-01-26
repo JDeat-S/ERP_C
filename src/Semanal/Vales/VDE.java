@@ -14,6 +14,7 @@ import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -25,7 +26,7 @@ import javax.swing.JTextField;
  *
  * @author JDeat
  */
-public class VDE extends javax.swing.JFrame implements Printable {
+public final class VDE extends javax.swing.JFrame implements Printable {
 
     int xMouse, yMouse;
     Logica_usuarios usr;
@@ -45,6 +46,7 @@ public class VDE extends javax.swing.JFrame implements Printable {
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         this.setLocationRelativeTo(null);
+        MNV();
 
     }
 
@@ -55,12 +57,33 @@ public class VDE extends javax.swing.JFrame implements Printable {
         this.usr = usr;
         this.LP = LP;
         this.setLocationRelativeTo(null);
-
+        MNV();
     }
 
-    public void AgregarServSem() {
+    public void MNV() {
+        String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022'"
+                + " AND TABLE_NAME = 'semanal.vales'";
+        try {
+            java.sql.Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            while (rs.next()) {
 
-        String SQL = "IINSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                NV.setText("" + Integer.parseInt(rs.getString("AUTO_INCREMENT")));
+                NV1.setText("" + Integer.parseInt(rs.getString("AUTO_INCREMENT")));
+
+            }
+            st.isClosed();
+            rs.isClosed();
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "Error al obtener utimo vale registrado: " + e);
+
+        }
+    }
+
+    public void agregarvale() {
+
+        String SQL = "INSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -73,7 +96,7 @@ public class VDE extends javax.swing.JFrame implements Printable {
             pst.setString(7, ImporteEsc.getText());
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Vale agregado.");
+            JOptionPane.showMessageDialog(null, "Vale registrado.");
 
             NV.setText("0");
             Importe.setText("");
@@ -89,7 +112,13 @@ public class VDE extends javax.swing.JFrame implements Printable {
             En1.setText("");
             Fecha1.setDate(null);
             ImporteEsc1.setText("");
-            
+            try {
+                PrinterJob job = PrinterJob.getPrinterJob();
+                job.setPrintable((Printable) this);
+                job.printDialog();
+                job.print();
+            } catch (PrinterException ex) {
+            }
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar vale");
         }
@@ -109,7 +138,7 @@ public class VDE extends javax.swing.JFrame implements Printable {
             //se divide el numero 0000000,00 -> entero y decimal
             String Num[] = numero.split(",");
             //de da formato al numero decimal
-            parte_decimal = ", " + Num[1] + " Pesos";
+            parte_decimal = ", " + Num[1] + "¢ Pesos";
             //se convierte el numero a literal
             if (Integer.parseInt(Num[0]) == 0) {//si el valor es cero
                 literal = "cero ";
@@ -219,8 +248,8 @@ public class VDE extends javax.swing.JFrame implements Printable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnexit = new javax.swing.JPanel();
-        txtbtnexit = new javax.swing.JLabel();
+        btngen = new javax.swing.JPanel();
+        txtbtngen = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
         Move = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -275,48 +304,45 @@ public class VDE extends javax.swing.JFrame implements Printable {
         jSeparator12 = new javax.swing.JSeparator();
         jSeparator13 = new javax.swing.JSeparator();
         jLabel21 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnexit = new javax.swing.JPanel();
+        txtbtnexit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnexit.setBackground(new java.awt.Color(255, 255, 255));
+        btngen.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtbtnexit.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
-        txtbtnexit.setForeground(new java.awt.Color(0, 0, 0));
-        txtbtnexit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtbtnexit.setText("x");
-        txtbtnexit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txtbtnexit.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtbtngen.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        txtbtngen.setForeground(new java.awt.Color(0, 0, 0));
+        txtbtngen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtbtngen.setText("Agregar vale.");
+        txtbtngen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtbtngen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtbtnexitMouseClicked(evt);
+                txtbtngenMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txtbtnexitMouseEntered(evt);
+                txtbtngenMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                txtbtnexitMouseExited(evt);
+                txtbtngenMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout btnexitLayout = new javax.swing.GroupLayout(btnexit);
-        btnexit.setLayout(btnexitLayout);
-        btnexitLayout.setHorizontalGroup(
-            btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout btngenLayout = new javax.swing.GroupLayout(btngen);
+        btngen.setLayout(btngenLayout);
+        btngenLayout.setHorizontalGroup(
+            btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
         );
-        btnexitLayout.setVerticalGroup(
-            btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        btngenLayout.setVerticalGroup(
+            btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
         );
 
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, -1, -1));
+        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 940, 90));
 
         Harder1.setBackground(new java.awt.Color(255, 255, 255));
         Harder1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -394,6 +420,11 @@ public class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
 
         RD.setBorder(null);
+        RD.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RDKeyReleased(evt);
+            }
+        });
         jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 70, 160, 20));
 
         jLabel4.setText("Cantidad de:");
@@ -425,6 +456,7 @@ public class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 200, -1));
 
         ImporteEsc.setColumns(20);
+        ImporteEsc.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ImporteEsc.setLineWrap(true);
         ImporteEsc.setRows(5);
         jScrollPane1.setViewportView(ImporteEsc);
@@ -546,30 +578,46 @@ public class VDE extends javax.swing.JFrame implements Printable {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 250));
 
-        jButton1.setText("Generar Vale.");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        btnexit.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtbtnexit.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        txtbtnexit.setForeground(new java.awt.Color(0, 0, 0));
+        txtbtnexit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtbtnexit.setText("x");
+        txtbtnexit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtbtnexit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtbtnexitMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtbtnexitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtbtnexitMouseExited(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
+
+        javax.swing.GroupLayout btnexitLayout = new javax.swing.GroupLayout(btnexit);
+        btnexit.setLayout(btnexitLayout);
+        btnexitLayout.setHorizontalGroup(
+            btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnexitLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        btnexitLayout.setVerticalGroup(
+            btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnexitLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtbtnexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_txtbtnexitMouseClicked
-
-    private void txtbtnexitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseEntered
-        btnexit.setBackground(Color.red);
-        txtbtnexit.setForeground(Color.white);
-    }//GEN-LAST:event_txtbtnexitMouseEntered
-
-    private void txtbtnexitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseExited
-        btnexit.setBackground(Color.white);
-        txtbtnexit.setForeground(Color.black);
-    }//GEN-LAST:event_txtbtnexitMouseExited
 
     private void MoveMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoveMouseDragged
         int x = evt.getXOnScreen();
@@ -593,18 +641,6 @@ public class VDE extends javax.swing.JFrame implements Printable {
         yMouse = evt.getY();
     }//GEN-LAST:event_Harder1MousePressed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
-            PrinterJob job = PrinterJob.getPrinterJob();
-            job.setPrintable((Printable) this);
-            job.printDialog();
-            job.print();
-        } catch (PrinterException ex) {
-        }
-
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
         Importe1.setText(Importe.getText());
         ImporteEsc.setText(Convertir(Importe.getText(), true));
@@ -626,6 +662,38 @@ public class VDE extends javax.swing.JFrame implements Printable {
     private void EnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EnKeyReleased
         En1.setText(En.getText());
     }//GEN-LAST:event_EnKeyReleased
+
+    private void RDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RDKeyReleased
+        RD1.setText(RD.getText());
+    }//GEN-LAST:event_RDKeyReleased
+
+    private void txtbtngenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseClicked
+        agregarvale();
+    }//GEN-LAST:event_txtbtngenMouseClicked
+
+    private void txtbtngenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseEntered
+        btngen.setBackground(Color.green);
+        txtbtngen.setForeground(Color.black);
+    }//GEN-LAST:event_txtbtngenMouseEntered
+
+    private void txtbtngenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseExited
+        btngen.setBackground(Color.white);
+        txtbtngen.setForeground(Color.black);
+    }//GEN-LAST:event_txtbtngenMouseExited
+
+    private void txtbtnexitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseExited
+        btnexit.setBackground(Color.white);
+        txtbtnexit.setForeground(Color.black);
+    }//GEN-LAST:event_txtbtnexitMouseExited
+
+    private void txtbtnexitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseEntered
+        btnexit.setBackground(Color.red);
+        txtbtnexit.setForeground(Color.white);
+    }//GEN-LAST:event_txtbtnexitMouseEntered
+
+    private void txtbtnexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_txtbtnexitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -674,7 +742,7 @@ public class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField RD;
     private javax.swing.JTextField RD1;
     private javax.swing.JPanel btnexit;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel btngen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -714,5 +782,6 @@ public class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel txtbtnexit;
+    private javax.swing.JLabel txtbtngen;
     // End of variables declaration//GEN-END:variables
 }

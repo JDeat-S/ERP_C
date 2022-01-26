@@ -15,6 +15,7 @@ import RH.Depositos_4;
 import RH.Empleados_4;
 import RH.Estadias_4;
 import RH.Tortas_4;
+import Semanal.Vales.VDE;
 import ServiciosSem.ServInturbide;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -4539,6 +4540,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Semanales = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Semanal Inturbide");
@@ -7456,6 +7458,14 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         });
         Semanales.add(jMenuItem4);
 
+        jMenuItem13.setText("Generar vale de efectivo");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem13);
+
         jMenuBar1.add(Semanales);
 
         setJMenuBar(jMenuBar1);
@@ -9925,6 +9935,12 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         }
     }//GEN-LAST:event_Servicio9ItemStateChanged
 
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        VDE regr = new VDE();
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -10297,6 +10313,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
