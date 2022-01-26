@@ -15,6 +15,7 @@ import java.awt.print.PrinterJob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -52,7 +53,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         this.setLocationRelativeTo(null);
-
+        MDVales();
     }
 
     public Rvales(Logica_usuarios usr, Logica_permisos LP) {
@@ -62,6 +63,62 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         this.usr = usr;
         this.LP = LP;
         this.setLocationRelativeTo(null);
+        MDVales();
+    }
+
+    public void MDVales() {
+        String Statusimss = NVSearch.getText();
+        String sql = "SELECT * FROM `semanal.vales`";
+
+        if (!"".equals(Statusimss)) {
+            sql = " SELECT * FROM `semanal.vales` WHERE `#vale` LIKE '%" + Statusimss + "%'";
+        }
+        try {
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//nombre tabla
+            Tvales.setModel(modelo);
+
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Vale");
+            modelo.addColumn("Bueno por");
+            modelo.addColumn("Recibi de");
+            modelo.addColumn("Concepto");
+            modelo.addColumn("En");
+            modelo.addColumn("Fecha");
+            modelo.addColumn("Cantidad escrita");
+
+//Anchos
+            int[] anchos = {30, 30, 50, 100, 100, 30, 60, 100};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //nombre tabla
+                Tvales.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de inturbide: \n" + e.getMessage());
+
+        }
     }
 
     public String Convertir(String numero, boolean mayusculas) {
@@ -607,6 +664,12 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel24.setText("# Vale:");
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 20));
+
+        NVSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVSearchKeyReleased(evt);
+            }
+        });
         getContentPane().add(NVSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 90, -1));
 
         pack();
@@ -720,12 +783,16 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             Date date2 = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse((String) model.getValueAt(seleccionar, 5));
             Fecha.setDate(date2);
             ImporteEsc.setText(String.valueOf(Tvales.getValueAt(seleccionar, 6)));
-            
+
         } catch (ParseException ex) {
             Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_TvalesMousePressed
+
+    private void NVSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVSearchKeyReleased
+        MDVales();
+    }//GEN-LAST:event_NVSearchKeyReleased
 
     /**
      * @param args the command line arguments

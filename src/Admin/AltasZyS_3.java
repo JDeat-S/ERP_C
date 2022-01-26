@@ -655,6 +655,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
