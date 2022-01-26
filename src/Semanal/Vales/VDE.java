@@ -119,6 +119,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 job.print();
             } catch (PrinterException ex) {
             }
+            MNV();
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar vale");
         }
@@ -302,8 +303,10 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jSeparator11 = new javax.swing.JSeparator();
         jLabel20 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
+        jLabel23 = new javax.swing.JLabel();
         jSeparator13 = new javax.swing.JSeparator();
         jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
 
@@ -392,7 +395,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("# Vale");
+        jLabel1.setText("A-22");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
 
         NV.setText("0");
@@ -402,7 +405,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 NVKeyReleased(evt);
             }
         });
-        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 80, 20));
+        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 90, 20));
 
         jLabel2.setText("Bueno por:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
@@ -484,7 +487,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel10.setText("# Vale");
+        jLabel10.setText("A-22");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 30, 20));
 
         NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
@@ -493,8 +496,9 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 90, 20));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Bueno por:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 57, 20));
 
         Importe1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Importe1.setText("0");
@@ -507,12 +511,13 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, 20));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Recibi de:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 45, 20));
 
         RD1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         RD1.setBorder(null);
-        jPanel2.add(RD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 170, 20));
+        jPanel2.add(RD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 165, 20));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel13.setText("Cantidad de:");
@@ -547,7 +552,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel16.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel16.setText("CONFORT SERVICE");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel17.setText("RECIBO DE DINERO.");
@@ -563,18 +568,25 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel19.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel19.setText("PRESTIGE DE MEXICO S.A DE C.V");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
-        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 170, 10));
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
 
         jLabel20.setText("Recibe");
         jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
         jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 120, 10));
+
+        jLabel23.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel23.setText("# Vale");
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 30, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 370, 250));
         jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 120, 10));
 
         jLabel21.setText("Recibe");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, -1, -1));
+
+        jLabel22.setText("# Vale");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 250));
 
@@ -757,6 +769,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
