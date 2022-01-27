@@ -1,4 +1,4 @@
-package Nomina;
+package Nomina.Listas;
 
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -12,6 +12,10 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import RH.*;
 import Logicas.*;
+import Nomina.NominaQSiMSS_5;
+import Nomina.NominaQ_5;
+import Nomina.NominaS_5;
+import Nomina.NominaS_simss_5;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;

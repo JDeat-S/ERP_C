@@ -12,7 +12,7 @@ import Nomina.ModulosQ.ODTQ_5;
 import Nomina.NominaS_simss_5;
 import Nomina.NominaS_5;
 import Nomina.NominaQSiMSS_5;
-import Nomina.Listas_5;
+import Nomina.Listas.Listas_5;
 import Admin.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltroServ;

@@ -14,7 +14,7 @@ import Logicas.BDNomQ.Logica_bd_NomODTQ;
 import Logicas.BDNomQ.Logica_bd_pagosODTQ;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-import Nomina.Listas_5;
+import Nomina.Listas.Listas_5;
 import Nomina.NominaQSiMSS_5;
 import Nomina.NominaQ_5;
 import Nomina.NominaS_5;

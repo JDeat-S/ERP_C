@@ -17,7 +17,7 @@ import Conexion.ConexionSQL;
 import Logicas.*;
 import Logicas.BDNomS.Logica_bd_NomCDAS;
 import Logicas.BDNomS.Logica_bd_pagosCDAS;
-import Nomina.Listas_5;
+import Nomina.Listas.Listas_5;
 import Nomina.NominaQSiMSS_5;
 import Nomina.NominaQ_5;
 import Nomina.NominaS_5;

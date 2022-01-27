@@ -13,7 +13,7 @@ import RH.*;
 import Conexion.ConexionSQL;
 import Logicas.*;
 import Nomina.ModulosS.CDAS_5;
-import Nomina.Listas_5;
+import Nomina.Listas.Listas_5;
 import Nomina.NominaQSiMSS_5;
 import Nomina.NominaQ_5;
 import Nomina.NominaS_5;

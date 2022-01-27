@@ -1,5 +1,6 @@
 package Semanal;
 
+import Nomina.Listas.Listas_5;
 import Nomina.ModulosS.CDAS_5;
 import Nomina.ModulosS.PresS_5;
 import Nomina.ModulosS.ODTS_5;
