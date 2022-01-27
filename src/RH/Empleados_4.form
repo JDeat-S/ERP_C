@@ -276,7 +276,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Inturbide"/>
+                <Property name="text" type="java.lang.String" value="Iturbide"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
@@ -296,6 +296,22 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reimprimir vale"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem14ActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem13">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Generar vale de efectivo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem13ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -2553,7 +2569,7 @@
                                   <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                                   <Component id="Cs4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botonWeb2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="3813" max="32767" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane7" alignment="1" max="32767" attributes="0"/>
@@ -2566,27 +2582,25 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="botonWeb2" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Nfilimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="namesimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Fimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FZimss" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nssimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rfcimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PuestoimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="StatusimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FBimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="curpimssF" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Nfilimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="namesimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="deleteimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Cs4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Fimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="expFimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ApimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="AmimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FdiimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FZimss" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="nssimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rfcimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PuestoimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="StatusimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="FBimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="curpimssF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane7" pref="792" max="32767" attributes="0"/>
@@ -2748,14 +2762,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cs4ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="botones.BotonWeb" name="botonWeb2">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
-                    </Property>
-                    <Property name="link" type="java.lang.String" value="http://192.168.3.10/Reportes/ReporteRH/EPCIMSS.php"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JComboBox" name="Fimss">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -2880,6 +2886,19 @@
                 <Component class="javax.swing.JTextField" name="FBimssF">
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FBimssFKeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel32">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
+                    </Property>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Hand Cursor"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel32MousePressed"/>
                   </Events>
                 </Component>
               </SubComponents>

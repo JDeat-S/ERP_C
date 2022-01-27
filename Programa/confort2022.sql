@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-01-2022 a las 00:20:33
+-- Tiempo de generación: 28-01-2022 a las 00:34:32
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -78,9 +78,9 @@ CREATE TABLE `admin.usuarios` (
 
 INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`, `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES
 (1, 'Gallardo', 'Torres', 'Jhovan Alexandro', 'Administrador', 'JDeat', 0x4a4465617435353737, '17/enero/2022 08:39:32', '1', '0'),
-(2, 'Melchor', 'Flores', 'Teresa', 'Nomina', 'Nomina', 0x4e6f6d696e61, '20/enero/2022 13:40:21', '1', '2'),
-(3, 'FUENTES', 'PLATA', 'KARLA JOANA', 'Recursos Humanos', 'RH', 0x5248, '20/enero/2022 13:07:09', '1', '1'),
-(4, 'Neri', 'Milpas', 'Guadalupe cristina', 'Administrador', 'Admin', 0x41646d696e, '17/enero/2022 08:42:43', '1', '0');
+(2, 'Melchor', 'Flores', 'Teresa', 'Nomina', 'Nomina', 0x4e6f6d696e61, '27/enero/2022 14:07:53', '1', '2'),
+(3, 'FUENTES', 'PLATA', 'KARLA JOANA', 'Recursos Humanos', 'RH', 0x5248, '27/enero/2022 16:32:23', '1', '1'),
+(4, 'Neri', 'Milpas', 'Guadalupe cristina', 'Administrador', 'Admin', 0x41646d696e, '24/enero/2022 10:40:27', '1', '0');
 
 -- --------------------------------------------------------
 
@@ -1486,7 +1486,7 @@ INSERT INTO `imss` (`idimss`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Genero_i
 (146, 'MELCHOR', 'FLORES', 'TERESA', 'MUJER', '18/06/2020', 'OFICINA', 'AUXILIAR CONTABLE', '1988200406', 'MEFT821015JC2', 'MEFT821015MDFLLR01', 'ADMINISTRATIVO', '128.79', 'VIGENTE', '', '', '', ''),
 (147, 'FUENTES', 'PLATA', 'KARLA JOANA', 'MUJER', '18/06/2020', 'OFICINA', 'RECEPCIONISTA', '7169861791', 'FUPK9811044U8', 'FUPK981104MDFNLR08', 'ADMINISTRATIVO', '128.79', 'VIGENTE', '', '', '', ''),
 (148, 'GOMEZ', 'RAMIREZ', 'JOSE LUIS', 'HOMBRE ', '13/08/2020', 'SUR 2', 'SANTANDER MISISIPI', '97927557153', 'GORL75097FT4', 'GORL750907HDFMMS07', 'CHOFER', '128.79', 'BAJA', '', '', '', ''),
-(149, 'ORTIZ', 'LAUREANO', 'PONCIANO', 'HOMBRE', '13/08/2020', 'SUR 1', 'XOTEPINGO', '6806128135', 'OILP611118HU8', 'OILP611118HPLRRN01', 'CHOFER', '128.79', 'VIGENTE', '', '', '', ''),
+(149, 'ORTIZ', 'LAUREANO', 'PONCIANO', 'HOMBRE', '13/08/2020', 'SUR 1', 'XOTEPINGO', 'OILP611118HU8', '6806128135', 'OILP611118HPLRRN01', 'CHOFER', '128.79', 'BAJA', '20/01/2022', '', '', 'SOLO SE DA DE BAJA DE IMSS'),
 (150, 'SANCHEZ', 'MORALES', 'ANA MINERVA', 'MUJER ', '27/08/2020', 'OFICINA', 'LIMPIEZA', '28068713990', 'SAMA8710239E5', 'SAMA871023MDFNRN01', 'CHOFER', '    ', 'VIGENTE', '', '', '', ''),
 (151, 'COLIN', 'ARENAS', 'JOSE ALBERTO', 'HOMBRE', '16/03/2021', 'SUR 2', 'SANTANDER MISISIPI', '39099125450', 'COAA910312IH6', 'COAA910312HDFLRL02', 'CHOFER', '148.1', 'VIGENTE', '', '', '', ''),
 (152, 'MORALES', 'MORALES', 'LIZBETH YERLY', 'MUJER', '01/07/2021', 'SANTANDER CORPORATIVO QUINCENAL', 'SANTANDER CORPORATIVO QUINCENAL', '03219241670', '', '', 'ADMINISTRATIVO', '148.1', 'VIGENTE', '', '', '', ''),
@@ -1494,7 +1494,8 @@ INSERT INTO `imss` (`idimss`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Genero_i
 (154, 'REYES', 'ORTIZ', 'PERFECTO', 'HOMBRE', '10/08/2021', 'PONIENTE', 'CANAL DEL NORTE', '96877201226', 'REOP720416HK8', 'REOP720416HOCYRR02', 'CHOFER', '148.1', 'BAJA', '', '', '', ''),
 (155, 'ARAIZA', 'MOYA', 'JUAN IGNACIO', 'HOMBRE', '29/12/2021', 'SUR 2', 'KOWLAAN', 'AAMJ960518TS8', '46149645494', 'AAMJ960518HDFRYN06', 'CHOFER', '148.10', 'VIGENTE', '', '', '', ''),
 (156, 'GALLARDO', 'TORRES', 'JHOVAN ALEXANDRO', 'HOMBRE', '08/01/2022', 'OFICINA', 'SISTEMAS', '57160175063', 'GATJ010114D96', 'GATJ010114HDFLRHA2', 'ADMINISTRATIVO', '148.10', 'VIGENTE', '', '', '', ''),
-(157, 'GUERECA', 'CARDENAS', 'JUAN ANTONIO', 'HOMBRE', '19/11/2021', 'sur 1', 'santander desierto de los leones', 'GUCJ7702154T3', '45007711539', 'GUCJ770215HDFRRN04', 'CHOFER', '148.10', 'VIGENTE', '', '', '', '');
+(157, 'GUERECA', 'CARDENAS', 'JUAN ANTONIO', 'HOMBRE', '19/11/2021', 'sur 1', 'santander desierto de los leones', 'GUCJ7702154T3', '45007711539', 'GUCJ770215HDFRRN04', 'CHOFER', '148.10', 'VIGENTE', '', '', '', ''),
+(158, 'GAYTAN', 'GALVAN', 'RENE', 'HOMBRE', '18/01/2022', 'SUR 1', 'SANTANDER COPILCO', 'GAGR900422KJ7', '45109045695', 'GAGR900422HDFYLN03', 'CHOFER', '185.20', 'VIGENTE', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -3194,7 +3195,7 @@ INSERT INTO `nomina.detallada.sur 1.simss` (`#lista`, `#empleado`, `Apellido P`,
 (4, 5770, 'TORRES', 'HERNANDEZ', 'FRANCISCO JAVIER', 'EFECTIVO', 'efectivo', 'sur 1', 'SANTANDER COPILCO', '1550', '300', '103.33333333333333', '12.916666666666666', '1ra Quincena de Enero', '2022', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '1.0', '103.33333333333333', '14.0', '1446.6666666666665', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '240', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '287.5', '0', '0', '1802.50', '1550+300 de bono + 240 apoyos- 287.50 prestamo'),
 (5, 5737, 'MOLINA', 'GARCIA', 'JOSE ANGEL', 'BANCOMER', '1558653478', 'sur 1', 'SANTANDER TLALPAN', '1550', '300', '103.33333333333333', '12.916666666666666', '1ra Quincena de Enero', '2022', 'D', 'A', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '2.0', '206.66666666666666', '13.0', '1343.3333333333333', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0240', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '130', '0', '0', '0', '0', '0', '0', '0', '130.0', '400', '200', '300', '1060.00', '1550+300 de bono+240 apoyos-400 prestamo 1/2 - 300 faltante de corte-200 caja de ahorro-300 orden de taller'),
 (6, 5686, 'RAMIREZ', 'MONTERDE', 'MICHEL ALEJANDRO', 'BANCOMER', '1537056524', 'sur 1', 'EDIFICIO AGATHA', '2000', '1000', '133.33333333333334', '16.666666666666668', '1ra Quincena de Enero', '2022', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', '.', '0.0', '0.0', '0.0', '0.0', '8.0', '1066.6666666666667', '7.0', '933.3333333333334', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '300', '0', '2700.00', '2000 + 1000 bono- 300 caja de ahorro'),
-(7, 5687, 'GRANADOS ', 'HERNANDEZ ', 'MARCOS ', 'SANTANDER', '60621867595', 'sur 1', 'EDIFICIO AGATHA', '2000', '500', '133.33333333333334', '16.666666666666668', '1ra Quincena de Enero', '2022', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', '.', '0.0', '0.0', '0.0', '0.0', '8.0', '1066.6666666666667', '7.0', '933.3333333333334', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2500.00', '2000 + 500 de bono'),
+(7, 5687, 'GRANADOS ', 'HERNANDEZ ', 'MARCOS ', 'SANTANDER', '60621867595', 'sur 1', 'EDIFICIO AGATHA', '2000', '500', '133.33333333333334', '16.666666666666668', '1ra Quincena de Enero', '2022', 'DFT', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', '.', '0.0', '0.0', '0.0', '0.0', '7.0', '933.3333333333334', '7.0', '933.3333333333334', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '1.0', '400.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2766.67', '2000 + 500 de bono+ 266.67 dia festivo'),
 (8, 5936, 'GAYTAN ', 'GALVAN ', 'RENE JAVIER ', 'BANCOMER', '1549606958', 'sur 1', 'SANTANDER COPILCO', '1600', '400', '106.66666666666667', '13.333333333333334', '1ra Quincena de Enero', '2022', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'A', 'A', 'A', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '3.0', '320.0', '12.0', '1280.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '160', '', '0', '300', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '250.0', '2210.00', '1600 + 400 de bono + 300 bono especial + 160 apoyos-250 orden de taller'),
 (9, 5932, 'TOVAR ', 'REYES ', 'ROBERTO ', 'BANCOMER', '1582298365', 'sur 1', 'ESTACIONAMIENTO ITURBIDE', '1500', '500', '100.0', '12.5', '1ra Quincena de Enero', '2022', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', 'A', 'D', '.', '0.0', '0.0', '0.0', '0.0', '8.0', '800.0', '7.0', '700.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '300', '0', '1700.00', '1500 + 500 de bono - 300 de caja de ahorro'),
 (10, 3662, 'STAVOLI', 'PEREZ', 'JULIO', 'SANTANDER', '60615835165', 'sur 1', 'SANTANDER SAN JERONIMO', '1100', '300', '73.33333333333333', '9.166666666666666', '1ra Quincena de Enero', '2022', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'D', 'D', 'A', 'A', 'A', 'A', 'A', 'A', '.', '0.0', '0.0', '0.0', '0.0', '4.0', '293.3333333333333', '11.0', '806.6666666666666', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '80', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1480.00', '1100+300 de bono + 80 apoyo'),
@@ -4309,7 +4310,38 @@ INSERT INTO `nomina.listas.sur 1.simss` (`NDL`, `Zona`, `Quincena`, `Apellido P`
 (28, 'sur 1', '2da Quincena de Enero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
 (29, 'sur 1', '2da Quincena de Enero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
 (30, 'sur 1', '2da Quincena de Enero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
-(31, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022');
+(31, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(32, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(33, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(34, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(35, 'sur 1', '2da Quincena de Febrero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '', '', '', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '', '', '', '2022'),
+(36, 'sur 1', '2da Quincena de Febrero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '', '', '', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '', '', '', '2022'),
+(37, 'sur 1', '2da Quincena de Febrero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '', '', '', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '', '', '', '2022'),
+(38, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(39, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(40, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(41, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(42, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(43, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(44, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(45, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(46, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(47, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(48, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(49, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(50, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(51, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(52, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(53, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(54, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(55, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(56, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(57, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(58, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(59, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(60, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(61, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(62, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022');
 
 -- --------------------------------------------------------
 
@@ -4441,7 +4473,17 @@ INSERT INTO `nomina.listas.sur 2.simss` (`NDL`, `Zona`, `Quincena`, `Apellido P`
 (27, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
 (28, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
 (29, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
-(30, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022');
+(30, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(31, 'sur 2', '1ra Quincena de Febrero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', '', '2022'),
+(32, 'sur 2', '1ra Quincena de Febrero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', '', '2022'),
+(33, 'sur 2', '1ra Quincena de Febrero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', '', '2022'),
+(34, 'sur 2', '2da Quincena de Enero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(35, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(36, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(37, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(38, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(39, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(40, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022');
 
 -- --------------------------------------------------------
 
@@ -4679,100 +4721,6 @@ INSERT INTO `nomina.pagos.odt` (`#Folio`, `#Lista`, `# de orden`, `#empleado`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `nomina.pagos.prestamos`
---
-
-CREATE TABLE `nomina.pagos.prestamos` (
-  `#Folio` int(11) NOT NULL,
-  `#Lista` int(20) NOT NULL,
-  `#prestamo` int(11) NOT NULL,
-  `#empleado` int(11) NOT NULL,
-  `Apellido P` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
-  `Apellido M` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
-  `Nombre(s)` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `Zona` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
-  `Servicio` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
-  `Quincena` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
-  `# quincena` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
-  `pagado` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
-  `pendiente` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
-  `Pago de prestamo` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
-
---
--- Volcado de datos para la tabla `nomina.pagos.prestamos`
---
-
-INSERT INTO `nomina.pagos.prestamos` (`#Folio`, `#Lista`, `#prestamo`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Quincena`, `# quincena`, `pagado`, `pendiente`, `Pago de prestamo`) VALUES
-(1, 1, 0, 3023, 'TORRES', 'REMEDIOS', 'JOSE LUIS', 'norte', 'SANTANDER LOMAS VERDES', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(2, 2, 0, 4216, 'ALVARADO', 'MIRAMONTES', 'LORENZO', 'norte', 'LA ERA SANTA CRUZ', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(3, 3, 0, 5517, 'TELLEZ', 'JIMENEZ', 'NORBERTO ', 'norte', 'SANTANDER INTERLOMAS', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(4, 4, 0, 1908, 'CHANTES', 'XONCLE', 'JOSE DIEGO', 'norte', 'ENTRE GAUCHOS S/BOLETAJE', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(5, 1, 0, 5674, 'PATINO', 'MARTINEZ', 'MAURICIO HERIBERTO', 'norte', 'LA ERA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(6, 2, 0, 752, 'SIERRA', 'HERNANDEZ', 'FRANCISCO', 'norte', 'LA ERA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(7, 1, 0, 5534, 'LAVARIEGA', 'RODRIGUEZ', 'ENRIQUE', 'poniente', 'santander canal del norte', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(8, 1, 0, 1986, 'MEDRANO', 'OVIEDO', 'JESUS MANUEL', 'poniente', 'SANTANDER MONTEVIDEO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(9, 2, 0, 2880, 'PEREZ', 'SANTIAGO', 'ALBERTO', 'poniente', 'SANTANDER AZCAPOTZALCO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(10, 3, 0, 3343, 'PADILLA', 'PARRADO', 'VICTORINO', 'poniente', 'SANTANDER MARINA NACIONAL', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(11, 4, 0, 4747, 'GONZALEZ', 'MUNOZ', 'JESUS ', 'poniente', 'SANTANDER EL CABALLITO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(12, 1, 0, 5215, 'RAMIREZ', 'ROSAS', 'CARLOS   ', 'oficina', 'Ventas', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(13, 1, 0, 6003, 'ARAIZA', 'MOYA', 'JUAN IGNACIO', 'sur 2', 'kowlaan', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(14, 2, 0, 5808, 'ZERMAN', 'CONTRERAS', 'ENRIQUE', 'sur 2', 'comodin', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(15, 2, 0, 5548, 'MELCHOR', 'FLORES', 'TERESA ', 'oficina', 'Auxiliar contable', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(16, 3, 0, 5576, 'FUENTES', 'PLATA', 'KARLA JOANA', 'oficina', 'Recepcion', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(17, 0, 0, 5989, 'AGUILAR ', 'COLORADO ', 'GUSTAVO', 'sur 2', 'KOWLAAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(18, 0, 0, 5735, 'NUNEZ ', 'SANCHEZ ', 'DILAN ALEXANDER ', 'sur 2', 'KOWLAAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(19, 5, 0, 5992, 'DE LA ROSA', 'GARCIA', 'MARTIN', 'sur 2', 'SANTANDER PALMAS', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(20, 1, 0, 5773, 'GALLARDO', 'TORRES', 'JHOVAN ALEXANDRO', 'oficina', 'Sistemas', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(21, 8, 0, 5994, 'TREJO', 'APOLINAR', 'ROSALIO', 'sur 2', 'SANTANDER MISISIPI', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(22, 2, 0, 6038, 'BAHENA', 'ARMENTA', 'ANGELICA', 'oficina', 'Capturista', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(23, 3, 0, 6037, 'AGUILA', 'LOPEZ', 'FATIMA', 'oficina', 'Capturista', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(24, 0, 0, 5104, 'HUERTA', 'FLORES', 'EPIFANIO', 'sur 2', 'SANTANDER NEWTON', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(25, 4, 0, 6033, 'ORTIZ', 'ARGUELLO', 'ANTONIO', 'oficina', 'Auditor', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(26, 10, 0, 3303, 'MARTINEZ', 'HERNANDEZ', 'JOSE MANUEL', 'sur 2', 'NOTARIA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(27, 1, 0, 1735, 'DURAN', 'GARCIA', 'DELFINO', 'foraneos puebla', 'SANTANDER TEHUACAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(28, 2, 0, 2438, 'LEON ', 'MEZA', 'PEDRO JOSE LUIS', 'foraneos puebla', 'SANTANDER TEHUACAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(29, 11, 0, 1542, 'OLIVARES', 'MAYORGA', 'JUAN CARLOS', 'sur 2', 'SANTANDER MASARIK', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(30, 1, 0, 3846, 'ROMAN', 'MIRANDA', 'EDGAR AGRIPINO', 'foraneos acapulco', 'SANTANDER PRINCIPAL', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(31, 12, 0, 5931, 'CHAVEZ ', 'FLORES ', 'VICTOR MANUEL ', 'sur 2', 'HONDA SAN ANTONIO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(32, 2, 0, 4740, 'CABRERA', 'MORALES', 'ANDRES', 'foraneos acapulco', 'SANTANDER PRINCIPAL', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(33, 3, 0, 4741, 'RIOJA', 'CABELLO', 'FRANCISCO', 'foraneos acapulco', 'SANTANDER RENACIMIENTO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(34, 1, 0, 4649, 'OLIVAR', 'VALDOVINOS', 'LEONEL', 'foraneos acapulco', 'SUPERVISOR', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(35, 13, 0, 4351, 'RAMOS', 'GARCIA', 'MARIANO', 'sur 2', 'SANTANDER POLANCO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(36, 2, 0, 4809, 'RAMIREZ', 'NAVA', 'MAURO', 'foraneos acapulco', 'SANTANDER RENACIMIENTO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(37, 14, 0, 6063, 'SEGURA', 'MORALES', 'AARON SAMUEL', 'sur 2', 'KOWLAAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(38, 3, 0, 6032, 'VAZQUEZ ', 'CARMONA', 'CARLOS ENRIQUE', 'foraneos acapulco', 'SANTANDER COSTA AZUL', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(39, 1, 0, 4314, 'GARCIA', 'CRUZ', 'HUMBERTO', 'sur 2', 'santander niza', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(40, 2, 0, 4817, 'LOPEZ', 'ZEPEDA', 'AARON', 'sur 2', 'ESTACIONAMIETO TEHUANTEPEC', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(41, 3, 0, 833, 'JIMENEZ', 'GOMEZ', 'SILAS', 'sur 2', 'SANTANDER LOMAS DE CHAPULTEPEC', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(42, 4, 0, 4342, 'GONZALEZ', 'GUTIERREZ', 'JUAN CARLOS', 'sur 2', 'SANTANDER PALMAS', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(43, 5, 0, 4710, 'BARRIOS', 'CEDILLO', 'GERARDO ERIK', 'sur 2', 'SANTANDER PLAZA REFORMA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(44, 6, 2, 5532, 'RANGEL', 'HERNANDEZ', 'ISRAEL      ', 'sur 2', 'SUPERVISOR', '1ra Quincena de Enero', '2.0', '1000.0', '500.0', '500'),
-(45, 1, 0, 6034, 'VERA', 'LOPEZ', 'CARLOS ROBERTO', 'sur 1', 'SANTANDER XOLA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(46, 2, 0, 4843, 'MARTINEZ', 'RAMIREZ', 'JESUS', 'sur 1', 'DIVISION DEL NORTE', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(47, 4, 61, 5770, 'TORRES', 'HERNANDEZ', 'FRANCISCO JAVIER', 'sur 1', 'SANTANDER COPILCO', '1ra Quincena de Enero', '3.0', '862.5', '287.5', '287.5'),
-(48, 5, 3, 5737, 'MOLINA', 'GARCIA', 'JOSE ANGEL', 'sur 1', 'SANTANDER TLALPAN', '1ra Quincena de Enero', '1.0', '400.0', '400.0', '400'),
-(49, 0, 0, 5686, 'RAMIREZ', 'MONTERDE', 'MICHEL ALEJANDRO', 'sur 1', 'EDIFICIO AGATHA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(50, 1, 0, 3155, 'GARCIA', 'GUARNEROS', 'JOSE ANTONIO', 'sur 1', 'SANTANDER INSURGENTES', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(51, 7, 0, 5687, 'GRANADOS ', 'HERNANDEZ ', 'MARCOS ', 'sur 1', 'EDIFICIO AGATHA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(52, 0, 0, 1754, 'PEREZ', 'DIAZ', 'MARCO ANTONIO', 'sur 1', 'SANTANDER TLALPAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(53, 3, 0, 4393, 'MARTINEZ', 'GARCIA', 'ISAIAS', 'sur 1', 'ESTACIONAMIENTO PUENTE TITLA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(54, 8, 0, 5936, 'GAYTAN ', 'GALVAN ', 'RENE JAVIER ', 'sur 1', 'SANTANDER COPILCO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(55, 9, 0, 5932, 'TOVAR ', 'REYES ', 'ROBERTO ', 'sur 1', 'ESTACIONAMIENTO ITURBIDE', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(56, 5, 53, 3285, 'PADILLA', 'SIXTO', 'ISAIAS', 'sur 1', 'SUPERVISOR', '1ra Quincena de Enero', '8.0', '2000.0', '2000.0', '250'),
-(57, 10, 0, 3662, 'STAVOLI', 'PEREZ', 'JULIO', 'sur 1', 'SANTANDER SAN JERONIMO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(58, 6, 0, 2241, 'DE LA CRUZ ', 'MARIN ', 'BLAS', 'sur 1', 'ESTACIONAMIENTO ITURBIDE', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(59, 0, 0, 6062, 'TORRES', 'MEJIA', 'JOSE ROBERTO', 'sur 1', 'SANTANDER DESIERTO DE LOS LEONES', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(60, 7, 0, 5611, 'ORTIZ', 'LAUREANO', 'PONCIANO', 'sur 1', 'XOTEPINGO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(61, 8, 0, 5412, 'GOMEZ', 'CARRILLO', 'JUAN ', 'sur 1', 'SANTANDER GUADALUPE INN/OLIVO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(62, 10, 1, 4985, 'RUIZ', 'LADRILLERO', 'ARTURO GUILLERMO ', 'sur 1', 'FELIX CUEVAS', '1ra Quincena de Enero', '1.0', '500.0', '550.0', '500.0'),
-(63, 9, 0, 1343, 'GUERECA ', 'CARDENAS ', 'JUAN ANTONIO ', 'sur 1', 'SANTANDER DESIERTO DE LOS LEONES', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(64, 1, 0, 16, 'MEJIA', 'GRIJALBA', 'ERIKA', 'foraneos toluca', 'oficina', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
-(65, 2, 0, 54, 'GONZALEZ ', 'CRUZ ', 'PEDRO ', 'foraneos toluca', 'supervisor', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `nomina.prestamos`
 --
 
@@ -4923,8 +4871,15 @@ CREATE TABLE `nominasem.detallada.corporativo santander semanal` (
   `Adelanto de Nomina` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Total de descuentos` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Deposito` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `Observaciones` varchar(25) COLLATE utf8_spanish2_ci NOT NULL
+  `Observaciones` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nominasem.detallada.corporativo santander semanal`
+--
+
+INSERT INTO `nominasem.detallada.corporativo santander semanal` (`#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`, `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, `Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, `Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito`, `Observaciones`) VALUES
+(2, 137, 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', '0', '1572787230', 'BANCOMER', 'corporativo santander semanal', 'corporativo santander semanal', '2500', '357.14285714285717', '44.642857142857146', '2022', '3er semana Enero', '15 ene. 2022', '16 ene. 2022', '17 ene. 2022', '18 ene. 2022', '19 ene. 2022', '20 ene. 2022', '21 ene. 2022', 'A', 'D', 'A', 'A', 'A', 'A', 'A', '21 ene. 2022', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '1.0', '357.14285714285717', '6.0', '2142.857142857143', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0', '', '0', '0', '0.0', '0.0', '0.0', '99.78', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '2500.00', '');
 
 -- --------------------------------------------------------
 
@@ -5012,8 +4967,15 @@ CREATE TABLE `nominasem.detallada.corporativo santander semanal.simss` (
   `Adelanto de Nomina` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Total de descuentos` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Deposito` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `Observaciones` varchar(25) COLLATE utf8_spanish2_ci NOT NULL
+  `Observaciones` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nominasem.detallada.corporativo santander semanal.simss`
+--
+
+INSERT INTO `nominasem.detallada.corporativo santander semanal.simss` (`#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`, `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, `Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, `Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito`, `Observaciones`) VALUES
+(1, 5034, 'TISCARENO', 'ROSAS', 'MARIO', '0', '1132200236', 'BANCOMER', 'corporativo santander semanal', 'corporativo santander semanal', '1500', '214.28571428571428', '26.785714285714285', '2022', '3er semana Enero', '15 ene. 2022', '16 ene. 2022', '17 ene. 2022', '18 ene. 2022', '19 ene. 2022', '20 ene. 2022', '21 ene. 2022', 'A', 'D', 'A', 'A', 'A', 'A', 'A', '21 ene. 2022', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '1.0', '214.28571428571428', '6.0', '1285.7142857142858', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0', '0', '', '0', '0', '0.0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1500.00', '');
 
 -- --------------------------------------------------------
 
@@ -5813,8 +5775,15 @@ CREATE TABLE `nominasem.detallada.oficina` (
   `Adelanto de Nomina` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Total de descuentos` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Deposito` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `Observaciones` varchar(25) COLLATE utf8_spanish2_ci NOT NULL
+  `Observaciones` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nominasem.detallada.oficina`
+--
+
+INSERT INTO `nominasem.detallada.oficina` (`#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`, `Fecha sabado`, `Fecha domingo`, `Fecha lunes`, `Fecha martes`, `Fecha miercoles`, `Fecha jueves`, `Fecha viernes`, `Sabado`, `Domingo`, `Lunes`, `Martes`, `Miercoles`, `Jueves`, `Viernes`, `Fecha de pago`, `Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito`, `Observaciones`) VALUES
+(8, 5319, 'SANCHEZ', 'MORALES', 'ANA MINERVA     ', '300', '1591652403', 'BANCOMER', 'oficina', 'Limpieza', '1000', '142.85714285714286', '17.857142857142858', '2022', '3er semana Enero', '22 ene. 2022', '23 ene. 2022', '17 ene. 2022', '18 ene. 2022', '19 ene. 2022', '20 ene. 2022', '21 ene. 2022', 'A', 'A', 'I', 'A', 'A', 'A', 'A', '24 ene. 2022', '0.0', '0.0', '1.0', '142.85714285714286', '0.0', '0.0', '0.0', '0.0', '6.0', '857.1428571428571', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '200', '0', '', '257.14', '8', '142.85714285714286', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '150', '150.0', '1307.14', 'PAGO DE 6 DIAS $857.14 + $257.14 \nBONO PROPORCIONAL - $150 ADEL +\n$142.85 SAB CAFE + 200 DOM CAFE');
 
 -- --------------------------------------------------------
 
@@ -5902,7 +5871,7 @@ CREATE TABLE `nominasem.detallada.oficina.simss` (
   `Adelanto de Nomina` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Total de descuentos` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
   `Deposito` varchar(25) COLLATE utf8_spanish2_ci NOT NULL,
-  `Observaciones` varchar(25) COLLATE utf8_spanish2_ci NOT NULL
+  `Observaciones` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -6496,6 +6465,15 @@ CREATE TABLE `nominasem.pagos.cda` (
   `# de recibo de pago` varchar(20) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `nominasem.pagos.cda`
+--
+
+INSERT INTO `nominasem.pagos.cda` (`#Folio`, `#Lista`, `#caja`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Semana`, `Caja de ahorro`, `Observaciones`, `Sem aportadas`, `# de recibo de pago`) VALUES
+(1, 0, 0, 137, 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', 'corporativo santander semanal', 'corporativo santander semanal', '3er semana Enero', '0', '', '1.0', ''),
+(2, 0, 0, 5034, 'TISCARENO', 'ROSAS', 'MARIO', 'corporativo santander semanal', 'corporativo santander semanal', '3er semana Enero', '0', '', '1.0', ''),
+(4, 0, 0, 5319, 'SANCHEZ', 'MORALES', 'ANA MINERVA     ', 'oficina', 'Limpieza', '3er semana Enero', '0', '', '1.0', '');
+
 -- --------------------------------------------------------
 
 --
@@ -6518,6 +6496,113 @@ CREATE TABLE `nominasem.pagos.odt` (
   `pendiente` varchar(30) COLLATE utf8_spanish2_ci NOT NULL,
   `Pago de odt` varchar(30) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nominasem.pagos.odt`
+--
+
+INSERT INTO `nominasem.pagos.odt` (`#Folio`, `#Lista`, `# de orden`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Semana`, `# Semana`, `pagado`, `pendiente`, `Pago de odt`) VALUES
+(1, 0, 0, 137, 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', 'corporativo santander semanal', 'corporativo santander semanal', '3er semana Enero', '1.0', '0.0', '0.0', '0'),
+(2, 0, 0, 5034, 'TISCARENO', 'ROSAS', 'MARIO', 'corporativo santander semanal', 'corporativo santander semanal', '3er semana Enero', '1.0', '0.0', '0.0', '0'),
+(3, 0, 0, 16, 'MEJIA', 'GRIJALBA', 'ERIKA', 'foraneos toluca', 'oficina', 'Selecciona semana', '1.0', '0.0', '0.0', '0'),
+(4, 0, 0, 5319, 'SANCHEZ', 'MORALES', 'ANA MINERVA     ', 'oficina', 'Limpieza', '3er semana Enero', '1.0', '0.0', '0.0', '0'),
+(5, 0, 0, 16, 'MEJIA', 'GRIJALBA', 'ERIKA', 'foraneos toluca', 'oficina', 'Selecciona semana', '1.0', '0.0', '0.0', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `nominasem.pagos.prestamosem`
+--
+
+CREATE TABLE `nominasem.pagos.prestamosem` (
+  `#Folio` int(11) NOT NULL,
+  `#Lista` int(20) NOT NULL,
+  `#prestamo` int(11) NOT NULL,
+  `#empleado` int(11) NOT NULL,
+  `Apellido P` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Apellido M` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Nombre(s)` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `Zona` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Servicio` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Semana` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `# semana` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `pagado` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `pendiente` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `Pago de prestamo` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `nominasem.pagos.prestamosem`
+--
+
+INSERT INTO `nominasem.pagos.prestamosem` (`#Folio`, `#Lista`, `#prestamo`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Semana`, `# semana`, `pagado`, `pendiente`, `Pago de prestamo`) VALUES
+(1, 1, 0, 3023, 'TORRES', 'REMEDIOS', 'JOSE LUIS', 'norte', 'SANTANDER LOMAS VERDES', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(2, 2, 0, 4216, 'ALVARADO', 'MIRAMONTES', 'LORENZO', 'norte', 'LA ERA SANTA CRUZ', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(3, 3, 0, 5517, 'TELLEZ', 'JIMENEZ', 'NORBERTO ', 'norte', 'SANTANDER INTERLOMAS', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(4, 4, 0, 1908, 'CHANTES', 'XONCLE', 'JOSE DIEGO', 'norte', 'ENTRE GAUCHOS S/BOLETAJE', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(5, 1, 0, 5674, 'PATINO', 'MARTINEZ', 'MAURICIO HERIBERTO', 'norte', 'LA ERA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(6, 2, 0, 752, 'SIERRA', 'HERNANDEZ', 'FRANCISCO', 'norte', 'LA ERA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(7, 1, 0, 5534, 'LAVARIEGA', 'RODRIGUEZ', 'ENRIQUE', 'poniente', 'santander canal del norte', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(8, 1, 0, 1986, 'MEDRANO', 'OVIEDO', 'JESUS MANUEL', 'poniente', 'SANTANDER MONTEVIDEO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(9, 2, 0, 2880, 'PEREZ', 'SANTIAGO', 'ALBERTO', 'poniente', 'SANTANDER AZCAPOTZALCO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(10, 3, 0, 3343, 'PADILLA', 'PARRADO', 'VICTORINO', 'poniente', 'SANTANDER MARINA NACIONAL', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(11, 4, 0, 4747, 'GONZALEZ', 'MUNOZ', 'JESUS ', 'poniente', 'SANTANDER EL CABALLITO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(12, 1, 0, 5215, 'RAMIREZ', 'ROSAS', 'CARLOS   ', 'oficina', 'Ventas', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(13, 1, 0, 6003, 'ARAIZA', 'MOYA', 'JUAN IGNACIO', 'sur 2', 'kowlaan', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(14, 2, 0, 5808, 'ZERMAN', 'CONTRERAS', 'ENRIQUE', 'sur 2', 'comodin', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(15, 2, 0, 5548, 'MELCHOR', 'FLORES', 'TERESA ', 'oficina', 'Auxiliar contable', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(16, 3, 0, 5576, 'FUENTES', 'PLATA', 'KARLA JOANA', 'oficina', 'Recepcion', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(17, 0, 0, 5989, 'AGUILAR ', 'COLORADO ', 'GUSTAVO', 'sur 2', 'KOWLAAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(18, 0, 0, 5735, 'NUNEZ ', 'SANCHEZ ', 'DILAN ALEXANDER ', 'sur 2', 'KOWLAAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(19, 5, 0, 5992, 'DE LA ROSA', 'GARCIA', 'MARTIN', 'sur 2', 'SANTANDER PALMAS', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(20, 1, 0, 5773, 'GALLARDO', 'TORRES', 'JHOVAN ALEXANDRO', 'oficina', 'Sistemas', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(21, 8, 0, 5994, 'TREJO', 'APOLINAR', 'ROSALIO', 'sur 2', 'SANTANDER MISISIPI', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(22, 2, 0, 6038, 'BAHENA', 'ARMENTA', 'ANGELICA', 'oficina', 'Capturista', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(23, 3, 0, 6037, 'AGUILA', 'LOPEZ', 'FATIMA', 'oficina', 'Capturista', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(24, 0, 0, 5104, 'HUERTA', 'FLORES', 'EPIFANIO', 'sur 2', 'SANTANDER NEWTON', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(25, 4, 0, 6033, 'ORTIZ', 'ARGUELLO', 'ANTONIO', 'oficina', 'Auditor', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(26, 10, 0, 3303, 'MARTINEZ', 'HERNANDEZ', 'JOSE MANUEL', 'sur 2', 'NOTARIA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(27, 1, 0, 1735, 'DURAN', 'GARCIA', 'DELFINO', 'foraneos puebla', 'SANTANDER TEHUACAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(28, 2, 0, 2438, 'LEON ', 'MEZA', 'PEDRO JOSE LUIS', 'foraneos puebla', 'SANTANDER TEHUACAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(29, 11, 0, 1542, 'OLIVARES', 'MAYORGA', 'JUAN CARLOS', 'sur 2', 'SANTANDER MASARIK', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(30, 1, 0, 3846, 'ROMAN', 'MIRANDA', 'EDGAR AGRIPINO', 'foraneos acapulco', 'SANTANDER PRINCIPAL', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(31, 12, 0, 5931, 'CHAVEZ ', 'FLORES ', 'VICTOR MANUEL ', 'sur 2', 'HONDA SAN ANTONIO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(32, 2, 0, 4740, 'CABRERA', 'MORALES', 'ANDRES', 'foraneos acapulco', 'SANTANDER PRINCIPAL', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(33, 3, 0, 4741, 'RIOJA', 'CABELLO', 'FRANCISCO', 'foraneos acapulco', 'SANTANDER RENACIMIENTO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(34, 1, 0, 4649, 'OLIVAR', 'VALDOVINOS', 'LEONEL', 'foraneos acapulco', 'SUPERVISOR', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(35, 13, 0, 4351, 'RAMOS', 'GARCIA', 'MARIANO', 'sur 2', 'SANTANDER POLANCO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(36, 2, 0, 4809, 'RAMIREZ', 'NAVA', 'MAURO', 'foraneos acapulco', 'SANTANDER RENACIMIENTO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(37, 14, 0, 6063, 'SEGURA', 'MORALES', 'AARON SAMUEL', 'sur 2', 'KOWLAAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(38, 3, 0, 6032, 'VAZQUEZ ', 'CARMONA', 'CARLOS ENRIQUE', 'foraneos acapulco', 'SANTANDER COSTA AZUL', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(39, 1, 0, 4314, 'GARCIA', 'CRUZ', 'HUMBERTO', 'sur 2', 'santander niza', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(40, 2, 0, 4817, 'LOPEZ', 'ZEPEDA', 'AARON', 'sur 2', 'ESTACIONAMIETO TEHUANTEPEC', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(41, 3, 0, 833, 'JIMENEZ', 'GOMEZ', 'SILAS', 'sur 2', 'SANTANDER LOMAS DE CHAPULTEPEC', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(42, 4, 0, 4342, 'GONZALEZ', 'GUTIERREZ', 'JUAN CARLOS', 'sur 2', 'SANTANDER PALMAS', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(43, 5, 0, 4710, 'BARRIOS', 'CEDILLO', 'GERARDO ERIK', 'sur 2', 'SANTANDER PLAZA REFORMA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(44, 6, 2, 5532, 'RANGEL', 'HERNANDEZ', 'ISRAEL      ', 'sur 2', 'SUPERVISOR', '1ra Quincena de Enero', '2.0', '1000.0', '500.0', '500'),
+(45, 1, 0, 6034, 'VERA', 'LOPEZ', 'CARLOS ROBERTO', 'sur 1', 'SANTANDER XOLA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(46, 2, 0, 4843, 'MARTINEZ', 'RAMIREZ', 'JESUS', 'sur 1', 'DIVISION DEL NORTE', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(47, 4, 61, 5770, 'TORRES', 'HERNANDEZ', 'FRANCISCO JAVIER', 'sur 1', 'SANTANDER COPILCO', '1ra Quincena de Enero', '3.0', '862.5', '287.5', '287.5'),
+(48, 5, 3, 5737, 'MOLINA', 'GARCIA', 'JOSE ANGEL', 'sur 1', 'SANTANDER TLALPAN', '1ra Quincena de Enero', '1.0', '400.0', '400.0', '400'),
+(49, 0, 0, 5686, 'RAMIREZ', 'MONTERDE', 'MICHEL ALEJANDRO', 'sur 1', 'EDIFICIO AGATHA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(50, 1, 0, 3155, 'GARCIA', 'GUARNEROS', 'JOSE ANTONIO', 'sur 1', 'SANTANDER INSURGENTES', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(51, 7, 0, 5687, 'GRANADOS ', 'HERNANDEZ ', 'MARCOS ', 'sur 1', 'EDIFICIO AGATHA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(52, 0, 0, 1754, 'PEREZ', 'DIAZ', 'MARCO ANTONIO', 'sur 1', 'SANTANDER TLALPAN', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(53, 3, 0, 4393, 'MARTINEZ', 'GARCIA', 'ISAIAS', 'sur 1', 'ESTACIONAMIENTO PUENTE TITLA', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(54, 8, 0, 5936, 'GAYTAN ', 'GALVAN ', 'RENE JAVIER ', 'sur 1', 'SANTANDER COPILCO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(55, 9, 0, 5932, 'TOVAR ', 'REYES ', 'ROBERTO ', 'sur 1', 'ESTACIONAMIENTO ITURBIDE', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(56, 5, 53, 3285, 'PADILLA', 'SIXTO', 'ISAIAS', 'sur 1', 'SUPERVISOR', '1ra Quincena de Enero', '8.0', '2000.0', '2000.0', '250'),
+(57, 10, 0, 3662, 'STAVOLI', 'PEREZ', 'JULIO', 'sur 1', 'SANTANDER SAN JERONIMO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(58, 6, 0, 2241, 'DE LA CRUZ ', 'MARIN ', 'BLAS', 'sur 1', 'ESTACIONAMIENTO ITURBIDE', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(59, 0, 0, 6062, 'TORRES', 'MEJIA', 'JOSE ROBERTO', 'sur 1', 'SANTANDER DESIERTO DE LOS LEONES', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(60, 7, 0, 5611, 'ORTIZ', 'LAUREANO', 'PONCIANO', 'sur 1', 'XOTEPINGO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(61, 8, 0, 5412, 'GOMEZ', 'CARRILLO', 'JUAN ', 'sur 1', 'SANTANDER GUADALUPE INN/OLIVO', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(62, 10, 1, 4985, 'RUIZ', 'LADRILLERO', 'ARTURO GUILLERMO ', 'sur 1', 'FELIX CUEVAS', '1ra Quincena de Enero', '1.0', '500.0', '550.0', '500.0'),
+(63, 9, 0, 1343, 'GUERECA ', 'CARDENAS ', 'JUAN ANTONIO ', 'sur 1', 'SANTANDER DESIERTO DE LOS LEONES', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(64, 1, 0, 16, 'MEJIA', 'GRIJALBA', 'ERIKA', 'foraneos toluca', 'oficina', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(65, 2, 0, 54, 'GONZALEZ ', 'CRUZ ', 'PEDRO ', 'foraneos toluca', 'supervisor', '1ra Quincena de Enero', '1.0', '0.0', '0.0', '0'),
+(66, 0, 0, 5319, 'SANCHEZ', 'MORALES', 'ANA MINERVA     ', 'oficina', 'Limpieza', '3er semana Enero', '1.0', '0.0', '0.0', '0'),
+(67, 0, 0, 16, 'MEJIA', 'GRIJALBA', 'ERIKA', 'foraneos toluca', 'oficina', 'Selecciona semana', '1.0', '0.0', '0.0', '0');
 
 -- --------------------------------------------------------
 
@@ -6962,6 +7047,15 @@ CREATE TABLE `rh.depositos.oficina` (
   `Observaciones` varchar(500) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `rh.depositos.oficina`
+--
+
+INSERT INTO `rh.depositos.oficina` (`#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Por dia`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`) VALUES
+(1, '5215', '1', 'RAMIREZ', 'ROSAS', 'CARLOS   ', 'oficina', 'Ventas', '4000', '1000', '266.6666666666667', '1ra Quincena de Enero', '2022', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '9.0', '2400.0', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '599.99', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '500', '0', '2499.99', '19 ene. 2022', 'Enero', 'BBVA', ''),
+(2, '5576', '3', 'FUENTES', 'PLATA', 'KARLA JOANA', 'oficina', 'Recepcion', '2500', '500', '166.66666666666666', '1ra Quincena de Enero', '2022', '6.0', '1000.0', '0.0', '0.0', '4.0', '666.6666666666666', '5.0', '833.3333333333333', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '299.99', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '100', '0', '1699.99', '19 ene. 2022', 'Enero', 'BBVA', ''),
+(3, '5576', '3', 'FUENTES', 'PLATA', 'KARLA JOANA', 'oficina', 'Recepcion', '2500', '500', '166.66666666666666', '1ra Quincena de Enero', '2022', '6.0', '1000.0', '0.0', '0.0', '4.0', '666.6666666666666', '5.0', '833.3333333333333', '0.0', '0.0', '0.0', '0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '0.0', '299.99', '', '0', '0', '0.0', '0.0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '100', '0', '1699.99', '19 ene. 2022', 'Enero', 'BBVA', '0');
+
 -- --------------------------------------------------------
 
 --
@@ -7221,28 +7315,28 @@ CREATE TABLE `rh.empleados` (
 --
 
 INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `# Casa`, `# Recados`, `Forma de pago`, `Sueldo`, `Bono`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Status`, `Fecha entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja Firmada`, `Finiquito`, `Años de antiguedad`, `RFC`, `NSS`, `CURP`, `Correo electronico`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`, `Documentos originales`, `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `Observaciones`) VALUES
-(16, 'SI', 'MEJIA', 'GRIJALBA', 'ERIKA', '7225820014', '.', '.', 'TARJETA', '3700', '0', 'BANCOMER', '2851440896', 'foraneos toluca', 'oficina', 'VIGENTE', '', '', '', '', '', '', '', 'MEGE810223', '45978100100', 'MEGE810223MDFJRR08', 'NO DEJO ', 'INDEPENDENCIA', '10', '', 'CERRO DEL MURCIELAGO', 'ZINACANTEPEC', '51350', '', '', '', '', ''),
+(16, 'Si', 'MEJIA', 'GRIJALBA', 'ERIKA', '7225820014', '.', '.', 'TARJETA', '3700', '0', 'BANCOMER', '2851440896', 'foraneos toluca', '.', 'VIGENTE', '', '07/04/2014', '', '', '.', '.', '7 Años, 9 Meses, 19 Dias', 'MEGE810223', '45978100100', 'MEGE810223MDFJRR08', 'NO DEJO ', 'INDEPENDENCIA', '', '10', 'CERRO DEL MURCIELAGO', 'ZINACANTEPEC', '51350', '', '', '', '', ''),
 (28, 'NO', 'BUSTOS', 'SANCHEZ', 'EMMANUEL', '.', '.', '.', 'TARJETA', '4750', '0', 'BANCOMER', '1517151962', 'corporativo santander quincenal', 'corporativo santander quincenal', 'BAJA', '', '29/05/2014', '15/11/2021', '25/11/2021', 'SI', 'SI', '', 'BUSE780109', '70178006600', 'BUSE780109HPLSNM00', 'NO DEJO ', 'TAMAGNO', '29', '', 'EX HIPODROMO DE PERALUILLO', 'CUAUHTEMOC', '6250', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
-(29, 'SI', 'CARBAJAL', 'MARTINEZ', 'GERMAN', '.', '.', '.', 'TARJETA', '5000', '0', 'SANTANDER', '62620795749', 'corporativo santander', 'corporativo santander quincenal', 'VIGENTE', '', '29/05/2014', '', '', '', '', '', 'CAMG730502N16', '96077301271', 'CAMG730502HMCRRR04', 'NO DEJO ', 'CERRADA 12 DE DICIEMBRE', '15', '', 'LA PILA', 'LAS MAROMAS', '5710', '', '', '', '', ''),
+(29, 'Si', 'CARBAJAL', 'MARTINEZ', 'GERMAN', '.', '.', '.', 'TARJETA', '5000', '0', 'SANTANDER', '62620795749', 'corporativo santander quincenal', 'corporativo santander quincenal', 'VIGENTE', '', '29/05/2014', '', '', 'Si', 'Si', '7 Años, 7 Meses, 28 Dias', 'CAMG730502N16', '96077301271', 'CAMG730502HMCRRR04', 'NO DEJO ', 'CERRADA 12 DE DICIEMBRE', '', '15', 'LA PILA', 'LAS MAROMAS', '5710', '', '', '', '', ''),
 (30, 'NO', 'HERNANDEZ', 'NAVA', 'DIEGO MAURICIO', '.', '.', '.', 'TARJETA', '2250', '0', 'BANCOMER', '2836064264', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '11/06/2014', '15/11/2021', '02/12/2021', 'SI', 'SI', '', 'HEND870605', '11068661641', 'HEND870605HDFRVG06', 'NO DEJO ', 'ARTEAGA SALAZAR', '18', '', 'CONTADERO', 'CUAJIMALPA', '5500', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
 (31, 'NO', 'LUNA', 'MANCILLA', 'JOSE MIGUEL', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '2836064272', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '11/06/2014', '23/12/2021', '30/11/2021', 'SI', 'SI', '', 'LUMM610915', '17796171670', 'LUMM610915HDFNNG00', 'NO DEJO ', 'CERRADA GREGORIO LOPEZ', '30', '', 'SANTA FE', 'ALVARO OBREGON', '1210', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
 (35, 'NO', 'SANTANA', 'HERNANDEZ', 'RAUL', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '2836064310', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '12/06/2014', '28/12/2021', '30/11/2021', 'SI', 'SI', '', 'SAHR850919', '1118504354', 'SAHR850919HDFNRL02', 'NO DEJO ', 'VIRGINIA FABREGAS', '404', '3', 'JORGE NEGRETE', 'GUSTAVO A MADERO', '7280', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
 (36, 'NO', 'ITURBE', 'SEGURA', 'GUSTAVO', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '2836064280', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '14/06/2014', '15/11/2021', '25/11/2021', 'SI', 'SI', '', 'IUSG841201', '37088400561', 'IUSG841201HDTGS00', 'NO DEJO ', 'PROLONGACION DE JUAREZ', '257', '', 'LOCAXCO', 'CUAJIMALPA', '5360', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
-(54, 'SI', 'GONZALEZ ', 'CRUZ ', 'PEDRO ', '7225811573', '.', '.', 'TARJETA', '3000', '500', 'BANCOMER ', '2851440853', 'foraneos toluca', 'supervisor', 'VIGENTE', '', '26/03/2015', '', '', '', '', '', 'GOCP740502', '39917422329', 'GOCP740502HMCNRD03', 'NO DEJO ', 'PRIVADA JOSE MARIA MORELOS', 'ORIENTE 720A', '', 'BARRIO DE SAN SEBASTIAN ', 'TOLUCA', '50090', '', '', '', '', ''),
+(54, 'Si', 'GONZALEZ ', 'CRUZ ', 'PEDRO ', '7225811573', '.', '.', 'TARJETA', '3000', '500', '.', '2851440853', 'foraneos toluca', 'SUPERVISOR', 'VIGENTE', '', '26/03/2015', '', '', '.', '.', '6 Años, 10 Meses, 0 Dias', 'GOCP740502', '39917422329', 'GOCP740502HMCNRD03', 'NO DEJO ', 'PRIVADA JOSE MARIA MORELOS', '', 'ORIENTE 720A', 'BARRIO DE SAN SEBASTIAN ', 'TOLUCA', '50090', '', '', '', '', ''),
 (80, 'NO', 'OLVERA', 'HERRERA', 'JOSE ALBERTO', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '1293142035', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '16/05/2016', '15/11/2021', '25/11/2021', 'SI', 'SI', '', 'OEHA810907MP7', '166324179', 'OEHA810907HDFLRL06', 'NO DEJO ', 'CAMELIA', '36', '202', 'GUERRERO', 'CUAUHTEMOC', '6300', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
 (104, 'SI', 'BARRON', 'RODRIGUEZ', 'ARMANDO', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '1521096141', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA ', '', '02/05/2017', '15/11/2021', '19/11/2021', 'SI', '', '', 'BARA6502141M2', '88826520590', 'BARA650214HDFRDR04', 'NO DEJO ', 'CERRADA VASCO DE QUIROGA', 'MZ 10 LT 17', '', 'CARLOS MADRAZO', 'ALVARO OBREGON', '1320', '', '', '', '', ''),
 (123, 'SI', 'ALONSO', 'HERNANDEZ', 'DANIEL', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '1569412557', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '30/04/2018', '24/12/2021', '28/12/2021', '', '', '', 'AOHD710214', '11127100169', 'AOHD710214HDFLRN06', 'NO DEJO ', 'SANTA LUCIA ', 'MZ. 32 LT. 12', '', 'MOLINA SANTO DOMINGO', 'ALVARO OBREGON', '1130', '', '', '', '', 'ERA DE SANTANDER CONTRATADO POR OUTSOURCING SE DA DE BAJA '),
 (124, 'SI', 'MENESES', 'MARQUEZ', 'MISAEL', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '1569412573', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '30/04/2018', '23/11/2021', '30/11/2021', 'SI', 'SI', '', 'MEMM840611', '45128401028', 'MEMM840611HDFNRS04', 'NO DEJO ', 'JUAN DE LA BARRERA', 'MZ. 99 LT. 56', '', 'MONTE ALBAN', 'IZTAPALAPA', '9560', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
-(131, 'SI', 'HERNANDEZ', 'GUERRA', 'BERNABE', '.', '.', '.', 'TARJETA', '2500', '500', 'BANCOMER', '1247846169', 'foraneos toluca', 'las costillas de don pancho', 'VIGENTE', '', '', '', '', '', '', '', 'HEGB810417', '92988139108', 'HEGB810417HPLRRR03', 'NO DEJO ', 'RAFAEL ZEPEDA', '115', '', 'GRANJAS VALLE DE GUADALUPE', 'ECATEPEC DE MORELOS', '55270', '', '', '', '', ''),
+(131, 'Si', 'HERNANDEZ', 'GUERRA', 'BERNABE', '.', '.', '.', 'TARJETA', '2500', '500', 'BANCOMER', '1247846169', 'foraneos toluca', '.', 'VIGENTE', '', '26/09/2016', '', '', '.', '.', '5 Años, 4 Meses, 0 Dias', 'HEGB810417', '92988139108', 'HEGB810417HPLRRR03', 'NO DEJO ', 'RAFAEL ZEPEDA', '', '115', 'GRANJAS VALLE DE GUADALUPE', 'ECATEPEC DE MORELOS', '55270', '', '', '', '', ''),
 (135, 'NO', 'LOPEZ', 'MATAMOROS', 'CARLOS ALBERTO', '5584519276', '', '', '', '0', '0', '', '', '', '', 'RECHAZADO', '20/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'CHECAR MUY BIEN ANTES DE CONTRATAR, NO DA MUCHA CONFIANZA, SE LE DIJO QUE SOLO TENEMOS kowlaanVESPERTINO. VINO POR PRIMERA VEZ EL 20/01/2011'),
-(137, 'SI', 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', '.', '.', '.', 'TARJETA', '2500', '0', 'BANCOMER', '1572787230', 'corporativo santander', 'corporativo santander semanal', 'VIGENTE', '', '29/10/2019', '', '', '', '', '', 'HESE700818', '2177071509', 'HESE700818MDFRLL00', 'NO DEJO ', 'AVENIDA PLAZA DE LAS 3 CULTURAS', 'MZ. 1 LT. 31', '', 'FRACCIONAMIENTO PLAZAS DE ARAGON', 'NEZAHUALCOYOTL', '57139', '', '', '', '', ''),
+(137, 'Si', 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', '.', '.', '.', 'TARJETA', '2500', '0', 'BANCOMER', '1572787230', 'corporativo santander semanal', 'corporativo santander semanal', 'VIGENTE', '', '29/10/2019', '', '', '.', '.', '2 Años, 2 Meses, 28 Dias', 'HESE700818', '2177071509', 'HESE700818MDFRLL00', 'NO DEJO ', 'AVENIDA PLAZA DE LAS 3 CULTURAS', '', 'MZ. 1 LT. 31', 'FRACCIONAMIENTO PLAZAS DE ARAGON', 'NEZAHUALCOYOTL', '57139', '', '', '', '', ''),
 (152, 'Si', 'MORALES', 'MORALES', 'LIZBETH YERLY', '.', '.', '.', 'TARJETA', '10000', '0', 'BANCOMER', '1527187486', 'Selecciona Zona', '.', 'VIGENTE', '', '01/07/2021', '', '', '.', '.', '0 Años, 6 Meses, 19 Dias', '.', '3219241670', '.', 'NO DEJO ', 'AVENIDA POPOCATEPETL', '', '362', 'GENERAL PEDRO MARIA ANAYA', 'BENITO JUAREZ', '3340', '', '', '', '', ''),
 (229, 'NO', 'ORTIZ', 'CASAS', 'JORGE', '.', '.', '.', '.', '0', '0', '.', '.', '.', '.', 'BAJA', '.', '25/11/2008', '26/01/2009', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '.', '.', '.', '.', '.', '.', '.', '.', '', 'REGRESA A DEJAR SOLICITUD EL DIA 06/07/2020. INGRESA 25-11-08 REINGRESA EL DIA 20/11/09 AL YUCATECO REINGRESA EL DIA 10/1/2010 BAJA EL DIA 27/04/2010 SE LE RETIRA DE LA TIXTLA PORQUE TUVO UN PROBLEMA CON EL SENOR DEL EDIFICIO DE A LADO \"LE CANTO UN TIRO\" Y EL DUENO DE LA TIXTLA PIDE QUE SE RETIRE YA NO QUISO TRABAJAR PORQUE DIJO QUE NO LE CONVENIA NO LE SALIA EN LA NOTARIA NI EN EL HOTEL DE REFORMA'),
 (752, 'No', 'SIERRA', 'HERNANDEZ', 'FRANCISCO', '5516228054', '58974147', '.', 'TARJETA', '1350', '250', 'BANCOMER', '2846998054', 'norte', 'LA ERA', 'VIGENTE', '19/04/2010', '20/04/2010', '', '', '.', '.', '11 Años, 8 Meses, 29 Dias', 'SIHF620411SSA', '42806261568', 'SIHF620411HDFRRR09', 'NO DEJO ', 'GABRIEL SUAREZ FRAGOSO', '2 LT. 2', 'A DEPT.202', 'SANTA MARIA', 'COACALCO', '55703', '', '', '', '', 'SUELDO ANTERIOR $1160 + 250 DE BONO'),
 (755, 'NO', 'GARCIA', 'MORALES', 'EDUARDO', '5576450081', '70325440', '.', 'TARJETA ', '2000', '300', 'BANCOMER', '.', 'poniente', 'santander el caballito', 'DEPURADO NO CONTRATAR', '28/10/2019', '29/10/2019', '10/12/2019', '12/12/2019', 'SI', '', '', 'GAME671224', '30876713006', 'GAME671224HDFRR007', 'NO DEJO ', '.', '', '', '', '', '', 'LICENCIA', 'ACTA DE NACIMIENTO', '', '', 'NO VOLVER A CONTRATAR. YA HABIA VENIDO ANTES EL DIA 22/04/2010 SE TIENE EN EL CONSECUTIVO 2017 QUE ES UN SENOR MUGROSO Y QUE SE TENIA QUEJAS DE ?L. ES MENTIROSO Y SE TIENEN REPORTES DE ?L POR PARTE DE LA GENTE DEL BANCO, YA QUE SE RETIRA VARIAS VECES DEL SERVICIO ANTES DE QUE TERMINE, SE LE PIDIO SE ALINEARA EN CUANTO A SU IMAGEN Y NO LO HACE.  REGRESA A ENTREVISTA EL DIA 22/10/2020, SE LE DIJO QUE NO HABIA VACANTES QUE SE LE MARCARIA SI HAY ALGO DISPONIBLE. SE DEPURA EXPEDIENTE CON FECHA 21/01/2020, CON LOS SIGUIENTES DOCUMENTOS: CURP, CERTIFICADO DE SECUNDARIA, CARTILLA MILITAR, 3 CARTAS DE RECOMENDACI?N, ACTA DE NACIMIENTO, HOJA AMARILLA, CONTROL DE DOCUMENTOS, VALE DE UNIFORME, FOTOGRAFIA, LICENCIA, BAJA FIRMADA, INE, CROQUIS, GOOGLE MAPS, COMPROBANTE DE DOMICILIO EN ORIGINAL, SOLICITUD DE EMPLEO, HOJA DE REFERENCIAS, CODIGO DE CONDUCTA, CODIGO PENAL, HOJA DE CREDENCIAL, RECIBO DE TARJETA BBVA. '),
 (833, 'Si', 'JIMENEZ', 'GOMEZ', 'SILAS', '5535737500', '.', '.', 'TARJETA', '1700', '300', 'BANCOMER', '2846997848', 'sur 2', 'SANTANDER LOMAS DE CHAPULTEPEC', 'VIGENTE', '24/05/2010', '16/10/2017', '', '', 'Si', '.', '4 Años, 3 Meses, 2 Dias', '?JIGS730816CP7', '2157329166', 'JIGS730816HGRMML05', 'NO DEJO ', 'NAVOJOA', '', '40', 'PUEBLO SAN LORENZO', 'IZTAPALAPA', '9130', 'ACTA DE NACIMIENTO', '', '', '54', 'REINGRESA PERO SE MANDA A SERVICIO city expressSTA FE, HUBO DETALLES Y SE REALIZA CAMBIO DE SERVICIO A SANTANDER CHAPULTEPEC, PENDIENTE YA QUE FALTA SU FECHA DE REINGRESO AL SEGURO. TIENE SU PRIMER INGRESO EL 24/05/2010 Y SE DA DE BAJA 30/04/2017. SE LE HACE CAMBIO DE ZONA A santander palmas. PENDIENTE YA QUE FALTA SU FECHA DE REINGRESO AL SEGURO, SALARIO HASTA EL 2021 $1500 + 300 DE BONO'),
 (837, 'NO', 'HERNANDEZ', 'ALONSO ', 'ANA MARIA ', '.', '.', '.', '.', '0', '0', '.', '.', 'foraneos toluca', 'secretaria', 'BAJA', '', '15/08/2018', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'ES DE TOLUCA, POR ESO SE ANEXA YA QUE EN NUESTRO CONSECUTIVO ESTE FOLIO PERTENECE A ALGUIEN MAS, SE DEPURA EXPEDIENTE CON FECHA 06/01/2020. HOJA AMARILLA, FINIQUITO, CURRICULUM VITAE, REFERENCIAS, CONTROL DE DOCUMENTOS, ACTA DE NACIMIENTO, COMPROBANTE DE DOMICILIO, INE, CURP, LICENCIA, 2 CARTAS DE RECOMENDACION, CROQUIS, HOJAS BLANCAS FIRMADAS, CONTRATO, RECIBO DE AGUINALDO, BAJA. '),
-(878, 'NO', 'REYES', 'CORONA', 'JUAN CARLOS', '5571428733', '', '.', 'TARJETA ', '1500', '500', 'BANCOMER', '', 'sur 2', 'kowlaan', 'BOLETINADO', '03/01/2022', '04/01/2022', '04/01/2022', '', '', '', '', '', '', '', 'NO DEJO ', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR ES UN SENOR BORRACHO. VIENE UN POCO MUGROSOS DE SU ROPA YVIENE CREUDO O ALGO ASI POR KE TRAE LOS OJOS SUPER ROJOS. SE LE DA BAJA. FECHA DE INGRESO 22/09/2011 BAJA 28/09/2011, SE DA DE BAJA DICE QUE NO LE SALE PARA PASAJES Y COMIDA, TENIA OTRO FOLIO ES EL NUMERO 1975. vino a su primera entrevista el 07/06/2010. '),
+(878, 'No', 'REYES', 'CORONA', 'JUAN CARLOS', '5571428733', '', '.', '.', '1500', '500', 'BANCOMER', '', 'Selecciona Zona', '.', 'BOLETINADO', '03/01/2022', '04/01/2022', '04/01/2022', '', '.', '.', '', '', '', '', 'NO DEJO ', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR ES UN SENOR BORRACHO. VIENE UN POCO MUGROSO DE SU ROPA YVIENE CREUDO O ALGO ASI POR KE TRAE LOS OJOS SUPER ROJOS. SE LE DA BAJA. FECHA DE INGRESO 22/09/2011 BAJA 28/09/2011, SE DA DE BAJA DICE QUE NO LE SALE PARA PASAJES Y COMIDA, TENIA OTRO FOLIO ES EL NUMERO 1975. vino a su primera entrevista el 07/06/2010. '),
 (1007, 'NO', 'GARCIA', 'RAMIREZ', 'ALFREDO', '.', '.', '.', 'TARJETA', '3000', '500', 'BANCOMER', '.', 'sur 2', 'supervisor', 'BOLETINADO', '', '02/08/2010', '', '', '', '', '', 'GARA820405', '42988208486', 'GARA820405HDFRML09', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO VOLVER A CONTRATAR, TIENE MALA ACTITUD. '),
 (1077, 'NO', 'RIVERA', 'SOLORZANO', 'FERNANDO', '.', '.', '.', '.', '0', '0', '.', '.', '.', '.', 'DEPURADO RECHAZADO', '07/09/2010', '', '', '', '', '', '', '.', '.', 'RISF690520HDFVLR00', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'PLEITISTA E INCONFORME ,PREGUNTO MUCHO ACERCA DEL SUELDO. REGRESA A ENTREVISTA EL DIA 20/01/2020, SE LE RECHAZA DICIENDO QUE NO HAY SERVICIO POR SU ZONA. '),
 (1184, 'NO', 'QUINTANAR', 'MEDINA', 'JONATHAN', '.', '50447214', '.', '.', '0', '0', '', '.', 'sur 1', 'city expressperiferico', 'BAJA', '08/09/2017', '13/09/2017', '21/09/2017', '22/09/2017', 'SI', 'NO', '', 'QUMJ760723SN0', '3000761218', 'QUMJ760723HDFNDN15', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO,INE Y LICENCIA', '8:30 AM A 4:00PM L A V ', 'NINGUNO', 'NA', 'LO REPORTAN  EL VIERNES 15 DESEPTIEMBRE 2017 POR JUGAR CON EL RADIO DENTRO DEL SERVICIO Y POR ROBO DE DINERO POR LA CANTIDAD DE $25.00 SE PRESENTA A oficinaSE CAMBIA DE SERVICIO A EXPANSION. supervisorLO MANDA A oficinaYA QUE LO REPORTA EL JEFE DE EXPANSION  POR UN MAL SERVICIO  ATIENDE DE MALA GANA,APARTA LUGARES PARA LAVADAS Y NO ESTA PERM ITIDO FIRMA BAJA'),
@@ -7280,7 +7374,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (3696, 'NO', 'SANCHEZ', 'JUAREZ', 'JOSUE CRISPIN', '.', '53000841', '.', 'TARJETA ', '1300', '200', 'BANCOMER', '.', 'sur 2', 'santander lomas de chapultepec', 'BAJA', '29/11/2017', '30/11/2017', '10/04/2018', '10/04/2018', 'SI', 'NO', '', '.', '.', 'SAJJ630909HDFNRS05', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO,INE  Y LICENCIA DE MANEJO', '', '', '61', 'SE ENTREVISTA, SE CONTRATA,SE CAMBIA A city expressSTA FE, SE LE DA BAJA '),
 (3698, 'NO', 'STROP', 'CORDOVA', 'MARTIN', '.', '6797 2699', '.', 'TARJETA ', '1500', '300', 'BANCOMER', '.', 'sur 1', 'estacionamiento iturbide', 'BAJA', '05/04/2017', '06/04/2017', '04/05/0217', '08/05/2017', 'SI', 'NO', '', '.', '.', 'SOCM630209HDFTRR02', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO', 'NINGUNO', 'INE Y LICENCIA', 'NA', 'YA HABIA INGRESADO AL MISMO SERVICIO,MENCIONA QUE EL MOTIVO DE LA BAJA ES QUE ENCONTRO UN MEJOR EMPLEO EN UNA PETROLERA ,TRABAJABA BIEN PERO CUANDO YA NO QUIERE TRABAJAR SE VUELVE AGRESIVO, DE PREFERENCIA NO VOLVER A CONTRATAR, SOLO QUE SEA MUY NECESARIO Y SOLO PARA ESTACIONAMIENTO/ NO CONTRATAR, MUY CONFLICTIVO'),
 (3846, 'Si', 'ROMAN', 'MIRANDA', 'EDGAR AGRIPINO', '.', '.', '.', 'TARJETA', '1550', '350', 'BANCOMER', '2851440926', 'foraneos acapulco', 'SANTANDER PRINCIPAL', 'VIGENTE', '', '04/03/2014', '', '', '.', '.', '7 Años, 10 Meses, 15 Dias', 'ROME731104SD1', '25937310735', 'ROME731104HSLMRD07', 'NO DEJO ', '3', '', '184', 'MELCHOR O CAMPO', 'ACAPULCO DE JUAREZ', '39799', '', '', '', '', 'salario hasta el 2021 $1550'),
-(3931, 'No', 'ALATRISTE', 'AGUILERA', 'GERARDO ', '.', '5768 8789', '.', '.', '1600', '250', 'BANCOMER', '2846997791', 'Selecciona Zona', '.', 'BAJA', '09/04/2014', '10/04/2014', '', '18/01/2022', '.', '.', '', 'AAAG541216DM9', '42035400391', 'AAAG541216HDFLGR00', 'NO DEJO ', 'RETORNO 11 AV DEL TALLER', '', '1', 'JARDIN BALBUENA', 'VENUSTIANO CARRANZA', '15900', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'FALLECIMIENTO DEL CHOFER'),
+(3931, 'No', 'ALATRISTE', 'AGUILERA', 'GERARDO ', '.', '5768 8789', '.', '.', '1600', '250', 'BANCOMER', '2846997791', 'sur 1', 'SANTANDER XOLA', 'BAJA', '09/04/2014', '10/04/2014', '17/01/2022', '18/01/2022', '.', '.', '7 Años, 9 Meses, 15 Dias', 'AAAG541216DM9', '42035400391', 'AAAG541216HDFLGR00', 'NO DEJO ', 'RETORNO 11 AV DEL TALLER', '1', '', 'JARDIN BALBUENA', 'VENUSTIANO CARRANZA', '15900', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'FALLECIMIENTO DEL CHOFER'),
 (4027, 'NO', 'HERNANDEZ', 'CHECA', 'EDUARDO', '554223 9183', '5485 8898', '.', 'TARJETA ', '600', '300', 'BANCOMER', '.', 'sur 2', 'comodin', 'BAJA', '18/02/2016', '17/02/2016', '31/12/2016', '31/12/2016', '', '', '', '.', '.', 'HECE910222HDFRHD01', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA.NACI. COMP.DOMICILIO CURP', '', '', 'NA', 'YA HABIA INGRESADO. CAMBIO DE SERVICIO santander palmas'),
 (4059, 'NO', 'PALOMARES', 'HERMOSILLO', 'GILBERTO GONTRAN', '5518557874', '.', '.', 'TARJETA ', '2000', '500', 'BANCOMER', '.', 'sur 1', 'city expressperiferico', 'BAJA', '27/06/2018', '27/05/2019', '', '', 'SI', '', '', '.', '.', 'PAHG620225HDFLRL06', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA', '2 FOTOS', 'INE Y LICENCIA', '79', 'CAMBIO DE SERVICIO 08/02/19 SE PRESENTA A ENTREVISTA EN EL 2014 COMENTA QUE TRABAJA DE VALET PARKING PERO QUE ESTA DE VACACIONES, SE LE RECHAZA POR QUE TAL VEZ SOLO VENGA A CHECAR COMO TRABAJAMOS. SE ENTREVISTA Y SE CONTRATA EL MISMO DIA. SE DEPURA EXPEDIENTE CON FECHA 03/01/2020 SOLICITUD DE ALTA IMSS, SOLICITUD DE EMPLEO, BAJA FIRMADA, RECIBO DE AGUINALDO, REQUISITOS PARA FINIQUITO, 4 VALES DE UNIFORME, REPORTE DE INCIDENTES, HOJA AMARILLA (2), CONTROL DE DOCUMENTOS, ACTA DE NACIMIENTO EN ORIGINAL Y COPIA, COMPROBANTE DE DOMICILIO, INE, LICENCIA (3), CURP, ANTECEDENTES NO PENALES, BOLETA DE CALIFICACI?N, 2 CARTAS DE RECOMENDACI?N, CODIGO DE CONDUCTA, CODIGO PENAL, CROQUIS, GOOGLE MAPS, HOJA DE REFERENCIA. PRIMER INGRESO 28/06/2018, ULTIMO DIA LABORADO 15/01/2019, FECHA DE BAJA 27/05/2019, FECHA EN QUE SE PRESENTA A FIRMAR SU BAJA 15/01/2019. BAJA FIRMADA 31/05/2019, CAMBIO DE SERVCIIO estacionamiento puente titla'),
 (4147, 'NO', 'DURAZNO', 'RAMIREZ', 'JOSE MARIO', '5583379102', '5575778076', '-', 'PENDIENTE', '1350', '200', '', '.', 'poniente', 'city expressperiferico', 'BOLETINADO', '23/01/2020', '24/01/2020', '15/02/2020', '17/02/2020', 'SI', 'NO TIENE', '', 'DURM590118569', '.', 'DURM590118HQTRMR04', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO, INE, LICENCIA, FOTOGRAFIAS, COMPROBANTE DE DOMICILIO', 'CARTAS DE RECOMENDACI?N ', '', '', 'COMENTA QUE SE DA DE BAJA PORQUE LO MUEVEN MUCHO DE SERVICIO, Y QUE LAS HORAS EXTRAS NO SE LE PAGAN. CAMBIO DE SERVICIO santander canal del norte'),
@@ -7317,7 +7411,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (4711, 'NO', 'GUTIERREZ', 'CARBAJAL', 'LUIS', '553210 5198', '5875 0682', '.', 'TARJETA ', '1550', '200', 'BANCOMER', '.', 'sur 1', 'entre gauchos', 'BAJA', '19/01/2016', '19/01/2016', '23/03/2020', '', '', 'SI', '', 'GUCL4405263S1', '.', 'GUCL440526HDFTRS05', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'FALLECIMIENTO DEL CHOFER. CAMBIO DE SERVICIO santander guadalupe inn/ olivo,sport world(CAJERO)'),
 (4740, 'Si', 'CABRERA', 'MORALES', 'ANDRES', '.', '.', '.', 'TARJETA', '1550', '350', 'BANCOMER', '2865863651', 'foraneos acapulco', 'SANTANDER PRINCIPAL', 'VIGENTE', '', '20/09/2014', '', '', '.', '.', '7 Años, 3 Meses, 30 Dias', 'CAMA781109A1A', '72947813696', 'CAMA781109HGRBRN04', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'salario hasta el 2021 $1550'),
 (4741, 'Si', 'RIOJA', 'CABELLO', 'FRANCISCO', '.', '.', '.', 'TARJETA', '1750', '300', 'BANCOMER', '2860907782', 'foraneos acapulco', 'SANTANDER RENACIMIENTO', 'VIGENTE', '', '07/08/2014', '', '', '.', '.', '7 Años, 5 Meses, 12 Dias', 'RICF721006DE6', '72967206094', 'RICF701006HGRJBR02', 'NO DEJO ', 'MIGUEL DE LA MADRID', '', 'S/N', 'MARTIRES DE CUILAPA', 'ACAPULCO DE JUAREZ', '39799', '', '', '', '', 'salario hasta el 2021 $1750'),
-(4747, 'Si', 'GONZALEZ', 'MUNOZ', 'JESUS ', '552366 8331', '7313 3370', '.', 'TARJETA', '2000', '200', 'BANCOMER', '1258410003', 'poniente', 'SANTANDER EL CABALLITO', 'VIGENTE', '10/03/2016', '10/03/2016', '', '', '.', '.', '', 'GOMJ520620QD1', '96985600798', 'GOMJ520620HDFNXS03', 'NO DEJO ', 'norte180', '', '624', 'PENSADOR MEXICANO', 'VENUSTIANO CARRANZA', '15510', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'SERVICIO DE INGRESO estacionamiento puente titla, CAMBIOS DE SERVICIO A COORPORATIVO CEO, ESTACIONAMIENTO 20 DE NOVIEMBRE. SALARIO HASTA EL 2021 $1800 +200 DE BONO'),
+(4747, 'Si', 'GONZALEZ', 'MUNOZ', 'JESUS ', '552366 8331', '7313 3370', '.', 'TARJETA', '2000', '200', 'BANCOMER', '1258410003', 'poniente', 'SANTANDER EL CABALLITO', 'VIGENTE', '10/03/2016', '10/03/2016', '', '', '.', '.', '5 Años, 10 Meses, 16 Dias', 'GOMJ520620QD1', '96985600798', 'GOMJ520620HDFNXS03', 'NO DEJO ', 'norte180', '624', '', 'PENSADOR MEXICANO', 'VENUSTIANO CARRANZA', '15510', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'SERVICIO DE INGRESO estacionamiento puente titla, CAMBIOS DE SERVICIO A COORPORATIVO CEO, ESTACIONAMIENTO 20 DE NOVIEMBRE. SALARIO HASTA EL 2021 $1800 +200 DE BONO'),
 (4764, 'NO', 'GALICIA', 'PLATA', 'LUIS GUILLERMO', '5611195205', '.', '5586511787', 'TARJETA ', '1350', '200', 'BANCOMER', '.', 'sur 2', 'santander palmas', 'BOLETINADO', '21/10/2019', '13/02/2020', '11/12/2020', '', 'SI, PENDIE', '', '', 'GAPL920125FBA', '.', 'GAPL920125HMCLLS05', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'REINGRESO, APARECE EN CONSECUTIVO DE IMSS CON EL NO. 91. REINGRESO EL DIA 22/10/2019 SE DA DE BAJA POR QUE ORINA UN AUTO EN  MONTEVIDEO EL DIA 01/02/2020, VIENE A FIRMAR SU BAJA EL DIA 04/02/2020. ES UN SENOR QUE NO ESTA CONFORME CON LOS SERVICIOS, SE LE HA ESTADO MOVIENDO EN la eraY TEHUANTEPEC Y EN NIGUNO DE LOS SERVICIOS EL SENOR SE ACOPLO, EN AMBOS CASOS FUE POR EL HORARIO. YA NO HAY OPORTUNIDAD DE REINGRESO. PRIMER INGRESO 22/10/2019, ULTIMO DIA LABORADO 01/02/2020, FECHA EN LA QUE SE PRESENTA A FIRMAR BAJA 04/02/2020. CAMBIO DE SERVICIO santander montevideo. FECHA DE BAJA 11/12/2020'),
 (4767, 'NO', 'VEGA', 'RIOS', 'FRANCISCO', '551497 6525', '.', '.', 'TARJETA ', '1500', '300', 'BANCOMER', '.', 'sur 1', 'estacionamiento tehuantepec', 'BAJA', '07/04/2016', '11/02/2017', '23/06/2017', '', '', '', '', '.', '.', 'VERF690812HDFGSR09', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'YA HABIA INGRESADO,FALTANTE DE CORTE (ROBABA DINERO), NO REPORTABA ENTRADAS NI SALIDAS DE TODOS LOS CARROS QUE ENTRABAN A ESTACIONAMIENTO, SE ENCUENTRA UN HOYO EN LA PARTE DEL TECHO DEL BANO DE LAS MUJERES LAS ESPIABA, SE PRESENTA A oficinaEL 27/06/2017 PARA ENTREGA DE FINIQUITO SE ALTERA DICE QUE NO LE CORRESPONDE ESE MONTO QUE DEBE DE SER MAYOR, SE PONE MUY AGRESIVO NO CONTRATAR. PRIMER INGRESO 01/06/2016, ULTIMO DIA LABORADO 16/12/2016. CAMBIO DE SERVCIIO estacionamiento iturbide'),
 (4806, 'NO', 'ANDRADE', 'FLORES', 'TERESA DE JESUS', '.', '.', '.', 'TARJETA ', '0', '0', 'BANCOMER', '.', 'oficina', '.', 'BAJA', '04/09/2017', '04/09/2017', '31/12/2017', '31/12/2017', 'SI', '', '', '.', '.', 'AAFT840406MMCNLR03', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', 'NA', ''),
@@ -7353,7 +7447,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5026, 'NO', 'ROBLERO', 'GONZALEZ', 'KAREN', '559169 4361', '5755 7180', '.', 'TARJETA ', '2000', '380', 'BANCOMER', '.', 'oficina', 'oficina', 'BAJA', '17/01/2017', '24/01/2017', '03/03/2017', '03/03/2017', 'SI', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', 'INE Y ACTA DE NACIMIENTO ', 'NA', 'LE MARCARON DE SU TRABAJO ANTERIOR. SE DEPURA HOJA DE CONTROL DE DOCUMENTOS, COPIA DE ACTA DE NACIMIENTO, RECIBO DE TARJETA BBBVA, SOLICITUD DE EMPLEO, COPIA INE, HOJA DE REFERENCIAS, CODIGO DE CONDUCTA, 3 RECIBOS DE VALES, COPIA COMPROBANTE DE DOMICILIO, COPIA DE CERTIFICADO DE BACHILLERATO, 2 CARTAS DE RECOMENDACI?N Y BAJA. EL DIA 17/10/2020'),
 (5029, 'NO', 'ZAMORA', 'RESENDIZ', 'JOSE ANTONIO', '784135 5878', '5527 4757', '.', 'TARJETA ', '1800', '500', 'BANCOMER', '.', 'norte', 'santander satelite', 'BAJA', '24/01/2017', '19/06/2019', '03/09/2019', '', 'SI', 'SI', '', 'ZARA770921846', '.', 'ZARA770921HVZMSN06', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA, ACTA DE NACIMIENTO', 'NA', 'AVISA CON ANTICIPACION SU BAJA, NO TUVO NINGUN PROBLEMA EN EL TIEMPO EN QUE LABOR?, BUEN CHOFER MENCIONA QUE SE VA A VERACRUZ, SE LE DEJAN LAS PUERTAS ABIERTAS PARA REINGRESO,SE DEPOSITA FINIQUITO 16/06/2017 YA QUE SE ENCUENTRA EN VERACRUZ, SE PRESENTA EL 03/09/2019 A FIRMAR SU BAJA. CHECAR ANTES DE CONTRATAR YA QUE MOSTRO MALA ACTITUD AL FINAL. PRIMER INGRESO 25/01/2017, ULTIMO DIA LABORADO 04/05/2017, FECHA EN QUE FIRMA SU BAJA 05/05/2017, FECHA DE BAJA 03/09/2019, BAJA FIRMADA 03/09/2019'),
 (5033, 'NO', 'ACO ', 'GONZALEZ', 'WILIULFO AMANDO', '556602 3143', '1811 0567', '.', 'TARJETA ', '1800', '200', 'BANCOMER', '.', 'volant', 'city expresssanta fe', 'BAJA', '25/01/2017', '26/01/2017', '26/01/2017', '26/01/2017', '', '', '', '.', '.', 'BAAG650418HDFXCR08', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'INGRESO, SE LE DA PUESTO DE ENCARGADO Y EL MISMO DIA NO TERMINO SU LABOR. SE DEPURA HOJA DE CONTROL DE DOCUMENTOS, HOJA AMARILLA, VALE DE UNIFORME, ACTA ADMINISTRATIVA, SOLICITUD DE EMPLEO, ORIGINAL Y COPIA DE ACTA DE NACIMIENTO, COPIA DE COMPROBANTE DE DOMICILIO, COPIA DE INE, COPIA DE ANTECEDENTES NO PENALES, ORIGINAL DE ANTECEDENTES NO PENALES DE LA CDMX, COPIA DE LICENCIA, COPIA CURP, COPIA CARTILLA MILITAR, COPIA CERTIFICADO DE SECUNDARIA, 3 CARTAS DE RECOMENDACI?N, CODIGO DE CONDUCTA, CODIGO PENAL, CROQUIS, HOJAS BLANCAS, BAJA FIRMADA. EL DIA 7/10/2020'),
-(5034, 'NO', 'TISCARENO', 'ROSAS', 'MARIO', '554836 7935', '5790 1778', '.', 'TARJETA ', '1500', '0', 'BANCOMER', '1132200236', 'corporativo santander semanal', 'corporativo santander semanal', 'VIGENTE', '', '08/03/2014', '', '', '', '', '', 'TIRM540510J30', '6765432528', 'TIRM540510HDFSSR07', 'NO DEJO ', 'VICENTE VILLADA', '22', '', 'VALLE DE ANAHUAC', 'ECATEPEC DE MORELOS', '55210', '', '', 'ACTA DE NACIMIENTO, INE Y LICENCIA', 'NA', ''),
+(5034, 'No', 'TISCARENO', 'ROSAS', 'MARIO', '554836 7935', '5790 1778', '.', '.', '1500', '0', 'BANCOMER', '1132200236', 'corporativo santander semanal', 'corporativo santander semanal', 'VIGENTE', '', '08/03/2014', '', '', '.', '.', '7 Años, 10 Meses, 18 Dias', 'TIRM540510J30', '6765432528', 'TIRM540510HDFSSR07', 'NO DEJO ', 'VICENTE VILLADA', '', '22', 'VALLE DE ANAHUAC', 'ECATEPEC DE MORELOS', '55210', '', '', 'ACTA DE NACIMIENTO, INE Y LICENCIA', 'NA', ''),
 (5035, 'NO', 'NAVARRO', 'OSORIO', 'JOSE FRANCISCO', '553334 7692', '5739 1369', '.', 'TARJETA ', '1300', '300', 'BANCOMER', '.', 'sur 1', 'sport world', 'PENDIENTE', '16/02/2017', '20/12/2018', '20/05/2018', '', '', 'NO', '', 'NO TIENE', '39936818507', 'NAOF680623HDFVSR03', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO', '', 'INE Y LICENCIA', 'NA', 'SE CONTRATA POR SEGUNDA OCASI?N A city expressperiferico, SE DA DE BAJA PORQUE NO GENERA LO QUE EL QUIERE  Y DECIDE RETIRARSE. REGRESA A ENTREVISTA EL DIA 20/04/2021 POR EL MOMENTO NO HAB?A VACANTE PARA SU PERFIL, QUEDA EN ESPERA FECHA DE INGRESO 16/02/2017, FECHA DE ULTIMO DIA LABORADO 27/12/2017, FECHA EN QUE SE PRESENTA A FIRMAR BAJA 28/12/2017. CAMBIO DE SERVICIO city expressperiferico, FECHA DE BAJA 31/05/2018. SI TIENE BAJA FIRMADA '),
 (5036, 'NO', 'ESPANA', 'TELLEZ', 'DEMETRIO', '552192 8207', '6110 011', '.', '.', '0', '0', '.', '.', '.', '.', 'RECHAZADO', '31/01/2017', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', 'NA', 'SE DEPURA SOLICITUD DE EMPLEO CON FECHA 08/10/2020'),
 (5037, 'NO', 'CASTILLO', 'MINERO', 'JAVIER', '.', '557000865', '.', 'TARJETA ', '1500', '200', 'BANCOMER', '.', 'sur 2', 'grupo expansion', 'BAJA', '17/02/2017', '20/02/2017', '21/07/2017', '10/08/2017', 'SI', 'NO', '', '.', '.', 'CAMJ700416HDFSNV01', 'NO DEJO ', '.', '', '', '', '', '', 'ACTA DE NACIMIENTO,', '', 'INE Y LICENCIA', 'NA', 'SE PRESENTA A oficinaFIRMA BAJA Y ENTREGA CHALECO. SE DEPURA CURRICULUM EL DIA 08/10/2020'),
@@ -7845,7 +7939,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5531, 'NO', 'CRUZ', 'VARGAS', 'MARTIN', '5513687167', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO ', '08/08/2019', '', '', '', '', '', '', '.', '.', 'CUVM790410HDFRRR03', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE ASIGNO ITURBIDE PAR PRESENTARSE EL SABADO 10/08/2019 Y SE PRESENTO HASTA EL 12/08/2019 A LAS 10 AM COMO SI NADA NO CONTRATAR'),
 (5532, 'Si', 'RANGEL', 'HERNANDEZ', 'ISRAEL      ', '.', '58626560', '.', 'TARJETA', '3000', '1000', 'BANCOMER', '1562752649', 'sur 2', 'SUPERVISOR', 'VIGENTE', '16/08/2019', '19/08/2019', '', '', '.', '.', '2 Años, 4 Meses, 30 Dias', 'RAHI90111844A', '42089003893', 'RAHI901118HDFNRS02', 'NO DEJO ', 'VALLARTA', '', 'NO. 42', 'PUEBLO SAN SALVADOR CUAUHTENCO', 'COATEPEC', '12300', 'INE,ACTA DE NACIMIENTO', '', '', '', 'SERVICIO DE INGRESO santander desierto de los leones. CAMBIOS DE SERVICIO santander tlalpan, santander copilco'),
 (5533, 'NO', 'RAMIREZ', 'LUNA', 'ANGEL', '9137876580', '.', '.', 'TARJETA ', '1250', '300', 'BANCOMER ', '.', 'sur 2', 'estacionamiento iturbide', 'BAJA', '16/08/219', '18/08/2019', '03/01/2020', 'AUN NO SE PRESENTA', 'NO', '', '', 'RALA6011012G0', '.', 'RALA601101HVZMNN07', 'NO DEJO ', '.', '', '', '', '', '', 'INE,ACTA DE NACIMIENTO, LICENCIA ', '', '', '', 'AUN NO SE PRESENTA A FIRMAR BAJA. DEJO EL CHALECO Y LA CHAMARRA EN EL SERVICIO. CAMBIO DE SERVICIO notaria edificio rosseau'),
-(5534, 'NO', 'LAVARIEGA', 'RODRIGUEZ', 'ENRIQUE', '5561844161', '.', '.', 'TARJETA ', '2000', '300', 'BANCOMER ', '1561427274', 'poniente', 'santander canal del norte', 'VIGENTE', '16/08/2019', '08/04/2021', '', '', '', '', '', 'LARE620715M44', '1786301968', 'LARE620715HVZVDN05', 'NO DEJO ', 'AV. FERROCARRIL', 'MZ. 2 LT. 3', '', 'SANTIAGO ATZACUALCO', 'GUSTAVO A MADERO', '2150', 'INE.LICENCIA,', '', '', '', 'SE LE HACE ENTREGA DE FINIQUITO EL DIA 14/12/2020. SE LE HABIA DADO UNA BAJA PROVISIONAL, SE LE DA LA ENTREGA DE FINIQUITO, POSTERIORMENTE DECIDE DARSE DE BAJA, ENTREGANDO EL SERVICIO. ENTREGA UNIFORME DIAS DESPUES CON EL supervisorARTURO RUIZ Y ESTE LO DEJA EN oficina. SE LE HACE ENTREVISTA Y REINGRESA. SU PRIMER INGRESO FUE EL 19/08/2019, ULTIMO DIA LABORADO 19/08/2019, TIENE 2 REINGRESOS M?S CON LAS SIGUIENTES FECHAS 30/11/2020 Y 11/12/2019 ULTIMO DIA LABORADO 20/11/2020. santander el caballito, comodin'),
+(5534, 'No', 'LAVARIEGA', 'RODRIGUEZ', 'ENRIQUE', '5561844161', '.', '.', '.', '2000', '300', '.', '1561427274', 'poniente', 'SANTANDER CANAL DEL NORTE', 'VIGENTE', '16/08/2019', '08/04/2021', '', '', '.', '.', '0 Años, 9 Meses, 18 Dias', 'LARE620715M44', '1786301968', 'LARE620715HVZVDN05', 'NO DEJO ', 'AV. FERROCARRIL', '', 'MZ. 2 LT. 3', 'SANTIAGO ATZACUALCO', 'GUSTAVO A MADERO', '2150', 'INE.LICENCIA,', '', '', '', 'SE LE HACE ENTREGA DE FINIQUITO EL DIA 14/12/2020. SE LE HABIA DADO UNA BAJA PROVISIONAL, SE LE DA LA ENTREGA DE FINIQUITO, POSTERIORMENTE DECIDE DARSE DE BAJA, ENTREGANDO EL SERVICIO. ENTREGA UNIFORME DIAS DESPUES CON EL supervisorARTURO RUIZ Y ESTE LO DEJA EN oficina. SE LE HACE ENTREVISTA Y REINGRESA. SU PRIMER INGRESO FUE EL 19/08/2019, ULTIMO DIA LABORADO 19/08/2019, TIENE 2 REINGRESOS M?S CON LAS SIGUIENTES FECHAS 30/11/2020 Y 11/12/2019 ULTIMO DIA LABORADO 20/11/2020. santander el caballito, comodin'),
 (5535, 'NO', 'ALVAREZ', 'HERNANDEZ', 'JORGE ENRIQUE', '5547935256', '58839630', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO ', '20/08/219', '', '', '', '', '', '', '.', '.', 'AAHJ9012234DFLRR08', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'VIVE MUY LEJOS '),
 (5536, 'NO', 'TORRES', 'NARVAEZ', 'VICENTE MARTIN', '5564393770', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO ', '19/08/2019', '', '', '', '', '', '', '.', '.', 'TONV680708HDFRRC05', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITO AL SIGUIENTE DIA PARA DOCUMENTOS Y NO SE PRESENTO '),
 (5537, 'NO', 'LINAS', 'JUAREZ', 'IVAN RODRIGO', '5551860997', '55585075', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO ', 'NO HAY FECHA DE ENTREVISTA', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CUENTA CON LA IMAGEN NI PERFIL. SE DEPURA CURRICULUM EL DIA 08/10/2020'),
@@ -7922,7 +8016,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5608, 'NO', 'CASTILLO', 'MENDEZ', 'ELPIDIO', '5560356777', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '06/11/2019', '', '', '', '', '', '', '.', '.', 'CAME651101HVZSNL05', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'CITADO PARA EL DIA 07/11/2019 Y NO SE PRESENTO. '),
 (5609, 'NO', 'RIVERA', 'MILLAN', 'RENATO', '5510099895', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '07/11/2019', '', '', '', '', '', '', '.', '.', 'RIMR80062809H600', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA EL DIA 08/11/2019 Y NO SE PRESENTO'),
 (5610, 'NO', 'FELIPE', 'ISLAS', 'MARIO', '5542167519', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '07/11/2019', '', '', '', '', '', '', '.', '.', 'FEIM540510HMCLSR00', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA EL DIA 08/11/2019 Y NO SE PRESENTO. SE LE OFRECIO EL PUESTO DE comodin'),
-(5611, 'Si', 'ORTIZ', 'LAUREANO', 'PONCIANO', '5527437578', '67295123', '73140299', 'TARJETA', '1850', '250', 'BANCOMER', '1580329579', 'sur 1', 'XOTEPINGO', 'VIGENTE', '06/11/2019', '08/11/2019', '', '', '.', '.', '2 Años, 2 Meses, 10 Dias', 'OILP611118HU8', '6806128135', 'OILP611118HPLRRN01', 'NO DEJO ', 'TLANEPANTLA', 'S/N', 'MZ 2 A', 'ANTONIO DE LA ISLA Y JUGUETEROS', 'CHIMALHUACAN', '56356', 'INE, LICENCIA, ACTA DE NACIMIENTO', '', '', '', 'SERVICIO DE INGRESO comodin, santander canal del norte, santander copilco'),
+(5611, 'No', 'ORTIZ', 'LAUREANO', 'PONCIANO', '5527437578', '67295123', '73140299', 'TARJETA', '1850', '250', 'BANCOMER', '1580329579', 'sur 1', 'XOTEPINGO', 'VIGENTE', '06/11/2019', '08/11/2019', '', '', '.', '.', '2 Años, 2 Meses, 10 Dias', 'OILP611118HU8', '6806128135', 'OILP611118HPLRRN01', 'NO DEJO ', 'TLANEPANTLA', 'MZ 2 A', 'S/N', 'ANTONIO DE LA ISLA Y JUGUETEROS', 'CHIMALHUACAN', '56356', 'INE, LICENCIA, ACTA DE NACIMIENTO', '', '', '', 'SERVICIO DE INGRESO comodin, santander canal del norte, santander copilco'),
 (5612, 'NO', 'TELESFORO', 'GONZALEZ', 'EMILIO', '.', '.', '.', 'TARJETA ', '1750', '0', 'BANCOMER ', '.', 'foraneos acapulco', 'santander renacimiento', 'BAJA', '', '23/01/2019', '', '', '', '', '', 'TEGE9802074A9', '4516986829', 'TEGE980207HGRLNM02', 'NO DEJO ', 'IGNACIO MANUEL ALTAMIRANO', 'MZ. 4 LT. 12', '', 'OBRERA', 'ACAPULCO DE JUAREZ', '39770', '', '', '', '', 'NO HA FIRMADO BAJA, ENVIA ESCRITO EL D?A 03/09/2021 CONFIRMANDO SU BAJA'),
 (5613, 'NO', 'MUNOZ', 'ORTIZ', 'MARIANO OSCAR', '5613515475', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '15/11/2019', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR ENFERMEDAD. '),
 (5614, 'NO', 'MENDOZA', 'CONTRERAS', 'JAVIER', '5518204743', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '15/11/2019', '', '', '', '', '', '', '.', '.', 'MECJ921115HMCNNV04', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITO EL DIA 16/11/2019 Y NO SE PRESENTO'),
@@ -8043,7 +8137,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5732, 'NO', 'MONTERO', 'PENALOZA', 'BOGAR JESUS', '5586514055', '5574643237', '.', '', '0', '0', '', '.', '.', '.', 'PENDIENTE', '11/06/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', ''),
 (5733, 'NO', 'RAMIREZ', 'GALVAN', 'JAVIER', '5541373041', '5571844528', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '11/06/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR LA EDAD, QUIERE UN SUELDO DE $8000.00 AL MES, PIDIO SU SOLICITUD ORIGINAL'),
 (5734, 'NO', 'LOPEZ', 'SANCHEZ', 'MARCOS ALEXIS', '.', '.', '.', '', '0', '0', '', '.', 'sur 2', 'kowlaan', 'BAJA', '', '17/05/2021', '08/06/2021', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO FUNCIONO COMO BOLETERO, SE DA DE BAJA POR CONSTANTES FALTANTES DE CORTE Y PEQUENAS FALLAS'),
-(5735, 'No', 'NUNEZ ', 'SANCHEZ ', 'DILAN ALEXANDER ', '.', '.', '.', 'TARJETA', '2000', '300', 'EFECTIVO', 'EFECTIVO', 'sur 2', 'KOWLAAN', 'VIGENTE', '', '11/12/2021', '', '', '.', '.', '0 Años, 1 Meses, 7 Dias', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'PRIMER INGRESO 09/06/2021'),
+(5735, 'No', 'NUNEZ ', 'SANCHEZ ', 'DILAN ALEXANDER ', '.', '.', '.', 'TARJETA', '2000', '300', 'EFECTIVO', 'EFECTIVO', 'Selecciona Zona', '.', 'BAJA', '', '11/12/2021', '15/01/2022', '', '.', '.', '0 Años, 1 Meses, 7 Dias', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'PRIMER INGRESO 09/06/2021'),
 (5736, 'NO', 'MONROY', 'AGUILAR', 'ENRIQUE', '.', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '14/06/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE MARCO A SUS REFERENCIAS LABORALES Y EN UNA NO CONTESTAN, MIENTRAS QUE EN LA OTRA MENCIONAN QUE NO LO CONOCEN '),
 (5737, 'No', 'MOLINA', 'GARCIA', 'JOSE ANGEL', '5615383252', '5572629562', '.', 'TARJETA', '1550', '300', 'BANCOMER', '1558653478', 'sur 1', 'SANTANDER TLALPAN', 'VIGENTE', '22/06/2021', '23/06/2021', '', '', '.', '.', '0 Años, 6 Meses, 26 Dias', '.', '.', '.', 'NO DEJO ', 'GUADALUPE', '106', '', 'GUADALUPE PROLETARIA', 'GUSTAVO A MADERO', '7670', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE CON DOCUMENTACI?N COMPLETA PARA SU CONTRATACI?N\r'),
 (5738, 'NO', 'HERNANDEZ', 'LOPEZ', 'LUCIANO', '5536570177', '5526334572', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '21/06/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR LA EDAD'),
@@ -8113,7 +8207,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5803, 'NO', 'MENDEZ', 'LOPEZ', 'JAIME', '5526704934', '.', '.', '', '0', '0', '', '.', '.', '.', 'BOLETINADO', '06/09/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE Y NO SE PRESENTA, MARCA PARA DECIR QUE NO SE PUDO PRESENTAR PERO QUE SI HAY POSIBILIDAD DE CONTRATACI?N, SE LE CITA, DURANTE LA FIRMA DE DOCUMENTOS COMENTA QUE LE OFRECIERON UN SERVICIO MEJOR EN UN BANCO Y QUE LE CONVIENE M?S ALL? SE DETIENE CONTRATACI?N '),
 (5804, 'No', 'MARQUEZ', 'CARVAJAL', 'JAVIER GUMERSINDO', '5514087307', '5588453780', '.', '.', '1500', '500', '.', '56802221481', 'Selecciona Zona', '.', 'BAJA', '24/08/2021', '25/08/2021', '25/09/2021', '', '.', '.', '', '.', '.', '.', 'NO DEJO ', 'SAN MARCOS', '', 'MZ.17 LT.10', 'EMILIANO ZAPATA', 'CHALCO ', '56608', '', '', '', '', 'SE CONTRATA ESE MISMO DIA Y SE CITA AL DIA SIGUIENTE A ITURBIDE, TIENE UN FALTANTE DE CORTE, CHECAR MUY BIEN ANTES DE VOLVER A CONTRATAR'),
 (5805, 'NO', 'ROSENDO', 'VALDERRAMA', 'LUIS', '8331171833', '5565499383', '.', 'TARJETA', '1550', '300', 'BANCOMER ', '1556470168', 'sur 1', 'santander desierto de los leones', 'BAJA', '07/09/2021', '08/09/2021', '27/10/2021', '28/10/2021', 'SI', 'NO', '', '.', '.', '.', 'NO DEJO ', 'OSA MAYOR', '6', '', 'PRADO CHURUBUSCO', 'COYOACAN', '4230', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA LA CONTRATACI?N AL SERVICIO DE DESIERTO DE LOS LEONES. CHECAR BIEN ANTES DE DAR POSIBLE EREINGRESO, ES UN SE?OR QUE ABANDONA EL SERVICIO, NO QUIERE REALIZAR LOS APOYOS. '),
-(5806, 'No', 'HERNANDEZ', 'GOMEZ', 'LUIS', '.', '5567315679', '.', 'TARJETA', '180', '0', 'BANCOMER', '1575069678', 'sur 2', 'KOWLAAN', 'VIGENTE', '07/09/2021', '29/10/2021', '', '', '.', '.', '0 Años, 2 Meses, 20 Dias', '.', '.', '.', 'NO DEJO ', 'TLATELOLCO', '', 'MZ 34 LT 3', 'CIUDAD AZTECA SECC poniente', 'ECATEPEC', '55120', '', '', '', '', 'CITADO PARA MANANA 08:30 kowlaan. SE PRESENTA EN LA TARDE CON DOC INCOMPLETA, SE LE CITA EL DIA LUNES A LAS 08:30. CHOFER FINES DE SEMANA JUEVES, VIERNES, SABADO Y DOMINGO. '),
+(5806, 'No', 'HERNANDEZ', 'GOMEZ', 'LUIS', '.', '5567315679', '.', 'TARJETA', '1260', '0', 'BANCOMER', '1575069678', 'sur 2', 'KOWLAAN', 'VIGENTE', '07/09/2021', '29/10/2021', '', '', '.', '.', '0 Años, 2 Meses, 20 Dias', '.', '.', '.', 'NO DEJO ', 'TLATELOLCO', '', 'MZ 34 LT 3', 'CIUDAD AZTECA SECC poniente', 'ECATEPEC', '55120', '', '', '', '', 'CITADO PARA MANANA 08:30 kowlaan. SE PRESENTA EN LA TARDE CON DOC INCOMPLETA, SE LE CITA EL DIA LUNES A LAS 08:30. CHOFER FINES DE SEMANA JUEVES, VIERNES, SABADO Y DOMINGO. COBRA 180 POR DIA POR SISTEMA SE TUVO QUE ACOMODAR SUELDO POR SEMANA'),
 (5807, 'NO', 'CASTILLO', 'HERNANDEZ', 'CECILIO', '5579305188', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '14/09/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'CHECAR MUY BIEN ANTES DE CONTRATAR, NO DA MUCHA CONFIANZA, NO QUIERE DAR LA INFORMACI?N EN LA ENTREVISTA, NO QUIERE DAR DATOS DE SUS EMPLEOS ANTERIORES'),
 (5808, 'No', 'ZERMAN', 'CONTRERAS', 'ENRIQUE', '5572689550', '5556428148', '5611843924', 'TARJETA', '1500', '500', 'BANCOMER', '1112843064', 'Selecciona Zona', '.', 'VIGENTE', '13/09/2021', '14/09/2021', '', '', '.', '.', '0 Años, 4 Meses, 4 Dias', '.', '.', '.', 'NO DEJO ', '17', '67', '', 'UNIDAD HABITACIONAL MEYEHUALCO', 'IZTAPALAPA', '9290', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE Y SE LE CONTRATA PARA kowlaan. SALARIO ANTERIOR 2000 + 1000 DE BONO'),
 (5809, 'NO', 'VENTURA', 'GARCIA', 'ANTONIO', '5540131530', '5581156147', '.', '', '0', '0', '', '.', '.', '.', 'PENDIENTE', '14/09/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA LA CONTRATACI?N Y NO SE PRESENTA'),
@@ -8137,12 +8231,12 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5928, 'NO', 'LOMAS', 'SANTILLAN', 'IVAN', '5532664877', '5557563385', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '06/10/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'TIENE BUEN PERFIL, PERO TRAE UN TATUAJE EN EL CUELLO EL CUAL ES MUY VISIBLE '),
 (5929, 'NO', 'MONCINO', 'BONILLA', 'JEFF ISRAEL', '.', '.', '5517647578', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '06/10/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA LA VACANTE DE BOLETERO, TRAIA TENIS, NO SE PRESENTA'),
 (5930, 'NO ', 'PACHECO', 'PEREA ', 'VICTOR RODRIGO ', '5549198892', '5525957819', '5622166105', 'TARJETA ', '1500', '500', 'BANCOMER', '', 'sur 1', 'comodin', 'BAJA', '16/10/2021', '19/10/2021', '', '', '', '', '', 'PAPV780717395', '', 'PAPV780717HDFCRC09', 'NO DEJO ', 'ESCOLLO', '48', '', 'LAS AGUILAS ', 'ALVARO OBREGON ', '1710', 'ACTA DE NACIMIENTO, INE, LICENCIA ', 'ACTA DE NACIMIENTO ORIGINAL, CURP COPIA, COPIA DE CARTILLA O PRECARTILLA  ', '', '', ''),
-(5931, 'No', 'CHAVEZ ', 'FLORES ', 'VICTOR MANUEL ', '5513208916', 'NO TIENE ', '5623225515', 'TARJETA', '2000', '500', 'BANCOMER', '1582298358', 'sur 2', 'HONDA SAN ANTONIO', 'VIGENTE', '18/10/2021', '19/10/2021', '', '', '.', '.', '', 'CAFV600509KK9', '', 'CAFV600509HDFHLC02', 'vanic2507@yahoo.com.mx ', 'JUMIL ', '29', '4', 'PEDREGAL DE SANTO DOMINGO ', 'COYOACAN ', '4369', 'ACTA DE NACIMIENTO, INE, LICENCIA ', 'ACTA DE NACIMIENTO ORIGINAL ', '', '', ''),
+(5931, 'No', 'CHAVEZ ', 'FLORES ', 'VICTOR MANUEL ', '5513208916', 'NO TIENE ', '5623225515', 'TARJETA', '2000', '500', 'BANCOMER', '1582298358', 'sur 2', 'HONDA SAN ANTONIO', 'VIGENTE', '18/10/2021', '19/10/2021', '', '', '.', '.', '0 Años, 3 Meses, 7 Dias', 'CAFV600509KK9', '', 'CAFV600509HDFHLC02', 'vanic2507@yahoo.com.mx ', 'JUMIL ', '4', '29', 'PEDREGAL DE SANTO DOMINGO ', 'COYOACAN ', '4369', 'ACTA DE NACIMIENTO, INE, LICENCIA ', 'ACTA DE NACIMIENTO ORIGINAL ', '', '', ''),
 (5932, 'No', 'TOVAR ', 'REYES ', 'ROBERTO ', '5515062686', 'NO TIENE ', '5551109837', 'TARJETA', '1500', '500', 'BANCOMER', '1582298365', 'sur 1', 'ESTACIONAMIENTO ITURBIDE', 'VIGENTE', '18/10/2021', '19/10/2021', '', '', '.', '.', '0 Años, 2 Meses, 30 Dias', 'TORR6610232TA', '', 'TORR661023HDFVYB06', 'robertotovar568@gmail.com ', 'LOS LAURELES ', '', '59', 'BENITO JUAREZ ', 'NEZAHUALCOYOTL', '57000', 'ACTA DE NACIMIENTO, INE, LICENCIA ', 'ACTA ORIGINAL, 2 FOTOS, INE ORIGINAL ', '', '', ''),
 (5933, 'NO ', 'GOMEZ ', 'LUIS ', 'RICARDO ', '5619014223', '56554803', '5529127676', 'TARJETA ', '1500', '500', 'SANTANDER ', '', 'sur 1', 'comodin', 'BAJA', '18/10/2021', '19/10/2021', '', '', '', '', '', 'GOLU700721FQ9', '45877007463', 'GOXL700721HDFMXS04', 'luisricardo2170@gmail.com ', 'ALVARO OBREGON ', '1', '7', 'TEPETONGO ', 'TLALPAN ', '14420', 'ACTA DE NACIMIENTO, INE, LICENCIA ', 'ACTA ORIGINAL, CARTILLA, 2 FOTOS ', '', '', ''),
-(5934, 'No', 'MALDONADO', 'SANCHEZ ', 'VICTOR ', '5540557769', '57691020', '5560119975', 'TARJETA', '180', '0', 'BANCOMER', '1580596317', 'sur 2', 'KOWLAAN', 'VIGENTE', '13/10/2021', '14/10/2021', '', '', '.', '.', '', 'MASV901007M13', '94129033752', 'MASV901007HMCLNC04', 'vktr16mc@gmail.com ', 'IGNACIO ALLENDE ', '', '35-A', 'SAN JUAN IXHUATEPEC ', 'TLANEPANTLA ', '54180', 'ACTA DE NACIMIENTO, INE, LICENCIA ', '2 FOTOS, TARJETA DE BBVA ', '', '', ''),
+(5934, 'No', 'MALDONADO', 'SANCHEZ ', 'VICTOR ', '5540557769', '57691020', '5560119975', 'TARJETA', '1260', '0', 'BANCOMER', '1580596317', 'sur 2', 'KOWLAAN', 'VIGENTE', '13/10/2021', '14/10/2021', '', '', '.', '.', '0 Años, 3 Meses, 11 Dias', 'MASV901007M13', '94129033752', 'MASV901007HMCLNC04', 'vktr16mc@gmail.com ', 'IGNACIO ALLENDE ', '35-A', '', 'SAN JUAN IXHUATEPEC ', 'TLANEPANTLA ', '54180', 'ACTA DE NACIMIENTO, INE, LICENCIA ', '2 FOTOS, TARJETA DE BBVA ', '', '', 'COBRA 180 POR DIA POR SISTEMA SE TUVO QUE ACOMODAR CON EL SALARIO POR SEMANA, ES DE FINES DE SEMANA JUEVES, VIERNES, SABADO Y DOMINGO'),
 (5935, 'NO ', 'GERMAN ', 'VARGAS ', 'JULIO CESAR', '5528130737', 'NO TIENE ', '5591013213', 'TARJETA ', '2000', '400', 'BANCOMER', '', 'sur 2', 'honda', 'BAJA', '12/10/2021', '13/10/2021', '', '', '', '', '', 'GEVJ810909J85', '', 'GEVJ810909HHGRRL06', 'cv348192@gmail.com ', '1 CDA. DE TULIPANES ', '7', '26', 'HEROES TECAMAC', 'TECAMAC ', '55764', 'ACTA DE NACIMIENTO, INE, LICENCIA ', '', '', '', 'SOLO FIRMO Y AL SI9GUIENTE DIA YA NO SE PRESENTO '),
-(5936, 'No', 'GAYTAN ', 'GALVAN ', 'RENE JAVIER ', '5626300807', '5521626063', '5551769365', 'TARJETA', '1600', '400', 'BANCOMER', '1549606958', 'sur 1', 'SANTANDER COPILCO', 'VIGENTE', '05/10/2021', '07/10/2021', '', '', '.', '.', '0 Años, 3 Meses, 11 Dias', 'GAGR900422KJ7', '4510903569-5', 'GAGR900422HDFYLN03', 'ibarrarebeca482@gmail.com ', 'ANA BOLENA ', '401', '270', 'AGRICOLA METROPOLITANA ', 'TLAHUAC ', '13280', 'ACTA DE NACIMIENTO, INE, LICENCIA ', '', '', '', 'SERVICIO DE INGRESO CANAL DEL NORTE, SALARIO HASTA EL 2021 $1550+300 BONO'),
+(5936, 'Si', 'GAYTAN ', 'GALVAN ', 'RENE JAVIER ', '5626300807', '5521626063', '5551769365', 'TARJETA', '1600', '400', 'BANCOMER', '1549606958', 'sur 1', 'SANTANDER COPILCO', 'VIGENTE', '05/10/2021', '07/10/2021', '', '', '.', '.', '0 Años, 3 Meses, 11 Dias', 'GAGR900422KJ7', '4510903569-5', 'GAGR900422HDFYLN03', 'ibarrarebeca482@gmail.com ', 'ANA BOLENA ', '270', '401', 'AGRICOLA METROPOLITANA ', 'TLAHUAC ', '13280', 'ACTA DE NACIMIENTO, INE, LICENCIA ', '', '', '', 'SERVICIO DE INGRESO CANAL DEL NORTE, SALARIO HASTA EL 2021 $1550+300 BONO'),
 (5937, 'NO ', 'GALLEGOS ', 'VARELA ', 'RENE', '5573090297', '5547115945', '554715645', 'TARJETA', '2000', '400', 'BBVA ', '', '', 'honda', 'BAJA ', '13/10/2021', '13/10/2021', '13/10/2021', '14/10/2021', '', '', '', 'GAVR761027472', '', 'GAVR761027HGRLRN07', 'i59-3015@hotmail.com', 'C. 3', '51', '', 'EL SOL', 'NEZAHUALCOYOTL', '57200', 'INE Y LICENCIA', 'COMPROBANTE DE DOMICILIO, ANTECEDENTES NO PENALES', 'ACTA DE NACIMIENTO, INE Y LICENCIA', '', ''),
 (5938, 'NO ', 'HERNANDEZ', 'SANCHEZ', 'ALFONSO', '5578529534', '', '5540089707', 'TARJETA ', '1500', '500', 'BBVA ', '', '', 'estacionamiento iturbide', 'BAJA ', '12/10/2021', '13/10/2021', '', '', '', '', '', '', '', 'HESA830801HDFENL02', 'NO DEJO ', 'NERDOS ', 'MZ 176 LT.21', '', 'JARDINES DE CHALCO ', 'TLAHUAC ', '56607', 'ACTA DE NACIMIENTO, INE Y LICENCIA ', 'ANTECEDENTES, CARTAS DE RECOMENDACI?N Y FOTOS', 'ACTA DE NACIMIENTO, INE Y LICENCIA ', '', ''),
 (5939, 'NO ', 'BERNAL', 'AVILA', 'ALAN ARMANDO', '5559634228', '56672897', '56672897', '', '0', '0', '', '', '', '', 'PENDIENTE', '', '', '', '', '', '', '', '', '4415955207-2', 'BEAA950731IHDFRVL09', 'NO DEJO ', '', '', '', '', '', '', '', '', '', '', ''),
@@ -8182,7 +8276,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5973, 'NO ', 'HERNANDEZ ', 'S?NZCHEZ ', 'JOSE FRANCISCO ', '2214618092', '5549156843', '5549156843', '', '0', '0', '', '', '', '', 'RECHAZADO ', '26/10/2021', '', '', '', '', '', '', 'HESF900123A12', '61089001640', 'HESF900123HPLRNR03', 'pakyn.2301@gmail.com', 'SANTANA ', '56', '', 'SAN MIGUEL TECAMACHALCO ', '', '53970', '', '', '', '', ''),
 (5974, 'NO ', 'ATENCO ', 'VIDAL ', 'JOS? ', '5626881618', '5557948696', '5548890140', '', '0', '0', '', '', '', '', 'RECHAZADO ', '26/10/2021', '', '', '', '', '', '', 'AEVJ5803192E3', '2215852811', 'AEVJ580319HDFTDS01', 'atencovj@hotmail.com ', 'BUENA SUERTE ', '244', 'B103', 'LAS ARBOLEADAS ', 'TLAHUAC ', '13219', '', '', '', '', ''),
 (5975, 'NO ', 'VAZQUEZ ', 'HERRERA', 'DARIO ', '5516803513', 'NO TIENE ', '', '', '0', '0', '', '', '', '', 'RECHAZADO ', '23/10/2021', '', '', '', '', '', '', 'VZHR083078309H700', 'E530000099671', 'VAHD830722HDFZRR08', 'NO DEJO ', 'AQUILES SERD?N ', '29', '19', 'EMILIANO ZAPATA ', 'LOS REYES, LA PAZ ', '56490', '', '', '', '', ''),
-(5976, 'NO ', 'CHANDE ', 'RUIZ ', 'FABI?N ', '5588284519', 'NO TIENE ', '', '', '0', '0', '', '', '', '', 'RECHAZADO ', '25/10/2021', '', '', '', '', '', '', 'CARF700811QY7', '', 'CARF700811HDFHZB07', 'chandefabian887@gmail.com ', 'SAN PABLO XALPA', '396', '', 'SAN MARTIN XOCHINAHUAC ', 'AZCAPOTZALCO', '2110', '', '', '', '', ''),
+(5976, 'No', 'CHANDE ', 'RUIZ ', 'FABIAN ', '5588284519', 'NO TIENE ', '', '.', '0', '0', '.', '', 'sur 2', '.', '.', '25/10/2021', '', '', '', '.', '.', '', 'CARF700811QY7', '', 'CARF700811HDFHZB07', 'chandefabian887@gmail.com ', 'SAN PABLO XALPA', '', '396', 'SAN MARTIN XOCHINAHUAC ', 'AZCAPOTZALCO', '2110', '', '', '', '', ''),
 (5977, 'NO ', 'DIMAS ', 'FRANCO ', 'JUAN ALBERTO ', '5531038302', '5521638025', '5521638025', '', '0', '0', '', '', '', '', 'RECHAZADO ', '25/10/2021', '', '', '', '', '', '', '', '90907505227', 'PIFJ751121HDFMRN02', 'albertcoy@gmail.com ', 'JUAN NEPOMUCENO ', '', '', 'OLIVAR DEL CONDE ', 'ALVARO OBREGON ', '1400', '', '', '', '', ''),
 (5978, 'NO ', 'ALVAREZ  ', 'HERNANDEZ ', 'JORGE MARCELO ', '5620378037', 'NO TIENE ', '5538979534', '', '0', '0', '', '', '', '', 'RECHAZADO ', '19/10/2021', '', '', '', '', '', '', 'AAHJ85012OAT2', '20038511265', 'AAHJ850120HDFLRR07', 'jorgemah2085@gmail.com ', 'DIBUJANTES ', '131', '', 'SAN JUANICO NEXTIPAC ', 'IZTAPALAPA ', '9400', '', '', '', '', ''),
 (5979, 'NO ', 'NAVA ', 'MUSICA ', 'JUAN DAVID ', 'NO TIENE ', '58152596', '58152896', '', '0', '0', '', '', '', '', 'RECHAZADO ', '20/10/2021', '', '', '', '', '', '', '', '', '', 'david90nava@gmail.com ', 'EMILIO CARRANZA ', '46', '', 'BUENAVISTA ', 'NAUCALPAN', '55800', '', '', '', '', ''),
@@ -8199,7 +8293,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5990, 'NO ', 'OVIEDO ', 'D?AZ ', 'ALBERTO ', '5579749516', '55855119', '55855119', 'TARJETA ', '1550', '300', 'BANCOMER ', '', '', 'santander palmas', 'BOLETINADO', '26/10/2021', '27/10/2021', '29/10/2021', '03/11/2021', 'SI', 'NO', '', '', '', 'OIDA881115HDFVZL08', 'albertooviedo673@gmail.com ', '2DA CERRADA DE EMILIANO ZAPATA ', '', '', 'SAN BERNBE ', 'MAGDALENA CONTRERAS ', '10300', 'ACTA DE NACIMIENTO, INE, LICENCIA ', 'COPIA DE CARTILLA, 2 FOTOS ', '', '', 'BOLETINADO POR ROBO EN PALMAS EL D?A 29 DE OCTUBRE DEL 2021, EL D?A DE LA ENTREGA DE SUS PAPELES SE PUSO MUY PESADO. '),
 (5991, 'NO ', 'GARCIA', 'JASSO', 'MISSAEL', '5554944389', '', '', 'TARJETA ', '1550', '300', 'BBVA ', '', '', 'santander desierto de los leones', 'BOLETINADO', '29/10/2021', '04/11/2021', '04/11/2021', '', '', '', '', '', '', 'GAJM920716HDFRSS05', 'misaeljasso955016@gmail.com', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR EL DIA DE LA CONTRATACION FIRMO TODO, ESTABA ESPERANDO A QUE PASARA EL supervisorPOR EL Y SE FUE, SOLO MANDO UN MENSAJE QUE TENIA UN PROBLEMA FAMILIAR Y SE TUVO QUE IR DE EMERGENCIA'),
 (5992, 'No', 'DE LA ROSA', 'GARCIA', 'MARTIN', '5588372886', '', '5548263005', 'TARJETA', '1550', '300', 'BANCOMER', '1520364398', 'sur 2', 'SANTANDER PALMAS', 'VIGENTE', '04/11/2021', '05/11/2021', '', '', '.', '.', '0 Años, 2 Meses, 13 Dias', 'ROGM800719HDFSRR07', '', 'ROGM800719HDFSRR07', 'delarosagarciamartin70@gmail.com', 'IGNACIO LOPEZ RAYON', '', '3', 'VILLA SAN LORENZO', 'CHIMALHUACAN', '56340', 'INE, LICENCIA, ACTA DE NACIMIENTO', '', '', '', ''),
-(5993, 'No', 'LABRA', 'VALADEZ', 'EDGAR', '5537158638', '', '5583273342', 'TARJETA', '1850', '400', 'BANCOMER', '1542776738', 'sur 2', 'KOWLAAN', 'BAJA', '03/11/2021', '05/11/2021', '', '', '.', '.', '', 'LAVE820630B26', '45008200037', 'LAVE820630HDFBLD01', 'nodejo', 'IGNACIO ZARAGOZA', '', '181', 'NUEVA JUAREZ PANTITLAN', 'NEZAHUALCOYOTL', '57466', 'INE, LICENCIA, ACTA DE NACIMIENTO', '', '', '', 'BAJA 31/12/2021 POR SALUD (CIRUGIA)'),
+(5993, 'No', 'LABRA', 'VALADEZ', 'EDGAR', '5537158638', '', '5583273342', 'TARJETA', '1850', '400', 'BANCOMER', '1542776738', 'sur 2', 'KOWLAAN', 'BAJA', '03/11/2021', '05/11/2021', '31/12/2021', '', '.', '.', '', 'LAVE820630B26', '45008200037', 'LAVE820630HDFBLD01', 'nodejo', 'IGNACIO ZARAGOZA', '181', '', 'NUEVA JUAREZ PANTITLAN', 'NEZAHUALCOYOTL', '57466', 'INE, LICENCIA, ACTA DE NACIMIENTO', '', '', '', 'BAJA 31/12/2021 POR SALUD (CIRUGIA)'),
 (5994, 'No', 'TREJO', 'APOLINAR', 'ROSALIO', '5621999673', '', '5546801804', 'TARJETA', '1550', '300', 'BANCOMER', '1529024223', 'sur 2', 'SANTANDER MISISIPI', 'VIGENTE', '05/11/2021', '08/11/2021', '', '', '.', '.', '0 Años, 2 Meses, 10 Dias', 'TEAR671110169', '', 'TEAR671110HDFRPS06', 'trejorosalio33@gmail.com', 'SAN PEDRO ', '', 'MZ 20 LT 9', 'MALACATES', 'GUSTAVO A MADERO', '7119', 'LICENCIA, INE, ACTA DE NACIMIENTO', '', '', '', 'SE LE CITA EL DIA LUNES CON DOCUMENTACION, SE LE CONTRATA PARA MISISIPI'),
 (5995, 'NO', 'PEREZ', 'REBOLLAR', 'ANTONIO', '', '', '', '', '0', '0', '', '', '', '', 'BOLETINADO', '05/11/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'TIENE MUY MALA ACTITUD, SE PUSO MUY PESADO DURANTE LA CONTRATACI?N SE LE OFRECIO DESIERTO DE LOS LEONES Y LO RECHAZO, DIJO QUE LE QUEDABA MUY LEJOS, AL SALIR DIJO QUE SE LE HIZO PERDER EL TIEMPO '),
 (5996, 'NO', 'SANCHEZ', 'SANCHEZ', 'DILAN ARTURO', '5528752071', '', '5545544218', '', '0', '0', '', '', '', '', 'BAJA', '05/11/2021', '', '', '', '', '', '', 'SAS9407011948', '30109400892', 'SASD94971HDFNNL08', 'dilanmx2019@gmail.com ', '', '', '', '', '', '', '', '', '', '', 'FIRMO PERO AL DIA SIGUIENTE YA NO SE PRESENTO '),
@@ -8270,7 +8364,15 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (6060, 'No', 'URIBE', 'ESPINOSA', 'JORGE LUIS', '5553555552', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'RECHAZADO', '05/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'CITADO PARA KOWLAAN VESPERTINO, YA NO SE PRESENTO, VIVE POR AZCAPOTZALCO, CERCA DE METRO NORMAL'),
 (6061, 'No', 'NAZARIO', 'AYALA', 'OSWALDO', '5624165706', '', '5554377151', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'PENDIENTE', '06/01/2022', '', '', '', '.', '.', '0', '', '', '', 'oswaldo.naz@gmail.com', '', '', '', '', '', '', '', '', '', '', 'SE LE CITA PARA DESIERTO DE LOS LEONES, TIENE 2 DOMICILIOS, UNO EN IZTAPALAPA Y EL OTRO EN ECATEPEC, EL DOMICILIO DE IZTAPALAPA ES DE SU ABUELA Y EL DE ECATEPEC ES DE SUS PAPAS, CHECAR BIEN '),
 (6062, 'No', 'TORRES', 'MEJIA', 'JOSE ROBERTO', '5574305665', '', '5527224602', 'TARJETA', '1550', '300', 'BANCOMER', '1523782392', 'sur 1', 'SANTANDER DESIERTO DE LOS LEONES', 'VIGENTE', '06/01/2022', '11/01/2022', '', '', '.', '.', '0 Años, 0 Meses, 7 Dias', 'TOMR861203EZ8', '', 'TOMR861203HDFRJB06', 'jrobertotorres@gmail.com', 'PLAYA MANZANILLO', '0', '531', 'MILITAR MARTE', 'IZTACALCO', '08830', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE PARA CONTRATACION, SE CONTRATA INGRESARA LA SIGUIENTE SEMANA'),
-(6063, 'No', 'SEGURA', 'MORALES', 'AARON SAMUEL', '5510738977', '', '5539336694', 'TARJETA', '2000', '300', 'BANCOMER', '', 'sur 2', 'KOWLAAN', 'VIGENTE', '11/01/2022', '12/01/2022', '', '', '.', '.', '0 Años, 5 Meses, 3 Dias', 'SEMA9011133A7', '', 'SEMA901113HDFGRR09', 'aaronmya90@gmail.com', 'LAZARO CARDENAS', 'LT 22', 'MZ 2', 'PRESIDENTES DE MEXICO', 'IZTAPALAPA', '09740', 'LICENCIA', 'INE, COPIA CARTIILA, 2 FOTOGRAFIAS', '', '', 'RECOMENDADO DEL SR. RENE GAYTAN');
+(6063, 'No', 'SEGURA', 'MORALES', 'AARON SAMUEL', '5510738977', '', '5539336694', 'TARJETA', '2000', '300', 'BANCOMER', '', 'sur 2', 'KOWLAAN', 'VIGENTE', '11/01/2022', '12/01/2022', '', '', '.', '.', '0 Años, 5 Meses, 3 Dias', 'SEMA9011133A7', '', 'SEMA901113HDFGRR09', 'aaronmya90@gmail.com', 'LAZARO CARDENAS', 'LT 22', 'MZ 2', 'PRESIDENTES DE MEXICO', 'IZTAPALAPA', '09740', 'LICENCIA', 'INE, COPIA CARTIILA, 2 FOTOGRAFIAS', '', '', 'RECOMENDADO DEL SR. RENE GAYTAN'),
+(6064, 'No', 'OSORIO', 'BENITEZ', 'SEUZ', '5585306269', '5554867575', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'EN ESPERA', '06/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'BUSCA ALGO CON HORARIO DESPUES DE LAS 09:00 AM HASTA LAS 07:00 PM '),
+(6065, 'No', 'ESTEBAN', 'VILLAR', 'JOSE ANGEL', '5527677122', '5556131207', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'RECHAZADO', '06/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'SE LE OFRECE KOWLAAN VESPERTINO FINES DE SEMANA, NO LO ACEPTA PORQUE NO TIENE FORMA DE TRASLADARSE'),
+(6066, 'No', 'GONZALEZ', 'ROCHA', 'JOSE ALEJANDRO', '5627268390', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'RECHAZADO', '03/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR LA EDAD, NO QUIZO REALIZAR LA SOLICITUD'),
+(6067, 'No', 'GONZALEZ', 'RAMIREZ', 'MIGUEL', '', '5556005540', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'EN ESPERA', '12/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'PARA CONTRATACION INMEDIATA EN ESPERA DE UN BANCO '),
+(6068, 'No', 'VAZQUEZ', 'DIAZ', 'RAUL', '5510283331', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'BOLETINADO', '17/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATADO, TIENE CARA DE RATERO'),
+(6069, 'No', 'NAVARRETE', 'ESTRADA', 'GABRIEL GIOVANNI', '5542647422', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'BOLETINADO', '18/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR VENIA CON EL SENOR JOSE IGNACIO E IGNACIO MARTIN, SOLO ESTABAN OBSERVANDO, MIDIENDO EL ESTACIONAMIENTO, NO DAN CONFIANZA'),
+(6070, 'No', 'NAVARRETE', 'SANCHEZ', 'JOSE IGNACIO', '5621585736', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'BOLETINADO', '18/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR, VENIA CON EL SEÑOR GABRIEL GIOVANNI E IGNACIO MARTIN, ESTABAN MIDIENDO EL AUTO, SOLO ESTABAN VIENDO EL MOVIMIENTO DEL ESTACIONAMIENTO, PRIMERO ENTRARON AL BAÑO Y DESPUES YA PIDIERON SER ENTREVISTADOS '),
+(6071, 'No', 'NAVARRETE', 'SANCHEZ', 'IGNACIO MARTIN', '', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'BOLETINADO', '18/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR, VENIA CON EL SEÑOR GABRIEL GIOVANNI Y JOPSE IGNACIO, ESTABAN MIDIENDO EL AUTO, SOLO ESTABAN VIENDO EL MOVIMIENTO DEL ESTACIONAMIENTO, PRIMERO ENTRARON AL BAÑO Y DESPUES YA PIDIERON SER ENTREVISTADOS ');
 
 -- --------------------------------------------------------
 
@@ -8288,6 +8390,17 @@ CREATE TABLE `rh.semanal.inturbide.gast` (
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.gast`
+--
+
+INSERT INTO `rh.semanal.inturbide.gast` (`Numregistro`, `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES
+(1, 1, '5 ene. 2022', 'LIC CRISTINA REYES', '1000', '', '1650.0'),
+(2, 1, '3 ene. 2022', 'ORDEN DE TALLER ENRIQUE ZERMAN', '400', 'S2-253', '1650.0'),
+(3, 1, '3 ene. 2022', 'DEPOSITOS SANTANDER', '230', '', '1650.0'),
+(4, 1, '26 dic. 2021', 'BASURA TEHUANTEPEC', '20', '', '1650.0'),
+(5, 2, '2 ene. 2022', 'PATRULLA LA ERA STA CRUZ', '250', 'NTE-8', '250.0');
+
 -- --------------------------------------------------------
 
 --
@@ -8303,8 +8416,20 @@ CREATE TABLE `rh.semanal.inturbide.nsem` (
   `Total restando gastos` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `Debe entregar` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `el entrega` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
-  `Debe` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+  `Debe` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TIS` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `TIP` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `TG` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `TV` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.nsem`
+--
+
+INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`, `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`, `el entrega`, `Debe`, `TIS`, `TIP`, `TG`, `TV`) VALUES
+(1, 'jueves, 27/enero/2022', '12:49:18 PM', 'ene.-22', '5052.0', '3402.0', '0.0', '0', '0.0', '5052.0', '0.0', '1650.0', '3402.0'),
+(2, 'jueves, 27/enero/2022', '04:45:48 PM', 'ene.-22', '5900.0', '5650.0', '0.0', '0', '0.0', '5900.0', '0.0', '250.0', '5650.0');
 
 -- --------------------------------------------------------
 
@@ -8322,6 +8447,14 @@ CREATE TABLE `rh.semanal.inturbide.pen` (
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.pen`
+--
+
+INSERT INTO `rh.semanal.inturbide.pen` (`Numregistro`, `Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES
+(1, 1, '27 ene. 2022', '', '', '0', '0.0'),
+(2, 2, '27 ene. 2022', '', '', '0', '0.0');
+
 -- --------------------------------------------------------
 
 --
@@ -8337,6 +8470,20 @@ CREATE TABLE `rh.semanal.inturbide.scc` (
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.scc`
+--
+
+INSERT INTO `rh.semanal.inturbide.scc` (`Numregistro`, `Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES
+(1, 1, '1 ene. 2022', 'Inturbide  x 12 hrs', '1030', '5052.0'),
+(2, 1, '1 ene. 2022', 'Inturbide x hora', '302', '5052.0'),
+(3, 1, '1 ene. 2022', 'Inturbide baño', '120', '5052.0'),
+(4, 1, '1 ene. 2022', 'Cafe', '3600', '5052.0'),
+(5, 2, '2 ene. 2022', 'Iturbide  x 12 hrs', '811', '5900.0'),
+(6, 2, '2 ene. 2022', 'Iturbide x hora', '289', '5900.0'),
+(7, 2, '2 ene. 2022', 'Iturbide baño', '120', '5900.0'),
+(8, 2, '2 ene. 2022', 'Cafe', '4680', '5900.0');
+
 -- --------------------------------------------------------
 
 --
@@ -8351,6 +8498,16 @@ CREATE TABLE `rh.semanal.inturbide.val` (
   `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.val`
+--
+
+INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES
+(1, 1, '3 ene. 2022', 'ITURBIDE 01 DE ENERO 2022', '2753', '3402.0'),
+(2, 1, '5 ene. 2022', 'SUR 1', '649', '3402.0'),
+(3, 2, '2 ene. 2022', 'KOWLAAN 02/01/22', '4370', '5650.0'),
+(4, 2, '2 ene. 2022', 'ITURBIDE 02/01/22', '1280', '5650.0');
 
 -- --------------------------------------------------------
 
@@ -8383,7 +8540,11 @@ CREATE TABLE `rh.semanal.ptetitla.nsem` (
   `Total restando gastos` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `Debe entregar` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `el entrega` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
-  `Debe` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+  `Debe` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TIS` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TIP` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TG` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TV` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -8463,7 +8624,11 @@ CREATE TABLE `rh.semanal.tehuantepec.nsem` (
   `Total restando gastos` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `Debe entregar` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `el entrega` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
-  `Debe` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+  `Debe` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TIS` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TIP` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TG` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `TV` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -8511,6 +8676,32 @@ CREATE TABLE `rh.semanal.tehuantepec.val` (
   `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `semanal.vales`
+--
+
+CREATE TABLE `semanal.vales` (
+  `#vale` int(100) NOT NULL,
+  `buenopor` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Recibi de` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `Concepto` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `en` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `BPescrito` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `semanal.vales`
+--
+
+INSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito`) VALUES
+(1, '649.00', 'ISAIAS PADILLA', 'ITURBE 01 DE ENERO 2022', 'CDMX', 'A 5 de enero de 2022', 'SEISCIENTOS CUARENTA Y NUEVE , 00¢ PESOS'),
+(2, '21150', 'ISAIAS PADILLA', 'SUR 1', 'CDMX', 'A 3 de enero de 2022', 'VEINTE Y UN MIL CIENTO CINCUENTA , 00¢ PESOS'),
+(3, '4370', ' CARLOS RAMIREZ', ' KOWLAAN 02/01/22', ' CDMX', 'A 2 de enero de 2022', 'CUATRO MIL TRECIENTOS SETENTA , 00¢ PESOS'),
+(4, '1280', ' ISAIAS PADILLA', ' ITURBIDE 02/01/2022', ' CDMX', 'A 2 de enero de 2022', 'UN MIL DOSCIENTOS OCHENTA , 00¢ PESOS');
 
 -- --------------------------------------------------------
 
@@ -8623,6 +8814,75 @@ INSERT INTO `servicio` (`idServ`, `idZona`, `Nombre Zona`, `Supervisor`, `Servic
 (81, '8', 'oficina', '', 'Auditor', 'L a V', '08:20', '17:20', '10:00 - 2:00', 'OFF', '', 'NO APLICA', '', 'NO APLICA'),
 (82, '17', 'corporativo santander semanal', '', 'corporativo santander semanal', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', '.', '', '.'),
 (83, '18', 'corporativo santander quincenal', '', 'corporativo santander quincenal', 'L a V', '08:30', '16:00', 'OFF', 'OFF', '', '.', '', '.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `servicios.iturbide`
+--
+
+CREATE TABLE `servicios.iturbide` (
+  `#Serv` int(11) NOT NULL,
+  `Servicio` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `servicios.iturbide`
+--
+
+INSERT INTO `servicios.iturbide` (`#Serv`, `Servicio`) VALUES
+(1, 'Iturbide x 1 dia'),
+(2, 'Iturbide  x 12 hrs'),
+(3, 'Iturbide x hora'),
+(4, 'Iturbide baño'),
+(5, 'Cafe'),
+(6, 'Division'),
+(7, 'Club kids'),
+(8, 'Party Surprise'),
+(9, 'Otro');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `servicios.puente titla`
+--
+
+CREATE TABLE `servicios.puente titla` (
+  `#Serv` int(11) NOT NULL,
+  `Servicio` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `servicios.puente titla`
+--
+
+INSERT INTO `servicios.puente titla` (`#Serv`, `Servicio`) VALUES
+(1, 'Puente titla x 1 dia'),
+(2, 'Puente titla x 12 hrs'),
+(3, 'Puente titla x hora'),
+(4, 'puente titla baño');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `servicios.tehuantepec`
+--
+
+CREATE TABLE `servicios.tehuantepec` (
+  `#Serv` int(11) NOT NULL,
+  `Servicio` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `servicios.tehuantepec`
+--
+
+INSERT INTO `servicios.tehuantepec` (`#Serv`, `Servicio`) VALUES
+(1, 'Tehuantepec x 1 dia'),
+(2, 'Santander Mazarik'),
+(3, 'Tehuantepec x 12 horas'),
+(4, 'Tehuantepec x hora'),
+(5, 'Tehuantepec baño');
 
 -- --------------------------------------------------------
 
@@ -9062,12 +9322,6 @@ ALTER TABLE `nomina.pagos.odt`
   ADD PRIMARY KEY (`#Folio`);
 
 --
--- Indices de la tabla `nomina.pagos.prestamos`
---
-ALTER TABLE `nomina.pagos.prestamos`
-  ADD PRIMARY KEY (`#Folio`);
-
---
 -- Indices de la tabla `nomina.prestamos`
 --
 ALTER TABLE `nomina.prestamos`
@@ -9203,6 +9457,12 @@ ALTER TABLE `nominasem.pagos.cda`
 -- Indices de la tabla `nominasem.pagos.odt`
 --
 ALTER TABLE `nominasem.pagos.odt`
+  ADD PRIMARY KEY (`#Folio`);
+
+--
+-- Indices de la tabla `nominasem.pagos.prestamosem`
+--
+ALTER TABLE `nominasem.pagos.prestamosem`
   ADD PRIMARY KEY (`#Folio`);
 
 --
@@ -9362,10 +9622,34 @@ ALTER TABLE `rh.semanal.tehuantepec.val`
   ADD PRIMARY KEY (`Numregistro`);
 
 --
+-- Indices de la tabla `semanal.vales`
+--
+ALTER TABLE `semanal.vales`
+  ADD PRIMARY KEY (`#vale`);
+
+--
 -- Indices de la tabla `servicio`
 --
 ALTER TABLE `servicio`
   ADD PRIMARY KEY (`idServ`);
+
+--
+-- Indices de la tabla `servicios.iturbide`
+--
+ALTER TABLE `servicios.iturbide`
+  ADD PRIMARY KEY (`#Serv`);
+
+--
+-- Indices de la tabla `servicios.puente titla`
+--
+ALTER TABLE `servicios.puente titla`
+  ADD PRIMARY KEY (`#Serv`);
+
+--
+-- Indices de la tabla `servicios.tehuantepec`
+--
+ALTER TABLE `servicios.tehuantepec`
+  ADD PRIMARY KEY (`#Serv`);
 
 --
 -- Indices de la tabla `torteria`
@@ -9447,7 +9731,7 @@ ALTER TABLE `estadia`
 -- AUTO_INCREMENT de la tabla `imss`
 --
 ALTER TABLE `imss`
-  MODIFY `idimss` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `idimss` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT de la tabla `inropa`
@@ -9675,13 +9959,13 @@ ALTER TABLE `nomina.listas.poniente.simss`
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 1`
 --
 ALTER TABLE `nomina.listas.sur 1`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 1.simss`
 --
 ALTER TABLE `nomina.listas.sur 1.simss`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 2`
@@ -9693,7 +9977,7 @@ ALTER TABLE `nomina.listas.sur 2`
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 2.simss`
 --
 ALTER TABLE `nomina.listas.sur 2.simss`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.odt`
@@ -9714,12 +9998,6 @@ ALTER TABLE `nomina.pagos.odt`
   MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
--- AUTO_INCREMENT de la tabla `nomina.pagos.prestamos`
---
-ALTER TABLE `nomina.pagos.prestamos`
-  MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
-
---
 -- AUTO_INCREMENT de la tabla `nomina.prestamos`
 --
 ALTER TABLE `nomina.prestamos`
@@ -9735,13 +10013,13 @@ ALTER TABLE `nominasem.cajadeahorro`
 -- AUTO_INCREMENT de la tabla `nominasem.detallada.corporativo santander semanal`
 --
 ALTER TABLE `nominasem.detallada.corporativo santander semanal`
-  MODIFY `#Lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `#Lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `nominasem.detallada.corporativo santander semanal.simss`
 --
 ALTER TABLE `nominasem.detallada.corporativo santander semanal.simss`
-  MODIFY `#Lista` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `#Lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `nominasem.detallada.foraneos acapulco`
@@ -9771,7 +10049,7 @@ ALTER TABLE `nominasem.detallada.foraneos puebla.simss`
 -- AUTO_INCREMENT de la tabla `nominasem.detallada.foraneos toluca`
 --
 ALTER TABLE `nominasem.detallada.foraneos toluca`
-  MODIFY `#Lista` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `#Lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `nominasem.detallada.foraneos toluca.simss`
@@ -9795,7 +10073,7 @@ ALTER TABLE `nominasem.detallada.norte.simss`
 -- AUTO_INCREMENT de la tabla `nominasem.detallada.oficina`
 --
 ALTER TABLE `nominasem.detallada.oficina`
-  MODIFY `#Lista` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `#Lista` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `nominasem.detallada.oficina.simss`
@@ -9849,13 +10127,19 @@ ALTER TABLE `nominasem.odt`
 -- AUTO_INCREMENT de la tabla `nominasem.pagos.cda`
 --
 ALTER TABLE `nominasem.pagos.cda`
-  MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `nominasem.pagos.odt`
 --
 ALTER TABLE `nominasem.pagos.odt`
-  MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `nominasem.pagos.prestamosem`
+--
+ALTER TABLE `nominasem.pagos.prestamosem`
+  MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT de la tabla `nominasem.prestamosem`
@@ -9897,7 +10181,7 @@ ALTER TABLE `rh.depositos.norte`
 -- AUTO_INCREMENT de la tabla `rh.depositos.oficina`
 --
 ALTER TABLE `rh.depositos.oficina`
-  MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `#Folio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.depositos.poniente`
@@ -9921,37 +10205,37 @@ ALTER TABLE `rh.depositos.sur 2`
 -- AUTO_INCREMENT de la tabla `rh.empleados`
 --
 ALTER TABLE `rh.empleados`
-  MODIFY `# Exp` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6064;
+  MODIFY `# Exp` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6072;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.gast`
 --
 ALTER TABLE `rh.semanal.inturbide.gast`
-  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.nsem`
 --
 ALTER TABLE `rh.semanal.inturbide.nsem`
-  MODIFY `#Nsem` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `#Nsem` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.pen`
 --
 ALTER TABLE `rh.semanal.inturbide.pen`
-  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.scc`
 --
 ALTER TABLE `rh.semanal.inturbide.scc`
-  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.val`
 --
 ALTER TABLE `rh.semanal.inturbide.val`
-  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.ptetitla.gast`
@@ -10014,10 +10298,34 @@ ALTER TABLE `rh.semanal.tehuantepec.val`
   MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `semanal.vales`
+--
+ALTER TABLE `semanal.vales`
+  MODIFY `#vale` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
   MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+
+--
+-- AUTO_INCREMENT de la tabla `servicios.iturbide`
+--
+ALTER TABLE `servicios.iturbide`
+  MODIFY `#Serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `servicios.puente titla`
+--
+ALTER TABLE `servicios.puente titla`
+  MODIFY `#Serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `servicios.tehuantepec`
+--
+ALTER TABLE `servicios.tehuantepec`
+  MODIFY `#Serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `torteria`

@@ -1,8 +1,9 @@
 package Admin;
 
+import Nomina.Listas.Listas_5;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
-import Semanal.Inturbide_4;
+import Semanal.Iturbide_4;
 import Nomina.ModulosS.CDAS_5;
 import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosS.PresS_5;
@@ -126,6 +127,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             PreparedStatement pst = con.prepareStatement(SQL);
             pst.setInt(1, Integer.parseInt(NServSem.getText()));
             pst.setString(2, SAR.getText());
+            pst.setInt(3, Integer.parseInt(NServSem.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Servicio semanal en " + Semcbx.getSelectedItem().toString() + " modificado.");
@@ -177,7 +179,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            String sql = "SELECT * FROM `servicios.inturbide`";
+            String sql = "SELECT * FROM `servicios.iturbide`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -203,7 +205,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
                 modelo.addRow(filas);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de inturbide: \n" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de servicios de iturbide: \n" + e.getMessage());
 
         }
 
@@ -655,6 +657,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
@@ -1603,11 +1606,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jScrollPane12.setViewportView(TServInt);
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel10.setText("Servicios en Inturbide.");
+        jLabel10.setText("Servicios en Iturbide.");
 
         jLabel13.setText("Semanal en el que aparecera el servicio:");
 
-        Semcbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "puente titla", "inturbide", "tehuantepec" }));
+        Semcbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "puente titla", "iturbide", "tehuantepec" }));
 
         ADDservsem.setText("Agregar Servicio");
         ADDservsem.addActionListener(new java.awt.event.ActionListener() {
@@ -1664,6 +1667,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         NServSem.setText("0");
 
         jButton1.setText("Modificar Servicio");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1886,7 +1894,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jMenu9.setText("Semanales");
 
-        jMenuItem13.setText("Inturbide");
+        jMenuItem13.setText("Iturbide");
         jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem13ActionPerformed(evt);
@@ -2368,7 +2376,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_TorteriaActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        Iturbide_4 regr = new Iturbide_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem13ActionPerformed
@@ -2434,6 +2442,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         Semcbx.setSelectedIndex(3);
     }//GEN-LAST:event_TServTehuaMousePressed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ModsServSem();
+        MostrarServSem();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2470,10 +2483,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AltasZyS_3().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new AltasZyS_3().setVisible(true);
         });
     }
 

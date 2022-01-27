@@ -1,8 +1,9 @@
 package RH;
 
+import Nomina.Listas.Listas_5;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
-import Semanal.Inturbide_4;
+import Semanal.Iturbide_4;
 import Nomina.ModulosS.CDAS_5;
 import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosS.PresS_5;
@@ -1133,7 +1134,7 @@ public final class Tortas_4 extends javax.swing.JFrame {
 
         jMenu6.setText("Semanales");
 
-        jMenuItem10.setText("Inturbide");
+        jMenuItem10.setText("Iturbide");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
@@ -1216,7 +1217,7 @@ public final class Tortas_4 extends javax.swing.JFrame {
 
         Semanales.setText("Semanales");
 
-        jMenuItem2.setText("Inturbide");
+        jMenuItem2.setText("Iturbide");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -1424,7 +1425,7 @@ public final class Tortas_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        Iturbide_4 regr = new Iturbide_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -1527,7 +1528,7 @@ public final class Tortas_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_TorteriaActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        Iturbide_4 regr = new Iturbide_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
