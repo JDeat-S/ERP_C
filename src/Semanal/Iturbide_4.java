@@ -1,21 +1,14 @@
 package Semanal;
 
 import Nomina.Listas.Listas_5;
-import Nomina.ModulosS.CDAS_5;
-import Nomina.ModulosS.PresS_5;
-import Nomina.ModulosS.ODTS_5;
-import Nomina.ModulosQ.CDAQ_5;
-import Nomina.ModulosQ.ODTQ_5;
-import Nomina.ModulosQ.PresQ_5;
+import Nomina.ModulosS.*;
+import Nomina.ModulosQ.*;
 import Nomina.*;
 import Admin.*;
 import Conexion.ConexionSQL;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-import RH.Depositos_4;
-import RH.Empleados_4;
-import RH.Estadias_4;
-import RH.Tortas_4;
+import RH.*;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
 import ServiciosSem.ServInturbide;
@@ -8647,14 +8640,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
 
-                    cell = row.createCell(8);
-                    cell.setCellValue("Total de servicios y pensiones");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
-                    cell.setCellStyle(Contenido);
-
                     cell = row.createCell(11);
                     cell.setCellValue("el entrega");
                     cell.setCellStyle(Contenido);
@@ -8666,18 +8651,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(8);
-                    cell.setCellValue("Total restando gastos");
+                    cell.setCellValue("Total de importe de servicios:");
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total restando gastos"));
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(11);
-                    cell.setCellValue("Debe");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(12);
-                    cell.setCellValue(NSem.getString("Debe"));
+                    cell.setCellValue(NSem.getString("TIS"));
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(4);
@@ -8702,13 +8680,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(8);
-                    cell.setCellValue("Total restando gastos");
+                    cell.setCellValue("Total de importe de pensiones:");
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellValue(NSem.getString("TIP"));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(11);
 
                     row = spreadsheet.createRow(5);
                     cell = row.createCell(3);
@@ -8731,13 +8708,53 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(8);
-                    cell.setCellValue("Debe entregar");
+                    cell.setCellValue("Total de servicios y pensiones");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.getRow(6);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total de gastos");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("TG"));
+                    cell.setCellStyle(Contenido);
+                    
+                    row = spreadsheet.getRow(7);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total menos gastos");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellStyle(Contenido);
+                    
+                    row = spreadsheet.getRow(8);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Debe entregar:");
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe entregar"));
                     cell.setCellStyle(Contenido);
+                    
+                    row = spreadsheet.getRow(9);
 
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total de vales:");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("TV"));
+                    cell.setCellStyle(Contenido);
+                    
                     NSem.isClosed();
                 }
                 int i = 9;

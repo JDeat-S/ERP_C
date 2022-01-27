@@ -23,9 +23,9 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class L4 {
+public class L5 {
 
-    // <editor-fold defaultstate="collapsed" desc="Solo 4 listas">
+    // <editor-fold defaultstate="collapsed" desc="Solo 3 listas">
     public void LIS(ItemsL IL) {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -2815,7 +2815,7 @@ public class L4 {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(L4.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(L5.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 //</editor-fold>

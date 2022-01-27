@@ -45,7 +45,7 @@ public class ServInturbide {
         ServInturbide dat;
         try {
 
-            String sql = "SELECT * FROM `servicios.inturbide`";
+            String sql = "SELECT * FROM `servicios.iturbide`";
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
 

@@ -1639,6 +1639,39 @@ public class L3 {
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
+                                    50, //first row (0-based)
+                                    50, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(51);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM3.getInt("dd 3/18"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM3.getString("EEEE 3/18"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
                                     51, //first row (0-based)
                                     51, //last row (0-based)
                                     8, //first column (0-based)
@@ -1653,10 +1686,10 @@ public class L3 {
                     row = spreadsheet.createRow(52);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 3/18"));
+                    cell.setCellValue(LM3.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 3/18"));
+                    cell.setCellValue(LM3.getString("EEEE 4/19"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1686,10 +1719,10 @@ public class L3 {
                     row = spreadsheet.createRow(53);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 4/19"));
+                    cell.setCellValue(LM3.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 4/19"));
+                    cell.setCellValue(LM3.getString("EEEE 5/20"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1719,10 +1752,10 @@ public class L3 {
                     row = spreadsheet.createRow(54);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 5/20"));
+                    cell.setCellValue(LM3.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 5/20"));
+                    cell.setCellValue(LM3.getString("EEEE 6/21"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1752,10 +1785,10 @@ public class L3 {
                     row = spreadsheet.createRow(55);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 6/21"));
+                    cell.setCellValue(LM3.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 6/21"));
+                    cell.setCellValue(LM3.getString("EEEE 7/22"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1785,10 +1818,10 @@ public class L3 {
                     row = spreadsheet.createRow(56);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 7/22"));
+                    cell.setCellValue(LM3.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 7/22"));
+                    cell.setCellValue(LM3.getString("EEEE 8/23"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1818,10 +1851,10 @@ public class L3 {
                     row = spreadsheet.createRow(57);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 8/23"));
+                    cell.setCellValue(LM3.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 8/23"));
+                    cell.setCellValue(LM3.getString("EEEE 9/24"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1851,10 +1884,10 @@ public class L3 {
                     row = spreadsheet.createRow(58);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 9/24"));
+                    cell.setCellValue(LM3.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 9/24"));
+                    cell.setCellValue(LM3.getString("EEEE 10/25"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1884,10 +1917,10 @@ public class L3 {
                     row = spreadsheet.createRow(59);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 10/25"));
+                    cell.setCellValue(LM3.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 10/25"));
+                    cell.setCellValue(LM3.getString("EEEE 11/26"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1917,10 +1950,10 @@ public class L3 {
                     row = spreadsheet.createRow(60);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 11/26"));
+                    cell.setCellValue(LM3.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 11/26"));
+                    cell.setCellValue(LM3.getString("EEEE 12/27"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1950,10 +1983,10 @@ public class L3 {
                     row = spreadsheet.createRow(61);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 12/27"));
+                    cell.setCellValue(LM3.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 12/27"));
+                    cell.setCellValue(LM3.getString("EEEE 13/28"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1983,10 +2016,10 @@ public class L3 {
                     row = spreadsheet.createRow(62);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 13/28"));
+                    cell.setCellValue(LM3.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 13/28"));
+                    cell.setCellValue(LM3.getString("EEEE 14/29"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -2016,10 +2049,10 @@ public class L3 {
                     row = spreadsheet.createRow(63);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 14/29"));
+                    cell.setCellValue(LM3.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 14/29"));
+                    cell.setCellValue(LM3.getString("EEEE 15/30"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -2049,39 +2082,6 @@ public class L3 {
                     row = spreadsheet.createRow(64);
                     row.setHeight((short) 600);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM3.getInt("dd 15/30"));
-                    cell.setCellStyle(Stilodd);
-                    cell = row.createCell(1);
-                    cell.setCellValue(LM3.getString("EEEE 15/30"));
-                    cell.setCellStyle(StiloEEEE);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    64, //first row (0-based)
-                                    64, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(8);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(9);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(65);
-                    row.setHeight((short) 600);
-                    cell = row.createCell(0);
                     cell.setCellValue(LM3.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
@@ -2101,8 +2101,8 @@ public class L3 {
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    65, //first row (0-based)
-                                    65, //last row (0-based)
+                                    64, //first row (0-based)
+                                    64, //last row (0-based)
                                     8, //first column (0-based)
                                     9 //last column (0-based)
                             )
