@@ -14,6 +14,8 @@ import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
 import RH.*;
 import Logicas.*;
+import Nomina.Listas.LSIMSS.ItemsL;
+import Nomina.Listas.LSIMSS.L1;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -4369,6 +4371,8 @@ public final class pruebas extends javax.swing.JFrame {
             }
 
         }*/
+        // <editor-fold defaultstate="collapsed" desc="Solo 1 lista">
+
         if (Integer.parseInt(NDL.getText()) == 1) {
 
             String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
@@ -4419,7 +4423,14 @@ public final class pruebas extends javax.swing.JFrame {
                 pst.setString(36, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
 
                 pst.executeUpdate();
-                
+                ItemsL IL = new ItemsL();
+                IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
+                IL.setLDAzona(LDAZon.getSelectedItem().toString());
+                IL.setUNumR(Integer.parseInt(UNR.getText()));
+
+                L1 L01 = new L1();
+                L01.LIS(IL);
+
                 LDAZon.setSelectedIndex(0);
                 TDL.setSelectedIndex(0);
                 LDAQuin.setSelectedIndex(0);
@@ -4465,8 +4476,9 @@ public final class pruebas extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
             }
         }
-        // <editor-fold defaultstate="collapsed" desc="Solo 2 listas">
+        //</editor-fold>
 
+        // <editor-fold defaultstate="collapsed" desc="Solo 2 listas">
         if (Integer.parseInt(NDL.getText()) == 2) {
 
             String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "

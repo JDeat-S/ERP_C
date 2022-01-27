@@ -2,7 +2,7 @@ package Nomina.Listas.LSIMSS;
 
 /**
  *
- * @author CONFORT
+ * @author JDeat
  */
 public class ItemsL {
 
@@ -10,6 +10,38 @@ public class ItemsL {
     private String LDAQuincena;
     private int LDAsis;
     private int UNumR;
+
+    public String getLDAzona() {
+        return LDAzona;
+    }
+
+    public void setLDAzona(String LDAzona) {
+        this.LDAzona = LDAzona;
+    }
+
+    public String getLDAQuincena() {
+        return LDAQuincena;
+    }
+
+    public void setLDAQuincena(String LDAQuincena) {
+        this.LDAQuincena = LDAQuincena;
+    }
+
+    public int getLDAsis() {
+        return LDAsis;
+    }
+
+    public void setLDAsis(int LDAsis) {
+        this.LDAsis = LDAsis;
+    }
+
+    public int getUNumR() {
+        return UNumR;
+    }
+
+    public void setUNumR(int UNumR) {
+        this.UNumR = UNumR;
+    }
     
     
 }
