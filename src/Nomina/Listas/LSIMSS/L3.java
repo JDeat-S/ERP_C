@@ -23,9 +23,9 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class L2 {
+public class L3 {
 
-    // <editor-fold defaultstate="collapsed" desc="Solo 2 listas">
+    // <editor-fold defaultstate="collapsed" desc="Solo 3 listas">
     public void LIS(ItemsL IL) {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -1449,7 +1449,7 @@ public class L2 {
                 spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
                 libro.write(archivo);
             } catch (SQLException ex) {
-                Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(L3.class.getName()).log(Level.SEVERE, null, ex);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
@@ -1463,7 +1463,7 @@ public class L2 {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(L3.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
