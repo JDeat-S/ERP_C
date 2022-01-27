@@ -303,6 +303,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jSeparator13 = new javax.swing.JSeparator();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jSeparator14 = new javax.swing.JSeparator();
+        jLabel25 = new javax.swing.JLabel();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -594,13 +596,17 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 30, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 370, 250));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 120, 10));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 120, 10));
 
         jLabel21.setText("Recibe");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
 
         jLabel22.setText("# Vale");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 120, 10));
+
+        jLabel25.setText("Entrega");
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 940, 250));
 
@@ -862,6 +868,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -879,6 +886,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
