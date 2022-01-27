@@ -98,6 +98,13 @@ public final class VDE extends javax.swing.JFrame implements Printable {
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Vale registrado.");
 
+            try {
+                PrinterJob job = PrinterJob.getPrinterJob();
+                job.setPrintable((Printable) this);
+                job.printDialog();
+                job.print();
+            } catch (PrinterException ex) {
+            }
             NV.setText("0");
             Importe.setText("");
             RD.setText("");
@@ -112,13 +119,6 @@ public final class VDE extends javax.swing.JFrame implements Printable {
             En1.setText("");
             Fecha1.setDate(null);
             ImporteEsc1.setText("");
-            try {
-                PrinterJob job = PrinterJob.getPrinterJob();
-                job.setPrintable((Printable) this);
-                job.printDialog();
-                job.print();
-            } catch (PrinterException ex) {
-            }
             MNV();
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar vale");
@@ -398,7 +398,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("A-22");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, 20));
 
         NV.setText("0");
         NV.setBorder(null);
@@ -458,6 +458,11 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 89, 20));
 
         Fecha.setDateFormatString("'A' d 'de' MMMM 'de' y");
+        Fecha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                FechaMousePressed(evt);
+            }
+        });
         jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 200, -1));
 
         ImporteEsc.setColumns(20);
@@ -510,7 +515,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 Importe1KeyReleased(evt);
             }
         });
-        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, 20));
+        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 100, 20));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -527,11 +532,11 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel14.setText("Concepto:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
 
         Concepto1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Concepto1.setBorder(null);
-        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 80, 20));
+        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 120, 20));
 
         jLabel15.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel15.setText("En:");
@@ -562,8 +567,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 10));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 80, 10));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 100, 10));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 120, 10));
         jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, 10));
         jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 90, 10));
         jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 130, 10));
@@ -588,7 +593,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
 
         jLabel22.setText("# Vale");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, 20));
         jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 120, 10));
 
         jLabel24.setText("Entrega");
@@ -712,6 +717,10 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private void txtbtnexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseClicked
         this.dispose();
     }//GEN-LAST:event_txtbtnexitMouseClicked
+
+    private void FechaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FechaMousePressed
+        Fecha1.setDate(Fecha.getDate());
+    }//GEN-LAST:event_FechaMousePressed
 
     /**
      * @param args the command line arguments

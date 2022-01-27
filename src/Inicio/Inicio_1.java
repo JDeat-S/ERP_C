@@ -133,7 +133,7 @@ public class Inicio_1 extends javax.swing.JFrame {
 
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo sin fondo.png"))); // NOI18N
-        Backgraund.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, 210, 220));
+        Backgraund.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 160, 130));
 
         fondologo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/HD-wallpaper-yellow-black-black-yellow-black-yellow.jpg"))); // NOI18N
         Backgraund.add(fondologo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 220, 500));
@@ -217,7 +217,7 @@ public class Inicio_1 extends javax.swing.JFrame {
         Backgraund.add(Btningresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 110, 40));
 
         VerERP.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        VerERP.setText("Ver 2.2.0");
+        VerERP.setText("Ver 2.2.2");
         VerERP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Backgraund.add(VerERP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 454, 80, 20));
 

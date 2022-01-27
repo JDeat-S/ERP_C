@@ -7,7 +7,6 @@ import Logicas.Logica_usuarios;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.HeadlessException;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
@@ -26,7 +25,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -444,16 +442,17 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         Concepto.setEditable(false);
+        Concepto.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         Concepto.setBorder(null);
         Concepto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ConceptoKeyReleased(evt);
             }
         });
-        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 130, 20));
+        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 160, 20));
 
         jLabel6.setText("En:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
 
         En.setEditable(false);
         En.setBorder(null);
@@ -462,10 +461,10 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 EnKeyReleased(evt);
             }
         });
-        jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 89, 20));
+        jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 89, 20));
 
         Fecha.setDateFormatString("'A' d 'de' MMMM 'de' y");
-        jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 200, -1));
+        jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 200, -1));
 
         ImporteEsc.setEditable(false);
         ImporteEsc.setColumns(20);
@@ -486,10 +485,10 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 10));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 310, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 310, 10));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 170, 10));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 90, 10));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 130, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 160, 10));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -520,7 +519,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 Importe1KeyReleased(evt);
             }
         });
-        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, 20));
+        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 90, 20));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -538,12 +537,12 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel14.setText("Concepto:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 50, -1));
 
         Concepto1.setEditable(false);
         Concepto1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Concepto1.setBorder(null);
-        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 80, 20));
+        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 130, 20));
 
         jLabel15.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel15.setText("En:");
@@ -576,8 +575,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 10));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 80, 10));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 90, 10));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 130, 10));
         jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, 10));
         jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 90, 10));
         jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 130, 10));
@@ -789,6 +788,15 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             Date date2 = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse((String) model.getValueAt(seleccionar, 5));
             Fecha.setDate(date2);
             ImporteEsc.setText(String.valueOf(Tvales.getValueAt(seleccionar, 6)));
+            
+            NV1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 0)));
+            Importe1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 1)));
+            RD1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 2)));
+            Concepto1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 3)));
+            En1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 4)));
+            Date date1 = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse((String) model.getValueAt(seleccionar, 5));
+            Fecha1.setDate(date1);
+            ImporteEsc1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 6)));
 
         } catch (ParseException ex) {
             Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
