@@ -10,6 +10,15 @@ public class ItemsL {
     private String LDAQuincena;
     private int LDAsis;
     private int UNumR;
+    private int NDLista;
+
+    public int getNDLista() {
+        return NDLista;
+    }
+
+    public void setNDLista(int NDLista) {
+        this.NDLista = NDLista;
+    }
 
     public String getLDAzona() {
         return LDAzona;
@@ -42,6 +51,5 @@ public class ItemsL {
     public void setUNumR(int UNumR) {
         this.UNumR = UNumR;
     }
-    
-    
+
 }

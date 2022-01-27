@@ -1134,7 +1134,7 @@ public final class Tortas_4 extends javax.swing.JFrame {
 
         jMenu6.setText("Semanales");
 
-        jMenuItem10.setText("Inturbide");
+        jMenuItem10.setText("Iturbide");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
@@ -1217,7 +1217,7 @@ public final class Tortas_4 extends javax.swing.JFrame {
 
         Semanales.setText("Semanales");
 
-        jMenuItem2.setText("Inturbide");
+        jMenuItem2.setText("Iturbide");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
