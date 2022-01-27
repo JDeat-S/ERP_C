@@ -1,17 +1,21 @@
 package Nomina.Listas.LSIMSS;
 
+import Conexion.ConexionSQL;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.ss.usermodel.PaperSize;
@@ -22,9 +26,11 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class L1 {
+public class L2 {
 
     // <editor-fold defaultstate="collapsed" desc="Solo 1 lista">
+    ConexionSQL cc = new ConexionSQL();
+    Connection con = cc.conexion();
 
     public void LIS(ItemsL IL) {
         JFileChooser chooser = new JFileChooser();
@@ -779,12 +785,13 @@ public class L1 {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(L1.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(L1.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
     }
