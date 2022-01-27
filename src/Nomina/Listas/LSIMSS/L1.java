@@ -26,7 +26,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class L1 {
+public class L1 {/*
     // <editor-fold defaultstate="collapsed" desc="Solo 1 lista">
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -787,13 +787,11 @@ public class L1 {
                         Logger.getLogger(L1.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
-                } catch (ClassNotFoundException ex) {
+                } catch (ClassNotFoundException | SQLException ex) {
                     Logger.getLogger(L1.class.getName()).log(Level.SEVERE, null, ex);
                 }
+        //</editor-fold>
 
-               
-            
-            //</editor-fold>
 
-        }
+        }*/
     }

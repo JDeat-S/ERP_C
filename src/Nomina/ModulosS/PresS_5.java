@@ -2,7 +2,7 @@ package Nomina.ModulosS;
 
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
-import Semanal.Inturbide_4;
+import Semanal.Iturbide_4;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
@@ -1907,7 +1907,7 @@ public final class PresS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_TorteriaActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        Iturbide_4 regr = new Iturbide_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem13ActionPerformed

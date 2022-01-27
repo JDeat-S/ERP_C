@@ -7453,7 +7453,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         });
         Semanales.add(jMenuItem3);
 
-        jMenuItem4.setText("PTE titla");
+        jMenuItem4.setText("Iturbide");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -9471,7 +9471,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        PT_4 regr = new PT_4();
+        Iturbide_4 regr = new Iturbide_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed

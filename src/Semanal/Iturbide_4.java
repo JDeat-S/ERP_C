@@ -58,7 +58,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
+public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
     /**
      * Creates new form Sem_4
@@ -72,7 +72,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public Inturbide_4() {
+    public Iturbide_4() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         Otro.setVisible(false);
@@ -369,12 +369,12 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         AutoFecha.setText("" + timeStamp);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(Inturbide_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Iturbide_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
         MDsem();
     }
 
-    public Inturbide_4(Logica_usuarios usr, Logica_permisos LP) {
+    public Iturbide_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -673,10 +673,10 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
         AutoFecha.setText("" + timeStamp);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(Inturbide_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Iturbide_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
         MDsem();
-        setTitle("Semanal Inturbide # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+        setTitle("Semanal Iturbide # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
             case 0 -> {
@@ -1006,11 +1006,11 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -1139,7 +1139,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO INTURBIDE");
+                    cell.setCellValue("SERVICIO C/COBRO ITURBIDE");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);
@@ -1682,11 +1682,11 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -9139,11 +9139,11 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         JFileChooser chooser1 = new JFileChooser();
@@ -9436,11 +9436,11 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Inturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel38MousePressed
 
@@ -9568,7 +9568,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_TorteriaActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        Inturbide_4 regr = new Inturbide_4(usr, LP);
+        Iturbide_4 regr = new Iturbide_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
@@ -9974,21 +9974,25 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inturbide_4.class
+            java.util.logging.Logger.getLogger(Iturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inturbide_4.class
+            java.util.logging.Logger.getLogger(Iturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inturbide_4.class
+            java.util.logging.Logger.getLogger(Iturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inturbide_4.class
+            java.util.logging.Logger.getLogger(Iturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -9996,7 +10000,7 @@ public final class Inturbide_4 extends javax.swing.JFrame implements Runnable {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Inturbide_4().setVisible(true);
+            new Iturbide_4().setVisible(true);
         });
     }
 

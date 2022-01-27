@@ -7445,7 +7445,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         Semanales.setText("Semanales");
 
-        jMenuItem3.setText("Inturbide");
+        jMenuItem3.setText("Iturbide");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -9465,7 +9465,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Inturbide_4 regr = new Inturbide_4();
+        Iturbide_4 regr = new Iturbide_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
