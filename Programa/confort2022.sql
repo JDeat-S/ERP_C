@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2022 a las 22:21:38
+-- Tiempo de generación: 28-01-2022 a las 00:34:32
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -78,8 +78,8 @@ CREATE TABLE `admin.usuarios` (
 
 INSERT INTO `admin.usuarios` (`id_user`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Tipo de usuario`, `Usuario`, `Contraseña`, `Ultimo inicio de sesion`, `Activo`, `Ventana de acceso`) VALUES
 (1, 'Gallardo', 'Torres', 'Jhovan Alexandro', 'Administrador', 'JDeat', 0x4a4465617435353737, '17/enero/2022 08:39:32', '1', '0'),
-(2, 'Melchor', 'Flores', 'Teresa', 'Nomina', 'Nomina', 0x4e6f6d696e61, '26/enero/2022 08:44:38', '1', '2'),
-(3, 'FUENTES', 'PLATA', 'KARLA JOANA', 'Recursos Humanos', 'RH', 0x5248, '26/enero/2022 15:08:57', '1', '1'),
+(2, 'Melchor', 'Flores', 'Teresa', 'Nomina', 'Nomina', 0x4e6f6d696e61, '27/enero/2022 14:07:53', '1', '2'),
+(3, 'FUENTES', 'PLATA', 'KARLA JOANA', 'Recursos Humanos', 'RH', 0x5248, '27/enero/2022 16:32:23', '1', '1'),
 (4, 'Neri', 'Milpas', 'Guadalupe cristina', 'Administrador', 'Admin', 0x41646d696e, '24/enero/2022 10:40:27', '1', '0');
 
 -- --------------------------------------------------------
@@ -4310,7 +4310,38 @@ INSERT INTO `nomina.listas.sur 1.simss` (`NDL`, `Zona`, `Quincena`, `Apellido P`
 (28, 'sur 1', '2da Quincena de Enero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
 (29, 'sur 1', '2da Quincena de Enero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
 (30, 'sur 1', '2da Quincena de Enero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
-(31, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022');
+(31, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(32, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(33, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(34, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(35, 'sur 1', '2da Quincena de Febrero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '', '', '', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '', '', '', '2022'),
+(36, 'sur 1', '2da Quincena de Febrero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '', '', '', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '', '', '', '2022'),
+(37, 'sur 1', '2da Quincena de Febrero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '', '', '', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '', '', '', '2022'),
+(38, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(39, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(40, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(41, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(42, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(43, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(44, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(45, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(46, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(47, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(48, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(49, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(50, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(51, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(52, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(53, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(54, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(55, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(56, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(57, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(58, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(59, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(60, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(61, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(62, 'sur 1', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022');
 
 -- --------------------------------------------------------
 
@@ -4442,7 +4473,17 @@ INSERT INTO `nomina.listas.sur 2.simss` (`NDL`, `Zona`, `Quincena`, `Apellido P`
 (27, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
 (28, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
 (29, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
-(30, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022');
+(30, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(31, 'sur 2', '1ra Quincena de Febrero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', '', '2022'),
+(32, 'sur 2', '1ra Quincena de Febrero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', '', '2022'),
+(33, 'sur 2', '1ra Quincena de Febrero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', '', '2022'),
+(34, 'sur 2', '2da Quincena de Enero', '', '', '', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', '2022'),
+(35, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(36, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(37, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(38, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(39, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022'),
+(40, 'sur 2', '1ra Quincena de Enero', '', '', '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', '', '2022');
 
 -- --------------------------------------------------------
 
@@ -7274,21 +7315,21 @@ CREATE TABLE `rh.empleados` (
 --
 
 INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`, `Nombre(s)`, `# Celular`, `# Casa`, `# Recados`, `Forma de pago`, `Sueldo`, `Bono`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Status`, `Fecha entrevista`, `Fecha de ingreso`, `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja Firmada`, `Finiquito`, `Años de antiguedad`, `RFC`, `NSS`, `CURP`, `Correo electronico`, `Calle`, `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`, `Documentos originales`, `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `Observaciones`) VALUES
-(16, 'SI', 'MEJIA', 'GRIJALBA', 'ERIKA', '7225820014', '.', '.', 'TARJETA', '3700', '0', 'BANCOMER', '2851440896', 'foraneos toluca', 'oficina', 'VIGENTE', '', '', '', '', '', '', '', 'MEGE810223', '45978100100', 'MEGE810223MDFJRR08', 'NO DEJO ', 'INDEPENDENCIA', '10', '', 'CERRO DEL MURCIELAGO', 'ZINACANTEPEC', '51350', '', '', '', '', ''),
+(16, 'Si', 'MEJIA', 'GRIJALBA', 'ERIKA', '7225820014', '.', '.', 'TARJETA', '3700', '0', 'BANCOMER', '2851440896', 'foraneos toluca', '.', 'VIGENTE', '', '07/04/2014', '', '', '.', '.', '7 Años, 9 Meses, 19 Dias', 'MEGE810223', '45978100100', 'MEGE810223MDFJRR08', 'NO DEJO ', 'INDEPENDENCIA', '', '10', 'CERRO DEL MURCIELAGO', 'ZINACANTEPEC', '51350', '', '', '', '', ''),
 (28, 'NO', 'BUSTOS', 'SANCHEZ', 'EMMANUEL', '.', '.', '.', 'TARJETA', '4750', '0', 'BANCOMER', '1517151962', 'corporativo santander quincenal', 'corporativo santander quincenal', 'BAJA', '', '29/05/2014', '15/11/2021', '25/11/2021', 'SI', 'SI', '', 'BUSE780109', '70178006600', 'BUSE780109HPLSNM00', 'NO DEJO ', 'TAMAGNO', '29', '', 'EX HIPODROMO DE PERALUILLO', 'CUAUHTEMOC', '6250', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
-(29, 'SI', 'CARBAJAL', 'MARTINEZ', 'GERMAN', '.', '.', '.', 'TARJETA', '5000', '0', 'SANTANDER', '62620795749', 'corporativo santander', 'corporativo santander quincenal', 'VIGENTE', '', '29/05/2014', '', '', '', '', '', 'CAMG730502N16', '96077301271', 'CAMG730502HMCRRR04', 'NO DEJO ', 'CERRADA 12 DE DICIEMBRE', '15', '', 'LA PILA', 'LAS MAROMAS', '5710', '', '', '', '', ''),
+(29, 'Si', 'CARBAJAL', 'MARTINEZ', 'GERMAN', '.', '.', '.', 'TARJETA', '5000', '0', 'SANTANDER', '62620795749', 'corporativo santander quincenal', 'corporativo santander quincenal', 'VIGENTE', '', '29/05/2014', '', '', 'Si', 'Si', '7 Años, 7 Meses, 28 Dias', 'CAMG730502N16', '96077301271', 'CAMG730502HMCRRR04', 'NO DEJO ', 'CERRADA 12 DE DICIEMBRE', '', '15', 'LA PILA', 'LAS MAROMAS', '5710', '', '', '', '', ''),
 (30, 'NO', 'HERNANDEZ', 'NAVA', 'DIEGO MAURICIO', '.', '.', '.', 'TARJETA', '2250', '0', 'BANCOMER', '2836064264', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '11/06/2014', '15/11/2021', '02/12/2021', 'SI', 'SI', '', 'HEND870605', '11068661641', 'HEND870605HDFRVG06', 'NO DEJO ', 'ARTEAGA SALAZAR', '18', '', 'CONTADERO', 'CUAJIMALPA', '5500', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
 (31, 'NO', 'LUNA', 'MANCILLA', 'JOSE MIGUEL', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '2836064272', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '11/06/2014', '23/12/2021', '30/11/2021', 'SI', 'SI', '', 'LUMM610915', '17796171670', 'LUMM610915HDFNNG00', 'NO DEJO ', 'CERRADA GREGORIO LOPEZ', '30', '', 'SANTA FE', 'ALVARO OBREGON', '1210', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
 (35, 'NO', 'SANTANA', 'HERNANDEZ', 'RAUL', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '2836064310', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '12/06/2014', '28/12/2021', '30/11/2021', 'SI', 'SI', '', 'SAHR850919', '1118504354', 'SAHR850919HDFNRL02', 'NO DEJO ', 'VIRGINIA FABREGAS', '404', '3', 'JORGE NEGRETE', 'GUSTAVO A MADERO', '7280', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
 (36, 'NO', 'ITURBE', 'SEGURA', 'GUSTAVO', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '2836064280', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '14/06/2014', '15/11/2021', '25/11/2021', 'SI', 'SI', '', 'IUSG841201', '37088400561', 'IUSG841201HDTGS00', 'NO DEJO ', 'PROLONGACION DE JUAREZ', '257', '', 'LOCAXCO', 'CUAJIMALPA', '5360', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
-(54, 'SI', 'GONZALEZ ', 'CRUZ ', 'PEDRO ', '7225811573', '.', '.', 'TARJETA', '3000', '500', 'BANCOMER ', '2851440853', 'foraneos toluca', 'supervisor', 'VIGENTE', '', '26/03/2015', '', '', '', '', '', 'GOCP740502', '39917422329', 'GOCP740502HMCNRD03', 'NO DEJO ', 'PRIVADA JOSE MARIA MORELOS', 'ORIENTE 720A', '', 'BARRIO DE SAN SEBASTIAN ', 'TOLUCA', '50090', '', '', '', '', ''),
+(54, 'Si', 'GONZALEZ ', 'CRUZ ', 'PEDRO ', '7225811573', '.', '.', 'TARJETA', '3000', '500', '.', '2851440853', 'foraneos toluca', 'SUPERVISOR', 'VIGENTE', '', '26/03/2015', '', '', '.', '.', '6 Años, 10 Meses, 0 Dias', 'GOCP740502', '39917422329', 'GOCP740502HMCNRD03', 'NO DEJO ', 'PRIVADA JOSE MARIA MORELOS', '', 'ORIENTE 720A', 'BARRIO DE SAN SEBASTIAN ', 'TOLUCA', '50090', '', '', '', '', ''),
 (80, 'NO', 'OLVERA', 'HERRERA', 'JOSE ALBERTO', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '1293142035', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '16/05/2016', '15/11/2021', '25/11/2021', 'SI', 'SI', '', 'OEHA810907MP7', '166324179', 'OEHA810907HDFLRL06', 'NO DEJO ', 'CAMELIA', '36', '202', 'GUERRERO', 'CUAUHTEMOC', '6300', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
 (104, 'SI', 'BARRON', 'RODRIGUEZ', 'ARMANDO', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '1521096141', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA ', '', '02/05/2017', '15/11/2021', '19/11/2021', 'SI', '', '', 'BARA6502141M2', '88826520590', 'BARA650214HDFRDR04', 'NO DEJO ', 'CERRADA VASCO DE QUIROGA', 'MZ 10 LT 17', '', 'CARLOS MADRAZO', 'ALVARO OBREGON', '1320', '', '', '', '', ''),
 (123, 'SI', 'ALONSO', 'HERNANDEZ', 'DANIEL', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '1569412557', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '30/04/2018', '24/12/2021', '28/12/2021', '', '', '', 'AOHD710214', '11127100169', 'AOHD710214HDFLRN06', 'NO DEJO ', 'SANTA LUCIA ', 'MZ. 32 LT. 12', '', 'MOLINA SANTO DOMINGO', 'ALVARO OBREGON', '1130', '', '', '', '', 'ERA DE SANTANDER CONTRATADO POR OUTSOURCING SE DA DE BAJA '),
 (124, 'SI', 'MENESES', 'MARQUEZ', 'MISAEL', '.', '.', '.', 'TARJETA', '1500', '0', 'BANCOMER', '1569412573', 'corporativo santander semanal', 'corporativo santander semanal', 'BAJA', '', '30/04/2018', '23/11/2021', '30/11/2021', 'SI', 'SI', '', 'MEMM840611', '45128401028', 'MEMM840611HDFNRS04', 'NO DEJO ', 'JUAN DE LA BARRERA', 'MZ. 99 LT. 56', '', 'MONTE ALBAN', 'IZTAPALAPA', '9560', '', '', '', '', 'SE LE DA DE BAJA PORQUE ESTABA POR OUTSOURCING CON SANTANDER, LO CONTRATAN EN SANTANDER'),
-(131, 'SI', 'HERNANDEZ', 'GUERRA', 'BERNABE', '.', '.', '.', 'TARJETA', '2500', '500', 'BANCOMER', '1247846169', 'foraneos toluca', 'las costillas de don pancho', 'VIGENTE', '', '', '', '', '', '', '', 'HEGB810417', '92988139108', 'HEGB810417HPLRRR03', 'NO DEJO ', 'RAFAEL ZEPEDA', '115', '', 'GRANJAS VALLE DE GUADALUPE', 'ECATEPEC DE MORELOS', '55270', '', '', '', '', ''),
+(131, 'Si', 'HERNANDEZ', 'GUERRA', 'BERNABE', '.', '.', '.', 'TARJETA', '2500', '500', 'BANCOMER', '1247846169', 'foraneos toluca', '.', 'VIGENTE', '', '26/09/2016', '', '', '.', '.', '5 Años, 4 Meses, 0 Dias', 'HEGB810417', '92988139108', 'HEGB810417HPLRRR03', 'NO DEJO ', 'RAFAEL ZEPEDA', '', '115', 'GRANJAS VALLE DE GUADALUPE', 'ECATEPEC DE MORELOS', '55270', '', '', '', '', ''),
 (135, 'NO', 'LOPEZ', 'MATAMOROS', 'CARLOS ALBERTO', '5584519276', '', '', '', '0', '0', '', '', '', '', 'RECHAZADO', '20/12/2021', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'CHECAR MUY BIEN ANTES DE CONTRATAR, NO DA MUCHA CONFIANZA, SE LE DIJO QUE SOLO TENEMOS kowlaanVESPERTINO. VINO POR PRIMERA VEZ EL 20/01/2011'),
-(137, 'SI', 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', '.', '.', '.', 'TARJETA', '2500', '0', 'BANCOMER', '1572787230', 'corporativo santander', 'corporativo santander semanal', 'VIGENTE', '', '29/10/2019', '', '', '', '', '', 'HESE700818', '2177071509', 'HESE700818MDFRLL00', 'NO DEJO ', 'AVENIDA PLAZA DE LAS 3 CULTURAS', 'MZ. 1 LT. 31', '', 'FRACCIONAMIENTO PLAZAS DE ARAGON', 'NEZAHUALCOYOTL', '57139', '', '', '', '', ''),
+(137, 'Si', 'HERNANDEZ', 'SOLIS', 'MARIA ELENA', '.', '.', '.', 'TARJETA', '2500', '0', 'BANCOMER', '1572787230', 'corporativo santander semanal', 'corporativo santander semanal', 'VIGENTE', '', '29/10/2019', '', '', '.', '.', '2 Años, 2 Meses, 28 Dias', 'HESE700818', '2177071509', 'HESE700818MDFRLL00', 'NO DEJO ', 'AVENIDA PLAZA DE LAS 3 CULTURAS', '', 'MZ. 1 LT. 31', 'FRACCIONAMIENTO PLAZAS DE ARAGON', 'NEZAHUALCOYOTL', '57139', '', '', '', '', ''),
 (152, 'Si', 'MORALES', 'MORALES', 'LIZBETH YERLY', '.', '.', '.', 'TARJETA', '10000', '0', 'BANCOMER', '1527187486', 'Selecciona Zona', '.', 'VIGENTE', '', '01/07/2021', '', '', '.', '.', '0 Años, 6 Meses, 19 Dias', '.', '3219241670', '.', 'NO DEJO ', 'AVENIDA POPOCATEPETL', '', '362', 'GENERAL PEDRO MARIA ANAYA', 'BENITO JUAREZ', '3340', '', '', '', '', ''),
 (229, 'NO', 'ORTIZ', 'CASAS', 'JORGE', '.', '.', '.', '.', '0', '0', '.', '.', '.', '.', 'BAJA', '.', '25/11/2008', '26/01/2009', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '.', '.', '.', '.', '.', '.', '.', '.', '', 'REGRESA A DEJAR SOLICITUD EL DIA 06/07/2020. INGRESA 25-11-08 REINGRESA EL DIA 20/11/09 AL YUCATECO REINGRESA EL DIA 10/1/2010 BAJA EL DIA 27/04/2010 SE LE RETIRA DE LA TIXTLA PORQUE TUVO UN PROBLEMA CON EL SENOR DEL EDIFICIO DE A LADO \"LE CANTO UN TIRO\" Y EL DUENO DE LA TIXTLA PIDE QUE SE RETIRE YA NO QUISO TRABAJAR PORQUE DIJO QUE NO LE CONVENIA NO LE SALIA EN LA NOTARIA NI EN EL HOTEL DE REFORMA'),
 (752, 'No', 'SIERRA', 'HERNANDEZ', 'FRANCISCO', '5516228054', '58974147', '.', 'TARJETA', '1350', '250', 'BANCOMER', '2846998054', 'norte', 'LA ERA', 'VIGENTE', '19/04/2010', '20/04/2010', '', '', '.', '.', '11 Años, 8 Meses, 29 Dias', 'SIHF620411SSA', '42806261568', 'SIHF620411HDFRRR09', 'NO DEJO ', 'GABRIEL SUAREZ FRAGOSO', '2 LT. 2', 'A DEPT.202', 'SANTA MARIA', 'COACALCO', '55703', '', '', '', '', 'SUELDO ANTERIOR $1160 + 250 DE BONO'),
@@ -8096,7 +8137,7 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (5732, 'NO', 'MONTERO', 'PENALOZA', 'BOGAR JESUS', '5586514055', '5574643237', '.', '', '0', '0', '', '.', '.', '.', 'PENDIENTE', '11/06/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', ''),
 (5733, 'NO', 'RAMIREZ', 'GALVAN', 'JAVIER', '5541373041', '5571844528', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '11/06/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR LA EDAD, QUIERE UN SUELDO DE $8000.00 AL MES, PIDIO SU SOLICITUD ORIGINAL'),
 (5734, 'NO', 'LOPEZ', 'SANCHEZ', 'MARCOS ALEXIS', '.', '.', '.', '', '0', '0', '', '.', 'sur 2', 'kowlaan', 'BAJA', '', '17/05/2021', '08/06/2021', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO FUNCIONO COMO BOLETERO, SE DA DE BAJA POR CONSTANTES FALTANTES DE CORTE Y PEQUENAS FALLAS'),
-(5735, 'No', 'NUNEZ ', 'SANCHEZ ', 'DILAN ALEXANDER ', '.', '.', '.', 'TARJETA', '2000', '300', 'EFECTIVO', 'EFECTIVO', 'sur 2', 'KOWLAAN', 'VIGENTE', '', '11/12/2021', '', '', '.', '.', '0 Años, 1 Meses, 7 Dias', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'PRIMER INGRESO 09/06/2021'),
+(5735, 'No', 'NUNEZ ', 'SANCHEZ ', 'DILAN ALEXANDER ', '.', '.', '.', 'TARJETA', '2000', '300', 'EFECTIVO', 'EFECTIVO', 'Selecciona Zona', '.', 'BAJA', '', '11/12/2021', '15/01/2022', '', '.', '.', '0 Años, 1 Meses, 7 Dias', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'PRIMER INGRESO 09/06/2021'),
 (5736, 'NO', 'MONROY', 'AGUILAR', 'ENRIQUE', '.', '.', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '14/06/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'SE MARCO A SUS REFERENCIAS LABORALES Y EN UNA NO CONTESTAN, MIENTRAS QUE EN LA OTRA MENCIONAN QUE NO LO CONOCEN '),
 (5737, 'No', 'MOLINA', 'GARCIA', 'JOSE ANGEL', '5615383252', '5572629562', '.', 'TARJETA', '1550', '300', 'BANCOMER', '1558653478', 'sur 1', 'SANTANDER TLALPAN', 'VIGENTE', '22/06/2021', '23/06/2021', '', '', '.', '.', '0 Años, 6 Meses, 26 Dias', '.', '.', '.', 'NO DEJO ', 'GUADALUPE', '106', '', 'GUADALUPE PROLETARIA', 'GUSTAVO A MADERO', '7670', '', '', '', '', 'SE LE CITA AL DIA SIGUIENTE CON DOCUMENTACI?N COMPLETA PARA SU CONTRATACI?N\r'),
 (5738, 'NO', 'HERNANDEZ', 'LOPEZ', 'LUCIANO', '5536570177', '5526334572', '.', '', '0', '0', '', '.', '.', '.', 'RECHAZADO', '21/06/2021', '', '', '', '', '', '', '.', '.', '.', 'NO DEJO ', '.', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR LA EDAD'),
@@ -8327,7 +8368,11 @@ INSERT INTO `rh.empleados` (`# Exp`, `Entra a IMSS`, `Apellido P`, `Apellido M`,
 (6064, 'No', 'OSORIO', 'BENITEZ', 'SEUZ', '5585306269', '5554867575', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'EN ESPERA', '06/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'BUSCA ALGO CON HORARIO DESPUES DE LAS 09:00 AM HASTA LAS 07:00 PM '),
 (6065, 'No', 'ESTEBAN', 'VILLAR', 'JOSE ANGEL', '5527677122', '5556131207', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'RECHAZADO', '06/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'SE LE OFRECE KOWLAAN VESPERTINO FINES DE SEMANA, NO LO ACEPTA PORQUE NO TIENE FORMA DE TRASLADARSE'),
 (6066, 'No', 'GONZALEZ', 'ROCHA', 'JOSE ALEJANDRO', '5627268390', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'RECHAZADO', '03/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR POR LA EDAD, NO QUIZO REALIZAR LA SOLICITUD'),
-(6067, 'No', 'GONZALEZ', 'RAMIREZ', 'MIGUEL', '', '5556005540', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'EN ESPERA', '12/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'PARA CONTRATACION INMEDIATA EN ESPERA DE UN BANCO ');
+(6067, 'No', 'GONZALEZ', 'RAMIREZ', 'MIGUEL', '', '5556005540', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'EN ESPERA', '12/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'PARA CONTRATACION INMEDIATA EN ESPERA DE UN BANCO '),
+(6068, 'No', 'VAZQUEZ', 'DIAZ', 'RAUL', '5510283331', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'BOLETINADO', '17/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATADO, TIENE CARA DE RATERO'),
+(6069, 'No', 'NAVARRETE', 'ESTRADA', 'GABRIEL GIOVANNI', '5542647422', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'BOLETINADO', '18/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR VENIA CON EL SENOR JOSE IGNACIO E IGNACIO MARTIN, SOLO ESTABAN OBSERVANDO, MIDIENDO EL ESTACIONAMIENTO, NO DAN CONFIANZA'),
+(6070, 'No', 'NAVARRETE', 'SANCHEZ', 'JOSE IGNACIO', '5621585736', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'BOLETINADO', '18/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR, VENIA CON EL SEÑOR GABRIEL GIOVANNI E IGNACIO MARTIN, ESTABAN MIDIENDO EL AUTO, SOLO ESTABAN VIENDO EL MOVIMIENTO DEL ESTACIONAMIENTO, PRIMERO ENTRARON AL BAÑO Y DESPUES YA PIDIERON SER ENTREVISTADOS '),
+(6071, 'No', 'NAVARRETE', 'SANCHEZ', 'IGNACIO MARTIN', '', '', '', '.', '0', '0', '.', '', 'Selecciona Zona', '.', 'BOLETINADO', '18/01/2022', '', '', '', '.', '.', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'NO CONTRATAR, VENIA CON EL SEÑOR GABRIEL GIOVANNI Y JOPSE IGNACIO, ESTABAN MIDIENDO EL AUTO, SOLO ESTABAN VIENDO EL MOVIMIENTO DEL ESTACIONAMIENTO, PRIMERO ENTRARON AL BAÑO Y DESPUES YA PIDIERON SER ENTREVISTADOS ');
 
 -- --------------------------------------------------------
 
@@ -8344,6 +8389,17 @@ CREATE TABLE `rh.semanal.inturbide.gast` (
   `#Lista` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.gast`
+--
+
+INSERT INTO `rh.semanal.inturbide.gast` (`Numregistro`, `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES
+(1, 1, '5 ene. 2022', 'LIC CRISTINA REYES', '1000', '', '1650.0'),
+(2, 1, '3 ene. 2022', 'ORDEN DE TALLER ENRIQUE ZERMAN', '400', 'S2-253', '1650.0'),
+(3, 1, '3 ene. 2022', 'DEPOSITOS SANTANDER', '230', '', '1650.0'),
+(4, 1, '26 dic. 2021', 'BASURA TEHUANTEPEC', '20', '', '1650.0'),
+(5, 2, '2 ene. 2022', 'PATRULLA LA ERA STA CRUZ', '250', 'NTE-8', '250.0');
 
 -- --------------------------------------------------------
 
@@ -8367,6 +8423,14 @@ CREATE TABLE `rh.semanal.inturbide.nsem` (
   `TV` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.nsem`
+--
+
+INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`, `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`, `el entrega`, `Debe`, `TIS`, `TIP`, `TG`, `TV`) VALUES
+(1, 'jueves, 27/enero/2022', '12:49:18 PM', 'ene.-22', '5052.0', '3402.0', '0.0', '0', '0.0', '5052.0', '0.0', '1650.0', '3402.0'),
+(2, 'jueves, 27/enero/2022', '04:45:48 PM', 'ene.-22', '5900.0', '5650.0', '0.0', '0', '0.0', '5900.0', '0.0', '250.0', '5650.0');
+
 -- --------------------------------------------------------
 
 --
@@ -8383,6 +8447,14 @@ CREATE TABLE `rh.semanal.inturbide.pen` (
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.pen`
+--
+
+INSERT INTO `rh.semanal.inturbide.pen` (`Numregistro`, `Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES
+(1, 1, '27 ene. 2022', '', '', '0', '0.0'),
+(2, 2, '27 ene. 2022', '', '', '0', '0.0');
+
 -- --------------------------------------------------------
 
 --
@@ -8398,6 +8470,20 @@ CREATE TABLE `rh.semanal.inturbide.scc` (
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.scc`
+--
+
+INSERT INTO `rh.semanal.inturbide.scc` (`Numregistro`, `Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES
+(1, 1, '1 ene. 2022', 'Inturbide  x 12 hrs', '1030', '5052.0'),
+(2, 1, '1 ene. 2022', 'Inturbide x hora', '302', '5052.0'),
+(3, 1, '1 ene. 2022', 'Inturbide baño', '120', '5052.0'),
+(4, 1, '1 ene. 2022', 'Cafe', '3600', '5052.0'),
+(5, 2, '2 ene. 2022', 'Iturbide  x 12 hrs', '811', '5900.0'),
+(6, 2, '2 ene. 2022', 'Iturbide x hora', '289', '5900.0'),
+(7, 2, '2 ene. 2022', 'Iturbide baño', '120', '5900.0'),
+(8, 2, '2 ene. 2022', 'Cafe', '4680', '5900.0');
+
 -- --------------------------------------------------------
 
 --
@@ -8412,6 +8498,16 @@ CREATE TABLE `rh.semanal.inturbide.val` (
   `Importe` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `Total` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `rh.semanal.inturbide.val`
+--
+
+INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES
+(1, 1, '3 ene. 2022', 'ITURBIDE 01 DE ENERO 2022', '2753', '3402.0'),
+(2, 1, '5 ene. 2022', 'SUR 1', '649', '3402.0'),
+(3, 2, '2 ene. 2022', 'KOWLAAN 02/01/22', '4370', '5650.0'),
+(4, 2, '2 ene. 2022', 'ITURBIDE 02/01/22', '1280', '5650.0');
 
 -- --------------------------------------------------------
 
@@ -8597,6 +8693,16 @@ CREATE TABLE `semanal.vales` (
   `BPescrito` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `semanal.vales`
+--
+
+INSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito`) VALUES
+(1, '649.00', 'ISAIAS PADILLA', 'ITURBE 01 DE ENERO 2022', 'CDMX', 'A 5 de enero de 2022', 'SEISCIENTOS CUARENTA Y NUEVE , 00¢ PESOS'),
+(2, '21150', 'ISAIAS PADILLA', 'SUR 1', 'CDMX', 'A 3 de enero de 2022', 'VEINTE Y UN MIL CIENTO CINCUENTA , 00¢ PESOS'),
+(3, '4370', ' CARLOS RAMIREZ', ' KOWLAAN 02/01/22', ' CDMX', 'A 2 de enero de 2022', 'CUATRO MIL TRECIENTOS SETENTA , 00¢ PESOS'),
+(4, '1280', ' ISAIAS PADILLA', ' ITURBIDE 02/01/2022', ' CDMX', 'A 2 de enero de 2022', 'UN MIL DOSCIENTOS OCHENTA , 00¢ PESOS');
+
 -- --------------------------------------------------------
 
 --
@@ -8712,23 +8818,23 @@ INSERT INTO `servicio` (`idServ`, `idZona`, `Nombre Zona`, `Supervisor`, `Servic
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `servicios.inturbide`
+-- Estructura de tabla para la tabla `servicios.iturbide`
 --
 
-CREATE TABLE `servicios.inturbide` (
+CREATE TABLE `servicios.iturbide` (
   `#Serv` int(11) NOT NULL,
   `Servicio` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `servicios.inturbide`
+-- Volcado de datos para la tabla `servicios.iturbide`
 --
 
-INSERT INTO `servicios.inturbide` (`#Serv`, `Servicio`) VALUES
-(1, 'Inturbide x 1 dia'),
-(2, 'Inturbide  x 12 hrs'),
-(3, 'Inturbide x hora'),
-(4, 'Inturbide baño'),
+INSERT INTO `servicios.iturbide` (`#Serv`, `Servicio`) VALUES
+(1, 'Iturbide x 1 dia'),
+(2, 'Iturbide  x 12 hrs'),
+(3, 'Iturbide x hora'),
+(4, 'Iturbide baño'),
 (5, 'Cafe'),
 (6, 'Division'),
 (7, 'Club kids'),
@@ -9528,9 +9634,9 @@ ALTER TABLE `servicio`
   ADD PRIMARY KEY (`idServ`);
 
 --
--- Indices de la tabla `servicios.inturbide`
+-- Indices de la tabla `servicios.iturbide`
 --
-ALTER TABLE `servicios.inturbide`
+ALTER TABLE `servicios.iturbide`
   ADD PRIMARY KEY (`#Serv`);
 
 --
@@ -9859,7 +9965,7 @@ ALTER TABLE `nomina.listas.sur 1`
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 1.simss`
 --
 ALTER TABLE `nomina.listas.sur 1.simss`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 2`
@@ -9871,7 +9977,7 @@ ALTER TABLE `nomina.listas.sur 2`
 -- AUTO_INCREMENT de la tabla `nomina.listas.sur 2.simss`
 --
 ALTER TABLE `nomina.listas.sur 2.simss`
-  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `NDL` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `nomina.odt`
@@ -10099,37 +10205,37 @@ ALTER TABLE `rh.depositos.sur 2`
 -- AUTO_INCREMENT de la tabla `rh.empleados`
 --
 ALTER TABLE `rh.empleados`
-  MODIFY `# Exp` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6068;
+  MODIFY `# Exp` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6072;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.gast`
 --
 ALTER TABLE `rh.semanal.inturbide.gast`
-  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.nsem`
 --
 ALTER TABLE `rh.semanal.inturbide.nsem`
-  MODIFY `#Nsem` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `#Nsem` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.pen`
 --
 ALTER TABLE `rh.semanal.inturbide.pen`
-  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.scc`
 --
 ALTER TABLE `rh.semanal.inturbide.scc`
-  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.inturbide.val`
 --
 ALTER TABLE `rh.semanal.inturbide.val`
-  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `Numregistro` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `rh.semanal.ptetitla.gast`
@@ -10195,7 +10301,7 @@ ALTER TABLE `rh.semanal.tehuantepec.val`
 -- AUTO_INCREMENT de la tabla `semanal.vales`
 --
 ALTER TABLE `semanal.vales`
-  MODIFY `#vale` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `#vale` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`
@@ -10204,9 +10310,9 @@ ALTER TABLE `servicio`
   MODIFY `idServ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
--- AUTO_INCREMENT de la tabla `servicios.inturbide`
+-- AUTO_INCREMENT de la tabla `servicios.iturbide`
 --
-ALTER TABLE `servicios.inturbide`
+ALTER TABLE `servicios.iturbide`
   MODIFY `#Serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
