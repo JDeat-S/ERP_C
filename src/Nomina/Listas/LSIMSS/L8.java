@@ -23,7 +23,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class L7 {
+public class L8 {
 
     // <editor-fold defaultstate="collapsed" desc="Solo 7 listas">
     public void LIS(ItemsL IL) {
@@ -4845,7 +4845,7 @@ public class L7 {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(L7.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(L8.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 //</editor-fold>
