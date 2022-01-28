@@ -1138,7 +1138,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO INTURBIDE");
+                    cell.setCellValue("SERVICIO C/COBRO TEHUANTEPEC");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);
@@ -8652,7 +8652,7 @@ while (NSem.next()) {
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO INTURBIDE");
+                    cell.setCellValue("SERVICIO C/COBRO TEHUANTEPEC");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);
