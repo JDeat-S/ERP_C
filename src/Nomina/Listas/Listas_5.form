@@ -2427,8 +2427,8 @@
                         <Container class="javax.swing.JScrollPane" name="jScrollPane22">
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                              <JTabbedPaneConstraints tabName="Santander Semanal">
-                                <Property name="tabTitle" type="java.lang.String" value="Santander Semanal"/>
+                              <JTabbedPaneConstraints tabName="Santander Quincenal">
+                                <Property name="tabTitle" type="java.lang.String" value="Santander Quincenal"/>
                               </JTabbedPaneConstraints>
                             </Constraint>
                           </Constraints>
@@ -2600,8 +2600,8 @@
                         <Container class="javax.swing.JScrollPane" name="jScrollPane24">
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                              <JTabbedPaneConstraints tabName="Santander Quincenal">
-                                <Property name="tabTitle" type="java.lang.String" value="Santander Quincenal"/>
+                              <JTabbedPaneConstraints tabName="Santander Semanal">
+                                <Property name="tabTitle" type="java.lang.String" value="Santander Semanal"/>
                               </JTabbedPaneConstraints>
                             </Constraint>
                           </Constraints>
