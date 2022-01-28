@@ -1668,7 +1668,7 @@ public final class pruebas extends javax.swing.JFrame {
 
         jScrollPane22.setViewportView(jPanel10);
 
-        jTabbedPane3.addTab("Santander Semanal", jScrollPane22);
+        jTabbedPane3.addTab("Santander Quincenal", jScrollPane22);
 
         jLabel29.setText("Filtro:");
 
@@ -1767,7 +1767,7 @@ public final class pruebas extends javax.swing.JFrame {
 
         jScrollPane24.setViewportView(jPanel11);
 
-        jTabbedPane3.addTab("Santander Quincenal", jScrollPane24);
+        jTabbedPane3.addTab("Santander Semanal", jScrollPane24);
 
         jScrollPane3.setViewportView(jTabbedPane3);
 
@@ -3664,7 +3664,7 @@ public final class pruebas extends javax.swing.JFrame {
                         cell.setCellStyle(Contenido);
 
                         cell = row.createCell(2);
-                        spreadsheet.setColumnWidth(2, 8250);
+                        spreadsheet.setColumnWidth(2, 8000);
                         cell.setCellValue("Nombre completo");
                         cell.setCellStyle(Contenido);
                         spreadsheet.addMergedRegion(
@@ -5023,6 +5023,558 @@ public final class pruebas extends javax.swing.JFrame {
             //</editor-fold>
 
         }
+        // <editor-fold defaultstate="collapsed" desc="Solo 5 listas">
+        if (Integer.parseInt(NDL.getText()) == 5) {
+
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
+                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
+                    + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
+                    + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
+                    + " `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`,"
+                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, '', '', '', ?, ?, "
+                    + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?),"
+                    + " (?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(LDA.getText()));
+                pst.setString(2, LDAZon.getSelectedItem().toString());
+                pst.setString(3, LDAQuin.getSelectedItem().toString());
+                pst.setString(4, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(5, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(6, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(7, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(8, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(9, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(10, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(11, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(12, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(13, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(14, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(15, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(16, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(17, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(18, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(19, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(20, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(21, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(22, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(23, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(24, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(25, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(26, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(27, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(28, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(29, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(30, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(31, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(32, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(33, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(34, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(35, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(36, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(37, Integer.parseInt(LDA.getText()));
+                pst.setString(38, LDAZon.getSelectedItem().toString());
+                pst.setString(39, LDAQuin.getSelectedItem().toString());
+                pst.setString(40, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(41, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(42, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(43, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(44, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(45, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(46, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(47, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(48, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(49, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(50, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(51, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(52, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(53, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(54, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(55, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(56, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(57, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(58, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(59, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(60, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(61, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(62, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(63, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(64, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(65, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(66, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(67, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(68, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(69, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(70, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(71, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(72, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(73, Integer.parseInt(LDA.getText()));
+                pst.setString(74, LDAZon.getSelectedItem().toString());
+                pst.setString(75, LDAQuin.getSelectedItem().toString());
+                pst.setString(76, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(77, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(78, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(79, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(80, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(81, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(82, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(83, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(84, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(85, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(86, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(87, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(88, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(89, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(90, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(91, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(92, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(93, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(94, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(95, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(96, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(97, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(98, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(99, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(100, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(101, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(102, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(103, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(104, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(105, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(106, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(107, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(108, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(109, Integer.parseInt(LDA.getText()));
+                pst.setString(110, LDAZon.getSelectedItem().toString());
+                pst.setString(111, LDAQuin.getSelectedItem().toString());
+                pst.setString(112, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(113, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(114, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(115, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(116, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(117, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(118, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(119, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(120, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(121, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(122, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(123, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(124, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(125, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(126, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(127, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(128, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(129, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(130, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(131, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(132, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(133, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(134, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(135, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(136, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(137, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(138, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(139, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(140, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(141, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(142, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(143, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(144, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(145, Integer.parseInt(LDA.getText()));
+                pst.setString(146, LDAZon.getSelectedItem().toString());
+                pst.setString(147, LDAQuin.getSelectedItem().toString());
+                pst.setString(148, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(149, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(150, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(151, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(152, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(153, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(154, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(155, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(156, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(157, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(158, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(159, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(160, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(161, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(162, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(163, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(164, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(165, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(166, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(167, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(168, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(169, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(170, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(171, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(172, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(173, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(174, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(175, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(176, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(177, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(178, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(179, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(180, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+
+                pst.executeUpdate();
+
+                MostrarULDA();
+
+                ItemsL IL = new ItemsL();
+                IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
+                IL.setLDAzona(LDAZon.getSelectedItem().toString());
+                IL.setUNumR(Integer.parseInt(UNR.getText()));
+                IL.setNDLista(Integer.parseInt(NDL.getText()));
+
+                L5 L05 = new L5();
+                L05.LIS(IL);
+
+                LDAZon.setSelectedIndex(0);
+                TDL.setSelectedIndex(0);
+                LDAQuin.setSelectedIndex(0);
+                Fecha1.setDate(null);
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
+
+                pst.isClosed();
+                JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
+            } catch (SQLException error_AddLDA) {
+                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
+            }
+            //</editor-fold>
+
+        }
+
+        // <editor-fold defaultstate="collapsed" desc="Solo 6 listas">
+        if (Integer.parseInt(NDL.getText()) == 6) {
+
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
+                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
+                    + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
+                    + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
+                    + " `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`,"
+                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, '', '', '', ?, ?, "
+                    + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?),"
+                    + " (?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?),";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(LDA.getText()));
+                pst.setString(2, LDAZon.getSelectedItem().toString());
+                pst.setString(3, LDAQuin.getSelectedItem().toString());
+                pst.setString(4, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(5, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(6, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(7, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(8, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(9, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(10, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(11, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(12, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(13, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(14, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(15, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(16, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(17, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(18, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(19, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(20, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(21, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(22, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(23, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(24, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(25, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(26, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(27, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(28, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(29, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(30, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(31, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(32, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(33, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(34, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(35, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(36, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(37, Integer.parseInt(LDA.getText()));
+                pst.setString(38, LDAZon.getSelectedItem().toString());
+                pst.setString(39, LDAQuin.getSelectedItem().toString());
+                pst.setString(40, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(41, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(42, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(43, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(44, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(45, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(46, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(47, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(48, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(49, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(50, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(51, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(52, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(53, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(54, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(55, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(56, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(57, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(58, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(59, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(60, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(61, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(62, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(63, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(64, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(65, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(66, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(67, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(68, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(69, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(70, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(71, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(72, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(73, Integer.parseInt(LDA.getText()));
+                pst.setString(74, LDAZon.getSelectedItem().toString());
+                pst.setString(75, LDAQuin.getSelectedItem().toString());
+                pst.setString(76, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(77, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(78, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(79, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(80, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(81, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(82, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(83, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(84, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(85, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(86, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(87, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(88, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(89, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(90, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(91, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(92, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(93, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(94, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(95, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(96, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(97, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(98, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(99, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(100, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(101, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(102, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(103, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(104, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(105, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(106, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(107, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(108, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(109, Integer.parseInt(LDA.getText()));
+                pst.setString(110, LDAZon.getSelectedItem().toString());
+                pst.setString(111, LDAQuin.getSelectedItem().toString());
+                pst.setString(112, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(113, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(114, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(115, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(116, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(117, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(118, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(119, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(120, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(121, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(122, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(123, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(124, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(125, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(126, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(127, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(128, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(129, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(130, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(131, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(132, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(133, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(134, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(135, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(136, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(137, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(138, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(139, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(140, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(141, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(142, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(143, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(144, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(145, Integer.parseInt(LDA.getText()));
+                pst.setString(146, LDAZon.getSelectedItem().toString());
+                pst.setString(147, LDAQuin.getSelectedItem().toString());
+                pst.setString(148, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(149, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(150, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(151, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(152, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(153, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(154, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(155, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(156, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(157, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(158, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(159, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(160, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(161, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(162, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(163, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(164, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(165, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(166, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(167, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(168, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(169, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(170, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(171, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(172, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(173, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(174, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(175, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(176, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(177, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(178, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(179, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(180, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(181, Integer.parseInt(LDA.getText()));
+                pst.setString(182, LDAZon.getSelectedItem().toString());
+                pst.setString(183, LDAQuin.getSelectedItem().toString());
+                pst.setString(184, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(185, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(186, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(187, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(188, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(189, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(190, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(191, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(192, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(193, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(194, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(195, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(196, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(197, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(198, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(199, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(200, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(201, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(202, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(203, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(204, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(205, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(206, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(207, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(208, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(209, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(210, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(211, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(212, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(213, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(214, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(215, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(216, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+
+                pst.executeUpdate();
+
+                MostrarULDA();
+
+                ItemsL IL = new ItemsL();
+                IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
+                IL.setLDAzona(LDAZon.getSelectedItem().toString());
+                IL.setUNumR(Integer.parseInt(UNR.getText()));
+                IL.setNDLista(Integer.parseInt(NDL.getText()));
+
+                L6 L06 = new L6();
+                L06.LIS(IL);
+
+                LDAZon.setSelectedIndex(0);
+                TDL.setSelectedIndex(0);
+                LDAQuin.setSelectedIndex(0);
+                Fecha1.setDate(null);
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
+
+                pst.isClosed();
+                JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
+            } catch (SQLException error_AddLDA) {
+                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
+            }
+            //</editor-fold>
+
+        }
+
     }
 
     public void MDLDASIMSS() {
@@ -18703,7 +19255,7 @@ public final class pruebas extends javax.swing.JFrame {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(2);
-                    spreadsheet.setColumnWidth(2, 8250);
+                    spreadsheet.setColumnWidth(2, 8000);
                     cell.setCellValue("Nombre completo");
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
@@ -19517,7 +20069,7 @@ public final class pruebas extends javax.swing.JFrame {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(2);
-                    spreadsheet.setColumnWidth(2, 8250);
+                    spreadsheet.setColumnWidth(2, 8000);
                     cell.setCellValue("Nombre completo");
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
