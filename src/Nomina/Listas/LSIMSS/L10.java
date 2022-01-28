@@ -4898,7 +4898,7 @@ public class L10 {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
-                    spreadsheet.setColumnWidth(9, 1500);
+                    spreadsheet.setColumnWidth(9, 1400);
                     cell.setCellValue(LM8.getInt("NDL"));
                     cell.setCellStyle(Contenido);
 
@@ -5575,7 +5575,7 @@ public class L10 {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
-                    spreadsheet.setColumnWidth(9, 1500);
+                    spreadsheet.setColumnWidth(9, 1400);
                     cell.setCellValue(LM9.getInt("NDL"));
                     cell.setCellStyle(Contenido);
 
@@ -6251,7 +6251,7 @@ public class L10 {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
-                    spreadsheet.setColumnWidth(9, 2160);
+                    spreadsheet.setColumnWidth(9, 1400);
                     cell.setCellValue(LM10.getInt("NDL"));
                     cell.setCellStyle(Contenido);
 
