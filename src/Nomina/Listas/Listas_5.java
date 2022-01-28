@@ -1769,7 +1769,7 @@ public final class Listas_5 extends javax.swing.JFrame {
 
         jScrollPane22.setViewportView(jPanel10);
 
-        jTabbedPane3.addTab("Santander Semanal", jScrollPane22);
+        jTabbedPane3.addTab("Santander Quincenal", jScrollPane22);
 
         jLabel29.setText("Filtro:");
 
@@ -1868,7 +1868,7 @@ public final class Listas_5 extends javax.swing.JFrame {
 
         jScrollPane24.setViewportView(jPanel11);
 
-        jTabbedPane3.addTab("Santander Quincenal", jScrollPane24);
+        jTabbedPane3.addTab("Santander Semanal", jScrollPane24);
 
         jScrollPane3.setViewportView(jTabbedPane3);
 

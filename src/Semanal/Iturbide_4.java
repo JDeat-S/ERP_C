@@ -1077,7 +1077,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
 
-//  int i = 2;
                 while (NSem.next()) {
 
                     cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
@@ -1183,37 +1182,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
 
-                    cell = row.createCell(8);
-                    cell.setCellValue("Total de servicios y pensiones");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(11);
-                    cell.setCellValue("el entrega");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(12);
-                    cell.setCellValue(NSem.getString("el entrega"));
-                    cell.setCellStyle(Contenido);
-
                     row = spreadsheet.createRow(3);
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(8);
-                    cell.setCellValue("Total restando gastos");
+                    cell.setCellValue("Total de importe de servicios:");
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total restando gastos"));
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(11);
-                    cell.setCellValue("Debe");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(12);
-                    cell.setCellValue(NSem.getString("Debe"));
+                    cell.setCellValue(NSem.getString("TIS"));
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(4);
@@ -1238,13 +1215,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(8);
-                    cell.setCellValue("Total restando gastos");
+                    cell.setCellValue("Total de importe de pensiones:");
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellValue(NSem.getString("TIP"));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(11);
 
                     row = spreadsheet.createRow(5);
                     cell = row.createCell(3);
@@ -1267,18 +1243,89 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(8);
-                    cell.setCellValue("Debe entregar");
+                    cell.setCellValue("Total de servicios y pensiones");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(6);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total de gastos");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("TG"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(7);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total de vales entregados: ");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("TV"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.getRow(8);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total menos gastos y vales");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(9);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Debe entregar: ");
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe entregar"));
                     cell.setCellStyle(Contenido);
 
+                    row = spreadsheet.createRow(10);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("El entrega: ");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("el entrega"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(11);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Debe: ");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Debe"));
+                    cell.setCellStyle(Contenido);
+
                     NSem.isClosed();
                 }
+                spreadsheet.createRow(12);
+                spreadsheet.createRow(13);
+                spreadsheet.createRow(14);
+                spreadsheet.createRow(15);
+                spreadsheet.createRow(16);
+                spreadsheet.createRow(17);
+                spreadsheet.createRow(18);
+                spreadsheet.createRow(19);
+                spreadsheet.createRow(20);
+                spreadsheet.createRow(21);
+                spreadsheet.createRow(22);
                 int i = 9;
                 while (scc.next()) {
-                    row = spreadsheet.createRow(i);
+                    row = spreadsheet.getRow(i);
                     spreadsheet.setColumnWidth(0, 3500);
                     cell = row.createCell(0);
                     cell.setCellValue(scc.getString("Fecha"));
@@ -1309,7 +1356,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     i++;
 
-                    row = spreadsheet.createRow(i);
+                    row = spreadsheet.getRow(i);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
                     cell.setCellValue("TOTAL: ");
@@ -1737,7 +1784,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             modelo.addColumn("Hora");//
             modelo.addColumn("Mes y año");//4
             modelo.addColumn("Total de Serv y Pen");
-            modelo.addColumn("Total - gastos");//6
+            modelo.addColumn("Total - gastos y vales");//6
             modelo.addColumn("Debe entregar");
             modelo.addColumn("El entrega");
             modelo.addColumn("Debe");
@@ -2113,7 +2160,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Importe38.setText("0");
         Importe39.setText("0");
         TDSYP.setText("0");
-        TMG.setText("0");
+        TMGYV.setText("0");
         DE.setText("0");
         EEntrega.setText("0");
         DBe.setText("0");
@@ -2136,7 +2183,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(3, Autohora.getText());
             pst.setString(4, mmyy);
             pst.setString(5, TDSYP.getText());
-            pst.setString(6, TMG.getText());
+            pst.setString(6, TMGYV.getText());
             pst.setString(7, DE.getText());
             pst.setString(8, EEntrega.getText());
             pst.setString(9, DBe.getText());
@@ -4107,6 +4154,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         TDIDP.setText("" + TotalPen);
         //</editor-fold>
 
+        // <editor-fold defaultstate="collapsed" desc="Total SYP">
+        double TDSYP1 = Double.parseDouble(TDIDS.getText());
+        double TDSYP2 = Double.parseDouble(TDIDP.getText());
+
+        double TotalSYP = TDSYP1 + TDSYP2;
+        TDSYP.setText("" + TotalSYP);
+        //</editor-fold>
+
         // <editor-fold defaultstate="collapsed" desc="Suma Gastos">
         double Gasto1 = Double.parseDouble(Importe20.getText());
         double Gasto2 = Double.parseDouble(Importe21.getText());
@@ -4132,20 +4187,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 + Double.parseDouble(Importe38.getText()) + Double.parseDouble(Importe39.getText())));
         //</editor-fold>
 
-        // <editor-fold defaultstate="collapsed" desc="Total SYP">
-        double TDSYP1 = Double.parseDouble(TDIDS.getText());
-        double TDSYP2 = Double.parseDouble(TDIDP.getText());
-
-        double TotalSYP = TDSYP1 + TDSYP2;
-        TDSYP.setText("" + TotalSYP);
-        //</editor-fold>
-
-        // <editor-fold defaultstate="collapsed" desc="Total menos gastos">
-        TMG.setText("" + (Double.parseDouble(TDSYP.getText()) - Double.parseDouble(TDG.getText())));
+        // <editor-fold defaultstate="collapsed" desc="Total menos gastos y vales">
+        TMGYV.setText("" + (Double.parseDouble(TDSYP.getText()) - (Double.parseDouble(TDG.getText()) + Double.parseDouble(TDV.getText()))));
         //</editor-fold>
 
         // <editor-fold defaultstate="collapsed" desc="Debe entregar">
-        DE.setText("" + (Double.parseDouble(TMG.getText()) - Double.parseDouble(TDV.getText())));
+        DE.setText("" + (Double.parseDouble(TDSYP.getText()) - (Double.parseDouble(TDG.getText()) + Double.parseDouble(TDV.getText()))));
         //</editor-fold>
 
         // <editor-fold defaultstate="collapsed" desc="Debe">
@@ -4447,7 +4494,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         NVale = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        TMG = new javax.swing.JLabel();
+        TMGYV = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         EEntrega = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
@@ -6751,9 +6798,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         jScrollPane5.setViewportView(jPanel5);
 
-        jLabel27.setText("Total menos gastos:");
+        jLabel27.setText("Total menos gastos y vales:");
 
-        TMG.setText("0");
+        TMGYV.setText("0");
 
         jLabel30.setText("El entrega:");
 
@@ -7037,7 +7084,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         TDG.setText("0");
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel12.setText("Total de Vales:");
+        jLabel12.setText("Total de Vales entregados:");
 
         TDV.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         TDV.setText("0");
@@ -7078,18 +7125,20 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel18)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel27)
-                                        .addComponent(jLabel9)
-                                        .addComponent(jLabel30)
-                                        .addComponent(jLabel31)
-                                        .addComponent(jLabel12))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(115, 115, 115)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel30)
+                                            .addComponent(jLabel31)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
-                                        .addComponent(jLabel5)))
+                                        .addComponent(jLabel5))
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -7106,18 +7155,20 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                             .addComponent(AutoFecha)
                                             .addComponent(Autohora)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(TDG)
-                                            .addComponent(TMG)
-                                            .addComponent(DE)
-                                            .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                            .addComponent(TDV)
-                                            .addComponent(DBe))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton1)
-                                            .addComponent(jLabel41)
-                                            .addComponent(jLabel1))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(TDG)
+                                                    .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                                    .addComponent(DBe))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jButton1)
+                                                    .addComponent(jLabel41)
+                                                    .addComponent(jLabel1)))
+                                            .addComponent(TMGYV)
+                                            .addComponent(TDV)
+                                            .addComponent(DE))
                                         .addGap(0, 8, Short.MAX_VALUE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel34)
@@ -7158,16 +7209,16 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     .addComponent(TDG))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(TDV))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(TMG))
+                            .addComponent(TMGYV))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(DE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(TDV))
                         .addGap(5, 5, 5)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30)
@@ -7721,9 +7772,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Addsgast();
         Addspen();
         Addval();
+        MostrarNDS();
+        MDsem();
         Reporte1();
         Reporte2();
-        MostrarNDS();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Importe10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyReleased
@@ -8534,7 +8586,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
 
-//  int i = 2;
                 while (NSem.next()) {
 
                     cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
@@ -8589,7 +8640,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("SERVICIO C/COBRO INTURBIDE");
+                    cell.setCellValue("SERVICIO C/COBRO ITURBIDE");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);
@@ -8638,13 +8689,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(11);
-                    cell.setCellValue("el entrega");
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(12);
-                    cell.setCellValue(NSem.getString("el entrega"));
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(3);
@@ -8715,7 +8759,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
                     cell.setCellStyle(Contenido);
 
-                    row = spreadsheet.getRow(6);
+                    row = spreadsheet.createRow(6);
 
                     cell = row.createCell(8);
                     cell.setCellValue("Total de gastos");
@@ -8724,42 +8768,73 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TG"));
                     cell.setCellStyle(Contenido);
-                    
-                    row = spreadsheet.getRow(7);
+
+                    row = spreadsheet.createRow(7);
 
                     cell = row.createCell(8);
-                    cell.setCellValue("Total menos gastos");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Total restando gastos"));
-                    cell.setCellStyle(Contenido);
-                    
-                    row = spreadsheet.getRow(8);
-
-                    cell = row.createCell(8);
-                    cell.setCellValue("Debe entregar:");
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    cell.setCellValue(NSem.getString("Debe entregar"));
-                    cell.setCellStyle(Contenido);
-                    
-                    row = spreadsheet.getRow(9);
-
-                    cell = row.createCell(8);
-                    cell.setCellValue("Total de vales:");
+                    cell.setCellValue("Total de vales entregados: ");
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TV"));
                     cell.setCellStyle(Contenido);
-                    
+
+                    row = spreadsheet.getRow(8);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Total menos gastos y vales");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Total restando gastos"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(9);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Debe entregar: ");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Debe entregar"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(10);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("El entrega: ");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("el entrega"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(11);
+
+                    cell = row.createCell(8);
+                    cell.setCellValue("Debe: ");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    cell.setCellValue(NSem.getString("Debe"));
+                    cell.setCellStyle(Contenido);
+
                     NSem.isClosed();
                 }
+                spreadsheet.createRow(12);
+                spreadsheet.createRow(13);
+                spreadsheet.createRow(14);
+                spreadsheet.createRow(15);
+                spreadsheet.createRow(16);
+                spreadsheet.createRow(17);
+                spreadsheet.createRow(18);
+                spreadsheet.createRow(19);
+                spreadsheet.createRow(20);
+                spreadsheet.createRow(21);
+                spreadsheet.createRow(22);
                 int i = 9;
                 while (scc.next()) {
-                    row = spreadsheet.createRow(i);
+                    row = spreadsheet.getRow(i);
                     spreadsheet.setColumnWidth(0, 3500);
                     cell = row.createCell(0);
                     cell.setCellValue(scc.getString("Fecha"));
@@ -8790,7 +8865,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     i++;
 
-                    row = spreadsheet.createRow(i);
+                    row = spreadsheet.getRow(i);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
                     cell.setCellValue("TOTAL: ");
@@ -9050,7 +9125,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                             )
                     );
                     cell = row.createCell(0);
-                    cell.setCellValue("VALES");
+                    cell.setCellValue("VALES ENTREGADOS");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
                     cell.setCellStyle(Contenido);
@@ -10283,7 +10358,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel TDIDS;
     private javax.swing.JLabel TDSYP;
     private javax.swing.JLabel TDV;
-    private javax.swing.JLabel TMG;
+    private javax.swing.JLabel TMGYV;
     private javax.swing.JTable TSem;
     private javax.swing.JTable TSem1;
     private javax.swing.JTable TSem2;
