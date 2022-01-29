@@ -6302,7 +6302,7 @@ public class L10 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2020);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
