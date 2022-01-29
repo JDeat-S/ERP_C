@@ -6302,7 +6302,7 @@ public class L12 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2020);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -6979,7 +6979,7 @@ public class L12 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2240);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -7529,7 +7529,7 @@ public class L12 {
 
                 Statement sLM12 = connect.createStatement();
                 ResultSet LM12 = sLM12.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
-                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 12");
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 11");
 
                 while (LM12.next()) {
 
@@ -7656,7 +7656,7 @@ public class L12 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2460);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);

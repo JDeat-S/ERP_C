@@ -6302,7 +6302,7 @@ public class L17 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2020);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -6979,7 +6979,7 @@ public class L17 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2240);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -7656,7 +7656,7 @@ public class L17 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2460);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -8278,7 +8278,7 @@ public class L17 {
                     //cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
                     cell.setCellValue(LM13.getString("Zona"));
-                    spreadsheet.setColumnWidth(8, 4272);
+                    spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
@@ -8333,7 +8333,7 @@ public class L17 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2680);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -8955,7 +8955,7 @@ public class L17 {
                     //cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
                     cell.setCellValue(LM14.getString("Zona"));
-                    spreadsheet.setColumnWidth(8, 4294);
+                    spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
@@ -9010,7 +9010,7 @@ public class L17 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2900);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -9631,7 +9631,7 @@ public class L17 {
                     //cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
                     cell.setCellValue(LM15.getString("Zona"));
-                    spreadsheet.setColumnWidth(8, 4316);
+                    spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
@@ -9686,7 +9686,7 @@ public class L17 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 3120);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -10308,7 +10308,7 @@ public class L17 {
                     //cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
                     cell.setCellValue(LM16.getString("Zona"));
-                    spreadsheet.setColumnWidth(8, 4338);
+                    spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
@@ -10363,7 +10363,7 @@ public class L17 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 3340);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -10984,7 +10984,7 @@ public class L17 {
                     //cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
                     cell.setCellValue(LM17.getString("Zona"));
-                    spreadsheet.setColumnWidth(8, 4360);
+                    spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
@@ -11039,7 +11039,7 @@ public class L17 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 3560);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);

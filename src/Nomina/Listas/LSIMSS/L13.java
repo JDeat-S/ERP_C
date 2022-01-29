@@ -87,7 +87,7 @@ public class L13 {
                 Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
 
-                XSSFRow row = spreadsheet.createRow((short) 0);
+                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
 
                 cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
@@ -6302,7 +6302,7 @@ public class L13 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2020);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -6979,7 +6979,7 @@ public class L13 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2240);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -7529,7 +7529,7 @@ public class L13 {
 
                 Statement sLM12 = connect.createStatement();
                 ResultSet LM12 = sLM12.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
-                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 12");
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 11");
 
                 while (LM12.next()) {
 
@@ -7656,7 +7656,7 @@ public class L13 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2460);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
@@ -8206,7 +8206,7 @@ public class L13 {
 
                 Statement sLM13 = connect.createStatement();
                 ResultSet LM13 = sLM13.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
-                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 13");
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 11");
 
                 while (LM13.next()) {
 
@@ -8278,7 +8278,7 @@ public class L13 {
                     //cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
                     cell.setCellValue(LM13.getString("Zona"));
-                    spreadsheet.setColumnWidth(8, 4272);
+                    spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
@@ -8333,7 +8333,7 @@ public class L13 {
 
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
-                    spreadsheet.setColumnWidth(7, 2680);
+                    spreadsheet.setColumnWidth(7, 1800);
                     cell.setCellValue("Doble");
 
                     cell.setCellStyle(Contenido);
