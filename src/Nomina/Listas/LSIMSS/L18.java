@@ -23,9 +23,9 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class L17 {
+public class L18 {
 
-    // <editor-fold defaultstate="collapsed" desc="Solo 17 listas">
+    // <editor-fold defaultstate="collapsed" desc="Solo 18 listas">
     public void LIS(ItemsL IL) {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -11612,7 +11612,7 @@ public class L17 {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(L17.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(L18.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 //</editor-fold>
