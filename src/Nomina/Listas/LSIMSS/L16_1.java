@@ -1,6 +1,6 @@
 package Nomina.Listas.LSIMSS;
 
-import Pruebas.pruebas;
+import Pruebas.Listas_SI_5;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
