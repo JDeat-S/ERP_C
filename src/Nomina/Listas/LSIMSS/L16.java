@@ -1,6 +1,6 @@
 package Nomina.Listas.LSIMSS;
 
-import Pruebas.pruebas;
+import Pruebas.Listas_SI_5;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -9579,11 +9579,11 @@ public class L16 {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Listas_SI_5.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(pruebas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Listas_SI_5.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(L16.class.getName()).log(Level.SEVERE, null, ex);
         }

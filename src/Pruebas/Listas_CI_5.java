@@ -52,7 +52,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public final class pruebas extends javax.swing.JFrame {
+public final class Listas_CI_5 extends javax.swing.JFrame {
 
     /**
      * Creates new form Listas
@@ -63,7 +63,7 @@ public final class pruebas extends javax.swing.JFrame {
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public pruebas() {
+    public Listas_CI_5() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         ListasGen.setVisible(false);
@@ -210,10 +210,10 @@ public final class pruebas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         ExcelSI.setVisible(false);
-        setIconImage(new ImageIcon(pruebas.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Listas_CI_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
 
-    public pruebas(Logica_usuarios usr, Logica_permisos LP) {
+    public Listas_CI_5(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -362,7 +362,7 @@ public final class pruebas extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         ExcelSI.setVisible(false);
-        setIconImage(new ImageIcon(pruebas.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Listas_CI_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         setTitle("Listas de asistencia. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
@@ -13579,7 +13579,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -13680,7 +13680,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -13792,7 +13792,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -13904,7 +13904,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14016,7 +14016,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14129,7 +14129,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14244,7 +14244,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14355,7 +14355,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14468,7 +14468,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14581,7 +14581,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14696,7 +14696,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14809,7 +14809,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14922,7 +14922,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15035,7 +15035,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15150,7 +15150,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15263,7 +15263,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15378,7 +15378,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15491,7 +15491,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15604,7 +15604,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15717,7 +15717,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15832,7 +15832,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15945,7 +15945,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16058,7 +16058,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16171,7 +16171,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16286,7 +16286,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16435,7 +16435,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -16548,7 +16548,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -16658,7 +16658,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -16767,7 +16767,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16876,7 +16876,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16985,7 +16985,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17096,7 +17096,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17205,7 +17205,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17314,7 +17314,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17423,7 +17423,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17534,7 +17534,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17643,7 +17643,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17752,7 +17752,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17861,7 +17861,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17972,7 +17972,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18081,7 +18081,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18192,7 +18192,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18301,7 +18301,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18410,7 +18410,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18519,7 +18519,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18630,7 +18630,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18739,7 +18739,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18848,7 +18848,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18957,7 +18957,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19068,7 +19068,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19213,7 +19213,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -19314,7 +19314,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -19426,7 +19426,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -19538,7 +19538,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19650,7 +19650,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19763,7 +19763,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19878,7 +19878,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19989,7 +19989,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -20102,7 +20102,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -20215,7 +20215,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -20330,7 +20330,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -20443,7 +20443,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -20556,7 +20556,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -20669,7 +20669,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -20784,7 +20784,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -20897,7 +20897,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21012,7 +21012,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21125,7 +21125,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21238,7 +21238,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21351,7 +21351,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21466,7 +21466,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21579,7 +21579,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21692,7 +21692,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21805,7 +21805,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -21920,7 +21920,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -22069,7 +22069,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -22182,7 +22182,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -22292,7 +22292,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -22401,7 +22401,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -22510,7 +22510,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -22619,7 +22619,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -22730,7 +22730,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -22839,7 +22839,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -22948,7 +22948,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23057,7 +23057,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23168,7 +23168,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23277,7 +23277,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23386,7 +23386,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23495,7 +23495,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23606,7 +23606,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23715,7 +23715,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23826,7 +23826,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -23935,7 +23935,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -24044,7 +24044,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -24153,7 +24153,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -24264,7 +24264,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -24373,7 +24373,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -24482,7 +24482,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -24591,7 +24591,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -24702,7 +24702,7 @@ public final class pruebas extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -26347,13 +26347,13 @@ public final class pruebas extends javax.swing.JFrame {
                     throw e;
 
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
 
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(pruebas.class
+                Logger.getLogger(Listas_CI_5.class
                         .getName()).log(Level.SEVERE, null, ex);
             }
 
@@ -27146,7 +27146,7 @@ public final class pruebas extends javax.swing.JFrame {
                     libro.write(archivo);
 
                 } catch (SQLException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
                 Desktop.getDesktop().open(archivoXLS);
@@ -27156,13 +27156,13 @@ public final class pruebas extends javax.swing.JFrame {
                     throw e;
 
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(pruebas.class
+                    Logger.getLogger(Listas_CI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
 
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(pruebas.class
+                Logger.getLogger(Listas_CI_5.class
                         .getName()).log(Level.SEVERE, null, ex);
             }
             LDAZon.setSelectedIndex(0);
@@ -28196,7 +28196,7 @@ public final class pruebas extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        pruebas regr = new pruebas(usr, LP);
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
@@ -28287,7 +28287,7 @@ public final class pruebas extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void LDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA1ActionPerformed
-        pruebas regr = new pruebas(usr, LP);
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDA1ActionPerformed
@@ -28393,10 +28393,26 @@ public final class pruebas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(pruebas.class
+            java.util.logging.Logger.getLogger(Listas_CI_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -28419,7 +28435,7 @@ public final class pruebas extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new pruebas().setVisible(true);
+            new Listas_CI_5().setVisible(true);
         });
     }
 
