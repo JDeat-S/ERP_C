@@ -25,37 +25,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class L17 {
 
-    XSSFWorkbook libro = new XSSFWorkbook();
-    XSSFSheet spreadsheet = libro.createSheet("Listas de asistencia");
-    XSSFRow row = spreadsheet.createRow((short) 0);
-    XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-
-    public XSSFRow getRow() {
-        return row;
-    }
-
-    public void setRow(XSSFRow row) {
-        this.row = row;
-    }
-
-    public XSSFCell getCell() {
-        return cell;
-    }
-
-    public void setCell(XSSFCell cell) {
-        this.cell = cell;
-    }
-
-    public XSSFWorkbook getLibro() {
-        return libro;
-    }
-
-    public void setLibro(XSSFWorkbook libro) {
-        this.libro = libro;
-    }
+     
     // <editor-fold defaultstate="collapsed" desc="Solo 17 listas">
     public void LIS(ItemsL IL) {
-        JFileChooser chooser = new JFileChooser();
+ JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
         chooser.setSelectedFile(new File("Listas de asistencia de la " + IL.getLDAQuincena() + " zona "
                 + IL.getLDAzona()));
@@ -72,32 +45,41 @@ public class L17 {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
+
             int PL = (IL.getUNumR() - IL.getNDLista()) + 1;
             Statement SLM1 = connect.createStatement();
             ResultSet LM1 = SLM1.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
                     + PL + "' AND '" + IL.getUNumR() + "' LIMIT 1");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                XSSFWorkbook libro = new XSSFWorkbook();
+                XSSFSheet spreadsheet = libro.createSheet("Listas de asistencia");
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
                 XSSFCellStyle Stilodd = libro.createCellStyle();
+
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -105,8 +87,13 @@ public class L17 {
                 Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+
+                XSSFRow row = spreadsheet.createRow((short) 0);
+                XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+
                 cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
                 cell.setCellStyle(Encabezado);
+
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
                                 0, //first row (0-based)
@@ -115,10 +102,12 @@ public class L17 {
                                 9 //last column (0-based)
                         )
                 );
+
                 row = spreadsheet.createRow(1);
                 cell = row.createCell(2);
                 cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
                 cell.setCellStyle(Encabezado);
+
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
                                 1, //first row (0-based)
@@ -127,6 +116,7 @@ public class L17 {
                                 7 //last column (0-based)
                         )
                 );
+
                 row = spreadsheet.createRow(4);
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
@@ -141,9 +131,11 @@ public class L17 {
                 spreadsheet.setColumnWidth(0, 750);
                 cell.setCellValue("Fecha");
                 cell.setCellStyle(Contenido);
+
                 spreadsheet.setColumnWidth(1, 2500);
                 cell = row.createCell(1);
                 cell.setCellStyle(Contenido);
+
                 cell = row.createCell(2);
                 spreadsheet.setColumnWidth(2, 8000);
                 cell.setCellValue("Nombre completo");
@@ -169,10 +161,12 @@ public class L17 {
                 cell = row.createCell(6);
                 spreadsheet.setColumnWidth(6, 5000);
                 cell.setCellValue("Lugar");
+
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(7);
                 spreadsheet.setColumnWidth(7, 1800);
                 cell.setCellValue("Doble");
+
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(8);
                 spreadsheet.setColumnWidth(8, 5650);
@@ -188,7 +182,9 @@ public class L17 {
                                 9 //last column (0-based)
                         )
                 );
+
                 while (LM1.next()) {
+
                     row = spreadsheet.createRow(2);
                     row.setHeight((short) 400);
                     cell = row.createCell(0);
@@ -8886,11 +8882,683 @@ public class L17 {
                     cell.setCellStyle(Contenido);
                 }
 
-                
-                L17_1 L017_1 = new L17_1();
-                L017_1.LIS(IL, this);
-                getCell();
-                getRow();
+                Statement sLM14 = connect.createStatement();
+                ResultSet LM14 = sLM14.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 14");
+
+                while (LM14.next()) {
+
+                    row = spreadsheet.createRow((short) 286);
+                    cell = (XSSFCell) row.createCell((short) 0);
+                    cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    286, //first row (0-based)
+                                    286, //last row (0-based)
+                                    0, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(287);
+                    cell = row.createCell(2);
+                    cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    287, //first row (0-based)
+                                    287, //last row (0-based)
+                                    2, //first column (0-based)
+                                    7 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(288);
+                    row.setHeight((short) 400);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getString("Quincena") + " " + LM14.getString("y 1/16"));
+                    cell.setCellStyle(Contenido);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    288, //first row (0-based)
+                                    288, //last row (0-based)
+                                    0, //first column (0-based)
+                                    2 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellValue("Servicio");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    288, //first row (0-based)
+                                    288, //last row (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    //cell = row.createCell(7);
+                    //cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellValue(LM14.getString("Zona"));
+                    spreadsheet.setColumnWidth(8, 4250);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(9);
+                    spreadsheet.setColumnWidth(9, 1400);
+                    cell.setCellValue(LM14.getInt("NDL"));
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(290);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    290, //first row (0-based)
+                                    290, //last row (0-based)
+                                    0, //first column (0-based)
+                                    1 //last column (0-based)
+                            )
+                    );
+                    row.setHeight((short) 500);
+                    cell = row.createCell(0);
+                    spreadsheet.setColumnWidth(0, 750);
+                    cell.setCellValue("Fecha");
+                    cell.setCellStyle(Contenido);
+
+                    spreadsheet.setColumnWidth(1, 2940);
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(2);
+                    spreadsheet.setColumnWidth(2, 8000);
+                    cell.setCellValue("Nombre completo");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    290, //last row (0-based)
+                                    290, //last row (0-based)
+                                    1, //first column (0-based)
+                                    3 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(3);
+                    cell.setCellValue("Entrada");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellValue("Salida");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    spreadsheet.setColumnWidth(5, 5000);
+                    cell.setCellValue("Firma");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    spreadsheet.setColumnWidth(6, 5000);
+                    cell.setCellValue("Lugar");
+
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    spreadsheet.setColumnWidth(7, 1800);
+                    cell.setCellValue("Doble");
+
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    spreadsheet.setColumnWidth(8, 5650);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    290, //last row (0-based)
+                                    290, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+
+                    row = spreadsheet.createRow(291);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellStyle(Stilodd);
+                    cell.setCellValue(LM14.getInt("dd 1/16"));
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 1/16"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    291, //last row (0-based)
+                                    291, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(292);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 2/17"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 2/17"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    292, //last row (0-based)
+                                    292, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(293);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 3/18"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 3/18"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    293, //last row (0-based)
+                                    293, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(294);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 4/19"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 4/19"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    294, //last row (0-based)
+                                    294, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(295);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 5/20"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 5/20"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    295, //first row (0-based)
+                                    295, //first row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(296);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 6/21"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 6/21"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    296, //first row (0-based)
+                                    296, //first row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(297);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 7/22"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 7/22"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    297, //first row (0-based)
+                                    297, //first row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(298);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 8/23"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 8/23"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    298,
+                                    298,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(299);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 9/24"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 9/24"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    299,
+                                    299,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(300);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 10/25"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 10/25"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    300,
+                                    300,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(301);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 11/26"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 11/26"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    301,
+                                    301,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(302);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 12/27"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 12/27"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    302,
+                                    302,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(303);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 13/28"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 13/28"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    303,
+                                    303,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(304);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 14/29"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 14/29"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    304,
+                                    304,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(305);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getInt("dd 15/30"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 15/30"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    305,
+                                    305,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(306);
+                    row.setHeight((short) 600);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM14.getString("dd 31"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM14.getString("EEEE 31"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    306,
+                                    306,
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+                }
+
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
@@ -8900,20 +9568,23 @@ public class L17 {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
                 spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
+
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Listas_SI_5.class.getName()).log(Level.SEVERE, null, ex);
             }
+
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Listas_SI_5.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(L17.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(L14.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 //</editor-fold>

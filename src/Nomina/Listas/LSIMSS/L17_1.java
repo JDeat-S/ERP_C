@@ -2755,8 +2755,6 @@ public class L17_1 {
                 cell = row.createCell(9);
                 cell.setCellStyle(Contenido);
             }
-            L017.setRow(row);
-            L017.setCell(cell);
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(L16_1.class.getName()).log(Level.SEVERE, null, ex);
