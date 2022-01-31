@@ -3530,7 +3530,7 @@ public final class Listas_5 extends javax.swing.JFrame {
 
     public void MostrarULDA() {
         if (CI.isSelected() == true) {
-            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'nomina.listas." + LDAZon.getText() + "'";
+            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022' AND TABLE_NAME = 'nomina.listas." + LDAZon.getText() + "'";
             try {
                 java.sql.Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(SQL);
@@ -3548,7 +3548,7 @@ public final class Listas_5 extends javax.swing.JFrame {
 
         }
         if (CI.isSelected() == false) {
-            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort' AND TABLE_NAME = 'nomina.listas." + LDAZon.getText() + ".simss'";
+            String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022' AND TABLE_NAME = 'nomina.listas." + LDAZon.getText() + ".simss'";
             try {
                 java.sql.Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery(SQL);
@@ -3713,9 +3713,9 @@ public final class Listas_5 extends javax.swing.JFrame {
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection connect = DriverManager.getConnection(
-                            "jdbc:mysql://192.168.1.170:3306/confort",
-                            "Servidor",
-                            "Confort1022"
+                            "jdbc:mysql://localhost:3306/confort2022",
+                            "root",
+                            ""
                     );
 
                     Statement statement = connect.createStatement();
