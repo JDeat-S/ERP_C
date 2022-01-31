@@ -1,6 +1,6 @@
 package Nomina.Listas.LCIMSS;
 
-import Pruebas.Listas_CI_5;
+import Pruebas.Listas_CI_5_Pruebas;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -1458,11 +1458,11 @@ public class L2 {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Listas_CI_5.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Listas_CI_5_Pruebas.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Listas_CI_5.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Listas_CI_5_Pruebas.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
         }

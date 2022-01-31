@@ -132,12 +132,20 @@
                     </MenuItem>
                   </SubComponents>
                 </Menu>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem12">
+                <MenuItem class="javax.swing.JMenuItem" name="LDA1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Listas de asistencia"/>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia C/IMSS "/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem12ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA1ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="LDA4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA4ActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>
@@ -346,10 +354,18 @@
             </Menu>
             <MenuItem class="javax.swing.JMenuItem" name="LDA">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Listas de asistencia"/>
+                <Property name="text" type="java.lang.String" value="Listas de asistencia C/IMSS "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDAActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="LDA3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA3ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

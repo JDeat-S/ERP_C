@@ -1,4 +1,4 @@
-package Pruebas;
+package Nomina.Listas;
 
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -14,7 +14,7 @@ import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
 import RH.*;
 import Logicas.*;
-import Nomina.Listas.LCIMSS.*;
+import Nomina.Listas.LSIMSS.*;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -52,7 +52,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDeat
  */
-public final class Listas_CI_5 extends javax.swing.JFrame {
+public final class Listas_SI_5 extends javax.swing.JFrame {
 
     /**
      * Creates new form Listas
@@ -62,9 +62,8 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
     Connection con = cc.conexion();
     Logica_usuarios usr;
     Logica_permisos LP;
-    ItemsL IL = new ItemsL();
 
-    public Listas_CI_5() {
+    public Listas_SI_5() {
         initComponents();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         FiltrosZonas zz8 = new FiltrosZonas();
@@ -87,56 +86,56 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         DiaCor14.setVisible(false);
         DiaCor15.setVisible(false);
         DiaCor16.setVisible(false);
-        FillLCIabel.setVisible(false);
-        FillLCIabel1.setVisible(false);
-        FillLCIabel2.setVisible(false);
-        FillLCIabel3.setVisible(false);
-        FillLCIabel4.setVisible(false);
-        FillLCIabel5.setVisible(false);
-        FillLCIabel6.setVisible(false);
-        FillLCIabel7.setVisible(false);
-        FillLCIabel8.setVisible(false);
-        FillLCIabel9.setVisible(false);
-        FillLCIAm.setVisible(false);
-        FillLCIAm1.setVisible(false);
-        FillLCIAm2.setVisible(false);
-        FillLCIAm3.setVisible(false);
-        FillLCIAm4.setVisible(false);
-        FillLCIAm5.setVisible(false);
-        FillLCIAm6.setVisible(false);
-        FillLCIAm7.setVisible(false);
-        FillLCIAm8.setVisible(false);
-        FillLCIAm9.setVisible(false);
-        FillLCIAp.setVisible(false);
-        FillLCIAp1.setVisible(false);
-        FillLCIAp2.setVisible(false);
-        FillLCIAp3.setVisible(false);
-        FillLCIAp4.setVisible(false);
-        FillLCIAp5.setVisible(false);
-        FillLCIAp6.setVisible(false);
-        FillLCIAp7.setVisible(false);
-        FillLCIAp8.setVisible(false);
-        FillLCIAp9.setVisible(false);
-        FillLCIName.setVisible(false);
-        FillLCIName1.setVisible(false);
-        FillLCIName2.setVisible(false);
-        FillLCIName3.setVisible(false);
-        FillLCIName4.setVisible(false);
-        FillLCIName5.setVisible(false);
-        FillLCIName6.setVisible(false);
-        FillLCIName7.setVisible(false);
-        FillLCIName8.setVisible(false);
-        FillLCIName9.setVisible(false);
-        FillLCIQuin.setVisible(false);
-        FillLCIQuin1.setVisible(false);
-        FillLCIQuin2.setVisible(false);
-        FillLCIQuin3.setVisible(false);
-        FillLCIQuin4.setVisible(false);
-        FillLCIQuin5.setVisible(false);
-        FillLCIQuin6.setVisible(false);
-        FillLCIQuin7.setVisible(false);
-        FillLCIQuin8.setVisible(false);
-        FillLCIQuin9.setVisible(false);
+        FillLSIabel.setVisible(false);
+        FillLSIabel1.setVisible(false);
+        FillLSIabel2.setVisible(false);
+        FillLSIabel3.setVisible(false);
+        FillLSIabel4.setVisible(false);
+        FillLSIabel5.setVisible(false);
+        FillLSIabel6.setVisible(false);
+        FillLSIabel7.setVisible(false);
+        FillLSIabel8.setVisible(false);
+        FillLSIabel9.setVisible(false);
+        FillLSIAm.setVisible(false);
+        FillLSIAm1.setVisible(false);
+        FillLSIAm2.setVisible(false);
+        FillLSIAm3.setVisible(false);
+        FillLSIAm4.setVisible(false);
+        FillLSIAm5.setVisible(false);
+        FillLSIAm6.setVisible(false);
+        FillLSIAm7.setVisible(false);
+        FillLSIAm8.setVisible(false);
+        FillLSIAm9.setVisible(false);
+        FillLSIAp.setVisible(false);
+        FillLSIAp1.setVisible(false);
+        FillLSIAp2.setVisible(false);
+        FillLSIAp3.setVisible(false);
+        FillLSIAp4.setVisible(false);
+        FillLSIAp5.setVisible(false);
+        FillLSIAp6.setVisible(false);
+        FillLSIAp7.setVisible(false);
+        FillLSIAp8.setVisible(false);
+        FillLSIAp9.setVisible(false);
+        FillLSIName.setVisible(false);
+        FillLSIName1.setVisible(false);
+        FillLSIName2.setVisible(false);
+        FillLSIName3.setVisible(false);
+        FillLSIName4.setVisible(false);
+        FillLSIName5.setVisible(false);
+        FillLSIName6.setVisible(false);
+        FillLSIName7.setVisible(false);
+        FillLSIName8.setVisible(false);
+        FillLSIName9.setVisible(false);
+        FillLSIQuin.setVisible(false);
+        FillLSIQuin1.setVisible(false);
+        FillLSIQuin2.setVisible(false);
+        FillLSIQuin3.setVisible(false);
+        FillLSIQuin4.setVisible(false);
+        FillLSIQuin5.setVisible(false);
+        FillLSIQuin6.setVisible(false);
+        FillLSIQuin7.setVisible(false);
+        FillLSIQuin8.setVisible(false);
+        FillLSIQuin9.setVisible(false);
         DiaCom1.setVisible(false);
         DiaCom2.setVisible(false);
         DiaCom3.setVisible(false);
@@ -155,13 +154,13 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         DiaCom16.setVisible(false);
 
 // </editor-fold>
-        MDLDA();
+        MDLDASIMSS();
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(Listas_CI_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Listas_SI_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
 
-    public Listas_CI_5(Logica_usuarios usr, Logica_permisos LP) {
+    public Listas_SI_5(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -186,56 +185,56 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         DiaCor14.setVisible(false);
         DiaCor15.setVisible(false);
         DiaCor16.setVisible(false);
-        FillLCIabel.setVisible(false);
-        FillLCIabel1.setVisible(false);
-        FillLCIabel2.setVisible(false);
-        FillLCIabel3.setVisible(false);
-        FillLCIabel4.setVisible(false);
-        FillLCIabel5.setVisible(false);
-        FillLCIabel6.setVisible(false);
-        FillLCIabel7.setVisible(false);
-        FillLCIabel8.setVisible(false);
-        FillLCIabel9.setVisible(false);
-        FillLCIAm.setVisible(false);
-        FillLCIAm1.setVisible(false);
-        FillLCIAm2.setVisible(false);
-        FillLCIAm3.setVisible(false);
-        FillLCIAm4.setVisible(false);
-        FillLCIAm5.setVisible(false);
-        FillLCIAm6.setVisible(false);
-        FillLCIAm7.setVisible(false);
-        FillLCIAm8.setVisible(false);
-        FillLCIAm9.setVisible(false);
-        FillLCIAp.setVisible(false);
-        FillLCIAp1.setVisible(false);
-        FillLCIAp2.setVisible(false);
-        FillLCIAp3.setVisible(false);
-        FillLCIAp4.setVisible(false);
-        FillLCIAp5.setVisible(false);
-        FillLCIAp6.setVisible(false);
-        FillLCIAp7.setVisible(false);
-        FillLCIAp8.setVisible(false);
-        FillLCIAp9.setVisible(false);
-        FillLCIName.setVisible(false);
-        FillLCIName1.setVisible(false);
-        FillLCIName2.setVisible(false);
-        FillLCIName3.setVisible(false);
-        FillLCIName4.setVisible(false);
-        FillLCIName5.setVisible(false);
-        FillLCIName6.setVisible(false);
-        FillLCIName7.setVisible(false);
-        FillLCIName8.setVisible(false);
-        FillLCIName9.setVisible(false);
-        FillLCIQuin.setVisible(false);
-        FillLCIQuin1.setVisible(false);
-        FillLCIQuin2.setVisible(false);
-        FillLCIQuin3.setVisible(false);
-        FillLCIQuin4.setVisible(false);
-        FillLCIQuin5.setVisible(false);
-        FillLCIQuin6.setVisible(false);
-        FillLCIQuin7.setVisible(false);
-        FillLCIQuin8.setVisible(false);
-        FillLCIQuin9.setVisible(false);
+        FillLSIabel.setVisible(false);
+        FillLSIabel1.setVisible(false);
+        FillLSIabel2.setVisible(false);
+        FillLSIabel3.setVisible(false);
+        FillLSIabel4.setVisible(false);
+        FillLSIabel5.setVisible(false);
+        FillLSIabel6.setVisible(false);
+        FillLSIabel7.setVisible(false);
+        FillLSIabel8.setVisible(false);
+        FillLSIabel9.setVisible(false);
+        FillLSIAm.setVisible(false);
+        FillLSIAm1.setVisible(false);
+        FillLSIAm2.setVisible(false);
+        FillLSIAm3.setVisible(false);
+        FillLSIAm4.setVisible(false);
+        FillLSIAm5.setVisible(false);
+        FillLSIAm6.setVisible(false);
+        FillLSIAm7.setVisible(false);
+        FillLSIAm8.setVisible(false);
+        FillLSIAm9.setVisible(false);
+        FillLSIAp.setVisible(false);
+        FillLSIAp1.setVisible(false);
+        FillLSIAp2.setVisible(false);
+        FillLSIAp3.setVisible(false);
+        FillLSIAp4.setVisible(false);
+        FillLSIAp5.setVisible(false);
+        FillLSIAp6.setVisible(false);
+        FillLSIAp7.setVisible(false);
+        FillLSIAp8.setVisible(false);
+        FillLSIAp9.setVisible(false);
+        FillLSIName.setVisible(false);
+        FillLSIName1.setVisible(false);
+        FillLSIName2.setVisible(false);
+        FillLSIName3.setVisible(false);
+        FillLSIName4.setVisible(false);
+        FillLSIName5.setVisible(false);
+        FillLSIName6.setVisible(false);
+        FillLSIName7.setVisible(false);
+        FillLSIName8.setVisible(false);
+        FillLSIName9.setVisible(false);
+        FillLSIQuin.setVisible(false);
+        FillLSIQuin1.setVisible(false);
+        FillLSIQuin2.setVisible(false);
+        FillLSIQuin3.setVisible(false);
+        FillLSIQuin4.setVisible(false);
+        FillLSIQuin5.setVisible(false);
+        FillLSIQuin6.setVisible(false);
+        FillLSIQuin7.setVisible(false);
+        FillLSIQuin8.setVisible(false);
+        FillLSIQuin9.setVisible(false);
         DiaCom1.setVisible(false);
         DiaCom2.setVisible(false);
         DiaCom3.setVisible(false);
@@ -254,10 +253,10 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         DiaCom16.setVisible(false);
 
 // </editor-fold>
-        MDLDA();
+        MDLDASIMSS();
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        setIconImage(new ImageIcon(Listas_CI_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(Listas_SI_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         setTitle("Listas de asistencia. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
@@ -321,118 +320,118 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         NYear = new javax.swing.JCheckBox();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        FillLCI = new javax.swing.JComboBox<>();
-        FillLCIabel = new javax.swing.JLabel();
-        FillLCIAp = new javax.swing.JTextField();
-        FillLCIAm = new javax.swing.JTextField();
-        FillLCIName = new javax.swing.JTextField();
-        FillLCIQuin = new javax.swing.JComboBox<>();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        TableLDACI = new javax.swing.JTable();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        FillLCI1 = new javax.swing.JComboBox<>();
-        FillLCIabel1 = new javax.swing.JLabel();
-        FillLCIAp1 = new javax.swing.JTextField();
-        FillLCIAm1 = new javax.swing.JTextField();
-        FillLCIName1 = new javax.swing.JTextField();
-        FillLCIQuin1 = new javax.swing.JComboBox<>();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        TableLDACI1 = new javax.swing.JTable();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        FillLCI2 = new javax.swing.JComboBox<>();
-        FillLCIabel2 = new javax.swing.JLabel();
-        FillLCIAp2 = new javax.swing.JTextField();
-        FillLCIAm2 = new javax.swing.JTextField();
-        FillLCIName2 = new javax.swing.JTextField();
-        FillLCIQuin2 = new javax.swing.JComboBox<>();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        TableLDACI2 = new javax.swing.JTable();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        FillLCI3 = new javax.swing.JComboBox<>();
-        FillLCIabel3 = new javax.swing.JLabel();
-        FillLCIAp3 = new javax.swing.JTextField();
-        FillLCIAm3 = new javax.swing.JTextField();
-        FillLCIName3 = new javax.swing.JTextField();
-        FillLCIQuin3 = new javax.swing.JComboBox<>();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        TableLDACI3 = new javax.swing.JTable();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        FillLCI4 = new javax.swing.JComboBox<>();
-        FillLCIabel4 = new javax.swing.JLabel();
-        FillLCIAp4 = new javax.swing.JTextField();
-        FillLCIAm4 = new javax.swing.JTextField();
-        FillLCIName4 = new javax.swing.JTextField();
-        FillLCIQuin4 = new javax.swing.JComboBox<>();
-        jScrollPane15 = new javax.swing.JScrollPane();
-        TableLDACI4 = new javax.swing.JTable();
-        jScrollPane16 = new javax.swing.JScrollPane();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        FillLCI5 = new javax.swing.JComboBox<>();
-        FillLCIabel5 = new javax.swing.JLabel();
-        FillLCIAp5 = new javax.swing.JTextField();
-        FillLCIAm5 = new javax.swing.JTextField();
-        FillLCIName5 = new javax.swing.JTextField();
-        FillLCIQuin5 = new javax.swing.JComboBox<>();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        TableLDACI5 = new javax.swing.JTable();
-        jScrollPane18 = new javax.swing.JScrollPane();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        FillLCI6 = new javax.swing.JComboBox<>();
-        FillLCIabel6 = new javax.swing.JLabel();
-        FillLCIAp6 = new javax.swing.JTextField();
-        FillLCIAm6 = new javax.swing.JTextField();
-        FillLCIName6 = new javax.swing.JTextField();
-        FillLCIQuin6 = new javax.swing.JComboBox<>();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        TableLDACI6 = new javax.swing.JTable();
-        jScrollPane20 = new javax.swing.JScrollPane();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        FillLCI7 = new javax.swing.JComboBox<>();
-        FillLCIabel7 = new javax.swing.JLabel();
-        FillLCIAp7 = new javax.swing.JTextField();
-        FillLCIAm7 = new javax.swing.JTextField();
-        FillLCIName7 = new javax.swing.JTextField();
-        FillLCIQuin7 = new javax.swing.JComboBox<>();
-        jScrollPane21 = new javax.swing.JScrollPane();
-        TableLDACI7 = new javax.swing.JTable();
-        jScrollPane22 = new javax.swing.JScrollPane();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        FillLCI8 = new javax.swing.JComboBox<>();
-        FillLCIabel8 = new javax.swing.JLabel();
-        FillLCIAp8 = new javax.swing.JTextField();
-        FillLCIAm8 = new javax.swing.JTextField();
-        FillLCIName8 = new javax.swing.JTextField();
-        FillLCIQuin8 = new javax.swing.JComboBox<>();
-        jScrollPane23 = new javax.swing.JScrollPane();
-        TableLDACI8 = new javax.swing.JTable();
-        jScrollPane24 = new javax.swing.JScrollPane();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
-        FillLCI9 = new javax.swing.JComboBox<>();
-        FillLCIabel9 = new javax.swing.JLabel();
-        FillLCIAp9 = new javax.swing.JTextField();
-        FillLCIAm9 = new javax.swing.JTextField();
-        FillLCIName9 = new javax.swing.JTextField();
-        FillLCIQuin9 = new javax.swing.JComboBox<>();
-        jScrollPane25 = new javax.swing.JScrollPane();
-        TableLDACI9 = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        FillLSI = new javax.swing.JComboBox<>();
+        FillLSIabel = new javax.swing.JLabel();
+        FillLSIAp = new javax.swing.JTextField();
+        FillLSIAm = new javax.swing.JTextField();
+        FillLSIName = new javax.swing.JTextField();
+        FillLSIQuin = new javax.swing.JComboBox<>();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        TableLDASI = new javax.swing.JTable();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        FillLSI1 = new javax.swing.JComboBox<>();
+        FillLSIabel1 = new javax.swing.JLabel();
+        FillLSIAp1 = new javax.swing.JTextField();
+        FillLSIAm1 = new javax.swing.JTextField();
+        FillLSIName1 = new javax.swing.JTextField();
+        FillLSIQuin1 = new javax.swing.JComboBox<>();
+        jScrollPane29 = new javax.swing.JScrollPane();
+        TableLDASI1 = new javax.swing.JTable();
+        jScrollPane30 = new javax.swing.JScrollPane();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        FillLSI2 = new javax.swing.JComboBox<>();
+        FillLSIabel2 = new javax.swing.JLabel();
+        FillLSIAp2 = new javax.swing.JTextField();
+        FillLSIAm2 = new javax.swing.JTextField();
+        FillLSIName2 = new javax.swing.JTextField();
+        FillLSIQuin2 = new javax.swing.JComboBox<>();
+        jScrollPane31 = new javax.swing.JScrollPane();
+        TableLDASI2 = new javax.swing.JTable();
+        jScrollPane32 = new javax.swing.JScrollPane();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        FillLSI3 = new javax.swing.JComboBox<>();
+        FillLSIabel3 = new javax.swing.JLabel();
+        FillLSIAp3 = new javax.swing.JTextField();
+        FillLSIAm3 = new javax.swing.JTextField();
+        FillLSIName3 = new javax.swing.JTextField();
+        FillLSIQuin3 = new javax.swing.JComboBox<>();
+        jScrollPane33 = new javax.swing.JScrollPane();
+        TableLDASI3 = new javax.swing.JTable();
+        jScrollPane34 = new javax.swing.JScrollPane();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        FillLSI4 = new javax.swing.JComboBox<>();
+        FillLSIabel4 = new javax.swing.JLabel();
+        FillLSIAp4 = new javax.swing.JTextField();
+        FillLSIAm4 = new javax.swing.JTextField();
+        FillLSIName4 = new javax.swing.JTextField();
+        FillLSIQuin4 = new javax.swing.JComboBox<>();
+        jScrollPane35 = new javax.swing.JScrollPane();
+        TableLDASI4 = new javax.swing.JTable();
+        jScrollPane36 = new javax.swing.JScrollPane();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        FillLSI5 = new javax.swing.JComboBox<>();
+        FillLSIabel5 = new javax.swing.JLabel();
+        FillLSIAp5 = new javax.swing.JTextField();
+        FillLSIAm5 = new javax.swing.JTextField();
+        FillLSIName5 = new javax.swing.JTextField();
+        FillLSIQuin5 = new javax.swing.JComboBox<>();
+        jScrollPane37 = new javax.swing.JScrollPane();
+        TableLDASI5 = new javax.swing.JTable();
+        jScrollPane38 = new javax.swing.JScrollPane();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        FillLSI6 = new javax.swing.JComboBox<>();
+        FillLSIabel6 = new javax.swing.JLabel();
+        FillLSIAp6 = new javax.swing.JTextField();
+        FillLSIAm6 = new javax.swing.JTextField();
+        FillLSIName6 = new javax.swing.JTextField();
+        FillLSIQuin6 = new javax.swing.JComboBox<>();
+        jScrollPane39 = new javax.swing.JScrollPane();
+        TableLDASI6 = new javax.swing.JTable();
+        jScrollPane40 = new javax.swing.JScrollPane();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
+        FillLSI7 = new javax.swing.JComboBox<>();
+        FillLSIabel7 = new javax.swing.JLabel();
+        FillLSIAp7 = new javax.swing.JTextField();
+        FillLSIAm7 = new javax.swing.JTextField();
+        FillLSIName7 = new javax.swing.JTextField();
+        FillLSIQuin7 = new javax.swing.JComboBox<>();
+        jScrollPane41 = new javax.swing.JScrollPane();
+        TableLDASI7 = new javax.swing.JTable();
+        jScrollPane42 = new javax.swing.JScrollPane();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        FillLSI8 = new javax.swing.JComboBox<>();
+        FillLSIabel8 = new javax.swing.JLabel();
+        FillLSIAp8 = new javax.swing.JTextField();
+        FillLSIAm8 = new javax.swing.JTextField();
+        FillLSIName8 = new javax.swing.JTextField();
+        FillLSIQuin8 = new javax.swing.JComboBox<>();
+        jScrollPane43 = new javax.swing.JScrollPane();
+        TableLDASI8 = new javax.swing.JTable();
+        jScrollPane44 = new javax.swing.JScrollPane();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
+        FillLSI9 = new javax.swing.JComboBox<>();
+        FillLSIabel9 = new javax.swing.JLabel();
+        FillLSIAp9 = new javax.swing.JTextField();
+        FillLSIAm9 = new javax.swing.JTextField();
+        FillLSIName9 = new javax.swing.JTextField();
+        FillLSIQuin9 = new javax.swing.JComboBox<>();
+        jScrollPane45 = new javax.swing.JScrollPane();
+        TableLDASI9 = new javax.swing.JTable();
         DiaCor1 = new com.toedter.calendar.JDateChooser();
         DiaCor2 = new com.toedter.calendar.JDateChooser();
         DiaCor3 = new com.toedter.calendar.JDateChooser();
@@ -465,7 +464,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         DiaCom14 = new com.toedter.calendar.JDateChooser();
         DiaCom15 = new com.toedter.calendar.JDateChooser();
         DiaCom16 = new com.toedter.calendar.JDateChooser();
-        ExcelCI = new javax.swing.JButton();
+        ExcelSI = new javax.swing.JButton();
         jLabel51 = new javax.swing.JLabel();
         LDAZon = new javax.swing.JComboBox<>();
         ListasGen = new javax.swing.JPanel();
@@ -490,7 +489,8 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
+        LDA5 = new javax.swing.JMenuItem();
+        LDA6 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -524,7 +524,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel2.setText("LISTAS DE ASISTENCIA CON IMSS");
+        jLabel2.setText("LISTA DE ASISTENCIA S/IMSS");
 
         jLabel1.setText("Quincena:");
 
@@ -551,49 +551,43 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane3.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel31.setText("Filtro:");
 
-        jScrollPane5.setBackground(new java.awt.Color(204, 255, 204));
-
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
-
-        jLabel10.setText("Filtro:");
-
-        FillLCI.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCIItemStateChanged(evt);
+                FillLSIItemStateChanged(evt);
             }
         });
 
-        FillLCIabel.setText("jLabel12");
+        FillLSIabel.setText("jLabel12");
 
-        FillLCIAp.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIApKeyReleased(evt);
+                FillLSIApKeyReleased(evt);
             }
         });
 
-        FillLCIAm.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAm.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAmKeyReleased(evt);
+                FillLSIAmKeyReleased(evt);
             }
         });
 
-        FillLCIName.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCINameKeyReleased(evt);
+                FillLSINameKeyReleased(evt);
             }
         });
 
-        FillLCIQuin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCIQuinItemStateChanged(evt);
+        FillLSIQuin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIQuinKeyReleased(evt);
             }
         });
 
-        TableLDACI.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -604,97 +598,95 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACIMouseClicked(evt);
+                TableLDASIMouseClicked(evt);
             }
         });
-        jScrollPane7.setViewportView(TableLDACI);
+        jScrollPane27.setViewportView(TableLDASI);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel)
+                        .addComponent(FillLSIabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(FillLCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel)
-                    .addComponent(FillLCIAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(FillLSI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel)
+                    .addComponent(FillLSIAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane5.setViewportView(jPanel2);
+        jScrollPane26.setViewportView(jPanel12);
 
-        jTabbedPane3.addTab("Foraneos acapulco", jScrollPane5);
+        jTabbedPane2.addTab("Foraneos acapulco", jScrollPane26);
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel33.setText("Filtro:");
 
-        jLabel13.setText("Filtro:");
-
-        FillLCI1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI1.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI1ItemStateChanged(evt);
+                FillLSI1ItemStateChanged(evt);
             }
         });
 
-        FillLCIabel1.setText("jLabel12");
+        FillLSIabel1.setText("jLabel12");
 
-        FillLCIAp1.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAp1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp1KeyReleased(evt);
+                FillLSIAp1KeyReleased(evt);
             }
         });
 
-        FillLCIAm1.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAm1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm1KeyReleased(evt);
+                FillLSIAm1KeyReleased(evt);
             }
         });
 
-        FillLCIName1.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIName1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIName1KeyReleased(evt);
+                FillLSIName1KeyReleased(evt);
             }
         });
 
-        FillLCIQuin1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin1.addItemListener(new java.awt.event.ItemListener() {
+        FillLSIQuin1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCIQuin1ItemStateChanged(evt);
+                FillLSIQuin1ItemStateChanged(evt);
             }
         });
 
-        TableLDACI1.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -705,194 +697,95 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                TableLDACI1KeyReleased(evt);
-            }
-        });
-        jScrollPane9.setViewportView(TableLDACI1);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(152, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(FillLCI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel1)
-                    .addComponent(FillLCIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jScrollPane8.setViewportView(jPanel3);
-
-        jTabbedPane3.addTab("Foraneos puebla", jScrollPane8);
-
-        jLabel15.setText("Filtro:");
-
-        FillLCI2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI2.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI2ItemStateChanged(evt);
-            }
-        });
-
-        FillLCIabel2.setText("jLabel12");
-
-        FillLCIAp2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp2KeyReleased(evt);
-            }
-        });
-
-        FillLCIAm2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm2KeyReleased(evt);
-            }
-        });
-
-        FillLCIName2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIName2KeyReleased(evt);
-            }
-        });
-
-        FillLCIQuin2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIQuin2KeyReleased(evt);
-            }
-        });
-
-        TableLDACI2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        TableLDACI2.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACI2MouseClicked(evt);
+                TableLDASI1MouseClicked(evt);
             }
         });
-        jScrollPane11.setViewportView(TableLDACI2);
+        jScrollPane29.setViewportView(TableLDASI1);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel15)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(jLabel33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel2)
+                        .addComponent(FillLSIabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(FillLCI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel2)
-                    .addComponent(FillLCIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(FillLSI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel1)
+                    .addComponent(FillLSIAp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane29, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane10.setViewportView(jPanel4);
+        jScrollPane28.setViewportView(jPanel13);
 
-        jTabbedPane3.addTab("Foraneos toluca", jScrollPane10);
+        jTabbedPane2.addTab("Foraneos puebla", jScrollPane28);
 
-        jLabel17.setText("Filtro:");
+        jLabel35.setText("Filtro:");
 
-        FillLCI3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI3.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI3ItemStateChanged(evt);
+                FillLSI2ItemStateChanged(evt);
             }
         });
 
-        FillLCIabel3.setText("jLabel12");
+        FillLSIabel2.setText("jLabel12");
 
-        FillLCIAp3.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAp2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp3KeyReleased(evt);
+                FillLSIAp2KeyReleased(evt);
             }
         });
 
-        FillLCIAm3.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAm2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm3KeyReleased(evt);
+                FillLSIAm2KeyReleased(evt);
             }
         });
 
-        FillLCIName3.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIName2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIName3KeyReleased(evt);
+                FillLSIName2KeyReleased(evt);
             }
         });
 
-        FillLCIQuin3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin3.addItemListener(new java.awt.event.ItemListener() {
+        FillLSIQuin2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCIQuin3ItemStateChanged(evt);
+                FillLSIQuin2ItemStateChanged(evt);
             }
         });
 
-        TableLDACI3.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -903,95 +796,77 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI3.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACI3MouseClicked(evt);
+                TableLDASI2MouseClicked(evt);
             }
         });
-        jScrollPane13.setViewportView(TableLDACI3);
+        jScrollPane31.setViewportView(TableLDASI2);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel3)
+                        .addComponent(FillLSIabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(FillLCI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel3)
-                    .addComponent(FillLCIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(FillLSI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel2)
+                    .addComponent(FillLSIAp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane31, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane12.setViewportView(jPanel5);
+        jScrollPane30.setViewportView(jPanel14);
 
-        jTabbedPane3.addTab("Norte", jScrollPane12);
+        jTabbedPane2.addTab("Foraneos toluca", jScrollPane30);
 
-        jLabel19.setText("Filtro:");
+        jLabel37.setText("Filtro:");
 
-        FillLCI4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI4.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI4ItemStateChanged(evt);
+                FillLSI3ItemStateChanged(evt);
             }
         });
 
-        FillLCIabel4.setText("jLabel12");
+        FillLSIabel3.setText("jLabel12");
 
-        FillLCIAp4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp4KeyReleased(evt);
-            }
-        });
-
-        FillLCIAm4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm4KeyReleased(evt);
-            }
-        });
-
-        FillLCIName4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                FillLCIName4KeyTyped(evt);
-            }
-        });
-
-        FillLCIQuin4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin4.addItemListener(new java.awt.event.ItemListener() {
+        FillLSIQuin3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCIQuin4ItemStateChanged(evt);
+                FillLSIQuin3ItemStateChanged(evt);
             }
         });
 
-        TableLDACI4.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1002,95 +877,95 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI4.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACI4MouseClicked(evt);
+                TableLDASI3MouseClicked(evt);
             }
         });
-        jScrollPane15.setViewportView(TableLDACI4);
+        jScrollPane33.setViewportView(TableLDASI3);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel19)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel37)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel4)
+                        .addComponent(FillLSIabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(FillLCI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel4)
-                    .addComponent(FillLCIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(FillLSI3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel3)
+                    .addComponent(FillLSIAp3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane33, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane14.setViewportView(jPanel6);
+        jScrollPane32.setViewportView(jPanel15);
 
-        jTabbedPane3.addTab("Oficina", jScrollPane14);
+        jTabbedPane2.addTab("Norte", jScrollPane32);
 
-        jLabel21.setText("Filtro:");
+        jLabel39.setText("Filtro:");
 
-        FillLCI5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI5.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI5ItemStateChanged(evt);
+                FillLSI4ItemStateChanged(evt);
             }
         });
 
-        FillLCIabel5.setText("jLabel12");
+        FillLSIabel4.setText("jLabel12");
 
-        FillLCIAp5.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAp4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp5KeyReleased(evt);
+                FillLSIAp4KeyReleased(evt);
             }
         });
 
-        FillLCIAm5.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAm4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm5KeyReleased(evt);
+                FillLSIAm4KeyReleased(evt);
             }
         });
 
-        FillLCIName5.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIName4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIName5KeyReleased(evt);
+                FillLSIName4KeyReleased(evt);
             }
         });
 
-        FillLCIQuin5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin5.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIQuin4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIQuin5KeyReleased(evt);
+                FillLSIQuin4KeyReleased(evt);
             }
         });
 
-        TableLDACI5.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1101,95 +976,95 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI5.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACI5MouseClicked(evt);
+                TableLDASI4MouseClicked(evt);
             }
         });
-        jScrollPane17.setViewportView(TableLDACI5);
+        jScrollPane35.setViewportView(TableLDASI4);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel21)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel5)
+                        .addComponent(FillLSIabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(FillLCI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel5)
-                    .addComponent(FillLCIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(FillLSI4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel4)
+                    .addComponent(FillLSIAp4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane16.setViewportView(jPanel7);
+        jScrollPane34.setViewportView(jPanel16);
 
-        jTabbedPane3.addTab("Poniente", jScrollPane16);
+        jTabbedPane2.addTab("Oficina", jScrollPane34);
 
-        jLabel23.setText("Filtro:");
+        jLabel41.setText("Filtro:");
 
-        FillLCI6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI6.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI6ItemStateChanged(evt);
+                FillLSI5ItemStateChanged(evt);
             }
         });
 
-        FillLCIabel6.setText("jLabel12");
+        FillLSIabel5.setText("jLabel12");
 
-        FillLCIAp6.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAp5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp6KeyReleased(evt);
+                FillLSIAp5KeyReleased(evt);
             }
         });
 
-        FillLCIAm6.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAm5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm6KeyReleased(evt);
+                FillLSIAm5KeyReleased(evt);
             }
         });
 
-        FillLCIName6.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIName5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIName6KeyReleased(evt);
+                FillLSIName5KeyReleased(evt);
             }
         });
 
-        FillLCIQuin6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin6.addItemListener(new java.awt.event.ItemListener() {
+        FillLSIQuin5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCIQuin6ItemStateChanged(evt);
+                FillLSIQuin5ItemStateChanged(evt);
             }
         });
 
-        TableLDACI6.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1200,95 +1075,95 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI6.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACI6MouseClicked(evt);
+                TableLDASI5MouseClicked(evt);
             }
         });
-        jScrollPane19.setViewportView(TableLDACI6);
+        jScrollPane37.setViewportView(TableLDASI5);
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel23)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addComponent(jLabel41)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel6)
+                        .addComponent(FillLSIabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(FillLCI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel6)
-                    .addComponent(FillLCIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(FillLSI5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel5)
+                    .addComponent(FillLSIAp5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane37, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane18.setViewportView(jPanel8);
+        jScrollPane36.setViewportView(jPanel17);
 
-        jTabbedPane3.addTab("Sur 1", jScrollPane18);
+        jTabbedPane2.addTab("Poniente", jScrollPane36);
 
-        jLabel25.setText("Filtro:");
+        jLabel43.setText("Filtro:");
 
-        FillLCI7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI7.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI7ItemStateChanged(evt);
+                FillLSI6ItemStateChanged(evt);
             }
         });
 
-        FillLCIabel7.setText("jLabel12");
+        FillLSIabel6.setText("jLabel12");
 
-        FillLCIAp7.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAp6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp7KeyReleased(evt);
+                FillLSIAp6KeyReleased(evt);
             }
         });
 
-        FillLCIAm7.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAm6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm7KeyReleased(evt);
+                FillLSIAm6KeyReleased(evt);
             }
         });
 
-        FillLCIName7.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIName6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIName7KeyReleased(evt);
+                FillLSIName6KeyReleased(evt);
             }
         });
 
-        FillLCIQuin7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin7.addItemListener(new java.awt.event.ItemListener() {
+        FillLSIQuin6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCIQuin7ItemStateChanged(evt);
+                FillLSIQuin6ItemStateChanged(evt);
             }
         });
 
-        TableLDACI7.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1299,95 +1174,95 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI7.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACI7MouseClicked(evt);
+                TableLDASI6MouseClicked(evt);
             }
         });
-        jScrollPane21.setViewportView(TableLDACI7);
+        jScrollPane39.setViewportView(TableLDASI6);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel25)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addComponent(jLabel43)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel7)
+                        .addComponent(FillLSIabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(FillLCI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel7)
-                    .addComponent(FillLCIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(FillLSI6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel6)
+                    .addComponent(FillLSIAp6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane39, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane20.setViewportView(jPanel9);
+        jScrollPane38.setViewportView(jPanel18);
 
-        jTabbedPane3.addTab("Sur 2", jScrollPane20);
+        jTabbedPane2.addTab("Sur 1", jScrollPane38);
 
-        jLabel27.setText("Filtro:");
+        jLabel45.setText("Filtro:");
 
-        FillLCI8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI8.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI7.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI8ItemStateChanged(evt);
+                FillLSI7ItemStateChanged(evt);
             }
         });
 
-        FillLCIabel8.setText("jLabel12");
+        FillLSIabel7.setText("jLabel12");
 
-        FillLCIAp8.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAp7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp8KeyReleased(evt);
+                FillLSIAp7KeyReleased(evt);
             }
         });
 
-        FillLCIAm8.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAm7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm8KeyReleased(evt);
+                FillLSIAm7KeyReleased(evt);
             }
         });
 
-        FillLCIName8.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIName7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIName8KeyReleased(evt);
+                FillLSIName7KeyReleased(evt);
             }
         });
 
-        FillLCIQuin8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin8.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIQuin8KeyReleased(evt);
+        FillLSIQuin7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin7.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin7ItemStateChanged(evt);
             }
         });
 
-        TableLDACI8.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI7.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1398,95 +1273,95 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI8.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACI8MouseClicked(evt);
+                TableLDASI7MouseClicked(evt);
             }
         });
-        jScrollPane23.setViewportView(TableLDACI8);
+        jScrollPane41.setViewportView(TableLDASI7);
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel27)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addComponent(jLabel45)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel8)
+                        .addComponent(FillLSIabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(FillLCI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel8)
-                    .addComponent(FillLCIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(FillLSI7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel7)
+                    .addComponent(FillLSIAp7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane41, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane22.setViewportView(jPanel10);
+        jScrollPane40.setViewportView(jPanel19);
 
-        jTabbedPane3.addTab("Santander Quincenal", jScrollPane22);
+        jTabbedPane2.addTab("Sur 2", jScrollPane40);
 
-        jLabel29.setText("Filtro:");
+        jLabel47.setText("Filtro:");
 
-        FillLCI9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLCI9.addItemListener(new java.awt.event.ItemListener() {
+        FillLSI8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI8.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCI9ItemStateChanged(evt);
+                FillLSI8ItemStateChanged(evt);
             }
         });
 
-        FillLCIabel9.setText("jLabel12");
+        FillLSIabel8.setText("jLabel12");
 
-        FillLCIAp9.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAp8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAp9KeyReleased(evt);
+                FillLSIAp8KeyReleased(evt);
             }
         });
 
-        FillLCIAm9.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIAm8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIAm9KeyReleased(evt);
+                FillLSIAm8KeyReleased(evt);
             }
         });
 
-        FillLCIName9.addKeyListener(new java.awt.event.KeyAdapter() {
+        FillLSIName8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLCIName9KeyReleased(evt);
+                FillLSIName8KeyReleased(evt);
             }
         });
 
-        FillLCIQuin9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLCIQuin9.addItemListener(new java.awt.event.ItemListener() {
+        FillLSIQuin8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin8.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLCIQuin9ItemStateChanged(evt);
+                FillLSIQuin8ItemStateChanged(evt);
             }
         });
 
-        TableLDACI9.setModel(new javax.swing.table.DefaultTableModel(
+        TableLDASI8.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1497,61 +1372,160 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        TableLDACI9.addMouseListener(new java.awt.event.MouseAdapter() {
+        TableLDASI8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDACI9MouseClicked(evt);
+                TableLDASI8MouseClicked(evt);
             }
         });
-        jScrollPane25.setViewportView(TableLDACI9);
+        jScrollPane43.setViewportView(TableLDASI8);
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel29)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addComponent(jLabel47)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIabel9)
+                        .addComponent(FillLSIabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIAm8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIName9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FillLSIName8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLCIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(FillLSIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(FillLCI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIabel9)
-                    .addComponent(FillLCIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIName9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLCIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(FillLSI8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel8)
+                    .addComponent(FillLSIAp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane43, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jScrollPane24.setViewportView(jPanel11);
+        jScrollPane42.setViewportView(jPanel20);
 
-        jTabbedPane3.addTab("Santander Semanal", jScrollPane24);
+        jTabbedPane2.addTab("Santander Semanal", jScrollPane42);
 
-        jScrollPane3.setViewportView(jTabbedPane3);
+        jLabel49.setText("Filtro:");
 
-        jTabbedPane1.addTab("Listas con IMSS", jScrollPane3);
+        FillLSI9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
+        FillLSI9.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSI9ItemStateChanged(evt);
+            }
+        });
+
+        FillLSIabel9.setText("jLabel12");
+
+        FillLSIAp9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAp9KeyReleased(evt);
+            }
+        });
+
+        FillLSIAm9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIAm9KeyReleased(evt);
+            }
+        });
+
+        FillLSIName9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FillLSIName9KeyReleased(evt);
+            }
+        });
+
+        FillLSIQuin9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FillLSIQuin9.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FillLSIQuin9ItemStateChanged(evt);
+            }
+        });
+
+        TableLDASI9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        TableLDASI9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableLDASI9MouseClicked(evt);
+            }
+        });
+        jScrollPane45.setViewportView(TableLDASI9);
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addComponent(jLabel49)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLSI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLSIabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLSIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLSIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLSIName9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FillLSIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(FillLSI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIabel9)
+                    .addComponent(FillLSIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIName9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FillLSIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane45, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jScrollPane44.setViewportView(jPanel21);
+
+        jTabbedPane2.addTab("Santander Quincenal", jScrollPane44);
+
+        jScrollPane4.setViewportView(jTabbedPane2);
+
+        jTabbedPane1.addTab("Listas sin IMSS", jScrollPane4);
 
         DiaCor1.setDateFormatString("d");
 
@@ -1617,10 +1591,10 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         DiaCom16.setDateFormatString("EEEE");
 
-        ExcelCI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        ExcelCI.addActionListener(new java.awt.event.ActionListener() {
+        ExcelSI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        ExcelSI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExcelCIActionPerformed(evt);
+                ExcelSIActionPerformed(evt);
             }
         });
 
@@ -1677,8 +1651,10 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel11.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel11.setText("Ultima lista registrada:");
 
+        ULDA.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         ULDA.setText("0");
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -1695,7 +1671,10 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1711,6 +1690,41 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(ListasGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabel51))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(56, 56, 56)
+                                        .addComponent(ExcelSI))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jLabel7))
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NYear)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ULDA))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1783,44 +1797,8 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(152, 152, 152)
-                                .addComponent(jLabel2))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ULDA)
-                        .addGap(96, 96, 96)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(28, 28, 28)
-                                        .addComponent(jLabel7))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel1)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LDAQuin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NYear))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(ListasGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ExcelCI)
-                                    .addComponent(jLabel51))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                                .addComponent(jLabel2)))))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1828,7 +1806,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addComponent(jLabel2)
                 .addGap(7, 7, 7)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
@@ -1836,19 +1814,21 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                             .addComponent(NYear))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(ULDA)
                             .addComponent(jLabel7)
                             .addComponent(LDAZon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)
                             .addComponent(LDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(ULDA))
+                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel51)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ExcelCI))
+                        .addComponent(ExcelSI))
                     .addComponent(ListasGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1927,7 +1907,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -2016,13 +1996,21 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         jMenu5.add(jMenu7);
 
-        jMenuItem11.setText("Listas de asistencia");
-        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+        LDA5.setText("Listas de asistencia C/IMSS ");
+        LDA5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem11ActionPerformed(evt);
+                LDA5ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem11);
+        jMenu5.add(LDA5);
+
+        LDA6.setText("Listas de asistencia S/IMSS");
+        LDA6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA6ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(LDA6);
 
         Menuadm.add(jMenu5);
 
@@ -2195,7 +2183,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         jMenu1.add(jMenu2);
 
-        LDA1.setText("Listas de asistencia");
+        LDA1.setText("Listas de asistencia C/IMSS");
         LDA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LDA1ActionPerformed(evt);
@@ -2223,11 +2211,11 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1313, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
 
         pack();
@@ -2235,7 +2223,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
     public void MostrarULDA() {
         String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022'"
-                + " AND TABLE_NAME = 'nomina.listas." + LDAZon.getSelectedItem().toString() + "'";
+                + " AND TABLE_NAME = 'nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
@@ -2250,393 +2238,20 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar ultima lista registrada de " + LDAZon.getSelectedItem().toString() + ": " + e);
 
         }
-
-        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS` LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%'";
-        try {
-            java.sql.Statement st = con.createStatement();
-            int total = 0;
-            ResultSet rs = st.executeQuery(SQL);
-            while (rs.next()) {
-                if (LDAZon.getSelectedIndex() == 0) {
-                    NDL.setText("0");
-                    ULDA.setText("0");
-
-                } else {
-                    total++;
-                    NDL.setText("" + total);
-                }
-
-            }
-            st.isClosed();
-            rs.isClosed();
-            UNR.setText("" + (Integer.parseInt(NDL.getText()) + Integer.parseInt(ULDA.getText())));
-        } catch (SQLException e) {
-
-            JOptionPane.showMessageDialog(null, "Error al mostrar listas a registrar de " + LDAZon.getSelectedItem().toString() + ":"
-                    + "\n " + e);
-
-        }
-
-    }
-
-    public void OBNames() {
-
-
-        String SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS` LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%'";
-        try {
-            java.sql.Statement st = con.createStatement();
-            int total = 0;
-            ResultSet rs = st.executeQuery(SQL);
-            while (rs.next()) {
-                total++;
-                if (total == 1) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS` LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 1";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP1(RS1.getString(1));
-                            IL.setAM1(RS1.getString(2));
-                            IL.setName1(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-
-                if (total == 2) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados`"
-                                + " WHERE `Entra a IMSS` LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 2";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP2(RS1.getString(1));
-                            IL.setAM2(RS1.getString(2));
-                            IL.setName2(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 3) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 3";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP3(RS1.getString(1));
-                            IL.setAM3(RS1.getString(2));
-                            IL.setName3(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 4) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 4";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP4(RS1.getString(1));
-                            IL.setAM4(RS1.getString(2));
-                            IL.setName4(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 5) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 5";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP5(RS1.getString(1));
-                            IL.setAM5(RS1.getString(2));
-                            IL.setName5(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 6) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 6";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP6(RS1.getString(1));
-                            IL.setAM6(RS1.getString(2));
-                            IL.setName6(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 7) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 7";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP7(RS1.getString(1));
-                            IL.setAM7(RS1.getString(2));
-                            IL.setName7(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 8) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 8";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP8(RS1.getString(1));
-                            IL.setAM8(RS1.getString(2));
-                            IL.setName8(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 9) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 9";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP9(RS1.getString(1));
-                            IL.setAM9(RS1.getString(2));
-                            IL.setName9(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 10) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 10";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP10(RS1.getString(1));
-                            IL.setAM10(RS1.getString(2));
-                            IL.setName10(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 11) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 11";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP11(RS1.getString(1));
-                            IL.setAM11(RS1.getString(2));
-                            IL.setName11(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 12) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 12";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP12(RS1.getString(1));
-                            IL.setAM12(RS1.getString(2));
-                            IL.setName12(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 13) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 13";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP13(RS1.getString(1));
-                            IL.setAM13(RS1.getString(2));
-                            IL.setName13(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-                if (total == 14) {
-                    try {
-                        SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS`"
-                                + " LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%' LIMIT 14";
-
-                        java.sql.Statement ST1 = con.createStatement();
-                        total = 0;
-                        ResultSet RS1 = ST1.executeQuery(SQL);
-                        while (RS1.next()) {
-                            total++;
-                            IL.setAP14(RS1.getString(1));
-                            IL.setAM14(RS1.getString(2));
-                            IL.setName14(RS1.getString(3));
-
-                        }
-                        ST1.isClosed();
-                        RS1.isClosed();
-                    } catch (SQLException e) {
-
-                        JOptionPane.showMessageDialog(null, "Error al registrar nombres de listas: \n " + e);
-
-                    }
-                }
-
-            }
-
-            st.isClosed();
-            rs.isClosed();
-        } catch (SQLException e) {
-
-            JOptionPane.showMessageDialog(null, "Error al mostrar listas a registrar de " + LDAZon.getSelectedItem().toString() + ":"
-                    + "\n " + e);
-
-        }
     }
 
     public void AgregarLDA() {
 
         // <editor-fold defaultstate="collapsed" desc="Solo 1 lista">
-
         if (Integer.parseInt(NDL.getText()) == 1) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
                     + " `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`,"
-                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, '" + IL.getAP1() + "', '" + IL.getAM1() + "', '" + IL.getName1() + "', ?, ?, "
+                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, '', '', '', ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
@@ -2678,8 +2293,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 pst.setString(36, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
 
                 pst.executeUpdate();
-            
-
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -2730,21 +2344,21 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             } catch (SQLException error_AddLDA) {
                 JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
             }
+            //</editor-fold>
         }
-        //</editor-fold>
 
         // <editor-fold defaultstate="collapsed" desc="Solo 2 listas">
         if (Integer.parseInt(NDL.getText()) == 2) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
                     + " `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`,"
-                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, '" + IL.getAP1() + "', '" + IL.getAM1() + "', '" + IL.getName1() + "', ?, ?, "
+                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, '', '', '', ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?),"
-                    + " (?, ?, ?, '" + IL.getAP2() + "', '" + IL.getAM2() + "', '" + IL.getName2() + "', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    + " (?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(LDA.getText()));
@@ -2824,7 +2438,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -2880,7 +2494,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 3 listas">
         if (Integer.parseInt(NDL.getText()) == 3) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -3004,8 +2618,8 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 pst.executeUpdate();
 
                 MostrarULDA();
-            
 
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -3061,7 +2675,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 4 listas">
         if (Integer.parseInt(NDL.getText()) == 4) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -3223,7 +2837,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -3279,7 +2893,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 5 listas">
         if (Integer.parseInt(NDL.getText()) == 5) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -3478,7 +3092,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -3535,7 +3149,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 6 listas">
         if (Integer.parseInt(NDL.getText()) == 6) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -3772,7 +3386,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -3829,7 +3443,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 7 listas">
         if (Integer.parseInt(NDL.getText()) == 7) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -4103,7 +3717,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -4160,7 +3774,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 8 listas">
         if (Integer.parseInt(NDL.getText()) == 8) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -4471,7 +4085,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -4528,7 +4142,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 9 listas">
         if (Integer.parseInt(NDL.getText()) == 9) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -4876,7 +4490,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -4933,7 +4547,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 10 listas">
         if (Integer.parseInt(NDL.getText()) == 10) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -5318,7 +4932,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -5378,7 +4992,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 11 listas">
         if (Integer.parseInt(NDL.getText()) == 11) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -5800,7 +5414,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -5857,7 +5471,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 12 listas">
         if (Integer.parseInt(NDL.getText()) == 12) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -6316,7 +5930,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -6373,7 +5987,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 13 listas">
         if (Integer.parseInt(NDL.getText()) == 13) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -6869,7 +6483,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -6926,7 +6540,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Solo 14 listas">
         if (Integer.parseInt(NDL.getText()) == 14) {
 
-            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
                     + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
@@ -7460,7 +7074,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-            
+                ItemsL IL = new ItemsL();
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -7514,26 +7128,654 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
+        // <editor-fold defaultstate="collapsed" desc="Solo 15 listas">
+        if (Integer.parseInt(NDL.getText()) == 15) {
+
+            String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` "
+                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
+                    + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
+                    + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
+                    + " `EEEE 6/21`, `EEEE 7/22`, `EEEE 8/23`, `EEEE 9/24`, `EEEE 10/25`, `EEEE 11/26`, `EEEE 12/27`,"
+                    + " `EEEE 13/28`, `EEEE 14/29`, `EEEE 15/30`, `EEEE 31`, `y 1/16`) VALUES (?, ?, ?, '', '', '', ?, ?, "
+                    + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?),"
+                    + " (?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, '', '', '', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(LDA.getText()));
+                pst.setString(2, LDAZon.getSelectedItem().toString());
+                pst.setString(3, LDAQuin.getSelectedItem().toString());
+                pst.setString(4, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(5, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(6, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(7, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(8, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(9, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(10, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(11, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(12, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(13, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(14, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(15, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(16, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(17, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(18, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(19, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(20, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(21, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(22, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(23, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(24, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(25, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(26, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(27, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(28, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(29, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(30, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(31, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(32, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(33, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(34, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(35, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(36, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(37, Integer.parseInt(LDA.getText()));
+                pst.setString(38, LDAZon.getSelectedItem().toString());
+                pst.setString(39, LDAQuin.getSelectedItem().toString());
+                pst.setString(40, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(41, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(42, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(43, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(44, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(45, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(46, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(47, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(48, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(49, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(50, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(51, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(52, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(53, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(54, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(55, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(56, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(57, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(58, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(59, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(60, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(61, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(62, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(63, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(64, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(65, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(66, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(67, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(68, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(69, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(70, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(71, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(72, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(73, Integer.parseInt(LDA.getText()));
+                pst.setString(74, LDAZon.getSelectedItem().toString());
+                pst.setString(75, LDAQuin.getSelectedItem().toString());
+                pst.setString(76, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(77, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(78, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(79, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(80, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(81, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(82, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(83, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(84, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(85, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(86, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(87, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(88, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(89, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(90, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(91, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(92, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(93, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(94, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(95, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(96, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(97, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(98, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(99, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(100, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(101, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(102, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(103, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(104, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(105, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(106, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(107, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(108, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(109, Integer.parseInt(LDA.getText()));
+                pst.setString(110, LDAZon.getSelectedItem().toString());
+                pst.setString(111, LDAQuin.getSelectedItem().toString());
+                pst.setString(112, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(113, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(114, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(115, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(116, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(117, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(118, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(119, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(120, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(121, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(122, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(123, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(124, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(125, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(126, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(127, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(128, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(129, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(130, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(131, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(132, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(133, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(134, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(135, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(136, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(137, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(138, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(139, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(140, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(141, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(142, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(143, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(144, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(145, Integer.parseInt(LDA.getText()));
+                pst.setString(146, LDAZon.getSelectedItem().toString());
+                pst.setString(147, LDAQuin.getSelectedItem().toString());
+                pst.setString(148, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(149, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(150, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(151, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(152, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(153, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(154, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(155, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(156, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(157, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(158, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(159, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(160, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(161, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(162, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(163, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(164, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(165, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(166, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(167, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(168, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(169, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(170, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(171, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(172, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(173, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(174, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(175, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(176, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(177, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(178, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(179, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(180, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(181, Integer.parseInt(LDA.getText()));
+                pst.setString(182, LDAZon.getSelectedItem().toString());
+                pst.setString(183, LDAQuin.getSelectedItem().toString());
+                pst.setString(184, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(185, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(186, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(187, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(188, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(189, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(190, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(191, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(192, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(193, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(194, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(195, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(196, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(197, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(198, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(199, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(200, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(201, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(202, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(203, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(204, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(205, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(206, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(207, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(208, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(209, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(210, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(211, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(212, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(213, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(214, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(215, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(216, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(217, Integer.parseInt(LDA.getText()));
+                pst.setString(218, LDAZon.getSelectedItem().toString());
+                pst.setString(219, LDAQuin.getSelectedItem().toString());
+                pst.setString(220, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(221, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(222, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(223, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(224, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(225, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(226, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(227, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(228, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(229, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(230, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(231, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(232, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(233, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(234, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(235, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(236, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(237, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(238, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(239, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(240, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(241, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(242, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(243, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(244, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(245, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(246, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(247, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(248, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(249, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(250, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(251, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(252, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(253, Integer.parseInt(LDA.getText()));
+                pst.setString(254, LDAZon.getSelectedItem().toString());
+                pst.setString(255, LDAQuin.getSelectedItem().toString());
+                pst.setString(256, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(257, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(258, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(259, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(260, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(261, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(262, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(263, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(264, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(265, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(266, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(267, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(268, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(269, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(270, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(271, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(272, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(273, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(274, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(275, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(276, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(277, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(278, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(279, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(280, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(281, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(282, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(283, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(284, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(285, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(286, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(287, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(288, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(289, Integer.parseInt(LDA.getText()));
+                pst.setString(290, LDAZon.getSelectedItem().toString());
+                pst.setString(291, LDAQuin.getSelectedItem().toString());
+                pst.setString(292, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(293, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(294, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(295, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(296, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(297, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(298, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(299, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(300, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(301, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(302, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(303, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(304, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(305, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(306, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(307, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(308, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(309, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(310, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(311, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(312, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(313, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(314, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(315, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(316, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(317, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(318, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(319, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(320, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(321, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(322, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(323, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(324, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(325, Integer.parseInt(LDA.getText()));
+                pst.setString(326, LDAZon.getSelectedItem().toString());
+                pst.setString(327, LDAQuin.getSelectedItem().toString());
+                pst.setString(328, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(329, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(330, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(331, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(332, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(333, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(334, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(335, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(336, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(337, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(338, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(339, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(340, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(341, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(342, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(343, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(344, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(345, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(346, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(347, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(348, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(349, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(350, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(351, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(352, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(353, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(354, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(355, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(356, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(357, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(358, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(359, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(360, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(361, Integer.parseInt(LDA.getText()));
+                pst.setString(362, LDAZon.getSelectedItem().toString());
+                pst.setString(363, LDAQuin.getSelectedItem().toString());
+                pst.setString(364, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(365, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(366, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(367, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(368, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(369, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(370, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(371, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(372, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(373, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(374, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(375, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(376, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(377, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(378, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(379, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(380, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(381, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(382, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(383, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(384, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(385, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(386, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(387, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(388, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(389, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(390, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(391, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(392, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(393, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(394, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(395, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(396, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(397, Integer.parseInt(LDA.getText()));
+                pst.setString(398, LDAZon.getSelectedItem().toString());
+                pst.setString(399, LDAQuin.getSelectedItem().toString());
+                pst.setString(400, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(401, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(402, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(403, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(404, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(405, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(406, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(407, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(408, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(409, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(410, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(411, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(412, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(413, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(414, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(415, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(416, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(417, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(418, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(419, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(420, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(421, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(422, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(423, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(424, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(425, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(426, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(427, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(428, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(429, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(430, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(431, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(432, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(433, Integer.parseInt(LDA.getText()));
+                pst.setString(434, LDAZon.getSelectedItem().toString());
+                pst.setString(435, LDAQuin.getSelectedItem().toString());
+                pst.setString(436, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(437, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(438, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(439, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(440, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(441, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(442, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(443, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(444, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(445, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(446, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(447, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(448, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(449, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(450, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(451, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(452, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(453, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(454, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(455, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(456, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(457, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(458, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(459, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(460, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(461, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(462, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(463, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(464, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(465, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(466, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(467, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(468, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setString(468, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(469, Integer.parseInt(LDA.getText()));
+                pst.setString(470, LDAZon.getSelectedItem().toString());
+                pst.setString(471, LDAQuin.getSelectedItem().toString());
+                pst.setString(472, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(473, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(474, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(475, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(476, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(477, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(478, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(479, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(480, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(481, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(482, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(483, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(484, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(485, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(486, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(487, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(488, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(489, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(490, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(491, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(492, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(493, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(494, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(495, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(496, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(497, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(498, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(499, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(500, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(501, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(502, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(503, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(504, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+                pst.setInt(505, Integer.parseInt(LDA.getText()));
+                pst.setString(506, LDAZon.getSelectedItem().toString());
+                pst.setString(507, LDAQuin.getSelectedItem().toString());
+                pst.setString(508, ((JTextField) DiaCor1.getDateEditor().getUiComponent()).getText());
+                pst.setString(509, ((JTextField) DiaCor2.getDateEditor().getUiComponent()).getText());
+                pst.setString(510, ((JTextField) DiaCor3.getDateEditor().getUiComponent()).getText());
+                pst.setString(511, ((JTextField) DiaCor4.getDateEditor().getUiComponent()).getText());
+                pst.setString(512, ((JTextField) DiaCor5.getDateEditor().getUiComponent()).getText());
+                pst.setString(513, ((JTextField) DiaCor6.getDateEditor().getUiComponent()).getText());
+                pst.setString(514, ((JTextField) DiaCor7.getDateEditor().getUiComponent()).getText());
+                pst.setString(515, ((JTextField) DiaCor8.getDateEditor().getUiComponent()).getText());
+                pst.setString(516, ((JTextField) DiaCor9.getDateEditor().getUiComponent()).getText());
+                pst.setString(517, ((JTextField) DiaCor10.getDateEditor().getUiComponent()).getText());
+                pst.setString(518, ((JTextField) DiaCor11.getDateEditor().getUiComponent()).getText());
+                pst.setString(519, ((JTextField) DiaCor12.getDateEditor().getUiComponent()).getText());
+                pst.setString(520, ((JTextField) DiaCor13.getDateEditor().getUiComponent()).getText());
+                pst.setString(521, ((JTextField) DiaCor14.getDateEditor().getUiComponent()).getText());
+                pst.setString(522, ((JTextField) DiaCor15.getDateEditor().getUiComponent()).getText());
+                pst.setString(523, ((JTextField) DiaCor16.getDateEditor().getUiComponent()).getText());
+                pst.setString(524, ((JTextField) DiaCom1.getDateEditor().getUiComponent()).getText());
+                pst.setString(525, ((JTextField) DiaCom2.getDateEditor().getUiComponent()).getText());
+                pst.setString(526, ((JTextField) DiaCom3.getDateEditor().getUiComponent()).getText());
+                pst.setString(527, ((JTextField) DiaCom4.getDateEditor().getUiComponent()).getText());
+                pst.setString(528, ((JTextField) DiaCom5.getDateEditor().getUiComponent()).getText());
+                pst.setString(529, ((JTextField) DiaCom6.getDateEditor().getUiComponent()).getText());
+                pst.setString(530, ((JTextField) DiaCom7.getDateEditor().getUiComponent()).getText());
+                pst.setString(531, ((JTextField) DiaCom8.getDateEditor().getUiComponent()).getText());
+                pst.setString(532, ((JTextField) DiaCom9.getDateEditor().getUiComponent()).getText());
+                pst.setString(533, ((JTextField) DiaCom10.getDateEditor().getUiComponent()).getText());
+                pst.setString(534, ((JTextField) DiaCom11.getDateEditor().getUiComponent()).getText());
+                pst.setString(535, ((JTextField) DiaCom12.getDateEditor().getUiComponent()).getText());
+                pst.setString(536, ((JTextField) DiaCom13.getDateEditor().getUiComponent()).getText());
+                pst.setString(537, ((JTextField) DiaCom14.getDateEditor().getUiComponent()).getText());
+                pst.setString(538, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
+                pst.setString(539, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
+                pst.setString(540, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
+
+                pst.executeUpdate();
+
+                MostrarULDA();
+
+                ItemsL IL = new ItemsL();
+                IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
+                IL.setLDAzona(LDAZon.getSelectedItem().toString());
+                IL.setUNumR(Integer.parseInt(UNR.getText()));
+                IL.setNDLista(Integer.parseInt(NDL.getText()));
+
+                L15 L015 = new L15();
+                L015.LIS(IL);
+
+                LDAZon.setSelectedIndex(0);
+                LDAQuin.setSelectedIndex(0);
+                Fecha1.setDate(null);
+                DiaCor1.setDate(null);
+                DiaCor2.setDate(null);
+                DiaCor3.setDate(null);
+                DiaCor4.setDate(null);
+                DiaCor5.setDate(null);
+                DiaCor6.setDate(null);
+                DiaCor7.setDate(null);
+                DiaCor8.setDate(null);
+                DiaCor9.setDate(null);
+                DiaCor10.setDate(null);
+                DiaCor11.setDate(null);
+                DiaCor12.setDate(null);
+                DiaCor13.setDate(null);
+                DiaCor14.setDate(null);
+                DiaCor15.setDate(null);
+                DiaCor16.setDate(null);
+                DiaCom1.setDate(null);
+                DiaCom2.setDate(null);
+                DiaCom3.setDate(null);
+                DiaCom4.setDate(null);
+                DiaCom5.setDate(null);
+                DiaCom6.setDate(null);
+                DiaCom7.setDate(null);
+                DiaCom8.setDate(null);
+                DiaCom9.setDate(null);
+                DiaCom10.setDate(null);
+                DiaCom11.setDate(null);
+                DiaCom12.setDate(null);
+                DiaCom13.setDate(null);
+                DiaCom14.setDate(null);
+                DiaCom15.setDate(null);
+                DiaCom16.setDate(null);
+
+                pst.isClosed();
+                JOptionPane.showMessageDialog(null, "Lista de asistencia registrada.");
+            } catch (SQLException error_AddLDA) {
+                JOptionPane.showMessageDialog(null, "Error al registrar lista de asistencia" + error_AddLDA);
+            }
+            //</editor-fold>
+
+        }
+
     }
 
-    public void MDLDA() {
-        String FiltroN = FillLCIName.getText();
-        String FAP = FillLCIAp.getText();
-        String FAM = FillLCIAm.getText();
-        String FQuin = FillLCIQuin.getSelectedItem().toString();
-        String SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`";
+    public void MDLDASIMSS() {
+        String FiltroN = FillLSIName.getText();
+        String FAP = FillLSIAp.getText();
+        String FAM = FillLSIAm.getText();
+        String FQuin = FillLSIQuin.getSelectedItem().toString();
+        String SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos acapulco.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -7547,7 +7789,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI.setModel(modelo);
+            TableLDASI.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -7569,7 +7811,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -7588,23 +7830,23 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName1.getText();
-        FAP = FillLCIAp1.getText();
-        FAM = FillLCIAm1.getText();
-        FQuin = FillLCIQuin1.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`";
+        FiltroN = FillLSIName1.getText();
+        FAP = FillLSIAp1.getText();
+        FAM = FillLSIAm1.getText();
+        FQuin = FillLSIQuin1.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos puebla.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -7618,7 +7860,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI1.setModel(modelo);
+            TableLDASI1.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -7640,7 +7882,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -7659,23 +7901,23 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName2.getText();
-        FAP = FillLCIAp2.getText();
-        FAM = FillLCIAm2.getText();
-        FQuin = FillLCIQuin2.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`";
+        FiltroN = FillLSIName2.getText();
+        FAP = FillLSIAp2.getText();
+        FAM = FillLSIAm2.getText();
+        FQuin = FillLSIQuin2.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.foraneos toluca.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -7689,7 +7931,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI2.setModel(modelo);
+            TableLDASI2.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -7711,7 +7953,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -7730,23 +7972,23 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName3.getText();
-        FAP = FillLCIAp3.getText();
-        FAM = FillLCIAm3.getText();
-        FQuin = FillLCIQuin3.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`";
+        FiltroN = FillLSIName3.getText();
+        FAP = FillLSIAp3.getText();
+        FAM = FillLSIAm3.getText();
+        FQuin = FillLSIQuin3.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.norte.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -7760,7 +8002,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI3.setModel(modelo);
+            TableLDASI3.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -7782,7 +8024,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -7801,23 +8043,23 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName4.getText();
-        FAP = FillLCIAp4.getText();
-        FAM = FillLCIAm4.getText();
-        FQuin = FillLCIQuin4.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`";
+        FiltroN = FillLSIName4.getText();
+        FAP = FillLSIAp4.getText();
+        FAM = FillLSIAm4.getText();
+        FQuin = FillLSIQuin4.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.oficina.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -7831,7 +8073,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI4.setModel(modelo);
+            TableLDASI4.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -7853,7 +8095,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -7868,27 +8110,27 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             rs.isClosed();
 
         } catch (SQLException error_mostrsr_pcda) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar datos de oficina: " + error_mostrsr_pcda.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar datos de ofiSIna: " + error_mostrsr_pcda.getMessage());
 
         }
 
-        FiltroN = FillLCIName5.getText();
-        FAP = FillLCIAp5.getText();
-        FAM = FillLCIAm5.getText();
-        FQuin = FillLCIQuin5.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`";
+        FiltroN = FillLSIName5.getText();
+        FAP = FillLSIAp5.getText();
+        FAM = FillLSIAm5.getText();
+        FQuin = FillLSIQuin5.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.poniente.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -7902,7 +8144,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI5.setModel(modelo);
+            TableLDASI5.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -7924,7 +8166,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI5.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -7943,23 +8185,23 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName6.getText();
-        FAP = FillLCIAp6.getText();
-        FAM = FillLCIAm6.getText();
-        FQuin = FillLCIQuin6.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`";
+        FiltroN = FillLSIName6.getText();
+        FAP = FillLSIAp6.getText();
+        FAM = FillLSIAm6.getText();
+        FQuin = FillLSIQuin6.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 1.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -7973,7 +8215,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI6.setModel(modelo);
+            TableLDASI6.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -7995,7 +8237,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI6.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -8014,23 +8256,23 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName7.getText();
-        FAP = FillLCIAp7.getText();
-        FAM = FillLCIAm7.getText();
-        FQuin = FillLCIQuin7.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`";
+        FiltroN = FillLSIName7.getText();
+        FAP = FillLSIAp7.getText();
+        FAM = FillLSIAm7.getText();
+        FQuin = FillLSIQuin7.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.sur 2.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -8044,7 +8286,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI7.setModel(modelo);
+            TableLDASI7.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -8066,7 +8308,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI7.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -8085,23 +8327,23 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName8.getText();
-        FAP = FillLCIAp8.getText();
-        FAM = FillLCIAm8.getText();
-        FQuin = FillLCIQuin8.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`";
+        FiltroN = FillLSIName8.getText();
+        FAP = FillLSIAp8.getText();
+        FAM = FillLSIAm8.getText();
+        FQuin = FillLSIQuin8.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander quincenal.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -8115,7 +8357,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI8.setModel(modelo);
+            TableLDASI8.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -8137,7 +8379,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -8156,23 +8398,23 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         }
 
-        FiltroN = FillLCIName9.getText();
-        FAP = FillLCIAp9.getText();
-        FAM = FillLCIAm9.getText();
-        FQuin = FillLCIQuin9.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`";
+        FiltroN = FillLSIName9.getText();
+        FAP = FillLSIAp9.getText();
+        FAM = FillLSIAm9.getText();
+        FQuin = FillLSIQuin9.getSelectedItem().toString();
+        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`";
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal`"
+            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
                     + " Where `Quincena` LIKE '%" + FQuin + "%'";
         }
 
@@ -8186,7 +8428,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            TableLDACI9.setModel(modelo);
+            TableLDASI9.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -8208,7 +8450,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                TableLDACI9.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                TableLDASI9.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -8367,7 +8609,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -8468,7 +8710,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -8580,7 +8822,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -8692,7 +8934,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8804,7 +9046,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -8917,7 +9159,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9032,7 +9274,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9143,7 +9385,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9256,7 +9498,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9369,7 +9611,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9484,7 +9726,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9597,7 +9839,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9710,7 +9952,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9823,7 +10065,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -9938,7 +10180,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10051,7 +10293,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10166,7 +10408,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10279,7 +10521,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10392,7 +10634,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10505,7 +10747,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10620,7 +10862,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10733,7 +10975,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10846,7 +11088,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -10959,7 +11201,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11074,7 +11316,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11223,7 +11465,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -11336,7 +11578,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -11446,7 +11688,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -11555,7 +11797,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11664,7 +11906,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11773,7 +12015,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11884,7 +12126,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -11993,7 +12235,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12102,7 +12344,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12211,7 +12453,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12322,7 +12564,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12431,7 +12673,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12540,7 +12782,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12649,7 +12891,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12760,7 +13002,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12869,7 +13111,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -12980,7 +13222,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13089,7 +13331,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13198,7 +13440,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13307,7 +13549,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13418,7 +13660,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13527,7 +13769,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13636,7 +13878,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13745,7 +13987,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -13856,7 +14098,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14001,7 +14243,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -14102,7 +14344,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -14214,7 +14456,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -14326,7 +14568,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14438,7 +14680,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14551,7 +14793,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14666,7 +14908,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14777,7 +15019,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -14890,7 +15132,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15003,7 +15245,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15118,7 +15360,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15231,7 +15473,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15344,7 +15586,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15457,7 +15699,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15572,7 +15814,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15685,7 +15927,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15800,7 +16042,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -15913,7 +16155,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16026,7 +16268,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16139,7 +16381,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16254,7 +16496,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16367,7 +16609,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16480,7 +16722,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16593,7 +16835,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16708,7 +16950,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -16857,7 +17099,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
 
@@ -16970,7 +17212,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -17080,7 +17322,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -17189,7 +17431,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17298,7 +17540,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17407,7 +17649,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17518,7 +17760,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17627,7 +17869,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17736,7 +17978,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17845,7 +18087,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -17956,7 +18198,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18065,7 +18307,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18174,7 +18416,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18283,7 +18525,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18394,7 +18636,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18503,7 +18745,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18614,7 +18856,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18723,7 +18965,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18832,7 +19074,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -18941,7 +19183,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19052,7 +19294,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19161,7 +19403,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19270,7 +19512,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19379,7 +19621,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(null);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
@@ -19490,893 +19732,21 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     DiaCom16.setDate(fin);
 
                 } catch (ParseException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
     }//GEN-LAST:event_NYearActionPerformed
 
-    private void FillLCIAp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp2KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIAp2KeyReleased
-
-    private void FillLCIApKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIApKeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIApKeyReleased
-
-    private void FillLCIAmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAmKeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIAmKeyReleased
-
-    private void FillLCINameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCINameKeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCINameKeyReleased
-
-    private void FillLCIQuinItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuinItemStateChanged
-        MDLDA();
-    }//GEN-LAST:event_FillLCIQuinItemStateChanged
-
-    private void FillLCIItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIItemStateChanged
-        if (FillLCI.getSelectedIndex() == 0) {
-            FillLCIabel.setVisible(false);
-            FillLCIAm.setVisible(false);
-            FillLCIAm.setText("");
-            FillLCIAp.setVisible(false);
-            FillLCIAp.setText("");
-            FillLCIName.setVisible(false);
-            FillLCIName.setText("");
-            FillLCIQuin.setVisible(false);
-            FillLCIQuin.setSelectedIndex(0);
-
-        }
-        if (FillLCI.getSelectedIndex() == 1) {
-            FillLCIabel.setVisible(true);
-            FillLCIabel.setText("Buscar apellido P:");
-            FillLCIAm.setVisible(false);
-            FillLCIAm.setText("");
-            FillLCIAp.setVisible(true);
-            FillLCIAp.setText("");
-            FillLCIName.setVisible(false);
-            FillLCIName.setText("");
-            FillLCIQuin.setVisible(false);
-            FillLCIQuin.setSelectedIndex(0);
-
-        }
-        if (FillLCI.getSelectedIndex() == 2) {
-            FillLCIabel.setVisible(true);
-            FillLCIabel.setText("Buscar apellido M:");
-            FillLCIAm.setVisible(true);
-            FillLCIAm.setText("");
-            FillLCIAp.setVisible(false);
-            FillLCIAp.setText("");
-            FillLCIName.setVisible(false);
-            FillLCIName.setText("");
-            FillLCIQuin.setVisible(false);
-            FillLCIQuin.setSelectedIndex(0);
-
-        }
-        if (FillLCI.getSelectedIndex() == 3) {
-            FillLCIabel.setVisible(true);
-            FillLCIabel.setText("Buscar Nombres:");
-            FillLCIAm.setVisible(false);
-            FillLCIAm.setText("");
-            FillLCIAp.setVisible(false);
-            FillLCIAp.setText("");
-            FillLCIName.setVisible(true);
-            FillLCIName.setText("");
-            FillLCIQuin.setVisible(false);
-            FillLCIQuin.setSelectedIndex(0);
-
-        }
-        if (FillLCI.getSelectedIndex() == 4) {
-            FillLCIabel.setVisible(true);
-            FillLCIabel.setText("Buscar Quincena:");
-            FillLCIAm.setVisible(false);
-            FillLCIAm.setText("");
-            FillLCIAp.setVisible(false);
-            FillLCIAp.setText("");
-            FillLCIName.setVisible(false);
-            FillLCIName.setText("");
-            FillLCIQuin.setVisible(true);
-            FillLCIQuin.setSelectedIndex(0);
-
-        }
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIItemStateChanged
-
-    private void FillLCI1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI1ItemStateChanged
-        if (FillLCI1.getSelectedIndex() == 0) {
-            FillLCIabel1.setVisible(false);
-            FillLCIAm1.setVisible(false);
-            FillLCIAm1.setText("");
-            FillLCIAp1.setVisible(false);
-            FillLCIAp1.setText("");
-            FillLCIName1.setVisible(false);
-            FillLCIName1.setText("");
-            FillLCIQuin1.setVisible(false);
-            FillLCIQuin1.setSelectedIndex(0);
-
-        }
-        if (FillLCI1.getSelectedIndex() == 1) {
-            FillLCIabel1.setVisible(true);
-            FillLCIabel1.setText("Buscar apellido P:");
-            FillLCIAm1.setVisible(false);
-            FillLCIAm1.setText("");
-            FillLCIAp1.setVisible(true);
-            FillLCIAp1.setText("");
-            FillLCIName1.setVisible(false);
-            FillLCIName1.setText("");
-            FillLCIQuin1.setVisible(false);
-            FillLCIQuin1.setSelectedIndex(0);
-
-        }
-        if (FillLCI1.getSelectedIndex() == 2) {
-            FillLCIabel1.setVisible(true);
-            FillLCIabel1.setText("Buscar apellido M:");
-            FillLCIAm1.setVisible(true);
-            FillLCIAm1.setText("");
-            FillLCIAp1.setVisible(false);
-            FillLCIAp1.setText("");
-            FillLCIName1.setVisible(false);
-            FillLCIName1.setText("");
-            FillLCIQuin1.setVisible(false);
-            FillLCIQuin1.setSelectedIndex(0);
-
-        }
-        if (FillLCI1.getSelectedIndex() == 3) {
-            FillLCIabel1.setVisible(true);
-            FillLCIabel1.setText("Buscar Nombres:");
-            FillLCIAm1.setVisible(false);
-            FillLCIAm1.setText("");
-            FillLCIAp1.setVisible(false);
-            FillLCIAp1.setText("");
-            FillLCIName1.setVisible(true);
-            FillLCIName1.setText("");
-            FillLCIQuin1.setVisible(false);
-            FillLCIQuin1.setSelectedIndex(0);
-
-        }
-        if (FillLCI1.getSelectedIndex() == 4) {
-            FillLCIabel1.setVisible(true);
-            FillLCIabel1.setText("Buscar Quincena:");
-            FillLCIAm1.setVisible(false);
-            FillLCIAm1.setText("");
-            FillLCIAp1.setVisible(false);
-            FillLCIAp1.setText("");
-            FillLCIName1.setVisible(false);
-            FillLCIName1.setText("");
-            FillLCIQuin1.setVisible(true);
-            FillLCIQuin1.setSelectedIndex(0);
-
-        }
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCI1ItemStateChanged
-
-    private void FillLCIAp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp1KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIAp1KeyReleased
-
-    private void FillLCIAm1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm1KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIAm1KeyReleased
-
-    private void FillLCIName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName1KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIName1KeyReleased
-
-    private void FillLCIQuin1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin1ItemStateChanged
-        MDLDA();
-    }//GEN-LAST:event_FillLCIQuin1ItemStateChanged
-
-    private void FillLCI2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI2ItemStateChanged
-        if (FillLCI2.getSelectedIndex() == 0) {
-            FillLCIabel2.setVisible(false);
-            FillLCIAm2.setVisible(false);
-            FillLCIAm2.setText("");
-            FillLCIAp2.setVisible(false);
-            FillLCIAp2.setText("");
-            FillLCIName2.setVisible(false);
-            FillLCIName2.setText("");
-            FillLCIQuin2.setVisible(false);
-            FillLCIQuin2.setSelectedIndex(0);
-
-        }
-        if (FillLCI2.getSelectedIndex() == 1) {
-            FillLCIabel2.setVisible(true);
-            FillLCIabel2.setText("Buscar apellido P:");
-            FillLCIAm2.setVisible(false);
-            FillLCIAm2.setText("");
-            FillLCIAp2.setVisible(true);
-            FillLCIAp2.setText("");
-            FillLCIName2.setVisible(false);
-            FillLCIName2.setText("");
-            FillLCIQuin2.setVisible(false);
-            FillLCIQuin2.setSelectedIndex(0);
-
-        }
-        if (FillLCI2.getSelectedIndex() == 2) {
-            FillLCIabel2.setVisible(true);
-            FillLCIabel2.setText("Buscar apellido M:");
-            FillLCIAm2.setVisible(true);
-            FillLCIAm2.setText("");
-            FillLCIAp2.setVisible(false);
-            FillLCIAp2.setText("");
-            FillLCIName2.setVisible(false);
-            FillLCIName2.setText("");
-            FillLCIQuin2.setVisible(false);
-            FillLCIQuin2.setSelectedIndex(0);
-
-        }
-        if (FillLCI2.getSelectedIndex() == 3) {
-            FillLCIabel2.setVisible(true);
-            FillLCIabel2.setText("Buscar Nombres:");
-            FillLCIAm2.setVisible(false);
-            FillLCIAm2.setText("");
-            FillLCIAp2.setVisible(false);
-            FillLCIAp2.setText("");
-            FillLCIName2.setVisible(true);
-            FillLCIName2.setText("");
-            FillLCIQuin2.setVisible(false);
-            FillLCIQuin2.setSelectedIndex(0);
-
-        }
-        if (FillLCI2.getSelectedIndex() == 4) {
-            FillLCIabel2.setVisible(true);
-            FillLCIabel2.setText("Buscar Quincena:");
-            FillLCIAm2.setVisible(false);
-            FillLCIAm2.setText("");
-            FillLCIAp2.setVisible(false);
-            FillLCIAp2.setText("");
-            FillLCIName2.setVisible(false);
-            FillLCIName2.setText("");
-            FillLCIQuin2.setVisible(true);
-            FillLCIQuin2.setSelectedIndex(0);
-
-        }
-        MDLDA();
-    }//GEN-LAST:event_FillLCI2ItemStateChanged
-
-    private void FillLCIAm2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm2KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIAm2KeyReleased
-
-    private void FillLCIName2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName2KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIName2KeyReleased
-
-    private void FillLCIQuin2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIQuin2KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIQuin2KeyReleased
-
-    private void FillLCI3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI3ItemStateChanged
-        if (FillLCI3.getSelectedIndex() == 0) {
-            FillLCIabel3.setVisible(false);
-            FillLCIAm3.setVisible(false);
-            FillLCIAm3.setText("");
-            FillLCIAp3.setVisible(false);
-            FillLCIAp3.setText("");
-            FillLCIName3.setVisible(false);
-            FillLCIName3.setText("");
-            FillLCIQuin3.setVisible(false);
-            FillLCIQuin3.setSelectedIndex(0);
-
-        }
-        if (FillLCI3.getSelectedIndex() == 1) {
-            FillLCIabel3.setVisible(true);
-            FillLCIabel3.setText("Buscar apellido P:");
-            FillLCIAm3.setVisible(false);
-            FillLCIAm3.setText("");
-            FillLCIAp3.setVisible(true);
-            FillLCIAp3.setText("");
-            FillLCIName3.setVisible(false);
-            FillLCIName3.setText("");
-            FillLCIQuin3.setVisible(false);
-            FillLCIQuin3.setSelectedIndex(0);
-
-        }
-        if (FillLCI3.getSelectedIndex() == 2) {
-            FillLCIabel3.setVisible(true);
-            FillLCIabel3.setText("Buscar apellido M:");
-            FillLCIAm3.setVisible(true);
-            FillLCIAm3.setText("");
-            FillLCIAp3.setVisible(false);
-            FillLCIAp3.setText("");
-            FillLCIName3.setVisible(false);
-            FillLCIName3.setText("");
-            FillLCIQuin3.setVisible(false);
-            FillLCIQuin3.setSelectedIndex(0);
-
-        }
-        if (FillLCI3.getSelectedIndex() == 3) {
-            FillLCIabel3.setVisible(true);
-            FillLCIabel3.setText("Buscar Nombres:");
-            FillLCIAm3.setVisible(false);
-            FillLCIAm3.setText("");
-            FillLCIAp3.setVisible(false);
-            FillLCIAp3.setText("");
-            FillLCIName3.setVisible(true);
-            FillLCIName3.setText("");
-            FillLCIQuin3.setVisible(false);
-            FillLCIQuin3.setSelectedIndex(0);
-
-        }
-        if (FillLCI3.getSelectedIndex() == 4) {
-            FillLCIabel3.setVisible(true);
-            FillLCIabel3.setText("Buscar Quincena:");
-            FillLCIAm3.setVisible(false);
-            FillLCIAm3.setText("");
-            FillLCIAp3.setVisible(false);
-            FillLCIAp3.setText("");
-            FillLCIName3.setVisible(false);
-            FillLCIName3.setText("");
-            FillLCIQuin3.setVisible(true);
-            FillLCIQuin3.setSelectedIndex(0);
-
-        }
-        MDLDA();
-    }//GEN-LAST:event_FillLCI3ItemStateChanged
-
-    private void FillLCIAp3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp3KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIAp3KeyReleased
-
-    private void FillLCIAm3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm3KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIAm3KeyReleased
-
-    private void FillLCIName3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName3KeyReleased
-        MDLDA();
-    }//GEN-LAST:event_FillLCIName3KeyReleased
-
-    private void FillLCIQuin3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin3ItemStateChanged
-        MDLDA();
-    }//GEN-LAST:event_FillLCIQuin3ItemStateChanged
-
-    private void FillLCIQuin4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin4ItemStateChanged
-        MDLDA();
-    }//GEN-LAST:event_FillLCIQuin4ItemStateChanged
-
-    private void FillLCIName4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName4KeyTyped
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIName4KeyTyped
-
-    private void FillLCIAm4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm4KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAm4KeyReleased
-
-    private void FillLCIAp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp4KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAp4KeyReleased
-
-    private void FillLCI4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI4ItemStateChanged
-        if (FillLCI4.getSelectedIndex() == 0) {
-            FillLCIabel4.setVisible(false);
-            FillLCIAm4.setVisible(false);
-            FillLCIAm4.setText("");
-            FillLCIAp4.setVisible(false);
-            FillLCIAp4.setText("");
-            FillLCIName4.setVisible(false);
-            FillLCIName4.setText("");
-            FillLCIQuin4.setVisible(false);
-            FillLCIQuin4.setSelectedIndex(0);
-
-        }
-        if (FillLCI4.getSelectedIndex() == 1) {
-            FillLCIabel4.setVisible(false);
-            FillLCIabel4.setText("Buscar apellido P:");
-            FillLCIAm4.setVisible(false);
-            FillLCIAm4.setText("");
-            FillLCIAp4.setVisible(true);
-            FillLCIAp4.setText("");
-            FillLCIName4.setVisible(false);
-            FillLCIName4.setText("");
-            FillLCIQuin4.setVisible(false);
-            FillLCIQuin4.setSelectedIndex(0);
-
-        }
-        if (FillLCI4.getSelectedIndex() == 2) {
-            FillLCIabel4.setVisible(false);
-            FillLCIabel4.setText("Buscar apellido M:");
-            FillLCIAm4.setVisible(true);
-            FillLCIAm4.setText("");
-            FillLCIAp4.setVisible(false);
-            FillLCIAp4.setText("");
-            FillLCIName4.setVisible(false);
-            FillLCIName4.setText("");
-            FillLCIQuin4.setVisible(false);
-            FillLCIQuin4.setSelectedIndex(0);
-
-        }
-        if (FillLCI4.getSelectedIndex() == 3) {
-            FillLCIabel4.setVisible(true);
-            FillLCIabel4.setText("Buscar Nombres:");
-            FillLCIAm4.setVisible(false);
-            FillLCIAm4.setText("");
-            FillLCIAp4.setVisible(false);
-            FillLCIAp4.setText("");
-            FillLCIName4.setVisible(true);
-            FillLCIName4.setText("");
-            FillLCIQuin4.setVisible(false);
-            FillLCIQuin4.setSelectedIndex(0);
-
-        }
-        if (FillLCI4.getSelectedIndex() == 4) {
-            FillLCIabel4.setVisible(false);
-            FillLCIabel4.setText("Buscar Quincena:");
-            FillLCIAm4.setVisible(false);
-            FillLCIAm4.setText("");
-            FillLCIAp4.setVisible(false);
-            FillLCIAp4.setText("");
-            FillLCIName4.setVisible(false);
-            FillLCIName4.setText("");
-            FillLCIQuin4.setVisible(true);
-            FillLCIQuin4.setSelectedIndex(0);
-
-        }
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCI4ItemStateChanged
-
-    private void FillLCI5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI5ItemStateChanged
-        if (FillLCI5.getSelectedIndex() == 0) {
-            FillLCIabel5.setVisible(false);
-            FillLCIAm5.setVisible(false);
-            FillLCIAm5.setText("");
-            FillLCIAp5.setVisible(false);
-            FillLCIAp5.setText("");
-            FillLCIName5.setVisible(false);
-            FillLCIName5.setText("");
-            FillLCIQuin5.setVisible(false);
-            FillLCIQuin5.setSelectedIndex(0);
-
-        }
-        if (FillLCI5.getSelectedIndex() == 1) {
-            FillLCIabel5.setVisible(true);
-            FillLCIabel5.setText("Buscar apellido P:");
-            FillLCIAm5.setVisible(true);
-            FillLCIAm5.setText("");
-            FillLCIAp5.setVisible(true);
-            FillLCIAp5.setText("");
-            FillLCIName5.setVisible(false);
-            FillLCIName5.setText("");
-            FillLCIQuin5.setVisible(false);
-            FillLCIQuin5.setSelectedIndex(0);
-
-        }
-        if (FillLCI5.getSelectedIndex() == 2) {
-            FillLCIabel5.setVisible(true);
-            FillLCIabel5.setText("Buscar apellido M:");
-            FillLCIAm5.setVisible(true);
-            FillLCIAm5.setText("");
-            FillLCIAp5.setVisible(false);
-            FillLCIAp5.setText("");
-            FillLCIName5.setVisible(false);
-            FillLCIName5.setText("");
-            FillLCIQuin5.setVisible(false);
-            FillLCIQuin5.setSelectedIndex(0);
-
-        }
-        if (FillLCI5.getSelectedIndex() == 3) {
-            FillLCIabel5.setVisible(true);
-            FillLCIabel5.setText("Buscar Nombres:");
-            FillLCIAm5.setVisible(false);
-            FillLCIAm5.setText("");
-            FillLCIAp5.setVisible(false);
-            FillLCIAp5.setText("");
-            FillLCIName5.setVisible(true);
-            FillLCIName5.setText("");
-            FillLCIQuin5.setVisible(false);
-            FillLCIQuin5.setSelectedIndex(0);
-
-        }
-        if (FillLCI5.getSelectedIndex() == 4) {
-            FillLCIabel5.setVisible(true);
-            FillLCIabel5.setText("Buscar Quincena:");
-            FillLCIAm5.setVisible(false);
-            FillLCIAm5.setText("");
-            FillLCIAp5.setVisible(false);
-            FillLCIAp5.setText("");
-            FillLCIName5.setVisible(false);
-            FillLCIName5.setText("");
-            FillLCIQuin5.setVisible(true);
-            FillLCIQuin5.setSelectedIndex(0);
-
-        }
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCI5ItemStateChanged
-
-    private void FillLCIAp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp5KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAp5KeyReleased
-
-    private void FillLCIAm5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm5KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAm5KeyReleased
-
-    private void FillLCIName5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName5KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIName5KeyReleased
-
-    private void FillLCIQuin5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIQuin5KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIQuin5KeyReleased
-
-    private void FillLCI6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI6ItemStateChanged
-        if (FillLCI6.getSelectedIndex() == 0) {
-            FillLCIabel6.setVisible(false);
-            FillLCIAm6.setVisible(false);
-            FillLCIAm6.setText("");
-            FillLCIAp6.setVisible(false);
-            FillLCIAp6.setText("");
-            FillLCIName6.setVisible(false);
-            FillLCIName6.setText("");
-            FillLCIQuin6.setVisible(false);
-            FillLCIQuin6.setSelectedIndex(0);
-
-        }
-        if (FillLCI6.getSelectedIndex() == 1) {
-            FillLCIabel6.setVisible(true);
-            FillLCIabel6.setText("Buscar apellido P:");
-            FillLCIAm6.setVisible(false);
-            FillLCIAm6.setText("");
-            FillLCIAp6.setVisible(true);
-            FillLCIAp6.setText("");
-            FillLCIName6.setVisible(false);
-            FillLCIName6.setText("");
-            FillLCIQuin6.setVisible(false);
-            FillLCIQuin6.setSelectedIndex(0);
-
-        }
-        if (FillLCI6.getSelectedIndex() == 2) {
-            FillLCIabel6.setVisible(true);
-            FillLCIabel6.setText("Buscar apellido M:");
-            FillLCIAm6.setVisible(true);
-            FillLCIAm6.setText("");
-            FillLCIAp6.setVisible(false);
-            FillLCIAp6.setText("");
-            FillLCIName6.setVisible(false);
-            FillLCIName6.setText("");
-            FillLCIQuin6.setVisible(false);
-            FillLCIQuin6.setSelectedIndex(0);
-
-        }
-        if (FillLCI6.getSelectedIndex() == 3) {
-            FillLCIabel6.setVisible(true);
-            FillLCIabel6.setText("Buscar Nombres:");
-            FillLCIAm6.setVisible(false);
-            FillLCIAm6.setText("");
-            FillLCIAp6.setVisible(false);
-            FillLCIAp6.setText("");
-            FillLCIName6.setVisible(true);
-            FillLCIName6.setText("");
-            FillLCIQuin6.setVisible(false);
-            FillLCIQuin6.setSelectedIndex(0);
-
-        }
-        if (FillLCI6.getSelectedIndex() == 4) {
-            FillLCIabel6.setVisible(true);
-            FillLCIabel6.setText("Buscar Quincena:");
-            FillLCIAm6.setVisible(false);
-            FillLCIAm6.setText("");
-            FillLCIAp6.setVisible(false);
-            FillLCIAp6.setText("");
-            FillLCIName6.setVisible(false);
-            FillLCIName6.setText("");
-            FillLCIQuin6.setVisible(true);
-            FillLCIQuin6.setSelectedIndex(0);
-
-        }
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCI6ItemStateChanged
-
-    private void FillLCIAp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp6KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAp6KeyReleased
-
-    private void FillLCIAm6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm6KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAm6KeyReleased
-
-    private void FillLCIName6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName6KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIName6KeyReleased
-
-    private void FillLCIQuin6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin6ItemStateChanged
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIQuin6ItemStateChanged
-
-    private void FillLCI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI7ItemStateChanged
-        if (FillLCI7.getSelectedIndex() == 0) {
-            FillLCIabel7.setVisible(false);
-            FillLCIAm7.setVisible(false);
-            FillLCIAm7.setText("");
-            FillLCIAp7.setVisible(false);
-            FillLCIAp7.setText("");
-            FillLCIName7.setVisible(false);
-            FillLCIName7.setText("");
-            FillLCIQuin7.setVisible(false);
-            FillLCIQuin7.setSelectedIndex(0);
-
-        }
-        if (FillLCI7.getSelectedIndex() == 1) {
-            FillLCIabel7.setVisible(true);
-            FillLCIabel7.setText("Buscar apellido P:");
-            FillLCIAm7.setVisible(false);
-            FillLCIAm7.setText("");
-            FillLCIAp7.setVisible(true);
-            FillLCIAp7.setText("");
-            FillLCIName7.setVisible(false);
-            FillLCIName7.setText("");
-            FillLCIQuin7.setVisible(false);
-            FillLCIQuin7.setSelectedIndex(0);
-
-        }
-        if (FillLCI7.getSelectedIndex() == 2) {
-            FillLCIabel7.setVisible(true);
-            FillLCIabel7.setText("Buscar apellido M:");
-            FillLCIAm7.setVisible(true);
-            FillLCIAm7.setText("");
-            FillLCIAp7.setVisible(false);
-            FillLCIAp7.setText("");
-            FillLCIName7.setVisible(false);
-            FillLCIName7.setText("");
-            FillLCIQuin7.setVisible(false);
-            FillLCIQuin7.setSelectedIndex(0);
-
-        }
-        if (FillLCI7.getSelectedIndex() == 3) {
-            FillLCIabel7.setVisible(true);
-            FillLCIabel7.setText("Buscar Nombres:");
-            FillLCIAm7.setVisible(false);
-            FillLCIAm7.setText("");
-            FillLCIAp7.setVisible(false);
-            FillLCIAp7.setText("");
-            FillLCIName7.setVisible(true);
-            FillLCIName7.setText("");
-            FillLCIQuin7.setVisible(false);
-            FillLCIQuin7.setSelectedIndex(0);
-
-        }
-        if (FillLCI7.getSelectedIndex() == 4) {
-            FillLCIabel7.setVisible(true);
-            FillLCIabel7.setText("Buscar Quincena:");
-            FillLCIAm7.setVisible(false);
-            FillLCIAm7.setText("");
-            FillLCIAp7.setVisible(false);
-            FillLCIAp7.setText("");
-            FillLCIName7.setVisible(false);
-            FillLCIName7.setText("");
-            FillLCIQuin7.setVisible(true);
-            FillLCIQuin7.setSelectedIndex(0);
-
-        }
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCI7ItemStateChanged
-
-    private void FillLCIAp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp7KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAp7KeyReleased
-
-    private void FillLCIAm7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm7KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAm7KeyReleased
-
-    private void FillLCIName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName7KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIName7KeyReleased
-
-    private void FillLCIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin7ItemStateChanged
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIQuin7ItemStateChanged
-
-    private void FillLCI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI8ItemStateChanged
-        if (FillLCI8.getSelectedIndex() == 0) {
-            FillLCIabel8.setVisible(false);
-            FillLCIAm8.setVisible(false);
-            FillLCIAm8.setText("");
-            FillLCIAp8.setVisible(false);
-            FillLCIAp8.setText("");
-            FillLCIName8.setVisible(false);
-            FillLCIName8.setText("");
-            FillLCIQuin8.setVisible(false);
-            FillLCIQuin8.setSelectedIndex(0);
-
-        }
-        if (FillLCI8.getSelectedIndex() == 1) {
-            FillLCIabel8.setVisible(true);
-            FillLCIabel8.setText("Buscar apellido P:");
-            FillLCIAm8.setVisible(false);
-            FillLCIAm8.setText("");
-            FillLCIAp8.setVisible(true);
-            FillLCIAp8.setText("");
-            FillLCIName8.setVisible(false);
-            FillLCIName8.setText("");
-            FillLCIQuin8.setVisible(false);
-            FillLCIQuin8.setSelectedIndex(0);
-
-        }
-        if (FillLCI8.getSelectedIndex() == 2) {
-            FillLCIabel8.setVisible(true);
-            FillLCIabel8.setText("Buscar apellido M:");
-            FillLCIAm8.setVisible(true);
-            FillLCIAm8.setText("");
-            FillLCIAp8.setVisible(false);
-            FillLCIAp8.setText("");
-            FillLCIName8.setVisible(false);
-            FillLCIName8.setText("");
-            FillLCIQuin8.setVisible(false);
-            FillLCIQuin8.setSelectedIndex(0);
-
-        }
-        if (FillLCI8.getSelectedIndex() == 3) {
-            FillLCIabel8.setVisible(true);
-            FillLCIabel8.setText("Buscar Nombres:");
-            FillLCIAm8.setVisible(false);
-            FillLCIAm8.setText("");
-            FillLCIAp8.setVisible(false);
-            FillLCIAp8.setText("");
-            FillLCIName8.setVisible(true);
-            FillLCIName8.setText("");
-            FillLCIQuin8.setVisible(false);
-            FillLCIQuin8.setSelectedIndex(0);
-
-        }
-        if (FillLCI8.getSelectedIndex() == 4) {
-            FillLCIabel8.setVisible(true);
-            FillLCIabel8.setText("Buscar Quincena:");
-            FillLCIAm8.setVisible(false);
-            FillLCIAm8.setText("");
-            FillLCIAp8.setVisible(false);
-            FillLCIAp8.setText("");
-            FillLCIName8.setVisible(false);
-            FillLCIName8.setText("");
-            FillLCIQuin8.setVisible(true);
-            FillLCIQuin8.setSelectedIndex(0);
-
-        }
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCI8ItemStateChanged
-
-    private void FillLCIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp8KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAp8KeyReleased
-
-    private void FillLCIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm8KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAm8KeyReleased
-
-    private void FillLCIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName8KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIName8KeyReleased
-
-    private void FillLCIQuin8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIQuin8KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIQuin8KeyReleased
-
-    private void FillLCIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCIQuin9ItemStateChanged
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIQuin9ItemStateChanged
-
-    private void FillLCIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIName9KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIName9KeyReleased
-
-    private void FillLCIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAm9KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAm9KeyReleased
-
-    private void FillLCIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLCIAp9KeyReleased
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCIAp9KeyReleased
-
-    private void FillLCI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLCI9ItemStateChanged
-        if (FillLCI9.getSelectedIndex() == 0) {
-            FillLCIabel9.setVisible(false);
-            FillLCIAm9.setVisible(false);
-            FillLCIAm9.setText("");
-            FillLCIAp9.setVisible(false);
-            FillLCIAp9.setText("");
-            FillLCIName9.setVisible(false);
-            FillLCIName9.setText("");
-            FillLCIQuin9.setVisible(false);
-            FillLCIQuin9.setSelectedIndex(0);
-
-        }
-        if (FillLCI9.getSelectedIndex() == 1) {
-            FillLCIabel9.setVisible(true);
-            FillLCIabel9.setText("Buscar apellido P:");
-            FillLCIAm9.setVisible(false);
-            FillLCIAm9.setText("");
-            FillLCIAp9.setVisible(true);
-            FillLCIAp9.setText("");
-            FillLCIName9.setVisible(false);
-            FillLCIName9.setText("");
-            FillLCIQuin9.setVisible(false);
-            FillLCIQuin9.setSelectedIndex(0);
-
-        }
-        if (FillLCI9.getSelectedIndex() == 2) {
-            FillLCIabel9.setVisible(true);
-            FillLCIabel9.setText("Buscar apellido M:");
-            FillLCIAm9.setVisible(true);
-            FillLCIAm9.setText("");
-            FillLCIAp9.setVisible(false);
-            FillLCIAp9.setText("");
-            FillLCIName9.setVisible(false);
-            FillLCIName9.setText("");
-            FillLCIQuin9.setVisible(false);
-            FillLCIQuin9.setSelectedIndex(0);
-
-        }
-        if (FillLCI9.getSelectedIndex() == 3) {
-            FillLCIabel9.setVisible(true);
-            FillLCIabel9.setText("Buscar Nombres:");
-            FillLCIAm9.setVisible(false);
-            FillLCIAm9.setText("");
-            FillLCIAp9.setVisible(false);
-            FillLCIAp9.setText("");
-            FillLCIName9.setVisible(true);
-            FillLCIName9.setText("");
-            FillLCIQuin9.setVisible(false);
-            FillLCIQuin9.setSelectedIndex(0);
-
-        }
-        if (FillLCI9.getSelectedIndex() == 4) {
-            FillLCIabel9.setVisible(true);
-            FillLCIabel9.setText("Buscar Quincena:");
-            FillLCIAm9.setVisible(false);
-            FillLCIAm9.setText("");
-            FillLCIAp9.setVisible(false);
-            FillLCIAp9.setText("");
-            FillLCIName9.setVisible(false);
-            FillLCIName9.setText("");
-            FillLCIQuin9.setVisible(true);
-            FillLCIQuin9.setSelectedIndex(0);
-
-        }
-        MDLDA();
-
-    }//GEN-LAST:event_FillLCI9ItemStateChanged
-
-    private void ExcelCIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcelCIActionPerformed
+    private void ExcelSIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcelSIActionPerformed
         if (LDA.getText().equals("0")) {
             JOptionPane.showMessageDialog(this, "Selecciona una lista.");
 
         } else {
             JFileChooser chooser = new JFileChooser();
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-            chooser.setSelectedFile(new File("Listas de asistencia  de la " + LDAQuin.getSelectedItem().toString() + " de la zona "
-                    + LDAZon.getSelectedItem().toString()));
+            chooser.setSelectedFile(new File("Lista " + LDA.getText() + " de " + LDAZon.getSelectedItem().toString() + " de la " + LDAQuin.getSelectedItem().toString()));
             chooser.setFileFilter(filter);
             chooser.setDialogTitle("Guardar archivo");
             chooser.setAcceptAllFileFilterUsed(false);
@@ -20393,16 +19763,16 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection connect = DriverManager.getConnection(
-                        "jdbc:mysql://192.168.1.170:3306/confort2022",
-                        "Servidor",
-                        "Confort1022"
+                        "jdbc:mysql://192.168.1.170:3306/confort2020",
+                        "root",
+                        ""
                 );
 
                 Statement statement = connect.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getSelectedItem().toString() + "` WHERE " + LDA.getText());
-                try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getSelectedItem().toString() + ".simss` WHERE " + LDA.getText());
+                try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
-                    XSSFSheet spreadsheet = libro.createSheet(("Lista"));
+                    XSSFSheet spreadsheet = libro.createSheet("Lista " + LDA.getText() + " de " + LDAZon.getSelectedItem().toString() + "de la " + LDAQuin.getSelectedItem().toString());
 
                     XSSFRow row = spreadsheet.createRow((short) 0);
                     XSSFCell cell = (XSSFCell) row.createCell((short) 0);
@@ -20547,35 +19917,26 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(2);
                         cell.setCellStyle(Contenido);
-
+                        cell = row.createCell(3);
+                        cell.setCellValue("Servicio");
+                        cell.setCellStyle(Contenido);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         2, //first row (0-based)
                                         2, //last row (0-based)
                                         4, //first column (0-based)
-                                        7 //last column (0-based)
+                                        6 //last column (0-based)
                                 )
                         );
                         cell = row.createCell(4);
-                        cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                        cell.setCellStyle(Encabezado);
+                        cell.setCellStyle(Contenido);
 
                         cell = row.createCell(5);
-                        cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                        cell.setCellStyle(Contenido);
                         cell = row.createCell(6);
-                        cell.setCellStyle(Encabezado);
-
-                        cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                        cell.setCellStyle(Encabezado);
-
-                        cell = row.createCell(7);
-                        cell.setCellValue(resultSet.getString("Apellido P") + " "
-                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
-                        cell.setCellStyle(Encabezado);
-
+                        cell.setCellStyle(Contenido);
+                        //cell = row.createCell(7);
+                        //cell.setCellStyle(Contenido);
                         cell = row.createCell(8);
                         cell.setCellValue(resultSet.getString("Zona"));
                         spreadsheet.setColumnWidth(8, 4250);
@@ -21127,6 +20488,10 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                     spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
                     libro.write(archivo);
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(Listas_SI_5.class
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
                 Desktop.getDesktop().open(archivoXLS);
             } catch (IOException | NumberFormatException e) {
@@ -21135,169 +20500,989 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     throw e;
 
                 } catch (IOException | NumberFormatException ex) {
-                    Logger.getLogger(Listas_CI_5.class
+                    Logger.getLogger(Listas_SI_5.class
                             .getName()).log(Level.SEVERE, null, ex);
 
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(Listas_CI_5.class
+                Logger.getLogger(Listas_SI_5.class
                         .getName()).log(Level.SEVERE, null, ex);
             }
-
             LDAZon.setSelectedIndex(0);
             LDAQuin.setSelectedIndex(0);
         }
-    }//GEN-LAST:event_ExcelCIActionPerformed
+    }//GEN-LAST:event_ExcelSIActionPerformed
 
-    private void TableLDACI9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI9MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI9.getModel();
+    private void FillLSIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin9ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin9ItemStateChanged
 
-        int fila = TableLDACI9.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI9.getValueAt(fila, 0)));
+    private void FillLSIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName9KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName9KeyReleased
+
+    private void FillLSIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm9KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm9KeyReleased
+
+    private void FillLSIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp9KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp9KeyReleased
+
+    private void FillLSI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI9ItemStateChanged
+
+        if (FillLSI9.getSelectedIndex() == 0) {
+            FillLSIabel9.setVisible(false);
+            FillLSIAm9.setVisible(false);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(false);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(false);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(false);
+            FillLSIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLSI9.getSelectedIndex() == 1) {
+            FillLSIabel9.setVisible(true);
+            FillLSIabel9.setText("Buscar apellido P:");
+            FillLSIAm9.setVisible(false);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(true);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(false);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(false);
+            FillLSIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLSI9.getSelectedIndex() == 2) {
+            FillLSIabel9.setVisible(true);
+            FillLSIabel9.setText("Buscar apellido M:");
+            FillLSIAm9.setVisible(true);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(false);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(false);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(false);
+            FillLSIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLSI9.getSelectedIndex() == 3) {
+            FillLSIabel9.setVisible(true);
+            FillLSIabel9.setText("Buscar Nombre(s):");
+            FillLSIAm9.setVisible(false);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(false);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(true);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(false);
+            FillLSIQuin9.setSelectedIndex(0);
+        }
+        if (FillLSI9.getSelectedIndex() == 4) {
+            FillLSIabel9.setVisible(true);
+            FillLSIabel9.setText("Buscar Quincena:");
+            FillLSIAm9.setVisible(false);
+            FillLSIAm9.setText("");
+            FillLSIAp9.setVisible(false);
+            FillLSIAp9.setText("");
+            FillLSIName9.setVisible(false);
+            FillLSIName9.setText("");
+            FillLSIQuin9.setVisible(true);
+            FillLSIQuin9.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI9ItemStateChanged
+
+    private void FillLSIQuin8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin8ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin8ItemStateChanged
+
+    private void FillLSIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName8KeyReleased
+
+    private void FillLSIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm8KeyReleased
+
+    private void FillLSIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp8KeyReleased
+
+    private void FillLSI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI8ItemStateChanged
+        if (FillLSI8.getSelectedIndex() == 0) {
+            FillLSIabel8.setVisible(false);
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 1) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar apellido P:");
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(true);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 2) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar apellido M:");
+            FillLSIAm8.setVisible(true);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 3) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar Nombre(s):");
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(true);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+        }
+        if (FillLSI8.getSelectedIndex() == 4) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar Quincena:");
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(true);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI8ItemStateChanged
+
+    private void FillLSIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin7ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin7ItemStateChanged
+
+    private void FillLSIName7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName7KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName7KeyReleased
+
+    private void FillLSIAm7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm7KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm7KeyReleased
+
+    private void FillLSIAp7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp7KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp7KeyReleased
+
+    private void FillLSI7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI7ItemStateChanged
+        if (FillLSI7.getSelectedIndex() == 0) {
+            FillLSIabel7.setVisible(true);
+            FillLSIAm7.setVisible(false);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(false);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(false);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(false);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLSI7.getSelectedIndex() == 1) {
+            FillLSIabel7.setVisible(true);
+            FillLSIabel7.setText("Buscar apellido P:");
+            FillLSIAm7.setVisible(false);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(true);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(false);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(false);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLSI7.getSelectedIndex() == 2) {
+            FillLSIabel7.setVisible(true);
+            FillLSIabel7.setText("Buscar apellido M:");
+            FillLSIAm7.setVisible(true);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(false);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(false);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(false);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLSI7.getSelectedIndex() == 3) {
+            FillLSIabel7.setVisible(true);
+            FillLSIabel7.setText("Buscar Nombre(s):");
+            FillLSIAm7.setVisible(false);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(false);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(true);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(false);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLSI7.getSelectedIndex() == 4) {
+            FillLSIabel7.setVisible(true);
+            FillLSIabel7.setText("Buscar Quincena:");
+            FillLSIAm7.setVisible(false);
+            FillLSIAm7.setText("");
+            FillLSIAp7.setVisible(false);
+            FillLSIAp7.setText("");
+            FillLSIName7.setVisible(false);
+            FillLSIName7.setText("");
+            FillLSIQuin7.setVisible(true);
+            FillLSIQuin7.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI7ItemStateChanged
+
+    private void FillLSIQuin6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin6ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin6ItemStateChanged
+
+    private void FillLSIName6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName6KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName6KeyReleased
+
+    private void FillLSIAm6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm6KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm6KeyReleased
+
+    private void FillLSIAp6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp6KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp6KeyReleased
+
+    private void FillLSI6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI6ItemStateChanged
+        if (FillLSI6.getSelectedIndex() == 0) {
+            FillLSIabel6.setVisible(true);
+            FillLSIAm6.setVisible(false);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(false);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(false);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(false);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLSI6.getSelectedIndex() == 1) {
+            FillLSIabel6.setVisible(true);
+            FillLSIabel6.setText("Buscar apellido P:");
+            FillLSIAm6.setVisible(false);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(true);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(false);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(false);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLSI6.getSelectedIndex() == 2) {
+            FillLSIabel6.setVisible(true);
+            FillLSIabel6.setText("Buscar apellido M:");
+            FillLSIAm6.setVisible(true);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(false);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(false);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(false);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLSI6.getSelectedIndex() == 3) {
+            FillLSIabel6.setVisible(true);
+            FillLSIabel6.setText("Buscar Nombre(s):");
+            FillLSIAm6.setVisible(false);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(false);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(true);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(false);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLSI6.getSelectedIndex() == 4) {
+            FillLSIabel6.setVisible(true);
+            FillLSIabel6.setText("Buscar Quincena:");
+            FillLSIAm6.setVisible(false);
+            FillLSIAm6.setText("");
+            FillLSIAp6.setVisible(false);
+            FillLSIAp6.setText("");
+            FillLSIName6.setVisible(false);
+            FillLSIName6.setText("");
+            FillLSIQuin6.setVisible(true);
+            FillLSIQuin6.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI6ItemStateChanged
+
+    private void FillLSIQuin5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin5ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin5ItemStateChanged
+
+    private void FillLSIName5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName5KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName5KeyReleased
+
+    private void FillLSIAm5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm5KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm5KeyReleased
+
+    private void FillLSIAp5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp5KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp5KeyReleased
+
+    private void FillLSI5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI5ItemStateChanged
+        if (FillLSI5.getSelectedIndex() == 0) {
+            FillLSIabel5.setVisible(true);
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 1) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar apellido P:");
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(true);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 2) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar apellido M:");
+            FillLSIAm5.setVisible(true);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 3) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar Nombre(s):");
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(true);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 4) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar Quincena:");
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(true);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI5ItemStateChanged
+
+    private void FillLSIQuin4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuin4KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin4KeyReleased
+
+    private void FillLSIName4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName4KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName4KeyReleased
+
+    private void FillLSIAm4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm4KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm4KeyReleased
+
+    private void FillLSIAp4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp4KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp4KeyReleased
+
+    private void FillLSI4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI4ItemStateChanged
+        if (FillLSI5.getSelectedIndex() == 0) {
+            FillLSIabel5.setVisible(true);
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 1) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar apellido P:");
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(true);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 2) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar apellido M:");
+            FillLSIAm5.setVisible(true);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 3) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar Nombre(s):");
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(true);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(false);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLSI5.getSelectedIndex() == 4) {
+            FillLSIabel5.setVisible(true);
+            FillLSIabel5.setText("Buscar Quincena:");
+            FillLSIAm5.setVisible(false);
+            FillLSIAm5.setText("");
+            FillLSIAp5.setVisible(false);
+            FillLSIAp5.setText("");
+            FillLSIName5.setVisible(false);
+            FillLSIName5.setText("");
+            FillLSIQuin5.setVisible(true);
+            FillLSIQuin5.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI4ItemStateChanged
+
+    private void FillLSIQuin3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin3ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin3ItemStateChanged
+
+    private void FillLSIQuin2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin2ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin2ItemStateChanged
+
+    private void FillLSIName2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName2KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName2KeyReleased
+
+    private void FillLSIAm2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm2KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm2KeyReleased
+
+    private void FillLSIAp2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp2KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp2KeyReleased
+
+    private void FillLSI2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI2ItemStateChanged
+        if (FillLSI2.getSelectedIndex() == 0) {
+            FillLSIabel2.setVisible(false);
+            FillLSIAm2.setVisible(false);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(false);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(false);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(false);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLSI2.getSelectedIndex() == 1) {
+            FillLSIabel2.setVisible(true);
+            FillLSIabel2.setText("Buscar apellido P:");
+            FillLSIAm2.setVisible(false);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(true);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(false);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(false);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLSI2.getSelectedIndex() == 2) {
+            FillLSIabel2.setVisible(true);
+            FillLSIabel2.setText("Buscar apellido M:");
+            FillLSIAm2.setVisible(true);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(false);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(false);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(false);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLSI2.getSelectedIndex() == 3) {
+            FillLSIabel2.setVisible(true);
+            FillLSIabel2.setText("Buscar Nombre(s):");
+            FillLSIAm2.setVisible(false);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(false);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(true);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(false);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLSI2.getSelectedIndex() == 4) {
+            FillLSIabel2.setVisible(true);
+            FillLSIabel2.setText("Buscar Quincena:");
+            FillLSIAm2.setVisible(false);
+            FillLSIAm2.setText("");
+            FillLSIAp2.setVisible(false);
+            FillLSIAp2.setText("");
+            FillLSIName2.setVisible(false);
+            FillLSIName2.setText("");
+            FillLSIQuin2.setVisible(true);
+            FillLSIQuin2.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI2ItemStateChanged
+
+    private void FillLSIQuin1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin1ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin1ItemStateChanged
+
+    private void FillLSIName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName1KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName1KeyReleased
+
+    private void FillLSIAm1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm1KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm1KeyReleased
+
+    private void FillLSIAp1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp1KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp1KeyReleased
+
+    private void FillLSI1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI1ItemStateChanged
+        if (FillLSI1.getSelectedIndex() == 0) {
+            FillLSIabel1.setVisible(false);
+            FillLSIAm1.setVisible(false);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(false);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(false);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(false);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLSI1.getSelectedIndex() == 1) {
+            FillLSIabel1.setVisible(true);
+            FillLSIabel1.setText("Buscar apellido P:");
+            FillLSIAm1.setVisible(false);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(true);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(false);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(false);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLSI1.getSelectedIndex() == 2) {
+            FillLSIabel1.setVisible(true);
+            FillLSIabel1.setText("Buscar apellido M:");
+            FillLSIAm1.setVisible(true);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(false);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(false);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(false);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLSI1.getSelectedIndex() == 3) {
+            FillLSIabel1.setVisible(true);
+            FillLSIabel1.setText("Buscar Nombre(s):");
+            FillLSIAm1.setVisible(false);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(false);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(true);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(false);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+
+        if (FillLSI1.getSelectedIndex() == 4) {
+            FillLSIabel1.setVisible(true);
+            FillLSIabel1.setText("Buscar Quincena:");
+            FillLSIAm1.setVisible(false);
+            FillLSIAm1.setText("");
+            FillLSIAp1.setVisible(false);
+            FillLSIAp1.setText("");
+            FillLSIName1.setVisible(false);
+            FillLSIName1.setText("");
+            FillLSIQuin1.setVisible(true);
+            FillLSIQuin1.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI1ItemStateChanged
+
+    private void FillLSIQuinKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIQuinKeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuinKeyReleased
+
+    private void FillLSINameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSINameKeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSINameKeyReleased
+
+    private void FillLSIAmKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAmKeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAmKeyReleased
+
+    private void FillLSIApKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIApKeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIApKeyReleased
+
+    private void FillLSIItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIItemStateChanged
+        if (FillLSI.getSelectedIndex() == 0) {
+            FillLSIabel.setVisible(false);
+            FillLSIAm.setVisible(false);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(false);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(false);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(false);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLSI.getSelectedIndex() == 1) {
+            FillLSIabel.setVisible(true);
+            FillLSIabel.setText("Buscar apellido P:");
+            FillLSIAm.setVisible(false);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(true);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(false);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(false);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLSI.getSelectedIndex() == 2) {
+            FillLSIabel.setVisible(true);
+            FillLSIabel.setText("Buscar apellido M:");
+            FillLSIAm.setVisible(true);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(false);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(false);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(false);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLSI.getSelectedIndex() == 3) {
+            FillLSIabel.setVisible(true);
+            FillLSIabel.setText("Buscar Nombre(s):");
+            FillLSIAm.setVisible(false);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(false);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(true);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(false);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLSI.getSelectedIndex() == 4) {
+            FillLSIabel.setVisible(true);
+            FillLSIabel.setText("Buscar Quincena:");
+            FillLSIAm.setVisible(false);
+            FillLSIAm.setText("");
+            FillLSIAp.setVisible(false);
+            FillLSIAp.setText("");
+            FillLSIName.setVisible(false);
+            FillLSIName.setText("");
+            FillLSIQuin.setVisible(true);
+            FillLSIQuin.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIItemStateChanged
+
+    private void TableLDASIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASIMouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI.getModel();
+
+        int fila = TableLDASI.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASIMouseClicked
 
-    }//GEN-LAST:event_TableLDACI9MouseClicked
+    private void TableLDASI1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI1MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI1.getModel();
 
-    private void TableLDACIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACIMouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI.getModel();
-
-        int fila = TableLDACI.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI.getValueAt(fila, 0)));
+        int fila = TableLDASI1.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI1.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI1MouseClicked
 
+    private void TableLDASI2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI2MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI2.getModel();
 
-    }//GEN-LAST:event_TableLDACIMouseClicked
-
-    private void TableLDACI1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableLDACI1KeyReleased
-        DefaultTableModel model = (DefaultTableModel) TableLDACI1.getModel();
-
-        int fila = TableLDACI1.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI1.getValueAt(fila, 0)));
+        int fila = TableLDASI2.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI2.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI2MouseClicked
 
-    }//GEN-LAST:event_TableLDACI1KeyReleased
+    private void TableLDASI3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI3MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI3.getModel();
 
-    private void TableLDACI2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI2MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI2.getModel();
-
-        int fila = TableLDACI2.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI2.getValueAt(fila, 0)));
+        int fila = TableLDASI3.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI3.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI3MouseClicked
 
-    }//GEN-LAST:event_TableLDACI2MouseClicked
+    private void TableLDASI4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI4MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI4.getModel();
 
-    private void TableLDACI3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI3MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI3.getModel();
-
-        int fila = TableLDACI3.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI3.getValueAt(fila, 0)));
+        int fila = TableLDASI4.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI4.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI4MouseClicked
 
-    }//GEN-LAST:event_TableLDACI3MouseClicked
+    private void TableLDASI5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI5MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI5.getModel();
 
-    private void TableLDACI4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI4MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI4.getModel();
-
-        int fila = TableLDACI4.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI4.getValueAt(fila, 0)));
+        int fila = TableLDASI5.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI5.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI5MouseClicked
 
-    }//GEN-LAST:event_TableLDACI4MouseClicked
+    private void TableLDASI6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI6MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI6.getModel();
 
-    private void TableLDACI5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI5MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI5.getModel();
-
-        int fila = TableLDACI5.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI5.getValueAt(fila, 0)));
+        int fila = TableLDASI6.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI6.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI6MouseClicked
 
-    }//GEN-LAST:event_TableLDACI5MouseClicked
+    private void TableLDASI7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI7MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI7.getModel();
 
-    private void TableLDACI6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI6MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI6.getModel();
-
-        int fila = TableLDACI6.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI6.getValueAt(fila, 0)));
+        int fila = TableLDASI7.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI7.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI7MouseClicked
 
-    }//GEN-LAST:event_TableLDACI6MouseClicked
+    private void TableLDASI8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI8MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI8.getModel();
 
-    private void TableLDACI8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI8MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI8.getModel();
-
-        int fila = TableLDACI8.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI8.getValueAt(fila, 0)));
+        int fila = TableLDASI8.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI8.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
-    }//GEN-LAST:event_TableLDACI8MouseClicked
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI8MouseClicked
 
-    private void TableLDACI7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDACI7MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDACI7.getModel();
+    private void TableLDASI9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI9MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI9.getModel();
 
-        int fila = TableLDACI7.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDACI7.getValueAt(fila, 0)));
+        int fila = TableLDASI9.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI9.getValueAt(fila, 0)));
         String combo1 = model.getValueAt(fila, 2).toString();
         for (int i = 0; i < LDAQuin.getItemCount(); i++) {
             if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
                 LDAQuin.setSelectedIndex(i);
             }
         }
-        ExcelCI.setVisible(true);
-    }//GEN-LAST:event_TableLDACI7MouseClicked
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI9MouseClicked
+
+    private void FillLSI3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI3ItemStateChanged
+
+        if (FillLSI4.getSelectedIndex() == 0) {
+            FillLSIabel4.setVisible(false);
+            FillLSIAm4.setVisible(false);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(false);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(false);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(false);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLSI4.getSelectedIndex() == 1) {
+            FillLSIabel4.setVisible(false);
+            FillLSIabel4.setText("Buscar apellido P:");
+            FillLSIAm4.setVisible(false);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(true);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(false);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(false);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLSI4.getSelectedIndex() == 2) {
+            FillLSIabel4.setVisible(false);
+            FillLSIabel4.setText("Buscar apellido M:");
+            FillLSIAm4.setVisible(true);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(false);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(false);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(false);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLSI4.getSelectedIndex() == 3) {
+            FillLSIabel4.setVisible(true);
+            FillLSIabel4.setText("Buscar Nombre(s):");
+            FillLSIAm4.setVisible(false);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(false);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(true);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(false);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLSI4.getSelectedIndex() == 4) {
+            FillLSIabel4.setVisible(false);
+            FillLSIabel4.setText("Buscar Quincena:");
+            FillLSIAm4.setVisible(false);
+            FillLSIAm4.setText("");
+            FillLSIAp4.setVisible(false);
+            FillLSIAp4.setText("");
+            FillLSIName4.setVisible(false);
+            FillLSIName4.setText("");
+            FillLSIQuin4.setVisible(true);
+            FillLSIQuin4.setSelectedIndex(0);
+
+        }
+
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI3ItemStateChanged
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
         ODTQ_5 regr = new ODTQ_5(usr, LP);
@@ -21346,12 +21531,6 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
-
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
 
@@ -21439,7 +21618,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void LDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA1ActionPerformed
-        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDA1ActionPerformed
@@ -21469,7 +21648,6 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
     private void LDAZonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LDAZonItemStateChanged
         MostrarULDA();
-        OBNames();
     }//GEN-LAST:event_LDAZonItemStateChanged
 
     private void NDLKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NDLKeyReleased
@@ -21493,12 +21671,26 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                     AgregarLDA1();
                 }
                 if (Integer.parseInt(NDL.getText()) >= 15) {
-                    JOptionPane.showMessageDialog(null, "El sistema no admite mas de 14 listas");
-                }
-            }
-        }
+                    JOptionPane.showMessageDialog(null, "El programa no admite mas de 14 listas");
 
+                }
+
+            }
+
+        }
     }//GEN-LAST:event_jLabel4MousePressed
+
+    private void LDA5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA5ActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA5ActionPerformed
+
+    private void LDA6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA6ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -21518,7 +21710,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Listas_CI_5.class
+            java.util.logging.Logger.getLogger(Listas_SI_5.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         }
@@ -21560,7 +21752,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Listas_CI_5().setVisible(true);
+            new Listas_SI_5().setVisible(true);
         });
     }
 
@@ -21603,71 +21795,76 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser DiaCor8;
     private com.toedter.calendar.JDateChooser DiaCor9;
     private javax.swing.JMenuItem Estadias;
-    private javax.swing.JButton ExcelCI;
+    private javax.swing.JButton ExcelSI;
     private com.toedter.calendar.JDateChooser Fecha1;
-    private javax.swing.JComboBox<String> FillLCI;
-    private javax.swing.JComboBox<String> FillLCI1;
-    private javax.swing.JComboBox<String> FillLCI2;
-    private javax.swing.JComboBox<String> FillLCI3;
-    private javax.swing.JComboBox<String> FillLCI4;
-    private javax.swing.JComboBox<String> FillLCI5;
-    private javax.swing.JComboBox<String> FillLCI6;
-    private javax.swing.JComboBox<String> FillLCI7;
-    private javax.swing.JComboBox<String> FillLCI8;
-    private javax.swing.JComboBox<String> FillLCI9;
-    private javax.swing.JTextField FillLCIAm;
-    private javax.swing.JTextField FillLCIAm1;
-    private javax.swing.JTextField FillLCIAm2;
-    private javax.swing.JTextField FillLCIAm3;
-    private javax.swing.JTextField FillLCIAm4;
-    private javax.swing.JTextField FillLCIAm5;
-    private javax.swing.JTextField FillLCIAm6;
-    private javax.swing.JTextField FillLCIAm7;
-    private javax.swing.JTextField FillLCIAm8;
-    private javax.swing.JTextField FillLCIAm9;
-    private javax.swing.JTextField FillLCIAp;
-    private javax.swing.JTextField FillLCIAp1;
-    private javax.swing.JTextField FillLCIAp2;
-    private javax.swing.JTextField FillLCIAp3;
-    private javax.swing.JTextField FillLCIAp4;
-    private javax.swing.JTextField FillLCIAp5;
-    private javax.swing.JTextField FillLCIAp6;
-    private javax.swing.JTextField FillLCIAp7;
-    private javax.swing.JTextField FillLCIAp8;
-    private javax.swing.JTextField FillLCIAp9;
-    private javax.swing.JTextField FillLCIName;
-    private javax.swing.JTextField FillLCIName1;
-    private javax.swing.JTextField FillLCIName2;
-    private javax.swing.JTextField FillLCIName3;
-    private javax.swing.JTextField FillLCIName4;
-    private javax.swing.JTextField FillLCIName5;
-    private javax.swing.JTextField FillLCIName6;
-    private javax.swing.JTextField FillLCIName7;
-    private javax.swing.JTextField FillLCIName8;
-    private javax.swing.JTextField FillLCIName9;
-    private javax.swing.JComboBox<String> FillLCIQuin;
-    private javax.swing.JComboBox<String> FillLCIQuin1;
-    private javax.swing.JComboBox<String> FillLCIQuin2;
-    private javax.swing.JComboBox<String> FillLCIQuin3;
-    private javax.swing.JComboBox<String> FillLCIQuin4;
-    private javax.swing.JComboBox<String> FillLCIQuin5;
-    private javax.swing.JComboBox<String> FillLCIQuin6;
-    private javax.swing.JComboBox<String> FillLCIQuin7;
-    private javax.swing.JComboBox<String> FillLCIQuin8;
-    private javax.swing.JComboBox<String> FillLCIQuin9;
-    private javax.swing.JLabel FillLCIabel;
-    private javax.swing.JLabel FillLCIabel1;
-    private javax.swing.JLabel FillLCIabel2;
-    private javax.swing.JLabel FillLCIabel3;
-    private javax.swing.JLabel FillLCIabel4;
-    private javax.swing.JLabel FillLCIabel5;
-    private javax.swing.JLabel FillLCIabel6;
-    private javax.swing.JLabel FillLCIabel7;
-    private javax.swing.JLabel FillLCIabel8;
-    private javax.swing.JLabel FillLCIabel9;
+    private javax.swing.JComboBox<String> FillLSI;
+    private javax.swing.JComboBox<String> FillLSI1;
+    private javax.swing.JComboBox<String> FillLSI2;
+    private javax.swing.JComboBox<String> FillLSI3;
+    private javax.swing.JComboBox<String> FillLSI4;
+    private javax.swing.JComboBox<String> FillLSI5;
+    private javax.swing.JComboBox<String> FillLSI6;
+    private javax.swing.JComboBox<String> FillLSI7;
+    private javax.swing.JComboBox<String> FillLSI8;
+    private javax.swing.JComboBox<String> FillLSI9;
+    private javax.swing.JTextField FillLSIAm;
+    private javax.swing.JTextField FillLSIAm1;
+    private javax.swing.JTextField FillLSIAm2;
+    private javax.swing.JTextField FillLSIAm3;
+    private javax.swing.JTextField FillLSIAm4;
+    private javax.swing.JTextField FillLSIAm5;
+    private javax.swing.JTextField FillLSIAm6;
+    private javax.swing.JTextField FillLSIAm7;
+    private javax.swing.JTextField FillLSIAm8;
+    private javax.swing.JTextField FillLSIAm9;
+    private javax.swing.JTextField FillLSIAp;
+    private javax.swing.JTextField FillLSIAp1;
+    private javax.swing.JTextField FillLSIAp2;
+    private javax.swing.JTextField FillLSIAp3;
+    private javax.swing.JTextField FillLSIAp4;
+    private javax.swing.JTextField FillLSIAp5;
+    private javax.swing.JTextField FillLSIAp6;
+    private javax.swing.JTextField FillLSIAp7;
+    private javax.swing.JTextField FillLSIAp8;
+    private javax.swing.JTextField FillLSIAp9;
+    private javax.swing.JTextField FillLSIName;
+    private javax.swing.JTextField FillLSIName1;
+    private javax.swing.JTextField FillLSIName2;
+    private javax.swing.JTextField FillLSIName3;
+    private javax.swing.JTextField FillLSIName4;
+    private javax.swing.JTextField FillLSIName5;
+    private javax.swing.JTextField FillLSIName6;
+    private javax.swing.JTextField FillLSIName7;
+    private javax.swing.JTextField FillLSIName8;
+    private javax.swing.JTextField FillLSIName9;
+    private javax.swing.JComboBox<String> FillLSIQuin;
+    private javax.swing.JComboBox<String> FillLSIQuin1;
+    private javax.swing.JComboBox<String> FillLSIQuin2;
+    private javax.swing.JComboBox<String> FillLSIQuin3;
+    private javax.swing.JComboBox<String> FillLSIQuin4;
+    private javax.swing.JComboBox<String> FillLSIQuin5;
+    private javax.swing.JComboBox<String> FillLSIQuin6;
+    private javax.swing.JComboBox<String> FillLSIQuin7;
+    private javax.swing.JComboBox<String> FillLSIQuin8;
+    private javax.swing.JComboBox<String> FillLSIQuin9;
+    private javax.swing.JLabel FillLSIabel;
+    private javax.swing.JLabel FillLSIabel1;
+    private javax.swing.JLabel FillLSIabel2;
+    private javax.swing.JLabel FillLSIabel3;
+    private javax.swing.JLabel FillLSIabel4;
+    private javax.swing.JLabel FillLSIabel5;
+    private javax.swing.JLabel FillLSIabel6;
+    private javax.swing.JLabel FillLSIabel7;
+    private javax.swing.JLabel FillLSIabel8;
+    private javax.swing.JLabel FillLSIabel9;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField LDA;
     private javax.swing.JMenuItem LDA1;
+    private javax.swing.JMenuItem LDA2;
+    private javax.swing.JMenuItem LDA3;
+    private javax.swing.JMenuItem LDA4;
+    private javax.swing.JMenuItem LDA5;
+    private javax.swing.JMenuItem LDA6;
     private javax.swing.JComboBox<String> LDAQuin;
     private javax.swing.JComboBox<String> LDAZon;
     private javax.swing.JPanel ListasGen;
@@ -21682,34 +21879,34 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem PRESQ;
     private javax.swing.JMenuItem PresSem;
     private javax.swing.JMenu Reportes;
-    private javax.swing.JTable TableLDACI;
-    private javax.swing.JTable TableLDACI1;
-    private javax.swing.JTable TableLDACI2;
-    private javax.swing.JTable TableLDACI3;
-    private javax.swing.JTable TableLDACI4;
-    private javax.swing.JTable TableLDACI5;
-    private javax.swing.JTable TableLDACI6;
-    private javax.swing.JTable TableLDACI7;
-    private javax.swing.JTable TableLDACI8;
-    private javax.swing.JTable TableLDACI9;
+    private javax.swing.JTable TableLDASI;
+    private javax.swing.JTable TableLDASI1;
+    private javax.swing.JTable TableLDASI2;
+    private javax.swing.JTable TableLDASI3;
+    private javax.swing.JTable TableLDASI4;
+    private javax.swing.JTable TableLDASI5;
+    private javax.swing.JTable TableLDASI6;
+    private javax.swing.JTable TableLDASI7;
+    private javax.swing.JTable TableLDASI8;
+    private javax.swing.JTable TableLDASI9;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JLabel ULDA;
     private javax.swing.JLabel UNR;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -21725,7 +21922,6 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
@@ -21737,41 +21933,41 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
-    private javax.swing.JScrollPane jScrollPane15;
-    private javax.swing.JScrollPane jScrollPane16;
-    private javax.swing.JScrollPane jScrollPane17;
-    private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
-    private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
-    private javax.swing.JScrollPane jScrollPane22;
-    private javax.swing.JScrollPane jScrollPane23;
-    private javax.swing.JScrollPane jScrollPane24;
-    private javax.swing.JScrollPane jScrollPane25;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
+    private javax.swing.JScrollPane jScrollPane29;
+    private javax.swing.JScrollPane jScrollPane30;
+    private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane32;
+    private javax.swing.JScrollPane jScrollPane33;
+    private javax.swing.JScrollPane jScrollPane34;
+    private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane36;
+    private javax.swing.JScrollPane jScrollPane37;
+    private javax.swing.JScrollPane jScrollPane38;
+    private javax.swing.JScrollPane jScrollPane39;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane40;
+    private javax.swing.JScrollPane jScrollPane41;
+    private javax.swing.JScrollPane jScrollPane42;
+    private javax.swing.JScrollPane jScrollPane43;
+    private javax.swing.JScrollPane jScrollPane44;
+    private javax.swing.JScrollPane jScrollPane45;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane2;
     // End of variables declaration//GEN-END:variables
 
 }

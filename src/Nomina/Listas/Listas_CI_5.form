@@ -333,7 +333,7 @@
             </Menu>
             <MenuItem class="javax.swing.JMenuItem" name="LDA1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Listas de asistencia"/>
+                <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA1ActionPerformed"/>

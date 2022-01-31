@@ -1,6 +1,6 @@
 package Nomina;
 
-import Nomina.Listas.Listas_5;
+import Nomina.Listas.Listas_CI_5;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
@@ -17,7 +17,7 @@ import Conexion.ConexionSQL;
 import Filtros.*;
 import Inicio.Inicio_1;
 import Logicas.*;
-import Pruebas.Listas_SI_5;
+import Nomina.Listas.Listas_SI_5;
 import VentanasDReportes.RepNomSem_7;
 import java.awt.*;
 import java.awt.event.ItemEvent;
@@ -22743,7 +22743,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_NomSemGenActionPerformed
 
     private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDAActionPerformed
@@ -22834,7 +22834,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed

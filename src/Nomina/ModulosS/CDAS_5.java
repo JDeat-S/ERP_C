@@ -13,7 +13,7 @@ import Conexion.ConexionSQL;
 import Logicas.*;
 import Logicas.BDNomS.Logica_bd_NomCDAS;
 import Logicas.BDNomS.Logica_bd_pagosCDAS;
-import Nomina.Listas.Listas_5;
+import Nomina.Listas.*;
 import Nomina.NominaQSiMSS_5;
 import Nomina.NominaQ_5;
 import Nomina.NominaS_5;
@@ -643,7 +643,8 @@ public final class CDAS_5 extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         ODT2 = new javax.swing.JMenuItem();
         CDA3 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
+        LDA1 = new javax.swing.JMenuItem();
+        LDA4 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -668,6 +669,7 @@ public final class CDAS_5 extends javax.swing.JFrame {
         NomGen = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
         LDA = new javax.swing.JMenuItem();
+        LDA3 = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
@@ -1472,13 +1474,21 @@ public final class CDAS_5 extends javax.swing.JFrame {
 
         jMenu5.add(jMenu7);
 
-        jMenuItem12.setText("Listas de asistencia");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        LDA1.setText("Listas de asistencia C/IMSS ");
+        LDA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                LDA1ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem12);
+        jMenu5.add(LDA1);
+
+        LDA4.setText("Listas de asistencia S/IMSS");
+        LDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA4ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(LDA4);
 
         Menuadm.add(jMenu5);
 
@@ -1651,13 +1661,21 @@ public final class CDAS_5 extends javax.swing.JFrame {
 
         jMenu4.add(jMenu11);
 
-        LDA.setText("Listas de asistencia");
+        LDA.setText("Listas de asistencia C/IMSS ");
         LDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LDAActionPerformed(evt);
             }
         });
         jMenu4.add(LDA);
+
+        LDA3.setText("Listas de asistencia S/IMSS");
+        LDA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA3ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(LDA3);
 
         jMenuBar1.add(jMenu4);
 
@@ -2167,12 +2185,6 @@ public final class CDAS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
-
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
 
         Empleados_4 RH = new Empleados_4(usr, LP);
@@ -2252,12 +2264,6 @@ public final class CDAS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_NomGenActionPerformed
 
-    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_LDAActionPerformed
-
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         RepNom_7 regr = new RepNom_7(usr, LP);
         regr.setVisible(true);
@@ -2307,6 +2313,30 @@ public final class CDAS_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDA3ActionPerformed
+
+    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDAActionPerformed
+
+    private void LDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA3ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA3ActionPerformed
+
+    private void LDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA1ActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA1ActionPerformed
+
+    private void LDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA4ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2377,6 +2407,9 @@ public final class CDAS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField IAP;
     private javax.swing.JMenuItem LDA;
+    private javax.swing.JMenuItem LDA1;
+    private javax.swing.JMenuItem LDA3;
+    private javax.swing.JMenuItem LDA4;
     private javax.swing.JLabel Labelcda;
     private javax.swing.JLabel Labelfilcda;
     private javax.swing.JLabel MADE;
@@ -2458,7 +2491,6 @@ public final class CDAS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
