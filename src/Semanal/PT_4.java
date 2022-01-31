@@ -12,7 +12,7 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-import RH.Depositos_4;
+import RH.Depositos.Depositos_4;
 import RH.Empleados_4;
 import RH.Estadias_4;
 import RH.Tortas_4;
