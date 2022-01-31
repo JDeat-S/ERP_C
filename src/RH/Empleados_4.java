@@ -1639,7 +1639,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
         Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "PENDIENTE", "EN ESPERA", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO", "DEPURADO", "RECHAZADO/DEPURADO", "NO CONTRATAR/DEPURADO", "BOLETINADO/DEPURADO", "BAJA/DEPURADO" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "PENDIENTE", "EN ESPERA", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO", "DEPURADO", "RECHAZADO/DEPURADO", "NO CONTRATAR/DEPURADO", "BOLETINADO/DEPURADO", "BAJA/DEPURADO", "NO CONTRATAR" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

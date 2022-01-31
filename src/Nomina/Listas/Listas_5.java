@@ -10,6 +10,7 @@ import Nomina.ModulosQ.PresQ_5;
 import VentanasDReportes.*;
 import Admin.*;
 import Conexion.ConexionSQL;
+import Filtros.FiltrosZonas;
 import RH.*;
 import Logicas.*;
 import Nomina.NominaQSiMSS_5;
@@ -33,6 +34,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -65,6 +67,9 @@ public final class Listas_5 extends javax.swing.JFrame {
 
     public Listas_5() {
         initComponents();
+        FiltrosZonas xd = new FiltrosZonas();
+        DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
+        FilZona.setModel(modelzonass);
         SHempleados();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         Fecha1.setVisible(false);
@@ -166,6 +171,9 @@ public final class Listas_5 extends javax.swing.JFrame {
         initComponents();
         this.usr = usr;
         this.LP = LP;
+        FiltrosZonas xd = new FiltrosZonas();
+        DefaultComboBoxModel modelzonass = new DefaultComboBoxModel(xd.mostrarzonas());
+        FilZona.setModel(modelzonass);
         SHempleados();
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         Fecha1.setVisible(false);
@@ -489,6 +497,8 @@ public final class Listas_5 extends javax.swing.JFrame {
         DiaCom16 = new com.toedter.calendar.JDateChooser();
         ExcelCI = new javax.swing.JButton();
         jLabel51 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        FilZona = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -852,6 +862,8 @@ public final class Listas_5 extends javax.swing.JFrame {
         jScrollPane8.setViewportView(jPanel3);
 
         jTabbedPane3.addTab("Foraneos puebla", jScrollPane8);
+
+        jPanel4.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel15.setText("Filtro:");
 
@@ -1722,6 +1734,15 @@ public final class Listas_5 extends javax.swing.JFrame {
 
         jLabel51.setText("Re-imprimir lista:");
 
+        jLabel12.setText("Zona:");
+
+        FilZona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        FilZona.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FilZonaItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1864,7 +1885,11 @@ public final class Listas_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LDAfilap, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FilZona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
@@ -1880,7 +1905,9 @@ public final class Listas_5 extends javax.swing.JFrame {
                             .addComponent(LabelFil)
                             .addComponent(LDAfilname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LDAfilap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LDAfilam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)
+                            .addComponent(FilZona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -2336,18 +2363,22 @@ public final class Listas_5 extends javax.swing.JFrame {
         String Share = LDAfilname.getText();
         String ShareAP = LDAfilap.getText();
         String ShareAM = LDAfilam.getText();
-        String SQL = "select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                + " from `rh.empleados` where `Status` LIKE '%Vigente%'";
+        String SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)`,`Zona`"
+                + " FROM `rh.empleados` WHERE `Entra a IMSS` LIKE '%SI%' AND `Zona`"
+                + " LIKE '%" + FilZona.getSelectedItem().toString() + "%' AND `Status` LIKE '%VIGENTE%'";
 
         if (!"".equals(Share)) {
-            SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+            SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)`,`Zona` FROM "
+                    + "`rh.empleados` WHERE `Entra a IMSS` LIKE '%SI%' AND `Nombre(s)` LIKE '%" + Share + "%' AND "
+                    + "`Zona` LIKE '%" + FilZona.getSelectedItem().toString() + "%' AND `Status` LIKE '%VIGENTE%'";
         } else if (!"".equals(ShareAP)) {
-            SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+            SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)`,`Zona` FROM "
+                    + "`rh.empleados` WHERE `Entra a IMSS` LIKE '%SI%' AND `Apellido P` LIKE '%" + ShareAP + "%' AND "
+                    + "`Zona` LIKE '%" + FilZona.getSelectedItem().toString() + "%' AND `Status` LIKE '%VIGENTE%'";
         } else if (!"".equals(ShareAM)) {
-            SQL = " select `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona` "
-                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+            SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)`,`Zona` FROM "
+                    + "`rh.empleados` WHERE `Entra a IMSS` LIKE '%SI%' AND `Apellido M` LIKE '%" + ShareAM + "%' AND "
+                    + "`Zona` LIKE '%" + FilZona.getSelectedItem().toString() + "%' AND `Status` LIKE '%VIGENTE%'";
         }
 
         try {
@@ -9696,12 +9727,11 @@ public final class Listas_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_LDAfilItemStateChanged
 
     private void EmpleadosShKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EmpleadosShKeyReleased
-            int fila = EmpleadosSh.getSelectedRow();
-            LDAAp.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 0)));
-            LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
-            LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
-            LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
-
+        int fila = EmpleadosSh.getSelectedRow();
+        LDAAp.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 0)));
+        LDAAm.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 1)));
+        LDAName.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 2)));
+        LDAZon.setText(String.valueOf(EmpleadosSh.getValueAt(fila, 3)));
 
         MostrarULDA();
     }//GEN-LAST:event_EmpleadosShKeyReleased
@@ -16371,7 +16401,20 @@ public final class Listas_5 extends javax.swing.JFrame {
             FillLCIQuin9.setSelectedIndex(0);
 
         }
-        if (FillLCI9.getSelectedIndex() == 3) {
+                if (FillLCI9.getSelectedIndex() == 3) {
+            FillLCIabel9.setVisible(true);
+            FillLCIabel9.setText("Nombre(s):");
+            FillLCIAm9.setVisible(false);
+            FillLCIAm9.setText("");
+            FillLCIAp9.setVisible(false);
+            FillLCIAp9.setText("");
+            FillLCIName9.setVisible(true);
+            FillLCIName9.setText("");
+            FillLCIQuin9.setVisible(false);
+            FillLCIQuin9.setSelectedIndex(0);
+
+        }
+        if (FillLCI9.getSelectedIndex() == 4) {
             FillLCIabel9.setVisible(true);
             FillLCIabel9.setText("Buscar Quincena:");
             FillLCIAm9.setVisible(false);
@@ -16462,6 +16505,19 @@ public final class Listas_5 extends javax.swing.JFrame {
         }
         if (FillLCI8.getSelectedIndex() == 3) {
             FillLCIabel8.setVisible(true);
+            FillLCIabel8.setText("Nombre(s):");
+            FillLCIAm8.setVisible(false);
+            FillLCIAm8.setText("");
+            FillLCIAp8.setVisible(false);
+            FillLCIAp8.setText("");
+            FillLCIName8.setVisible(true);
+            FillLCIName8.setText("");
+            FillLCIQuin8.setVisible(false);
+            FillLCIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLCI8.getSelectedIndex() == 4) {
+            FillLCIabel8.setVisible(true);
             FillLCIabel8.setText("Buscar Quincena:");
             FillLCIAm8.setVisible(false);
             FillLCIAm8.setText("");
@@ -16549,7 +16605,20 @@ public final class Listas_5 extends javax.swing.JFrame {
             FillLCIQuin7.setSelectedIndex(0);
 
         }
-        if (FillLCI7.getSelectedIndex() == 3) {
+                if (FillLCI7.getSelectedIndex() == 3) {
+            FillLCIabel7.setVisible(true);
+            FillLCIabel7.setText("Nombre(s):");
+            FillLCIAm7.setVisible(false);
+            FillLCIAm7.setText("");
+            FillLCIAp7.setVisible(false);
+            FillLCIAp7.setText("");
+            FillLCIName7.setVisible(true);
+            FillLCIName7.setText("");
+            FillLCIQuin7.setVisible(false);
+            FillLCIQuin7.setSelectedIndex(0);
+
+        }
+        if (FillLCI7.getSelectedIndex() == 4) {
             FillLCIabel7.setVisible(true);
             FillLCIabel7.setText("Buscar Quincena:");
             FillLCIAm7.setVisible(false);
@@ -16638,7 +16707,20 @@ public final class Listas_5 extends javax.swing.JFrame {
             FillLCIQuin6.setSelectedIndex(0);
 
         }
-        if (FillLCI6.getSelectedIndex() == 3) {
+                if (FillLCI6.getSelectedIndex() == 3) {
+            FillLCIabel6.setVisible(true);
+            FillLCIabel6.setText("Nombre(s):");
+            FillLCIAm6.setVisible(false);
+            FillLCIAm6.setText("");
+            FillLCIAp6.setVisible(false);
+            FillLCIAp6.setText("");
+            FillLCIName6.setVisible(true);
+            FillLCIName6.setText("");
+            FillLCIQuin6.setVisible(false);
+            FillLCIQuin6.setSelectedIndex(0);
+
+        }
+        if (FillLCI6.getSelectedIndex() == 4) {
             FillLCIabel6.setVisible(true);
             FillLCIabel6.setText("Buscar Quincena:");
             FillLCIAm6.setVisible(false);
@@ -16727,7 +16809,20 @@ public final class Listas_5 extends javax.swing.JFrame {
             FillLCIQuin5.setSelectedIndex(0);
 
         }
-        if (FillLCI5.getSelectedIndex() == 3) {
+                if (FillLCI5.getSelectedIndex() == 3) {
+            FillLCIabel5.setVisible(true);
+            FillLCIabel5.setText("Nombre(s):");
+            FillLCIAm5.setVisible(false);
+            FillLCIAm5.setText("");
+            FillLCIAp5.setVisible(false);
+            FillLCIAp5.setText("");
+            FillLCIName5.setVisible(true);
+            FillLCIName5.setText("");
+            FillLCIQuin5.setVisible(false);
+            FillLCIQuin5.setSelectedIndex(0);
+
+        }
+        if (FillLCI5.getSelectedIndex() == 4) {
             FillLCIabel5.setVisible(true);
             FillLCIabel5.setText("Buscar Quincena:");
             FillLCIAm5.setVisible(false);
@@ -16817,6 +16912,19 @@ public final class Listas_5 extends javax.swing.JFrame {
 
         }
         if (FillLCI4.getSelectedIndex() == 3) {
+            FillLCIabel4.setVisible(true);
+            FillLCIabel4.setText("Nombre(s):");
+            FillLCIAm4.setVisible(false);
+            FillLCIAm4.setText("");
+            FillLCIAp4.setVisible(false);
+            FillLCIAp4.setText("");
+            FillLCIName4.setVisible(true);
+            FillLCIName4.setText("");
+            FillLCIQuin4.setVisible(false);
+            FillLCIQuin4.setSelectedIndex(0);
+
+        }
+        if (FillLCI4.getSelectedIndex() == 4) {
             FillLCIabel4.setVisible(false);
             FillLCIabel4.setText("Buscar Quincena:");
             FillLCIAm4.setVisible(false);
@@ -16907,6 +17015,19 @@ public final class Listas_5 extends javax.swing.JFrame {
         }
         if (FillLCI3.getSelectedIndex() == 3) {
             FillLCIabel3.setVisible(true);
+            FillLCIabel3.setText("Nombre(s):");
+            FillLCIAm3.setVisible(false);
+            FillLCIAm3.setText("");
+            FillLCIAp3.setVisible(false);
+            FillLCIAp3.setText("");
+            FillLCIName3.setVisible(true);
+            FillLCIName3.setText("");
+            FillLCIQuin3.setVisible(false);
+            FillLCIQuin3.setSelectedIndex(0);
+
+        }
+        if (FillLCI3.getSelectedIndex() == 4) {
+            FillLCIabel3.setVisible(true);
             FillLCIabel3.setText("Buscar Quincena:");
             FillLCIAm3.setVisible(false);
             FillLCIAm3.setText("");
@@ -16996,6 +17117,19 @@ public final class Listas_5 extends javax.swing.JFrame {
         }
         if (FillLCI2.getSelectedIndex() == 3) {
             FillLCIabel2.setVisible(true);
+            FillLCIabel2.setText("Buscar Nombre(s):");
+            FillLCIAm2.setVisible(false);
+            FillLCIAm2.setText("");
+            FillLCIAp2.setVisible(false);
+            FillLCIAp2.setText("");
+            FillLCIName2.setVisible(true);
+            FillLCIName2.setText("");
+            FillLCIQuin2.setVisible(false);
+            FillLCIQuin2.setSelectedIndex(0);
+
+        }
+        if (FillLCI2.getSelectedIndex() == 4) {
+            FillLCIabel2.setVisible(true);
             FillLCIabel2.setText("Buscar Quincena:");
             FillLCIAm2.setVisible(false);
             FillLCIAm2.setText("");
@@ -17084,6 +17218,19 @@ public final class Listas_5 extends javax.swing.JFrame {
 
         }
         if (FillLCI1.getSelectedIndex() == 3) {
+            FillLCIabel1.setVisible(true);
+            FillLCIabel1.setText("Buscar Nombre(s):");
+            FillLCIAm1.setVisible(false);
+            FillLCIAm1.setText("");
+            FillLCIAp1.setVisible(false);
+            FillLCIAp1.setText("");
+            FillLCIName1.setVisible(true);
+            FillLCIName1.setText("");
+            FillLCIQuin1.setVisible(false);
+            FillLCIQuin1.setSelectedIndex(0);
+
+        }
+        if (FillLCI1.getSelectedIndex() == 4) {
             FillLCIabel1.setVisible(true);
             FillLCIabel1.setText("Buscar Quincena:");
             FillLCIAm1.setVisible(false);
@@ -17175,6 +17322,19 @@ public final class Listas_5 extends javax.swing.JFrame {
         }
         if (FillLCI.getSelectedIndex() == 3) {
             FillLCIabel.setVisible(true);
+            FillLCIabel.setText("Buscar Nombre(s):");
+            FillLCIAm.setVisible(false);
+            FillLCIAm.setText("");
+            FillLCIAp.setVisible(false);
+            FillLCIAp.setText("");
+            FillLCIName.setVisible(true);
+            FillLCIName.setText("");
+            FillLCIQuin.setVisible(false);
+            FillLCIQuin.setSelectedIndex(0);
+
+        }
+        if (FillLCI.getSelectedIndex() == 4) {
+            FillLCIabel.setVisible(true);
             FillLCIabel.setText("Buscar Quincena:");
             FillLCIAm.setVisible(false);
             FillLCIAm.setText("");
@@ -17188,6 +17348,10 @@ public final class Listas_5 extends javax.swing.JFrame {
         }
         MDLDA();
     }//GEN-LAST:event_FillLCIItemStateChanged
+
+    private void FilZonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FilZonaItemStateChanged
+        SHempleados();
+    }//GEN-LAST:event_FilZonaItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -17268,6 +17432,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem Estadias;
     private javax.swing.JButton ExcelCI;
     private com.toedter.calendar.JDateChooser Fecha1;
+    private javax.swing.JComboBox<String> FilZona;
     private javax.swing.JComboBox<String> FillLCI;
     private javax.swing.JComboBox<String> FillLCI1;
     private javax.swing.JComboBox<String> FillLCI2;
@@ -17367,6 +17532,7 @@ public final class Listas_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;

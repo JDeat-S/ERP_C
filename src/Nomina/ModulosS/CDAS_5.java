@@ -3,13 +3,9 @@ package Nomina.ModulosS;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
-import Nomina.ModulosS.PresS_5;
-import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
-import Logicas.BDNomQ.Logica_bd_pagosCDAQ;
-import Logicas.BDNomQ.Logica_bd_NomCDAQ;
 import VentanasDReportes.*;
 import Admin.*;
 import RH.*;
@@ -321,7 +317,7 @@ public final class CDAS_5 extends javax.swing.JFrame {
         String SQL = "UPDATE `nominasem.cajadeahorro` SET `#caja` = ?,"
                 + " `#exp_Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?,"
                 + " `Nombre(s)` = ?, `Zona` = ?, `Servicio` = ?, "
-                + "`Ahorro por quincena` = ?, `Quincenas Ahorradas` = ?,"
+                + "`Ahorro por semana` = ?, `Semanas Ahorradas` = ?,"
                 + " `Total Ahorrado` = ?, `caja anticipada` = ?, `total a pagar` = ?, "
                 + "`% interes` = ?, `interes a pagar` = ?, `Por final pagar` = ?, "
                 + "`Status` = ?, `Observacion 1` = ?, `Observaciones` = ? WHERE "
@@ -382,11 +378,10 @@ public final class CDAS_5 extends javax.swing.JFrame {
     //agregar caja de ahorro
     public void AgregarCDA() {
 
-        String SQL = "INSERT INTO `nominasem.cajadeahorro` (`#caja`, `#exp_Empleado`,"
-                + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
-                + " `Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado`,"
-                + " `caja anticipada`, `total a pagar`, `% interes`, `interes a pagar`,"
-                + " `Por final pagar`, `Status`, `Observacion 1`, `Observaciones`) "
+        String SQL = "INSERT INTO `nominasem.cajadeahorro` (`#caja`, `#exp_Empleado`, `Apellido P`, "
+                + "`Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Ahorro por semana`, "
+                + "`Semanas Ahorradas`, `Total Ahorrado`, `caja anticipada`, `total a pagar`, `% interes`, "
+                + "`interes a pagar`, `Por final pagar`, `Status`, `Observacion 1`, `Observaciones`) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -767,11 +762,11 @@ public final class CDAS_5 extends javax.swing.JFrame {
 
         TIAP.setText("0");
 
-        jLabel110.setText("Ahorro por Qna:");
+        jLabel110.setText("Ahorro por Sem:");
 
         jLabel120.setText("Total a pagar:");
 
-        jLabel111.setText("Qnas ahorradas:");
+        jLabel111.setText("Sem ahorradas:");
 
         jLabel112.setText("Total ahorrado:");
 
@@ -1134,19 +1129,6 @@ public final class CDAS_5 extends javax.swing.JFrame {
                             .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel102)
                                 .addComponent(AMcda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Labelfilcda)
-                        .addComponent(BusnameCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel162)
-                        .addComponent(Filtroscda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FilAPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillAMCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Eliminarcda)
-                            .addComponent(jLabel4))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
@@ -1177,8 +1159,23 @@ public final class CDAS_5 extends javax.swing.JFrame {
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AgregarCDA)
                             .addComponent(ModCDA))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE))
+                        .addGap(0, 309, Short.MAX_VALUE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Labelfilcda)
+                                .addComponent(BusnameCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel162)
+                                .addComponent(Filtroscda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FilAPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FillAMCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Eliminarcda)
+                                    .addComponent(jLabel4))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
