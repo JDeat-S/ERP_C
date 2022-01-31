@@ -1,6 +1,6 @@
 package Nomina.Listas.LCIMSS;
 
-import Pruebas.Listas_CI_5;
+import Pruebas.Listas_CI_5_Pruebas;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -48,9 +48,9 @@ public class L2 {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/confort2022",
-                    "root",
-                    ""
+                    "jdbc:mysql://192.168.1.170:3306/confort2022",
+                    "Servidor",
+                    "Confort1022"
             );
 
             int PL = (IL.getUNumR() - IL.getNDLista()) + 1;
@@ -1458,11 +1458,11 @@ public class L2 {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Listas_CI_5.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Listas_CI_5_Pruebas.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Listas_CI_5.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Listas_CI_5_Pruebas.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
         }

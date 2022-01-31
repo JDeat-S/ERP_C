@@ -1,6 +1,7 @@
 package Admin;
 
-import Nomina.Listas.Listas_5;
+import RH.Depositos.Depositos_4;
+import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
@@ -987,7 +988,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         CDA4 = new javax.swing.JMenuItem();
         ODT2 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
+        LDA = new javax.swing.JMenuItem();
+        LDA3 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -1856,13 +1858,21 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
 
         jMenu5.add(jMenu7);
 
-        jMenuItem12.setText("Listas de asistencia");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        LDA.setText("Listas de asistencia C/IMSS ");
+        LDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                LDAActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem12);
+        jMenu5.add(LDA);
+
+        LDA3.setText("Listas de asistencia S/IMSS");
+        LDA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA3ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(LDA3);
 
         Menuadm.add(jMenu5);
 
@@ -2350,12 +2360,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
-
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
 
         Empleados_4 RH = new Empleados_4(usr, LP);
@@ -2447,6 +2451,18 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         MostrarServSem();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDAActionPerformed
+
+    private void LDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA3ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2521,6 +2537,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JLabel HorarioSYD;
     private javax.swing.JTextField IDS;
     private javax.swing.JTextField IDZ;
+    private javax.swing.JMenuItem LDA;
+    private javax.swing.JMenuItem LDA3;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JButton ModS;
     private javax.swing.JButton ModZ;
@@ -2581,7 +2599,6 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;

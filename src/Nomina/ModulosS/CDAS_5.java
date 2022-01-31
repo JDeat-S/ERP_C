@@ -1,15 +1,12 @@
 package Nomina.ModulosS;
 
+import RH.Depositos.Depositos_4;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
-import Nomina.ModulosS.PresS_5;
-import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
-import Logicas.BDNomQ.Logica_bd_pagosCDAQ;
-import Logicas.BDNomQ.Logica_bd_NomCDAQ;
 import VentanasDReportes.*;
 import Admin.*;
 import RH.*;
@@ -17,7 +14,7 @@ import Conexion.ConexionSQL;
 import Logicas.*;
 import Logicas.BDNomS.Logica_bd_NomCDAS;
 import Logicas.BDNomS.Logica_bd_pagosCDAS;
-import Nomina.Listas.Listas_5;
+import Nomina.Listas.*;
 import Nomina.NominaQSiMSS_5;
 import Nomina.NominaQ_5;
 import Nomina.NominaS_5;
@@ -321,7 +318,7 @@ public final class CDAS_5 extends javax.swing.JFrame {
         String SQL = "UPDATE `nominasem.cajadeahorro` SET `#caja` = ?,"
                 + " `#exp_Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?,"
                 + " `Nombre(s)` = ?, `Zona` = ?, `Servicio` = ?, "
-                + "`Ahorro por quincena` = ?, `Quincenas Ahorradas` = ?,"
+                + "`Ahorro por semana` = ?, `Semanas Ahorradas` = ?,"
                 + " `Total Ahorrado` = ?, `caja anticipada` = ?, `total a pagar` = ?, "
                 + "`% interes` = ?, `interes a pagar` = ?, `Por final pagar` = ?, "
                 + "`Status` = ?, `Observacion 1` = ?, `Observaciones` = ? WHERE "
@@ -382,11 +379,10 @@ public final class CDAS_5 extends javax.swing.JFrame {
     //agregar caja de ahorro
     public void AgregarCDA() {
 
-        String SQL = "INSERT INTO `nominasem.cajadeahorro` (`#caja`, `#exp_Empleado`,"
-                + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`,"
-                + " `Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado`,"
-                + " `caja anticipada`, `total a pagar`, `% interes`, `interes a pagar`,"
-                + " `Por final pagar`, `Status`, `Observacion 1`, `Observaciones`) "
+        String SQL = "INSERT INTO `nominasem.cajadeahorro` (`#caja`, `#exp_Empleado`, `Apellido P`, "
+                + "`Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Ahorro por semana`, "
+                + "`Semanas Ahorradas`, `Total Ahorrado`, `caja anticipada`, `total a pagar`, `% interes`, "
+                + "`interes a pagar`, `Por final pagar`, `Status`, `Observacion 1`, `Observaciones`) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -648,7 +644,8 @@ public final class CDAS_5 extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         ODT2 = new javax.swing.JMenuItem();
         CDA3 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
+        LDA1 = new javax.swing.JMenuItem();
+        LDA4 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -673,6 +670,7 @@ public final class CDAS_5 extends javax.swing.JFrame {
         NomGen = new javax.swing.JMenuItem();
         CDA = new javax.swing.JMenuItem();
         LDA = new javax.swing.JMenuItem();
+        LDA3 = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
@@ -767,11 +765,11 @@ public final class CDAS_5 extends javax.swing.JFrame {
 
         TIAP.setText("0");
 
-        jLabel110.setText("Ahorro por Qna:");
+        jLabel110.setText("Ahorro por Sem:");
 
         jLabel120.setText("Total a pagar:");
 
-        jLabel111.setText("Qnas ahorradas:");
+        jLabel111.setText("Sem ahorradas:");
 
         jLabel112.setText("Total ahorrado:");
 
@@ -1134,19 +1132,6 @@ public final class CDAS_5 extends javax.swing.JFrame {
                             .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel102)
                                 .addComponent(AMcda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Labelfilcda)
-                        .addComponent(BusnameCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel162)
-                        .addComponent(Filtroscda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FilAPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FillAMCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Eliminarcda)
-                            .addComponent(jLabel4))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
@@ -1177,8 +1162,23 @@ public final class CDAS_5 extends javax.swing.JFrame {
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AgregarCDA)
                             .addComponent(ModCDA))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE))
+                        .addGap(0, 309, Short.MAX_VALUE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Labelfilcda)
+                                .addComponent(BusnameCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel162)
+                                .addComponent(Filtroscda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FilAPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(FillAMCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Eliminarcda)
+                                    .addComponent(jLabel4))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1475,13 +1475,21 @@ public final class CDAS_5 extends javax.swing.JFrame {
 
         jMenu5.add(jMenu7);
 
-        jMenuItem12.setText("Listas de asistencia");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        LDA1.setText("Listas de asistencia C/IMSS ");
+        LDA1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                LDA1ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem12);
+        jMenu5.add(LDA1);
+
+        LDA4.setText("Listas de asistencia S/IMSS");
+        LDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA4ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(LDA4);
 
         Menuadm.add(jMenu5);
 
@@ -1654,13 +1662,21 @@ public final class CDAS_5 extends javax.swing.JFrame {
 
         jMenu4.add(jMenu11);
 
-        LDA.setText("Listas de asistencia");
+        LDA.setText("Listas de asistencia C/IMSS ");
         LDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LDAActionPerformed(evt);
             }
         });
         jMenu4.add(LDA);
+
+        LDA3.setText("Listas de asistencia S/IMSS");
+        LDA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA3ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(LDA3);
 
         jMenuBar1.add(jMenu4);
 
@@ -2170,12 +2186,6 @@ public final class CDAS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
-
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
 
         Empleados_4 RH = new Empleados_4(usr, LP);
@@ -2255,12 +2265,6 @@ public final class CDAS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_NomGenActionPerformed
 
-    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_LDAActionPerformed
-
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         RepNom_7 regr = new RepNom_7(usr, LP);
         regr.setVisible(true);
@@ -2310,6 +2314,30 @@ public final class CDAS_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CDA3ActionPerformed
+
+    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDAActionPerformed
+
+    private void LDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA3ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA3ActionPerformed
+
+    private void LDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA1ActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA1ActionPerformed
+
+    private void LDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA4ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2380,6 +2408,9 @@ public final class CDAS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField IAP;
     private javax.swing.JMenuItem LDA;
+    private javax.swing.JMenuItem LDA1;
+    private javax.swing.JMenuItem LDA3;
+    private javax.swing.JMenuItem LDA4;
     private javax.swing.JLabel Labelcda;
     private javax.swing.JLabel Labelfilcda;
     private javax.swing.JLabel MADE;
@@ -2461,7 +2492,6 @@ public final class CDAS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;

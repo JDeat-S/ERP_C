@@ -1,6 +1,7 @@
 package Semanal;
 
-import Nomina.Listas.Listas_5;
+import RH.Depositos.Depositos_4;
+import Nomina.Listas.*;
 import Nomina.ModulosS.*;
 import Nomina.ModulosQ.*;
 import Nomina.*;
@@ -4562,7 +4563,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem8 = new javax.swing.JMenuItem();
         CDA4 = new javax.swing.JMenuItem();
         ODT2 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        LDA10 = new javax.swing.JMenuItem();
+        LDA11 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         General1 = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -7360,13 +7362,21 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         jMenu2.add(jMenu4);
 
-        jMenuItem9.setText("Listas de asistencia");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        LDA10.setText("Listas de asistencia C/IMSS ");
+        LDA10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                LDA10ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem9);
+        jMenu2.add(LDA10);
+
+        LDA11.setText("Listas de asistencia S/IMSS");
+        LDA11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA11ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(LDA11);
 
         Menuadm.add(jMenu2);
 
@@ -9634,12 +9644,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         this.dispose();
     }//GEN-LAST:event_ODT2ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
     private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
 
         Empleados_4 RH = new Empleados_4(usr, LP);
@@ -10048,6 +10052,18 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
+    private void LDA10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA10ActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA10ActionPerformed
+
+    private void LDA11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA11ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA11ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -10204,6 +10220,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField Importe9;
     private javax.swing.JTextField LDA;
     private javax.swing.JTextField LDA1;
+    private javax.swing.JMenuItem LDA10;
+    private javax.swing.JMenuItem LDA11;
     private javax.swing.JTextField LDA2;
     private javax.swing.JTextField LDA3;
     private javax.swing.JTextField LDA4;
@@ -10428,7 +10446,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

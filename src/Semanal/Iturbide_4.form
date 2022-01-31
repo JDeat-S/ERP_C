@@ -132,12 +132,20 @@
                     </MenuItem>
                   </SubComponents>
                 </Menu>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+                <MenuItem class="javax.swing.JMenuItem" name="LDA10">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Listas de asistencia"/>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia C/IMSS "/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA10ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="LDA11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA11ActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>

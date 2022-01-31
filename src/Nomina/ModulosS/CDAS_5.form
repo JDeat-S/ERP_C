@@ -132,12 +132,20 @@
                     </MenuItem>
                   </SubComponents>
                 </Menu>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem12">
+                <MenuItem class="javax.swing.JMenuItem" name="LDA1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Listas de asistencia"/>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia C/IMSS "/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem12ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA1ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="LDA4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA4ActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>
@@ -349,10 +357,18 @@
             </Menu>
             <MenuItem class="javax.swing.JMenuItem" name="LDA">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Listas de asistencia"/>
+                <Property name="text" type="java.lang.String" value="Listas de asistencia C/IMSS "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDAActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="LDA3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA3ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -604,26 +620,9 @@
                                   </Group>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="Labelfilcda" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="BusnameCDA" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel162" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Filtroscda" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FilAPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FillAMCDA" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="Eliminarcda" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="jLabel119" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -659,9 +658,29 @@
                                       <Component id="AgregarCDA" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="ModCDA" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="309" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane14" alignment="0" pref="575" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                          <Component id="Labelfilcda" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BusnameCDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel162" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Filtroscda" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FilAPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FillAMCDA" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="Eliminarcda" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane14" pref="575" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -938,7 +957,7 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel110">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Ahorro por Qna:"/>
+                        <Property name="text" type="java.lang.String" value="Ahorro por Sem:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel120">
@@ -948,7 +967,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel111">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Qnas ahorradas:"/>
+                        <Property name="text" type="java.lang.String" value="Sem ahorradas:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel112">

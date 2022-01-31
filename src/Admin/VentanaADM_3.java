@@ -1,6 +1,7 @@
 package Admin;
 
-import Nomina.Listas.Listas_5;
+import RH.Depositos.Depositos_4;
+import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
@@ -299,7 +300,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         CDA4 = new javax.swing.JMenuItem();
         ODT2 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        LDA = new javax.swing.JMenuItem();
+        LDA3 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -962,13 +964,21 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
         jMenu2.add(jMenu4);
 
-        jMenuItem7.setText("Listas de asistencia");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        LDA.setText("Listas de asistencia C/IMSS ");
+        LDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                LDAActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem7);
+        jMenu2.add(LDA);
+
+        LDA3.setText("Listas de asistencia S/IMSS");
+        LDA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(LDA3);
 
         Menuadm.add(jMenu2);
 
@@ -1114,12 +1124,6 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void GeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneralActionPerformed
 
@@ -2196,6 +2200,18 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ODT2ActionPerformed
 
+    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDAActionPerformed
+
+    private void LDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA3ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2247,6 +2263,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JTextField Filname;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField IDuser;
+    private javax.swing.JMenuItem LDA;
+    private javax.swing.JMenuItem LDA3;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JTextField Nameadduser;
     private javax.swing.JTextField NumP;
@@ -2306,7 +2324,6 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel2;

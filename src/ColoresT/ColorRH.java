@@ -51,6 +51,8 @@ public class ColorRH extends DefaultTableCellRenderer {
             setBackground(RyB);
         } else if (table.getValueAt(row, 15).toString().equals("DEPURADO")) {
             setBackground(Dep);
+        } else if (table.getValueAt(row, 15).toString().equals("NO CONTRATAR")) {
+            setBackground(RyB);
         } else if (table.getValueAt(row, 15).toString().equals("RECHAZADO/DEPURADO")) {
             setBackground(Dep);
         } else if (table.getValueAt(row, 15).toString().equals("NO CONTRATAR/DEPURADO")) {

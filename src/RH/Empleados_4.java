@@ -1,6 +1,7 @@
 package RH;
 
-import Nomina.Listas.Listas_5;
+import RH.Depositos.Depositos_4;
+import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
@@ -1447,7 +1448,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         CDA4 = new javax.swing.JMenuItem();
         ODT2 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        LDA = new javax.swing.JMenuItem();
+        LDA3 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         General1 = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -1639,7 +1641,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
         Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "PENDIENTE", "EN ESPERA", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO", "DEPURADO", "RECHAZADO/DEPURADO", "NO CONTRATAR/DEPURADO", "BOLETINADO/DEPURADO", "BAJA/DEPURADO" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "PENDIENTE", "EN ESPERA", "RECHAZADO", "TEMPORAL", "VIGENTE", "BOLETINADO", "DEPURADO", "RECHAZADO/DEPURADO", "NO CONTRATAR/DEPURADO", "BOLETINADO/DEPURADO", "BAJA/DEPURADO", "NO CONTRATAR" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -2851,13 +2853,21 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
         jMenu2.add(jMenu4);
 
-        jMenuItem9.setText("Listas de asistencia");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        LDA.setText("Listas de asistencia C/IMSS ");
+        LDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                LDAActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem9);
+        jMenu2.add(LDA);
+
+        LDA3.setText("Listas de asistencia S/IMSS");
+        LDA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(LDA3);
 
         Menuadm.add(jMenu2);
 
@@ -4234,12 +4244,6 @@ public final class Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        Listas_5 regr = new Listas_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
     private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
 
         Empleados_4 RH = new Empleados_4(usr, LP);
@@ -4320,6 +4324,18 @@ public final class Empleados_4 extends javax.swing.JFrame {
         Logica_bd_RHIMSS obj = new Logica_bd_RHIMSS();
         obj.BDRH();
     }//GEN-LAST:event_jLabel32MousePressed
+
+    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDAActionPerformed
+
+    private void LDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA3ActionPerformed
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -4410,6 +4426,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem General1;
     private javax.swing.JPanel IMSS;
     private javax.swing.JTextField INT;
+    private javax.swing.JMenuItem LDA;
+    private javax.swing.JMenuItem LDA3;
     private javax.swing.JLabel LabelF1;
     private javax.swing.JLabel LabelF2;
     private javax.swing.JMenu Menuadm;
@@ -4538,7 +4556,6 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

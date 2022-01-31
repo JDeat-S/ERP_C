@@ -1,7 +1,7 @@
 package Nomina.Listas.LCIMSS;
 
 import Nomina.Listas.LSIMSS.*;
-import Pruebas.Listas_SI_5;
+import Nomina.Listas.Listas_SI_5;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
