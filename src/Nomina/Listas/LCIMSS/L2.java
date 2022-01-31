@@ -48,9 +48,9 @@ public class L2 {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/confort2022",
-                    "root",
-                    ""
+                    "jdbc:mysql://192.168.1.170:3306/confort2022",
+                    "Servidor",
+                    "Confort1022"
             );
 
             int PL = (IL.getUNumR() - IL.getNDLista()) + 1;

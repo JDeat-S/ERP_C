@@ -2281,6 +2281,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
     public void OBNames() {
 
+
         String SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados` WHERE `Entra a IMSS` LIKE '%si%' AND `Zona` LIKE '%" + LDAZon.getSelectedItem().toString() + "%'";
         try {
             java.sql.Statement st = con.createStatement();
@@ -2677,7 +2678,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 pst.setString(36, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
 
                 pst.executeUpdate();
-                ItemsL IL = new ItemsL();
+            
 
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
@@ -2823,7 +2824,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -3003,7 +3004,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 pst.executeUpdate();
 
                 MostrarULDA();
-                ItemsL IL = new ItemsL();
+            
 
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
@@ -3222,7 +3223,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -3477,7 +3478,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -3771,7 +3772,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -4102,7 +4103,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -4470,7 +4471,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -4875,7 +4876,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -5317,7 +5318,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -5799,7 +5800,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -6315,7 +6316,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -6868,7 +6869,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
@@ -7459,7 +7460,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 MostrarULDA();
 
-                ItemsL IL = new ItemsL();
+            
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
