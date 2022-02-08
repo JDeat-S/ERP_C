@@ -4555,6 +4555,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         TDSYP = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         DE = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -5173,7 +5174,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         jScrollPane2.setViewportView(Panel);
 
-        jButton1.setText("Agregar semanal");
+        jButton1.setText("Agregar ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -7103,6 +7104,13 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         DE.setText("0");
 
+        jButton2.setText("Guardar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -7176,7 +7184,10 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                             .addComponent(DBe))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton1)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jButton1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton2))
                                             .addComponent(jLabel41)
                                             .addComponent(jLabel1))
                                         .addGap(0, 8, Short.MAX_VALUE))))
@@ -7244,7 +7255,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
                             .addComponent(NDS)
-                            .addComponent(jButton1))
+                            .addComponent(jButton1)
+                            .addComponent(jButton2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -7796,6 +7808,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         MDsem();
         Reporte1();
         Reporte2();
+        limpiar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void Importe10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe10KeyReleased
@@ -10075,6 +10088,17 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         this.dispose();
     }//GEN-LAST:event_LDA11ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ADDSemanal();
+        Addscc();
+        Addsgast();
+        Addspen();
+        Addval();
+        MostrarNDS();
+        MDsem();
+        limpiar();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -10396,6 +10420,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
