@@ -16,6 +16,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
@@ -42,7 +43,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     Connection con = cc.conexion();
 
     double BM = 1000, BQ = 500, BD = 200, BC = 100, BCIN = 50, BV = 20,
-            MV = 20, MD = 10, MC = 5, MDOS = 2, MU = 1, MCENT = 0.50, DEN;
+            MV = 20, MD = 10, MC = 5, MDOS = 2, MU = 1, MCENT = 0.50;
 
     public VDE() {
         initComponents();
@@ -61,6 +62,16 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         this.LP = LP;
         this.setLocationRelativeTo(null);
         MNV();
+    }
+
+    public void TDEN() {
+        double TDen;
+        TDen = Double.parseDouble(SB1000.getText()) + Double.parseDouble(SB500.getText()) + Double.parseDouble(SB200.getText())
+                + Double.parseDouble(SB100.getText()) + Double.parseDouble(SB50.getText()) + Double.parseDouble(SB20.getText())
+                + Double.parseDouble(SM20.getText()) + Double.parseDouble(SM10.getText()) + Double.parseDouble(SM5.getText())
+                + Double.parseDouble(SM2.getText()) + Double.parseDouble(SM1.getText()) + Double.parseDouble(SM050.getText());
+        DecimalFormat dDeposito = new DecimalFormat("#.00");
+        TR.setText(dDeposito.format(TDen));
     }
 
     public void MNV() {
@@ -86,7 +97,11 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
     public void agregarvale() {
 
-        String SQL = "INSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`,"
+                + " `en`, `fecha`, `BPescrito`, `B1000`, `SB1000`, `B500`, `SB500`, `B200`, `SB200`,"
+                + " `B100`, `SB100`, `B50`, `SB50`, `B20`, `SB20`, `M20`, `SM20`, `M10`, `SM10`, `M5`,"
+                + " `SM5`, `M2`, `SM2`, `M1`, `SM1`, `M050`, `SM050`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -97,6 +112,30 @@ public final class VDE extends javax.swing.JFrame implements Printable {
             pst.setString(5, En.getText());
             pst.setString(6, ((JTextField) Fecha.getDateEditor().getUiComponent()).getText());
             pst.setString(7, ImporteEsc.getText());
+            pst.setString(8, B1000.getText());
+            pst.setString(9, SB1000.getText());
+            pst.setString(10, B500.getText());
+            pst.setString(11, SB500.getText());
+            pst.setString(12, B200.getText());
+            pst.setString(13, SB200.getText());
+            pst.setString(14, B100.getText());
+            pst.setString(15, SB100.getText());
+            pst.setString(16, B50.getText());
+            pst.setString(17, SB50.getText());
+            pst.setString(18, B20.getText());
+            pst.setString(19, SB20.getText());
+            pst.setString(20, M20.getText());
+            pst.setString(21, SM20.getText());
+            pst.setString(22, M10.getText());
+            pst.setString(23, SM10.getText());
+            pst.setString(24, M5.getText());
+            pst.setString(25, SM5.getText());
+            pst.setString(26, M2.getText());
+            pst.setString(27, SM2.getText());
+            pst.setString(28, M1.getText());
+            pst.setString(29, SM1.getText());
+            pst.setString(30, M050.getText());
+            pst.setString(31, SM050.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Vale registrado.");
@@ -122,6 +161,30 @@ public final class VDE extends javax.swing.JFrame implements Printable {
             En1.setText("");
             Fecha1.setDate(null);
             ImporteEsc1.setText("");
+            B1000.setText("0");
+            SB1000.setText("0");
+            B500.setText("0");
+            SB500.setText("0");
+            B200.setText("0");
+            SB200.setText("0");
+            B100.setText("0");
+            SB100.setText("0");
+            B50.setText("0");
+            SB50.setText("0");
+            B20.setText("0");
+            SB20.setText("0");
+            M20.setText("0");
+            SM20.setText("0");
+            M10.setText("0");
+            SM10.setText("0");
+            M5.setText("0");
+            SM5.setText("0");
+            M2.setText("0");
+            SM2.setText("0");
+            M1.setText("0");
+            SM1.setText("0");
+            M050.setText("0");
+            SM050.setText("0");
             MNV();
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar vale");
@@ -356,6 +419,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         SM1 = new javax.swing.JTextField();
         SM050 = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        TR = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
@@ -389,15 +454,19 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         btngenLayout.setHorizontalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btngenLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(txtbtngen, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         btngenLayout.setVerticalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtbtngen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addGroup(btngenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 940, 70));
+        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 940, 70));
 
         Harder1.setBackground(new java.awt.Color(255, 255, 255));
         Harder1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -657,6 +726,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel26.setText("$1000");
 
+        B1000.setText("0");
         B1000.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 B1000KeyReleased(evt);
@@ -665,24 +735,101 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel27.setText("$500");
 
+        B500.setText("0");
+        B500.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B500KeyReleased(evt);
+            }
+        });
+
         jLabel28.setText("$200");
+
+        B200.setText("0");
+        B200.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B200KeyReleased(evt);
+            }
+        });
 
         jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel29.setText("Billete");
 
+        B100.setText("0");
+        B100.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B100KeyReleased(evt);
+            }
+        });
+
         jLabel31.setText("$100");
 
+        B50.setText("0");
+        B50.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B50KeyReleased(evt);
+            }
+        });
+
         jLabel32.setText("$50");
+
+        B20.setText("0");
+        B20.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B20KeyReleased(evt);
+            }
+        });
 
         jLabel33.setText("$20");
 
         jLabel34.setText("$20");
 
+        M1.setText("0");
+        M1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M1KeyReleased(evt);
+            }
+        });
+
         jLabel35.setText("$2");
+
+        M10.setText("0");
+        M10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M10KeyReleased(evt);
+            }
+        });
+
+        M050.setText("0");
+        M050.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M050KeyReleased(evt);
+            }
+        });
+
+        M20.setText("0");
+        M20.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M20KeyReleased(evt);
+            }
+        });
+
+        M2.setText("0");
+        M2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M2KeyReleased(evt);
+            }
+        });
 
         jLabel38.setText("$10");
 
         jLabel39.setText("$1");
+
+        M5.setText("0");
+        M5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M5KeyReleased(evt);
+            }
+        });
 
         jLabel36.setText("$5");
 
@@ -695,9 +842,51 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel42.setText("Cantidad");
 
+        SB1000.setEditable(false);
+        SB1000.setText("0");
+
         jLabel43.setText("Subtotal");
 
+        SB500.setEditable(false);
+        SB500.setText("0");
+
+        SB200.setEditable(false);
+        SB200.setText("0");
+
+        SB100.setEditable(false);
+        SB100.setText("0");
+
+        SB50.setEditable(false);
+        SB50.setText("0");
+
+        SB20.setEditable(false);
+        SB20.setText("0");
+
+        SM20.setEditable(false);
+        SM20.setText("0");
+
+        SM10.setEditable(false);
+        SM10.setText("0");
+
+        SM5.setEditable(false);
+        SM5.setText("0");
+
+        SM2.setEditable(false);
+        SM2.setText("0");
+
+        SM1.setEditable(false);
+        SM1.setText("0");
+
+        SM050.setEditable(false);
+        SM050.setText("0");
+
         jLabel44.setText("Subtotal");
+
+        jLabel45.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel45.setText("Total real:");
+
+        TR.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        TR.setText("0");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -719,9 +908,9 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(SB1000, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(jPanel3Layout.createSequentialGroup()
                                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -736,18 +925,23 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                                             .addGroup(jPanel3Layout.createSequentialGroup()
                                                 .addComponent(jLabel28)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(B200, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel27)
+                                                .addComponent(B200, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addComponent(jLabel27)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(B500, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B500, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SB500, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SB200, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SB100, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SB50, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SB20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(SB500, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SB200, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SB100, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SB50, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SB20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jLabel45)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TR))))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jLabel29)
@@ -893,16 +1087,20 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                             .addComponent(SM1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(SM050, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(TR))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 480, 240));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 480, 320));
 
         jLabel30.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel30.setText("CONFORT SERVICE PRESTIGE ");
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 490));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 570));
 
         btnexit.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1026,9 +1224,64 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     }//GEN-LAST:event_FechaMousePressed
 
     private void B1000KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B1000KeyReleased
-       
         SB1000.setText("" + (BM * Double.parseDouble(B1000.getText())));
+        TDEN();
     }//GEN-LAST:event_B1000KeyReleased
+
+    private void B500KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B500KeyReleased
+        SB500.setText("" + (BQ * Double.parseDouble(B500.getText())));
+        TDEN();
+    }//GEN-LAST:event_B500KeyReleased
+
+    private void B200KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B200KeyReleased
+        SB200.setText("" + (BD * Double.parseDouble(B200.getText())));
+        TDEN();
+    }//GEN-LAST:event_B200KeyReleased
+
+    private void B100KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B100KeyReleased
+        SB100.setText("" + (BC * Double.parseDouble(B100.getText())));
+        TDEN();
+    }//GEN-LAST:event_B100KeyReleased
+
+    private void B50KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B50KeyReleased
+        SB50.setText("" + (BCIN * Double.parseDouble(B50.getText())));
+        TDEN();
+    }//GEN-LAST:event_B50KeyReleased
+
+    private void B20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B20KeyReleased
+        SB20.setText("" + (BV * Double.parseDouble(B20.getText())));
+        TDEN();
+    }//GEN-LAST:event_B20KeyReleased
+
+    private void M20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M20KeyReleased
+        SM20.setText("" + (MV * Double.parseDouble(M20.getText())));
+        TDEN();
+    }//GEN-LAST:event_M20KeyReleased
+
+    private void M10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M10KeyReleased
+        SM10.setText("" + (MD * Double.parseDouble(M10.getText())));
+        TDEN();
+    }//GEN-LAST:event_M10KeyReleased
+
+    private void M5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M5KeyReleased
+        SM5.setText("" + (MC * Double.parseDouble(M5.getText())));
+        TDEN();
+    }//GEN-LAST:event_M5KeyReleased
+
+    private void M2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M2KeyReleased
+        SM2.setText("" + (MD * Double.parseDouble(M2.getText())));
+        TDEN();
+    }//GEN-LAST:event_M2KeyReleased
+
+    private void M1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M1KeyReleased
+        SM1.setText("" + (MU * Double.parseDouble(M1.getText())));
+        TDEN();
+    }//GEN-LAST:event_M1KeyReleased
+
+    private void M050KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M050KeyReleased
+        SM050.setText("" + (MCENT * Double.parseDouble(M050.getText())));
+        TDEN();
+    }//GEN-LAST:event_M050KeyReleased
 
     /**
      * @param args the command line arguments
@@ -1100,6 +1353,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField SM2;
     private javax.swing.JTextField SM20;
     private javax.swing.JTextField SM5;
+    private javax.swing.JLabel TR;
     private javax.swing.JPanel btnexit;
     private javax.swing.JPanel btngen;
     private javax.swing.JLabel jLabel1;
@@ -1141,6 +1395,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
