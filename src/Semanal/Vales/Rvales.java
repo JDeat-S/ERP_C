@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -45,7 +46,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         "setecientos ", "ochocientos ", "novecientos "};
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
-        double BM = 1000, BQ = 500, BD = 200, BC = 100, BCIN = 50, BV = 20,
+    double BM = 1000, BQ = 500, BD = 200, BC = 100, BCIN = 50, BV = 20,
             MV = 20, MD = 10, MC = 5, MDOS = 2, MU = 1, MCENT = 0.50;
 
     public Rvales() {
@@ -66,12 +67,22 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         MDVales();
     }
 
+    public void TDEN() {
+        double TDen;
+        TDen = Double.parseDouble(SB1000.getText()) + Double.parseDouble(SB500.getText()) + Double.parseDouble(SB200.getText())
+                + Double.parseDouble(SB100.getText()) + Double.parseDouble(SB50.getText()) + Double.parseDouble(SB20.getText())
+                + Double.parseDouble(SM20.getText()) + Double.parseDouble(SM10.getText()) + Double.parseDouble(SM5.getText())
+                + Double.parseDouble(SM2.getText()) + Double.parseDouble(SM1.getText()) + Double.parseDouble(SM050.getText());
+        DecimalFormat dDeposito = new DecimalFormat("#.00");
+        TR.setText(dDeposito.format(TDen));
+    }
+
     public void MDVales() {
         String Statusimss = NVSearch.getText();
-        String sql = "SELECT * FROM `semanal.vales`";
+        String sql = "SELECT `#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito` FROM `semanal.vales`";
 
         if (!"".equals(Statusimss)) {
-            sql = " SELECT * FROM `semanal.vales` WHERE `#vale` LIKE '%" + Statusimss + "%'";
+            sql = " SELECT `#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito` FROM `semanal.vales` WHERE `#vale` LIKE '%" + Statusimss + "%'";
         }
         try {
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -707,17 +718,17 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 50, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 480, 250));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 120, 10));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 120, 10));
 
         jLabel21.setText("Recibe");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
 
         jLabel22.setText("# Vale");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 20));
-        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 120, 10));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 120, 10));
 
         jLabel26.setText("Entrega");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1187,7 +1198,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             Date date2 = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse((String) model.getValueAt(seleccionar, 5));
             Fecha.setDate(date2);
             ImporteEsc.setText(String.valueOf(Tvales.getValueAt(seleccionar, 6)));
-            
+
             NV1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 0)));
             Importe1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 1)));
             RD1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 2)));
@@ -1197,7 +1208,48 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             Fecha1.setDate(date1);
             ImporteEsc1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 6)));
 
-        } catch (ParseException ex) {
+            int id = Integer.parseInt(Tvales.getValueAt(seleccionar, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `B1000`, `SB1000`, `B500`, `SB500`, "
+                    + "`B200`, `SB200`, `B100`, `SB100`, `B50`, `SB50`, `B20`, `SB20`, "
+                    + "`M20`, `SM20`, `M10`, `SM10`, `M5`, `SM5`, `M2`, `SM2`, `M1`, "
+                    + "`SM1`, `M050`, `SM050`, `total real` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                B1000.setText(rs.getString(1));
+                SB1000.setText(rs.getString(2));
+                B500.setText(rs.getString(3));
+                SB500.setText(rs.getString(4));
+                B200.setText(rs.getString(5));
+                SB200.setText(rs.getString(6));
+                B100.setText(rs.getString(7));
+                SB100.setText(rs.getString(8));
+                B50.setText(rs.getString(9));
+                SB50.setText(rs.getString(10));
+                B20.setText(rs.getString(11));
+                SB20.setText(rs.getString(12));
+                M20.setText(rs.getString(13));
+                SM20.setText(rs.getString(14));
+                M10.setText(rs.getString(15));
+                SM10.setText(rs.getString(16));
+                M5.setText(rs.getString(17));
+                SM5.setText(rs.getString(18));
+                M2.setText(rs.getString(19));
+                SM2.setText(rs.getString(20));
+                M1.setText(rs.getString(21));
+                SM1.setText(rs.getString(22));
+                M050.setText(rs.getString(23));
+                SM050.setText(rs.getString(24));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
             Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
         }
 

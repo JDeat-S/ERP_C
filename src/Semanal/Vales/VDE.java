@@ -100,8 +100,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         String SQL = "INSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`,"
                 + " `en`, `fecha`, `BPescrito`, `B1000`, `SB1000`, `B500`, `SB500`, `B200`, `SB200`,"
                 + " `B100`, `SB100`, `B50`, `SB50`, `B20`, `SB20`, `M20`, `SM20`, `M10`, `SM10`, `M5`,"
-                + " `SM5`, `M2`, `SM2`, `M1`, `SM1`, `M050`, `SM050`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `SM5`, `M2`, `SM2`, `M1`, `SM1`, `M050`, `SM050`, `total real`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -136,6 +136,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
             pst.setString(29, SM1.getText());
             pst.setString(30, M050.getText());
             pst.setString(31, SM050.getText());
+            pst.setString(32, TR.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Vale registrado.");
@@ -185,6 +186,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
             SM1.setText("0");
             M050.setText("0");
             SM050.setText("0");
+            TR.setText("0");
             MNV();
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar vale");
@@ -707,17 +709,17 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 50, 20));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 480, 250));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 120, 10));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 120, 10));
 
         jLabel21.setText("Recibe");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
 
         jLabel22.setText("# Vale");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 20));
-        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 120, 10));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 120, 10));
 
         jLabel24.setText("Entrega");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
