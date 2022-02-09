@@ -7529,7 +7529,7 @@ public class L14 {
 
                 Statement sLM12 = connect.createStatement();
                 ResultSet LM12 = sLM12.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
-                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 11");
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 12");
 
                 while (LM12.next()) {
 
@@ -8206,7 +8206,7 @@ public class L14 {
 
                 Statement sLM13 = connect.createStatement();
                 ResultSet LM13 = sLM13.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
-                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 11");
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 13");
 
                 while (LM13.next()) {
 

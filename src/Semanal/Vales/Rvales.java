@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -45,6 +46,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         "setecientos ", "ochocientos ", "novecientos "};
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
+    double BM = 1000, BQ = 500, BD = 200, BC = 100, BCIN = 50, BV = 20,
+            MV = 20, MD = 10, MC = 5, MDOS = 2, MU = 1, MCENT = 0.50;
 
     public Rvales() {
         initComponents();
@@ -64,12 +67,22 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         MDVales();
     }
 
+    public void TDEN() {
+        double TDen;
+        TDen = Double.parseDouble(SB1000.getText()) + Double.parseDouble(SB500.getText()) + Double.parseDouble(SB200.getText())
+                + Double.parseDouble(SB100.getText()) + Double.parseDouble(SB50.getText()) + Double.parseDouble(SB20.getText())
+                + Double.parseDouble(SM20.getText()) + Double.parseDouble(SM10.getText()) + Double.parseDouble(SM5.getText())
+                + Double.parseDouble(SM2.getText()) + Double.parseDouble(SM1.getText()) + Double.parseDouble(SM050.getText());
+        DecimalFormat dDeposito = new DecimalFormat("#.00");
+        TR.setText(dDeposito.format(TDen));
+    }
+
     public void MDVales() {
         String Statusimss = NVSearch.getText();
-        String sql = "SELECT * FROM `semanal.vales`";
+        String sql = "SELECT `#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito` FROM `semanal.vales`";
 
         if (!"".equals(Statusimss)) {
-            sql = " SELECT * FROM `semanal.vales` WHERE `#vale` LIKE '%" + Statusimss + "%'";
+            sql = " SELECT `#vale`, `buenopor`, `Recibi de`, `Concepto`, `en`, `fecha`, `BPescrito` FROM `semanal.vales` WHERE `#vale` LIKE '%" + Statusimss + "%'";
         }
         try {
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -247,6 +260,12 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         txtbtngen = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
         Move = new javax.swing.JLabel();
+        btnexit = new javax.swing.JPanel();
+        txtbtnexit = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Tvales = new javax.swing.JTable();
+        jLabel24 = new javax.swing.JLabel();
+        NVSearch = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         NV = new javax.swing.JTextField();
@@ -302,13 +321,54 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jSeparator14 = new javax.swing.JSeparator();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
-        btnexit = new javax.swing.JPanel();
-        txtbtnexit = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        Tvales = new javax.swing.JTable();
-        jLabel24 = new javax.swing.JLabel();
-        NVSearch = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        B1000 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        B500 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        B200 = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        B100 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        B50 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        B20 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        M1 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        M10 = new javax.swing.JTextField();
+        M050 = new javax.swing.JTextField();
+        M20 = new javax.swing.JTextField();
+        M2 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        M5 = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        SB1000 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        SB500 = new javax.swing.JTextField();
+        SB200 = new javax.swing.JTextField();
+        SB100 = new javax.swing.JTextField();
+        SB50 = new javax.swing.JTextField();
+        SB20 = new javax.swing.JTextField();
+        SM20 = new javax.swing.JTextField();
+        SM10 = new javax.swing.JTextField();
+        SM5 = new javax.swing.JTextField();
+        SM2 = new javax.swing.JTextField();
+        SM1 = new javax.swing.JTextField();
+        SM050 = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        TR = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -338,16 +398,18 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         btngen.setLayout(btngenLayout);
         btngenLayout.setHorizontalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btngenLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtbtngen, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         btngenLayout.setVerticalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btngenLayout.createSequentialGroup()
-                .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(txtbtngen, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
-        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 940, 90));
+        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 760, 940, 90));
 
         Harder1.setBackground(new java.awt.Color(255, 255, 255));
         Harder1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -392,222 +454,6 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         );
 
         getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("A-22");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
-
-        NV.setEditable(false);
-        NV.setText("0");
-        NV.setBorder(null);
-        NV.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                NVKeyReleased(evt);
-            }
-        });
-        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 90, 20));
-
-        jLabel2.setText("Bueno por:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-
-        Importe.setEditable(false);
-        Importe.setText("0");
-        Importe.setBorder(null);
-        Importe.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                ImporteKeyReleased(evt);
-            }
-        });
-        jPanel1.add(Importe, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, 20));
-
-        jLabel3.setText("Recibi de:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
-
-        RD.setEditable(false);
-        RD.setBorder(null);
-        RD.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                RDKeyReleased(evt);
-            }
-        });
-        jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 70, 160, 20));
-
-        jLabel4.setText("Cantidad de:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
-
-        jLabel5.setText("Concepto:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
-
-        Concepto.setEditable(false);
-        Concepto.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        Concepto.setBorder(null);
-        Concepto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                ConceptoKeyReleased(evt);
-            }
-        });
-        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 160, 20));
-
-        jLabel6.setText("En:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, -1, -1));
-
-        En.setEditable(false);
-        En.setBorder(null);
-        En.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                EnKeyReleased(evt);
-            }
-        });
-        jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 89, 20));
-
-        Fecha.setDateFormatString("'A' d 'de' MMMM 'de' y");
-        jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 200, -1));
-
-        ImporteEsc.setEditable(false);
-        ImporteEsc.setColumns(20);
-        ImporteEsc.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        ImporteEsc.setLineWrap(true);
-        ImporteEsc.setRows(5);
-        jScrollPane1.setViewportView(ImporteEsc);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 222, -1));
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel7.setText("CONFORT SERVICE PRESTIGE DE MEXICO S.A DE C.V");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 6, -1, -1));
-
-        jLabel8.setText("RECIBO DE DINERO.");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 38, -1, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 10));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 310, 10));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 170, 10));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 90, 10));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 160, 10));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel10.setText("A-22");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 30, 20));
-
-        NV1.setEditable(false);
-        NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        NV1.setText("0");
-        NV1.setBorder(null);
-        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 90, 20));
-
-        jLabel11.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel11.setText("Bueno por:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 57, 20));
-
-        Importe1.setEditable(false);
-        Importe1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        Importe1.setText("0");
-        Importe1.setBorder(null);
-        Importe1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Importe1KeyReleased(evt);
-            }
-        });
-        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 90, 20));
-
-        jLabel12.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel12.setText("Recibi de:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 45, 20));
-
-        RD1.setEditable(false);
-        RD1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        RD1.setBorder(null);
-        jPanel2.add(RD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 165, 20));
-
-        jLabel13.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel13.setText("Cantidad de:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
-
-        jLabel14.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel14.setText("Concepto:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 50, -1));
-
-        Concepto1.setEditable(false);
-        Concepto1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        Concepto1.setBorder(null);
-        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 130, 20));
-
-        jLabel15.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel15.setText("En:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, -1, -1));
-
-        En1.setEditable(false);
-        En1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        En1.setBorder(null);
-        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 110, 20));
-
-        Fecha1.setDateFormatString("'A' d 'de' MMMM 'de' y");
-        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 200, -1));
-
-        ImporteEsc1.setEditable(false);
-        ImporteEsc1.setColumns(20);
-        ImporteEsc1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        ImporteEsc1.setLineWrap(true);
-        ImporteEsc1.setRows(5);
-        jScrollPane2.setViewportView(ImporteEsc1);
-
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, -1));
-
-        jLabel16.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel16.setText("CONFORT SERVICE");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel17.setText("RECIBO DE DINERO.");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 90, 10));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 130, 10));
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, 10));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 90, 10));
-        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 130, 10));
-
-        jLabel19.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel19.setText("PRESTIGE DE MEXICO S.A DE C.V");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
-        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
-
-        jLabel20.setText("Recibe");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
-        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 110, 10));
-
-        jLabel23.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel23.setText("# Vale");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 30, 20));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 370, 250));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 120, 10));
-
-        jLabel21.setText("Recibe");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, -1));
-
-        jLabel22.setText("# Vale");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, -1, -1));
-        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 120, 10));
-
-        jLabel25.setText("Entrega");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, -1, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 940, 250));
 
         btnexit.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -677,6 +523,596 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         });
         getContentPane().add(NVSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 90, -1));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("A-22");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, 20));
+
+        NV.setText("0");
+        NV.setBorder(null);
+        NV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVKeyReleased(evt);
+            }
+        });
+        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 90, 20));
+
+        jLabel2.setText("Bueno por:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        Importe.setText("0");
+        Importe.setBorder(null);
+        Importe.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ImporteKeyReleased(evt);
+            }
+        });
+        jPanel1.add(Importe, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 20));
+
+        jLabel3.setText("Recibi de:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        RD.setBorder(null);
+        RD.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                RDKeyReleased(evt);
+            }
+        });
+        jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 160, 20));
+
+        jLabel4.setText("Cantidad de:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+
+        jLabel5.setText("Concepto:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+
+        Concepto.setBorder(null);
+        Concepto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ConceptoKeyReleased(evt);
+            }
+        });
+        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 250, 20));
+
+        jLabel6.setText("En:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+
+        En.setBorder(null);
+        En.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EnKeyReleased(evt);
+            }
+        });
+        jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 120, 20));
+
+        Fecha.setDateFormatString("'A' d 'de' MMMM 'de' y");
+        Fecha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                FechaMousePressed(evt);
+            }
+        });
+        jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 200, -1));
+
+        ImporteEsc.setColumns(20);
+        ImporteEsc.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        ImporteEsc.setLineWrap(true);
+        ImporteEsc.setRows(5);
+        jScrollPane1.setViewportView(ImporteEsc);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 222, -1));
+
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel7.setText("DE MEXICO S.A DE C.V");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
+
+        jLabel8.setText("RECIBO DE DINERO.");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 170, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 90, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 250, 10));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel10.setText("A-22");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 30, 20));
+
+        NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        NV1.setText("0");
+        NV1.setBorder(null);
+        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 120, 20));
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel11.setText("Bueno por:");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 57, 20));
+
+        Importe1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        Importe1.setText("0");
+        Importe1.setBorder(null);
+        Importe1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe1KeyReleased(evt);
+            }
+        });
+        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 100, 20));
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("Recibi de:");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 45, 20));
+
+        RD1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        RD1.setBorder(null);
+        jPanel2.add(RD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 165, 20));
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel13.setText("Cantidad de:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel14.setText("Concepto:");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
+
+        Concepto1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        Concepto1.setBorder(null);
+        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 200, 20));
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel15.setText("En:");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 30, -1));
+
+        En1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        En1.setBorder(null);
+        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 160, 20));
+
+        Fecha1.setDateFormatString("'A' d 'de' MMMM 'de' y");
+        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 200, -1));
+
+        ImporteEsc1.setColumns(20);
+        ImporteEsc1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        ImporteEsc1.setLineWrap(true);
+        ImporteEsc1.setRows(5);
+        jScrollPane2.setViewportView(ImporteEsc1);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, -1));
+
+        jLabel16.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel16.setText("CONFORT SERVICE");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel17.setText("RECIBO DE DINERO.");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 100, 10));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 200, 10));
+        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, 10));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 120, 10));
+        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 130, 10));
+
+        jLabel19.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel19.setText("PRESTIGE DE MEXICO S.A DE C.V");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+        jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
+
+        jLabel20.setText("Recibe");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
+        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 160, 10));
+
+        jLabel23.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel23.setText("# Vale");
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 50, 20));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 480, 250));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 120, 10));
+
+        jLabel21.setText("Recibe");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
+
+        jLabel22.setText("# Vale");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 20));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 120, 10));
+
+        jLabel26.setText("Entrega");
+        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel25.setText("Denominacion.");
+
+        jLabel27.setText("$1000");
+
+        B1000.setText("0");
+        B1000.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B1000KeyReleased(evt);
+            }
+        });
+
+        jLabel28.setText("$500");
+
+        B500.setText("0");
+        B500.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B500KeyReleased(evt);
+            }
+        });
+
+        jLabel29.setText("$200");
+
+        B200.setText("0");
+        B200.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B200KeyReleased(evt);
+            }
+        });
+
+        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel30.setText("Billete");
+
+        B100.setText("0");
+        B100.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B100KeyReleased(evt);
+            }
+        });
+
+        jLabel31.setText("$100");
+
+        B50.setText("0");
+        B50.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B50KeyReleased(evt);
+            }
+        });
+
+        jLabel32.setText("$50");
+
+        B20.setText("0");
+        B20.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                B20KeyReleased(evt);
+            }
+        });
+
+        jLabel33.setText("$20");
+
+        jLabel34.setText("$20");
+
+        M1.setText("0");
+        M1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M1KeyReleased(evt);
+            }
+        });
+
+        jLabel35.setText("$2");
+
+        M10.setText("0");
+        M10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M10KeyReleased(evt);
+            }
+        });
+
+        M050.setText("0");
+        M050.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M050KeyReleased(evt);
+            }
+        });
+
+        M20.setText("0");
+        M20.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M20KeyReleased(evt);
+            }
+        });
+
+        M2.setText("0");
+        M2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M2KeyReleased(evt);
+            }
+        });
+
+        jLabel38.setText("$10");
+
+        jLabel39.setText("$1");
+
+        M5.setText("0");
+        M5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                M5KeyReleased(evt);
+            }
+        });
+
+        jLabel36.setText("$5");
+
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setText("Moneda");
+
+        jLabel37.setText("$0,50");
+
+        jLabel41.setText("Cantidad");
+
+        jLabel42.setText("Cantidad");
+
+        SB1000.setEditable(false);
+        SB1000.setText("0");
+
+        jLabel43.setText("Subtotal");
+
+        SB500.setEditable(false);
+        SB500.setText("0");
+
+        SB200.setEditable(false);
+        SB200.setText("0");
+
+        SB100.setEditable(false);
+        SB100.setText("0");
+
+        SB50.setEditable(false);
+        SB50.setText("0");
+
+        SB20.setEditable(false);
+        SB20.setText("0");
+
+        SM20.setEditable(false);
+        SM20.setText("0");
+
+        SM10.setEditable(false);
+        SM10.setText("0");
+
+        SM5.setEditable(false);
+        SM5.setText("0");
+
+        SM2.setEditable(false);
+        SM2.setText("0");
+
+        SM1.setEditable(false);
+        SM1.setText("0");
+
+        SM050.setEditable(false);
+        SM050.setText("0");
+
+        jLabel44.setText("Subtotal");
+
+        jLabel45.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel45.setText("Total real:");
+
+        TR.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        TR.setText("0");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(jLabel25)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(B1000, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SB1000, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel31)
+                                                    .addComponent(jLabel32)
+                                                    .addComponent(jLabel33))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(B100, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(B50, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(B20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addComponent(jLabel29)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(B200, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addComponent(jLabel28)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(B500, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(SB500, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SB200, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SB100, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SB50, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SB20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jLabel45)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TR))))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel41)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel43)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(7, 7, 7)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel34)
+                                        .addComponent(jLabel38))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(M20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(M10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(jLabel36)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(M5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGap(17, 17, 17)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                            .addComponent(jLabel39)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(M1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                            .addComponent(jLabel35)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(M2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel37)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(M050, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(1, 1, 1)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel42)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel44))
+                    .addComponent(SM20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SM10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SM5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SM2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SM1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SM050, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel43))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel27)
+                            .addComponent(B1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SB1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SB500, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel28)
+                            .addComponent(B500, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SB200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29)
+                            .addComponent(B200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(B100, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel31)
+                            .addComponent(SB100, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(B50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel32)
+                            .addComponent(SB50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel33)
+                            .addComponent(B20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SB20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel40)
+                                .addComponent(jLabel42)
+                                .addComponent(jLabel44))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel34)
+                                .addComponent(M20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(M10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel38))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(M5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel36))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel35)
+                                .addComponent(M2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(M1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel39))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(M050, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel37)))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(SM20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(SM10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(SM5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(SM2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(SM1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(SM050, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(TR))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 480, 320));
+
+        jLabel46.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel46.setText("CONFORT SERVICE PRESTIGE ");
+        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 940, 570));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -701,32 +1137,6 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_Harder1MousePressed
-
-    private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
-        Importe1.setText(Importe.getText());
-        ImporteEsc.setText(Convertir(Importe.getText(), true));
-        ImporteEsc1.setText(ImporteEsc.getText());
-    }//GEN-LAST:event_ImporteKeyReleased
-
-    private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
-        ImporteEsc1.setText(Convertir(Importe1.getText(), true));
-    }//GEN-LAST:event_Importe1KeyReleased
-
-    private void NVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVKeyReleased
-        NV1.setText(NV.getText());
-    }//GEN-LAST:event_NVKeyReleased
-
-    private void ConceptoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConceptoKeyReleased
-        Concepto1.setText(Concepto.getText());
-    }//GEN-LAST:event_ConceptoKeyReleased
-
-    private void EnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EnKeyReleased
-        En1.setText(En.getText());
-    }//GEN-LAST:event_EnKeyReleased
-
-    private void RDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RDKeyReleased
-        RD1.setText(RD.getText());
-    }//GEN-LAST:event_RDKeyReleased
 
     private void txtbtngenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseClicked
         try {
@@ -788,7 +1198,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             Date date2 = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse((String) model.getValueAt(seleccionar, 5));
             Fecha.setDate(date2);
             ImporteEsc.setText(String.valueOf(Tvales.getValueAt(seleccionar, 6)));
-            
+
             NV1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 0)));
             Importe1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 1)));
             RD1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 2)));
@@ -798,7 +1208,48 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             Fecha1.setDate(date1);
             ImporteEsc1.setText(String.valueOf(Tvales.getValueAt(seleccionar, 6)));
 
-        } catch (ParseException ex) {
+            int id = Integer.parseInt(Tvales.getValueAt(seleccionar, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `B1000`, `SB1000`, `B500`, `SB500`, "
+                    + "`B200`, `SB200`, `B100`, `SB100`, `B50`, `SB50`, `B20`, `SB20`, "
+                    + "`M20`, `SM20`, `M10`, `SM10`, `M5`, `SM5`, `M2`, `SM2`, `M1`, "
+                    + "`SM1`, `M050`, `SM050`, `total real` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                B1000.setText(rs.getString(1));
+                SB1000.setText(rs.getString(2));
+                B500.setText(rs.getString(3));
+                SB500.setText(rs.getString(4));
+                B200.setText(rs.getString(5));
+                SB200.setText(rs.getString(6));
+                B100.setText(rs.getString(7));
+                SB100.setText(rs.getString(8));
+                B50.setText(rs.getString(9));
+                SB50.setText(rs.getString(10));
+                B20.setText(rs.getString(11));
+                SB20.setText(rs.getString(12));
+                M20.setText(rs.getString(13));
+                SM20.setText(rs.getString(14));
+                M10.setText(rs.getString(15));
+                SM10.setText(rs.getString(16));
+                M5.setText(rs.getString(17));
+                SM5.setText(rs.getString(18));
+                M2.setText(rs.getString(19));
+                SM2.setText(rs.getString(20));
+                M1.setText(rs.getString(21));
+                SM1.setText(rs.getString(22));
+                M050.setText(rs.getString(23));
+                SM050.setText(rs.getString(24));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
             Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -807,6 +1258,96 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private void NVSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVSearchKeyReleased
         MDVales();
     }//GEN-LAST:event_NVSearchKeyReleased
+
+    private void NVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVKeyReleased
+        NV1.setText(NV.getText());
+    }//GEN-LAST:event_NVKeyReleased
+
+    private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
+        Importe1.setText(Importe.getText());
+        ImporteEsc.setText(Convertir(Importe.getText(), true));
+        ImporteEsc1.setText(ImporteEsc.getText());
+    }//GEN-LAST:event_ImporteKeyReleased
+
+    private void RDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RDKeyReleased
+        RD1.setText(RD.getText());
+    }//GEN-LAST:event_RDKeyReleased
+
+    private void ConceptoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConceptoKeyReleased
+        Concepto1.setText(Concepto.getText());
+    }//GEN-LAST:event_ConceptoKeyReleased
+
+    private void EnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EnKeyReleased
+        En1.setText(En.getText());
+    }//GEN-LAST:event_EnKeyReleased
+
+    private void FechaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FechaMousePressed
+        Fecha1.setDate(Fecha.getDate());
+    }//GEN-LAST:event_FechaMousePressed
+
+    private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
+        ImporteEsc1.setText(Convertir(Importe1.getText(), true));
+    }//GEN-LAST:event_Importe1KeyReleased
+
+    private void B1000KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B1000KeyReleased
+        SB1000.setText("" + (BM * Double.parseDouble(B1000.getText())));
+        TDEN();
+    }//GEN-LAST:event_B1000KeyReleased
+
+    private void B500KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B500KeyReleased
+        SB500.setText("" + (BQ * Double.parseDouble(B500.getText())));
+        TDEN();
+    }//GEN-LAST:event_B500KeyReleased
+
+    private void B200KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B200KeyReleased
+        SB200.setText("" + (BD * Double.parseDouble(B200.getText())));
+        TDEN();
+    }//GEN-LAST:event_B200KeyReleased
+
+    private void B100KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B100KeyReleased
+        SB100.setText("" + (BC * Double.parseDouble(B100.getText())));
+        TDEN();
+    }//GEN-LAST:event_B100KeyReleased
+
+    private void B50KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B50KeyReleased
+        SB50.setText("" + (BCIN * Double.parseDouble(B50.getText())));
+        TDEN();
+    }//GEN-LAST:event_B50KeyReleased
+
+    private void B20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B20KeyReleased
+        SB20.setText("" + (BV * Double.parseDouble(B20.getText())));
+        TDEN();
+    }//GEN-LAST:event_B20KeyReleased
+
+    private void M1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M1KeyReleased
+        SM1.setText("" + (MU * Double.parseDouble(M1.getText())));
+        TDEN();
+    }//GEN-LAST:event_M1KeyReleased
+
+    private void M10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M10KeyReleased
+        SM10.setText("" + (MD * Double.parseDouble(M10.getText())));
+        TDEN();
+    }//GEN-LAST:event_M10KeyReleased
+
+    private void M050KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M050KeyReleased
+        SM050.setText("" + (MCENT * Double.parseDouble(M050.getText())));
+        TDEN();
+    }//GEN-LAST:event_M050KeyReleased
+
+    private void M20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M20KeyReleased
+        SM20.setText("" + (MV * Double.parseDouble(M20.getText())));
+        TDEN();
+    }//GEN-LAST:event_M20KeyReleased
+
+    private void M2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M2KeyReleased
+        SM2.setText("" + (MD * Double.parseDouble(M2.getText())));
+        TDEN();
+    }//GEN-LAST:event_M2KeyReleased
+
+    private void M5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M5KeyReleased
+        SM5.setText("" + (MC * Double.parseDouble(M5.getText())));
+        TDEN();
+    }//GEN-LAST:event_M5KeyReleased
 
     /**
      * @param args the command line arguments
@@ -839,6 +1380,12 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField B100;
+    private javax.swing.JTextField B1000;
+    private javax.swing.JTextField B20;
+    private javax.swing.JTextField B200;
+    private javax.swing.JTextField B50;
+    private javax.swing.JTextField B500;
     private javax.swing.JTextField Concepto;
     private javax.swing.JTextField Concepto1;
     private javax.swing.JTextField En;
@@ -850,12 +1397,31 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField Importe1;
     private javax.swing.JTextArea ImporteEsc;
     private javax.swing.JTextArea ImporteEsc1;
+    private javax.swing.JTextField M050;
+    private javax.swing.JTextField M1;
+    private javax.swing.JTextField M10;
+    private javax.swing.JTextField M2;
+    private javax.swing.JTextField M20;
+    private javax.swing.JTextField M5;
     private javax.swing.JLabel Move;
     private javax.swing.JTextField NV;
     private javax.swing.JTextField NV1;
     private javax.swing.JTextField NVSearch;
     private javax.swing.JTextField RD;
     private javax.swing.JTextField RD1;
+    private javax.swing.JTextField SB100;
+    private javax.swing.JTextField SB1000;
+    private javax.swing.JTextField SB20;
+    private javax.swing.JTextField SB200;
+    private javax.swing.JTextField SB50;
+    private javax.swing.JTextField SB500;
+    private javax.swing.JTextField SM050;
+    private javax.swing.JTextField SM1;
+    private javax.swing.JTextField SM10;
+    private javax.swing.JTextField SM2;
+    private javax.swing.JTextField SM20;
+    private javax.swing.JTextField SM5;
+    private javax.swing.JLabel TR;
     private javax.swing.JTable Tvales;
     private javax.swing.JPanel btnexit;
     private javax.swing.JPanel btngen;
@@ -877,8 +1443,29 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -886,6 +1473,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

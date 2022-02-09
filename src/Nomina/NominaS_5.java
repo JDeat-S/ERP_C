@@ -9913,9 +9913,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
 
             pst.setInt(1, Integer.parseInt(NDL.getText()));
             pst.setInt(2, Integer.parseInt(NE.getText()));
-            pst.setString(3, Ap.getText());
-            pst.setString(4, am.getText());
-            pst.setString(5, name.getText());
+            pst.setString(3, name.getText());
+            pst.setString(4, Ap.getText());
+            pst.setString(5, am.getText());
             pst.setString(6, Bono1.getText());
             pst.setString(7, cta.getText());
             pst.setString(8, ban.getText());
