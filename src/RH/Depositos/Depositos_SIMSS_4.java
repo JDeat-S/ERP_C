@@ -812,23 +812,23 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     public void Modeposito() {
-        String SQL = "UPDATE `rh.depositos." + Zon.getText() + ".simss` SET `#Folio` = ?, `#Lista` = ?, `#Empleado` = ?,"
-                + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?, "
-                + "`Servicio` = ?, `Sueldo` = ?, `Bono` = ?, `Por dia` = ?, "
-                + "`Quincena del mes` = ?, `Año` = ?, `Dias de incapacidad` = ?,"
-                + " `Pago seguro` = ?, `Dias de vacaciones` = ?, `Pago de vacaciones` = ?,"
+        String SQL = "UPDATE `rh.depositos." + Zon.getText() + ".simss` SET `#Lista` = ?,"
+                + " `#Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, "
+                + "`Zona` = ?, `Servicio` = ?, `Sueldo` = ?, `Bono` = ?, `Por dia` = ?,"
+                + " `Quincena del mes` = ?, `Año` = ?, `Dias de incapacidad` = ?, "
+                + "`Pago seguro` = ?, `Dias de vacaciones` = ?, `Pago de vacaciones` = ?,"
                 + " `Dias de descanso` = ?, `Pago de dias descansados` = ?, `Dias laborados` = ?,"
-                + " `Pago de dias laborados` = ?, `Descansos trabajados` = ?, "
-                + "`Pago de Descansos trabajados` = ?, `DSGS` = ?, `Pago de dias de DSGS` = ?,"
-                + " `Faltas justificadas` = ?, `Descanso otorgado` = ?, `Retardos` = ?,"
-                + " `Pago con retardos` = ?, `Apoyo` = ?, `Lugar` = ?, `Rembolso` = ?,"
-                + " `Adicionales` = ?, `Faltas` = ?, `Descuento por faltas` = ?, "
-                + "`Descuento imss` = ?, `Faltantes de boleto` = ?, `Sancion` = ?, "
-                + "`Chamarra` = ?, `Chaleco` = ?, `Faltante de efectivo` = ?, `Grua` = ?,"
-                + " `Pantalon` = ?, `Credencial` = ?, `Boleto perdido` = ?, `Playera` = ?, "
-                + "`Corbata` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?,"
-                + " `Adelanto de nomina` = ?, `Deposito` = ?, `Fecha de deposito` = ?, "
-                + "`Mes de pago` = ?, `Forma de pago` = ?, `Observaciones` = ? WHERE `rh.depositos." + Zon.getText() + ".simss`.`#Folio` = ?";
+                + " `Pago de dias laborados` = ?, `Descansos trabajados` = ?, `Pago de Descansos trabajados` = ?,"
+                + " `DSGS` = ?, `Pago de dias de DSGS` = ?, `Faltas justificadas` = ?,"
+                + " `Descanso otorgado` = ?, `Dias festivos` = ?, `Pago de dias festivos` = ?,"
+                + " `Dias festivos trabajados` = ?, `Pago de dias festivos trabajados` = ?,"
+                + " `Retardos` = ?, `Pago con retardos` = ?, `Apoyo` = ?, `Lugar` = ?, `Rembolso` = ?,"
+                + " `Adicionales` = ?, `Faltas` = ?, `Descuento por faltas` = ?, `Descuento imss` = ?, "
+                + "`Faltantes de boleto` = ?, `Sancion` = ?, `Chamarra` = ?, `Chaleco` = ?,"
+                + " `Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, `Credencial` = ?,"
+                + " `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, `Pago de prestamo` = ?, "
+                + "`Caja de ahorro` = ?, `Orden de taller` = ?, `Adelanto de nomina` = ?, `Deposito` = ?, "
+                + "`Fecha de deposito` = ?, `Mes de pago` = ?, `Forma de pago` = ? WHERE `rh.depositos." + Zon.getText() + ".simss`.`#Folio` = ?";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -904,6 +904,8 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito Modificado.");
+
+            Cleardeposito();
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar deposito: " + e.getMessage());
@@ -2127,6 +2129,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         MDP.setSelectedIndex(0);
         FDP.setText("");
         Obsdeposito.setText("0");
+        ban.setText("");
+        cta.setText("");
+        PH.setText("");
+        THE.setText("0");
+        HE.setText("0");
+        RI.setText("0");
+        RF.setText("0");
+        NomISR.setText("0");
     }
 
     public void Agregardeposito() {
@@ -2223,6 +2233,8 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito agregado.");
+
+            Cleardeposito();
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar deposito: " + e.getMessage());
@@ -3705,6 +3717,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         BAppag = new javax.swing.JTextField();
         Bampag = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         TPagos1 = new javax.swing.JScrollPane();
         jPanel29 = new javax.swing.JPanel();
         jScrollPane29 = new javax.swing.JScrollPane();
@@ -3724,7 +3737,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FiltrosP1 = new javax.swing.JComboBox<>();
         BAppag1 = new javax.swing.JTextField();
         Bampag1 = new javax.swing.JTextField();
-        botonWeb16 = new botones.BotonWeb();
         jButton2 = new javax.swing.JButton();
         TPagos2 = new javax.swing.JScrollPane();
         jPanel30 = new javax.swing.JPanel();
@@ -3745,7 +3757,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FiltrosP2 = new javax.swing.JComboBox<>();
         BAppag2 = new javax.swing.JTextField();
         Bampag2 = new javax.swing.JTextField();
-        botonWeb17 = new botones.BotonWeb();
         jButton3 = new javax.swing.JButton();
         TPagos3 = new javax.swing.JScrollPane();
         jPanel31 = new javax.swing.JPanel();
@@ -3766,7 +3777,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FiltrosP3 = new javax.swing.JComboBox<>();
         BAppag3 = new javax.swing.JTextField();
         Bampag3 = new javax.swing.JTextField();
-        botonWeb18 = new botones.BotonWeb();
         jButton4 = new javax.swing.JButton();
         TPagos4 = new javax.swing.JScrollPane();
         jPanel32 = new javax.swing.JPanel();
@@ -3787,7 +3797,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FiltrosP4 = new javax.swing.JComboBox<>();
         BAppag4 = new javax.swing.JTextField();
         Bampag4 = new javax.swing.JTextField();
-        botonWeb19 = new botones.BotonWeb();
         jButton5 = new javax.swing.JButton();
         TPagos5 = new javax.swing.JScrollPane();
         jPanel33 = new javax.swing.JPanel();
@@ -3808,7 +3817,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FiltrosP5 = new javax.swing.JComboBox<>();
         BAppag5 = new javax.swing.JTextField();
         Bampag5 = new javax.swing.JTextField();
-        botonWeb20 = new botones.BotonWeb();
         jButton6 = new javax.swing.JButton();
         TPagos6 = new javax.swing.JScrollPane();
         jPanel34 = new javax.swing.JPanel();
@@ -3829,7 +3837,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FiltrosP6 = new javax.swing.JComboBox<>();
         BAppag6 = new javax.swing.JTextField();
         Bampag6 = new javax.swing.JTextField();
-        botonWeb21 = new botones.BotonWeb();
         jButton7 = new javax.swing.JButton();
         TPagos7 = new javax.swing.JScrollPane();
         jPanel35 = new javax.swing.JPanel();
@@ -3850,7 +3857,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FiltrosP7 = new javax.swing.JComboBox<>();
         BAppag7 = new javax.swing.JTextField();
         Bampag7 = new javax.swing.JTextField();
-        botonWeb22 = new botones.BotonWeb();
         jButton8 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
@@ -5200,7 +5206,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel60.setText("Desc IMSS:");
 
-        DI.setText("26.98");
+        DI.setText("0");
         DI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DIActionPerformed(evt);
@@ -6333,6 +6339,15 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         jButton1.setText("Eliminar");
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel2MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -6349,7 +6364,9 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addComponent(jLabel64)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(45, 45, 45)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelBEP)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6374,7 +6391,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS3))
-                        .addGap(0, 6799, Short.MAX_VALUE)))
+                        .addGap(0, 6840, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -6396,7 +6413,8 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -6496,10 +6514,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb16.setToolTipText("");
-        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
-
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         jButton2.setText("Eliminar");
 
@@ -6521,9 +6535,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addComponent(jLabel161)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(botonWeb16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(45, 45, 45)
                                 .addComponent(LabelBEP1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(busp1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6548,7 +6560,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS15))
-                        .addGap(0, 6799, Short.MAX_VALUE)))
+                        .addGap(0, 6834, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
@@ -6570,7 +6582,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6669,10 +6680,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb17.setToolTipText("");
-        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
-
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         jButton3.setText("Eliminar");
 
@@ -6692,9 +6699,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addComponent(jLabel176)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(botonWeb17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(45, 45, 45)
                                 .addComponent(LabelBEP2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(busp2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6719,7 +6724,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS16))
-                        .addGap(0, 6799, Short.MAX_VALUE)))
+                        .addGap(0, 6834, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
@@ -6741,7 +6746,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6840,10 +6844,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb18.setToolTipText("");
-        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
-
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         jButton4.setText("Eliminar");
 
@@ -6860,9 +6860,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                         .addComponent(jLabel177)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6888,7 +6886,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                         .addComponent(FiltroQP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(CS17)
                     .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 8176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6909,7 +6907,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7008,10 +7005,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb19.setToolTipText("");
-        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
-
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         jButton5.setText("Eliminar");
 
@@ -7031,9 +7024,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addComponent(jLabel178)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(45, 45, 45)
                                 .addComponent(LabelBEP4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(busp4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7058,7 +7049,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS18))
-                        .addGap(0, 6799, Short.MAX_VALUE)))
+                        .addGap(0, 6834, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel32Layout.setVerticalGroup(
@@ -7080,7 +7071,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7179,10 +7169,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb20.setToolTipText("");
-        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
-
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         jButton6.setText("Eliminar");
 
@@ -7202,9 +7188,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addComponent(jLabel179)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(botonWeb20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(45, 45, 45)
                                 .addComponent(LabelBEP5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(busp5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7229,7 +7213,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS19))
-                        .addGap(0, 6799, Short.MAX_VALUE)))
+                        .addGap(0, 6834, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel33Layout.setVerticalGroup(
@@ -7251,7 +7235,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltrosP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7350,10 +7333,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb21.setToolTipText("");
-        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
-
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         jButton7.setText("Eliminar");
 
@@ -7373,9 +7352,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addComponent(jLabel180)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(botonWeb21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(45, 45, 45)
                                 .addComponent(LabelBEP6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(busp6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7400,7 +7377,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS20))
-                        .addGap(0, 6799, Short.MAX_VALUE)))
+                        .addGap(0, 6834, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -7422,7 +7399,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltrosP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7521,10 +7497,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb22.setToolTipText("");
-        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaQuin/EPCPagosNomQuin.php");
-
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eliminarlogo.png"))); // NOI18N
         jButton8.setText("Eliminar");
 
@@ -7544,9 +7516,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addComponent(jLabel181)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(botonWeb22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(45, 45, 45)
                                 .addComponent(LabelBEP7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(busp7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7571,7 +7541,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS21))
-                        .addGap(0, 6799, Short.MAX_VALUE)))
+                        .addGap(0, 6834, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel35Layout.setVerticalGroup(
@@ -7593,7 +7563,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltrosP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bampag7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7940,13 +7909,11 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
     private void Adddeposito1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Adddeposito1ActionPerformed
         Modeposito();
-        Cleardeposito();
         MDepFA();
     }//GEN-LAST:event_Adddeposito1ActionPerformed
 
     private void AdddepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdddepositoActionPerformed
         Agregardeposito();
-        Cleardeposito();
         MDepFA();
     }//GEN-LAST:event_AdddepositoActionPerformed
 
@@ -12044,6 +12011,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_HEKeyReleased
 
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -12397,13 +12368,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField apy;
     private com.toedter.calendar.JDateChooser año;
     private javax.swing.JTextField ban;
-    private botones.BotonWeb botonWeb16;
-    private botones.BotonWeb botonWeb17;
-    private botones.BotonWeb botonWeb18;
-    private botones.BotonWeb botonWeb19;
-    private botones.BotonWeb botonWeb20;
-    private botones.BotonWeb botonWeb21;
-    private botones.BotonWeb botonWeb22;
     private javax.swing.JTextField busp;
     private javax.swing.JTextField busp1;
     private javax.swing.JTextField busp2;
@@ -12488,6 +12452,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel184;
     private javax.swing.JLabel jLabel185;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel25;
