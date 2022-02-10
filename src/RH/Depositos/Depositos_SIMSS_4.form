@@ -3474,10 +3474,10 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="DPF" max="32767" attributes="0"/>
-                                          <Component id="NomISR" max="32767" attributes="0"/>
+                                          <Component id="DPF" alignment="0" pref="80" max="32767" attributes="0"/>
+                                          <Component id="RI" alignment="0" max="32767" attributes="0"/>
                                           <Component id="RF" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="RI" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                          <Component id="NomISR" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -5825,6 +5825,9 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MousePressed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -6115,6 +6118,9 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MousePressed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -6406,6 +6412,9 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel7MousePressed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -6701,6 +6710,9 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MousePressed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -6993,6 +7005,9 @@
                               <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel10MousePressed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -7288,6 +7303,9 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel11MousePressed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -7583,6 +7601,9 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel12MousePressed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>

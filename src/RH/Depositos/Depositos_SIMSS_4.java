@@ -120,6 +120,18 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FZservicio.setModel(MODELFZS);
         //</editor-fold>
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        busp8.setVisible(false);
+        BAppag8.setVisible(false);
+        Bampag8.setVisible(false);
+        LabelBEP8.setVisible(false);
+        LabelBQP8.setVisible(false);
+        FiltroQP8.setVisible(false);
+        FiltroServP8.setVisible(false);
+        LabelBSP8.setVisible(false);
+        FiltroSZP8.setVisible(false);
+        LabelSZP8.setVisible(false);
+        filtroNDFP8.setVisible(false);
+        LabelNDFP8.setVisible(false);
         LabelBE8.setVisible(false);
         FApT8.setVisible(false);
         FAmT8.setVisible(false);
@@ -497,6 +509,30 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FZservicio.setModel(MODELFZS);
         //</editor-fold>
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
+        busp8.setVisible(false);
+        BAppag8.setVisible(false);
+        Bampag8.setVisible(false);
+        LabelBEP8.setVisible(false);
+        LabelBQP8.setVisible(false);
+        FiltroQP8.setVisible(false);
+        FiltroServP8.setVisible(false);
+        LabelBSP8.setVisible(false);
+        FiltroSZP8.setVisible(false);
+        LabelSZP8.setVisible(false);
+        filtroNDFP8.setVisible(false);
+        LabelNDFP8.setVisible(false);
         LabelBE8.setVisible(false);
         FApT8.setVisible(false);
         FAmT8.setVisible(false);
@@ -1057,7 +1093,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -1069,6 +1104,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -1197,7 +1233,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -1209,6 +1244,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -1337,7 +1373,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -1349,6 +1384,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -1477,7 +1513,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -1489,6 +1524,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -1617,7 +1653,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -1629,6 +1664,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -1757,7 +1793,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -1769,6 +1804,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -1897,7 +1933,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -1909,6 +1944,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -2037,7 +2073,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -2049,6 +2084,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -2177,7 +2213,6 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Descuanto por faltas");
             modelo.addColumn("Sancion");//36
             modelo.addColumn("Chamarra");
             modelo.addColumn("Chaleco");//38
@@ -2189,6 +2224,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Playera");//44
             modelo.addColumn("Corbata");
             modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Pago de prestamo");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Orden de taller");//48
@@ -2467,7 +2503,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -2494,9 +2533,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -2522,10 +2566,9 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
-                /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50,
-                /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
+                /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
                 /*GRUA*/ 50, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 50, /*PLAY*/ 50,
@@ -2550,7 +2593,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
         }
     }
-    
+
     public void MDepS2() {
         String SQL = "SELECT * FROM `rh.depositos.sur 2.simss`";
         String FiltroN = busp7.getText();
@@ -2604,7 +2647,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -2631,9 +2677,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -2659,10 +2710,9 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
-                /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50,
-                /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
+                /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
                 /*GRUA*/ 50, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 50, /*PLAY*/ 50,
@@ -2741,7 +2791,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -2768,9 +2821,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -2796,7 +2854,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
@@ -2877,7 +2935,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -2904,9 +2965,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -2932,7 +2998,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
@@ -3013,7 +3079,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -3040,9 +3109,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -3068,7 +3142,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
@@ -3149,7 +3223,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -3176,9 +3253,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -3204,7 +3286,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
@@ -3286,7 +3368,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -3313,9 +3398,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -3341,7 +3431,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
@@ -3423,7 +3513,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -3450,9 +3543,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -3478,7 +3576,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
@@ -3561,7 +3659,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Servicio");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");
@@ -3588,9 +3689,14 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Lugar");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
             modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -3616,7 +3722,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
-                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
                 /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
@@ -5823,10 +5929,10 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
                                     .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(DPF)
-                            .addComponent(NomISR)
+                            .addComponent(DPF, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(RI)
                             .addComponent(RF)
-                            .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(NomISR))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
@@ -7192,6 +7298,11 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel4MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -7357,6 +7468,11 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel6MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -7519,6 +7635,11 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel7MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
@@ -7684,6 +7805,11 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel8MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -7848,6 +7974,11 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         });
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel10MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
@@ -8013,6 +8144,11 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel11MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -8178,6 +8314,11 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel12MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
@@ -8908,11 +9049,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -9194,11 +9336,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -9480,11 +9623,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -9766,11 +9910,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -10052,11 +10197,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -10338,11 +10484,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -10627,11 +10774,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -10913,11 +11061,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -12747,7 +12896,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_HEKeyReleased
 
     private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
-               Logica_BDDep_FA obj = new Logica_BDDep_FA();
+        Logica_BDDep_FA obj = new Logica_BDDep_FA();
         obj.BDRH();
     }//GEN-LAST:event_jLabel2MousePressed
 
@@ -12821,11 +12970,12 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Bp.setText(String.valueOf(Tnom8.getValueAt(fila, 55)));
             Playera.setText(String.valueOf(Tnom8.getValueAt(fila, 56)));
             Corbata.setText(String.valueOf(Tnom8.getValueAt(fila, 57)));
-            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 58)));
-            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
-            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
-            AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
-            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 63)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -13237,9 +13387,44 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Bampag8KeyReleased
 
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
-                       Logica_BDDep_FP obj = new Logica_BDDep_FP();
+        Logica_BDDep_FP obj = new Logica_BDDep_FP();
         obj.BDRH();
     }//GEN-LAST:event_jLabel3MousePressed
+
+    private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
+        Logica_BDDep_FT obj = new Logica_BDDep_FT();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel4MousePressed
+
+    private void jLabel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MousePressed
+        Logica_BDDep_Nor obj = new Logica_BDDep_Nor();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel6MousePressed
+
+    private void jLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MousePressed
+        Logica_BDDep_Pon obj = new Logica_BDDep_Pon();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel7MousePressed
+
+    private void jLabel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MousePressed
+        Logica_BDDep_Ofi obj = new Logica_BDDep_Ofi();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel8MousePressed
+
+    private void jLabel10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MousePressed
+        Logica_BDDep_S1 obj = new Logica_BDDep_S1();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel10MousePressed
+
+    private void jLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MousePressed
+        Logica_BDDep_S2 obj = new Logica_BDDep_S2();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel11MousePressed
+
+    private void jLabel12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MousePressed
+        Logica_BDDep_CSQ obj = new Logica_BDDep_CSQ();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel12MousePressed
 
     /**
      * @param args the command line arguments
