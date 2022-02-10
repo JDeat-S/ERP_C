@@ -1271,7 +1271,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     }//GEN-LAST:event_M5KeyReleased
 
     private void M2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M2KeyReleased
-        SM2.setText("" + (MD * Double.parseDouble(M2.getText())));
+        SM2.setText("" + (MDOS * Double.parseDouble(M2.getText())));
         TDEN();
     }//GEN-LAST:event_M2KeyReleased
 
