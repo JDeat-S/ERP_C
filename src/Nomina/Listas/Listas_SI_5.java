@@ -1,6 +1,6 @@
 package Nomina.Listas;
 
-import RH.Depositos.Depositos_4;
+import RH.Depositos.DepositosQ_4;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
@@ -21002,7 +21002,7 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        Depositos_4 regr = new Depositos_4(usr, LP);
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem15ActionPerformed

@@ -1,6 +1,6 @@
 package Nomina;
 
-import RH.Depositos.Depositos_4;
+import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.Listas_CI_5;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -22749,7 +22749,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        Depositos_4 regr = new Depositos_4(usr, LP);
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem15ActionPerformed

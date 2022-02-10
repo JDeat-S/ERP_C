@@ -1,6 +1,6 @@
 package Semanal;
 
-import RH.Depositos.Depositos_4;
+import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Nomina.ModulosS.*;
 import Nomina.ModulosQ.*;
@@ -9574,7 +9574,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Depositos_4 regr = new Depositos_4();
+        DepositosQ_4 regr = new DepositosQ_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
