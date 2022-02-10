@@ -1244,7 +1244,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 SM1.setText(rs.getString(22));
                 M050.setText(rs.getString(23));
                 SM050.setText(rs.getString(24));
-
+                TR.setText(rs.getString(25));
+                
             }
             ps.isClosed();
             rs.isClosed();
