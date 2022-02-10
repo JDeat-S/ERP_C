@@ -32,7 +32,7 @@ public class Logica_BDDep_CSQ {
 
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Reporte de Datos IMSS"));
+        chooser.setSelectedFile(new File("Reporte de Depositos Santander quincenal"));
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
@@ -54,7 +54,7 @@ public class Logica_BDDep_CSQ {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `rh.depositos.corporativo santander quincenal`");
+            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `rh.depositos.corporativo santander quincenal.simss`");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Depositos Santander quincenal");

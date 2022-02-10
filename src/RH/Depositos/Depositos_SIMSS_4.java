@@ -116,6 +116,18 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FZservicio.setModel(MODELFZS);
         //</editor-fold>
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
         LabelBE.setVisible(false);
         LabelBQ.setVisible(false);
         LabelBS.setVisible(false);
@@ -478,6 +490,18 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FZservicio.setModel(MODELFZS);
         //</editor-fold>
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
         LabelBE.setVisible(false);
         LabelBQ.setVisible(false);
         LabelBS.setVisible(false);
@@ -779,7 +803,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FZservicio1.setModel(MODELFZSnomdep);
         setIconImage(new ImageIcon(Depositos_SIMSS_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MDepFA();
-        setTitle("RH: Depositos con imss Quincenales # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+        setTitle("RH: Depositos sin imss Quincenales # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
 
         switch (LP.getVDA()) {
@@ -933,7 +957,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }
 
     // mostrar datos de nomina
-     public void MDNSQ() {
+    public void MDNSQ() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
         String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss`";
@@ -1072,7 +1096,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         }
 
     }
-    
+
     public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
@@ -8481,7 +8505,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab7KeyReleased
 
     private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
- try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom7.getModel();
 
@@ -8767,7 +8791,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab6KeyReleased
 
     private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
- try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
 
@@ -9053,7 +9077,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab5KeyReleased
 
     private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
- try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
 
@@ -12394,27 +12418,109 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MousePressed
 
     private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
-        // TODO add your handling code here:
+       try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
+
+            int fila = Tnom8.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom8.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom8.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom8.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom8.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom8.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom8.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom8.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom8.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom8.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom8.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom8.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom8.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom8.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom8.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom8.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom8.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom8.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom8.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom8.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom8.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom8.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom8.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom8.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom8.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom8.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom8.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom8.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom8.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom8.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom8.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom8.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom8.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom8.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom8.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom8.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom8.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom8.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom8.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom8.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom8.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom8.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom8.getValueAt(fila, 57)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 58)));
+            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
+            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
+            AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Depositos_SIMSS_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Tnom8MouseClicked
 
     private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
-        // TODO add your handling code here:
+            FunMD();
     }//GEN-LAST:event_Nominab8KeyReleased
 
     private void CS22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS22ActionPerformed
-        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_CS22ActionPerformed
 
     private void FiltroSnomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina8ItemStateChanged
-        // TODO add your handling code here:
+            FunMD();
     }//GEN-LAST:event_FiltroSnomina8ItemStateChanged
 
     private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
-        // TODO add your handling code here:
+            FunMD();
     }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
 
     private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
-        // TODO add your handling code here:
+            FunMD();
     }//GEN-LAST:event_FZservicio8ItemStateChanged
 
     private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
@@ -12579,15 +12685,16 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_FiltrosTD8ItemStateChanged
 
     private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
-        // TODO add your handling code here:
+            FunMD();
+
     }//GEN-LAST:event_FiltroNDF8KeyReleased
 
     private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
-        // TODO add your handling code here:
+            FunMD();
     }//GEN-LAST:event_FApT8KeyReleased
 
     private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
-        // TODO add your handling code here:
+            FunMD();
     }//GEN-LAST:event_FAmT8KeyReleased
 
     /**
