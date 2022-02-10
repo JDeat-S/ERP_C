@@ -7043,7 +7043,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             ps.isClosed();
             rs.isClosed();
         } catch (SQLException error_sh_cda_nom) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
 
         }
 

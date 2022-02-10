@@ -921,6 +921,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         MDNPon();
         MDNS1();
         MDNS2();
+        MDNSQ();
         MDepFA();
         MDepFT();
         MDepFP();
@@ -932,6 +933,146 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }
 
     // mostrar datos de nomina
+     public void MDNSQ() {
+        //Buscar empleado
+        String FiltroN = Nominab.getText();
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss`";
+        String FAPNom = FApT.getText();
+        String FAMNom = FAmT.getText();
+        String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//8
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Descuanto por faltas");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//48
+            modelo.addColumn("Deposito");
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90,/*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*HE*/ 50, /*THE*/ 50, /*FALT*/ 45,
+                /*DPF*/ 120, /*INF*/ 50, /*FON*/ 50, /*ISR*/ 50,/*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_FA) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
+
+        }
+
+    }
+    
     public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
@@ -3544,6 +3685,25 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         FiltroNDF7 = new javax.swing.JTextField();
         FApT7 = new javax.swing.JTextField();
         FAmT7 = new javax.swing.JTextField();
+        TDFA8 = new javax.swing.JScrollPane();
+        jPanel36 = new javax.swing.JPanel();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        Tnom8 = new javax.swing.JTable();
+        LabelBE8 = new javax.swing.JLabel();
+        Nominab8 = new javax.swing.JTextField();
+        CS22 = new javax.swing.JButton();
+        LabelBS8 = new javax.swing.JLabel();
+        FiltroSnomina8 = new javax.swing.JComboBox<>();
+        LabelBQ8 = new javax.swing.JLabel();
+        FiltroQuincenanomina8 = new javax.swing.JComboBox<>();
+        LabelSZ8 = new javax.swing.JLabel();
+        FZservicio8 = new javax.swing.JComboBox<>();
+        jLabel186 = new javax.swing.JLabel();
+        FiltrosTD8 = new javax.swing.JComboBox<>();
+        LabelBNDF8 = new javax.swing.JLabel();
+        FiltroNDF8 = new javax.swing.JTextField();
+        FApT8 = new javax.swing.JTextField();
+        FAmT8 = new javax.swing.JTextField();
         jScrollPane10 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
         jLabel123 = new javax.swing.JLabel();
@@ -5192,6 +5352,168 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         TDFA7.setViewportView(jPanel28);
 
         PestanañasND.addTab("Sur 2", TDFA7);
+
+        jPanel36.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom8MouseClicked(evt);
+            }
+        });
+        jScrollPane28.setViewportView(Tnom8);
+
+        LabelBE8.setText("Buscar Empleado:");
+
+        Nominab8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab8KeyReleased(evt);
+            }
+        });
+
+        CS22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS22.setText("Cerrar sesion");
+        CS22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS22ActionPerformed(evt);
+            }
+        });
+
+        LabelBS8.setText("Buscar Servicio:");
+
+        FiltroSnomina8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina8ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ8.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina8ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ8.setText("Selecciona Zona:");
+
+        FZservicio8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio8ItemStateChanged(evt);
+            }
+        });
+
+        jLabel186.setText("Filtros:");
+
+        FiltrosTD8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD8ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF8.setText("Buscar por # Lista");
+
+        FiltroNDF8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF8KeyReleased(evt);
+            }
+        });
+
+        FApT8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT8KeyReleased(evt);
+            }
+        });
+
+        FAmT8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT8KeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addComponent(jLabel186)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS22))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel36Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane28))
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE8)
+                    .addComponent(Nominab8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS8)
+                    .addComponent(FiltroSnomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ8)
+                    .addComponent(FiltroQuincenanomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ8)
+                    .addComponent(FZservicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel186)
+                    .addComponent(FiltrosTD8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF8)
+                    .addComponent(FiltroNDF8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS22)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA8.setViewportView(jPanel36);
+
+        PestanañasND.addTab("Santander quincenal", TDFA8);
 
         jScrollPane9.setViewportView(PestanañasND);
 
@@ -8159,7 +8481,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab7KeyReleased
 
     private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
-        try {
+ try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom7.getModel();
 
@@ -8169,62 +8491,70 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Ap.setText(String.valueOf(Tnom7.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom7.getValueAt(fila, 3)));
             name.setText(String.valueOf(Tnom7.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
-            Bono.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
-            pd.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            ban.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom7.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom7.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom7.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
-            pds.setText(String.valueOf(Tnom7.getValueAt(fila, 13)));
-            Ddv.setText(String.valueOf(Tnom7.getValueAt(fila, 14)));
-            PDDDV.setText(String.valueOf(Tnom7.getValueAt(fila, 15)));
-            DD.setText(String.valueOf(Tnom7.getValueAt(fila, 16)));
-            PDDD.setText(String.valueOf(Tnom7.getValueAt(fila, 17)));
-            DL.setText(String.valueOf(Tnom7.getValueAt(fila, 18)));
-            PDDL.setText(String.valueOf(Tnom7.getValueAt(fila, 19)));
-            dt.setText(String.valueOf(Tnom7.getValueAt(fila, 20)));
-            PDDT.setText(String.valueOf(Tnom7.getValueAt(fila, 21)));
-            DSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 22)));
-            PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 23)));
-            FJ.setText(String.valueOf(Tnom7.getValueAt(fila, 24)));
-            DO.setText(String.valueOf(Tnom7.getValueAt(fila, 25)));
-            DF.setText(String.valueOf(Tnom7.getValueAt(fila, 26)));
-            PDDF.setText(String.valueOf(Tnom7.getValueAt(fila, 27)));
-            DFT.setText(String.valueOf(Tnom7.getValueAt(fila, 28)));
-            PDDFT.setText(String.valueOf(Tnom7.getValueAt(fila, 29)));
-            R.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
-            PCR.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
-            apy.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
-            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
-            ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
-            F.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
-            DPF.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
-            DI.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
-            Fdb.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
-            Sancion.setText(String.valueOf(Tnom7.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
-            Chaleco.setText(String.valueOf(Tnom7.getValueAt(fila, 42)));
-            Fde.setText(String.valueOf(Tnom7.getValueAt(fila, 43)));
-            Grua.setText(String.valueOf(Tnom7.getValueAt(fila, 44)));
-            Pantalon.setText(String.valueOf(Tnom7.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom7.getValueAt(fila, 46)));
-            Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 47)));
-            Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 48)));
-            Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 49)));
-            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
-            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 52)));
-            AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
-            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 54)));
+            Dpi.setText(String.valueOf(Tnom7.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom7.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom7.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom7.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom7.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom7.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom7.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom7.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom7.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom7.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom7.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom7.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom7.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom7.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom7.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom7.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom7.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom7.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom7.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom7.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom7.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom7.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 57)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 58)));
+            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
+            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
+            AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -8437,7 +8767,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab6KeyReleased
 
     private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
-        try {
+ try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
 
@@ -8447,62 +8777,70 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));
             name.setText(String.valueOf(Tnom6.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
-            Bono.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
-            pd.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            ban.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom6.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom6.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom6.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
-            pds.setText(String.valueOf(Tnom6.getValueAt(fila, 13)));
-            Ddv.setText(String.valueOf(Tnom6.getValueAt(fila, 14)));
-            PDDDV.setText(String.valueOf(Tnom6.getValueAt(fila, 15)));
-            DD.setText(String.valueOf(Tnom6.getValueAt(fila, 16)));
-            PDDD.setText(String.valueOf(Tnom6.getValueAt(fila, 17)));
-            DL.setText(String.valueOf(Tnom6.getValueAt(fila, 18)));
-            PDDL.setText(String.valueOf(Tnom6.getValueAt(fila, 19)));
-            dt.setText(String.valueOf(Tnom6.getValueAt(fila, 20)));
-            PDDT.setText(String.valueOf(Tnom6.getValueAt(fila, 21)));
-            DSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 22)));
-            PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 23)));
-            FJ.setText(String.valueOf(Tnom6.getValueAt(fila, 24)));
-            DO.setText(String.valueOf(Tnom6.getValueAt(fila, 25)));
-            DF.setText(String.valueOf(Tnom6.getValueAt(fila, 26)));
-            PDDF.setText(String.valueOf(Tnom6.getValueAt(fila, 27)));
-            DFT.setText(String.valueOf(Tnom6.getValueAt(fila, 28)));
-            PDDFT.setText(String.valueOf(Tnom6.getValueAt(fila, 29)));
-            R.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
-            PCR.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
-            apy.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
-            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
-            ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
-            F.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
-            DPF.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
-            DI.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
-            Fdb.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
-            Sancion.setText(String.valueOf(Tnom6.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
-            Chaleco.setText(String.valueOf(Tnom6.getValueAt(fila, 42)));
-            Fde.setText(String.valueOf(Tnom6.getValueAt(fila, 43)));
-            Grua.setText(String.valueOf(Tnom6.getValueAt(fila, 44)));
-            Pantalon.setText(String.valueOf(Tnom6.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom6.getValueAt(fila, 46)));
-            Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 47)));
-            Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 48)));
-            Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 49)));
-            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
-            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 52)));
-            AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
-            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 54)));
+            Dpi.setText(String.valueOf(Tnom6.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom6.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom6.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom6.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom6.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom6.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom6.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom6.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom6.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom6.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom6.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom6.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom6.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom6.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom6.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom6.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom6.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom6.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom6.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom6.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom6.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom6.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 57)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 58)));
+            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
+            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
+            AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -8715,7 +9053,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Nominab5KeyReleased
 
     private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
-        try {
+ try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
 
@@ -8725,62 +9063,70 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Ap.setText(String.valueOf(Tnom5.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom5.getValueAt(fila, 3)));
             name.setText(String.valueOf(Tnom5.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
-            Bono.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
-            pd.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            ban.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom5.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom5.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom5.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
-            pds.setText(String.valueOf(Tnom5.getValueAt(fila, 13)));
-            Ddv.setText(String.valueOf(Tnom5.getValueAt(fila, 14)));
-            PDDDV.setText(String.valueOf(Tnom5.getValueAt(fila, 15)));
-            DD.setText(String.valueOf(Tnom5.getValueAt(fila, 16)));
-            PDDD.setText(String.valueOf(Tnom5.getValueAt(fila, 17)));
-            DL.setText(String.valueOf(Tnom5.getValueAt(fila, 18)));
-            PDDL.setText(String.valueOf(Tnom5.getValueAt(fila, 19)));
-            dt.setText(String.valueOf(Tnom5.getValueAt(fila, 20)));
-            PDDT.setText(String.valueOf(Tnom5.getValueAt(fila, 21)));
-            DSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 22)));
-            PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 23)));
-            FJ.setText(String.valueOf(Tnom5.getValueAt(fila, 24)));
-            DO.setText(String.valueOf(Tnom5.getValueAt(fila, 25)));
-            DF.setText(String.valueOf(Tnom5.getValueAt(fila, 26)));
-            PDDF.setText(String.valueOf(Tnom5.getValueAt(fila, 27)));
-            DFT.setText(String.valueOf(Tnom5.getValueAt(fila, 28)));
-            PDDFT.setText(String.valueOf(Tnom5.getValueAt(fila, 29)));
-            R.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
-            PCR.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
-            apy.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
-            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
-            ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
-            F.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
-            DPF.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
-            DI.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
-            Fdb.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
-            Sancion.setText(String.valueOf(Tnom5.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
-            Chaleco.setText(String.valueOf(Tnom5.getValueAt(fila, 42)));
-            Fde.setText(String.valueOf(Tnom5.getValueAt(fila, 43)));
-            Grua.setText(String.valueOf(Tnom5.getValueAt(fila, 44)));
-            Pantalon.setText(String.valueOf(Tnom5.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom5.getValueAt(fila, 46)));
-            Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 47)));
-            Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 48)));
-            Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 49)));
-            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
-            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 52)));
-            AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
-            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 54)));
+            Dpi.setText(String.valueOf(Tnom5.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom5.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom5.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom5.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom5.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom5.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom5.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom5.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom5.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom5.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom5.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom5.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom5.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom5.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom5.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom5.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom5.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom5.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom5.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom5.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom5.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom5.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 57)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 58)));
+            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
+            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
+            AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -9003,62 +9349,70 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Ap.setText(String.valueOf(Tnom4.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom4.getValueAt(fila, 3)));
             name.setText(String.valueOf(Tnom4.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
-            Bono.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
-            pd.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            ban.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom4.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom4.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom4.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
-            pds.setText(String.valueOf(Tnom4.getValueAt(fila, 13)));
-            Ddv.setText(String.valueOf(Tnom4.getValueAt(fila, 14)));
-            PDDDV.setText(String.valueOf(Tnom4.getValueAt(fila, 15)));
-            DD.setText(String.valueOf(Tnom4.getValueAt(fila, 16)));
-            PDDD.setText(String.valueOf(Tnom4.getValueAt(fila, 17)));
-            DL.setText(String.valueOf(Tnom4.getValueAt(fila, 18)));
-            PDDL.setText(String.valueOf(Tnom4.getValueAt(fila, 19)));
-            dt.setText(String.valueOf(Tnom4.getValueAt(fila, 20)));
-            PDDT.setText(String.valueOf(Tnom4.getValueAt(fila, 21)));
-            DSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 22)));
-            PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 23)));
-            FJ.setText(String.valueOf(Tnom4.getValueAt(fila, 24)));
-            DO.setText(String.valueOf(Tnom4.getValueAt(fila, 25)));
-            DF.setText(String.valueOf(Tnom4.getValueAt(fila, 26)));
-            PDDF.setText(String.valueOf(Tnom4.getValueAt(fila, 27)));
-            DFT.setText(String.valueOf(Tnom4.getValueAt(fila, 28)));
-            PDDFT.setText(String.valueOf(Tnom4.getValueAt(fila, 29)));
-            R.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
-            PCR.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
-            apy.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
-            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
-            ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
-            F.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
-            DPF.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
-            DI.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
-            Fdb.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
-            Sancion.setText(String.valueOf(Tnom4.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
-            Chaleco.setText(String.valueOf(Tnom4.getValueAt(fila, 42)));
-            Fde.setText(String.valueOf(Tnom4.getValueAt(fila, 43)));
-            Grua.setText(String.valueOf(Tnom4.getValueAt(fila, 44)));
-            Pantalon.setText(String.valueOf(Tnom4.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom4.getValueAt(fila, 46)));
-            Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 47)));
-            Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 48)));
-            Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 49)));
-            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
-            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 52)));
-            AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
-            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 54)));
+            Dpi.setText(String.valueOf(Tnom4.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom4.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom4.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom4.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom4.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom4.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom4.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom4.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom4.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom4.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom4.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom4.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom4.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom4.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom4.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom4.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom4.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom4.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom4.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom4.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom4.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom4.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 57)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 58)));
+            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
+            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
+            AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -9281,62 +9635,70 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Ap.setText(String.valueOf(Tnom3.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom3.getValueAt(fila, 3)));
             name.setText(String.valueOf(Tnom3.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
-            Bono.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
-            pd.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            ban.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom3.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom3.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom3.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom3.getValueAt(fila, 12)));
-            pds.setText(String.valueOf(Tnom3.getValueAt(fila, 13)));
-            Ddv.setText(String.valueOf(Tnom3.getValueAt(fila, 14)));
-            PDDDV.setText(String.valueOf(Tnom3.getValueAt(fila, 15)));
-            DD.setText(String.valueOf(Tnom3.getValueAt(fila, 16)));
-            PDDD.setText(String.valueOf(Tnom3.getValueAt(fila, 17)));
-            DL.setText(String.valueOf(Tnom3.getValueAt(fila, 18)));
-            PDDL.setText(String.valueOf(Tnom3.getValueAt(fila, 19)));
-            dt.setText(String.valueOf(Tnom3.getValueAt(fila, 20)));
-            PDDT.setText(String.valueOf(Tnom3.getValueAt(fila, 21)));
-            DSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 22)));
-            PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 23)));
-            FJ.setText(String.valueOf(Tnom3.getValueAt(fila, 24)));
-            DO.setText(String.valueOf(Tnom3.getValueAt(fila, 25)));
-            DF.setText(String.valueOf(Tnom3.getValueAt(fila, 26)));
-            PDDF.setText(String.valueOf(Tnom3.getValueAt(fila, 27)));
-            DFT.setText(String.valueOf(Tnom3.getValueAt(fila, 28)));
-            PDDFT.setText(String.valueOf(Tnom3.getValueAt(fila, 29)));
-            R.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
-            PCR.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
-            apy.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
-            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
-            ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
-            F.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
-            DPF.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
-            DI.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
-            Fdb.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
-            Sancion.setText(String.valueOf(Tnom3.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
-            Chaleco.setText(String.valueOf(Tnom3.getValueAt(fila, 42)));
-            Fde.setText(String.valueOf(Tnom3.getValueAt(fila, 43)));
-            Grua.setText(String.valueOf(Tnom3.getValueAt(fila, 44)));
-            Pantalon.setText(String.valueOf(Tnom3.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom3.getValueAt(fila, 46)));
-            Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 47)));
-            Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 48)));
-            Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 49)));
-            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
-            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 52)));
-            AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
-            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 54)));
+            Dpi.setText(String.valueOf(Tnom3.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom3.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom3.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom3.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom3.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom3.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom3.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom3.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom3.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom3.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom3.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom3.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom3.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom3.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom3.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom3.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom3.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom3.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom3.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom3.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom3.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom3.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 57)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
+            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
+            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
+            AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -9559,62 +9921,70 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Ap.setText(String.valueOf(Tnom2.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom2.getValueAt(fila, 3)));
             name.setText(String.valueOf(Tnom2.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
-            Bono.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
-            pd.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            ban.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom2.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom2.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom2.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
-            pds.setText(String.valueOf(Tnom2.getValueAt(fila, 13)));
-            Ddv.setText(String.valueOf(Tnom2.getValueAt(fila, 14)));
-            PDDDV.setText(String.valueOf(Tnom2.getValueAt(fila, 15)));
-            DD.setText(String.valueOf(Tnom2.getValueAt(fila, 16)));
-            PDDD.setText(String.valueOf(Tnom2.getValueAt(fila, 17)));
-            DL.setText(String.valueOf(Tnom2.getValueAt(fila, 18)));
-            PDDL.setText(String.valueOf(Tnom2.getValueAt(fila, 19)));
-            dt.setText(String.valueOf(Tnom2.getValueAt(fila, 20)));
-            PDDT.setText(String.valueOf(Tnom2.getValueAt(fila, 21)));
-            DSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 22)));
-            PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 23)));
-            FJ.setText(String.valueOf(Tnom2.getValueAt(fila, 24)));
-            DO.setText(String.valueOf(Tnom2.getValueAt(fila, 25)));
-            DF.setText(String.valueOf(Tnom2.getValueAt(fila, 26)));
-            PDDF.setText(String.valueOf(Tnom2.getValueAt(fila, 27)));
-            DFT.setText(String.valueOf(Tnom2.getValueAt(fila, 28)));
-            PDDFT.setText(String.valueOf(Tnom2.getValueAt(fila, 29)));
-            R.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
-            PCR.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
-            apy.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
-            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
-            ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
-            F.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
-            DPF.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
-            DI.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
-            Fdb.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
-            Sancion.setText(String.valueOf(Tnom2.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
-            Chaleco.setText(String.valueOf(Tnom2.getValueAt(fila, 42)));
-            Fde.setText(String.valueOf(Tnom2.getValueAt(fila, 43)));
-            Grua.setText(String.valueOf(Tnom2.getValueAt(fila, 44)));
-            Pantalon.setText(String.valueOf(Tnom2.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom2.getValueAt(fila, 46)));
-            Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 47)));
-            Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 48)));
-            Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 49)));
-            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
-            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 52)));
-            AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
-            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 54)));
+            Dpi.setText(String.valueOf(Tnom2.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom2.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom2.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom2.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom2.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom2.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom2.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom2.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom2.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom2.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom2.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom2.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom2.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom2.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom2.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom2.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom2.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom2.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom2.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom2.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom2.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom2.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 57)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 58)));
+            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
+            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
+            AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -10126,62 +10496,70 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
             Ap.setText(String.valueOf(Tnom1.getValueAt(fila, 2)));
             am.setText(String.valueOf(Tnom1.getValueAt(fila, 3)));
             name.setText(String.valueOf(Tnom1.getValueAt(fila, 4)));
-            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 6)));
-            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
-            Bono.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
-            pd.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            ban.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom1.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom1.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom1.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
-            pds.setText(String.valueOf(Tnom1.getValueAt(fila, 13)));
-            Ddv.setText(String.valueOf(Tnom1.getValueAt(fila, 14)));
-            PDDDV.setText(String.valueOf(Tnom1.getValueAt(fila, 15)));
-            DD.setText(String.valueOf(Tnom1.getValueAt(fila, 16)));
-            PDDD.setText(String.valueOf(Tnom1.getValueAt(fila, 17)));
-            DL.setText(String.valueOf(Tnom1.getValueAt(fila, 18)));
-            PDDL.setText(String.valueOf(Tnom1.getValueAt(fila, 19)));
-            dt.setText(String.valueOf(Tnom1.getValueAt(fila, 20)));
-            PDDT.setText(String.valueOf(Tnom1.getValueAt(fila, 21)));
-            DSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 22)));
-            PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 23)));
-            FJ.setText(String.valueOf(Tnom1.getValueAt(fila, 24)));
-            DO.setText(String.valueOf(Tnom1.getValueAt(fila, 25)));
-            DF.setText(String.valueOf(Tnom1.getValueAt(fila, 26)));
-            PDDF.setText(String.valueOf(Tnom1.getValueAt(fila, 27)));
-            DFT.setText(String.valueOf(Tnom1.getValueAt(fila, 28)));
-            PDDFT.setText(String.valueOf(Tnom1.getValueAt(fila, 29)));
-            R.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
-            PCR.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
-            apy.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
-            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
-            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
-            ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
-            F.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
-            DPF.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
-            DI.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
-            Fdb.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
-            Sancion.setText(String.valueOf(Tnom1.getValueAt(fila, 40)));
-            Chamarra.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
-            Chaleco.setText(String.valueOf(Tnom1.getValueAt(fila, 42)));
-            Fde.setText(String.valueOf(Tnom1.getValueAt(fila, 43)));
-            Grua.setText(String.valueOf(Tnom1.getValueAt(fila, 44)));
-            Pantalon.setText(String.valueOf(Tnom1.getValueAt(fila, 45)));
-            Credencial.setText(String.valueOf(Tnom1.getValueAt(fila, 46)));
-            Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 47)));
-            Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 48)));
-            Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 49)));
-            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
-            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
-            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 52)));
-            AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
-            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 54)));
+            Dpi.setText(String.valueOf(Tnom1.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom1.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom1.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom1.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom1.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom1.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom1.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom1.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom1.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom1.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom1.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom1.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom1.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom1.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom1.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom1.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom1.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom1.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom1.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom1.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom1.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom1.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 57)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 58)));
+            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
+            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
+            AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
         } catch (ParseException ex) {
             Logger.getLogger(Depositos_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -12015,6 +12393,203 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MousePressed
 
+    private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tnom8MouseClicked
+
+    private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nominab8KeyReleased
+
+    private void CS22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CS22ActionPerformed
+
+    private void FiltroSnomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina8ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroSnomina8ItemStateChanged
+
+    private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
+
+    private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FZservicio8ItemStateChanged
+
+    private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
+        String FTD8 = (String) FiltrosTD8.getSelectedItem();
+        if (FTD8.equals("Selecciona filtro")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD8.equals("Filtrar por Apellido P")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido P:");
+            FApT8.setText("");
+            FApT8.setVisible(true);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Apellido M")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido M:");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(true);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Nombre(s)")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Nombre(s):");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(true);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Servicio")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(true);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(true);
+            FZservicio8.setVisible(true);
+            LabelSZ8.setVisible(true);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por quincena")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(true);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(true);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por # Lista")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(true);
+            LabelBNDF8.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD8ItemStateChanged
+
+    private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FiltroNDF8KeyReleased
+
+    private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FApT8KeyReleased
+
+    private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FAmT8KeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -12083,6 +12658,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JButton CS2;
     private javax.swing.JButton CS20;
     private javax.swing.JButton CS21;
+    private javax.swing.JButton CS22;
     private javax.swing.JButton CS3;
     private javax.swing.JButton CS8;
     private javax.swing.JButton CS9;
@@ -12113,6 +12689,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FAmT5;
     private javax.swing.JTextField FAmT6;
     private javax.swing.JTextField FAmT7;
+    private javax.swing.JTextField FAmT8;
     private javax.swing.JTextField FApT;
     private javax.swing.JTextField FApT1;
     private javax.swing.JTextField FApT2;
@@ -12121,6 +12698,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT5;
     private javax.swing.JTextField FApT6;
     private javax.swing.JTextField FApT7;
+    private javax.swing.JTextField FApT8;
     private com.toedter.calendar.JDateChooser FDD;
     private javax.swing.JTextField FDP;
     private javax.swing.JTextField FJ;
@@ -12132,6 +12710,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FZservicio5;
     private javax.swing.JComboBox<String> FZservicio6;
     private javax.swing.JComboBox<String> FZservicio7;
+    private javax.swing.JComboBox<String> FZservicio8;
     private javax.swing.JTextField Fdb;
     private javax.swing.JTextField Fde;
     private javax.swing.JTextField FiltroNDF;
@@ -12142,6 +12721,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FiltroNDF5;
     private javax.swing.JTextField FiltroNDF6;
     private javax.swing.JTextField FiltroNDF7;
+    private javax.swing.JTextField FiltroNDF8;
     private javax.swing.JComboBox<String> FiltroQP;
     private javax.swing.JComboBox<String> FiltroQP1;
     private javax.swing.JComboBox<String> FiltroQP2;
@@ -12158,6 +12738,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroQuincenanomina5;
     private javax.swing.JComboBox<String> FiltroQuincenanomina6;
     private javax.swing.JComboBox<String> FiltroQuincenanomina7;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina8;
     private javax.swing.JComboBox<String> FiltroSZP;
     private javax.swing.JComboBox<String> FiltroSZP1;
     private javax.swing.JComboBox<String> FiltroSZP2;
@@ -12182,6 +12763,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroSnomina5;
     private javax.swing.JComboBox<String> FiltroSnomina6;
     private javax.swing.JComboBox<String> FiltroSnomina7;
+    private javax.swing.JComboBox<String> FiltroSnomina8;
     private javax.swing.JComboBox<String> FiltrosP;
     private javax.swing.JComboBox<String> FiltrosP1;
     private javax.swing.JComboBox<String> FiltrosP2;
@@ -12198,6 +12780,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltrosTD5;
     private javax.swing.JComboBox<String> FiltrosTD6;
     private javax.swing.JComboBox<String> FiltrosTD7;
+    private javax.swing.JComboBox<String> FiltrosTD8;
     private javax.swing.JMenuItem General;
     private javax.swing.JMenuItem General1;
     private javax.swing.JTextField Grua;
@@ -12212,6 +12795,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBE5;
     private javax.swing.JLabel LabelBE6;
     private javax.swing.JLabel LabelBE7;
+    private javax.swing.JLabel LabelBE8;
     private javax.swing.JLabel LabelBEP;
     private javax.swing.JLabel LabelBEP1;
     private javax.swing.JLabel LabelBEP2;
@@ -12228,6 +12812,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBNDF5;
     private javax.swing.JLabel LabelBNDF6;
     private javax.swing.JLabel LabelBNDF7;
+    private javax.swing.JLabel LabelBNDF8;
     private javax.swing.JLabel LabelBQ;
     private javax.swing.JLabel LabelBQ1;
     private javax.swing.JLabel LabelBQ2;
@@ -12236,6 +12821,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBQ5;
     private javax.swing.JLabel LabelBQ6;
     private javax.swing.JLabel LabelBQ7;
+    private javax.swing.JLabel LabelBQ8;
     private javax.swing.JLabel LabelBQP;
     private javax.swing.JLabel LabelBQP1;
     private javax.swing.JLabel LabelBQP2;
@@ -12252,6 +12838,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBS5;
     private javax.swing.JLabel LabelBS6;
     private javax.swing.JLabel LabelBS7;
+    private javax.swing.JLabel LabelBS8;
     private javax.swing.JLabel LabelBSP;
     private javax.swing.JLabel LabelBSP1;
     private javax.swing.JLabel LabelBSP2;
@@ -12277,6 +12864,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZ5;
     private javax.swing.JLabel LabelSZ6;
     private javax.swing.JLabel LabelSZ7;
+    private javax.swing.JLabel LabelSZ8;
     private javax.swing.JLabel LabelSZP;
     private javax.swing.JLabel LabelSZP1;
     private javax.swing.JLabel LabelSZP2;
@@ -12300,6 +12888,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab5;
     private javax.swing.JTextField Nominab6;
     private javax.swing.JTextField Nominab7;
+    private javax.swing.JTextField Nominab8;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT2;
     private javax.swing.JTextArea Obsdeposito;
@@ -12336,6 +12925,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane TDFA5;
     private javax.swing.JScrollPane TDFA6;
     private javax.swing.JScrollPane TDFA7;
+    private javax.swing.JScrollPane TDFA8;
     private javax.swing.JTextField THE;
     private javax.swing.JScrollPane TPagos;
     private javax.swing.JScrollPane TPagos1;
@@ -12361,6 +12951,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom5;
     private javax.swing.JTable Tnom6;
     private javax.swing.JTable Tnom7;
+    private javax.swing.JTable Tnom8;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
@@ -12451,6 +13042,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel183;
     private javax.swing.JLabel jLabel184;
     private javax.swing.JLabel jLabel185;
+    private javax.swing.JLabel jLabel186;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -12521,6 +13113,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane12;
@@ -12531,6 +13124,7 @@ public final class Depositos_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane26;
     private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
     private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane30;
