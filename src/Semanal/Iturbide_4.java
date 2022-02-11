@@ -4560,8 +4560,54 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel12 = new javax.swing.JLabel();
         TDV = new javax.swing.JLabel();
         DBe = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        Importe40 = new javax.swing.JTextField();
+        Fecha40 = new com.toedter.calendar.JDateChooser();
+        Servicio20 = new javax.swing.JComboBox<>();
+        jLabel48 = new javax.swing.JLabel();
+        Otro10 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
+        Importe41 = new javax.swing.JTextField();
+        Servicio21 = new javax.swing.JTextField();
+        Fecha41 = new com.toedter.calendar.JDateChooser();
+        jLabel50 = new javax.swing.JLabel();
+        NPadron10 = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel53 = new javax.swing.JLabel();
+        LDA12 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        Concepto10 = new javax.swing.JTextField();
+        Importe42 = new javax.swing.JTextField();
+        Fecha42 = new com.toedter.calendar.JDateChooser();
+        jLabel56 = new javax.swing.JLabel();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        NVale10 = new javax.swing.JTextField();
+        Fecha43 = new com.toedter.calendar.JDateChooser();
+        Importe43 = new javax.swing.JTextField();
+        ObsV10 = new javax.swing.JTextField();
+        jLabel60 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -7108,14 +7154,323 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         DBe.setEditable(false);
         DBe.setText("0");
 
-        jLabel41.setText("Cuando sale de resultado menor a 0 significa que es saldo a favor.");
-
         jButton2.setText("Guardar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jLabel43.setText("Colores en debe:");
+
+        jLabel44.setText("Rojo: falta efectivo.");
+
+        jLabel45.setText("Verde: esta correcto o saldo a favor.");
+
+        jLabel46.setText("Observaciones");
+
+        jLabel41.setText("Servicio");
+
+        jLabel47.setText("Fecha");
+
+        Importe40.setText("0");
+        Importe40.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe40KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe40KeyTyped(evt);
+            }
+        });
+
+        Fecha40.setDateFormatString("dd MMM yyyy ");
+
+        Servicio20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio20.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio20ItemStateChanged(evt);
+            }
+        });
+
+        jLabel48.setText("Importe");
+
+        jButton3.setText("Agregar registro");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha40, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel47))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Servicio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel41))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Otro10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel48)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(Importe40, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)))
+                .addContainerGap(152, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel48))
+                        .addGap(3, 3, 3)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Importe40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Servicio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Otro10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton3)))
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+
+        jScrollPane16.setViewportView(jPanel12);
+
+        jTabbedPane2.addTab("Agregar ServC/Cobro", jScrollPane16);
+
+        jLabel49.setText("Fecha");
+
+        Importe41.setText("0");
+        Importe41.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe41KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe41KeyTyped(evt);
+            }
+        });
+
+        Fecha41.setDateFormatString("dd MMM yyyy ");
+
+        jLabel50.setText("# De padron");
+
+        jLabel51.setText("Importe");
+
+        jLabel52.setText("Servicio");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha41, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel52)
+                    .addComponent(Servicio21, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NPadron10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel50))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel51)
+                    .addComponent(Importe41, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(192, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel51)
+                                .addComponent(jLabel50))
+                            .addComponent(jLabel52))
+                        .addGap(3, 3, 3)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Importe41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Servicio21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NPadron10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(101, Short.MAX_VALUE))
+        );
+
+        jScrollPane17.setViewportView(jPanel13);
+
+        jTabbedPane2.addTab("Agregar Pension", jScrollPane17);
+
+        jLabel53.setText("Fecha");
+
+        jLabel54.setText("Lista de asistencia");
+
+        jLabel55.setText("Importe");
+
+        Importe42.setText("0");
+        Importe42.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe42KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe42KeyTyped(evt);
+            }
+        });
+
+        Fecha42.setDateFormatString("dd MMM yyyy ");
+
+        jLabel56.setText("Concepto");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha42, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel53))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel56)
+                    .addComponent(Concepto10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(Importe42, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LDA12, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel55)
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel54)))
+                .addContainerGap(147, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel55)
+                                .addComponent(jLabel54))
+                            .addComponent(jLabel56))
+                        .addGap(3, 3, 3)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Importe42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LDA12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(101, Short.MAX_VALUE))
+        );
+
+        jScrollPane18.setViewportView(jPanel14);
+
+        jTabbedPane2.addTab("Agregar gastos", jScrollPane18);
+
+        jLabel57.setText("Importe");
+
+        jLabel58.setText("Fecha");
+
+        jLabel59.setText("# Vale");
+
+        NVale10.setText("0");
+        NVale10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale10KeyTyped(evt);
+            }
+        });
+
+        Fecha43.setDateFormatString("dd MMM yyyy ");
+
+        Importe43.setText("0");
+        Importe43.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe43KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe43KeyTyped(evt);
+            }
+        });
+
+        jLabel60.setText("Observaciones");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NVale10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel59))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jLabel58)
+                        .addGap(119, 119, 119)
+                        .addComponent(jLabel60)
+                        .addGap(83, 83, 83)
+                        .addComponent(jLabel57))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(Fecha43, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ObsV10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(218, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel57)
+                        .addComponent(jLabel60)
+                        .addComponent(jLabel59)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Fecha43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ObsV10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NVale10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(101, Short.MAX_VALUE))
+        );
+
+        jScrollPane19.setViewportView(jPanel15);
+
+        jTabbedPane2.addTab("Agregar Vales", jScrollPane19);
+
+        jButton4.setText("Modificar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -7134,15 +7489,23 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel24)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel35)
                                     .addComponent(jLabel36)
-                                    .addComponent(jLabel37))
+                                    .addComponent(jLabel37)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel24)
+                                            .addComponent(jLabel20)
+                                            .addComponent(jLabel35))
+                                        .addGap(111, 111, 111)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel45)
+                                            .addComponent(jLabel44)
+                                            .addComponent(jLabel43))))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -7179,23 +7542,29 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                             .addComponent(Autohora)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(TDG)
-                                                    .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                                    .addComponent(DBe))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jButton1)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jButton2))
-                                                    .addComponent(jLabel41)
-                                                    .addComponent(jLabel1)))
                                             .addComponent(TMGYV)
                                             .addComponent(TDV)
                                             .addComponent(DE))
-                                        .addGap(0, 8, Short.MAX_VALUE))))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(TDG)
+                                            .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                            .addComponent(DBe))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel46)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jTextField1))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jButton1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton4)
+                                                .addGap(0, 188, Short.MAX_VALUE))))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -7208,7 +7577,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel33)
                             .addComponent(AutoFecha)
@@ -7216,11 +7585,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                             .addComponent(TDIDS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel32)
-                                    .addComponent(Autohora))
-                                .addGap(26, 26, 26))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel32)
+                                .addComponent(Autohora))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel18)
@@ -7232,8 +7599,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel7)
-                                    .addComponent(TDG))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                    .addComponent(TDG))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
                             .addComponent(TDV))
@@ -7253,27 +7620,37 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
                             .addComponent(DBe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel41))
+                            .addComponent(jLabel46)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
                             .addComponent(NDS)
                             .addComponent(jButton1)
-                            .addComponent(jButton2))
+                            .addComponent(jButton2)
+                            .addComponent(jButton4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel43))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel44))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel45))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel37))
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -10101,6 +10478,46 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         limpiar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void Importe40KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe40KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Importe40KeyReleased
+
+    private void Importe40KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe40KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Importe40KeyTyped
+
+    private void Servicio20ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio20ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Servicio20ItemStateChanged
+
+    private void Importe41KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe41KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Importe41KeyReleased
+
+    private void Importe41KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe41KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Importe41KeyTyped
+
+    private void Importe42KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe42KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Importe42KeyReleased
+
+    private void Importe42KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe42KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Importe42KeyTyped
+
+    private void NVale10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale10KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NVale10KeyTyped
+
+    private void Importe43KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Importe43KeyReleased
+
+    private void Importe43KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Importe43KeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -10159,6 +10576,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JTextField Concepto;
     private javax.swing.JTextField Concepto1;
+    private javax.swing.JTextField Concepto10;
     private javax.swing.JTextField Concepto2;
     private javax.swing.JTextField Concepto3;
     private javax.swing.JTextField Concepto4;
@@ -10208,6 +10626,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private com.toedter.calendar.JDateChooser Fecha38;
     private com.toedter.calendar.JDateChooser Fecha39;
     private com.toedter.calendar.JDateChooser Fecha4;
+    private com.toedter.calendar.JDateChooser Fecha40;
+    private com.toedter.calendar.JDateChooser Fecha41;
+    private com.toedter.calendar.JDateChooser Fecha42;
+    private com.toedter.calendar.JDateChooser Fecha43;
     private com.toedter.calendar.JDateChooser Fecha5;
     private com.toedter.calendar.JDateChooser Fecha6;
     private com.toedter.calendar.JDateChooser Fecha7;
@@ -10250,6 +10672,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField Importe38;
     private javax.swing.JTextField Importe39;
     private javax.swing.JTextField Importe4;
+    private javax.swing.JTextField Importe40;
+    private javax.swing.JTextField Importe41;
+    private javax.swing.JTextField Importe42;
+    private javax.swing.JTextField Importe43;
     private javax.swing.JTextField Importe5;
     private javax.swing.JTextField Importe6;
     private javax.swing.JTextField Importe7;
@@ -10259,6 +10685,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField LDA1;
     private javax.swing.JMenuItem LDA10;
     private javax.swing.JMenuItem LDA11;
+    private javax.swing.JTextField LDA12;
     private javax.swing.JTextField LDA2;
     private javax.swing.JTextField LDA3;
     private javax.swing.JTextField LDA4;
@@ -10343,6 +10770,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
+    private javax.swing.JTextField NPadron10;
     private javax.swing.JTextField NPadron2;
     private javax.swing.JTextField NPadron3;
     private javax.swing.JTextField NPadron4;
@@ -10353,6 +10781,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField NPadron9;
     private javax.swing.JTextField NVale;
     private javax.swing.JTextField NVale1;
+    private javax.swing.JTextField NVale10;
     private javax.swing.JTextField NVale2;
     private javax.swing.JTextField NVale3;
     private javax.swing.JTextField NVale4;
@@ -10365,6 +10794,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem ODT2;
     private javax.swing.JTextField ObsV;
     private javax.swing.JTextField ObsV1;
+    private javax.swing.JTextField ObsV10;
     private javax.swing.JTextField ObsV2;
     private javax.swing.JTextField ObsV3;
     private javax.swing.JTextField ObsV4;
@@ -10375,6 +10805,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField ObsV9;
     private javax.swing.JTextField Otro;
     private javax.swing.JTextField Otro1;
+    private javax.swing.JTextField Otro10;
     private javax.swing.JTextField Otro2;
     private javax.swing.JTextField Otro3;
     private javax.swing.JTextField Otro4;
@@ -10401,6 +10832,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField Servicio18;
     private javax.swing.JTextField Servicio19;
     private javax.swing.JComboBox<String> Servicio2;
+    private javax.swing.JComboBox<String> Servicio20;
+    private javax.swing.JTextField Servicio21;
     private javax.swing.JComboBox<String> Servicio3;
     private javax.swing.JComboBox<String> Servicio4;
     private javax.swing.JComboBox<String> Servicio5;
@@ -10423,6 +10856,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -10460,8 +10895,26 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -10487,6 +10940,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -10502,6 +10959,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -10511,6 +10972,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtsem;
     // End of variables declaration//GEN-END:variables
 }

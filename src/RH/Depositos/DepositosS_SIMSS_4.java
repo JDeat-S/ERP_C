@@ -6946,9 +6946,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP.setText("Buscar quincena:");
+        LabelBQP.setText("Buscar Semana:");
 
-        FiltroQP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
         FiltroQP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQPItemStateChanged(evt);
@@ -6957,7 +6957,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel64.setText("Filtrar:");
 
-        FiltrosP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
         FiltrosP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosPItemStateChanged(evt);
@@ -6996,7 +6996,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel64)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7027,7 +7027,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS3))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7222, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -7119,9 +7119,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP1.setText("Buscar quincena:");
+        LabelBQP1.setText("Buscar semana:");
 
-        FiltroQP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
         FiltroQP1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP1ItemStateChanged(evt);
@@ -7130,7 +7130,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel161.setText("Filtrar:");
 
-        FiltrosP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
         FiltrosP1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP1ItemStateChanged(evt);
@@ -7170,7 +7170,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel29Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel161)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7201,7 +7201,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS15))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7223, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
@@ -7291,9 +7291,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP2.setText("Buscar quincena:");
+        LabelBQP2.setText("Buscar semana:");
 
-        FiltroQP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
         FiltroQP2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP2ItemStateChanged(evt);
@@ -7339,7 +7339,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel30Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel176)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7370,7 +7370,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS16))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7223, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
@@ -7460,9 +7460,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP3.setText("Buscar quincena:");
+        LabelBQP3.setText("Buscar semana:");
 
-        FiltroQP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
         FiltroQP3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP3ItemStateChanged(evt);
@@ -7506,7 +7506,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel177)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7627,9 +7627,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP4.setText("Buscar quincena:");
+        LabelBQP4.setText("Buscar semana:");
 
-        FiltroQP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
         FiltroQP4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP4ItemStateChanged(evt);
@@ -7638,7 +7638,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel178.setText("Filtrar:");
 
-        FiltrosP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
         FiltrosP4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP4ItemStateChanged(evt);
@@ -7676,7 +7676,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel32Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel178)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7707,7 +7707,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS18))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7223, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel32Layout.setVerticalGroup(
@@ -7797,9 +7797,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP5.setText("Buscar quincena:");
+        LabelBQP5.setText("Buscar semana:");
 
-        FiltroQP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
         FiltroQP5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP5ItemStateChanged(evt);
@@ -7808,7 +7808,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel179.setText("Filtrar:");
 
-        FiltrosP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
         FiltrosP5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP5ItemStateChanged(evt);
@@ -7846,7 +7846,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel33Layout.createSequentialGroup()
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel33Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel179)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7877,7 +7877,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS19))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7223, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel33Layout.setVerticalGroup(
@@ -7967,9 +7967,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP6.setText("Buscar quincena:");
+        LabelBQP6.setText("Buscar semana:");
 
-        FiltroQP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
         FiltroQP6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP6ItemStateChanged(evt);
@@ -7978,7 +7978,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel180.setText("Filtrar:");
 
-        FiltrosP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
         FiltrosP6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP6ItemStateChanged(evt);
@@ -8015,7 +8015,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel34Layout.createSequentialGroup()
                         .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel34Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel180)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -8046,7 +8046,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS20))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7223, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -8147,7 +8147,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel181.setText("Filtrar:");
 
-        FiltrosP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
         FiltrosP7.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP7ItemStateChanged(evt);
@@ -8185,7 +8185,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel181)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -8216,7 +8216,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS21))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7194, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel35Layout.setVerticalGroup(
