@@ -19,6 +19,15 @@ public class Logica_permisos {
     private int P8;
     private int P9;
     private int P10;
+    private int P11;
+
+    public int getP11() {
+        return P11;
+    }
+
+    public void setP11(int P11) {
+        this.P11 = P11;
+    }
 
     public int getP10() {
         return P10;

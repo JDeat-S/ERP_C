@@ -12,12 +12,13 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-import RH.Depositos.Depositos_4;
+import RH.Depositos.DepositosQ_4;
 import RH.Empleados_4;
 import RH.Estadias_4;
 import RH.Tortas_4;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
+import ServiciosSem.ServInturbide;
 import ServiciosSem.ServTehuantepec;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -74,6 +75,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
     public Tehuantepec_4() {
         initComponents();
+        ARSC.setVisible(false);
+
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         Otro.setVisible(false);
         Otro1.setVisible(false);
@@ -85,6 +88,11 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Otro7.setVisible(false);
         Otro8.setVisible(false);
         Otro9.setVisible(false);
+        Otro10.setVisible(false);
+        Fecha40.setCalendar(fecha_actual);
+        Fecha41.setCalendar(fecha_actual);
+        Fecha42.setCalendar(fecha_actual);
+        Fecha43.setCalendar(fecha_actual);
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         Fecha2.setCalendar(fecha_actual);
@@ -333,6 +341,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Importe39.setVisible(false);
 
         // </editor-fold>     
+        ServInturbide zz20 = new ServInturbide();
+        DefaultComboBoxModel modelzonas20 = new DefaultComboBoxModel(zz20.mostrarserv());
+        Servicio20.setModel(modelzonas20);
         ServTehuantepec zz = new ServTehuantepec();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarserv());
         Servicio.setModel(modelzonas);
@@ -376,6 +387,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
     public Tehuantepec_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
+        ARSC.setVisible(false);
+
         this.usr = usr;
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
@@ -389,6 +402,11 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Otro7.setVisible(false);
         Otro8.setVisible(false);
         Otro9.setVisible(false);
+        Otro10.setVisible(false);
+        Fecha40.setCalendar(fecha_actual);
+        Fecha41.setCalendar(fecha_actual);
+        Fecha42.setCalendar(fecha_actual);
+        Fecha43.setCalendar(fecha_actual);
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         Fecha2.setCalendar(fecha_actual);
@@ -637,6 +655,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Importe39.setVisible(false);
 
         // </editor-fold>     
+        ServInturbide zz20 = new ServInturbide();
+        DefaultComboBoxModel modelzonas20 = new DefaultComboBoxModel(zz20.mostrarserv());
+        Servicio20.setModel(modelzonas20);
         ServTehuantepec zz = new ServTehuantepec();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarserv());
         Servicio.setModel(modelzonas);
@@ -676,6 +697,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         setIconImage(new ImageIcon(Tehuantepec_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
         MDsem();
+        jButton1.setVisible(false);
         setTitle("Semanal tehuantepec # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
@@ -1012,6 +1034,103 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Tehuantepec_4.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void MODSemanal() {
+        String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
+        String SQL = "UPDATE `rh.semanal.tehuantepec.nsem` SET `#Nsem` = ?, `Fecha` = ?, `hora` = ?,"
+                + " `MMM/YY` = ?, `Total de servicios y pensiones` = ?, `Total restando gastos` = ?,"
+                + " `Debe entregar` = ?, `el entrega` = ?, `Debe` = ?, `Observaciones` = ?, `TIS` = ?,"
+                + " `TIP` = ?, `TG` = ?, `TV` = ? WHERE `rh.semanal.tehuantepec.nsem`.`#Nsem` = ?";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, AutoFecha.getText());
+            pst.setString(3, Autohora.getText());
+            pst.setString(4, mmyy);
+            pst.setString(5, TDSYP.getText());
+            pst.setString(6, TMGYV.getText());
+            pst.setString(7, DE.getText());
+            pst.setString(8, EEntrega.getText());
+            pst.setString(9, DBe.getText());
+            pst.setString(10, ObsDbe.getText());
+            pst.setString(11, TDIDS.getText());
+            pst.setString(12, TDIDP.getText());
+            pst.setString(13, TDG.getText());
+            pst.setString(14, TDV.getText());
+            pst.setInt(15, Integer.parseInt(SemSl.getText()));
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Semanal modificado");
+
+        } catch (HeadlessException | SQLException error_add_cda) {
+            JOptionPane.showMessageDialog(null, "Error al modificar semanal: " + error_add_cda.getMessage());
+        }
+    }
+
+    public void Operaciones2() {
+        int fila = TSem.getSelectedRow();
+        SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
+        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 4)));
+        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 5)));
+        DE.setText(String.valueOf(TSem.getValueAt(fila, 6)));
+        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 7)));
+        DBe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
+        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
+        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
+        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
+        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+
+        // <editor-fold defaultstate="collapsed" desc="Servicios">
+        double ImServ1 = Double.parseDouble(Importe40.getText());
+        double ImServ2 = Double.parseDouble(TDIDS.getText());
+
+        double TotalServ = ImServ1 + ImServ2;
+        this.TDIDS.setText("" + TotalServ + "");
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Suma Pensiones">
+        double ImPen1 = Double.parseDouble(Importe41.getText());
+        double ImPen2 = Double.parseDouble(TDIDP.getText());
+
+        double TotalPen = ImPen1 + ImPen2;
+        TDIDP.setText("" + TotalPen);
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Total SYP">
+        double TDSYP1 = Double.parseDouble(TDIDS.getText());
+        double TDSYP2 = Double.parseDouble(TDIDP.getText());
+
+        double TotalSYP = TDSYP1 + TDSYP2;
+        TDSYP.setText("" + TotalSYP);
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Suma Gastos">
+        double Gasto1 = Double.parseDouble(Importe42.getText());
+        double Gasto2 = Double.parseDouble(TDG.getText());
+
+        double TotalGas = Gasto1 + Gasto2;
+        TDG.setText("" + TotalGas);
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Suma vales">
+        TDV.setText("" + (Double.parseDouble(Importe43.getText()) + Double.parseDouble(TDV.getText())));
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Total menos gastos y vales">
+        TMGYV.setText("" + (Double.parseDouble(TDSYP.getText()) - (Double.parseDouble(TDG.getText()) + Double.parseDouble(TDV.getText()))));
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Debe entregar">
+        DE.setText("" + (Double.parseDouble(TDSYP.getText()) - (Double.parseDouble(TDG.getText()) + Double.parseDouble(TDV.getText()))));
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Debe">
+        DBe.setText("" + (Double.parseDouble(DE.getText()) - Double.parseDouble(EEntrega.getText())));
+        //</editor-fold>
+        ColorDB();
     }
 
     public void Reporte1() {
@@ -1795,13 +1914,14 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             modelo.addColumn("Debe entregar");
             modelo.addColumn("El entrega");
             modelo.addColumn("Debe");
+            modelo.addColumn("Observsciones");
             modelo.addColumn("TIS");
             modelo.addColumn("TIP");
             modelo.addColumn("TG");
             modelo.addColumn("TV");
 
 //Anchos
-            int[] anchos = {40, 120, 50, 50, 40, 75, 75, 50, 40, 40, 40, 40, 40};
+            int[] anchos = {40, 120, 50, 50, 40, 75, 75, 50, 50, 40, 40, 40, 40, 40};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -2078,6 +2198,18 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Fecha37.setCalendar(fecha_actual);
         Fecha38.setCalendar(fecha_actual);
         Fecha39.setCalendar(fecha_actual);
+        Servicio.setSelectedIndex(0);
+        Importe.setText("0");
+        NPadron.setText("");
+        Concepto.setText("");
+        Servicio1.setSelectedIndex(0);
+        Importe1.setText("0");
+        NPadron1.setText("");
+        Concepto1.setText("");
+        Servicio2.setSelectedIndex(0);
+        Importe2.setText("0");
+        NPadron2.setText("");
+        Concepto2.setText("");
         Servicio3.setSelectedIndex(0);
         Importe3.setText("0");
         NPadron3.setText("");
@@ -2167,7 +2299,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Importe38.setText("0");
         Importe39.setText("0");
         TDSYP.setText("0");
-        TMG.setText("0");
+        TMGYV.setText("0");
         DE.setText("0");
         EEntrega.setText("0");
         DBe.setText("0");
@@ -2181,7 +2313,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
         String SQL = "INSERT INTO `rh.semanal.tehuantepec.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
                 + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`,"
-                + " `el entrega`, `Debe`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `el entrega`, `Debe`, `Observaciones`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -2190,14 +2322,15 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             pst.setString(3, Autohora.getText());
             pst.setString(4, mmyy);
             pst.setString(5, TDSYP.getText());
-            pst.setString(6, TMG.getText());
+            pst.setString(6, TMGYV.getText());
             pst.setString(7, DE.getText());
             pst.setString(8, EEntrega.getText());
             pst.setString(9, DBe.getText());
-            pst.setString(10, TDIDS.getText());
-            pst.setString(11, TDIDP.getText());
-            pst.setString(12, TDG.getText());
-            pst.setString(13, TDV.getText());
+            pst.setString(10, ObsDbe.getText());
+            pst.setString(11, TDIDS.getText());
+            pst.setString(12, TDIDP.getText());
+            pst.setString(13, TDG.getText());
+            pst.setString(14, TDV.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal agregado");
@@ -4196,7 +4329,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         //</editor-fold>
 
         // <editor-fold defaultstate="collapsed" desc="Total menos gastos y vales">
-        TMG.setText("" + (Double.parseDouble(TDSYP.getText()) - (Double.parseDouble(TDG.getText()) + Double.parseDouble(TDV.getText()))));
+        TMGYV.setText("" + (Double.parseDouble(TDSYP.getText()) - (Double.parseDouble(TDG.getText()) + Double.parseDouble(TDV.getText()))));
         //</editor-fold>
 
         // <editor-fold defaultstate="collapsed" desc="Debe entregar">
@@ -4540,10 +4673,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         DBe = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
         TDIDS = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        TMG = new javax.swing.JLabel();
+        TMGYV = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         TDV = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -4556,6 +4688,60 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         jLabel9 = new javax.swing.JLabel();
         TDSYP = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        ARSC = new javax.swing.JTabbedPane();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        Importe40 = new javax.swing.JTextField();
+        Fecha40 = new com.toedter.calendar.JDateChooser();
+        Servicio20 = new javax.swing.JComboBox<>();
+        jLabel48 = new javax.swing.JLabel();
+        Otro10 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
+        Importe41 = new javax.swing.JTextField();
+        Servicio21 = new javax.swing.JTextField();
+        Fecha41 = new com.toedter.calendar.JDateChooser();
+        jLabel50 = new javax.swing.JLabel();
+        NPadron10 = new javax.swing.JTextField();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel53 = new javax.swing.JLabel();
+        LDA12 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        Concepto10 = new javax.swing.JTextField();
+        Importe42 = new javax.swing.JTextField();
+        Fecha42 = new com.toedter.calendar.JDateChooser();
+        jLabel56 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        NVale10 = new javax.swing.JTextField();
+        Fecha43 = new com.toedter.calendar.JDateChooser();
+        Importe43 = new javax.swing.JTextField();
+        ObsV10 = new javax.swing.JTextField();
+        jLabel60 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jLabel46 = new javax.swing.JLabel();
+        ObsDbe = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -7066,15 +7252,13 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         DBe.setEditable(false);
         DBe.setText("0");
 
-        jLabel41.setText("Cuando sale de resultado menor a 0 significa que es saldo a favor.");
-
         TDIDS.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         TDIDS.setText("0");
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel5.setText("Total de importe de servicios:");
 
-        TMG.setText("0");
+        TMGYV.setText("0");
 
         jLabel27.setText("Total menos gastos y vales:");
 
@@ -7111,6 +7295,406 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
+        jLabel43.setText("Servicio");
+
+        jLabel47.setText("Fecha");
+
+        Importe40.setText("0");
+        Importe40.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe40KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe40KeyTyped(evt);
+            }
+        });
+
+        Fecha40.setDateFormatString("dd MMM yyyy ");
+
+        Servicio20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "  ", "Iturbide x 1 dia", "Iturbide x 12 hrs", "Iturbide x hora", "Iturbide baño", "Cafe", "Division" }));
+        Servicio20.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Servicio20ItemStateChanged(evt);
+            }
+        });
+
+        jLabel48.setText("Importe");
+
+        jButton3.setText("Agregar registro");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("Ocultar menu");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha40, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel47))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Servicio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel43))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Otro10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel48)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addComponent(Importe40, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton3))))
+                    .addComponent(jButton8))
+                .addContainerGap(122, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel48))
+                        .addGap(3, 3, 3)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Importe40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Servicio20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Otro10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jScrollPane16.setViewportView(jPanel12);
+
+        ARSC.addTab("Agregar ServC/Cobro", jScrollPane16);
+
+        jLabel49.setText("Fecha");
+
+        Importe41.setText("0");
+        Importe41.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe41KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe41KeyTyped(evt);
+            }
+        });
+
+        Fecha41.setDateFormatString("dd MMM yyyy ");
+
+        jLabel50.setText("# De padron");
+
+        jLabel51.setText("Importe");
+
+        jLabel52.setText("Servicio");
+
+        jButton5.setText("Agregar registro");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Ocultar menu");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha41, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel49))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel52)
+                            .addComponent(Servicio21, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NPadron10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel50))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel51)
+                            .addGroup(jPanel13Layout.createSequentialGroup()
+                                .addComponent(Importe41, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton5))))
+                    .addComponent(jButton9))
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel51)
+                                .addComponent(jLabel50))
+                            .addComponent(jLabel52))
+                        .addGap(3, 3, 3)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Importe41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Servicio21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NPadron10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton9)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+
+        jScrollPane17.setViewportView(jPanel13);
+
+        ARSC.addTab("Agregar Pension", jScrollPane17);
+
+        jLabel53.setText("Fecha");
+
+        jLabel54.setText("Lista de asistencia");
+
+        jLabel55.setText("Importe");
+
+        Importe42.setText("0");
+        Importe42.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe42KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe42KeyTyped(evt);
+            }
+        });
+
+        Fecha42.setDateFormatString("dd MMM yyyy ");
+
+        jLabel56.setText("Concepto");
+
+        jButton6.setText("Agregar registro");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("Ocultar menu");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Fecha42, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel53))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel56)
+                            .addComponent(Concepto10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(Importe42, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LDA12, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton6))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jLabel55)
+                                .addGap(35, 35, 35)
+                                .addComponent(jLabel54))))
+                    .addComponent(jButton10))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel55)
+                                .addComponent(jLabel54))
+                            .addComponent(jLabel56))
+                        .addGap(3, 3, 3)))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Fecha42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Importe42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Concepto10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LDA12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton6)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton10)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+
+        jScrollPane18.setViewportView(jPanel14);
+
+        ARSC.addTab("Agregar gastos", jScrollPane18);
+
+        jLabel57.setText("Importe");
+
+        jLabel58.setText("Fecha");
+
+        jLabel59.setText("# Vale");
+
+        NVale10.setText("0");
+        NVale10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NVale10KeyTyped(evt);
+            }
+        });
+
+        Fecha43.setDateFormatString("dd MMM yyyy ");
+
+        Importe43.setText("0");
+        Importe43.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Importe43KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Importe43KeyTyped(evt);
+            }
+        });
+
+        jLabel60.setText("Observaciones");
+
+        jButton7.setText("Agregar registro");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("Ocultar menu");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NVale10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel59))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jLabel58)
+                                .addGap(119, 119, 119)
+                                .addComponent(jLabel60)
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel57))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(Fecha43, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ObsV10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton7))))
+                    .addComponent(jButton11))
+                .addContainerGap(125, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel57)
+                        .addComponent(jLabel60)
+                        .addComponent(jLabel59)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Fecha43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ObsV10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton7))
+                    .addComponent(NVale10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton11)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+
+        jScrollPane19.setViewportView(jPanel15);
+
+        ARSC.addTab("Agregar Vales", jScrollPane19);
+
+        jLabel46.setText("Observaciones");
+
+        jButton4.setText("Modificar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel44.setText("Rojo: falta efectivo.");
+
+        jLabel61.setText("Colores en debe:");
+
+        jLabel45.setText("Verde: esta correcto o saldo a favor.");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -7128,15 +7712,22 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel24)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel35)
                                     .addComponent(jLabel36)
-                                    .addComponent(jLabel37))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                    .addComponent(jLabel37)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel24)
+                                            .addComponent(jLabel20)
+                                            .addComponent(jLabel35))
+                                        .addGap(118, 118, 118)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel45)
+                                            .addComponent(jLabel44)
+                                            .addComponent(jLabel61))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -7164,7 +7755,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                             .addComponent(TDSYP)
                                             .addComponent(TDIDS)
                                             .addComponent(TDG)
-                                            .addComponent(TMG)
+                                            .addComponent(TMGYV)
                                             .addComponent(TDV)
                                             .addComponent(DE))))
                                 .addGap(11, 11, 11)
@@ -7185,24 +7776,34 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jButton1)
+                                                .addComponent(jLabel46)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton2))
-                                            .addComponent(jLabel41)
-                                            .addComponent(jLabel1))
-                                        .addGap(0, 8, Short.MAX_VALUE))))
+                                                .addComponent(ObsDbe))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel1)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jButton1)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton2)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton4)))
+                                                .addGap(0, 0, Short.MAX_VALUE))))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(NDS)
                                 .addGap(411, 411, 411)))
-                        .addGap(51, 51, 51))))
+                        .addGap(51, 51, 51))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ARSC)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -7237,7 +7838,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel27)
-                                    .addComponent(TMG))
+                                    .addComponent(TMGYV))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
@@ -7250,27 +7851,39 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel31)
                             .addComponent(DBe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel41))
+                            .addComponent(jLabel46)
+                            .addComponent(ObsDbe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
                             .addComponent(NDS)
                             .addComponent(jButton1)
-                            .addComponent(jButton2))
+                            .addComponent(jButton2)
+                            .addComponent(jButton4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel35))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel61)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel44)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel45)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel36)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel37))
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ARSC, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8547,6 +9160,26 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private void TSemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TSemMouseClicked
         int fila = TSem.getSelectedRow();
         SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
+        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 4)));
+        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 5)));
+        DE.setText(String.valueOf(TSem.getValueAt(fila, 6)));
+        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 7)));
+        DBe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
+        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
+        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
+        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
+        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+
+        DBe.setEnabled(false);
+        EEntrega.setEnabled(false);
+        ARSC.setVisible(true);
+        Panel.setVisible(false);
+        Panel2.setVisible(false);
+        jPanel3.setVisible(false);
+        jPanel5.setVisible(false);
+        jButton2.setEnabled(false);
+        ColorDB();
     }//GEN-LAST:event_TSemMouseClicked
 
     private void jLabel38MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel38MousePressed
@@ -9357,7 +9990,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                 int i = 3;
                 while (NSem.next()) {
 
-                    cell.setCellValue("Ingresos y egresos Semanal No. " + NDS.getText() + " de " + AutoFecha.getText());
+                    cell.setCellValue("Ingresos y egresos Semanal No. " + SemSl.getText() + " de " + AutoFecha.getText());
                     cell.setCellStyle(Encabezado);
 
                     spreadsheet.addMergedRegion(
@@ -9422,6 +10055,19 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                             )
                     );
 
+                    cell = row.createCell(13);
+                    cell.setCellValue("Descuadre");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    13, //first column (0-based)
+                                    14 //last column (0-based)
+                            )
+                    );
+
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(0);
                     cell.setCellValue("# Semanal");
@@ -9475,11 +10121,24 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(13);
+                    cell.setCellValue("Debe");
+                    cell.setCellStyle(Encabezado);
+                    cell = row.createCell(14);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Encabezado);
+
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(0);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(1);
                     cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(13);
+                    cell.setCellValue(NSem.getString("Debe"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(14);
+                    cell.setCellValue(NSem.getString("Observaciones"));
                     cell.setCellStyle(Contenido);
                     i++;
                 }
@@ -9584,7 +10243,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Depositos_4 regr = new Depositos_4();
+        DepositosQ_4 regr = new DepositosQ_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -10098,6 +10757,254 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         limpiar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void Importe40KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe40KeyReleased
+        Operaciones2();
+    }//GEN-LAST:event_Importe40KeyReleased
+
+    private void Importe40KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe40KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe40KeyTyped
+
+    private void Servicio20ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio20ItemStateChanged
+        if (Servicio20.getSelectedItem().toString().equals("Otro")) {
+            Otro10.setVisible(true);
+        } else {
+            Otro10.setVisible(false);
+        }
+    }//GEN-LAST:event_Servicio20ItemStateChanged
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        MODSemanal();
+        String SV;
+        if (Servicio20.getSelectedItem().toString().equals("Otro")) {
+            SV = Otro10.getText();
+        } else {
+            SV = Servicio20.getSelectedItem().toString();
+        }
+        String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, DateFormat.getDateInstance().format(Fecha40.getDate()));
+            pst.setString(3, SV);
+            pst.setString(4, Importe40.getText());
+            pst.setString(5, TDIDS.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            Importe40.setText("0");
+            Servicio20.setSelectedIndex(0);
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jButton2.setEnabled(true);
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
+        ARSC.setVisible(false);
+        Panel.setVisible(true);
+        Panel2.setVisible(true);
+        jPanel3.setVisible(true);
+        jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void Importe41KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe41KeyReleased
+        Operaciones2();
+    }//GEN-LAST:event_Importe41KeyReleased
+
+    private void Importe41KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe41KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe41KeyTyped
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        MODSemanal();
+        String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, DateFormat.getDateInstance().format(Fecha41.getDate()));
+            pst.setString(3, Servicio21.getText());
+            pst.setString(4, NPadron10.getText());
+            pst.setString(5, Importe41.getText());
+            pst.setString(6, TDIDP.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+            Servicio21.setText("");
+            NPadron10.setText("");
+            Importe41.setText("0");
+
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        jButton2.setEnabled(true);
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
+        ARSC.setVisible(false);
+        Panel.setVisible(true);
+        Panel2.setVisible(true);
+        jPanel3.setVisible(true);
+        jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void Importe42KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe42KeyReleased
+        Operaciones2();
+    }//GEN-LAST:event_Importe42KeyReleased
+
+    private void Importe42KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe42KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe42KeyTyped
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        MODSemanal();
+        String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, DateFormat.getDateInstance().format(Fecha42.getDate()));
+            pst.setString(3, Concepto10.getText());
+            pst.setString(4, Importe42.getText());
+            pst.setString(5, LDA12.getText());
+            pst.setString(6, TDG.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        jButton2.setEnabled(true);
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
+        ARSC.setVisible(false);
+        Panel.setVisible(true);
+        Panel2.setVisible(true);
+        jPanel3.setVisible(true);
+        jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void NVale10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale10KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale10KeyTyped
+
+    private void Importe43KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyReleased
+        Operaciones2();
+    }//GEN-LAST:event_Importe43KeyReleased
+
+    private void Importe43KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe43KeyTyped
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        MODSemanal();
+
+        String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NVale10.getText()));
+            pst.setInt(2, Integer.parseInt(SemSl.getText()));
+            pst.setString(3, DateFormat.getDateInstance().format(Fecha43.getDate()));
+            pst.setString(4, ObsV10.getText());
+            pst.setString(5, Importe43.getText());
+            pst.setString(6, TDV.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            NVale10.setText("0");
+            ObsV10.setText("");
+            Importe43.setText("0");
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
+        jButton2.setEnabled(true);
+        ARSC.setVisible(false);
+        Panel.setVisible(true);
+        Panel2.setVisible(true);
+        jPanel3.setVisible(true);
+        jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        MODSemanal();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -10172,6 +11079,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem ADMV1;
+    private javax.swing.JTabbedPane ARSC;
     private javax.swing.JMenuItem Alumnos;
     private javax.swing.JLabel AutoFecha;
     private javax.swing.JLabel Autohora;
@@ -10180,6 +11088,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JTextField Concepto;
     private javax.swing.JTextField Concepto1;
+    private javax.swing.JTextField Concepto10;
     private javax.swing.JTextField Concepto2;
     private javax.swing.JTextField Concepto3;
     private javax.swing.JTextField Concepto4;
@@ -10229,6 +11138,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private com.toedter.calendar.JDateChooser Fecha38;
     private com.toedter.calendar.JDateChooser Fecha39;
     private com.toedter.calendar.JDateChooser Fecha4;
+    private com.toedter.calendar.JDateChooser Fecha40;
+    private com.toedter.calendar.JDateChooser Fecha41;
+    private com.toedter.calendar.JDateChooser Fecha42;
+    private com.toedter.calendar.JDateChooser Fecha43;
     private com.toedter.calendar.JDateChooser Fecha5;
     private com.toedter.calendar.JDateChooser Fecha6;
     private com.toedter.calendar.JDateChooser Fecha7;
@@ -10271,6 +11184,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JTextField Importe38;
     private javax.swing.JTextField Importe39;
     private javax.swing.JTextField Importe4;
+    private javax.swing.JTextField Importe40;
+    private javax.swing.JTextField Importe41;
+    private javax.swing.JTextField Importe42;
+    private javax.swing.JTextField Importe43;
     private javax.swing.JTextField Importe5;
     private javax.swing.JTextField Importe6;
     private javax.swing.JTextField Importe7;
@@ -10280,6 +11197,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JTextField LDA1;
     private javax.swing.JMenuItem LDA10;
     private javax.swing.JMenuItem LDA11;
+    private javax.swing.JTextField LDA12;
     private javax.swing.JTextField LDA2;
     private javax.swing.JTextField LDA3;
     private javax.swing.JTextField LDA4;
@@ -10364,6 +11282,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JLabel NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
+    private javax.swing.JTextField NPadron10;
     private javax.swing.JTextField NPadron2;
     private javax.swing.JTextField NPadron3;
     private javax.swing.JTextField NPadron4;
@@ -10374,6 +11293,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JTextField NPadron9;
     private javax.swing.JTextField NVale;
     private javax.swing.JTextField NVale1;
+    private javax.swing.JTextField NVale10;
     private javax.swing.JTextField NVale2;
     private javax.swing.JTextField NVale3;
     private javax.swing.JTextField NVale4;
@@ -10384,8 +11304,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JTextField NVale9;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT2;
+    private javax.swing.JTextField ObsDbe;
     private javax.swing.JTextField ObsV;
     private javax.swing.JTextField ObsV1;
+    private javax.swing.JTextField ObsV10;
     private javax.swing.JTextField ObsV2;
     private javax.swing.JTextField ObsV3;
     private javax.swing.JTextField ObsV4;
@@ -10396,6 +11318,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JTextField ObsV9;
     private javax.swing.JTextField Otro;
     private javax.swing.JTextField Otro1;
+    private javax.swing.JTextField Otro10;
     private javax.swing.JTextField Otro2;
     private javax.swing.JTextField Otro3;
     private javax.swing.JTextField Otro4;
@@ -10422,6 +11345,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JTextField Servicio18;
     private javax.swing.JTextField Servicio19;
     private javax.swing.JComboBox<String> Servicio2;
+    private javax.swing.JComboBox<String> Servicio20;
+    private javax.swing.JTextField Servicio21;
     private javax.swing.JComboBox<String> Servicio3;
     private javax.swing.JComboBox<String> Servicio4;
     private javax.swing.JComboBox<String> Servicio5;
@@ -10434,7 +11359,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JLabel TDIDS;
     private javax.swing.JLabel TDSYP;
     private javax.swing.JLabel TDV;
-    private javax.swing.JLabel TMG;
+    private javax.swing.JLabel TMGYV;
     private javax.swing.JTable TSem;
     private javax.swing.JTable TSem1;
     private javax.swing.JTable TSem2;
@@ -10443,7 +11368,16 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -10479,10 +11413,28 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -10508,6 +11460,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -10523,6 +11479,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;

@@ -1,6 +1,6 @@
 package Nomina;
 
-import RH.Depositos.Depositos_4;
+import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -730,10 +730,45 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     Reportes.setVisible(false);
                 }
                 if (LP.getP5() == 0) {
-                    NomDetallada.setVisible(false);
+                    Tnom.setVisible(false);
+                    Tnom1.setVisible(false);
+                    Tnom2.setVisible(false);
+                    Tnom3.setVisible(false);
+                    Tnom4.setVisible(false);
+                    Tnom5.setVisible(false);
+                    Tnom6.setVisible(false);
+                    Tnom7.setVisible(false);
+                    Tnom8.setVisible(false);
+                    Tnom.setEnabled(false);
+                    Tnom1.setEnabled(false);
+                    Tnom2.setEnabled(false);
+                    Tnom3.setEnabled(false);
+                    Tnom4.setEnabled(false);
+                    Tnom5.setEnabled(false);
+                    Tnom6.setEnabled(false);
+                    Tnom7.setEnabled(false);
+                    Tnom8.setEnabled(false);
+                    
                 }
                 if (LP.getP6() == 0) {
-                    NomPagos.setVisible(false);
+                    pago.setVisible(false);
+                    pago1.setVisible(false);
+                    pago2.setVisible(false);
+                    pago3.setVisible(false);
+                    pago4.setVisible(false);
+                    pago5.setVisible(false);
+                    pago6.setVisible(false);
+                    pago7.setVisible(false);
+                    pago8.setVisible(false);
+                                        pago.setEnabled(false);
+                    pago1.setEnabled(false);
+                    pago2.setEnabled(false);
+                    pago3.setEnabled(false);
+                    pago4.setEnabled(false);
+                    pago5.setEnabled(false);
+                    pago6.setEnabled(false);
+                    pago7.setEnabled(false);
+                    pago8.setEnabled(false);
                 }
                 if (LP.getP7() == 0) {
                     PRES.setVisible(false);
@@ -747,6 +782,9 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 }
                 if (LP.getP10() == 0) {
                     Modm.setVisible(false);
+                }
+                if (LP.getP11() == 0) {
+                    AgregarNP.setVisible(false);
                 }
             }
             default -> {
@@ -995,7 +1033,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS = new javax.swing.JLabel();
         FAmT = new javax.swing.JTextField();
         FiltroSnomina = new javax.swing.JComboBox<>();
-        botonWeb1 = new botones.BotonWeb();
         LabelBQ = new javax.swing.JLabel();
         FiltroQuincenanomina = new javax.swing.JComboBox<>();
         LabelSZ = new javax.swing.JLabel();
@@ -1016,7 +1053,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS1 = new javax.swing.JLabel();
         FAmT1 = new javax.swing.JTextField();
         FiltroSnomina1 = new javax.swing.JComboBox<>();
-        botonWeb3 = new botones.BotonWeb();
         LabelBQ1 = new javax.swing.JLabel();
         FiltroQuincenanomina1 = new javax.swing.JComboBox<>();
         LabelSZ1 = new javax.swing.JLabel();
@@ -1037,7 +1073,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS2 = new javax.swing.JLabel();
         FAmT2 = new javax.swing.JTextField();
         FiltroSnomina2 = new javax.swing.JComboBox<>();
-        botonWeb4 = new botones.BotonWeb();
         LabelBQ2 = new javax.swing.JLabel();
         FiltroQuincenanomina2 = new javax.swing.JComboBox<>();
         LabelSZ2 = new javax.swing.JLabel();
@@ -1058,7 +1093,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS3 = new javax.swing.JLabel();
         FAmT3 = new javax.swing.JTextField();
         FiltroSnomina3 = new javax.swing.JComboBox<>();
-        botonWeb5 = new botones.BotonWeb();
         LabelBQ3 = new javax.swing.JLabel();
         FiltroQuincenanomina3 = new javax.swing.JComboBox<>();
         LabelSZ3 = new javax.swing.JLabel();
@@ -1079,7 +1113,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS4 = new javax.swing.JLabel();
         FAmT4 = new javax.swing.JTextField();
         FiltroSnomina4 = new javax.swing.JComboBox<>();
-        botonWeb6 = new botones.BotonWeb();
         LabelBQ4 = new javax.swing.JLabel();
         FiltroQuincenanomina4 = new javax.swing.JComboBox<>();
         LabelSZ4 = new javax.swing.JLabel();
@@ -1100,7 +1133,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS5 = new javax.swing.JLabel();
         FAmT5 = new javax.swing.JTextField();
         FiltroSnomina5 = new javax.swing.JComboBox<>();
-        botonWeb7 = new botones.BotonWeb();
         LabelBQ5 = new javax.swing.JLabel();
         FiltroQuincenanomina5 = new javax.swing.JComboBox<>();
         LabelSZ5 = new javax.swing.JLabel();
@@ -1121,7 +1153,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS6 = new javax.swing.JLabel();
         FAmT6 = new javax.swing.JTextField();
         FiltroSnomina6 = new javax.swing.JComboBox<>();
-        botonWeb8 = new botones.BotonWeb();
         LabelBQ6 = new javax.swing.JLabel();
         FiltroQuincenanomina6 = new javax.swing.JComboBox<>();
         LabelSZ6 = new javax.swing.JLabel();
@@ -1142,7 +1173,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS7 = new javax.swing.JLabel();
         FAmT7 = new javax.swing.JTextField();
         FiltroSnomina7 = new javax.swing.JComboBox<>();
-        botonWeb9 = new botones.BotonWeb();
         LabelBQ7 = new javax.swing.JLabel();
         FiltroQuincenanomina7 = new javax.swing.JComboBox<>();
         LabelSZ7 = new javax.swing.JLabel();
@@ -1163,7 +1193,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LabelBS8 = new javax.swing.JLabel();
         FAmT8 = new javax.swing.JTextField();
         FiltroSnomina8 = new javax.swing.JComboBox<>();
-        botonWeb10 = new botones.BotonWeb();
         LabelBQ8 = new javax.swing.JLabel();
         FiltroQuincenanomina8 = new javax.swing.JComboBox<>();
         LabelSZ8 = new javax.swing.JLabel();
@@ -1199,7 +1228,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP = new javax.swing.JComboBox<>();
         BAppag = new javax.swing.JTextField();
         Bampag = new javax.swing.JTextField();
-        botonWeb2 = new botones.BotonWeb();
         jLabel30 = new javax.swing.JLabel();
         MTDsum = new javax.swing.JLabel();
         Imprimir = new javax.swing.JButton();
@@ -1222,7 +1250,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP1 = new javax.swing.JComboBox<>();
         BAppag1 = new javax.swing.JTextField();
         Bampag1 = new javax.swing.JTextField();
-        botonWeb16 = new botones.BotonWeb();
         jLabel31 = new javax.swing.JLabel();
         MTDsum1 = new javax.swing.JLabel();
         Imprimir1 = new javax.swing.JButton();
@@ -1245,7 +1272,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP2 = new javax.swing.JComboBox<>();
         BAppag2 = new javax.swing.JTextField();
         Bampag2 = new javax.swing.JTextField();
-        botonWeb17 = new botones.BotonWeb();
         jLabel33 = new javax.swing.JLabel();
         MTDsum2 = new javax.swing.JLabel();
         Imprimir2 = new javax.swing.JButton();
@@ -1268,7 +1294,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP3 = new javax.swing.JComboBox<>();
         BAppag3 = new javax.swing.JTextField();
         Bampag3 = new javax.swing.JTextField();
-        botonWeb18 = new botones.BotonWeb();
         jLabel34 = new javax.swing.JLabel();
         MTDsum3 = new javax.swing.JLabel();
         Imprimir3 = new javax.swing.JButton();
@@ -1291,7 +1316,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP4 = new javax.swing.JComboBox<>();
         BAppag4 = new javax.swing.JTextField();
         Bampag4 = new javax.swing.JTextField();
-        botonWeb19 = new botones.BotonWeb();
         jLabel35 = new javax.swing.JLabel();
         MTDsum4 = new javax.swing.JLabel();
         Imprimir4 = new javax.swing.JButton();
@@ -1314,7 +1338,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP5 = new javax.swing.JComboBox<>();
         BAppag5 = new javax.swing.JTextField();
         Bampag5 = new javax.swing.JTextField();
-        botonWeb20 = new botones.BotonWeb();
         Imprimir5 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         MTDsum5 = new javax.swing.JLabel();
@@ -1337,7 +1360,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP6 = new javax.swing.JComboBox<>();
         BAppag6 = new javax.swing.JTextField();
         Bampag6 = new javax.swing.JTextField();
-        botonWeb21 = new botones.BotonWeb();
         jLabel37 = new javax.swing.JLabel();
         MTDsum6 = new javax.swing.JLabel();
         Imprimir6 = new javax.swing.JButton();
@@ -1360,7 +1382,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP7 = new javax.swing.JComboBox<>();
         BAppag7 = new javax.swing.JTextField();
         Bampag7 = new javax.swing.JTextField();
-        botonWeb22 = new botones.BotonWeb();
         jLabel38 = new javax.swing.JLabel();
         MTDsum7 = new javax.swing.JLabel();
         Imprimir7 = new javax.swing.JButton();
@@ -1383,7 +1404,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
         FiltrosP8 = new javax.swing.JComboBox<>();
         BAppag8 = new javax.swing.JTextField();
         Bampag8 = new javax.swing.JTextField();
-        botonWeb25 = new botones.BotonWeb();
         jLabel39 = new javax.swing.JLabel();
         MTDsum8 = new javax.swing.JLabel();
         Imprimir9 = new javax.swing.JButton();
@@ -3141,9 +3161,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb1.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
-
         LabelBQ.setText("Buscar Semana:");
 
         FiltroQuincenanomina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
@@ -3234,9 +3251,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel65)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(39, 39, 39)
                         .addComponent(LabelBE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3285,13 +3300,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF)
                     .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane7.setViewportView(jPanel6);
@@ -3320,9 +3334,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 FiltroSnomina1ItemStateChanged(evt);
             }
         });
-
-        botonWeb3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb3.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ1.setText("Buscar Semana:");
 
@@ -3415,9 +3426,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel66)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(39, 39, 39)
                                 .addComponent(LabelBE1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3466,13 +3475,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF1)
                     .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane8.setViewportView(jPanel7);
@@ -3501,9 +3509,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 FiltroSnomina2ItemStateChanged(evt);
             }
         });
-
-        botonWeb4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb4.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ2.setText("Buscar Semana:");
 
@@ -3596,9 +3601,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel67)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(39, 39, 39)
                                 .addComponent(LabelBE2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3647,13 +3650,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF2)
                     .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane9.setViewportView(jPanel10);
@@ -3682,9 +3684,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 FiltroSnomina3ItemStateChanged(evt);
             }
         });
-
-        botonWeb5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb5.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ3.setText("Buscar Semana:");
 
@@ -3777,9 +3776,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel68)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(39, 39, 39)
                                 .addComponent(LabelBE3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3828,13 +3825,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF3)
                     .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane12.setViewportView(jPanel14);
@@ -3863,9 +3859,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 FiltroSnomina4ItemStateChanged(evt);
             }
         });
-
-        botonWeb6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb6.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ4.setText("Buscar Semana:");
 
@@ -3958,9 +3951,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel69)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(39, 39, 39)
                                 .addComponent(LabelBE4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4009,13 +4000,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF4)
                     .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane14.setViewportView(jPanel15);
@@ -4044,9 +4034,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 FiltroSnomina5ItemStateChanged(evt);
             }
         });
-
-        botonWeb7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb7.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ5.setText("Buscar Semana:");
 
@@ -4139,9 +4126,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel70)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(39, 39, 39)
                                 .addComponent(LabelBE5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4190,13 +4175,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF5)
                     .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane16.setViewportView(jPanel16);
@@ -4225,9 +4209,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 FiltroSnomina6ItemStateChanged(evt);
             }
         });
-
-        botonWeb8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb8.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ6.setText("Buscar Semana:");
 
@@ -4320,9 +4301,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel71)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(39, 39, 39)
                                 .addComponent(LabelBE6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4371,13 +4350,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF6)
                     .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane18.setViewportView(jPanel17);
@@ -4406,9 +4384,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 FiltroSnomina7ItemStateChanged(evt);
             }
         });
-
-        botonWeb9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb9.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ7.setText("Buscar Semana:");
 
@@ -4501,9 +4476,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel72)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(39, 39, 39)
                                 .addComponent(LabelBE7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4552,13 +4525,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF7)
                     .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane20.setViewportView(jPanel18);
@@ -4587,9 +4559,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
                 FiltroSnomina8ItemStateChanged(evt);
             }
         });
-
-        botonWeb10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb10.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCNominaSem.php");
 
         LabelBQ8.setText("Buscar Semana:");
 
@@ -4682,9 +4651,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                                 .addComponent(jLabel74)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonWeb10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(39, 39, 39)
                                 .addComponent(LabelBE8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4733,13 +4700,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(LabelBNDF8)
                     .addComponent(FiltroNDF8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(CS11)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         jScrollPane22.setViewportView(jPanel19);
@@ -4836,10 +4802,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb2.setToolTipText("");
-        botonWeb2.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         jLabel30.setText("Monto total en fila deposito:");
 
         MTDsum.setText("0");
@@ -4862,9 +4824,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel64)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4897,7 +4857,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1967, Short.MAX_VALUE))
+                .addContainerGap(2048, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4917,8 +4877,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel64)
                     .addComponent(FiltrosP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5022,10 +4981,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb16.setToolTipText("");
-        botonWeb16.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         jLabel31.setText("Monto total en fila deposito:");
 
         MTDsum1.setText("0");
@@ -5048,9 +5003,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel159)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5103,8 +5056,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel159)
                     .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5207,10 +5159,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb17.setToolTipText("");
-        botonWeb17.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         jLabel33.setText("Monto total en fila deposito:");
 
         MTDsum2.setText("0");
@@ -5233,9 +5181,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel176)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5288,8 +5234,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel176)
                     .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5392,10 +5337,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb18.setToolTipText("");
-        botonWeb18.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         jLabel34.setText("Monto total en fila deposito:");
 
         MTDsum3.setText("0");
@@ -5418,9 +5359,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel177)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5473,8 +5412,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel177)
                     .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5577,10 +5515,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb19.setToolTipText("");
-        botonWeb19.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         jLabel35.setText("Monto total en fila deposito:");
 
         MTDsum4.setText("0");
@@ -5603,9 +5537,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel178)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5658,8 +5590,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel178)
                     .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5762,10 +5693,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb20.setToolTipText("");
-        botonWeb20.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         Imprimir5.setText("Imprimir tabla");
         Imprimir5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -5788,9 +5715,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel179)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5843,8 +5768,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel179)
                     .addComponent(FiltrosP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -5947,10 +5871,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb21.setToolTipText("");
-        botonWeb21.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         jLabel37.setText("Monto total en fila deposito:");
 
         MTDsum6.setText("0");
@@ -5973,9 +5893,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel180)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6028,8 +5946,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel180)
                     .addComponent(FiltrosP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -6132,10 +6049,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb22.setToolTipText("");
-        botonWeb22.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         jLabel38.setText("Monto total en fila deposito:");
 
         MTDsum7.setText("0");
@@ -6158,9 +6071,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel181)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6213,8 +6124,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel181)
                     .addComponent(FiltrosP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -6317,10 +6227,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
 
-        botonWeb25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
-        botonWeb25.setToolTipText("");
-        botonWeb25.setLink("http://192.168.3.10/Reportes/ReportesNominaSem/EPCPagosNominaSem.php");
-
         jLabel39.setText("Monto total en fila deposito:");
 
         MTDsum8.setText("0");
@@ -6343,9 +6249,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addComponent(jLabel186)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(botonWeb25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(45, 45, 45)
                         .addComponent(LabelBEP8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(busp8, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6378,7 +6282,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Imprimir9))
                     .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 1050, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(2048, Short.MAX_VALUE))
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6398,8 +6302,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
                     .addComponent(jLabel186)
                     .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAppag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonWeb25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -7043,7 +6946,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
             ps.isClosed();
             rs.isClosed();
         } catch (SQLException error_sh_cda_nom) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
 
         }
 
@@ -15739,7 +15642,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        Depositos_4 regr = new Depositos_4(usr, LP);
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem15ActionPerformed
@@ -17967,24 +17870,6 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JTextField apy;
     private com.toedter.calendar.JDateChooser año;
     private javax.swing.JTextField ban;
-    private botones.BotonWeb botonWeb1;
-    private botones.BotonWeb botonWeb10;
-    private botones.BotonWeb botonWeb16;
-    private botones.BotonWeb botonWeb17;
-    private botones.BotonWeb botonWeb18;
-    private botones.BotonWeb botonWeb19;
-    private botones.BotonWeb botonWeb2;
-    private botones.BotonWeb botonWeb20;
-    private botones.BotonWeb botonWeb21;
-    private botones.BotonWeb botonWeb22;
-    private botones.BotonWeb botonWeb25;
-    private botones.BotonWeb botonWeb3;
-    private botones.BotonWeb botonWeb4;
-    private botones.BotonWeb botonWeb5;
-    private botones.BotonWeb botonWeb6;
-    private botones.BotonWeb botonWeb7;
-    private botones.BotonWeb botonWeb8;
-    private botones.BotonWeb botonWeb9;
     private javax.swing.JTextField busp;
     private javax.swing.JTextField busp1;
     private javax.swing.JTextField busp2;
