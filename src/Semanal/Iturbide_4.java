@@ -670,6 +670,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         setIconImage(new ImageIcon(Iturbide_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MostrarNDS();
         MDsem();
+        jButton1.setVisible(false);
         setTitle("Semanal Iturbide # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
@@ -2072,6 +2073,18 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha37.setCalendar(fecha_actual);
         Fecha38.setCalendar(fecha_actual);
         Fecha39.setCalendar(fecha_actual);
+        Servicio.setSelectedIndex(0);
+        Importe.setText("0");
+        NPadron.setText("");
+        Concepto.setText("");
+        Servicio1.setSelectedIndex(0);
+        Importe1.setText("0");
+        NPadron1.setText("");
+        Concepto1.setText("");
+        Servicio2.setSelectedIndex(0);
+        Importe2.setText("0");
+        NPadron2.setText("");
+        Concepto2.setText("");
         Servicio3.setSelectedIndex(0);
         Importe3.setText("0");
         NPadron3.setText("");

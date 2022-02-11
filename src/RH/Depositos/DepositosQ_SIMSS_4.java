@@ -879,7 +879,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     public void Modeposito() {
-        String SQL = "UPDATE `rh.depositos." + Zon.getText() + ".simss` SET `#Lista` = ?,"
+        String SQL = "UPDATE `rh.depositos." + Zon.getText() + ".simss` SET `#Folio` = ?, `#Lista` = ?,"
                 + " `#Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, "
                 + "`Zona` = ?, `Servicio` = ?, `Sueldo` = ?, `Bono` = ?, `Por dia` = ?,"
                 + " `Quincena del mes` = ?, `Año` = ?, `Dias de incapacidad` = ?, "
@@ -900,8 +900,8 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NEnom.getText());
-            pst.setString(3, NDL.getText());
+            pst.setString(2, NDL.getText());
+            pst.setString(3, NEnom.getText());
             pst.setString(4, Ap.getText());
             pst.setString(5, am.getText());
             pst.setString(6, name.getText());
@@ -2372,8 +2372,8 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NEnom.getText());
-            pst.setString(3, NDL.getText());
+            pst.setString(2, NDL.getText());
+            pst.setString(3, NEnom.getText());
             pst.setString(4, Ap.getText());
             pst.setString(5, am.getText());
             pst.setString(6, name.getText());
