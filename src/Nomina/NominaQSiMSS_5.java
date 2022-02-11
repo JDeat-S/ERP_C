@@ -945,10 +945,45 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                     Reportes.setVisible(false);
                 }
                 if (LP.getP5() == 0) {
-                    NomDetallada.setVisible(false);
+                    Tnom.setVisible(false);
+                    Tnom1.setVisible(false);
+                    Tnom2.setVisible(false);
+                    Tnom3.setVisible(false);
+                    Tnom4.setVisible(false);
+                    Tnom5.setVisible(false);
+                    Tnom6.setVisible(false);
+                    Tnom7.setVisible(false);
+                    Tnom8.setVisible(false);
+                    Tnom.setEnabled(false);
+                    Tnom1.setEnabled(false);
+                    Tnom2.setEnabled(false);
+                    Tnom3.setEnabled(false);
+                    Tnom4.setEnabled(false);
+                    Tnom5.setEnabled(false);
+                    Tnom6.setEnabled(false);
+                    Tnom7.setEnabled(false);
+                    Tnom8.setEnabled(false);
+                    
                 }
                 if (LP.getP6() == 0) {
-                    NomPagos.setVisible(false);
+                    pago.setVisible(false);
+                    pago1.setVisible(false);
+                    pago2.setVisible(false);
+                    pago3.setVisible(false);
+                    pago4.setVisible(false);
+                    pago5.setVisible(false);
+                    pago6.setVisible(false);
+                    pago7.setVisible(false);
+                    pago8.setVisible(false);
+                                        pago.setEnabled(false);
+                    pago1.setEnabled(false);
+                    pago2.setEnabled(false);
+                    pago3.setEnabled(false);
+                    pago4.setEnabled(false);
+                    pago5.setEnabled(false);
+                    pago6.setEnabled(false);
+                    pago7.setEnabled(false);
+                    pago8.setEnabled(false);
                 }
                 if (LP.getP7() == 0) {
                     PRES.setVisible(false);
@@ -962,6 +997,9 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 }
                 if (LP.getP10() == 0) {
                     Modm.setVisible(false);
+                }
+                 if (LP.getP11() == 0) {
+                    AgregarNP.setVisible(false);
                 }
             }
             default -> {

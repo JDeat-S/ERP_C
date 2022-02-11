@@ -20,15 +20,22 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/Logica_TDU.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/Logica_userhash.java</file>
             <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/ColoresT/ColorRH.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Semanal/Vales/Rvales.java</file>
             <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Nomina/Listas/Listas_SI_5.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Depositos/Depositos_SIMSS_4.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Nomina/NominaQ_5.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Semanal/Vales/VDE.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Nomina/ModulosQ/ODTQ_5.java</file>
             <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Inicio/Inicio_1.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Depositos/Depositos_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/Logica_usuarios.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Empleados_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Semanal/Vales/Rvales.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/Logica_permisos.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Admin/VentanaADM_3.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Nomina/NominaQ_5.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Nomina/NominaS_simss_5.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Semanal/Vales/VDE.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Nomina/NominaS_5.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Nomina/ModulosQ/ODTQ_5.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Inicio/Updates_2.java</file>
         </group>
     </open-files>
 </project-private>

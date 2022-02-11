@@ -170,6 +170,21 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 if (LP.getP4() == 0) {
                     Semanales.setVisible(false);
                 }
+                if (LP.getP5() == 0) {
+                    Timss.setEnabled(false);
+                    data.setEnabled(false);
+                    Timss.setVisible(false);
+                    data.setVisible(false);
+
+                }
+                if (LP.getP6() == 0) {
+                    add.setEnabled(false);
+                    addimss.setEnabled(false);
+                }
+                if (LP.getP7() == 0) {
+                    mod.setEnabled(false);
+                    modIMSS.setEnabled(false);
+                }
             }
             case 2 -> {
                 Menuadm.setVisible(false);
