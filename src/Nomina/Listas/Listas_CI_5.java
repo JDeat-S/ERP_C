@@ -16153,6 +16153,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             LDAAp.setText("");
             LDAAm.setText("");
             LDAName.setText("");
+            LDA.setText("0");
         }
     }//GEN-LAST:event_ExcelCIActionPerformed
 

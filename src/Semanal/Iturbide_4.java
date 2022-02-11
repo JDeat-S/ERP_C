@@ -79,6 +79,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Otro7.setVisible(false);
         Otro8.setVisible(false);
         Otro9.setVisible(false);
+        Otro10.setVisible(false);
+        Fecha40.setCalendar(fecha_actual);
+        Fecha41.setCalendar(fecha_actual);
+        Fecha42.setCalendar(fecha_actual);
+        Fecha43.setCalendar(fecha_actual);
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         Fecha2.setCalendar(fecha_actual);
@@ -327,6 +332,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Importe39.setVisible(false);
 
         // </editor-fold>     
+        ServInturbide zz20 = new ServInturbide();
+        DefaultComboBoxModel modelzonas20 = new DefaultComboBoxModel(zz20.mostrarserv());
+        Servicio20.setModel(modelzonas20);
         ServInturbide zz = new ServInturbide();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarserv());
         Servicio.setModel(modelzonas);
@@ -372,6 +380,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     public Iturbide_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
+        ARSC.setVisible(false);
+
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         Otro.setVisible(false);
@@ -384,6 +394,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Otro7.setVisible(false);
         Otro8.setVisible(false);
         Otro9.setVisible(false);
+        Otro10.setVisible(false);
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         Fecha2.setCalendar(fecha_actual);
@@ -424,6 +435,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha37.setCalendar(fecha_actual);
         Fecha38.setCalendar(fecha_actual);
         Fecha39.setCalendar(fecha_actual);
+        Fecha40.setCalendar(fecha_actual);
+        Fecha41.setCalendar(fecha_actual);
+        Fecha42.setCalendar(fecha_actual);
+        Fecha43.setCalendar(fecha_actual);
         NVale1.setVisible(false);
         NVale2.setVisible(false);
         NVale3.setVisible(false);
@@ -659,6 +674,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         ServInturbide zz8 = new ServInturbide();
         DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarserv());
         Servicio8.setModel(modelzonas8);
+        ServInturbide zz20 = new ServInturbide();
+        DefaultComboBoxModel modelzonas20 = new DefaultComboBoxModel(zz20.mostrarserv());
+        Servicio20.setModel(modelzonas20);
         ServInturbide zz9 = new ServInturbide();
         DefaultComboBoxModel modelzonas9 = new DefaultComboBoxModel(zz9.mostrarserv());
         Servicio9.setModel(modelzonas9);
@@ -1791,13 +1809,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             modelo.addColumn("Debe entregar");
             modelo.addColumn("El entrega");
             modelo.addColumn("Debe");
+            modelo.addColumn("Observsciones");
             modelo.addColumn("TIS");
             modelo.addColumn("TIP");
             modelo.addColumn("TG");
             modelo.addColumn("TV");
 
 //Anchos
-            int[] anchos = {40, 120, 50, 50, 40, 75, 75, 50, 40, 40, 40, 40, 40};
+            int[] anchos = {40, 120, 50, 50, 40, 75, 75, 50, 50, 40, 40, 40, 40, 40};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -2189,7 +2208,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
         String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
                 + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`,"
-                + " `el entrega`, `Debe`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `el entrega`, `Debe`, `Observaciones`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -2202,16 +2221,50 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(7, DE.getText());
             pst.setString(8, EEntrega.getText());
             pst.setString(9, DBe.getText());
-            pst.setString(10, TDIDS.getText());
-            pst.setString(11, TDIDP.getText());
-            pst.setString(12, TDG.getText());
-            pst.setString(13, TDV.getText());
+            pst.setString(10, ObsDbe.getText());
+            pst.setString(11, TDIDS.getText());
+            pst.setString(12, TDIDP.getText());
+            pst.setString(13, TDG.getText());
+            pst.setString(14, TDV.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal agregado");
 
         } catch (HeadlessException | SQLException error_add_cda) {
             JOptionPane.showMessageDialog(null, "Error al agregar semanal: " + error_add_cda.getMessage());
+        }
+    }
+
+    public void MODSemanal() {
+        String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
+        String SQL = "UPDATE `rh.semanal.inturbide.nsem` SET `#Nsem` = ?, `Fecha` = ?, `hora` = ?,"
+                + " `MMM/YY` = ?, `Total de servicios y pensiones` = ?, `Total restando gastos` = ?,"
+                + " `Debe entregar` = ?, `el entrega` = ?, `Debe` = ?, `Observaciones` = ?, `TIS` = ?,"
+                + " `TIP` = ?, `TG` = ?, `TV` = ? WHERE `rh.semanal.inturbide.nsem`.`#Nsem` = ?";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, AutoFecha.getText());
+            pst.setString(3, Autohora.getText());
+            pst.setString(4, mmyy);
+            pst.setString(5, TDSYP.getText());
+            pst.setString(6, TMGYV.getText());
+            pst.setString(7, DE.getText());
+            pst.setString(8, EEntrega.getText());
+            pst.setString(9, DBe.getText());
+            pst.setString(10, ObsDbe.getText());
+            pst.setString(11, TDIDS.getText());
+            pst.setString(12, TDIDP.getText());
+            pst.setString(13, TDG.getText());
+            pst.setString(14, TDV.getText());
+            pst.setInt(15, Integer.parseInt(SemSl.getText()));
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Semanal modificado");
+
+        } catch (HeadlessException | SQLException error_add_cda) {
+            JOptionPane.showMessageDialog(null, "Error al modificar semanal: " + error_add_cda.getMessage());
         }
     }
 
@@ -4132,6 +4185,70 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         }
         min = Fechaactual.get(Calendar.MINUTE) > 9 ? "" + Fechaactual.get(Calendar.MINUTE) : "0" + Fechaactual.get(Calendar.MINUTE);
         seg = Fechaactual.get(Calendar.SECOND) > 9 ? "" + Fechaactual.get(Calendar.SECOND) : "0" + Fechaactual.get(Calendar.SECOND);
+    }
+
+    public void Operaciones2() {
+        int fila = TSem.getSelectedRow();
+        SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
+        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 4)));
+        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 5)));
+        DE.setText(String.valueOf(TSem.getValueAt(fila, 6)));
+        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 7)));
+        DBe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
+        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
+        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
+        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
+        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+
+        // <editor-fold defaultstate="collapsed" desc="Servicios">
+        double ImServ1 = Double.parseDouble(Importe40.getText());
+        double ImServ2 = Double.parseDouble(TDIDS.getText());
+
+        double TotalServ = ImServ1 + ImServ2;
+        this.TDIDS.setText("" + TotalServ + "");
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Suma Pensiones">
+        double ImPen1 = Double.parseDouble(Importe41.getText());
+        double ImPen2 = Double.parseDouble(TDIDP.getText());
+
+        double TotalPen = ImPen1 + ImPen2;
+        TDIDP.setText("" + TotalPen);
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Total SYP">
+        double TDSYP1 = Double.parseDouble(TDIDS.getText());
+        double TDSYP2 = Double.parseDouble(TDIDP.getText());
+
+        double TotalSYP = TDSYP1 + TDSYP2;
+        TDSYP.setText("" + TotalSYP);
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Suma Gastos">
+        double Gasto1 = Double.parseDouble(Importe42.getText());
+        double Gasto2 = Double.parseDouble(TDG.getText());
+
+        double TotalGas = Gasto1 + Gasto2;
+        TDG.setText("" + TotalGas);
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Suma vales">
+        TDV.setText("" + (Double.parseDouble(Importe43.getText()) + Double.parseDouble(TDV.getText())));
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Total menos gastos y vales">
+        TMGYV.setText("" + (Double.parseDouble(TDSYP.getText()) - (Double.parseDouble(TDG.getText()) + Double.parseDouble(TDV.getText()))));
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Debe entregar">
+        DE.setText("" + (Double.parseDouble(TDSYP.getText()) - (Double.parseDouble(TDG.getText()) + Double.parseDouble(TDV.getText()))));
+        //</editor-fold>
+
+        // <editor-fold defaultstate="collapsed" desc="Debe">
+        DBe.setText("" + (Double.parseDouble(DE.getText()) - Double.parseDouble(EEntrega.getText())));
+        //</editor-fold>
+        ColorDB();
     }
 
     public void Operaciones() {
@@ -7203,6 +7320,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel48.setText("Importe");
 
         jButton3.setText("Agregar registro");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Ocultar menu");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -7289,6 +7411,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel52.setText("Servicio");
 
         jButton5.setText("Agregar registro");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("Ocultar menu");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -7379,6 +7506,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel56.setText("Concepto");
 
         jButton6.setText("Agregar registro");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("Ocultar menu");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -7477,6 +7609,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel60.setText("Observaciones");
 
         jButton7.setText("Agregar registro");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton11.setText("Ocultar menu");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -7492,30 +7629,28 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NVale10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel59))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jLabel58)
-                        .addGap(119, 119, 119)
-                        .addComponent(jLabel60)
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel57))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(Fecha43, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NVale10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel59))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ObsV10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)))
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jLabel58)
+                                .addGap(119, 119, 119)
+                                .addComponent(jLabel60)
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel57))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(Fecha43, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ObsV10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton7))))
+                    .addComponent(jButton11))
                 .addContainerGap(112, Short.MAX_VALUE))
-            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel15Layout.createSequentialGroup()
-                    .addGap(295, 295, 295)
-                    .addComponent(jButton11)
-                    .addContainerGap(296, Short.MAX_VALUE)))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7535,12 +7670,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton7))
                     .addComponent(NVale10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(101, Short.MAX_VALUE))
-            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel15Layout.createSequentialGroup()
-                    .addGap(64, 64, 64)
-                    .addComponent(jButton11)
-                    .addContainerGap(65, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton11)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         jScrollPane19.setViewportView(jPanel15);
@@ -7548,6 +7680,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         ARSC.addTab("Agregar Vales", jScrollPane19);
 
         jButton4.setText("Modificar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -7630,17 +7767,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                             .addComponent(DBe))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel46)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(ObsDbe))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jButton1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jButton4)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel1)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jButton1)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton2)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton4)))
                                                 .addGap(0, 0, Short.MAX_VALUE))))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel34)
@@ -9004,22 +9143,26 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private void TSemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TSemMouseClicked
         int fila = TSem.getSelectedRow();
         SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
-        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
-        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
         TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 4)));
-        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
-        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
         TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 5)));
         DE.setText(String.valueOf(TSem.getValueAt(fila, 6)));
-        DBe.setText(String.valueOf(TSem.getValueAt(fila, 7)));
-        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 7)));
+        DBe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
+        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
+        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
+        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
+        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
 
-        DBe.setEditable(true);
+        DBe.setEnabled(false);
+        EEntrega.setEnabled(false);
         ARSC.setVisible(true);
         Panel.setVisible(false);
         Panel2.setVisible(false);
         jPanel3.setVisible(false);
         jPanel5.setVisible(false);
+        jButton2.setEnabled(false);
+        ColorDB();
     }//GEN-LAST:event_TSemMouseClicked
 
     private void jLabel38MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel38MousePressed
@@ -9830,7 +9973,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 int i = 3;
                 while (NSem.next()) {
 
-                    cell.setCellValue("Ingresos y egresos Semanal No. " + NDS.getText() + " de " + AutoFecha.getText());
+                    cell.setCellValue("Ingresos y egresos Semanal No. " + SemSl.getText() + " de " + AutoFecha.getText());
                     cell.setCellStyle(Encabezado);
 
                     spreadsheet.addMergedRegion(
@@ -9895,6 +10038,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                             )
                     );
 
+                    cell = row.createCell(13);
+                    cell.setCellValue("Descuadre");
+                    cell.setCellStyle(Encabezado);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    1, //first row (0-based)
+                                    1, //last row (0-based)
+                                    13, //first column (0-based)
+                                    14 //last column (0-based)
+                            )
+                    );
+
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(0);
                     cell.setCellValue("# Semanal");
@@ -9948,11 +10104,24 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(13);
+                    cell.setCellValue("Debe");
+                    cell.setCellStyle(Encabezado);
+                    cell = row.createCell(14);
+                    cell.setCellValue("Observaciones");
+                    cell.setCellStyle(Encabezado);
+
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(0);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(1);
                     cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(13);
+                    cell.setCellValue(NSem.getString("Debe"));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(14);
+                    cell.setCellValue(NSem.getString("Observaciones"));
                     cell.setCellStyle(Contenido);
                     i++;
                 }
@@ -10572,76 +10741,256 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Importe40KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe40KeyReleased
-        // TODO add your handling code here:
+        Operaciones2();
     }//GEN-LAST:event_Importe40KeyReleased
 
     private void Importe40KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe40KeyTyped
-        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
     }//GEN-LAST:event_Importe40KeyTyped
 
     private void Servicio20ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Servicio20ItemStateChanged
-        // TODO add your handling code here:
+        if (Servicio20.getSelectedItem().toString().equals("Otro")) {
+            Otro10.setVisible(true);
+        } else {
+            Otro10.setVisible(false);
+        }
     }//GEN-LAST:event_Servicio20ItemStateChanged
 
     private void Importe41KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe41KeyReleased
-        // TODO add your handling code here:
+        Operaciones2();
     }//GEN-LAST:event_Importe41KeyReleased
 
     private void Importe41KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe41KeyTyped
-        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
     }//GEN-LAST:event_Importe41KeyTyped
 
     private void Importe42KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe42KeyReleased
-        // TODO add your handling code here:
+        Operaciones2();
     }//GEN-LAST:event_Importe42KeyReleased
 
     private void Importe42KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe42KeyTyped
-        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
     }//GEN-LAST:event_Importe42KeyTyped
 
     private void NVale10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale10KeyTyped
-        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
     }//GEN-LAST:event_NVale10KeyTyped
 
     private void Importe43KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyReleased
-        // TODO add your handling code here:
+        Operaciones2();
     }//GEN-LAST:event_Importe43KeyReleased
 
     private void Importe43KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyTyped
-        // TODO add your handling code here:
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
     }//GEN-LAST:event_Importe43KeyTyped
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        jButton2.setEnabled(true);
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
         ARSC.setVisible(false);
         Panel.setVisible(true);
         Panel2.setVisible(true);
         jPanel3.setVisible(true);
         jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        jButton2.setEnabled(true);
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
         ARSC.setVisible(false);
         Panel.setVisible(true);
         Panel2.setVisible(true);
         jPanel3.setVisible(true);
         jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        jButton2.setEnabled(true);
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
         ARSC.setVisible(false);
         Panel.setVisible(true);
         Panel2.setVisible(true);
         jPanel3.setVisible(true);
         jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
+
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
+        jButton2.setEnabled(true);
         ARSC.setVisible(false);
         Panel.setVisible(true);
         Panel2.setVisible(true);
         jPanel3.setVisible(true);
         jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        MODSemanal();
+        String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, DateFormat.getDateInstance().format(Fecha42.getDate()));
+            pst.setString(3, Concepto10.getText());
+            pst.setString(4, Importe42.getText());
+            pst.setString(5, LDA12.getText());
+            pst.setString(6, TDG.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+
+        }
+
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        MODSemanal();
+        String SV;
+        if (Servicio20.getSelectedItem().toString().equals("Otro")) {
+            SV = Otro10.getText();
+        } else {
+            SV = Servicio20.getSelectedItem().toString();
+        }
+        String SQL = "INSERT INTO `rh.semanal.inturbide.scc` (`Semanal`, `Fecha`, `Servicio`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, DateFormat.getDateInstance().format(Fecha40.getDate()));
+            pst.setString(3, SV);
+            pst.setString(4, Importe40.getText());
+            pst.setString(5, TDIDS.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
+
+            Importe40.setText("0");
+            Servicio20.setSelectedIndex(0);
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
+
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        MODSemanal();
+        String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, DateFormat.getDateInstance().format(Fecha41.getDate()));
+            pst.setString(3, Servicio21.getText());
+            pst.setString(4, NPadron10.getText());
+            pst.setString(5, Importe41.getText());
+            pst.setString(6, TDIDP.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+            Servicio21.setText("");
+            NPadron10.setText("");
+            Importe41.setText("0");
+
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        MODSemanal();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        MODSemanal();
+
+        String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NVale10.getText()));
+            pst.setInt(2, Integer.parseInt(SemSl.getText()));
+            pst.setString(3, DateFormat.getDateInstance().format(Fecha43.getDate()));
+            pst.setString(4, ObsV10.getText());
+            pst.setString(5, Importe43.getText());
+            pst.setString(6, TDV.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            NVale10.setText("0");
+            ObsV10.setText("");
+            Importe43.setText("0");
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
