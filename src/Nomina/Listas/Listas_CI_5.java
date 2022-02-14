@@ -312,6 +312,9 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 if (LP.getP10() == 0) {
                     //Modm.setVisible(false);
                 }
+                 if (LP.getP11() == 0) {
+                   // AgregarNP.setVisible(false);
+                }
             }
             default -> {
             }

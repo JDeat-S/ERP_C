@@ -4975,7 +4975,7 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                                   <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FiltrosP" min="-2" max="-2" attributes="0"/>
@@ -5008,7 +5008,7 @@
                                               </Group>
                                               <Component id="CS3" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="7114" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="7194" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -5071,6 +5071,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TdepMousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -5376,6 +5379,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep1MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -5674,6 +5680,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep2MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -5964,6 +5973,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep3MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -6258,6 +6270,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep4MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -6556,6 +6571,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep5MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -6854,6 +6872,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep6MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -7149,6 +7170,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep7MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -7347,7 +7371,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                                   <Component id="jLabel187" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FiltrosP8" min="-2" max="-2" attributes="0"/>
@@ -7380,7 +7404,7 @@
                                               </Group>
                                               <Component id="CS23" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="7114" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="7194" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -7447,6 +7471,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep8MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>

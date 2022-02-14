@@ -5074,6 +5074,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TdepMousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -5379,6 +5382,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep1MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -5677,6 +5683,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep2MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -5967,6 +5976,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep3MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -6261,6 +6273,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep4MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -6559,6 +6574,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep5MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -6857,6 +6875,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep6MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -7152,6 +7173,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep7MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -7450,6 +7474,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tdep8MousePressed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
