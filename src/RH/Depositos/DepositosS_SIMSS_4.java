@@ -16,7 +16,7 @@ import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorRH;
 import Inicio.Inicio_1;
-import Logicas.BDRH.DepSIMSS.*;
+import Logicas.BDRH.DepSemSIMSS.*;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import Nomina.*;
@@ -898,8 +898,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NE.getText());
-            pst.setString(3, NDL.getText());
+            pst.setString(2, NDL.getText());
+            pst.setString(3, NE.getText());
             pst.setString(4, Ap.getText());
             pst.setString(5, am.getText());
             pst.setString(6, name.getText());
@@ -971,6 +971,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Deposito Modificado.");
 
             Cleardeposito();
+            FunMD();
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar deposito: " + e.getMessage());
@@ -2370,8 +2371,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NE.getText());
-            pst.setString(3, NDL.getText());
+            pst.setString(2, NDL.getText());
+            pst.setString(3, NE.getText());
             pst.setString(4, Ap.getText());
             pst.setString(5, am.getText());
             pst.setString(6, name.getText());
@@ -2442,6 +2443,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Deposito agregado.");
 
             Cleardeposito();
+            FunMD();
 
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar deposito: " + e.getMessage());
@@ -4335,6 +4337,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -8392,7 +8400,6 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel37Layout.createSequentialGroup()
                         .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel37Layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
                                 .addComponent(jLabel187)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -8632,6 +8639,42 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         jMenu6.add(jMenuItem12);
 
         jMenu5.add(jMenu6);
+
+        Depositos.setText("Depositos");
+
+        jMenu7.setText("Quincenales");
+
+        jMenuItem1.setText("Depositos C/ IMSS");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem1);
+
+        jMenuItem9.setText("Depositos S/ IMSS");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem9);
+
+        Depositos.add(jMenu7);
+
+        jMenu8.setText("Semanales");
+
+        jMenuItem15.setText("Depositos C/ IMSS");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem15);
+
+        Depositos.add(jMenu8);
+
+        jMenu5.add(Depositos);
 
         Menuadm.add(jMenu5);
 
@@ -13633,7 +13676,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_TdepMousePressed
 
     private void Tdep1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep1MousePressed
-         try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep1.getModel();
 
@@ -13727,7 +13770,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tdep1MousePressed
 
     private void Tdep2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep2MousePressed
-         try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep2.getModel();
 
@@ -13821,7 +13864,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tdep2MousePressed
 
     private void Tdep3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep3MousePressed
-         try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep3.getModel();
 
@@ -13915,7 +13958,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tdep3MousePressed
 
     private void Tdep4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep4MousePressed
- try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep4.getModel();
 
@@ -14103,7 +14146,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tdep5MousePressed
 
     private void Tdep6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep6MousePressed
-       try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep6.getModel();
 
@@ -14197,7 +14240,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tdep6MousePressed
 
     private void Tdep7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep7MousePressed
-         try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep7.getModel();
 
@@ -14291,7 +14334,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tdep7MousePressed
 
     private void Tdep8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep8MousePressed
- try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep8.getModel();
 
@@ -14384,6 +14427,24 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         desv();
     }//GEN-LAST:event_Tdep8MousePressed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        DepositosQ_SIMSS_4 regr = new DepositosQ_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        DepositosS_4 regr = new DepositosS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -14474,6 +14535,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField DVT;
     private javax.swing.JPanel Datgen;
     private javax.swing.JTextField Ddv;
+    private javax.swing.JMenu Depositos;
     private javax.swing.JTextField Dpi;
     private javax.swing.JMenuItem EmpleadosT;
     private javax.swing.JMenuItem Estadias;
@@ -14884,10 +14946,14 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -14895,6 +14961,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
