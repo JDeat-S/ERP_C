@@ -312,8 +312,8 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 if (LP.getP10() == 0) {
                     //Modm.setVisible(false);
                 }
-                 if (LP.getP11() == 0) {
-                   // AgregarNP.setVisible(false);
+                if (LP.getP11() == 0) {
+                    // AgregarNP.setVisible(false);
                 }
             }
             default -> {
@@ -15409,7 +15409,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 );
 
                 Statement statement = connect.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + "` WHERE " + LDA.getText());
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getText() + "` WHERE `NDL` = " + LDA.getText());
                 try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
                     XSSFSheet spreadsheet = libro.createSheet(("Lista"));
@@ -16151,13 +16151,13 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 Logger.getLogger(Listas_CI_5.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            LDAZon.setText("");
-            LDAQuin.setSelectedIndex(0);
-            LDAAp.setText("");
-            LDAAm.setText("");
-            LDAName.setText("");
-            LDA.setText("0");
         }
+        LDAZon.setText("");
+        LDAQuin.setSelectedIndex(0);
+        LDAAp.setText("");
+        LDAAm.setText("");
+        LDAName.setText("");
+        LDA.setText("0");
     }//GEN-LAST:event_ExcelCIActionPerformed
 
     private void ODT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODT1ActionPerformed
@@ -16406,7 +16406,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             FillLCIQuin9.setSelectedIndex(0);
 
         }
-                if (FillLCI9.getSelectedIndex() == 3) {
+        if (FillLCI9.getSelectedIndex() == 3) {
             FillLCIabel9.setVisible(true);
             FillLCIabel9.setText("Nombre(s):");
             FillLCIAm9.setVisible(false);
@@ -16610,7 +16610,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             FillLCIQuin7.setSelectedIndex(0);
 
         }
-                if (FillLCI7.getSelectedIndex() == 3) {
+        if (FillLCI7.getSelectedIndex() == 3) {
             FillLCIabel7.setVisible(true);
             FillLCIabel7.setText("Nombre(s):");
             FillLCIAm7.setVisible(false);
@@ -16712,7 +16712,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             FillLCIQuin6.setSelectedIndex(0);
 
         }
-                if (FillLCI6.getSelectedIndex() == 3) {
+        if (FillLCI6.getSelectedIndex() == 3) {
             FillLCIabel6.setVisible(true);
             FillLCIabel6.setText("Nombre(s):");
             FillLCIAm6.setVisible(false);
@@ -16814,7 +16814,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
             FillLCIQuin5.setSelectedIndex(0);
 
         }
-                if (FillLCI5.getSelectedIndex() == 3) {
+        if (FillLCI5.getSelectedIndex() == 3) {
             FillLCIabel5.setVisible(true);
             FillLCIabel5.setText("Nombre(s):");
             FillLCIAm5.setVisible(false);
