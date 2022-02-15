@@ -1,5 +1,9 @@
-package RH.Depositos;
+package RH.Depositos.Santander;
 
+import RH.Depositos.*;
+import Semanal.PT_4;
+import Semanal.Tehuantepec_4;
+import Semanal.Iturbide_4;
 import Nomina.ModulosS.CDAS_5;
 import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosQ.CDAQ_5;
@@ -16,12 +20,13 @@ import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorRH;
 import Inicio.Inicio_1;
-import Logicas.BDRH.DepSemSIMSS.*;
+import Logicas.BDRH.DepCIMSS.*;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import Nomina.*;
-import RH.*;
-import Semanal.*;
+import RH.Empleados_4;
+import RH.Estadias_4;
+import RH.Tortas_4;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.sql.Connection;
@@ -47,7 +52,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
+public final class DepositosQ_4 extends javax.swing.JFrame {
 
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
@@ -56,10 +61,13 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     Logica_usuarios usr;
     Logica_permisos LP;
 
-    public DepositosS_SIMSS_4() {
+    public DepositosQ_4() {
         initComponents();
         FunMD();
         // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
+        FiltrosZonas zz8 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
+        FZservicio8.setModel(modelzonas8);
         FiltrosZonas zz7 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas7 = new DefaultComboBoxModel(zz7.mostrarzonas());
         FZservicio7.setModel(modelzonas7);
@@ -113,6 +121,30 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         FZservicio.setModel(MODELFZS);
         //</editor-fold>
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        busp8.setVisible(false);
+        BAppag8.setVisible(false);
+        Bampag8.setVisible(false);
+        LabelBEP8.setVisible(false);
+        LabelBQP8.setVisible(false);
+        FiltroQP8.setVisible(false);
+        FiltroServP8.setVisible(false);
+        LabelBSP8.setVisible(false);
+        FiltroSZP8.setVisible(false);
+        LabelSZP8.setVisible(false);
+        filtroNDFP8.setVisible(false);
+        LabelNDFP8.setVisible(false);
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
         LabelBE.setVisible(false);
         LabelBQ.setVisible(false);
         LabelBS.setVisible(false);
@@ -412,16 +444,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         FiltrosZonas FZSnomdep = new FiltrosZonas();
         DefaultComboBoxModel MODELFZSnomdep = new DefaultComboBoxModel(FZSnomdep.mostrarzonas());
         FZservicio1.setModel(MODELFZSnomdep);
-        setIconImage(new ImageIcon(DepositosS_SIMSS_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(DepositosQ_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MDepFA();
     }
 
-    public DepositosS_SIMSS_4(Logica_usuarios usr, Logica_permisos LP) {
+    public DepositosQ_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
         FunMD();
         // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
+        FiltrosZonas zz8 = new FiltrosZonas();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
+        FZservicio8.setModel(modelzonas8);
         FiltrosZonas zz7 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas7 = new DefaultComboBoxModel(zz7.mostrarzonas());
         FZservicio7.setModel(modelzonas7);
@@ -475,6 +510,42 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         FZservicio.setModel(MODELFZS);
         //</editor-fold>
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
+        busp8.setVisible(false);
+        BAppag8.setVisible(false);
+        Bampag8.setVisible(false);
+        LabelBEP8.setVisible(false);
+        LabelBQP8.setVisible(false);
+        FiltroQP8.setVisible(false);
+        FiltroServP8.setVisible(false);
+        LabelBSP8.setVisible(false);
+        FiltroSZP8.setVisible(false);
+        LabelSZP8.setVisible(false);
+        filtroNDFP8.setVisible(false);
+        LabelNDFP8.setVisible(false);
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
         LabelBE.setVisible(false);
         LabelBQ.setVisible(false);
         LabelBS.setVisible(false);
@@ -774,9 +845,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         FiltrosZonas FZSnomdep = new FiltrosZonas();
         DefaultComboBoxModel MODELFZSnomdep = new DefaultComboBoxModel(FZSnomdep.mostrarzonas());
         FZservicio1.setModel(MODELFZSnomdep);
-        setIconImage(new ImageIcon(DepositosS_SIMSS_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setIconImage(new ImageIcon(DepositosQ_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         MDepFA();
-        setTitle("RH: Depositos sin imss semanales # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+        setTitle("RH: Depositos imss Quincenales # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
 
         switch (LP.getVDA()) {
@@ -809,31 +880,30 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     public void Modeposito() {
-        String SQL = "UPDATE `rh.depositosem." + Zon.getText() + ".simss` SET ``#Folio` = ?,"
-                + " `#Lista` = ?, `#Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?, "
-                + "`Nombre(s)` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, `Bono` = ?, "
-                + "`Banco` = ?, `Cuenta de banco` = ?, `Por dia` = ?, `por hora` = ?, "
-                + "`Semana` = ?, `Año` = ?, `Dias de incapacidad` = ?, `Pago seguro` = ?, "
-                + "`Dias de vacaciones` = ?, `Pago de vacaciones` = ?, `Dias de descanso` = ?, "
-                + "`Pago de dias descansados` = ?, `Dias laborados` = ?, `Pago de dias laborados` = ?, "
-                + "`Descansos trabajados` = ?, `Pago de Descansos trabajados` = ?, `DSGS` = ?, "
-                + "`Pago de dias de DSGS` = ?, `Faltas justificadas` = ?, `Descanso otorgado` = ?, "
-                + "`Dias festivos` = ?, `Pago de dias festivos` = ?, `Dias festivos trabajados` = ?, "
-                + "`Pago de dias festivos trabajados` = ?, `Retardos` = ?, `Pago con retardos` = ?, "
-                + "`Apoyo` = ?, `Lugar` = ?, `Rembolso` = ?, `Adicionales` = ?, `horas extra` = ?, "
-                + "`total de horas extra` = ?, `Faltas` = ?, `Descuento por faltas` = ?,"
-                + " `Infonavit` = ?, `Fonacot` = ?, `ISR` = ?, `Descuento imss` = ?, `Faltantes de boleto` = ?, "
-                + "`Sancion` = ?, `Chamarra` = ?, `Chaleco` = ?, `Faltante de efectivo` = ?,"
-                + " `Grua` = ?, `Pantalon` = ?, `Credencial` = ?, `Boleto perdido` = ?, `Playera` = ?,"
-                + " `Corbata` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?,"
-                + " `Adelanto de nomina` = ?, `Deposito` = ?, `Fecha de deposito` = ?, `Mes de pago` = ?, "
-                + "`Forma de pago` = ?, `Observaciones` = ? WHERE `rh.depositosem." + Zon.getText() + ".simss`.`#Folio` = ?";
+        String SQL = "UPDATE `rh.depositos." + Zon.getText() + "` SET `#Folio` = ?, `#Lista` = ?,"
+                + " `#Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
+                + " `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, `Bono` = ?, `Banco` = ?,"
+                + " `Cuenta de banco` = ?, `Por dia` = ?, `por hora` = ?, `Quincena del mes` = ?,"
+                + " `Año` = ?, `Dias de incapacidad` = ?, `Pago seguro` = ?, `Dias de vacaciones` = ?,"
+                + " `Pago de vacaciones` = ?, `Dias de descanso` = ?, `Pago de dias descansados` = ?,"
+                + " `Dias laborados` = ?, `Pago de dias laborados` = ?, `Descansos trabajados` = ?,"
+                + " `Pago de Descansos trabajados` = ?, `DSGS` = ?, `Pago de dias de DSGS` = ?,"
+                + " `Faltas justificadas` = ?, `Descanso otorgado` = ?, `Dias festivos` = ?,"
+                + " `Pago de dias festivos` = ?, `Dias festivos trabajados` = ?,"
+                + " `Pago de dias festivos trabajados` = ?, `Retardos` = ?, `Pago con retardos` = ?, `Apoyo` = ?,"
+                + " `Lugar` = ?, `Rembolso` = ?, `Adicionales` = ?, `horas extra` = ?, `total de horas extra` = ?,"
+                + " `Faltas` = ?, `Descuento por faltas` = ?, `Infonavit` = ?, `Fonacot` = ?, `ISR` = ?,"
+                + " `Descuento imss` = ?, `Faltantes de boleto` = ?, `Sancion` = ?, `Chamarra` = ?, `Chaleco` = ?, "
+                + "`Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, `Credencial` = ?, `Boleto perdido` = ?,"
+                + " `Playera` = ?, `Corbata` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?, "
+                + "`Adelanto de nomina` = ?, `Deposito` = ?, `Fecha de deposito` = ?, `Mes de pago` = ?, `Forma de pago` = ?, "
+                + "`Observaciones` = ? WHERE `rh.depositos." + Zon.getText() + "`.`#Folio` = ?";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
             pst.setString(2, NDL.getText());
-            pst.setString(3, NE.getText());
+            pst.setString(3, NEnom.getText());
             pst.setString(4, Ap.getText());
             pst.setString(5, am.getText());
             pst.setString(6, name.getText());
@@ -845,7 +915,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pst.setString(12, cta.getText());
             pst.setString(13, pd.getText());
             pst.setString(14, PH.getText());
-            pst.setString(15, Semana.getSelectedItem().toString());
+            pst.setString(15, Quincenas.getSelectedItem().toString());
             pst.setString(16, ((JTextField) año.getDateEditor().getUiComponent()).getText());
             pst.setString(17, Dpi.getText());
             pst.setString(18, pds.getText());
@@ -877,7 +947,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pst.setString(44, DPF.getText());
             pst.setString(45, RI.getText());
             pst.setString(46, RF.getText());
-            pst.setString(47, ISR.getText());
+            pst.setString(47, NomISR.getText());
             pst.setString(48, DI.getText());
             pst.setString(49, Fdb.getText());
             pst.setString(50, Sancion.getText());
@@ -893,7 +963,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pst.setString(60, Presp.getText());
             pst.setString(61, cda.getText());
             pst.setString(62, Odtp.getText());
-            pst.setString(63, ADN.getText());
+            pst.setString(63, AdN.getText());
             pst.setString(64, deposito.getText());
             pst.setString(65, ((JTextField) FDD.getDateEditor().getUiComponent()).getText());
             pst.setString(66, MDP.getSelectedItem().toString());
@@ -921,6 +991,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         MDNPon();
         MDNS1();
         MDNS2();
+        MDNSQ();
         MDepFA();
         MDepFT();
         MDepFP();
@@ -929,32 +1000,172 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         MDepPon();
         MDepS1();
         MDepS2();
+        MDepSQ();
     }
 
     // mostrar datos de nomina
+    public void MDNSQ() {
+        //Buscar empleado
+        String FiltroN = Nominab8.getText();
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal`";
+        String FAPNom = FApT8.getText();
+        String FAMNom = FAmT8.getText();
+        String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina8.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF8.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            Tnom8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# lista");//1
+            modelo.addColumn("# Empleado");//2
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");//4
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Zona");//6
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");//8
+            modelo.addColumn("Bono");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
+            modelo.addColumn("Quincena del mes");//10
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");//12
+            modelo.addColumn("Pago de seguro");
+            modelo.addColumn("Dias de vacaciones");//14
+            modelo.addColumn("Pago de dias de vacaciones");
+            modelo.addColumn("Dias descansados");//16
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias Laborados");//18
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos Trabajados");//20
+            modelo.addColumn("Pago de descansos trabajados");
+            modelo.addColumn("Descanso sin goce de sueldo");//22
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas Justificadas");//24
+            modelo.addColumn("Descanso Otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Retardos");//26
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");//28
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("Faltas");//32
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Desc IMSS");//34
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");//36
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");//38
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");//40
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");//42
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");//44
+            modelo.addColumn("Corbata");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Total de descuentos varios");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");//48
+            modelo.addColumn("Deposito");
+
+//Anchos hasta quincena
+            int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
+                /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
+                /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
+                /*DD*/ 100, /*PDD*/ 120, /*DL*/ 100, /*PDDL*/ 120, /*DT*/ 130, /*PDDT*/ 130,
+                /*DSGS*/ 130, /*PDDDDSGS*/ 150, /*FJ*/ 90, /*DO*/ 90,/*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RETARDOS*/ 65,
+                /*PCR*/ 100, /*APY*/ 50, /*LUGAR*/ 75, /*REMBOLSO*/ 55, /*AD*/ 65, /*HE*/ 50, /*THE*/ 50, /*FALT*/ 45,
+                /*DPF*/ 120, /*INF*/ 50, /*FON*/ 50, /*ISR*/ 50,/*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
+                /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
+                /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tnom8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException error_ND_FA) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
+
+        }
+
+    }
 
     public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
-        String SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco`";
         String FAPNom = FApT.getText();
         String FAMNom = FAmT.getText();
         String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina.getSelectedItem().toString();
         String FiltroFol = FiltroNDF.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos acapulco` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -990,7 +1201,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");//12
             modelo.addColumn("Pago de seguro");
@@ -1042,7 +1253,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
 
-//Anchos hasta Semana
+//Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1076,25 +1287,25 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     public void MDNFP() {
         //Buscar empleado
         String FiltroN = Nominab1.getText();
-        String SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos puebla.simss`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla`";
         String FAPNom = FApT1.getText();
         String FAMNom = FAmT1.getText();
         String FiltroSnom = FiltroSnomina1.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina1.getSelectedItem().toString();
         String FiltroFol = FiltroNDF1.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos puebla` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1130,7 +1341,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");//12
             modelo.addColumn("Pago de seguro");
@@ -1182,7 +1393,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
 
-//Anchos hasta Semana
+//Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1216,25 +1427,25 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     public void MDNFT() {
         //Buscar empleado
         String FiltroN = Nominab2.getText();
-        String SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos toluca.simss`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca`";
         String FAPNom = FApT2.getText();
         String FAMNom = FAmT2.getText();
         String FiltroSnom = FiltroSnomina2.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina2.getSelectedItem().toString();
         String FiltroFol = FiltroNDF2.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.foraneos toluca` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1270,7 +1481,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");//12
             modelo.addColumn("Pago de seguro");
@@ -1322,7 +1533,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
 
-//Anchos hasta Semana
+//Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1356,25 +1567,25 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     public void MDNNor() {
         //Buscar empleado
         String FiltroN = Nominab3.getText();
-        String where = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.norte.simss`";
+        String where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte`";
         String FAPNom = FApT3.getText();
         String FAMNom = FAmT3.getText();
         String FiltroSnom = FiltroSnomina3.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina3.getSelectedItem().toString();
         String FiltroFol = FiltroNDF3.getText();
 
         if (!"".equals(FiltroN)) {
-            where = "Select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.norte.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            where = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            where = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.norte.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            where = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.norte.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            where = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.norte.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            where = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.norte.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            where = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.norte.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            where = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.norte` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1410,7 +1621,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");//12
             modelo.addColumn("Pago de seguro");
@@ -1462,7 +1673,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
 
-//Anchos hasta Semana
+//Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1496,25 +1707,25 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     public void MDNOfi() {
         //Buscar empleado
         String FiltroN = Nominab4.getText();
-        String SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.oficina.simss`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina`";
         String FAPNom = FApT4.getText();
         String FAMNom = FAmT4.getText();
         String FiltroSnom = FiltroSnomina4.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina4.getSelectedItem().toString();
         String FiltroFol = FiltroNDF4.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.oficina.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.oficina.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.oficina.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.oficina.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.oficina.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.oficina.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.oficina` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1550,7 +1761,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");//12
             modelo.addColumn("Pago de seguro");
@@ -1602,7 +1813,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
 
-//Anchos hasta Semana
+//Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1636,25 +1847,25 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     public void MDNPon() {
         //Buscar empleado
         String FiltroN = Nominab5.getText();
-        String SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.poniente.simss`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente`";
         String FAPNom = FApT5.getText();
         String FAMNom = FAmT5.getText();
         String FiltroSnom = FiltroSnomina5.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina5.getSelectedItem().toString();
         String FiltroFol = FiltroNDF5.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.poniente.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.poniente.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.poniente.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.poniente.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.poniente.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.poniente.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.poniente` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1690,7 +1901,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");//12
             modelo.addColumn("Pago de seguro");
@@ -1742,7 +1953,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
 
-//Anchos hasta Semana
+//Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1776,25 +1987,25 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     public void MDNS1() {
         //Buscar empleado
         String FiltroN = Nominab6.getText();
-        String SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 1.simss`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1`";
         String FAPNom = FApT6.getText();
         String FAMNom = FAmT6.getText();
         String FiltroSnom = FiltroSnomina6.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina6.getSelectedItem().toString();
         String FiltroFol = FiltroNDF6.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 1.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 1.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 1.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 1.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 1.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 1.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 1` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1830,7 +2041,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");//12
             modelo.addColumn("Pago de seguro");
@@ -1882,7 +2093,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
 
-//Anchos hasta Semana
+//Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1916,7 +2127,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     public void MDNS2() {
         //Buscar empleado
         String FiltroN = Nominab7.getText();
-        String SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 2.simss`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2`";
         String FAPNom = FApT7.getText();
         String FAMNom = FAmT7.getText();
         String FiltroSnom = FiltroSnomina7.getSelectedItem().toString();
@@ -1924,17 +2135,17 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = FiltroNDF7.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "Select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 2.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 2.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 2.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 2.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 2.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`,  `Zona`, `Servicio`, `Sueldo`, `Bono`,  `Por dia`, `Por hora`, `Semana`, `año`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`,  `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Horas extra`, `Total de horas extra`, `Dias con retardos`, `Pago con retardos`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Deposito` from `nominasem.detallada.sur 2.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.sur 2` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1970,7 +2181,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Bono");
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Quincena del mes");//10
             modelo.addColumn("Año");
             modelo.addColumn("Dias de incapacidad");//12
             modelo.addColumn("Pago de seguro");
@@ -2022,7 +2233,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Orden de taller");//48
             modelo.addColumn("Deposito");
 
-//Anchos hasta Semana
+//Anchos hasta quincena
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -2066,7 +2277,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         double desv9 = Double.parseDouble(this.Pantalon.getText());
         double desv10 = Double.parseDouble(this.Chaleco.getText());
         double desv11 = Double.parseDouble(this.Credencial.getText());
-        double desv12 = Double.parseDouble(this.ADN.getText());
+        double desv12 = Double.parseDouble(this.AdN.getText());
 
         double total = desv1 + desv2 + desv3 + desv4 + desv5 + desv6 + desv7
                 + desv8 + desv9 + desv10 + desv11 + desv12;
@@ -2075,7 +2286,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
     public void Cleardeposito() {
         NFnom.setText("0");
-        NE.setText("");
+        NEnom.setText("");
         NDL.setText("");
         Ap.setText("");
         am.setText("");
@@ -2085,7 +2296,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         sueldo.setText("0");
         Bono.setText("0");
         pd.setText("0");
-        Semana.setSelectedIndex(0);
+        Quincenas.setSelectedIndex(0);
         año.setCalendar(fecha_actual);
         Dpi.setText("0");
         pds.setText("0");
@@ -2124,12 +2335,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         Presp.setText("0");
         cda.setText("0");
         Odtp.setText("0");
-        ADN.setText("0");
+        AdN.setText("0");
         deposito.setText("0");
         FDD.setDate(null);
         MDP.setSelectedIndex(0);
         FDP.setText("");
-        Obsdeposito.setText("0");
+        Obsdeposito.setText("");
         ban.setText("");
         cta.setText("");
         PH.setText("");
@@ -2137,35 +2348,35 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         HE.setText("0");
         RI.setText("0");
         RF.setText("0");
-        ISR.setText("0");
+        NomISR.setText("0");
     }
 
     public void Agregardeposito() {
-        String SQL = "INSERT INTO `rh.depositosem." + Zon.getText() + ".simss`"
+        String SQL = "INSERT INTO `rh.depositos." + Zon.getText() + "`"
                 + " (`#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, "
-                + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`,"
-                + " `Cuenta de banco`, `Por dia`, `por hora`, `Semana`, `Año`, `Dias de incapacidad`,"
-                + " `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, "
-                + "`Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`,"
-                + " `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`,"
-                + " `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`,"
-                + " `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`,"
-                + " `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, "
-                + "`Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, "
-                + "`Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, "
-                + "`Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, "
-                + "`Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, "
-                + "`Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, "
-                + "`Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`)"
-                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, "
+                + "`Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, "
+                + "`Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, "
+                + "`Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, "
+                + "`Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, "
+                + "`Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`,"
+                + " `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, "
+                + "`Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, "
+                + "`horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`,"
+                + " `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, "
+                + "`Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`,"
+                + " `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, "
+                + "`Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, "
+                + "`Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`) VALUES"
+                + " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
             pst.setString(2, NDL.getText());
-            pst.setString(3, NE.getText());
+            pst.setString(3, NEnom.getText());
             pst.setString(4, Ap.getText());
             pst.setString(5, am.getText());
             pst.setString(6, name.getText());
@@ -2177,7 +2388,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pst.setString(12, cta.getText());
             pst.setString(13, pd.getText());
             pst.setString(14, PH.getText());
-            pst.setString(15, Semana.getSelectedItem().toString());
+            pst.setString(15, Quincenas.getSelectedItem().toString());
             pst.setString(16, ((JTextField) año.getDateEditor().getUiComponent()).getText());
             pst.setString(17, Dpi.getText());
             pst.setString(18, pds.getText());
@@ -2209,7 +2420,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pst.setString(44, DPF.getText());
             pst.setString(45, RI.getText());
             pst.setString(46, RF.getText());
-            pst.setString(47, ISR.getText());
+            pst.setString(47, NomISR.getText());
             pst.setString(48, DI.getText());
             pst.setString(49, Fdb.getText());
             pst.setString(50, Sancion.getText());
@@ -2225,7 +2436,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pst.setString(60, Presp.getText());
             pst.setString(61, cda.getText());
             pst.setString(62, Odtp.getText());
-            pst.setString(63, ADN.getText());
+            pst.setString(63, AdN.getText());
             pst.setString(64, deposito.getText());
             pst.setString(65, ((JTextField) FDD.getDateEditor().getUiComponent()).getText());
             pst.setString(66, MDP.getSelectedItem().toString());
@@ -2243,8 +2454,152 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         }
     }
 
+    public void MDepSQ() {
+        String SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal`";
+        String FiltroN = busp8.getText();
+        String FAPNom = BAppag8.getText();
+        String FAMNom = Bampag8.getText();
+        String FiltroSnom = FiltroServP8.getSelectedItem().toString();
+        String FiltroQuin = FiltroQP8.getSelectedItem().toString();
+        String FiltroFol = filtroNDFP8.getText();
+
+        if (!"".equals(FiltroN)) {
+            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal`"
+                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+        } else if (!"".equals(FiltroFol)) {
+            SQL = "SELECT * FROM `rh.depositos.c` Where `#lista` LIKE '%" + FiltroFol + "%'";
+        } else if (!"".equals(FAPNom)) {
+            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+        } else if (!"".equals(FAMNom)) {
+            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+        } else if (!"".equals(FiltroSnom)) {
+            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal`"
+                    + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+        } else if (!"".equals(FiltroQuin)) {
+            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+        }
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+            };
+//Nombre de la tabla
+            Tdep8.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Folio");
+            modelo.addColumn("# Lista");
+            modelo.addColumn("# Empleado");
+            modelo.addColumn("Apellido P");
+            modelo.addColumn("Apellido M");
+            modelo.addColumn("Nombre(s)");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
+            modelo.addColumn("Banco");
+            modelo.addColumn("Cuenta de banco");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
+            modelo.addColumn("Quincena");
+            modelo.addColumn("Año");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Dias laborados");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Descansos trabajados");
+            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("DSGS");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("Descanso otorgado");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Retardos");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Apoyo");
+            modelo.addColumn("Lugar");
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Adicionales");
+            modelo.addColumn("horas extra");
+            modelo.addColumn("Total de horas extra");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Descuento imss");
+            modelo.addColumn("Infonavit");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("ISR");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Pantalon");
+            modelo.addColumn("Credencial");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Playera");
+            modelo.addColumn("Corbata");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Caja de ahorro");
+            modelo.addColumn("Orden de taller");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Deposito");
+            modelo.addColumn("Fecha de deposito");
+            modelo.addColumn("Mes de pago");
+            modelo.addColumn("Forma de pago");
+            modelo.addColumn("Observaciones");
+
+//Anchos
+            int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
+                /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
+                /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
+                /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
+                /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
+                /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
+                /*GRUA*/ 50, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 50, /*PLAY*/ 50,
+                /*CORB*/ 50, /*PDP*/ 50, /*CDA*/ 50, /*ODT*/ 50, /*ADN*/ 50,
+                /*DEP*/ 60, /*FDD*/ 60, /*MDP*/ 50, /*FDP*/ 51,/*OBS*/ 1000};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                Tdep8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar depositos en sur 2 " + e.getMessage());
+
+        }
+    }
+
     public void MDepS2() {
-        String SQL = "SELECT * FROM `rh.depositosem.sur 2.simss`";
+        String SQL = "SELECT * FROM `rh.depositos.sur 2`";
         String FiltroN = busp7.getText();
         String FAPNom = BAppag7.getText();
         String FAMNom = Bampag7.getText();
@@ -2253,19 +2608,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP7.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss`"
+            SQL = "SELECT * FROM `rh.depositos.sur 2`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositos.sur 2` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.sur 2` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.sur 2` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss`"
+            SQL = "SELECT * FROM `rh.depositos.sur 2`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositos.sur 2` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -2388,7 +2743,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepS1() {
-        String SQL = "SELECT * FROM `rh.depositosem.sur 1.simss`";
+        String SQL = "SELECT * FROM `rh.depositos.sur 1`";
         String FiltroN = busp6.getText();
         String FAPNom = BAppag6.getText();
         String FAMNom = Bampag6.getText();
@@ -2397,19 +2752,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP6.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss`"
+            SQL = "SELECT * FROM `rh.depositos.sur 1`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositos.sur 1` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.sur 1` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.sur 1` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss`"
+            SQL = "SELECT * FROM `rh.depositos.sur 1`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositos.sur 1` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -2532,7 +2887,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepOfi() {
-        String SQL = "SELECT * FROM `rh.depositosem.oficina.simss`";
+        String SQL = "SELECT * FROM `rh.depositos.oficina`";
         String FiltroN = busp5.getText();
         String FAPNom = BAppag5.getText();
         String FAMNom = Bampag5.getText();
@@ -2541,19 +2896,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP5.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositosem.oficina.simss`"
+            SQL = "SELECT * FROM `rh.depositos.oficina`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositosem.oficina.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositos.oficina` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.oficina.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.oficina` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.oficina.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.oficina` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositosem.oficina`"
+            SQL = "SELECT * FROM `rh.depositos.oficina`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositosem.oficina.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositos.oficina` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -2676,7 +3031,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepPon() {
-        String SQL = "SELECT * FROM `rh.depositosem.poniente.simss`";
+        String SQL = "SELECT * FROM `rh.depositos.poniente`";
         String FiltroN = busp4.getText();
         String FAPNom = BAppag4.getText();
         String FAMNom = Bampag4.getText();
@@ -2685,19 +3040,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP4.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositosem.poniente.simss`"
+            SQL = "SELECT * FROM `rh.depositos.poniente`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositosem.poniente.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositos.poniente` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.poniente.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.poniente` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.poniente.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.poniente` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositosem.poniente.simss`"
+            SQL = "SELECT * FROM `rh.depositos.poniente`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositosem.poniente.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositos.poniente` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -2820,7 +3175,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepNor() {
-        String SQL = "SELECT * FROM `rh.depositosem.norte.simss`";
+        String SQL = "SELECT * FROM `rh.depositos.norte`";
         String FiltroN = busp3.getText();
         String FAPNom = BAppag3.getText();
         String FAMNom = Bampag3.getText();
@@ -2829,19 +3184,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP3.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositosem.norte.simss`"
+            SQL = "SELECT * FROM `rh.depositos.norte`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositosem.norte.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositos.norte` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.norte.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.norte` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.norte.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.norte` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositosem.norte.simss`"
+            SQL = "SELECT * FROM `rh.depositos.norte`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositosem.norte.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositos.norte` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -2965,7 +3320,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
     public void MDepFT() {
         //Buscar servicio
-        String SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss`";
+        String SQL = "SELECT * FROM `rh.depositos.foraneos toluca`";
         String FiltroN = busp2.getText();
         String FAPNom = BAppag2.getText();
         String FAMNom = Bampag2.getText();
@@ -2974,19 +3329,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP2.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss`"
+            SQL = "SELECT * FROM `rh.depositos.foraneos toluca`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos toluca` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos toluca` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos toluca` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss`"
+            SQL = "SELECT * FROM `rh.depositos.foraneos toluca`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos toluca` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -3110,7 +3465,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
     public void MDepFP() {
         //Buscar servicio
-        String SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss`";
+        String SQL = "SELECT * FROM `rh.depositos.foraneos puebla`";
         String FiltroN = busp1.getText();
         String FAPNom = BAppag1.getText();
         String FAMNom = Bampag1.getText();
@@ -3119,19 +3474,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP1.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss`"
+            SQL = "SELECT * FROM `rh.depositos.foraneos puebla`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELE CT * FROM `rh.depositosem.foraneos puebla.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELE CT * FROM `rh.depositos.foraneos puebla` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos puebla` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos puebla` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss`"
+            SQL = "SELECT * FROM `rh.depositos.foraneos puebla`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos puebla` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -3256,7 +3611,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
     public void MDepFA() {
         //Buscar servicio
-        String SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss`";
+        String SQL = "SELECT * FROM `rh.depositos.foraneos acapulco`";
         String FiltroN = busp.getText();
         String FAPNom = BAppag.getText();
         String FAMNom = Bampag.getText();
@@ -3265,19 +3620,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss`"
+            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss`"
+            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -3443,7 +3798,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
                 + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
                 + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
-                + Double.parseDouble(RF.getText()) + Double.parseDouble(ISR.getText()));
+                + Double.parseDouble(RF.getText()) + Double.parseDouble(NomISR.getText()));
 
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));
@@ -3457,158 +3812,177 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         RH = new javax.swing.JTabbedPane();
         jScrollPane9 = new javax.swing.JScrollPane();
         PestanañasND = new javax.swing.JTabbedPane();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jPanel6 = new javax.swing.JPanel();
-        FApT = new javax.swing.JTextField();
+        TDFA = new javax.swing.JScrollPane();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Tnom = new javax.swing.JTable();
+        LabelBE = new javax.swing.JLabel();
+        Nominab = new javax.swing.JTextField();
+        CS2 = new javax.swing.JButton();
         LabelBS = new javax.swing.JLabel();
-        FAmT = new javax.swing.JTextField();
         FiltroSnomina = new javax.swing.JComboBox<>();
         LabelBQ = new javax.swing.JLabel();
         FiltroQuincenanomina = new javax.swing.JComboBox<>();
         LabelSZ = new javax.swing.JLabel();
         FZservicio = new javax.swing.JComboBox<>();
         jLabel65 = new javax.swing.JLabel();
-        LabelBE = new javax.swing.JLabel();
         FiltrosTD = new javax.swing.JComboBox<>();
-        Nominab = new javax.swing.JTextField();
         LabelBNDF = new javax.swing.JLabel();
         FiltroNDF = new javax.swing.JTextField();
-        CS2 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        Tnom = new javax.swing.JTable();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jPanel7 = new javax.swing.JPanel();
-        FApT1 = new javax.swing.JTextField();
+        FApT = new javax.swing.JTextField();
+        FAmT = new javax.swing.JTextField();
+        TDFA1 = new javax.swing.JScrollPane();
+        jPanel22 = new javax.swing.JPanel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        Tnom1 = new javax.swing.JTable();
+        LabelBE1 = new javax.swing.JLabel();
+        Nominab1 = new javax.swing.JTextField();
+        CS8 = new javax.swing.JButton();
         LabelBS1 = new javax.swing.JLabel();
-        FAmT1 = new javax.swing.JTextField();
         FiltroSnomina1 = new javax.swing.JComboBox<>();
         LabelBQ1 = new javax.swing.JLabel();
         FiltroQuincenanomina1 = new javax.swing.JComboBox<>();
         LabelSZ1 = new javax.swing.JLabel();
         FZservicio1 = new javax.swing.JComboBox<>();
-        jLabel66 = new javax.swing.JLabel();
-        LabelBE1 = new javax.swing.JLabel();
+        jLabel169 = new javax.swing.JLabel();
         FiltrosTD1 = new javax.swing.JComboBox<>();
-        Nominab1 = new javax.swing.JTextField();
         LabelBNDF1 = new javax.swing.JLabel();
         FiltroNDF1 = new javax.swing.JTextField();
-        CS4 = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        Tnom1 = new javax.swing.JTable();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        jPanel10 = new javax.swing.JPanel();
-        FApT2 = new javax.swing.JTextField();
+        FApT1 = new javax.swing.JTextField();
+        FAmT1 = new javax.swing.JTextField();
+        TDFA2 = new javax.swing.JScrollPane();
+        jPanel23 = new javax.swing.JPanel();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        Tnom2 = new javax.swing.JTable();
+        LabelBE2 = new javax.swing.JLabel();
+        Nominab2 = new javax.swing.JTextField();
+        CS9 = new javax.swing.JButton();
         LabelBS2 = new javax.swing.JLabel();
-        FAmT2 = new javax.swing.JTextField();
         FiltroSnomina2 = new javax.swing.JComboBox<>();
         LabelBQ2 = new javax.swing.JLabel();
         FiltroQuincenanomina2 = new javax.swing.JComboBox<>();
         LabelSZ2 = new javax.swing.JLabel();
         FZservicio2 = new javax.swing.JComboBox<>();
-        jLabel67 = new javax.swing.JLabel();
-        LabelBE2 = new javax.swing.JLabel();
+        jLabel170 = new javax.swing.JLabel();
         FiltrosTD2 = new javax.swing.JComboBox<>();
-        Nominab2 = new javax.swing.JTextField();
         LabelBNDF2 = new javax.swing.JLabel();
         FiltroNDF2 = new javax.swing.JTextField();
-        CS5 = new javax.swing.JButton();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        Tnom2 = new javax.swing.JTable();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        jPanel14 = new javax.swing.JPanel();
-        FApT3 = new javax.swing.JTextField();
+        FApT2 = new javax.swing.JTextField();
+        FAmT2 = new javax.swing.JTextField();
+        TDFA3 = new javax.swing.JScrollPane();
+        jPanel24 = new javax.swing.JPanel();
+        k = new javax.swing.JScrollPane();
+        Tnom3 = new javax.swing.JTable();
+        LabelBE3 = new javax.swing.JLabel();
+        Nominab3 = new javax.swing.JTextField();
+        CS10 = new javax.swing.JButton();
         LabelBS3 = new javax.swing.JLabel();
-        FAmT3 = new javax.swing.JTextField();
         FiltroSnomina3 = new javax.swing.JComboBox<>();
         LabelBQ3 = new javax.swing.JLabel();
         FiltroQuincenanomina3 = new javax.swing.JComboBox<>();
         LabelSZ3 = new javax.swing.JLabel();
         FZservicio3 = new javax.swing.JComboBox<>();
-        jLabel68 = new javax.swing.JLabel();
-        LabelBE3 = new javax.swing.JLabel();
+        jLabel171 = new javax.swing.JLabel();
         FiltrosTD3 = new javax.swing.JComboBox<>();
-        Nominab3 = new javax.swing.JTextField();
         LabelBNDF3 = new javax.swing.JLabel();
         FiltroNDF3 = new javax.swing.JTextField();
-        CS6 = new javax.swing.JButton();
-        jScrollPane15 = new javax.swing.JScrollPane();
-        Tnom3 = new javax.swing.JTable();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        jPanel15 = new javax.swing.JPanel();
-        FApT4 = new javax.swing.JTextField();
+        FApT3 = new javax.swing.JTextField();
+        FAmT3 = new javax.swing.JTextField();
+        TDFA4 = new javax.swing.JScrollPane();
+        jPanel25 = new javax.swing.JPanel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        Tnom4 = new javax.swing.JTable();
+        LabelBE4 = new javax.swing.JLabel();
+        Nominab4 = new javax.swing.JTextField();
+        CS11 = new javax.swing.JButton();
         LabelBS4 = new javax.swing.JLabel();
-        FAmT4 = new javax.swing.JTextField();
         FiltroSnomina4 = new javax.swing.JComboBox<>();
         LabelBQ4 = new javax.swing.JLabel();
         FiltroQuincenanomina4 = new javax.swing.JComboBox<>();
         LabelSZ4 = new javax.swing.JLabel();
         FZservicio4 = new javax.swing.JComboBox<>();
-        jLabel69 = new javax.swing.JLabel();
-        LabelBE4 = new javax.swing.JLabel();
+        jLabel172 = new javax.swing.JLabel();
         FiltrosTD4 = new javax.swing.JComboBox<>();
-        Nominab4 = new javax.swing.JTextField();
         LabelBNDF4 = new javax.swing.JLabel();
         FiltroNDF4 = new javax.swing.JTextField();
-        CS7 = new javax.swing.JButton();
-        jScrollPane18 = new javax.swing.JScrollPane();
-        Tnom4 = new javax.swing.JTable();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        jPanel20 = new javax.swing.JPanel();
-        FApT5 = new javax.swing.JTextField();
+        FApT4 = new javax.swing.JTextField();
+        FAmT4 = new javax.swing.JTextField();
+        TDFA5 = new javax.swing.JScrollPane();
+        jPanel26 = new javax.swing.JPanel();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        Tnom5 = new javax.swing.JTable();
+        LabelBE5 = new javax.swing.JLabel();
+        Nominab5 = new javax.swing.JTextField();
+        CS12 = new javax.swing.JButton();
         LabelBS5 = new javax.swing.JLabel();
-        FAmT5 = new javax.swing.JTextField();
         FiltroSnomina5 = new javax.swing.JComboBox<>();
         LabelBQ5 = new javax.swing.JLabel();
         FiltroQuincenanomina5 = new javax.swing.JComboBox<>();
         LabelSZ5 = new javax.swing.JLabel();
         FZservicio5 = new javax.swing.JComboBox<>();
-        jLabel70 = new javax.swing.JLabel();
-        LabelBE5 = new javax.swing.JLabel();
+        jLabel173 = new javax.swing.JLabel();
         FiltrosTD5 = new javax.swing.JComboBox<>();
-        Nominab5 = new javax.swing.JTextField();
         LabelBNDF5 = new javax.swing.JLabel();
         FiltroNDF5 = new javax.swing.JTextField();
-        CS8 = new javax.swing.JButton();
-        jScrollPane20 = new javax.swing.JScrollPane();
-        Tnom5 = new javax.swing.JTable();
-        jScrollPane23 = new javax.swing.JScrollPane();
-        jPanel21 = new javax.swing.JPanel();
-        FApT6 = new javax.swing.JTextField();
+        FApT5 = new javax.swing.JTextField();
+        FAmT5 = new javax.swing.JTextField();
+        TDFA6 = new javax.swing.JScrollPane();
+        jPanel27 = new javax.swing.JPanel();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        Tnom6 = new javax.swing.JTable();
+        LabelBE6 = new javax.swing.JLabel();
+        Nominab6 = new javax.swing.JTextField();
+        CS13 = new javax.swing.JButton();
         LabelBS6 = new javax.swing.JLabel();
-        FAmT6 = new javax.swing.JTextField();
         FiltroSnomina6 = new javax.swing.JComboBox<>();
         LabelBQ6 = new javax.swing.JLabel();
         FiltroQuincenanomina6 = new javax.swing.JComboBox<>();
         LabelSZ6 = new javax.swing.JLabel();
         FZservicio6 = new javax.swing.JComboBox<>();
-        jLabel71 = new javax.swing.JLabel();
-        LabelBE6 = new javax.swing.JLabel();
+        jLabel174 = new javax.swing.JLabel();
         FiltrosTD6 = new javax.swing.JComboBox<>();
-        Nominab6 = new javax.swing.JTextField();
         LabelBNDF6 = new javax.swing.JLabel();
         FiltroNDF6 = new javax.swing.JTextField();
-        CS9 = new javax.swing.JButton();
-        jScrollPane37 = new javax.swing.JScrollPane();
-        Tnom6 = new javax.swing.JTable();
-        jScrollPane38 = new javax.swing.JScrollPane();
-        jPanel38 = new javax.swing.JPanel();
-        FApT7 = new javax.swing.JTextField();
+        FApT6 = new javax.swing.JTextField();
+        FAmT6 = new javax.swing.JTextField();
+        TDFA7 = new javax.swing.JScrollPane();
+        jPanel28 = new javax.swing.JPanel();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        Tnom7 = new javax.swing.JTable();
+        LabelBE7 = new javax.swing.JLabel();
+        Nominab7 = new javax.swing.JTextField();
+        CS14 = new javax.swing.JButton();
         LabelBS7 = new javax.swing.JLabel();
-        FAmT7 = new javax.swing.JTextField();
         FiltroSnomina7 = new javax.swing.JComboBox<>();
         LabelBQ7 = new javax.swing.JLabel();
         FiltroQuincenanomina7 = new javax.swing.JComboBox<>();
         LabelSZ7 = new javax.swing.JLabel();
         FZservicio7 = new javax.swing.JComboBox<>();
-        jLabel72 = new javax.swing.JLabel();
-        LabelBE7 = new javax.swing.JLabel();
+        jLabel175 = new javax.swing.JLabel();
         FiltrosTD7 = new javax.swing.JComboBox<>();
-        Nominab7 = new javax.swing.JTextField();
         LabelBNDF7 = new javax.swing.JLabel();
         FiltroNDF7 = new javax.swing.JTextField();
-        CS10 = new javax.swing.JButton();
-        jScrollPane21 = new javax.swing.JScrollPane();
-        Tnom7 = new javax.swing.JTable();
+        FApT7 = new javax.swing.JTextField();
+        FAmT7 = new javax.swing.JTextField();
+        TDFA8 = new javax.swing.JScrollPane();
+        jPanel36 = new javax.swing.JPanel();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        Tnom8 = new javax.swing.JTable();
+        LabelBE8 = new javax.swing.JLabel();
+        Nominab8 = new javax.swing.JTextField();
+        CS22 = new javax.swing.JButton();
+        LabelBS8 = new javax.swing.JLabel();
+        FiltroSnomina8 = new javax.swing.JComboBox<>();
+        LabelBQ8 = new javax.swing.JLabel();
+        FiltroQuincenanomina8 = new javax.swing.JComboBox<>();
+        LabelSZ8 = new javax.swing.JLabel();
+        FZservicio8 = new javax.swing.JComboBox<>();
+        jLabel186 = new javax.swing.JLabel();
+        FiltrosTD8 = new javax.swing.JComboBox<>();
+        LabelBNDF8 = new javax.swing.JLabel();
+        FiltroNDF8 = new javax.swing.JTextField();
+        FApT8 = new javax.swing.JTextField();
+        FAmT8 = new javax.swing.JTextField();
         jScrollPane10 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
         jLabel123 = new javax.swing.JLabel();
@@ -3630,10 +4004,10 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         RF = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
-        ISR = new javax.swing.JTextField();
+        NomISR = new javax.swing.JTextField();
         pd = new javax.swing.JTextField();
         jLabel89 = new javax.swing.JLabel();
-        Semana = new javax.swing.JComboBox<>();
+        Quincenas = new javax.swing.JComboBox<>();
         jLabel101 = new javax.swing.JLabel();
         año = new com.toedter.calendar.JDateChooser();
         jLabel102 = new javax.swing.JLabel();
@@ -3645,7 +4019,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         jScrollPane16 = new javax.swing.JScrollPane();
         Obsdeposito = new javax.swing.JTextArea();
         Adddeposito = new javax.swing.JButton();
-        Adddeposito1 = new javax.swing.JButton();
+        Moddeposito = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jLabel122 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
@@ -3672,7 +4046,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         jLabel140 = new javax.swing.JLabel();
         Corbata = new javax.swing.JTextField();
         jLabel167 = new javax.swing.JLabel();
-        ADN = new javax.swing.JTextField();
+        AdN = new javax.swing.JTextField();
         DVT = new javax.swing.JTextField();
         jPanel19 = new javax.swing.JPanel();
         jLabel91 = new javax.swing.JLabel();
@@ -3697,7 +4071,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         jLabel100 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel141 = new javax.swing.JLabel();
-        NE = new javax.swing.JTextField();
+        NEnom = new javax.swing.JTextField();
         jLabel159 = new javax.swing.JLabel();
         NFnom = new javax.swing.JTextField();
         jLabel133 = new javax.swing.JLabel();
@@ -3922,6 +4296,26 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         BAppag7 = new javax.swing.JTextField();
         Bampag7 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        TPagos8 = new javax.swing.JScrollPane();
+        jPanel37 = new javax.swing.JPanel();
+        jScrollPane36 = new javax.swing.JScrollPane();
+        Tdep8 = new javax.swing.JTable();
+        LabelBEP8 = new javax.swing.JLabel();
+        busp8 = new javax.swing.JTextField();
+        CS23 = new javax.swing.JButton();
+        LabelSZP8 = new javax.swing.JLabel();
+        FiltroSZP8 = new javax.swing.JComboBox<>();
+        LabelBSP8 = new javax.swing.JLabel();
+        FiltroServP8 = new javax.swing.JComboBox<>();
+        LabelNDFP8 = new javax.swing.JLabel();
+        filtroNDFP8 = new javax.swing.JTextField();
+        LabelBQP8 = new javax.swing.JLabel();
+        FiltroQP8 = new javax.swing.JComboBox<>();
+        jLabel187 = new javax.swing.JLabel();
+        FiltrosP8 = new javax.swing.JComboBox<>();
+        BAppag8 = new javax.swing.JTextField();
+        Bampag8 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -3947,18 +4341,25 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
-        Depositos = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
+        Depositos1 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu8 = new javax.swing.JMenu();
-        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         Alumnos = new javax.swing.JMenuItem();
         EmpleadosT = new javax.swing.JMenuItem();
         General = new javax.swing.JMenuItem();
+        Depositos = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         Semanales = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -3967,21 +4368,43 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Depositos C/ IMSS");
 
-        jPanel6.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
-        FApT.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tnom.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TnomMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(Tnom);
+
+        LabelBE.setText("Buscar Empleado:");
+
+        Nominab.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FApTKeyReleased(evt);
+                NominabKeyReleased(evt);
+            }
+        });
+
+        CS2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS2.setText("Cerrar sesion");
+        CS2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS2ActionPerformed(evt);
             }
         });
 
         LabelBS.setText("Buscar Servicio:");
-
-        FAmT.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FAmTKeyReleased(evt);
-            }
-        });
 
         FiltroSnomina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         FiltroSnomina.addItemListener(new java.awt.event.ItemListener() {
@@ -3990,9 +4413,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQ.setText("Buscar Semana:");
+        LabelBQ.setText("Buscar Quincena:");
 
-        FiltroQuincenanomina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
+        FiltroQuincenanomina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQuincenanomina.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQuincenanominaItemStateChanged(evt);
@@ -4009,18 +4432,10 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel65.setText("Filtros:");
 
-        LabelBE.setText("Buscar Empleado:");
-
-        FiltrosTD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosTD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTDItemStateChanged(evt);
-            }
-        });
-
-        Nominab.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                NominabKeyReleased(evt);
             }
         });
 
@@ -4032,46 +4447,30 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        CS2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS2.setText("Cerrar sesion");
-        CS2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS2ActionPerformed(evt);
+        FApT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApTKeyReleased(evt);
             }
         });
 
-        Tnom.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        Tnom.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TnomMouseClicked(evt);
+        FAmT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmTKeyReleased(evt);
             }
         });
-        jScrollPane3.setViewportView(Tnom);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(9, 9, 9)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CS2)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel65)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4094,18 +4493,18 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBNDF)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(FiltroNDF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS2))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane3))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelBE)
                     .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS)
@@ -4121,31 +4520,53 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FApT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(CS2)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jScrollPane7.setViewportView(jPanel6);
+        TDFA.setViewportView(jPanel2);
 
-        PestanañasND.addTab("Foraneos acapulco", jScrollPane7);
+        PestanañasND.addTab("Foraneos Acapulco", TDFA);
 
-        jPanel7.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel22.setBackground(new java.awt.Color(204, 255, 255));
 
-        FApT1.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tnom1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom1MouseClicked(evt);
+            }
+        });
+        jScrollPane21.setViewportView(Tnom1);
+
+        LabelBE1.setText("Buscar Empleado:");
+
+        Nominab1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FApT1KeyReleased(evt);
+                Nominab1KeyReleased(evt);
+            }
+        });
+
+        CS8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS8.setText("Cerrar sesion");
+        CS8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS8ActionPerformed(evt);
             }
         });
 
         LabelBS1.setText("Buscar Servicio:");
-
-        FAmT1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FAmT1KeyReleased(evt);
-            }
-        });
 
         FiltroSnomina1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         FiltroSnomina1.addItemListener(new java.awt.event.ItemListener() {
@@ -4154,9 +4575,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQ1.setText("Buscar Semana:");
+        LabelBQ1.setText("Buscar Quincena:");
 
-        FiltroQuincenanomina1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
+        FiltroQuincenanomina1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQuincenanomina1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQuincenanomina1ItemStateChanged(evt);
@@ -4171,20 +4592,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel66.setText("Filtros:");
+        jLabel169.setText("Filtros:");
 
-        LabelBE1.setText("Buscar Empleado:");
-
-        FiltrosTD1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosTD1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD1ItemStateChanged(evt);
-            }
-        });
-
-        Nominab1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nominab1KeyReleased(evt);
             }
         });
 
@@ -4196,81 +4609,64 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        CS4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS4.setText("Cerrar sesion");
-        CS4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS4ActionPerformed(evt);
+        FApT1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT1KeyReleased(evt);
             }
         });
 
-        Tnom1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        Tnom1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tnom1MouseClicked(evt);
+        FAmT1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT1KeyReleased(evt);
             }
         });
-        jScrollPane4.setViewportView(Tnom1);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel66)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosTD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(LabelBE1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nominab1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZ1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FZservicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBS1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSnomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQ1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQuincenanomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBNDF1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS4)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addComponent(jLabel169)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS8))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane21))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelBE1)
                     .addComponent(Nominab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS1)
@@ -4279,38 +4675,60 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltroQuincenanomina1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelSZ1)
                     .addComponent(FZservicio1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel66)
+                    .addComponent(jLabel169)
                     .addComponent(FiltrosTD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBNDF1)
                     .addComponent(FiltroNDF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CS4)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS8)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jScrollPane8.setViewportView(jPanel7);
+        TDFA1.setViewportView(jPanel22);
 
-        PestanañasND.addTab("Foraneos Puebla", jScrollPane8);
+        PestanañasND.addTab("Foraneos Puebla", TDFA1);
 
-        jPanel10.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel23.setBackground(new java.awt.Color(204, 255, 255));
 
-        FApT2.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tnom2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom2MouseClicked(evt);
+            }
+        });
+        jScrollPane22.setViewportView(Tnom2);
+
+        LabelBE2.setText("Buscar Empleado:");
+
+        Nominab2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FApT2KeyReleased(evt);
+                Nominab2KeyReleased(evt);
+            }
+        });
+
+        CS9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS9.setText("Cerrar sesion");
+        CS9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS9ActionPerformed(evt);
             }
         });
 
         LabelBS2.setText("Buscar Servicio:");
-
-        FAmT2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FAmT2KeyReleased(evt);
-            }
-        });
 
         FiltroSnomina2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         FiltroSnomina2.addItemListener(new java.awt.event.ItemListener() {
@@ -4319,9 +4737,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQ2.setText("Buscar Semana:");
+        LabelBQ2.setText("Buscar Quincena:");
 
-        FiltroQuincenanomina2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
+        FiltroQuincenanomina2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQuincenanomina2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQuincenanomina2ItemStateChanged(evt);
@@ -4336,20 +4754,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel67.setText("Filtros:");
+        jLabel170.setText("Filtros:");
 
-        LabelBE2.setText("Buscar Empleado:");
-
-        FiltrosTD2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosTD2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD2ItemStateChanged(evt);
-            }
-        });
-
-        Nominab2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nominab2KeyReleased(evt);
             }
         });
 
@@ -4361,81 +4771,64 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        CS5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS5.setText("Cerrar sesion");
-        CS5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS5ActionPerformed(evt);
+        FApT2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT2KeyReleased(evt);
             }
         });
 
-        Tnom2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        Tnom2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tnom2MouseClicked(evt);
+        FAmT2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT2KeyReleased(evt);
             }
         });
-        jScrollPane13.setViewportView(Tnom2);
 
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel67)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosTD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(LabelBE2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nominab2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZ2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FZservicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBS2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSnomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQ2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQuincenanomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBNDF2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS5)))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addComponent(jLabel170)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS9))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane22))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelBE2)
                     .addComponent(Nominab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS2)
@@ -4444,38 +4837,60 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltroQuincenanomina2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelSZ2)
                     .addComponent(FZservicio2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel67)
+                    .addComponent(jLabel170)
                     .addComponent(FiltrosTD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBNDF2)
                     .addComponent(FiltroNDF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CS5)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS9)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jScrollPane11.setViewportView(jPanel10);
+        TDFA2.setViewportView(jPanel23);
 
-        PestanañasND.addTab("Foraneos Toluca", jScrollPane11);
+        PestanañasND.addTab("Foraneos Toluca", TDFA2);
 
-        jPanel14.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel24.setBackground(new java.awt.Color(204, 255, 255));
 
-        FApT3.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tnom3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom3MouseClicked(evt);
+            }
+        });
+        k.setViewportView(Tnom3);
+
+        LabelBE3.setText("Buscar Empleado:");
+
+        Nominab3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FApT3KeyReleased(evt);
+                Nominab3KeyReleased(evt);
+            }
+        });
+
+        CS10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS10.setText("Cerrar sesion");
+        CS10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS10ActionPerformed(evt);
             }
         });
 
         LabelBS3.setText("Buscar Servicio:");
-
-        FAmT3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FAmT3KeyReleased(evt);
-            }
-        });
 
         FiltroSnomina3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         FiltroSnomina3.addItemListener(new java.awt.event.ItemListener() {
@@ -4484,9 +4899,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQ3.setText("Buscar Semana:");
+        LabelBQ3.setText("Buscar Quincena:");
 
-        FiltroQuincenanomina3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
+        FiltroQuincenanomina3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQuincenanomina3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQuincenanomina3ItemStateChanged(evt);
@@ -4501,20 +4916,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel68.setText("Filtros:");
+        jLabel171.setText("Filtros:");
 
-        LabelBE3.setText("Buscar Empleado:");
-
-        FiltrosTD3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosTD3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD3ItemStateChanged(evt);
-            }
-        });
-
-        Nominab3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nominab3KeyReleased(evt);
             }
         });
 
@@ -4526,81 +4933,64 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        CS6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS6.setText("Cerrar sesion");
-        CS6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS6ActionPerformed(evt);
+        FApT3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT3KeyReleased(evt);
             }
         });
 
-        Tnom3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        Tnom3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tnom3MouseClicked(evt);
+        FAmT3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT3KeyReleased(evt);
             }
         });
-        jScrollPane15.setViewportView(Tnom3);
 
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel68)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosTD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(LabelBE3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nominab3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FApT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZ3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FZservicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBS3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSnomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQ3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQuincenanomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBNDF3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS6)))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addComponent(jLabel171)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS10))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(k))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelBE3)
                     .addComponent(Nominab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS3)
@@ -4609,38 +4999,60 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltroQuincenanomina3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelSZ3)
                     .addComponent(FZservicio3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel68)
+                    .addComponent(jLabel171)
                     .addComponent(FiltrosTD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBNDF3)
                     .addComponent(FiltroNDF3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CS6)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addComponent(k, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS10)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jScrollPane14.setViewportView(jPanel14);
+        TDFA3.setViewportView(jPanel24);
 
-        PestanañasND.addTab("Norte", jScrollPane14);
+        PestanañasND.addTab("Norte", TDFA3);
 
-        jPanel15.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel25.setBackground(new java.awt.Color(204, 255, 255));
 
-        FApT4.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tnom4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom4MouseClicked(evt);
+            }
+        });
+        jScrollPane24.setViewportView(Tnom4);
+
+        LabelBE4.setText("Buscar Empleado:");
+
+        Nominab4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FApT4KeyReleased(evt);
+                Nominab4KeyReleased(evt);
+            }
+        });
+
+        CS11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS11.setText("Cerrar sesion");
+        CS11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS11ActionPerformed(evt);
             }
         });
 
         LabelBS4.setText("Buscar Servicio:");
-
-        FAmT4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FAmT4KeyReleased(evt);
-            }
-        });
 
         FiltroSnomina4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         FiltroSnomina4.addItemListener(new java.awt.event.ItemListener() {
@@ -4649,9 +5061,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQ4.setText("Buscar Semana:");
+        LabelBQ4.setText("Buscar Quincena:");
 
-        FiltroQuincenanomina4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
+        FiltroQuincenanomina4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQuincenanomina4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQuincenanomina4ItemStateChanged(evt);
@@ -4666,20 +5078,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel69.setText("Filtros:");
+        jLabel172.setText("Filtros:");
 
-        LabelBE4.setText("Buscar Empleado:");
-
-        FiltrosTD4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosTD4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD4ItemStateChanged(evt);
-            }
-        });
-
-        Nominab4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nominab4KeyReleased(evt);
             }
         });
 
@@ -4691,81 +5095,64 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        CS7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS7.setText("Cerrar sesion");
-        CS7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS7ActionPerformed(evt);
+        FApT4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT4KeyReleased(evt);
             }
         });
 
-        Tnom4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        Tnom4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tnom4MouseClicked(evt);
+        FAmT4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT4KeyReleased(evt);
             }
         });
-        jScrollPane18.setViewportView(Tnom4);
 
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel69)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosTD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(LabelBE4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nominab4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FApT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZ4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FZservicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBS4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSnomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQ4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQuincenanomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBNDF4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS7)))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addComponent(jLabel172)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS11))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane24))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelBE4)
                     .addComponent(Nominab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS4)
@@ -4774,38 +5161,60 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltroQuincenanomina4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelSZ4)
                     .addComponent(FZservicio4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel69)
+                    .addComponent(jLabel172)
                     .addComponent(FiltrosTD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBNDF4)
                     .addComponent(FiltroNDF4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CS7)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS11)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jScrollPane17.setViewportView(jPanel15);
+        TDFA4.setViewportView(jPanel25);
 
-        PestanañasND.addTab("Oficina", jScrollPane17);
+        PestanañasND.addTab("Oficina", TDFA4);
 
-        jPanel20.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel26.setBackground(new java.awt.Color(204, 255, 255));
 
-        FApT5.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tnom5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom5MouseClicked(evt);
+            }
+        });
+        jScrollPane25.setViewportView(Tnom5);
+
+        LabelBE5.setText("Buscar Empleado:");
+
+        Nominab5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FApT5KeyReleased(evt);
+                Nominab5KeyReleased(evt);
+            }
+        });
+
+        CS12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS12.setText("Cerrar sesion");
+        CS12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS12ActionPerformed(evt);
             }
         });
 
         LabelBS5.setText("Buscar Servicio:");
-
-        FAmT5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FAmT5KeyReleased(evt);
-            }
-        });
 
         FiltroSnomina5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         FiltroSnomina5.addItemListener(new java.awt.event.ItemListener() {
@@ -4814,9 +5223,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQ5.setText("Buscar Semana:");
+        LabelBQ5.setText("Buscar Quincena:");
 
-        FiltroQuincenanomina5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
+        FiltroQuincenanomina5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQuincenanomina5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQuincenanomina5ItemStateChanged(evt);
@@ -4831,20 +5240,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel70.setText("Filtros:");
+        jLabel173.setText("Filtros:");
 
-        LabelBE5.setText("Buscar Empleado:");
-
-        FiltrosTD5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosTD5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD5ItemStateChanged(evt);
-            }
-        });
-
-        Nominab5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nominab5KeyReleased(evt);
             }
         });
 
@@ -4856,81 +5257,64 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        CS8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS8.setText("Cerrar sesion");
-        CS8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS8ActionPerformed(evt);
+        FApT5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT5KeyReleased(evt);
             }
         });
 
-        Tnom5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        Tnom5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tnom5MouseClicked(evt);
+        FAmT5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT5KeyReleased(evt);
             }
         });
-        jScrollPane20.setViewportView(Tnom5);
 
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel20Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel70)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosTD5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(LabelBE5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nominab5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZ5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FZservicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBS5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSnomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQ5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQuincenanomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBNDF5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS8)))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel26Layout.createSequentialGroup()
+                        .addComponent(jLabel173)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS12))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane25))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelBE5)
                     .addComponent(Nominab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS5)
@@ -4939,38 +5323,60 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltroQuincenanomina5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelSZ5)
                     .addComponent(FZservicio5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel70)
+                    .addComponent(jLabel173)
                     .addComponent(FiltrosTD5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBNDF5)
                     .addComponent(FiltroNDF5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CS8)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS12)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jScrollPane19.setViewportView(jPanel20);
+        TDFA5.setViewportView(jPanel26);
 
-        PestanañasND.addTab("Poniente", jScrollPane19);
+        PestanañasND.addTab("Poniente", TDFA5);
 
-        jPanel21.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel27.setBackground(new java.awt.Color(204, 255, 255));
 
-        FApT6.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tnom6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom6MouseClicked(evt);
+            }
+        });
+        jScrollPane26.setViewportView(Tnom6);
+
+        LabelBE6.setText("Buscar Empleado:");
+
+        Nominab6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FApT6KeyReleased(evt);
+                Nominab6KeyReleased(evt);
+            }
+        });
+
+        CS13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS13.setText("Cerrar sesion");
+        CS13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS13ActionPerformed(evt);
             }
         });
 
         LabelBS6.setText("Buscar Servicio:");
-
-        FAmT6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FAmT6KeyReleased(evt);
-            }
-        });
 
         FiltroSnomina6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         FiltroSnomina6.addItemListener(new java.awt.event.ItemListener() {
@@ -4979,9 +5385,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQ6.setText("Buscar Semana:");
+        LabelBQ6.setText("Buscar Quincena:");
 
-        FiltroQuincenanomina6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
+        FiltroQuincenanomina6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQuincenanomina6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQuincenanomina6ItemStateChanged(evt);
@@ -4996,20 +5402,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel71.setText("Filtros:");
+        jLabel174.setText("Filtros:");
 
-        LabelBE6.setText("Buscar Empleado:");
-
-        FiltrosTD6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosTD6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD6ItemStateChanged(evt);
-            }
-        });
-
-        Nominab6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nominab6KeyReleased(evt);
             }
         });
 
@@ -5021,81 +5419,64 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        CS9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS9.setText("Cerrar sesion");
-        CS9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS9ActionPerformed(evt);
+        FApT6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT6KeyReleased(evt);
             }
         });
 
-        Tnom6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        Tnom6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tnom6MouseClicked(evt);
+        FAmT6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT6KeyReleased(evt);
             }
         });
-        jScrollPane37.setViewportView(Tnom6);
 
-        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
-        jPanel21.setLayout(jPanel21Layout);
-        jPanel21Layout.setHorizontalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel71)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosTD6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(LabelBE6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nominab6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZ6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FZservicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBS6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSnomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQ6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQuincenanomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBNDF6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS9)))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel21Layout.setVerticalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel27Layout.createSequentialGroup()
+                        .addComponent(jLabel174)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS13))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane26))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelBE6)
                     .addComponent(Nominab6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS6)
@@ -5104,38 +5485,60 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltroQuincenanomina6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelSZ6)
                     .addComponent(FZservicio6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel71)
+                    .addComponent(jLabel174)
                     .addComponent(FiltrosTD6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBNDF6)
                     .addComponent(FiltroNDF6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CS9)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS13)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jScrollPane23.setViewportView(jPanel21);
+        TDFA6.setViewportView(jPanel27);
 
-        PestanañasND.addTab("Sur 1", jScrollPane23);
+        PestanañasND.addTab("Sur 1", TDFA6);
 
-        jPanel38.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel28.setBackground(new java.awt.Color(204, 255, 255));
 
-        FApT7.addKeyListener(new java.awt.event.KeyAdapter() {
+        Tnom7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom7MouseClicked(evt);
+            }
+        });
+        jScrollPane27.setViewportView(Tnom7);
+
+        LabelBE7.setText("Buscar Empleado:");
+
+        Nominab7.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FApT7KeyReleased(evt);
+                Nominab7KeyReleased(evt);
+            }
+        });
+
+        CS14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS14.setText("Cerrar sesion");
+        CS14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS14ActionPerformed(evt);
             }
         });
 
         LabelBS7.setText("Buscar Servicio:");
-
-        FAmT7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FAmT7KeyReleased(evt);
-            }
-        });
 
         FiltroSnomina7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         FiltroSnomina7.addItemListener(new java.awt.event.ItemListener() {
@@ -5144,9 +5547,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQ7.setText("Buscar Semana:");
+        LabelBQ7.setText("Buscar Quincena:");
 
-        FiltroQuincenanomina7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre" }));
+        FiltroQuincenanomina7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQuincenanomina7.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQuincenanomina7ItemStateChanged(evt);
@@ -5161,20 +5564,12 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel72.setText("Filtros:");
+        jLabel175.setText("Filtros:");
 
-        LabelBE7.setText("Buscar Empleado:");
-
-        FiltrosTD7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosTD7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosTD7.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTD7ItemStateChanged(evt);
-            }
-        });
-
-        Nominab7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nominab7KeyReleased(evt);
             }
         });
 
@@ -5186,81 +5581,64 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        CS10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
-        CS10.setText("Cerrar sesion");
-        CS10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CS10ActionPerformed(evt);
+        FApT7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT7KeyReleased(evt);
             }
         });
 
-        Tnom7.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        Tnom7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tnom7MouseClicked(evt);
+        FAmT7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT7KeyReleased(evt);
             }
         });
-        jScrollPane21.setViewportView(Tnom7);
 
-        javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
-        jPanel38.setLayout(jPanel38Layout);
-        jPanel38Layout.setHorizontalGroup(
-            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel38Layout.createSequentialGroup()
-                .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel38Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel38Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel72)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltrosTD7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(LabelBE7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Nominab7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelSZ7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FZservicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBS7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroSnomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBQ7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroQuincenanomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelBNDF7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(CS10)))
-                    .addGroup(jPanel38Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 4489, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel38Layout.setVerticalGroup(
-            jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel38Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addComponent(jLabel175)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS14))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel28Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jScrollPane27))
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelBE7)
                     .addComponent(Nominab7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBS7)
@@ -5269,22 +5647,184 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(FiltroQuincenanomina7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelSZ7)
                     .addComponent(FZservicio7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel72)
+                    .addComponent(jLabel175)
                     .addComponent(FiltrosTD7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelBNDF7)
                     .addComponent(FiltroNDF7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FApT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FAmT7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CS10)
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS14)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
-        jScrollPane38.setViewportView(jPanel38);
+        TDFA7.setViewportView(jPanel28);
 
-        PestanañasND.addTab("Sur 2", jScrollPane38);
+        PestanañasND.addTab("Sur 2", TDFA7);
+
+        jPanel36.setBackground(new java.awt.Color(204, 255, 255));
+
+        Tnom8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12", "Title 13", "Title 14", "Title 15", "Title 16", "Title 17", "Title 18", "Title 19", "Title 20", "Title 21", "Title 22", "Title 23", "Title 24", "Title 25", "Title 26", "Title 27", "Title 28", "Title 29", "Title 30", "Title 31", "Title 32", "Title 33", "Title 34", "Title 35", "Title 36", "Title 37", "Title 38", "Title 39", "Title 40", "Title 41", "Title 42", "Title 43", "Title 44", "Title 45", "Title 46", "Title 47", "Title 48", "Title 49", "Title 50"
+            }
+        ));
+        Tnom8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tnom8MouseClicked(evt);
+            }
+        });
+        jScrollPane28.setViewportView(Tnom8);
+
+        LabelBE8.setText("Buscar Empleado:");
+
+        Nominab8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nominab8KeyReleased(evt);
+            }
+        });
+
+        CS22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS22.setText("Cerrar sesion");
+        CS22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS22ActionPerformed(evt);
+            }
+        });
+
+        LabelBS8.setText("Buscar Servicio:");
+
+        FiltroSnomina8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroSnomina8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSnomina8ItemStateChanged(evt);
+            }
+        });
+
+        LabelBQ8.setText("Buscar Quincena:");
+
+        FiltroQuincenanomina8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQuincenanomina8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQuincenanomina8ItemStateChanged(evt);
+            }
+        });
+
+        LabelSZ8.setText("Selecciona Zona:");
+
+        FZservicio8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FZservicio8ItemStateChanged(evt);
+            }
+        });
+
+        jLabel186.setText("Filtros:");
+
+        FiltrosTD8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosTD8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosTD8ItemStateChanged(evt);
+            }
+        });
+
+        LabelBNDF8.setText("Buscar por # Lista");
+
+        FiltroNDF8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FiltroNDF8KeyReleased(evt);
+            }
+        });
+
+        FApT8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FApT8KeyReleased(evt);
+            }
+        });
+
+        FAmT8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FAmT8KeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
+        jPanel36.setLayout(jPanel36Layout);
+        jPanel36Layout.setHorizontalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addComponent(jLabel186)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltrosTD8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBE8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Nominab8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FApT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSZ8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FZservicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBS8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroSnomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBQ8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroQuincenanomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelBNDF8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(FiltroNDF8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CS22))
+                .addContainerGap(8091, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel36Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane28))
+        );
+        jPanel36Layout.setVerticalGroup(
+            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel36Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBE8)
+                    .addComponent(Nominab8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBS8)
+                    .addComponent(FiltroSnomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQ8)
+                    .addComponent(FiltroQuincenanomina8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZ8)
+                    .addComponent(FZservicio8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel186)
+                    .addComponent(FiltrosTD8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBNDF8)
+                    .addComponent(FiltroNDF8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FApT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FAmT8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(CS22)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+
+        TDFA8.setViewportView(jPanel36);
+
+        PestanañasND.addTab("Santander quincenal", TDFA8);
 
         jScrollPane9.setViewportView(PestanañasND);
 
@@ -5327,7 +5867,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel61.setText("Ahorro por Sem:");
+        jLabel61.setText("Ahorro por Qna:");
 
         jLabel85.setText("Orden de taller:");
 
@@ -5366,7 +5906,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel45.setText("ISR");
 
-        ISR.setText("0");
+        NomISR.setText("0");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -5409,7 +5949,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                             .addComponent(DPF, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                             .addComponent(RI)
                             .addComponent(RF)
-                            .addComponent(ISR))))
+                            .addComponent(NomISR))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
@@ -5438,7 +5978,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(jLabel61)
                     .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel45)
-                    .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NomISR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5450,7 +5990,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel89.setText("Por dia:");
 
-        Semana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona semana", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
+        Quincenas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona una Quincena", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
 
         jLabel101.setText("Año:");
 
@@ -5479,11 +6019,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        Adddeposito1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        Adddeposito1.setText("Modificar");
-        Adddeposito1.addActionListener(new java.awt.event.ActionListener() {
+        Moddeposito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
+        Moddeposito.setText("Modificar");
+        Moddeposito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Adddeposito1ActionPerformed(evt);
+                ModdepositoActionPerformed(evt);
             }
         });
 
@@ -5596,10 +6136,10 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel167.setText("Adelanto de nomina:");
 
-        ADN.setText("0");
-        ADN.addKeyListener(new java.awt.event.KeyAdapter() {
+        AdN.setText("0");
+        AdN.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                ADNKeyReleased(evt);
+                AdNKeyReleased(evt);
             }
         });
 
@@ -5654,7 +6194,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                             .addComponent(Bp, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                             .addComponent(Playera, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                             .addComponent(Corbata, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                            .addComponent(ADN)))
+                            .addComponent(AdN)))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel17Layout.createSequentialGroup()
@@ -5707,7 +6247,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(jLabel132)
                     .addComponent(Grua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel167)
-                    .addComponent(ADN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AdN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel124)
@@ -5812,7 +6352,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel141.setText("# empleado:");
 
-        NE.setText("0");
+        NEnom.setText("0");
 
         jLabel159.setText("# Folio:");
 
@@ -5838,7 +6378,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(Ap, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(am, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(NE, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(NEnom, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                     .addComponent(NFnom))
                 .addContainerGap())
         );
@@ -5852,7 +6392,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(DatgenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel141)
-                    .addComponent(NE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NEnom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(DatgenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel97)
@@ -6177,7 +6717,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel1.setText("Semana:");
+        jLabel1.setText("Quincena:");
 
         deposito.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         deposito.setText("0");
@@ -6230,7 +6770,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel101)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -6247,7 +6787,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addComponent(Adddeposito)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Adddeposito1))
+                                        .addComponent(Moddeposito))
                                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(FDD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(MDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6302,7 +6842,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel101)
                                 .addComponent(jLabel1))
                             .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -6335,7 +6875,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Adddeposito)
-                            .addComponent(Adddeposito1))))
+                            .addComponent(Moddeposito))))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
 
@@ -6404,9 +6944,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP.setText("Buscar Semana:");
+        LabelBQP.setText("Buscar quincena:");
 
-        FiltroQP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
+        FiltroQP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQPItemStateChanged(evt);
@@ -6415,7 +6955,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel64.setText("Filtrar:");
 
-        FiltrosP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosPItemStateChanged(evt);
@@ -6484,7 +7024,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS3))
-                        .addGap(0, 7222, Short.MAX_VALUE)))
+                        .addGap(0, 7194, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -6581,9 +7121,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP1.setText("Buscar semana:");
+        LabelBQP1.setText("Buscar quincena:");
 
-        FiltroQP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
+        FiltroQP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQP1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP1ItemStateChanged(evt);
@@ -6592,7 +7132,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel161.setText("Filtrar:");
 
-        FiltrosP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosP1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP1ItemStateChanged(evt);
@@ -6632,6 +7172,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel29Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
                                 .addComponent(jLabel161)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6662,7 +7203,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS15))
-                        .addGap(0, 7223, Short.MAX_VALUE)))
+                        .addGap(0, 7114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
@@ -6757,9 +7298,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP2.setText("Buscar semana:");
+        LabelBQP2.setText("Buscar quincena:");
 
-        FiltroQP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
+        FiltroQP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQP2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP2ItemStateChanged(evt);
@@ -6768,7 +7309,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel176.setText("Filtrar:");
 
-        FiltrosP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosP2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP2ItemStateChanged(evt);
@@ -6805,6 +7346,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel30Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
                                 .addComponent(jLabel176)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6835,7 +7377,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS16))
-                        .addGap(0, 7223, Short.MAX_VALUE)))
+                        .addGap(0, 7114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
@@ -6930,9 +7472,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP3.setText("Buscar semana:");
+        LabelBQP3.setText("Buscar quincena:");
 
-        FiltroQP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
+        FiltroQP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQP3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP3ItemStateChanged(evt);
@@ -6941,7 +7483,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel177.setText("Filtrar:");
 
-        FiltrosP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosP3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP3ItemStateChanged(evt);
@@ -6976,6 +7518,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
                         .addComponent(jLabel177)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7101,9 +7644,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP4.setText("Buscar semana:");
+        LabelBQP4.setText("Buscar quincena:");
 
-        FiltroQP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
+        FiltroQP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQP4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP4ItemStateChanged(evt);
@@ -7112,7 +7655,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel178.setText("Filtrar:");
 
-        FiltrosP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosP4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP4ItemStateChanged(evt);
@@ -7150,6 +7693,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel32Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
                                 .addComponent(jLabel178)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7180,7 +7724,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS18))
-                        .addGap(0, 7223, Short.MAX_VALUE)))
+                        .addGap(0, 7114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel32Layout.setVerticalGroup(
@@ -7275,9 +7819,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP5.setText("Buscar semana:");
+        LabelBQP5.setText("Buscar quincena:");
 
-        FiltroQP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
+        FiltroQP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQP5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP5ItemStateChanged(evt);
@@ -7286,7 +7830,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel179.setText("Filtrar:");
 
-        FiltrosP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosP5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP5ItemStateChanged(evt);
@@ -7324,6 +7868,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel33Layout.createSequentialGroup()
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel33Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
                                 .addComponent(jLabel179)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7354,7 +7899,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS19))
-                        .addGap(0, 7223, Short.MAX_VALUE)))
+                        .addGap(0, 7114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel33Layout.setVerticalGroup(
@@ -7449,9 +7994,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP6.setText("Buscar semana:");
+        LabelBQP6.setText("Buscar quincena:");
 
-        FiltroQP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
+        FiltroQP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQP6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP6ItemStateChanged(evt);
@@ -7460,7 +8005,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel180.setText("Filtrar:");
 
-        FiltrosP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosP6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP6ItemStateChanged(evt);
@@ -7497,6 +8042,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel34Layout.createSequentialGroup()
                         .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel34Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
                                 .addComponent(jLabel180)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7527,7 +8073,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS20))
-                        .addGap(0, 7223, Short.MAX_VALUE)))
+                        .addGap(0, 7114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -7622,7 +8168,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             }
         });
 
-        LabelBQP7.setText("Buscar semana:");
+        LabelBQP7.setText("Buscar quincena:");
 
         FiltroQP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
         FiltroQP7.addItemListener(new java.awt.event.ItemListener() {
@@ -7633,7 +8179,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jLabel181.setText("Filtrar:");
 
-        FiltrosP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por semana", "Filtrar por # Lista" }));
+        FiltrosP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
         FiltrosP7.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosP7ItemStateChanged(evt);
@@ -7671,6 +8217,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel35Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
                                 .addComponent(jLabel181)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7701,7 +8248,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS21))
-                        .addGap(0, 7199, Short.MAX_VALUE)))
+                        .addGap(0, 7114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel35Layout.setVerticalGroup(
@@ -7734,6 +8281,180 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         TPagos7.setViewportView(jPanel35);
 
         PestañasPagos.addTab("Sur 2", TPagos7);
+
+        jPanel37.setBackground(new java.awt.Color(204, 255, 204));
+
+        Tdep8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9", "Title 10", "Title 11", "Title 12"
+            }
+        ));
+        Tdep8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Tdep8MousePressed(evt);
+            }
+        });
+        jScrollPane36.setViewportView(Tdep8);
+
+        LabelBEP8.setText("Buscar empleado:");
+
+        busp8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                busp8KeyReleased(evt);
+            }
+        });
+
+        CS23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
+        CS23.setText("Cerrar sesion");
+        CS23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CS23ActionPerformed(evt);
+            }
+        });
+
+        LabelSZP8.setText("Seleccionar zona:");
+
+        FiltroSZP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroSZP8ItemStateChanged(evt);
+            }
+        });
+
+        LabelBSP8.setText("Buscar servicio:");
+
+        FiltroServP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        FiltroServP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroServP8ItemStateChanged(evt);
+            }
+        });
+
+        LabelNDFP8.setText("# de Lista");
+
+        filtroNDFP8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                filtroNDFP8KeyReleased(evt);
+            }
+        });
+
+        LabelBQP8.setText("Buscar quincena:");
+
+        FiltroQP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltroQP8ItemStateChanged(evt);
+            }
+        });
+
+        jLabel187.setText("Filtrar:");
+
+        FiltrosP8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Filtrar por Apellido P", "Filtrar por Apellido M", "Filtrar por Nombre(s)", "Filtrar por Servicio", "Filtrar por quincena", "Filtrar por # Lista" }));
+        FiltrosP8.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosP8ItemStateChanged(evt);
+            }
+        });
+
+        BAppag8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BAppag8KeyReleased(evt);
+            }
+        });
+
+        Bampag8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Bampag8KeyReleased(evt);
+            }
+        });
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel12MousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
+        jPanel37.setLayout(jPanel37Layout);
+        jPanel37Layout.setHorizontalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel37Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane36)
+                    .addGroup(jPanel37Layout.createSequentialGroup()
+                        .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel37Layout.createSequentialGroup()
+                                .addComponent(jLabel187)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelBEP8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(busp8, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BAppag8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelSZP8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FiltroSZP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelBSP8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FiltroServP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelNDFP8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(filtroNDFP8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelBQP8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CS23))
+                        .addGap(0, 7194, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel37Layout.setVerticalGroup(
+            jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel37Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelBEP8)
+                    .addComponent(busp8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSZP8)
+                    .addComponent(FiltroSZP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBSP8)
+                    .addComponent(FiltroServP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelNDFP8)
+                    .addComponent(filtroNDFP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBQP8)
+                    .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel187)
+                    .addComponent(FiltrosP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAppag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Bampag8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CS23)
+                .addContainerGap(183, Short.MAX_VALUE))
+        );
+
+        TPagos8.setViewportView(jPanel37);
+
+        PestañasPagos.addTab("Santander quincenal", TPagos8);
 
         jScrollPane12.setViewportView(PestañasPagos);
 
@@ -7911,9 +8632,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
         jMenu5.add(jMenu6);
 
-        Depositos.setText("Depositos");
+        Depositos1.setText("Depositos");
 
-        jMenu7.setText("Quincenales");
+        jMenu9.setText("Quincenales");
 
         jMenuItem1.setText("Depositos C/ IMSS");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -7921,31 +8642,39 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem1);
+        jMenu9.add(jMenuItem1);
 
-        jMenuItem9.setText("Depositos S/ IMSS");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem13.setText("Depositos S/ IMSS");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                jMenuItem13ActionPerformed(evt);
             }
         });
-        jMenu7.add(jMenuItem9);
+        jMenu9.add(jMenuItem13);
 
-        Depositos.add(jMenu7);
+        Depositos1.add(jMenu9);
 
-        jMenu8.setText("Semanales");
+        jMenu10.setText("Semanales");
 
-        jMenuItem15.setText("Depositos C/ IMSS");
-        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem17.setText("Depositos C/ IMSS");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem15ActionPerformed(evt);
+                jMenuItem17ActionPerformed(evt);
             }
         });
-        jMenu8.add(jMenuItem15);
+        jMenu10.add(jMenuItem17);
 
-        Depositos.add(jMenu8);
+        jMenuItem18.setText("Depositos S/ IMSS");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem18);
 
-        jMenu5.add(Depositos);
+        Depositos1.add(jMenu10);
+
+        jMenu5.add(Depositos1);
 
         Menuadm.add(jMenu5);
 
@@ -7996,6 +8725,42 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         });
         jMenu1.add(General);
 
+        Depositos.setText("Depositos");
+
+        jMenu7.setText("Quincenales");
+
+        jMenuItem9.setText("Depositos S/ IMSS");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem9);
+
+        Depositos.add(jMenu7);
+
+        jMenu8.setText("Semanales");
+
+        jMenuItem15.setText("Depositos C/ IMSS");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem15);
+
+        jMenuItem16.setText("Depositos S/ IMSS");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem16);
+
+        Depositos.add(jMenu8);
+
+        jMenu1.add(Depositos);
+
         jMenuBar1.add(jMenu1);
 
         Semanales.setText("Semanales");
@@ -8042,10 +8807,10 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ADNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADNKeyReleased
+    private void AdNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AdNKeyReleased
         desv();
         deposito();
-    }//GEN-LAST:event_ADNKeyReleased
+    }//GEN-LAST:event_AdNKeyReleased
 
     private void CorbataKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorbataKeyReleased
         desv();
@@ -8103,14 +8868,14 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_FdbKeyReleased
 
-    private void Adddeposito1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Adddeposito1ActionPerformed
+    private void ModdepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModdepositoActionPerformed
         Modeposito();
-        MDepFA();
-    }//GEN-LAST:event_Adddeposito1ActionPerformed
+        FunMD();
+    }//GEN-LAST:event_ModdepositoActionPerformed
 
     private void AdddepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdddepositoActionPerformed
         Agregardeposito();
-        MDepFA();
+        FunMD();
     }//GEN-LAST:event_AdddepositoActionPerformed
 
     private void OdtpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OdtpKeyReleased
@@ -8148,6 +8913,2305 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private void ADDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADDKeyReleased
         deposito();
     }//GEN-LAST:event_ADDKeyReleased
+
+    private void FAmT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT7KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT7KeyReleased
+
+    private void FApT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT7KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT7KeyReleased
+
+    private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF7KeyReleased
+
+    private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
+
+        String FTD7 = (String) FiltrosTD7.getSelectedItem();
+        if (FTD7.equals("Selecciona filtro")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD7.equals("Filtrar por Apellido P")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Apellido P:");
+            FApT7.setText("");
+            FApT7.setVisible(true);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Apellido M")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Apellido M:");
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(true);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Nombre(s)")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(true);
+            LabelBE7.setText("Buscar Nombre(s):");
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(true);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por Servicio")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(true);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(true);
+            FZservicio7.setVisible(true);
+            LabelSZ7.setVisible(true);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por quincena")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(true);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(true);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(false);
+            LabelBNDF7.setVisible(false);
+            FunMD();
+        }
+        if (FTD7.equals("Filtrar por # Lista")) {
+            Nominab7.setText("");
+            LabelBE7.setVisible(false);
+            FApT7.setText("");
+            FApT7.setVisible(false);
+            FAmT7.setVisible(false);
+            FAmT7.setText("");
+            Nominab7.setVisible(false);
+            FiltroSnomina7.setVisible(false);
+            FiltroSnomina7.setSelectedIndex(0);
+            LabelBS7.setVisible(false);
+            FZservicio7.setVisible(false);
+            LabelSZ7.setVisible(false);
+            FZservicio7.setSelectedIndex(0);
+            FiltroQuincenanomina7.setVisible(false);
+            FiltroQuincenanomina7.setSelectedIndex(0);
+            LabelBQ7.setVisible(false);
+            FiltroNDF7.setText("");
+            FiltroNDF7.setVisible(true);
+            LabelBNDF7.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD7ItemStateChanged
+
+    private void FZservicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio7ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio7.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina7.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio7ItemStateChanged
+
+    private void FiltroQuincenanomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina7ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
+
+    private void FiltroSnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina7ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina7ItemStateChanged
+
+    private void CS14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS14ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS14ActionPerformed
+
+    private void Nominab7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab7KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab7KeyReleased
+
+    private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom7.getModel();
+
+            int fila = Tnom7.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom7.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom7.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom7.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom7.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom7.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom7.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom7.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom7.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom7.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom7.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom7.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom7.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom7.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom7.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom7.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom7.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom7.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom7.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom7.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom7.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom7.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom7.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom7.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom7.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom7.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom7.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom7.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom7.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom7.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom7.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom7.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom7MouseClicked
+
+    private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT6KeyReleased
+
+    private void FApT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT6KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT6KeyReleased
+
+    private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF6KeyReleased
+
+    private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
+
+        String FTD6 = (String) FiltrosTD6.getSelectedItem();
+        if (FTD6.equals("Selecciona filtro")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD6.equals("Filtrar por Apellido P")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Apellido P:");
+            FApT6.setText("");
+            FApT6.setVisible(true);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Apellido M")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Apellido M:");
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(true);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Nombre(s)")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(true);
+            LabelBE6.setText("Buscar Nombre(s):");
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(true);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por Servicio")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(true);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(true);
+            FZservicio6.setVisible(true);
+            LabelSZ6.setVisible(true);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por quincena")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(true);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(true);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(false);
+            LabelBNDF6.setVisible(false);
+            FunMD();
+        }
+        if (FTD6.equals("Filtrar por # Lista")) {
+            Nominab6.setText("");
+            LabelBE6.setVisible(false);
+            FApT6.setText("");
+            FApT6.setVisible(false);
+            FAmT6.setVisible(false);
+            FAmT6.setText("");
+            Nominab6.setVisible(false);
+            FiltroSnomina6.setVisible(false);
+            FiltroSnomina6.setSelectedIndex(0);
+            LabelBS6.setVisible(false);
+            FZservicio6.setVisible(false);
+            LabelSZ6.setVisible(false);
+            FZservicio6.setSelectedIndex(0);
+            FiltroQuincenanomina6.setVisible(false);
+            FiltroQuincenanomina6.setSelectedIndex(0);
+            LabelBQ6.setVisible(false);
+            FiltroNDF6.setText("");
+            FiltroNDF6.setVisible(true);
+            LabelBNDF6.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD6ItemStateChanged
+
+    private void FZservicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio6ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio6.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina6.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio6ItemStateChanged
+
+    private void FiltroQuincenanomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina6ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
+
+    private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
+
+    private void CS13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS13ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS13ActionPerformed
+
+    private void Nominab6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab6KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab6KeyReleased
+
+    private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
+
+            int fila = Tnom6.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom6.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom6.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom6.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom6.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom6.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom6.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom6.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom6.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom6.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom6.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom6.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom6.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom6.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom6.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom6.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom6.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom6.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom6.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom6.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom6.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom6.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom6.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom6.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom6.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom6.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom6.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom6.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom6MouseClicked
+
+    private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT5KeyReleased
+
+    private void FApT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT5KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT5KeyReleased
+
+    private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF5KeyReleased
+
+    private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
+
+        String FTD5 = (String) FiltrosTD5.getSelectedItem();
+        if (FTD5.equals("Selecciona filtro")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD5.equals("Filtrar por Apellido P")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Apellido P:");
+            FApT5.setText("");
+            FApT5.setVisible(true);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Apellido M")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Apellido M:");
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(true);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Nombre(s)")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(true);
+            LabelBE5.setText("Buscar Nombre(s):");
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(true);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por Servicio")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(true);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(true);
+            FZservicio5.setVisible(true);
+            LabelSZ5.setVisible(true);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por quincena")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(true);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(true);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(false);
+            LabelBNDF5.setVisible(false);
+            FunMD();
+        }
+        if (FTD5.equals("Filtrar por # Lista")) {
+            Nominab5.setText("");
+            LabelBE5.setVisible(false);
+            FApT5.setText("");
+            FApT5.setVisible(false);
+            FAmT5.setVisible(false);
+            FAmT5.setText("");
+            Nominab5.setVisible(false);
+            FiltroSnomina5.setVisible(false);
+            FiltroSnomina5.setSelectedIndex(0);
+            LabelBS5.setVisible(false);
+            FZservicio5.setVisible(false);
+            LabelSZ5.setVisible(false);
+            FZservicio5.setSelectedIndex(0);
+            FiltroQuincenanomina5.setVisible(false);
+            FiltroQuincenanomina5.setSelectedIndex(0);
+            LabelBQ5.setVisible(false);
+            FiltroNDF5.setText("");
+            FiltroNDF5.setVisible(true);
+            LabelBNDF5.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD5ItemStateChanged
+
+    private void FZservicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio5ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio5.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina5.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio5ItemStateChanged
+
+    private void FiltroQuincenanomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina5ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
+
+    private void FiltroSnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina5ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina5ItemStateChanged
+
+    private void CS12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS12ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS12ActionPerformed
+
+    private void Nominab5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab5KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab5KeyReleased
+
+    private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
+
+            int fila = Tnom5.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom5.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom5.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom5.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom5.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom5.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom5.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom5.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom5.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom5.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom5.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom5.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom5.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom5.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom5.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom5.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom5.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom5.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom5.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom5.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom5.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom5.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom5.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom5.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom5.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom5.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom5.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom5.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom5.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom5.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom5.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom5.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom5MouseClicked
+
+    private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT4KeyReleased
+
+    private void FApT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT4KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT4KeyReleased
+
+    private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF4KeyReleased
+
+    private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
+
+        String FTD4 = (String) FiltrosTD4.getSelectedItem();
+        if (FTD4.equals("Selecciona filtro")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD4.equals("Filtrar por Apellido P")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Apellido P:");
+            FApT4.setText("");
+            FApT4.setVisible(true);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Apellido M")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Apellido M:");
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(true);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Nombre(s)")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(true);
+            LabelBE4.setText("Buscar Nombre(s):");
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(true);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por Servicio")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(true);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(true);
+            FZservicio4.setVisible(true);
+            LabelSZ4.setVisible(true);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por quincena")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(true);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(true);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(false);
+            LabelBNDF4.setVisible(false);
+            FunMD();
+        }
+        if (FTD4.equals("Filtrar por # Lista")) {
+            Nominab4.setText("");
+            LabelBE4.setVisible(false);
+            FApT4.setText("");
+            FApT4.setVisible(false);
+            FAmT4.setVisible(false);
+            FAmT4.setText("");
+            Nominab4.setVisible(false);
+            FiltroSnomina4.setVisible(false);
+            FiltroSnomina4.setSelectedIndex(0);
+            LabelBS4.setVisible(false);
+            FZservicio4.setVisible(false);
+            LabelSZ4.setVisible(false);
+            FZservicio4.setSelectedIndex(0);
+            FiltroQuincenanomina4.setVisible(false);
+            FiltroQuincenanomina4.setSelectedIndex(0);
+            LabelBQ4.setVisible(false);
+            FiltroNDF4.setText("");
+            FiltroNDF4.setVisible(true);
+            LabelBNDF4.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD4ItemStateChanged
+
+    private void FZservicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio4ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio4.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina4.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio4ItemStateChanged
+
+    private void FiltroQuincenanomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina4ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
+
+    private void FiltroSnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina4ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina4ItemStateChanged
+
+    private void CS11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS11ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS11ActionPerformed
+
+    private void Nominab4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab4KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab4KeyReleased
+
+    private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom4.getModel();
+
+            int fila = Tnom4.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom4.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom4.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom4.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom4.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom4.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom4.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom4.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom4.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom4.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom4.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom4.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom4.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom4.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom4.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom4.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom4.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom4.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom4.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom4.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom4.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom4.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom4.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom4.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom4.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom4.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom4.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom4.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom4.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom4.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom4.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom4.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom4MouseClicked
+
+    private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT3KeyReleased
+
+    private void FApT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT3KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT3KeyReleased
+
+    private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF3KeyReleased
+
+    private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
+
+        String FTD3 = (String) FiltrosTD3.getSelectedItem();
+        if (FTD3.equals("Selecciona filtro")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD3.equals("Filtrar por Apellido P")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Apellido P:");
+            FApT3.setText("");
+            FApT3.setVisible(true);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Apellido M")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Apellido M:");
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(true);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Nombre(s)")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(true);
+            LabelBE3.setText("Buscar Nombre(s):");
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(true);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por Servicio")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(true);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(true);
+            FZservicio3.setVisible(true);
+            LabelSZ3.setVisible(true);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por quincena")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(true);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(true);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(false);
+            LabelBNDF3.setVisible(false);
+            FunMD();
+        }
+        if (FTD3.equals("Filtrar por # Lista")) {
+            Nominab3.setText("");
+            LabelBE3.setVisible(false);
+            FApT3.setText("");
+            FApT3.setVisible(false);
+            FAmT3.setVisible(false);
+            FAmT3.setText("");
+            Nominab3.setVisible(false);
+            FiltroSnomina3.setVisible(false);
+            FiltroSnomina3.setSelectedIndex(0);
+            LabelBS3.setVisible(false);
+            FZservicio3.setVisible(false);
+            LabelSZ3.setVisible(false);
+            FZservicio3.setSelectedIndex(0);
+            FiltroQuincenanomina3.setVisible(false);
+            FiltroQuincenanomina3.setSelectedIndex(0);
+            LabelBQ3.setVisible(false);
+            FiltroNDF3.setText("");
+            FiltroNDF3.setVisible(true);
+            LabelBNDF3.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD3ItemStateChanged
+
+    private void FZservicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio3ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio3.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina3.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio3ItemStateChanged
+
+    private void FiltroQuincenanomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina3ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
+
+    private void FiltroSnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina3ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina3ItemStateChanged
+
+    private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS10ActionPerformed
+
+    private void Nominab3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab3KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab3KeyReleased
+
+    private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom3.getModel();
+
+            int fila = Tnom3.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom3.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom3.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom3.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom3.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom3.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom3.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom3.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom3.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom3.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom3.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom3.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom3.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom3.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom3.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom3.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom3.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom3.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom3.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom3.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom3.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom3.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom3.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom3.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom3.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom3.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom3.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom3.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom3.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom3.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom3.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom3MouseClicked
+
+    private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT2KeyReleased
+
+    private void FApT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT2KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT2KeyReleased
+
+    private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF2KeyReleased
+
+    private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
+
+        String FTD2 = (String) FiltrosTD2.getSelectedItem();
+        if (FTD2.equals("Selecciona filtro")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD2.equals("Filtrar por Apellido P")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Apellido P:");
+            FApT2.setText("");
+            FApT2.setVisible(true);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Apellido M")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Apellido M:");
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(true);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Nombre(s)")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(true);
+            LabelBE2.setText("Buscar Nombre(s):");
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(true);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por Servicio")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(true);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(true);
+            FZservicio2.setVisible(true);
+            LabelSZ2.setVisible(true);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por quincena")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(true);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(true);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(false);
+            LabelBNDF2.setVisible(false);
+            FunMD();
+        }
+        if (FTD2.equals("Filtrar por # Lista")) {
+            Nominab2.setText("");
+            LabelBE2.setVisible(false);
+            FApT2.setText("");
+            FApT2.setVisible(false);
+            FAmT2.setVisible(false);
+            FAmT2.setText("");
+            Nominab2.setVisible(false);
+            FiltroSnomina2.setVisible(false);
+            FiltroSnomina2.setSelectedIndex(0);
+            LabelBS2.setVisible(false);
+            FZservicio2.setVisible(false);
+            LabelSZ2.setVisible(false);
+            FZservicio2.setSelectedIndex(0);
+            FiltroQuincenanomina2.setVisible(false);
+            FiltroQuincenanomina2.setSelectedIndex(0);
+            LabelBQ2.setVisible(false);
+            FiltroNDF2.setText("");
+            FiltroNDF2.setVisible(true);
+            LabelBNDF2.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD2ItemStateChanged
+
+    private void FZservicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio2ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio2.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina2.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio2ItemStateChanged
+
+    private void FiltroQuincenanomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina2ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
+
+    private void FiltroSnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina2ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina2ItemStateChanged
+
+    private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS9ActionPerformed
+
+    private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab2KeyReleased
+
+    private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom2.getModel();
+
+            int fila = Tnom2.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom2.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom2.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom2.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom2.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom2.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom2.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom2.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom2.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom2.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom2.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom2.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom2.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom2.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom2.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom2.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom2.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom2.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom2.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom2.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom2.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom2.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom2.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom2.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom2.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom2.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom2.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom2.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom2.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom2.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom2.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom2.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom2MouseClicked
+
+    private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmTKeyReleased
+
+    private void FApTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApTKeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApTKeyReleased
+
+    private void FiltroNDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDFKeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDFKeyReleased
+
+    private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
+
+        String FTD = (String) FiltrosTD.getSelectedItem();
+        if (FTD.equals("Selecciona filtro")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD.equals("Filtrar por Apellido P")) {
+            Nominab.setText("");
+            LabelBE.setVisible(true);
+            LabelBE.setText("Buscar Apellido P:");
+            FApT.setText("");
+            FApT.setVisible(true);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por Apellido M")) {
+            Nominab.setText("");
+            LabelBE.setVisible(true);
+            LabelBE.setText("Buscar Apellido M:");
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(true);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por Nombre(s)")) {
+            Nominab.setText("");
+            LabelBE.setVisible(true);
+            LabelBE.setText("Buscar Nombre(s):");
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(true);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por Servicio")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(true);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(true);
+            FZservicio.setVisible(true);
+            LabelSZ.setVisible(true);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por quincena")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(true);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(true);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(false);
+            LabelBNDF.setVisible(false);
+            FunMD();
+        }
+        if (FTD.equals("Filtrar por # Lista")) {
+            Nominab.setText("");
+            LabelBE.setVisible(false);
+            FApT.setText("");
+            FApT.setVisible(false);
+            FAmT.setVisible(false);
+            FAmT.setText("");
+            Nominab.setVisible(false);
+            FiltroSnomina.setVisible(false);
+            FiltroSnomina.setSelectedIndex(0);
+            LabelBS.setVisible(false);
+            FZservicio.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio.setSelectedIndex(0);
+            FiltroQuincenanomina.setVisible(false);
+            FiltroQuincenanomina.setSelectedIndex(0);
+            LabelBQ.setVisible(false);
+            FiltroNDF.setText("");
+            FiltroNDF.setVisible(true);
+            LabelBNDF.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTDItemStateChanged
+
+    private void FZservicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicioItemStateChanged
+
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicioItemStateChanged
+
+    private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
+
+    private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnominaItemStateChanged
+
+    private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS2ActionPerformed
+
+    private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
+
+        FunMD();
+    }//GEN-LAST:event_NominabKeyReleased
+
+    private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
+
+            int fila = Tnom.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TnomMouseClicked
+
+    private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT1KeyReleased
+
+    private void FApT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT1KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT1KeyReleased
+
+    private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FiltroNDF1KeyReleased
+
+    private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
+
+        String FTD1 = (String) FiltrosTD1.getSelectedItem();
+        if (FTD1.equals("Selecciona filtro")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD1.equals("Filtrar por Apellido P")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Apellido P:");
+            FApT1.setText("");
+            FApT1.setVisible(true);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por Apellido M")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Apellido M:");
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(true);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por Nombre(s)")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(true);
+            LabelBE1.setText("Buscar Nombre(s):");
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(true);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por Servicio")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(true);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(true);
+            FZservicio1.setVisible(true);
+            LabelSZ1.setVisible(true);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por quincena")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(true);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(true);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(false);
+            LabelBNDF1.setVisible(false);
+            FunMD();
+        }
+        if (FTD1.equals("Filtrar por # Lista")) {
+            Nominab1.setText("");
+            LabelBE1.setVisible(false);
+            FApT1.setText("");
+            FApT1.setVisible(false);
+            FAmT1.setVisible(false);
+            FAmT1.setText("");
+            Nominab1.setVisible(false);
+            FiltroSnomina1.setVisible(false);
+            FiltroSnomina1.setSelectedIndex(0);
+            LabelBS1.setVisible(false);
+            FZservicio1.setVisible(false);
+            LabelSZ1.setVisible(false);
+            FZservicio1.setSelectedIndex(0);
+            FiltroQuincenanomina1.setVisible(false);
+            FiltroQuincenanomina1.setSelectedIndex(0);
+            LabelBQ1.setVisible(false);
+            FiltroNDF1.setText("");
+            FiltroNDF1.setVisible(true);
+            LabelBNDF1.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD1ItemStateChanged
+
+    private void FZservicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio1ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FZservicio1.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroSnomina1.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FZservicio1ItemStateChanged
+
+    private void FiltroQuincenanomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina1ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
+
+    private void FiltroSnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina1ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina1ItemStateChanged
+
+    private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS8ActionPerformed
+
+    private void Nominab1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab1KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab1KeyReleased
+
+    private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom1.getModel();
+
+            int fila = Tnom1.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom1.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom1.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom1.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom1.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom1.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom1.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom1.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom1.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom1.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom1.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom1.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom1.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom1.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom1.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom1.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom1.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom1.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom1.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom1.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom1.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom1.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom1.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom1.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom1.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom1.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom1.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom1.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom1.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom1.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom1.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom1.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom1MouseClicked
 
     private void buspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buspKeyReleased
         FunMD();
@@ -8303,7 +11367,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             LabelNDFP.setVisible(false);
             FunMD();
         }
-        if (FP.equals("Filtrar por semana")) {
+        if (FP.equals("Filtrar por quincena")) {
             busp.setVisible(false);
             LabelBEP.setVisible(false);
             BAppag.setVisible(false);
@@ -8509,7 +11573,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             LabelNDFP1.setVisible(false);
             FunMD();
         }
-        if (FP.equals("Filtrar por semana")) {
+        if (FP.equals("Filtrar por quincena")) {
             busp1.setVisible(false);
             LabelBEP1.setVisible(false);
             BAppag1.setVisible(false);
@@ -8716,7 +11780,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             LabelNDFP2.setVisible(false);
             FunMD();
         }
-        if (FP2.equals("Filtrar por semana")) {
+        if (FP2.equals("Filtrar por quincena")) {
             busp2.setVisible(false);
             LabelBEP2.setVisible(false);
             BAppag2.setVisible(false);
@@ -8922,7 +11986,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             LabelNDFP3.setVisible(false);
             FunMD();
         }
-        if (FP3.equals("Filtrar por semana")) {
+        if (FP3.equals("Filtrar por quincena")) {
             busp3.setVisible(false);
             LabelBEP3.setVisible(false);
             BAppag3.setVisible(false);
@@ -9129,7 +12193,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             LabelNDFP4.setVisible(false);
             FunMD();
         }
-        if (FP.equals("Filtrar por semana")) {
+        if (FP.equals("Filtrar por quincena")) {
             busp4.setVisible(false);
             LabelBEP4.setVisible(false);
             BAppag4.setVisible(false);
@@ -9334,7 +12398,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             LabelNDFP5.setVisible(false);
             FunMD();
         }
-        if (FP.equals("Filtrar por semana")) {
+        if (FP.equals("Filtrar por quincena")) {
             busp5.setVisible(false);
             LabelBEP5.setVisible(false);
             BAppag5.setVisible(false);
@@ -9540,7 +12604,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             LabelNDFP6.setVisible(false);
             FunMD();
         }
-        if (FP6.equals("Filtrar por semana")) {
+        if (FP6.equals("Filtrar por quincena")) {
             busp6.setVisible(false);
             LabelBEP6.setVisible(false);
             BAppag6.setVisible(false);
@@ -9746,7 +12810,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             LabelNDFP7.setVisible(false);
             FunMD();
         }
-        if (FP.equals("Filtrar por semana")) {
+        if (FP.equals("Filtrar por quincena")) {
             busp7.setVisible(false);
             LabelBEP7.setVisible(false);
             BAppag7.setVisible(false);
@@ -9976,6 +13040,492 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         obj.BDRH();
     }//GEN-LAST:event_jLabel2MousePressed
 
+    private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
+
+            int fila = Tnom8.getSelectedRow();
+            NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
+            NEnom.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
+            Ap.setText(String.valueOf(Tnom8.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom8.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom8.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
+            cta.setText(String.valueOf(Tnom8.getValueAt(fila, 6)));
+            Zon.setText(String.valueOf(Tnom8.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom8.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom8.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
+            pd.setText(String.valueOf(Tnom8.getValueAt(fila, 11)));
+            PH.setText(String.valueOf(Tnom8.getValueAt(fila, 12)));
+            String Quinc = model.getValueAt(fila, 13).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom8.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom8.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom8.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom8.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom8.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom8.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom8.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom8.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom8.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom8.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom8.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom8.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom8.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom8.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom8.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom8.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom8.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom8.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom8.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom8.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom8.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tnom8.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom8.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom8.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom8.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom8.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom8.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom8.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom8.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom8.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom8.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom8.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom8.getValueAt(fila, 57)));
+            AdN.setText(String.valueOf(Tnom8.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 63)));
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Tnom8MouseClicked
+
+    private void Nominab8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Nominab8KeyReleased
+
+    private void CS22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS22ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS22ActionPerformed
+
+    private void FiltroSnomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroSnomina8ItemStateChanged
+
+    private void FiltroQuincenanomina8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQuincenanomina8ItemStateChanged
+
+    private void FZservicio8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FZservicio8ItemStateChanged
+
+    private void FiltrosTD8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD8ItemStateChanged
+        String FTD8 = (String) FiltrosTD8.getSelectedItem();
+        if (FTD8.equals("Selecciona filtro")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+
+        }
+        if (FTD8.equals("Filtrar por Apellido P")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido P:");
+            FApT8.setText("");
+            FApT8.setVisible(true);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Apellido M")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Apellido M:");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(true);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Nombre(s)")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(true);
+            LabelBE8.setText("Buscar Nombre(s):");
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(true);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por Servicio")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(true);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(true);
+            FZservicio8.setVisible(true);
+            LabelSZ8.setVisible(true);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por quincena")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(true);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(true);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(false);
+            LabelBNDF8.setVisible(false);
+            FunMD();
+        }
+        if (FTD8.equals("Filtrar por # Lista")) {
+            Nominab8.setText("");
+            LabelBE8.setVisible(false);
+            FApT8.setText("");
+            FApT8.setVisible(false);
+            FAmT8.setVisible(false);
+            FAmT8.setText("");
+            Nominab8.setVisible(false);
+            FiltroSnomina8.setVisible(false);
+            FiltroSnomina8.setSelectedIndex(0);
+            LabelBS8.setVisible(false);
+            FZservicio8.setVisible(false);
+            LabelSZ8.setVisible(false);
+            FZservicio8.setSelectedIndex(0);
+            FiltroQuincenanomina8.setVisible(false);
+            FiltroQuincenanomina8.setSelectedIndex(0);
+            LabelBQ8.setVisible(false);
+            FiltroNDF8.setText("");
+            FiltroNDF8.setVisible(true);
+            LabelBNDF8.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosTD8ItemStateChanged
+
+    private void FiltroNDF8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF8KeyReleased
+        FunMD();
+
+    }//GEN-LAST:event_FiltroNDF8KeyReleased
+
+    private void FApT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FApT8KeyReleased
+
+    private void FAmT8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_FAmT8KeyReleased
+
+    private void busp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_busp8KeyReleased
+
+    private void CS23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS23ActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_CS23ActionPerformed
+
+    private void FiltroSZP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSZP8ItemStateChanged
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            FiltrosZonas zon = (FiltrosZonas) FiltroSZP8.getSelectedItem();
+            FiltroServ serv = new FiltroServ();
+            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
+            FiltroServP8.setModel(modelServicio);
+        }
+        FunMD();
+    }//GEN-LAST:event_FiltroSZP8ItemStateChanged
+
+    private void FiltroServP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroServP8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroServP8ItemStateChanged
+
+    private void filtroNDFP8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filtroNDFP8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_filtroNDFP8KeyReleased
+
+    private void FiltroQP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQP8ItemStateChanged
+        FunMD();
+    }//GEN-LAST:event_FiltroQP8ItemStateChanged
+
+    private void FiltrosP8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosP8ItemStateChanged
+        String FP = (String) FiltrosP8.getSelectedItem();
+        if (FP.equals("Selecciona filtro")) {
+            busp8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            LabelBEP8.setVisible(false);
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+
+        }
+        if (FP.equals("Filtrar por Nombre(s)")) {
+            busp8.setVisible(true);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por nombre:");
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido P")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por apellido P:");
+            BAppag8.setVisible(true);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Apellido M")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(true);
+            LabelBEP8.setText("Buscar por apellido M: ");
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(true);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por Servicio")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(true);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(true);
+            FiltroSZP8.setVisible(true);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(true);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por quincena")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(true);
+            FiltroQP8.setVisible(true);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(false);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(false);
+            FunMD();
+        }
+        if (FP.equals("Filtrar por # Lista")) {
+            busp8.setVisible(false);
+            LabelBEP8.setVisible(false);
+            BAppag8.setVisible(false);
+            BAppag8.setText("");
+            Bampag8.setVisible(false);
+            Bampag8.setText("");
+            busp8.setText("");
+            LabelBQP8.setVisible(false);
+            FiltroQP8.setVisible(false);
+            FiltroQP8.setSelectedIndex(0);
+            FiltroServP8.setVisible(false);
+            FiltroServP8.setSelectedIndex(0);
+            LabelBSP8.setVisible(false);
+            FiltroSZP8.setVisible(false);
+            FiltroSZP8.setSelectedIndex(0);
+            LabelSZP8.setVisible(false);
+            filtroNDFP8.setVisible(true);
+            filtroNDFP8.setText("");
+            LabelNDFP8.setVisible(true);
+            FunMD();
+        }
+    }//GEN-LAST:event_FiltrosP8ItemStateChanged
+
+    private void BAppag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAppag8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_BAppag8KeyReleased
+
+    private void Bampag8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Bampag8KeyReleased
+        FunMD();
+    }//GEN-LAST:event_Bampag8KeyReleased
+
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
         Logica_BDDep_FP obj = new Logica_BDDep_FP();
         obj.BDRH();
@@ -10011,2344 +13561,10 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         obj.BDRH();
     }//GEN-LAST:event_jLabel11MousePressed
 
-    private void FApTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApTKeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FApTKeyReleased
-
-    private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FAmTKeyReleased
-
-    private void FiltroSnominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnominaItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroSnominaItemStateChanged
-
-    private void FiltroQuincenanominaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanominaItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroQuincenanominaItemStateChanged
-
-    private void FZservicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicioItemStateChanged
-
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina.setModel(modelServicio);
-        }
-        FunMD();
-    }//GEN-LAST:event_FZservicioItemStateChanged
-
-    private void FiltrosTDItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTDItemStateChanged
-
-        String FTD = (String) FiltrosTD.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Apellido P:");
-            FApT.setText("");
-            FApT.setVisible(true);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Apellido M:");
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(true);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab.setText("");
-            LabelBE.setVisible(true);
-            LabelBE.setText("Buscar Nombre(s):");
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(true);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(true);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(true);
-            FZservicio.setVisible(true);
-            LabelSZ.setVisible(true);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por semana")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(true);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(true);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(false);
-            LabelBNDF.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab.setText("");
-            LabelBE.setVisible(false);
-            FApT.setText("");
-            FApT.setVisible(false);
-            FAmT.setVisible(false);
-            FAmT.setText("");
-            Nominab.setVisible(false);
-            FiltroSnomina.setVisible(false);
-            FiltroSnomina.setSelectedIndex(0);
-            LabelBS.setVisible(false);
-            FZservicio.setVisible(false);
-            LabelSZ.setVisible(false);
-            FZservicio.setSelectedIndex(0);
-            FiltroQuincenanomina.setVisible(false);
-            FiltroQuincenanomina.setSelectedIndex(0);
-            LabelBQ.setVisible(false);
-            FiltroNDF.setText("");
-            FiltroNDF.setVisible(true);
-            LabelBNDF.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTDItemStateChanged
-
-    private void NominabKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NominabKeyReleased
-
-        FunMD();
-    }//GEN-LAST:event_NominabKeyReleased
-
-    private void FiltroNDFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDFKeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FiltroNDFKeyReleased
-
-    private void CS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2ActionPerformed
-
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Inicio_1 regr = new Inicio_1();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS2ActionPerformed
-
-    private void TnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TnomMouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom.getModel();
-
-            int fila = Tnom.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
-            NE.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
-            ban.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
-            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom.getValueAt(fila, 11)));
-            PH.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
-            String Quinc = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom.getValueAt(fila, 15)));
-            pds.setText(String.valueOf(Tnom.getValueAt(fila, 16)));
-            Ddv.setText(String.valueOf(Tnom.getValueAt(fila, 17)));
-            PDDDV.setText(String.valueOf(Tnom.getValueAt(fila, 18)));
-            DD.setText(String.valueOf(Tnom.getValueAt(fila, 19)));
-            PDDD.setText(String.valueOf(Tnom.getValueAt(fila, 20)));
-            DL.setText(String.valueOf(Tnom.getValueAt(fila, 21)));
-            PDDL.setText(String.valueOf(Tnom.getValueAt(fila, 22)));
-            dt.setText(String.valueOf(Tnom.getValueAt(fila, 23)));
-            PDDT.setText(String.valueOf(Tnom.getValueAt(fila, 24)));
-            DSGS.setText(String.valueOf(Tnom.getValueAt(fila, 25)));
-            PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 26)));
-            FJ.setText(String.valueOf(Tnom.getValueAt(fila, 27)));
-            DO.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
-            DF.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
-            PDDF.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
-            DFT.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
-            PDDFT.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            HE.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            THE.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            R.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            PCR.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
-            apy.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
-            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
-            F.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
-            DPF.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
-            DI.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
-            RI.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
-            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
-            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
-            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
-            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
-            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 52)));
-            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
-            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
-            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 55)));
-            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 56)));
-            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 57)));
-            ADN.setText(String.valueOf(Tnom.getValueAt(fila, 58)));
-            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 59)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 60)));
-            cda.setText(String.valueOf(Tnom.getValueAt(fila, 61)));
-            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 63)));
-        } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_TnomMouseClicked
-
-    private void FApT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT1KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FApT1KeyReleased
-
-    private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FAmT1KeyReleased
-
-    private void FiltroSnomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina1ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroSnomina1ItemStateChanged
-
-    private void FiltroQuincenanomina1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina1ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroQuincenanomina1ItemStateChanged
-
-    private void FZservicio1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio1ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio1.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina1.setModel(modelServicio);
-        }
-    }//GEN-LAST:event_FZservicio1ItemStateChanged
-
-    private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
-
-        String FTD = (String) FiltrosTD1.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(false);
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(true);
-            LabelBE1.setText("Buscar Apellido P:");
-            FApT1.setText("");
-            FApT1.setVisible(true);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(true);
-            LabelBE1.setText("Buscar Apellido M:");
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(true);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(true);
-            LabelBE1.setText("Buscar Nombre(s):");
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(true);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(false);
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(true);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(true);
-            FZservicio1.setVisible(true);
-            LabelSZ1.setVisible(true);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por semana")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(false);
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(true);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(true);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(false);
-            LabelBNDF1.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab1.setText("");
-            LabelBE1.setVisible(false);
-            FApT1.setText("");
-            FApT1.setVisible(false);
-            FAmT1.setVisible(false);
-            FAmT1.setText("");
-            Nominab1.setVisible(false);
-            FiltroSnomina1.setVisible(false);
-            FiltroSnomina1.setSelectedIndex(0);
-            LabelBS1.setVisible(false);
-            FZservicio1.setVisible(false);
-            LabelSZ1.setVisible(false);
-            FZservicio1.setSelectedIndex(0);
-            FiltroQuincenanomina1.setVisible(false);
-            FiltroQuincenanomina1.setSelectedIndex(0);
-            LabelBQ1.setVisible(false);
-            FiltroNDF1.setText("");
-            FiltroNDF1.setVisible(true);
-            LabelBNDF1.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD1ItemStateChanged
-
-    private void Nominab1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab1KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_Nominab1KeyReleased
-
-    private void FiltroNDF1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF1KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FiltroNDF1KeyReleased
-
-    private void CS4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS4ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Inicio_1 regr = new Inicio_1();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS4ActionPerformed
-
-    private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom1.getModel();
-
-            int fila = Tnom1.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom1.getValueAt(fila, 0)));
-            NE.setText(String.valueOf(Tnom1.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom1.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom1.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom1.getValueAt(fila, 4)));
-            ban.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(Tnom1.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
-            Bono.setText(String.valueOf(Tnom1.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom1.getValueAt(fila, 11)));
-            PH.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
-            String Quinc = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom1.getValueAt(fila, 15)));
-            pds.setText(String.valueOf(Tnom1.getValueAt(fila, 16)));
-            Ddv.setText(String.valueOf(Tnom1.getValueAt(fila, 17)));
-            PDDDV.setText(String.valueOf(Tnom1.getValueAt(fila, 18)));
-            DD.setText(String.valueOf(Tnom1.getValueAt(fila, 19)));
-            PDDD.setText(String.valueOf(Tnom1.getValueAt(fila, 20)));
-            DL.setText(String.valueOf(Tnom1.getValueAt(fila, 21)));
-            PDDL.setText(String.valueOf(Tnom1.getValueAt(fila, 22)));
-            dt.setText(String.valueOf(Tnom1.getValueAt(fila, 23)));
-            PDDT.setText(String.valueOf(Tnom1.getValueAt(fila, 24)));
-            DSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 25)));
-            PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 26)));
-            FJ.setText(String.valueOf(Tnom1.getValueAt(fila, 27)));
-            DO.setText(String.valueOf(Tnom1.getValueAt(fila, 28)));
-            DF.setText(String.valueOf(Tnom1.getValueAt(fila, 29)));
-            PDDF.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
-            DFT.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
-            PDDFT.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
-            HE.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
-            THE.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
-            R.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
-            PCR.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
-            apy.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
-            ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 40)));
-            F.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
-            DPF.setText(String.valueOf(Tnom1.getValueAt(fila, 42)));
-            DI.setText(String.valueOf(Tnom1.getValueAt(fila, 43)));
-            RI.setText(String.valueOf(Tnom1.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 45)));
-            ISR.setText(String.valueOf(Tnom1.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tnom1.getValueAt(fila, 47)));
-            Sancion.setText(String.valueOf(Tnom1.getValueAt(fila, 48)));
-            Chamarra.setText(String.valueOf(Tnom1.getValueAt(fila, 49)));
-            Chaleco.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
-            Fde.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tnom1.getValueAt(fila, 52)));
-            Pantalon.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
-            Credencial.setText(String.valueOf(Tnom1.getValueAt(fila, 54)));
-            Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 55)));
-            Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 56)));
-            Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 57)));
-            ADN.setText(String.valueOf(Tnom1.getValueAt(fila, 58)));
-            DVT.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
-            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
-            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
-            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 63)));
-        } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom1MouseClicked
-
-    private void FApT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT2KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FApT2KeyReleased
-
-    private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FAmT2KeyReleased
-
-    private void FiltroSnomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina2ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroSnomina2ItemStateChanged
-
-    private void FiltroQuincenanomina2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina2ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroQuincenanomina2ItemStateChanged
-
-    private void FZservicio2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio2ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio2.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina2.setModel(modelServicio);
-        }
-    }//GEN-LAST:event_FZservicio2ItemStateChanged
-
-    private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
-
-        String FTD = (String) FiltrosTD2.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(false);
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(true);
-            LabelBE2.setText("Buscar Apellido P:");
-            FApT2.setText("");
-            FApT2.setVisible(true);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(true);
-            LabelBE2.setText("Buscar Apellido M:");
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(true);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(true);
-            LabelBE2.setText("Buscar Nombre(s):");
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(true);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(false);
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(true);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(true);
-            FZservicio2.setVisible(true);
-            LabelSZ2.setVisible(true);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por semana")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(false);
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(true);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(true);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(false);
-            LabelBNDF2.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab2.setText("");
-            LabelBE2.setVisible(false);
-            FApT2.setText("");
-            FApT2.setVisible(false);
-            FAmT2.setVisible(false);
-            FAmT2.setText("");
-            Nominab2.setVisible(false);
-            FiltroSnomina2.setVisible(false);
-            FiltroSnomina2.setSelectedIndex(0);
-            LabelBS2.setVisible(false);
-            FZservicio2.setVisible(false);
-            LabelSZ2.setVisible(false);
-            FZservicio2.setSelectedIndex(0);
-            FiltroQuincenanomina2.setVisible(false);
-            FiltroQuincenanomina2.setSelectedIndex(0);
-            LabelBQ2.setVisible(false);
-            FiltroNDF2.setText("");
-            FiltroNDF2.setVisible(true);
-            LabelBNDF2.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD2ItemStateChanged
-
-    private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_Nominab2KeyReleased
-
-    private void FiltroNDF2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF2KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FiltroNDF2KeyReleased
-
-    private void CS5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS5ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Inicio_1 regr = new Inicio_1();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS5ActionPerformed
-
-    private void Tnom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom2MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom2.getModel();
-
-            int fila = Tnom2.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom2.getValueAt(fila, 0)));
-            NE.setText(String.valueOf(Tnom2.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom2.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom2.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom2.getValueAt(fila, 4)));
-            ban.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(Tnom2.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
-            Bono.setText(String.valueOf(Tnom2.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom2.getValueAt(fila, 11)));
-            PH.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
-            String Quinc = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom2.getValueAt(fila, 15)));
-            pds.setText(String.valueOf(Tnom2.getValueAt(fila, 16)));
-            Ddv.setText(String.valueOf(Tnom2.getValueAt(fila, 17)));
-            PDDDV.setText(String.valueOf(Tnom2.getValueAt(fila, 18)));
-            DD.setText(String.valueOf(Tnom2.getValueAt(fila, 19)));
-            PDDD.setText(String.valueOf(Tnom2.getValueAt(fila, 20)));
-            DL.setText(String.valueOf(Tnom2.getValueAt(fila, 21)));
-            PDDL.setText(String.valueOf(Tnom2.getValueAt(fila, 22)));
-            dt.setText(String.valueOf(Tnom2.getValueAt(fila, 23)));
-            PDDT.setText(String.valueOf(Tnom2.getValueAt(fila, 24)));
-            DSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 25)));
-            PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 26)));
-            FJ.setText(String.valueOf(Tnom2.getValueAt(fila, 27)));
-            DO.setText(String.valueOf(Tnom2.getValueAt(fila, 28)));
-            DF.setText(String.valueOf(Tnom2.getValueAt(fila, 29)));
-            PDDF.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
-            DFT.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
-            PDDFT.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
-            HE.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
-            THE.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
-            R.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
-            PCR.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
-            apy.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
-            ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 40)));
-            F.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
-            DPF.setText(String.valueOf(Tnom2.getValueAt(fila, 42)));
-            DI.setText(String.valueOf(Tnom2.getValueAt(fila, 43)));
-            RI.setText(String.valueOf(Tnom2.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 45)));
-            ISR.setText(String.valueOf(Tnom2.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tnom2.getValueAt(fila, 47)));
-            Sancion.setText(String.valueOf(Tnom2.getValueAt(fila, 48)));
-            Chamarra.setText(String.valueOf(Tnom2.getValueAt(fila, 49)));
-            Chaleco.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
-            Fde.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tnom2.getValueAt(fila, 52)));
-            Pantalon.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
-            Credencial.setText(String.valueOf(Tnom2.getValueAt(fila, 54)));
-            Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 55)));
-            Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 56)));
-            Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 57)));
-            ADN.setText(String.valueOf(Tnom2.getValueAt(fila, 58)));
-            DVT.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
-            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
-            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
-            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 63)));
-        } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom2MouseClicked
-
-    private void FApT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT3KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FApT3KeyReleased
-
-    private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FAmT3KeyReleased
-
-    private void FiltroSnomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina3ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroSnomina3ItemStateChanged
-
-    private void FiltroQuincenanomina3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina3ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroQuincenanomina3ItemStateChanged
-
-    private void FZservicio3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio3ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio3.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina3.setModel(modelServicio);
-        }
-    }//GEN-LAST:event_FZservicio3ItemStateChanged
-
-    private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
-
-        String FTD = (String) FiltrosTD3.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(false);
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(true);
-            LabelBE3.setText("Buscar Apellido P:");
-            FApT3.setText("");
-            FApT3.setVisible(true);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(true);
-            LabelBE3.setText("Buscar Apellido M:");
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(true);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(true);
-            LabelBE3.setText("Buscar Nombre(s):");
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(true);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(false);
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(true);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(true);
-            FZservicio3.setVisible(true);
-            LabelSZ3.setVisible(true);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por semana")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(false);
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(true);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(true);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(false);
-            LabelBNDF3.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab3.setText("");
-            LabelBE3.setVisible(false);
-            FApT3.setText("");
-            FApT3.setVisible(false);
-            FAmT3.setVisible(false);
-            FAmT3.setText("");
-            Nominab3.setVisible(false);
-            FiltroSnomina3.setVisible(false);
-            FiltroSnomina3.setSelectedIndex(0);
-            LabelBS3.setVisible(false);
-            FZservicio3.setVisible(false);
-            LabelSZ3.setVisible(false);
-            FZservicio3.setSelectedIndex(0);
-            FiltroQuincenanomina3.setVisible(false);
-            FiltroQuincenanomina3.setSelectedIndex(0);
-            LabelBQ3.setVisible(false);
-            FiltroNDF3.setText("");
-            FiltroNDF3.setVisible(true);
-            LabelBNDF3.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD3ItemStateChanged
-
-    private void Nominab3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab3KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_Nominab3KeyReleased
-
-    private void FiltroNDF3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF3KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FiltroNDF3KeyReleased
-
-    private void CS6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS6ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Inicio_1 regr = new Inicio_1();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS6ActionPerformed
-
-    private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom3.getModel();
-
-            int fila = Tnom3.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom3.getValueAt(fila, 0)));
-            NE.setText(String.valueOf(Tnom3.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom3.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom3.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom3.getValueAt(fila, 4)));
-            ban.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(Tnom3.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
-            Bono.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom3.getValueAt(fila, 11)));
-            PH.setText(String.valueOf(Tnom3.getValueAt(fila, 12)));
-            String Quinc = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom3.getValueAt(fila, 15)));
-            pds.setText(String.valueOf(Tnom3.getValueAt(fila, 16)));
-            Ddv.setText(String.valueOf(Tnom3.getValueAt(fila, 17)));
-            PDDDV.setText(String.valueOf(Tnom3.getValueAt(fila, 18)));
-            DD.setText(String.valueOf(Tnom3.getValueAt(fila, 19)));
-            PDDD.setText(String.valueOf(Tnom3.getValueAt(fila, 20)));
-            DL.setText(String.valueOf(Tnom3.getValueAt(fila, 21)));
-            PDDL.setText(String.valueOf(Tnom3.getValueAt(fila, 22)));
-            dt.setText(String.valueOf(Tnom3.getValueAt(fila, 23)));
-            PDDT.setText(String.valueOf(Tnom3.getValueAt(fila, 24)));
-            DSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 25)));
-            PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 26)));
-            FJ.setText(String.valueOf(Tnom3.getValueAt(fila, 27)));
-            DO.setText(String.valueOf(Tnom3.getValueAt(fila, 28)));
-            DF.setText(String.valueOf(Tnom3.getValueAt(fila, 29)));
-            PDDF.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
-            DFT.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
-            PDDFT.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
-            HE.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
-            THE.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
-            R.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
-            PCR.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
-            apy.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
-            ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 40)));
-            F.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
-            DPF.setText(String.valueOf(Tnom3.getValueAt(fila, 42)));
-            DI.setText(String.valueOf(Tnom3.getValueAt(fila, 43)));
-            RI.setText(String.valueOf(Tnom3.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 45)));
-            ISR.setText(String.valueOf(Tnom3.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tnom3.getValueAt(fila, 47)));
-            Sancion.setText(String.valueOf(Tnom3.getValueAt(fila, 48)));
-            Chamarra.setText(String.valueOf(Tnom3.getValueAt(fila, 49)));
-            Chaleco.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
-            Fde.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tnom3.getValueAt(fila, 52)));
-            Pantalon.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
-            Credencial.setText(String.valueOf(Tnom3.getValueAt(fila, 54)));
-            Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 55)));
-            Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 56)));
-            Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 57)));
-            ADN.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
-            DVT.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
-            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
-            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
-            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 63)));
-        } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom3MouseClicked
-
-    private void FApT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT4KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FApT4KeyReleased
-
-    private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FAmT4KeyReleased
-
-    private void FiltroSnomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina4ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroSnomina4ItemStateChanged
-
-    private void FiltroQuincenanomina4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina4ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroQuincenanomina4ItemStateChanged
-
-    private void FZservicio4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio4ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio4.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina4.setModel(modelServicio);
-        }
-    }//GEN-LAST:event_FZservicio4ItemStateChanged
-
-    private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
-
-        String FTD = (String) FiltrosTD4.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(false);
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(true);
-            LabelBE4.setText("Buscar Apellido P:");
-            FApT4.setText("");
-            FApT4.setVisible(true);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(true);
-            LabelBE4.setText("Buscar Apellido M:");
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(true);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(true);
-            LabelBE4.setText("Buscar Nombre(s):");
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(true);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(false);
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(true);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(true);
-            FZservicio4.setVisible(true);
-            LabelSZ4.setVisible(true);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por semana")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(false);
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(true);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(true);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(false);
-            LabelBNDF4.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab4.setText("");
-            LabelBE4.setVisible(false);
-            FApT4.setText("");
-            FApT4.setVisible(false);
-            FAmT4.setVisible(false);
-            FAmT4.setText("");
-            Nominab4.setVisible(false);
-            FiltroSnomina4.setVisible(false);
-            FiltroSnomina4.setSelectedIndex(0);
-            LabelBS4.setVisible(false);
-            FZservicio4.setVisible(false);
-            LabelSZ4.setVisible(false);
-            FZservicio4.setSelectedIndex(0);
-            FiltroQuincenanomina4.setVisible(false);
-            FiltroQuincenanomina4.setSelectedIndex(0);
-            LabelBQ4.setVisible(false);
-            FiltroNDF4.setText("");
-            FiltroNDF4.setVisible(true);
-            LabelBNDF4.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD4ItemStateChanged
-
-    private void Nominab4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab4KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_Nominab4KeyReleased
-
-    private void FiltroNDF4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF4KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FiltroNDF4KeyReleased
-
-    private void CS7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS7ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Inicio_1 regr = new Inicio_1();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS7ActionPerformed
-
-    private void Tnom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom4MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom4.getModel();
-
-            int fila = Tnom4.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom4.getValueAt(fila, 0)));
-            NE.setText(String.valueOf(Tnom4.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom4.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom4.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom4.getValueAt(fila, 4)));
-            ban.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(Tnom4.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
-            Bono.setText(String.valueOf(Tnom4.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom4.getValueAt(fila, 11)));
-            PH.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
-            String Quinc = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom4.getValueAt(fila, 15)));
-            pds.setText(String.valueOf(Tnom4.getValueAt(fila, 16)));
-            Ddv.setText(String.valueOf(Tnom4.getValueAt(fila, 17)));
-            PDDDV.setText(String.valueOf(Tnom4.getValueAt(fila, 18)));
-            DD.setText(String.valueOf(Tnom4.getValueAt(fila, 19)));
-            PDDD.setText(String.valueOf(Tnom4.getValueAt(fila, 20)));
-            DL.setText(String.valueOf(Tnom4.getValueAt(fila, 21)));
-            PDDL.setText(String.valueOf(Tnom4.getValueAt(fila, 22)));
-            dt.setText(String.valueOf(Tnom4.getValueAt(fila, 23)));
-            PDDT.setText(String.valueOf(Tnom4.getValueAt(fila, 24)));
-            DSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 25)));
-            PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 26)));
-            FJ.setText(String.valueOf(Tnom4.getValueAt(fila, 27)));
-            DO.setText(String.valueOf(Tnom4.getValueAt(fila, 28)));
-            DF.setText(String.valueOf(Tnom4.getValueAt(fila, 29)));
-            PDDF.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
-            DFT.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
-            PDDFT.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
-            HE.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
-            THE.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
-            R.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
-            PCR.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
-            apy.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
-            ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 40)));
-            F.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
-            DPF.setText(String.valueOf(Tnom4.getValueAt(fila, 42)));
-            DI.setText(String.valueOf(Tnom4.getValueAt(fila, 43)));
-            RI.setText(String.valueOf(Tnom4.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 45)));
-            ISR.setText(String.valueOf(Tnom4.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tnom4.getValueAt(fila, 47)));
-            Sancion.setText(String.valueOf(Tnom4.getValueAt(fila, 48)));
-            Chamarra.setText(String.valueOf(Tnom4.getValueAt(fila, 49)));
-            Chaleco.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
-            Fde.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tnom4.getValueAt(fila, 52)));
-            Pantalon.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
-            Credencial.setText(String.valueOf(Tnom4.getValueAt(fila, 54)));
-            Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 55)));
-            Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 56)));
-            Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 57)));
-            ADN.setText(String.valueOf(Tnom4.getValueAt(fila, 58)));
-            DVT.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
-            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
-            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
-            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 63)));
-        } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom4MouseClicked
-
-    private void FApT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT5KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FApT5KeyReleased
-
-    private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FAmT5KeyReleased
-
-    private void FiltroSnomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina5ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroSnomina5ItemStateChanged
-
-    private void FiltroQuincenanomina5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina5ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroQuincenanomina5ItemStateChanged
-
-    private void FZservicio5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio5ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio5.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina5.setModel(modelServicio);
-        }
-    }//GEN-LAST:event_FZservicio5ItemStateChanged
-
-    private void FiltrosTD5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD5ItemStateChanged
-
-        String FTD = (String) FiltrosTD5.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(false);
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(true);
-            LabelBE5.setText("Buscar Apellido P:");
-            FApT5.setText("");
-            FApT5.setVisible(true);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(true);
-            LabelBE5.setText("Buscar Apellido M:");
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(true);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(true);
-            LabelBE5.setText("Buscar Nombre(s):");
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(true);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(false);
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(true);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(true);
-            FZservicio5.setVisible(true);
-            LabelSZ5.setVisible(true);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por semana")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(false);
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(true);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(true);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(false);
-            LabelBNDF5.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab5.setText("");
-            LabelBE5.setVisible(false);
-            FApT5.setText("");
-            FApT5.setVisible(false);
-            FAmT5.setVisible(false);
-            FAmT5.setText("");
-            Nominab5.setVisible(false);
-            FiltroSnomina5.setVisible(false);
-            FiltroSnomina5.setSelectedIndex(0);
-            LabelBS5.setVisible(false);
-            FZservicio5.setVisible(false);
-            LabelSZ5.setVisible(false);
-            FZservicio5.setSelectedIndex(0);
-            FiltroQuincenanomina5.setVisible(false);
-            FiltroQuincenanomina5.setSelectedIndex(0);
-            LabelBQ5.setVisible(false);
-            FiltroNDF5.setText("");
-            FiltroNDF5.setVisible(true);
-            LabelBNDF5.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD5ItemStateChanged
-
-    private void Nominab5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab5KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_Nominab5KeyReleased
-
-    private void FiltroNDF5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF5KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FiltroNDF5KeyReleased
-
-    private void CS8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS8ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Inicio_1 regr = new Inicio_1();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS8ActionPerformed
-
-    private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
-
-            int fila = Tnom5.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom5.getValueAt(fila, 0)));
-            NE.setText(String.valueOf(Tnom5.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom5.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom5.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom5.getValueAt(fila, 4)));
-            ban.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(Tnom5.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
-            Bono.setText(String.valueOf(Tnom5.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom5.getValueAt(fila, 11)));
-            PH.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
-            String Quinc = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom5.getValueAt(fila, 15)));
-            pds.setText(String.valueOf(Tnom5.getValueAt(fila, 16)));
-            Ddv.setText(String.valueOf(Tnom5.getValueAt(fila, 17)));
-            PDDDV.setText(String.valueOf(Tnom5.getValueAt(fila, 18)));
-            DD.setText(String.valueOf(Tnom5.getValueAt(fila, 19)));
-            PDDD.setText(String.valueOf(Tnom5.getValueAt(fila, 20)));
-            DL.setText(String.valueOf(Tnom5.getValueAt(fila, 21)));
-            PDDL.setText(String.valueOf(Tnom5.getValueAt(fila, 22)));
-            dt.setText(String.valueOf(Tnom5.getValueAt(fila, 23)));
-            PDDT.setText(String.valueOf(Tnom5.getValueAt(fila, 24)));
-            DSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 25)));
-            PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 26)));
-            FJ.setText(String.valueOf(Tnom5.getValueAt(fila, 27)));
-            DO.setText(String.valueOf(Tnom5.getValueAt(fila, 28)));
-            DF.setText(String.valueOf(Tnom5.getValueAt(fila, 29)));
-            PDDF.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
-            DFT.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
-            PDDFT.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
-            HE.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
-            THE.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
-            R.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
-            PCR.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
-            apy.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
-            ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 40)));
-            F.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
-            DPF.setText(String.valueOf(Tnom5.getValueAt(fila, 42)));
-            DI.setText(String.valueOf(Tnom5.getValueAt(fila, 43)));
-            RI.setText(String.valueOf(Tnom5.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 45)));
-            ISR.setText(String.valueOf(Tnom5.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tnom5.getValueAt(fila, 47)));
-            Sancion.setText(String.valueOf(Tnom5.getValueAt(fila, 48)));
-            Chamarra.setText(String.valueOf(Tnom5.getValueAt(fila, 49)));
-            Chaleco.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
-            Fde.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tnom5.getValueAt(fila, 52)));
-            Pantalon.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
-            Credencial.setText(String.valueOf(Tnom5.getValueAt(fila, 54)));
-            Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 55)));
-            Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 56)));
-            Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 57)));
-            ADN.setText(String.valueOf(Tnom5.getValueAt(fila, 58)));
-            DVT.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
-            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
-            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
-            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 63)));
-        } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom5MouseClicked
-
-    private void FApT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT6KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FApT6KeyReleased
-
-    private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FAmT6KeyReleased
-
-    private void FiltroSnomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina6ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroSnomina6ItemStateChanged
-
-    private void FiltroQuincenanomina6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina6ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroQuincenanomina6ItemStateChanged
-
-    private void FZservicio6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio6ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio6.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina6.setModel(modelServicio);
-        }
-    }//GEN-LAST:event_FZservicio6ItemStateChanged
-
-    private void FiltrosTD6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD6ItemStateChanged
-
-        String FTD = (String) FiltrosTD6.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(false);
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(true);
-            LabelBE6.setText("Buscar Apellido P:");
-            FApT6.setText("");
-            FApT6.setVisible(true);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(true);
-            LabelBE6.setText("Buscar Apellido M:");
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(true);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(true);
-            LabelBE6.setText("Buscar Nombre(s):");
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(true);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(false);
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(true);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(true);
-            FZservicio6.setVisible(true);
-            LabelSZ6.setVisible(true);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por semana")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(false);
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(true);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(true);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(false);
-            LabelBNDF6.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab6.setText("");
-            LabelBE6.setVisible(false);
-            FApT6.setText("");
-            FApT6.setVisible(false);
-            FAmT6.setVisible(false);
-            FAmT6.setText("");
-            Nominab6.setVisible(false);
-            FiltroSnomina6.setVisible(false);
-            FiltroSnomina6.setSelectedIndex(0);
-            LabelBS6.setVisible(false);
-            FZservicio6.setVisible(false);
-            LabelSZ6.setVisible(false);
-            FZservicio6.setSelectedIndex(0);
-            FiltroQuincenanomina6.setVisible(false);
-            FiltroQuincenanomina6.setSelectedIndex(0);
-            LabelBQ6.setVisible(false);
-            FiltroNDF6.setText("");
-            FiltroNDF6.setVisible(true);
-            LabelBNDF6.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD6ItemStateChanged
-
-    private void Nominab6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab6KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_Nominab6KeyReleased
-
-    private void FiltroNDF6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF6KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FiltroNDF6KeyReleased
-
-    private void CS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS9ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Inicio_1 regr = new Inicio_1();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS9ActionPerformed
-
-    private void Tnom6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom6MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom6.getModel();
-
-            int fila = Tnom6.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
-            NE.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom6.getValueAt(fila, 4)));
-            ban.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(Tnom6.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
-            Bono.setText(String.valueOf(Tnom6.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom6.getValueAt(fila, 11)));
-            PH.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
-            String Quinc = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom6.getValueAt(fila, 15)));
-            pds.setText(String.valueOf(Tnom6.getValueAt(fila, 16)));
-            Ddv.setText(String.valueOf(Tnom6.getValueAt(fila, 17)));
-            PDDDV.setText(String.valueOf(Tnom6.getValueAt(fila, 18)));
-            DD.setText(String.valueOf(Tnom6.getValueAt(fila, 19)));
-            PDDD.setText(String.valueOf(Tnom6.getValueAt(fila, 20)));
-            DL.setText(String.valueOf(Tnom6.getValueAt(fila, 21)));
-            PDDL.setText(String.valueOf(Tnom6.getValueAt(fila, 22)));
-            dt.setText(String.valueOf(Tnom6.getValueAt(fila, 23)));
-            PDDT.setText(String.valueOf(Tnom6.getValueAt(fila, 24)));
-            DSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 25)));
-            PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 26)));
-            FJ.setText(String.valueOf(Tnom6.getValueAt(fila, 27)));
-            DO.setText(String.valueOf(Tnom6.getValueAt(fila, 28)));
-            DF.setText(String.valueOf(Tnom6.getValueAt(fila, 29)));
-            PDDF.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
-            DFT.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
-            PDDFT.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
-            HE.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
-            THE.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
-            R.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
-            PCR.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
-            apy.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
-            ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 40)));
-            F.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
-            DPF.setText(String.valueOf(Tnom6.getValueAt(fila, 42)));
-            DI.setText(String.valueOf(Tnom6.getValueAt(fila, 43)));
-            RI.setText(String.valueOf(Tnom6.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 45)));
-            ISR.setText(String.valueOf(Tnom6.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tnom6.getValueAt(fila, 47)));
-            Sancion.setText(String.valueOf(Tnom6.getValueAt(fila, 48)));
-            Chamarra.setText(String.valueOf(Tnom6.getValueAt(fila, 49)));
-            Chaleco.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
-            Fde.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tnom6.getValueAt(fila, 52)));
-            Pantalon.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
-            Credencial.setText(String.valueOf(Tnom6.getValueAt(fila, 54)));
-            Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 55)));
-            Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 56)));
-            Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 57)));
-            ADN.setText(String.valueOf(Tnom6.getValueAt(fila, 58)));
-            DVT.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
-            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
-            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
-            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 63)));
-        } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom6MouseClicked
-
-    private void FApT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FApT7KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FApT7KeyReleased
-
-    private void FAmT7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT7KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FAmT7KeyReleased
-
-    private void FiltroSnomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroSnomina7ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroSnomina7ItemStateChanged
-
-    private void FiltroQuincenanomina7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltroQuincenanomina7ItemStateChanged
-        FunMD();
-
-    }//GEN-LAST:event_FiltroQuincenanomina7ItemStateChanged
-
-    private void FZservicio7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FZservicio7ItemStateChanged
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            FiltrosZonas zon = (FiltrosZonas) FZservicio7.getSelectedItem();
-            FiltroServ serv = new FiltroServ();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            FiltroSnomina7.setModel(modelServicio);
-        }
-    }//GEN-LAST:event_FZservicio7ItemStateChanged
-
-    private void FiltrosTD7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD7ItemStateChanged
-
-        String FTD = (String) FiltrosTD7.getSelectedItem();
-        if (FTD.equals("Selecciona filtro")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(false);
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-
-        }
-        if (FTD.equals("Filtrar por Apellido P")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(true);
-            LabelBE7.setText("Buscar Apellido P:");
-            FApT7.setText("");
-            FApT7.setVisible(true);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Apellido M")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(true);
-            LabelBE7.setText("Buscar Apellido M:");
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(true);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Nombre(s)")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(true);
-            LabelBE7.setText("Buscar Nombre(s):");
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(true);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por Servicio")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(false);
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(true);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(true);
-            FZservicio7.setVisible(true);
-            LabelSZ7.setVisible(true);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por semana")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(false);
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(true);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(true);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(false);
-            LabelBNDF7.setVisible(false);
-            FunMD();
-        }
-        if (FTD.equals("Filtrar por # Lista")) {
-            Nominab7.setText("");
-            LabelBE7.setVisible(false);
-            FApT7.setText("");
-            FApT7.setVisible(false);
-            FAmT7.setVisible(false);
-            FAmT7.setText("");
-            Nominab7.setVisible(false);
-            FiltroSnomina7.setVisible(false);
-            FiltroSnomina7.setSelectedIndex(0);
-            LabelBS7.setVisible(false);
-            FZservicio7.setVisible(false);
-            LabelSZ7.setVisible(false);
-            FZservicio7.setSelectedIndex(0);
-            FiltroQuincenanomina7.setVisible(false);
-            FiltroQuincenanomina7.setSelectedIndex(0);
-            LabelBQ7.setVisible(false);
-            FiltroNDF7.setText("");
-            FiltroNDF7.setVisible(true);
-            LabelBNDF7.setVisible(true);
-            FunMD();
-        }
-    }//GEN-LAST:event_FiltrosTD7ItemStateChanged
-
-    private void Nominab7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab7KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_Nominab7KeyReleased
-
-    private void FiltroNDF7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FiltroNDF7KeyReleased
-        FunMD();
-
-    }//GEN-LAST:event_FiltroNDF7KeyReleased
-
-    private void CS10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS10ActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
-        if (i == 0) {
-            Inicio_1 regr = new Inicio_1();
-            regr.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_CS10ActionPerformed
-
-    private void Tnom7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom7MouseClicked
-        try {
-
-            DefaultTableModel model = (DefaultTableModel) Tnom7.getModel();
-
-            int fila = Tnom7.getSelectedRow();
-            NDL.setText(String.valueOf(Tnom7.getValueAt(fila, 0)));
-            NE.setText(String.valueOf(Tnom7.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom7.getValueAt(fila, 2)));
-            am.setText(String.valueOf(Tnom7.getValueAt(fila, 3)));
-            name.setText(String.valueOf(Tnom7.getValueAt(fila, 4)));
-            ban.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
-            cta.setText(String.valueOf(Tnom7.getValueAt(fila, 6)));
-            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
-            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
-            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
-            Bono.setText(String.valueOf(Tnom7.getValueAt(fila, 10)));
-            pd.setText(String.valueOf(Tnom7.getValueAt(fila, 11)));
-            PH.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
-            String Quinc = model.getValueAt(fila, 13).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
-                }
-            }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
-            año.setDate(date);
-            Dpi.setText(String.valueOf(Tnom7.getValueAt(fila, 15)));
-            pds.setText(String.valueOf(Tnom7.getValueAt(fila, 16)));
-            Ddv.setText(String.valueOf(Tnom7.getValueAt(fila, 17)));
-            PDDDV.setText(String.valueOf(Tnom7.getValueAt(fila, 18)));
-            DD.setText(String.valueOf(Tnom7.getValueAt(fila, 19)));
-            PDDD.setText(String.valueOf(Tnom7.getValueAt(fila, 20)));
-            DL.setText(String.valueOf(Tnom7.getValueAt(fila, 21)));
-            PDDL.setText(String.valueOf(Tnom7.getValueAt(fila, 22)));
-            dt.setText(String.valueOf(Tnom7.getValueAt(fila, 23)));
-            PDDT.setText(String.valueOf(Tnom7.getValueAt(fila, 24)));
-            DSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 25)));
-            PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 26)));
-            FJ.setText(String.valueOf(Tnom7.getValueAt(fila, 27)));
-            DO.setText(String.valueOf(Tnom7.getValueAt(fila, 28)));
-            DF.setText(String.valueOf(Tnom7.getValueAt(fila, 29)));
-            PDDF.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
-            DFT.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
-            PDDFT.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
-            HE.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
-            THE.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
-            R.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
-            PCR.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
-            apy.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
-            ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 40)));
-            F.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
-            DPF.setText(String.valueOf(Tnom7.getValueAt(fila, 42)));
-            DI.setText(String.valueOf(Tnom7.getValueAt(fila, 43)));
-            RI.setText(String.valueOf(Tnom7.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 45)));
-            ISR.setText(String.valueOf(Tnom7.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tnom7.getValueAt(fila, 47)));
-            Sancion.setText(String.valueOf(Tnom7.getValueAt(fila, 48)));
-            Chamarra.setText(String.valueOf(Tnom7.getValueAt(fila, 49)));
-            Chaleco.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
-            Fde.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tnom7.getValueAt(fila, 52)));
-            Pantalon.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
-            Credencial.setText(String.valueOf(Tnom7.getValueAt(fila, 54)));
-            Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 55)));
-            Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 56)));
-            Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 57)));
-            ADN.setText(String.valueOf(Tnom7.getValueAt(fila, 58)));
-            DVT.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
-            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
-            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
-            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 63)));
-        } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
-                    .getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Tnom7MouseClicked
+    private void jLabel12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MousePressed
+        Logica_BDDep_CSQ obj = new Logica_BDDep_CSQ();
+        obj.BDRH();
+    }//GEN-LAST:event_jLabel12MousePressed
 
     private void TdepMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TdepMousePressed
         try {
@@ -12358,7 +13574,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tdep.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep.getValueAt(fila, 1)));
-            NE.setText(String.valueOf(Tdep.getValueAt(fila, 2)));
+            NEnom.setText(String.valueOf(Tdep.getValueAt(fila, 2)));
             Ap.setText(String.valueOf(Tdep.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep.getValueAt(fila, 5)));
@@ -12371,9 +13587,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tdep.getValueAt(fila, 12)));
             PH.setText(String.valueOf(Tdep.getValueAt(fila, 13)));
             String Quinc = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
                 }
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
@@ -12409,7 +13625,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             DI.setText(String.valueOf(Tdep.getValueAt(fila, 44)));
             RI.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
             RF.setText(String.valueOf(Tdep.getValueAt(fila, 46)));
-            ISR.setText(String.valueOf(Tdep.getValueAt(fila, 47)));
+            NomISR.setText(String.valueOf(Tdep.getValueAt(fila, 47)));
             Fdb.setText(String.valueOf(Tdep.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep.getValueAt(fila, 50)));
@@ -12424,7 +13640,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Presp.setText(String.valueOf(Tdep.getValueAt(fila, 59)));
             cda.setText(String.valueOf(Tdep.getValueAt(fila, 60)));
             Odtp.setText(String.valueOf(Tdep.getValueAt(fila, 61)));
-            ADN.setText(String.valueOf(Tdep.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tdep.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tdep.getValueAt(fila, 63)));
             Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
             FDD.setDate(date1);
@@ -12438,7 +13654,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Obsdeposito.setText(String.valueOf(Tdep.getValueAt(fila, 67)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
@@ -12452,7 +13668,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tdep1.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep1.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep1.getValueAt(fila, 1)));
-            NE.setText(String.valueOf(Tdep1.getValueAt(fila, 2)));
+            NEnom.setText(String.valueOf(Tdep1.getValueAt(fila, 2)));
             Ap.setText(String.valueOf(Tdep1.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep1.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep1.getValueAt(fila, 5)));
@@ -12465,9 +13681,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tdep1.getValueAt(fila, 12)));
             PH.setText(String.valueOf(Tdep1.getValueAt(fila, 13)));
             String Quinc = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
                 }
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
@@ -12503,7 +13719,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             DI.setText(String.valueOf(Tdep1.getValueAt(fila, 44)));
             RI.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
             RF.setText(String.valueOf(Tdep1.getValueAt(fila, 46)));
-            ISR.setText(String.valueOf(Tdep1.getValueAt(fila, 47)));
+            NomISR.setText(String.valueOf(Tdep1.getValueAt(fila, 47)));
             Fdb.setText(String.valueOf(Tdep1.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep1.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep1.getValueAt(fila, 50)));
@@ -12518,7 +13734,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Presp.setText(String.valueOf(Tdep1.getValueAt(fila, 59)));
             cda.setText(String.valueOf(Tdep1.getValueAt(fila, 60)));
             Odtp.setText(String.valueOf(Tdep1.getValueAt(fila, 61)));
-            ADN.setText(String.valueOf(Tdep1.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tdep1.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tdep1.getValueAt(fila, 63)));
             Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
             FDD.setDate(date1);
@@ -12532,7 +13748,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Obsdeposito.setText(String.valueOf(Tdep1.getValueAt(fila, 67)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
@@ -12546,7 +13762,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tdep2.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep2.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep2.getValueAt(fila, 1)));
-            NE.setText(String.valueOf(Tdep2.getValueAt(fila, 2)));
+            NEnom.setText(String.valueOf(Tdep2.getValueAt(fila, 2)));
             Ap.setText(String.valueOf(Tdep2.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep2.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep2.getValueAt(fila, 5)));
@@ -12559,9 +13775,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tdep2.getValueAt(fila, 12)));
             PH.setText(String.valueOf(Tdep2.getValueAt(fila, 13)));
             String Quinc = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
                 }
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
@@ -12597,7 +13813,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             DI.setText(String.valueOf(Tdep2.getValueAt(fila, 44)));
             RI.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
             RF.setText(String.valueOf(Tdep2.getValueAt(fila, 46)));
-            ISR.setText(String.valueOf(Tdep2.getValueAt(fila, 47)));
+            NomISR.setText(String.valueOf(Tdep2.getValueAt(fila, 47)));
             Fdb.setText(String.valueOf(Tdep2.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep2.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep2.getValueAt(fila, 50)));
@@ -12612,7 +13828,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Presp.setText(String.valueOf(Tdep2.getValueAt(fila, 59)));
             cda.setText(String.valueOf(Tdep2.getValueAt(fila, 60)));
             Odtp.setText(String.valueOf(Tdep2.getValueAt(fila, 61)));
-            ADN.setText(String.valueOf(Tdep2.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tdep2.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tdep2.getValueAt(fila, 63)));
             Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
             FDD.setDate(date1);
@@ -12626,7 +13842,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Obsdeposito.setText(String.valueOf(Tdep2.getValueAt(fila, 67)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
@@ -12640,7 +13856,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tdep3.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep3.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep3.getValueAt(fila, 1)));
-            NE.setText(String.valueOf(Tdep3.getValueAt(fila, 2)));
+            NEnom.setText(String.valueOf(Tdep3.getValueAt(fila, 2)));
             Ap.setText(String.valueOf(Tdep3.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep3.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep3.getValueAt(fila, 5)));
@@ -12653,9 +13869,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tdep3.getValueAt(fila, 12)));
             PH.setText(String.valueOf(Tdep3.getValueAt(fila, 13)));
             String Quinc = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
                 }
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
@@ -12691,7 +13907,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             DI.setText(String.valueOf(Tdep3.getValueAt(fila, 44)));
             RI.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
             RF.setText(String.valueOf(Tdep3.getValueAt(fila, 46)));
-            ISR.setText(String.valueOf(Tdep3.getValueAt(fila, 47)));
+            NomISR.setText(String.valueOf(Tdep3.getValueAt(fila, 47)));
             Fdb.setText(String.valueOf(Tdep3.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep3.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep3.getValueAt(fila, 50)));
@@ -12706,7 +13922,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Presp.setText(String.valueOf(Tdep3.getValueAt(fila, 59)));
             cda.setText(String.valueOf(Tdep3.getValueAt(fila, 60)));
             Odtp.setText(String.valueOf(Tdep3.getValueAt(fila, 61)));
-            ADN.setText(String.valueOf(Tdep3.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tdep3.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tdep3.getValueAt(fila, 63)));
             Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
             FDD.setDate(date1);
@@ -12720,7 +13936,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Obsdeposito.setText(String.valueOf(Tdep3.getValueAt(fila, 67)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
@@ -12734,7 +13950,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tdep4.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep4.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep4.getValueAt(fila, 1)));
-            NE.setText(String.valueOf(Tdep4.getValueAt(fila, 2)));
+            NEnom.setText(String.valueOf(Tdep4.getValueAt(fila, 2)));
             Ap.setText(String.valueOf(Tdep4.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep4.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep4.getValueAt(fila, 5)));
@@ -12747,9 +13963,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tdep4.getValueAt(fila, 12)));
             PH.setText(String.valueOf(Tdep4.getValueAt(fila, 13)));
             String Quinc = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
                 }
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
@@ -12785,7 +14001,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             DI.setText(String.valueOf(Tdep4.getValueAt(fila, 44)));
             RI.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
             RF.setText(String.valueOf(Tdep4.getValueAt(fila, 46)));
-            ISR.setText(String.valueOf(Tdep4.getValueAt(fila, 47)));
+            NomISR.setText(String.valueOf(Tdep4.getValueAt(fila, 47)));
             Fdb.setText(String.valueOf(Tdep4.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep4.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep4.getValueAt(fila, 50)));
@@ -12800,7 +14016,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Presp.setText(String.valueOf(Tdep4.getValueAt(fila, 59)));
             cda.setText(String.valueOf(Tdep4.getValueAt(fila, 60)));
             Odtp.setText(String.valueOf(Tdep4.getValueAt(fila, 61)));
-            ADN.setText(String.valueOf(Tdep4.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tdep4.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tdep4.getValueAt(fila, 63)));
             Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
             FDD.setDate(date1);
@@ -12814,7 +14030,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Obsdeposito.setText(String.valueOf(Tdep4.getValueAt(fila, 67)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
@@ -12828,7 +14044,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tdep5.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep5.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep5.getValueAt(fila, 1)));
-            NE.setText(String.valueOf(Tdep5.getValueAt(fila, 2)));
+            NEnom.setText(String.valueOf(Tdep5.getValueAt(fila, 2)));
             Ap.setText(String.valueOf(Tdep5.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep5.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep5.getValueAt(fila, 5)));
@@ -12841,9 +14057,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tdep5.getValueAt(fila, 12)));
             PH.setText(String.valueOf(Tdep5.getValueAt(fila, 13)));
             String Quinc = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
                 }
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
@@ -12879,7 +14095,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             DI.setText(String.valueOf(Tdep5.getValueAt(fila, 44)));
             RI.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
             RF.setText(String.valueOf(Tdep5.getValueAt(fila, 46)));
-            ISR.setText(String.valueOf(Tdep5.getValueAt(fila, 47)));
+            NomISR.setText(String.valueOf(Tdep5.getValueAt(fila, 47)));
             Fdb.setText(String.valueOf(Tdep5.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep5.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep5.getValueAt(fila, 50)));
@@ -12894,7 +14110,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Presp.setText(String.valueOf(Tdep5.getValueAt(fila, 59)));
             cda.setText(String.valueOf(Tdep5.getValueAt(fila, 60)));
             Odtp.setText(String.valueOf(Tdep5.getValueAt(fila, 61)));
-            ADN.setText(String.valueOf(Tdep5.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tdep5.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tdep5.getValueAt(fila, 63)));
             Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
             FDD.setDate(date1);
@@ -12908,7 +14124,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Obsdeposito.setText(String.valueOf(Tdep5.getValueAt(fila, 67)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
@@ -12922,7 +14138,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tdep6.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep6.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep6.getValueAt(fila, 1)));
-            NE.setText(String.valueOf(Tdep6.getValueAt(fila, 2)));
+            NEnom.setText(String.valueOf(Tdep6.getValueAt(fila, 2)));
             Ap.setText(String.valueOf(Tdep6.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep6.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep6.getValueAt(fila, 5)));
@@ -12935,9 +14151,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tdep6.getValueAt(fila, 12)));
             PH.setText(String.valueOf(Tdep6.getValueAt(fila, 13)));
             String Quinc = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
                 }
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
@@ -12973,7 +14189,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             DI.setText(String.valueOf(Tdep6.getValueAt(fila, 44)));
             RI.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
             RF.setText(String.valueOf(Tdep6.getValueAt(fila, 46)));
-            ISR.setText(String.valueOf(Tdep6.getValueAt(fila, 47)));
+            NomISR.setText(String.valueOf(Tdep6.getValueAt(fila, 47)));
             Fdb.setText(String.valueOf(Tdep6.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep6.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep6.getValueAt(fila, 50)));
@@ -12988,7 +14204,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Presp.setText(String.valueOf(Tdep6.getValueAt(fila, 59)));
             cda.setText(String.valueOf(Tdep6.getValueAt(fila, 60)));
             Odtp.setText(String.valueOf(Tdep6.getValueAt(fila, 61)));
-            ADN.setText(String.valueOf(Tdep6.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tdep6.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tdep6.getValueAt(fila, 63)));
             Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
             FDD.setDate(date1);
@@ -13002,7 +14218,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Obsdeposito.setText(String.valueOf(Tdep6.getValueAt(fila, 67)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
@@ -13016,7 +14232,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tdep7.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep7.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep7.getValueAt(fila, 1)));
-            NE.setText(String.valueOf(Tdep7.getValueAt(fila, 2)));
+            NEnom.setText(String.valueOf(Tdep7.getValueAt(fila, 2)));
             Ap.setText(String.valueOf(Tdep7.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep7.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep7.getValueAt(fila, 5)));
@@ -13029,9 +14245,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             pd.setText(String.valueOf(Tdep7.getValueAt(fila, 12)));
             PH.setText(String.valueOf(Tdep7.getValueAt(fila, 13)));
             String Quinc = model.getValueAt(fila, 14).toString();
-            for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
-                    Semana.setSelectedIndex(i);
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
                 }
             }
             Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
@@ -13067,7 +14283,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             DI.setText(String.valueOf(Tdep7.getValueAt(fila, 44)));
             RI.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
             RF.setText(String.valueOf(Tdep7.getValueAt(fila, 46)));
-            ISR.setText(String.valueOf(Tdep7.getValueAt(fila, 47)));
+            NomISR.setText(String.valueOf(Tdep7.getValueAt(fila, 47)));
             Fdb.setText(String.valueOf(Tdep7.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep7.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep7.getValueAt(fila, 50)));
@@ -13082,7 +14298,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Presp.setText(String.valueOf(Tdep7.getValueAt(fila, 59)));
             cda.setText(String.valueOf(Tdep7.getValueAt(fila, 60)));
             Odtp.setText(String.valueOf(Tdep7.getValueAt(fila, 61)));
-            ADN.setText(String.valueOf(Tdep7.getValueAt(fila, 62)));
+            AdN.setText(String.valueOf(Tdep7.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tdep7.getValueAt(fila, 63)));
             Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
             FDD.setDate(date1);
@@ -13096,17 +14312,105 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             Obsdeposito.setText(String.valueOf(Tdep7.getValueAt(fila, 67)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_SIMSS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
     }//GEN-LAST:event_Tdep7MousePressed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void Tdep8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep8MousePressed
+        try {
+
+            DefaultTableModel model = (DefaultTableModel) Tdep8.getModel();
+
+            int fila = Tdep8.getSelectedRow();
+            NFnom.setText(String.valueOf(Tdep8.getValueAt(fila, 0)));
+            NDL.setText(String.valueOf(Tdep8.getValueAt(fila, 1)));
+            NEnom.setText(String.valueOf(Tdep8.getValueAt(fila, 2)));
+            Ap.setText(String.valueOf(Tdep8.getValueAt(fila, 3)));
+            am.setText(String.valueOf(Tdep8.getValueAt(fila, 4)));
+            name.setText(String.valueOf(Tdep8.getValueAt(fila, 5)));
+            Zon.setText(String.valueOf(Tdep8.getValueAt(fila, 6)));
+            ServN.setText(String.valueOf(Tdep8.getValueAt(fila, 7)));
+            sueldo.setText(String.valueOf(Tdep8.getValueAt(fila, 8)));
+            Bono.setText(String.valueOf(Tdep8.getValueAt(fila, 9)));
+            ban.setText(String.valueOf(Tdep8.getValueAt(fila, 10)));
+            cta.setText(String.valueOf(Tdep8.getValueAt(fila, 11)));
+            pd.setText(String.valueOf(Tdep8.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep8.getValueAt(fila, 13)));
+            String Quinc = model.getValueAt(fila, 14).toString();
+            for (int i = 0; i < Quincenas.getItemCount(); i++) {
+                if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
+                    Quincenas.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tdep8.getValueAt(fila, 16)));
+            pds.setText(String.valueOf(Tdep8.getValueAt(fila, 17)));
+            Ddv.setText(String.valueOf(Tdep8.getValueAt(fila, 18)));
+            PDDDV.setText(String.valueOf(Tdep8.getValueAt(fila, 19)));
+            DD.setText(String.valueOf(Tdep8.getValueAt(fila, 20)));
+            PDDD.setText(String.valueOf(Tdep8.getValueAt(fila, 21)));
+            DL.setText(String.valueOf(Tdep8.getValueAt(fila, 22)));
+            PDDL.setText(String.valueOf(Tdep8.getValueAt(fila, 23)));
+            dt.setText(String.valueOf(Tdep8.getValueAt(fila, 24)));
+            PDDT.setText(String.valueOf(Tdep8.getValueAt(fila, 25)));
+            DSGS.setText(String.valueOf(Tdep8.getValueAt(fila, 26)));
+            PDDDDSGS.setText(String.valueOf(Tdep8.getValueAt(fila, 27)));
+            FJ.setText(String.valueOf(Tdep8.getValueAt(fila, 28)));
+            DO.setText(String.valueOf(Tdep8.getValueAt(fila, 29)));
+            DF.setText(String.valueOf(Tdep8.getValueAt(fila, 30)));
+            PDDF.setText(String.valueOf(Tdep8.getValueAt(fila, 31)));
+            DFT.setText(String.valueOf(Tdep8.getValueAt(fila, 32)));
+            PDDFT.setText(String.valueOf(Tdep8.getValueAt(fila, 33)));
+            R.setText(String.valueOf(Tdep8.getValueAt(fila, 34)));
+            PCR.setText(String.valueOf(Tdep8.getValueAt(fila, 35)));
+            apy.setText(String.valueOf(Tdep8.getValueAt(fila, 36)));
+            Lugar.setText(String.valueOf(Tdep8.getValueAt(fila, 37)));
+            Rembolso.setText(String.valueOf(Tdep8.getValueAt(fila, 38)));
+            ADD.setText(String.valueOf(Tdep8.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tdep8.getValueAt(fila, 40)));
+            THE.setText(String.valueOf(Tdep8.getValueAt(fila, 41)));
+            F.setText(String.valueOf(Tdep8.getValueAt(fila, 42)));
+            DPF.setText(String.valueOf(Tdep8.getValueAt(fila, 43)));
+            DI.setText(String.valueOf(Tdep8.getValueAt(fila, 44)));
+            RI.setText(String.valueOf(Tdep8.getValueAt(fila, 45)));
+            RF.setText(String.valueOf(Tdep8.getValueAt(fila, 46)));
+            NomISR.setText(String.valueOf(Tdep8.getValueAt(fila, 47)));
+            Fdb.setText(String.valueOf(Tdep8.getValueAt(fila, 48)));
+            Sancion.setText(String.valueOf(Tdep8.getValueAt(fila, 49)));
+            Chamarra.setText(String.valueOf(Tdep8.getValueAt(fila, 50)));
+            Chaleco.setText(String.valueOf(Tdep8.getValueAt(fila, 51)));
+            Fde.setText(String.valueOf(Tdep8.getValueAt(fila, 52)));
+            Grua.setText(String.valueOf(Tdep8.getValueAt(fila, 53)));
+            Pantalon.setText(String.valueOf(Tdep8.getValueAt(fila, 54)));
+            Credencial.setText(String.valueOf(Tdep8.getValueAt(fila, 55)));
+            Bp.setText(String.valueOf(Tdep8.getValueAt(fila, 56)));
+            Playera.setText(String.valueOf(Tdep8.getValueAt(fila, 57)));
+            Corbata.setText(String.valueOf(Tdep8.getValueAt(fila, 58)));
+            Presp.setText(String.valueOf(Tdep8.getValueAt(fila, 59)));
+            cda.setText(String.valueOf(Tdep8.getValueAt(fila, 60)));
+            Odtp.setText(String.valueOf(Tdep8.getValueAt(fila, 61)));
+            AdN.setText(String.valueOf(Tdep8.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tdep8.getValueAt(fila, 63)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            FDD.setDate(date1);
+            String Mes = model.getValueAt(fila, 65).toString();
+            for (int i = 0; i < MDP.getItemCount(); i++) {
+                if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
+                    MDP.setSelectedIndex(i);
+                }
+            }
+            FDP.setText(String.valueOf(Tdep8.getValueAt(fila, 66)));
+            Obsdeposito.setText(String.valueOf(Tdep8.getValueAt(fila, 67)));
+
+        } catch (ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+        desv();
+    }//GEN-LAST:event_Tdep8MousePressed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         DepositosQ_SIMSS_4 regr = new DepositosQ_SIMSS_4(usr, LP);
@@ -13119,6 +14423,36 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        DepositosS_SIMSS_4 regr = new DepositosS_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        DepositosQ_SIMSS_4 regr = new DepositosQ_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        DepositosS_4 regr = new DepositosS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        DepositosS_SIMSS_4 regr = new DepositosS_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -13137,21 +14471,20 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DepositosS_SIMSS_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DepositosQ_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new DepositosS_SIMSS_4().setVisible(true);
+            new DepositosQ_4().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ADD;
     private javax.swing.JMenuItem ADMV1;
-    private javax.swing.JTextField ADN;
+    private javax.swing.JTextField AdN;
     private javax.swing.JButton Adddeposito;
-    private javax.swing.JButton Adddeposito1;
     private javax.swing.JMenuItem Alumnos;
     private javax.swing.JTextField Ap;
     private javax.swing.JTextField BAppag;
@@ -13162,6 +14495,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField BAppag5;
     private javax.swing.JTextField BAppag6;
     private javax.swing.JTextField BAppag7;
+    private javax.swing.JTextField BAppag8;
     private javax.swing.JTextField Bampag;
     private javax.swing.JTextField Bampag1;
     private javax.swing.JTextField Bampag2;
@@ -13170,12 +14504,17 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Bampag5;
     private javax.swing.JTextField Bampag6;
     private javax.swing.JTextField Bampag7;
+    private javax.swing.JTextField Bampag8;
     private javax.swing.JTextField Bono;
     private javax.swing.JTextField Bp;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ;
     private javax.swing.JButton CS10;
+    private javax.swing.JButton CS11;
+    private javax.swing.JButton CS12;
+    private javax.swing.JButton CS13;
+    private javax.swing.JButton CS14;
     private javax.swing.JButton CS15;
     private javax.swing.JButton CS16;
     private javax.swing.JButton CS17;
@@ -13184,11 +14523,9 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JButton CS2;
     private javax.swing.JButton CS20;
     private javax.swing.JButton CS21;
+    private javax.swing.JButton CS22;
+    private javax.swing.JButton CS23;
     private javax.swing.JButton CS3;
-    private javax.swing.JButton CS4;
-    private javax.swing.JButton CS5;
-    private javax.swing.JButton CS6;
-    private javax.swing.JButton CS7;
     private javax.swing.JButton CS8;
     private javax.swing.JButton CS9;
     private javax.swing.JTextField Chaleco;
@@ -13207,6 +14544,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JPanel Datgen;
     private javax.swing.JTextField Ddv;
     private javax.swing.JMenu Depositos;
+    private javax.swing.JMenu Depositos1;
     private javax.swing.JTextField Dpi;
     private javax.swing.JMenuItem EmpleadosT;
     private javax.swing.JMenuItem Estadias;
@@ -13219,6 +14557,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FAmT5;
     private javax.swing.JTextField FAmT6;
     private javax.swing.JTextField FAmT7;
+    private javax.swing.JTextField FAmT8;
     private javax.swing.JTextField FApT;
     private javax.swing.JTextField FApT1;
     private javax.swing.JTextField FApT2;
@@ -13227,6 +14566,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FApT5;
     private javax.swing.JTextField FApT6;
     private javax.swing.JTextField FApT7;
+    private javax.swing.JTextField FApT8;
     private com.toedter.calendar.JDateChooser FDD;
     private javax.swing.JTextField FDP;
     private javax.swing.JTextField FJ;
@@ -13238,6 +14578,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FZservicio5;
     private javax.swing.JComboBox<String> FZservicio6;
     private javax.swing.JComboBox<String> FZservicio7;
+    private javax.swing.JComboBox<String> FZservicio8;
     private javax.swing.JTextField Fdb;
     private javax.swing.JTextField Fde;
     private javax.swing.JTextField FiltroNDF;
@@ -13248,6 +14589,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField FiltroNDF5;
     private javax.swing.JTextField FiltroNDF6;
     private javax.swing.JTextField FiltroNDF7;
+    private javax.swing.JTextField FiltroNDF8;
     private javax.swing.JComboBox<String> FiltroQP;
     private javax.swing.JComboBox<String> FiltroQP1;
     private javax.swing.JComboBox<String> FiltroQP2;
@@ -13256,6 +14598,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroQP5;
     private javax.swing.JComboBox<String> FiltroQP6;
     private javax.swing.JComboBox<String> FiltroQP7;
+    private javax.swing.JComboBox<String> FiltroQP8;
     private javax.swing.JComboBox<String> FiltroQuincenanomina;
     private javax.swing.JComboBox<String> FiltroQuincenanomina1;
     private javax.swing.JComboBox<String> FiltroQuincenanomina2;
@@ -13264,6 +14607,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroQuincenanomina5;
     private javax.swing.JComboBox<String> FiltroQuincenanomina6;
     private javax.swing.JComboBox<String> FiltroQuincenanomina7;
+    private javax.swing.JComboBox<String> FiltroQuincenanomina8;
     private javax.swing.JComboBox<String> FiltroSZP;
     private javax.swing.JComboBox<String> FiltroSZP1;
     private javax.swing.JComboBox<String> FiltroSZP2;
@@ -13272,6 +14616,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroSZP5;
     private javax.swing.JComboBox<String> FiltroSZP6;
     private javax.swing.JComboBox<String> FiltroSZP7;
+    private javax.swing.JComboBox<String> FiltroSZP8;
     private javax.swing.JComboBox<String> FiltroServP;
     private javax.swing.JComboBox<String> FiltroServP1;
     private javax.swing.JComboBox<String> FiltroServP2;
@@ -13280,6 +14625,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroServP5;
     private javax.swing.JComboBox<String> FiltroServP6;
     private javax.swing.JComboBox<String> FiltroServP7;
+    private javax.swing.JComboBox<String> FiltroServP8;
     private javax.swing.JComboBox<String> FiltroSnomina;
     private javax.swing.JComboBox<String> FiltroSnomina1;
     private javax.swing.JComboBox<String> FiltroSnomina2;
@@ -13288,6 +14634,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroSnomina5;
     private javax.swing.JComboBox<String> FiltroSnomina6;
     private javax.swing.JComboBox<String> FiltroSnomina7;
+    private javax.swing.JComboBox<String> FiltroSnomina8;
     private javax.swing.JComboBox<String> FiltrosP;
     private javax.swing.JComboBox<String> FiltrosP1;
     private javax.swing.JComboBox<String> FiltrosP2;
@@ -13296,6 +14643,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltrosP5;
     private javax.swing.JComboBox<String> FiltrosP6;
     private javax.swing.JComboBox<String> FiltrosP7;
+    private javax.swing.JComboBox<String> FiltrosP8;
     private javax.swing.JComboBox<String> FiltrosTD;
     private javax.swing.JComboBox<String> FiltrosTD1;
     private javax.swing.JComboBox<String> FiltrosTD2;
@@ -13304,11 +14652,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltrosTD5;
     private javax.swing.JComboBox<String> FiltrosTD6;
     private javax.swing.JComboBox<String> FiltrosTD7;
+    private javax.swing.JComboBox<String> FiltrosTD8;
     private javax.swing.JMenuItem General;
     private javax.swing.JMenuItem General1;
     private javax.swing.JTextField Grua;
     private javax.swing.JTextField HE;
-    private javax.swing.JTextField ISR;
     private javax.swing.JMenuItem LDA;
     private javax.swing.JMenuItem LDA3;
     private javax.swing.JLabel LabelBE;
@@ -13319,6 +14667,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBE5;
     private javax.swing.JLabel LabelBE6;
     private javax.swing.JLabel LabelBE7;
+    private javax.swing.JLabel LabelBE8;
     private javax.swing.JLabel LabelBEP;
     private javax.swing.JLabel LabelBEP1;
     private javax.swing.JLabel LabelBEP2;
@@ -13327,6 +14676,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBEP5;
     private javax.swing.JLabel LabelBEP6;
     private javax.swing.JLabel LabelBEP7;
+    private javax.swing.JLabel LabelBEP8;
     private javax.swing.JLabel LabelBNDF;
     private javax.swing.JLabel LabelBNDF1;
     private javax.swing.JLabel LabelBNDF2;
@@ -13335,6 +14685,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBNDF5;
     private javax.swing.JLabel LabelBNDF6;
     private javax.swing.JLabel LabelBNDF7;
+    private javax.swing.JLabel LabelBNDF8;
     private javax.swing.JLabel LabelBQ;
     private javax.swing.JLabel LabelBQ1;
     private javax.swing.JLabel LabelBQ2;
@@ -13343,6 +14694,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBQ5;
     private javax.swing.JLabel LabelBQ6;
     private javax.swing.JLabel LabelBQ7;
+    private javax.swing.JLabel LabelBQ8;
     private javax.swing.JLabel LabelBQP;
     private javax.swing.JLabel LabelBQP1;
     private javax.swing.JLabel LabelBQP2;
@@ -13351,6 +14703,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBQP5;
     private javax.swing.JLabel LabelBQP6;
     private javax.swing.JLabel LabelBQP7;
+    private javax.swing.JLabel LabelBQP8;
     private javax.swing.JLabel LabelBS;
     private javax.swing.JLabel LabelBS1;
     private javax.swing.JLabel LabelBS2;
@@ -13359,6 +14712,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBS5;
     private javax.swing.JLabel LabelBS6;
     private javax.swing.JLabel LabelBS7;
+    private javax.swing.JLabel LabelBS8;
     private javax.swing.JLabel LabelBSP;
     private javax.swing.JLabel LabelBSP1;
     private javax.swing.JLabel LabelBSP2;
@@ -13367,6 +14721,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBSP5;
     private javax.swing.JLabel LabelBSP6;
     private javax.swing.JLabel LabelBSP7;
+    private javax.swing.JLabel LabelBSP8;
     private javax.swing.JLabel LabelDSGS;
     private javax.swing.JLabel LabelNDFP;
     private javax.swing.JLabel LabelNDFP1;
@@ -13376,6 +14731,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelNDFP5;
     private javax.swing.JLabel LabelNDFP6;
     private javax.swing.JLabel LabelNDFP7;
+    private javax.swing.JLabel LabelNDFP8;
     private javax.swing.JLabel LabelSZ;
     private javax.swing.JLabel LabelSZ1;
     private javax.swing.JLabel LabelSZ2;
@@ -13384,6 +14740,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZ5;
     private javax.swing.JLabel LabelSZ6;
     private javax.swing.JLabel LabelSZ7;
+    private javax.swing.JLabel LabelSZ8;
     private javax.swing.JLabel LabelSZP;
     private javax.swing.JLabel LabelSZP1;
     private javax.swing.JLabel LabelSZP2;
@@ -13392,12 +14749,15 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelSZP5;
     private javax.swing.JLabel LabelSZP6;
     private javax.swing.JLabel LabelSZP7;
+    private javax.swing.JLabel LabelSZP8;
     private javax.swing.JTextField Lugar;
     private javax.swing.JComboBox<String> MDP;
     private javax.swing.JMenu Menuadm;
+    private javax.swing.JButton Moddeposito;
     private javax.swing.JTextField NDL;
-    private javax.swing.JTextField NE;
+    private javax.swing.JTextField NEnom;
     private javax.swing.JTextField NFnom;
+    private javax.swing.JTextField NomISR;
     private javax.swing.JTextField Nominab;
     private javax.swing.JTextField Nominab1;
     private javax.swing.JTextField Nominab2;
@@ -13406,6 +14766,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Nominab5;
     private javax.swing.JTextField Nominab6;
     private javax.swing.JTextField Nominab7;
+    private javax.swing.JTextField Nominab8;
     private javax.swing.JMenuItem ODT;
     private javax.swing.JMenuItem ODT2;
     private javax.swing.JTextArea Obsdeposito;
@@ -13425,15 +14786,24 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTabbedPane PestañasPagos;
     private javax.swing.JTextField Playera;
     private javax.swing.JTextField Presp;
+    private javax.swing.JComboBox<String> Quincenas;
     private javax.swing.JTextField R;
     private javax.swing.JTextField RF;
     private javax.swing.JTabbedPane RH;
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
     private javax.swing.JTextField Sancion;
-    private javax.swing.JComboBox<String> Semana;
     private javax.swing.JMenu Semanales;
     private javax.swing.JTextField ServN;
+    private javax.swing.JScrollPane TDFA;
+    private javax.swing.JScrollPane TDFA1;
+    private javax.swing.JScrollPane TDFA2;
+    private javax.swing.JScrollPane TDFA3;
+    private javax.swing.JScrollPane TDFA4;
+    private javax.swing.JScrollPane TDFA5;
+    private javax.swing.JScrollPane TDFA6;
+    private javax.swing.JScrollPane TDFA7;
+    private javax.swing.JScrollPane TDFA8;
     private javax.swing.JTextField THE;
     private javax.swing.JScrollPane TPagos;
     private javax.swing.JScrollPane TPagos1;
@@ -13443,6 +14813,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane TPagos5;
     private javax.swing.JScrollPane TPagos6;
     private javax.swing.JScrollPane TPagos7;
+    private javax.swing.JScrollPane TPagos8;
     private javax.swing.JTable Tdep;
     private javax.swing.JTable Tdep1;
     private javax.swing.JTable Tdep2;
@@ -13451,6 +14822,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTable Tdep5;
     private javax.swing.JTable Tdep6;
     private javax.swing.JTable Tdep7;
+    private javax.swing.JTable Tdep8;
     private javax.swing.JTable Tnom;
     private javax.swing.JTable Tnom1;
     private javax.swing.JTable Tnom2;
@@ -13459,6 +14831,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom5;
     private javax.swing.JTable Tnom6;
     private javax.swing.JTable Tnom7;
+    private javax.swing.JTable Tnom8;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
@@ -13474,6 +14847,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField busp5;
     private javax.swing.JTextField busp6;
     private javax.swing.JTextField busp7;
+    private javax.swing.JTextField busp8;
     private javax.swing.JTextField cda;
     private javax.swing.JTextField cta;
     private javax.swing.JTextField deposito;
@@ -13486,6 +14860,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField filtroNDFP5;
     private javax.swing.JTextField filtroNDFP6;
     private javax.swing.JTextField filtroNDFP7;
+    private javax.swing.JTextField filtroNDFP8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -13499,6 +14874,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
@@ -13525,7 +14901,14 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel161;
     private javax.swing.JLabel jLabel167;
+    private javax.swing.JLabel jLabel169;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel170;
+    private javax.swing.JLabel jLabel171;
+    private javax.swing.JLabel jLabel172;
+    private javax.swing.JLabel jLabel173;
+    private javax.swing.JLabel jLabel174;
+    private javax.swing.JLabel jLabel175;
     private javax.swing.JLabel jLabel176;
     private javax.swing.JLabel jLabel177;
     private javax.swing.JLabel jLabel178;
@@ -13536,6 +14919,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel183;
     private javax.swing.JLabel jLabel184;
     private javax.swing.JLabel jLabel185;
+    private javax.swing.JLabel jLabel186;
+    private javax.swing.JLabel jLabel187;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -13557,14 +14942,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel84;
@@ -13582,6 +14960,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -13589,12 +14968,17 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -13603,15 +14987,18 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
@@ -13620,23 +15007,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
-    private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
-    private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
-    private javax.swing.JScrollPane jScrollPane17;
-    private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
-    private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
-    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
     private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane30;
@@ -13645,13 +15028,10 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane33;
     private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane35;
-    private javax.swing.JScrollPane jScrollPane37;
-    private javax.swing.JScrollPane jScrollPane38;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JScrollPane k;
     private javax.swing.JTextField name;
     private javax.swing.JTextField pd;
     private javax.swing.JTextField pds;
