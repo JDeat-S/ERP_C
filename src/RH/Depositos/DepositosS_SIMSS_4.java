@@ -877,7 +877,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     public void Modeposito() {
-        String SQL = "UPDATE `rh.depositos." + Zon.getText() + ".simss` SET `#Lista` = ?,"
+        String SQL = "UPDATE `rh.depositosem." + Zon.getText() + ".simss` SET `#Lista` = ?,"
                 + " `#Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, "
                 + "`Zona` = ?, `Servicio` = ?, `Sueldo` = ?, `Bono` = ?, `Por dia` = ?,"
                 + " `Quincena del mes` = ?, `Año` = ?, `Dias de incapacidad` = ?, "
@@ -893,7 +893,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 + " `Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, `Credencial` = ?,"
                 + " `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?, `Pago de prestamo` = ?, "
                 + "`Caja de ahorro` = ?, `Orden de taller` = ?, `Adelanto de nomina` = ?, `Deposito` = ?, "
-                + "`Fecha de deposito` = ?, `Mes de pago` = ?, `Forma de pago` = ? WHERE `rh.depositos." + Zon.getText() + ".simss`.`#Folio` = ?";
+                + "`Fecha de deposito` = ?, `Mes de pago` = ?, `Forma de pago` = ? WHERE `rh.depositosem." + Zon.getText() + ".simss`.`#Folio` = ?";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -1001,13 +1001,13 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     // mostrar datos de nomina
     public void MDNSQ() {
         //Buscar empleado
-        String FiltroN = Nominab.getText();
+        String FiltroN = Nominab8.getText();
         String SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.corporativo santander semanal.simss`";
-        String FAPNom = FApT.getText();
-        String FAMNom = FAmT.getText();
-        String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina.getSelectedItem().toString();
-        String FiltroFol = FiltroNDF.getText();
+        String FAPNom = FApT8.getText();
+        String FAMNom = FAmT8.getText();
+        String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
+        String FiltroFol = FiltroNDF8.getText();
 
         if (!"".equals(FiltroN)) {
             SQL = "Select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.corporativo santander semanal.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
@@ -1020,7 +1020,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.corporativo santander semanal.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.corporativo santander semanal.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.corporativo santander semanal.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1057,7 +1057,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -1108,7 +1108,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1146,7 +1146,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FAPNom = FApT.getText();
         String FAMNom = FAmT.getText();
         String FiltroSnom = FiltroSnomina.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
         String FiltroFol = FiltroNDF.getText();
 
         if (!"".equals(FiltroN)) {
@@ -1160,7 +1160,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos acapulco.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1197,7 +1197,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -1248,7 +1248,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1286,7 +1286,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FAPNom = FApT1.getText();
         String FAMNom = FAmT1.getText();
         String FiltroSnom = FiltroSnomina1.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina1.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
         String FiltroFol = FiltroNDF1.getText();
 
         if (!"".equals(FiltroN)) {
@@ -1300,7 +1300,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos puebla.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1337,7 +1337,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -1388,7 +1388,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1426,7 +1426,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FAPNom = FApT2.getText();
         String FAMNom = FAmT2.getText();
         String FiltroSnom = FiltroSnomina2.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina2.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
         String FiltroFol = FiltroNDF2.getText();
 
         if (!"".equals(FiltroN)) {
@@ -1440,7 +1440,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.foraneos toluca.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1477,7 +1477,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -1528,7 +1528,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1566,7 +1566,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FAPNom = FApT3.getText();
         String FAMNom = FAmT3.getText();
         String FiltroSnom = FiltroSnomina3.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina3.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
         String FiltroFol = FiltroNDF3.getText();
 
         if (!"".equals(FiltroN)) {
@@ -1580,7 +1580,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             where = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.norte.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            where = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.norte.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            where = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.norte.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1617,7 +1617,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -1668,7 +1668,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1706,7 +1706,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FAPNom = FApT4.getText();
         String FAMNom = FAmT4.getText();
         String FiltroSnom = FiltroSnomina4.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina4.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
         String FiltroFol = FiltroNDF4.getText();
 
         if (!"".equals(FiltroN)) {
@@ -1720,7 +1720,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.oficina.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.oficina.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.oficina.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1757,7 +1757,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -1808,7 +1808,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1846,7 +1846,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FAPNom = FApT5.getText();
         String FAMNom = FAmT5.getText();
         String FiltroSnom = FiltroSnomina5.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina5.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
         String FiltroFol = FiltroNDF5.getText();
 
         if (!"".equals(FiltroN)) {
@@ -1860,7 +1860,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.poniente.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.poniente.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.poniente.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -1897,7 +1897,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -1948,7 +1948,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -1986,7 +1986,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FAPNom = FApT6.getText();
         String FAMNom = FAmT6.getText();
         String FiltroSnom = FiltroSnomina6.getSelectedItem().toString();
-        String FiltroQuin = FiltroQuincenanomina6.getSelectedItem().toString();
+        String FiltroQuin = FiltroQuincenanomina7.getSelectedItem().toString();
         String FiltroFol = FiltroNDF6.getText();
 
         if (!"".equals(FiltroN)) {
@@ -2000,7 +2000,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.sur 1.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.sur 1.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.sur 1.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -2037,7 +2037,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -2088,7 +2088,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -2140,7 +2140,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroSnom)) {
             SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.sur 2.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.sur 2.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#Lista`, `#Empleado`, `Nombre(s)`, `Apellido P`, `Apellido M`, `Bono`, `Cuenta de banco`, `Banco`, `Zona`, `Servicio`, `Sueldo`, `Por dia`, `Por hora`, `año`, `Semana`,`Dias con retardos`, `Pago con retardos`, `Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de Dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `Dias de DSGS`, `Pago de Dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de Dias festivos`, `Dias festivos trabajados`, `Pago de Dias festivos trabajados`, `Apoyo`, `Rembolso`, `Lugar`, `Adicionales`, `Horas extra`, `Total de horas extra`, `Dias con faltas`, `pago de Dias con faltas`, `IMSS`, `Infonavit`, `Fonacot`, `ISR`, `Pago de prestamo`, `Caja de ahorro`, `Pago de ODT`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de Nomina`, `Total de descuentos`, `Deposito` from `nominasem.detallada.sur 2.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
 
         try {
@@ -2177,7 +2177,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Por dia");
             modelo.addColumn("Por hora");
             modelo.addColumn("Año");
-            modelo.addColumn("Semana del mes");//10
+            modelo.addColumn("Semana ");//10
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Dias de incapacidad");//12
@@ -2228,7 +2228,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de descuentos varios");
             modelo.addColumn("Deposito");
 
-//Anchos hasta quincena
+//Anchos hasta Semana
             int[] anchos = {/*NL*/50, /*NE*/ 60, /*AP*/ 70, /*AM*/ 70, /*NAME*/ 150,
                 /*ZONA*/ 50, /*SERV*/ 70, /*SUELDO*/ 55, /*BONO*/ 50, /*Ban*/ 50,/*cta*/ 50, /*pordia*/ 50, /*porHora*/ 50,
                 /*QDM*/ 150, /*AÑO*/ 35, /*DDI*/ 120, /*PDS*/ 120, /*DDV*/ 100, /*PDDDV*/ 120,
@@ -2347,25 +2347,25 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void Agregardeposito() {
-        String SQL = "INSERT INTO `rh.depositos." + Zon.getText() + ".simss`"
+        String SQL = "INSERT INTO `rh.depositosem." + Zon.getText() + ".simss`"
                 + " (`#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, "
-                + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, "
-                + "`Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, "
-                + "`Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, "
-                + "`Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, "
-                + "`Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, "
-                + "`Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`,"
-                + " `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, "
-                + "`Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, "
-                + "`horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`,"
-                + " `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, "
-                + "`Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`,"
-                + " `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, "
-                + "`Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, "
-                + "`Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`) VALUES"
-                + " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`,"
+                + " `Cuenta de banco`, `Por dia`, `por hora`, `Semana`, `Año`, `Dias de incapacidad`,"
+                + " `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, "
+                + "`Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`,"
+                + " `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`,"
+                + " `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`,"
+                + " `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`,"
+                + " `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, "
+                + "`Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, "
+                + "`Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, "
+                + "`Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, "
+                + "`Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, "
+                + "`Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, "
+                + "`Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`)"
+                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -2449,7 +2449,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepSQ() {
-        String SQL = "SELECT * FROM `rh.depositos.corporativo santander semanal.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.corporativo santander semanal.simss`";
         String FiltroN = busp8.getText();
         String FAPNom = BAppag8.getText();
         String FAMNom = Bampag8.getText();
@@ -2458,19 +2458,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP8.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander semanal.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.corporativo santander semanal.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.c.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.c.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander semanal.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.corporativo santander semanal.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander semanal.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.corporativo santander semanal.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander semanal.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.corporativo santander semanal.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 2.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.corporativo santander semanal.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -2593,7 +2593,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepS2() {
-        String SQL = "SELECT * FROM `rh.depositos.sur 2.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.sur 2.simss`";
         String FiltroN = busp7.getText();
         String FAPNom = BAppag7.getText();
         String FAMNom = Bampag7.getText();
@@ -2602,19 +2602,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP7.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 2.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 2.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 2.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 2.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 2.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 2.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.sur 2.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -2737,7 +2737,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepS1() {
-        String SQL = "SELECT * FROM `rh.depositos.sur 1.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.sur 1.simss`";
         String FiltroN = busp6.getText();
         String FAPNom = BAppag6.getText();
         String FAMNom = Bampag6.getText();
@@ -2746,19 +2746,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP6.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 1.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 1.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 1.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 1.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 1.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.sur 1.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.sur 1.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -2881,7 +2881,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepOfi() {
-        String SQL = "SELECT * FROM `rh.depositos.oficina.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.oficina.simss`";
         String FiltroN = busp5.getText();
         String FAPNom = BAppag5.getText();
         String FAMNom = Bampag5.getText();
@@ -2890,19 +2890,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP5.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.oficina.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.oficina.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.oficina.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.oficina.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.oficina.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.oficina.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.oficina.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.oficina.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.oficina`"
+            SQL = "SELECT * FROM `rh.depositosem.oficina`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.oficina.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.oficina.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -3025,7 +3025,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepPon() {
-        String SQL = "SELECT * FROM `rh.depositos.poniente.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.poniente.simss`";
         String FiltroN = busp4.getText();
         String FAPNom = BAppag4.getText();
         String FAMNom = Bampag4.getText();
@@ -3034,19 +3034,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP4.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.poniente.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.poniente.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.poniente.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.poniente.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.poniente.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.poniente.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.poniente.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.poniente.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.poniente.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.poniente.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.poniente.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.poniente.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -3169,7 +3169,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }
 
     public void MDepNor() {
-        String SQL = "SELECT * FROM `rh.depositos.norte.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.norte.simss`";
         String FiltroN = busp3.getText();
         String FAPNom = BAppag3.getText();
         String FAMNom = Bampag3.getText();
@@ -3178,19 +3178,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP3.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.norte.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.norte.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.norte.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.norte.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.norte.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.norte.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.norte.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.norte.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.norte.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.norte.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.norte.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.norte.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -3314,7 +3314,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
     public void MDepFT() {
         //Buscar servicio
-        String SQL = "SELECT * FROM `rh.depositos.foraneos toluca.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss`";
         String FiltroN = busp2.getText();
         String FAPNom = BAppag2.getText();
         String FAMNom = Bampag2.getText();
@@ -3323,19 +3323,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP2.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos toluca.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos toluca.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos toluca.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos toluca.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos toluca.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos toluca.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos toluca.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -3459,7 +3459,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
     public void MDepFP() {
         //Buscar servicio
-        String SQL = "SELECT * FROM `rh.depositos.foraneos puebla.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss`";
         String FiltroN = busp1.getText();
         String FAPNom = BAppag1.getText();
         String FAMNom = Bampag1.getText();
@@ -3468,19 +3468,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP1.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos puebla.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELE CT * FROM `rh.depositos.foraneos puebla.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELE CT * FROM `rh.depositosem.foraneos puebla.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos puebla.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos puebla.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos puebla.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos puebla.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos puebla.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -3605,7 +3605,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
 
     public void MDepFA() {
         //Buscar servicio
-        String SQL = "SELECT * FROM `rh.depositos.foraneos acapulco.simss`";
+        String SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss`";
         String FiltroN = busp.getText();
         String FAPNom = BAppag.getText();
         String FAMNom = Bampag.getText();
@@ -3614,19 +3614,19 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
         String FiltroFol = filtroNDFP.getText();
 
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco.simss`"
+            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.foraneos acapulco.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT * FROM `rh.depositosem.foraneos acapulco.simss` Where `Semana` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -11083,41 +11083,76 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tnom.getSelectedRow();
             NDL.setText(String.valueOf(Tnom.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_TnomMouseClicked
@@ -11148,6 +11183,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             FiltroServ serv = new FiltroServ();
             DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
             FiltroSnomina1.setModel(modelServicio);
+        }
     }//GEN-LAST:event_FZservicio1ItemStateChanged
 
     private void FiltrosTD1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD1ItemStateChanged
@@ -11332,105 +11368,83 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS4ActionPerformed
 
     private void Tnom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom1MouseClicked
-        try {
+       try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom1.getModel();
 
             int fila = Tnom1.getSelectedRow();
             NDL.setText(String.valueOf(Tnom1.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom1.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom1.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom1.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom1.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
-            Bono1.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom1.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom1.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom1.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom1.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom1.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom1.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom1.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom1.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom1.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom1.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom1.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
-            Fsab.setDate(date2);
-            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
-            FDom.setDate(date3);
-            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
-            FLun.setDate(date4);
-            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
-            Fmar.setDate(date5);
-            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
-            Fmier.setDate(date6);
-            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
-            FJuev.setDate(date7);
-            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
-            Fvier.setDate(date8);
-
-            String combo2 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < SabT.getItemCount(); i++) {
-                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    SabT.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < DomT.getItemCount(); i++) {
-                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    DomT.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < LunT.getItemCount(); i++) {
-                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    LunT.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < MarT.getItemCount(); i++) {
-                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    MarT.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < MierT.getItemCount(); i++) {
-                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    MierT.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < JueT.getItemCount(); i++) {
-                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    JueT.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < VieT.getItemCount(); i++) {
-                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    VieT.setSelectedIndex(i);
-                }
-            }
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom1.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom1.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom1.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom1.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom1.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom1.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom1.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom1.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom1.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom1.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom1.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom1.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom1.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom1.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom1.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom1.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom1.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom1.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom1.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom1.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom1.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom1.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom1.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom1.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom1.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom1.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom1.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom1.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom1.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom1MouseClicked
@@ -11461,6 +11475,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             FiltroServ serv = new FiltroServ();
             DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
             FiltroSnomina2.setModel(modelServicio);
+        }
     }//GEN-LAST:event_FZservicio2ItemStateChanged
 
     private void FiltrosTD2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD2ItemStateChanged
@@ -11622,6 +11637,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             FiltroNDF2.setVisible(true);
             LabelBNDF2.setVisible(true);
             FunMD();
+        }
     }//GEN-LAST:event_FiltrosTD2ItemStateChanged
 
     private void Nominab2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nominab2KeyReleased
@@ -11651,98 +11667,76 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tnom2.getSelectedRow();
             NDL.setText(String.valueOf(Tnom2.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom2.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom2.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom2.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom2.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
-            Bono1.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom2.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom2.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom2.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom2.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom2.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom2.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom2.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom2.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom2.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom2.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom2.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
-            Fsab.setDate(date2);
-            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
-            FDom.setDate(date3);
-            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
-            FLun.setDate(date4);
-            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
-            Fmar.setDate(date5);
-            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
-            Fmier.setDate(date6);
-            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
-            FJuev.setDate(date7);
-            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
-            Fvier.setDate(date8);
-
-            String combo2 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < SabT.getItemCount(); i++) {
-                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    SabT.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < DomT.getItemCount(); i++) {
-                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    DomT.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < LunT.getItemCount(); i++) {
-                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    LunT.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < MarT.getItemCount(); i++) {
-                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    MarT.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < MierT.getItemCount(); i++) {
-                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    MierT.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < JueT.getItemCount(); i++) {
-                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    JueT.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < VieT.getItemCount(); i++) {
-                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    VieT.setSelectedIndex(i);
-                }
-            }
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom2.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom2.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom2.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom2.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom2.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom2.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom2.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom2.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom2.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom2.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom2.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom2.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom2.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom2.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom2.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom2.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom2.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom2.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom2.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom2.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom2.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom2.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom2.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom2.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom2.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom2.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom2.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom2.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom2.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom2MouseClicked
@@ -11773,6 +11767,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             FiltroServ serv = new FiltroServ();
             DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
             FiltroSnomina3.setModel(modelServicio);
+        }
     }//GEN-LAST:event_FZservicio3ItemStateChanged
 
     private void FiltrosTD3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD3ItemStateChanged
@@ -11957,105 +11952,83 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS6ActionPerformed
 
     private void Tnom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom3MouseClicked
-        try {
+       try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom3.getModel();
 
             int fila = Tnom3.getSelectedRow();
             NDL.setText(String.valueOf(Tnom3.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom3.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom3.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom3.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom3.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
-            Bono1.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom3.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom3.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom3.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom3.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom3.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom3.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom3.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom3.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom3.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom3.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom3.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
-            Fsab.setDate(date2);
-            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
-            FDom.setDate(date3);
-            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
-            FLun.setDate(date4);
-            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
-            Fmar.setDate(date5);
-            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
-            Fmier.setDate(date6);
-            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
-            FJuev.setDate(date7);
-            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
-            Fvier.setDate(date8);
-
-            String combo2 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < SabT.getItemCount(); i++) {
-                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    SabT.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < DomT.getItemCount(); i++) {
-                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    DomT.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < LunT.getItemCount(); i++) {
-                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    LunT.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < MarT.getItemCount(); i++) {
-                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    MarT.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < MierT.getItemCount(); i++) {
-                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    MierT.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < JueT.getItemCount(); i++) {
-                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    JueT.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < VieT.getItemCount(); i++) {
-                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    VieT.setSelectedIndex(i);
-                }
-            }
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom3.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom3.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom3.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom3.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom3.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom3.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom3.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom3.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom3.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom3.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom3.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom3.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom3.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom3.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom3.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom3.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom3.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom3.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom3.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom3.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom3.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom3.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom3.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom3.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom3.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom3.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom3.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom3.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom3.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom3MouseClicked
@@ -12086,6 +12059,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             FiltroServ serv = new FiltroServ();
             DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
             FiltroSnomina4.setModel(modelServicio);
+        }
     }//GEN-LAST:event_FZservicio4ItemStateChanged
 
     private void FiltrosTD4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTD4ItemStateChanged
@@ -12277,98 +12251,76 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tnom4.getSelectedRow();
             NDL.setText(String.valueOf(Tnom4.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom4.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom4.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom4.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom4.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
-            Bono1.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom4.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom4.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom4.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom4.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom4.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom4.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom4.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom4.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom4.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom4.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom4.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
-            Fsab.setDate(date2);
-            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
-            FDom.setDate(date3);
-            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
-            FLun.setDate(date4);
-            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
-            Fmar.setDate(date5);
-            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
-            Fmier.setDate(date6);
-            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
-            FJuev.setDate(date7);
-            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
-            Fvier.setDate(date8);
-
-            String combo2 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < SabT.getItemCount(); i++) {
-                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    SabT.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < DomT.getItemCount(); i++) {
-                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    DomT.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < LunT.getItemCount(); i++) {
-                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    LunT.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < MarT.getItemCount(); i++) {
-                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    MarT.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < MierT.getItemCount(); i++) {
-                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    MierT.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < JueT.getItemCount(); i++) {
-                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    JueT.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < VieT.getItemCount(); i++) {
-                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    VieT.setSelectedIndex(i);
-                }
-            }
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom4.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom4.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom4.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom4.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom4.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom4.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom4.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom4.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom4.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom4.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom4.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom4.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom4.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom4.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom4.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom4.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom4.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom4.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom4.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom4.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom4.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom4.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom4.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom4.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom4.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom4.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom4.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom4.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom4.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom4MouseClicked
@@ -12584,105 +12536,83 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS8ActionPerformed
 
     private void Tnom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom5MouseClicked
-        try {
+       try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom5.getModel();
 
             int fila = Tnom5.getSelectedRow();
             NDL.setText(String.valueOf(Tnom5.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom5.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom5.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom5.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom5.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
-            Bono1.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom5.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom5.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom5.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom5.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom5.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom5.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom5.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom5.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom5.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom5.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom5.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
-            Fsab.setDate(date2);
-            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
-            FDom.setDate(date3);
-            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
-            FLun.setDate(date4);
-            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
-            Fmar.setDate(date5);
-            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
-            Fmier.setDate(date6);
-            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
-            FJuev.setDate(date7);
-            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
-            Fvier.setDate(date8);
-
-            String combo2 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < SabT.getItemCount(); i++) {
-                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    SabT.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < DomT.getItemCount(); i++) {
-                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    DomT.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < LunT.getItemCount(); i++) {
-                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    LunT.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < MarT.getItemCount(); i++) {
-                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    MarT.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < MierT.getItemCount(); i++) {
-                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    MierT.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < JueT.getItemCount(); i++) {
-                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    JueT.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < VieT.getItemCount(); i++) {
-                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    VieT.setSelectedIndex(i);
-                }
-            }
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom5.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom5.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom5.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom5.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom5.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom5.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom5.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom5.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom5.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom5.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom5.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom5.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom5.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom5.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom5.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom5.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom5.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom5.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom5.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom5.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom5.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom5.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom5.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom5.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom5.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom5.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom5.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom5.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom5.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom5MouseClicked
@@ -12905,98 +12835,76 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tnom6.getSelectedRow();
             NDL.setText(String.valueOf(Tnom6.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom6.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom6.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
-            Bono1.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom6.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom6.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom6.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom6.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom6.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom6.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom6.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom6.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom6.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom6.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom6.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
-            Fsab.setDate(date2);
-            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
-            FDom.setDate(date3);
-            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
-            FLun.setDate(date4);
-            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
-            Fmar.setDate(date5);
-            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
-            Fmier.setDate(date6);
-            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
-            FJuev.setDate(date7);
-            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
-            Fvier.setDate(date8);
-
-            String combo2 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < SabT.getItemCount(); i++) {
-                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    SabT.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < DomT.getItemCount(); i++) {
-                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    DomT.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < LunT.getItemCount(); i++) {
-                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    LunT.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < MarT.getItemCount(); i++) {
-                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    MarT.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < MierT.getItemCount(); i++) {
-                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    MierT.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < JueT.getItemCount(); i++) {
-                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    JueT.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < VieT.getItemCount(); i++) {
-                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    VieT.setSelectedIndex(i);
-                }
-            }
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom6.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom6.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom6.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom6.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom6.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom6.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom6.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom6.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom6.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom6.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom6.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom6.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom6.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom6.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom6.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom6.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom6.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom6.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom6.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom6.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom6.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom6.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom6.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom6.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom6.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom6.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom6.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom6.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom6.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom6MouseClicked
@@ -13219,98 +13127,76 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             int fila = Tnom7.getSelectedRow();
             NDL.setText(String.valueOf(Tnom7.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom7.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom7.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom7.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom7.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
-            Bono1.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom7.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom7.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom7.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom7.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom7.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom7.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom7.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom7.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom7.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom7.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom7.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
-            Fsab.setDate(date2);
-            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
-            FDom.setDate(date3);
-            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
-            FLun.setDate(date4);
-            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
-            Fmar.setDate(date5);
-            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
-            Fmier.setDate(date6);
-            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
-            FJuev.setDate(date7);
-            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
-            Fvier.setDate(date8);
-
-            String combo2 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < SabT.getItemCount(); i++) {
-                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    SabT.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < DomT.getItemCount(); i++) {
-                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    DomT.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < LunT.getItemCount(); i++) {
-                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    LunT.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < MarT.getItemCount(); i++) {
-                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    MarT.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < MierT.getItemCount(); i++) {
-                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    MierT.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < JueT.getItemCount(); i++) {
-                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    JueT.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < VieT.getItemCount(); i++) {
-                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    VieT.setSelectedIndex(i);
-                }
-            }
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom7.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom7.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom7.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom7.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom7.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom7.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom7.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom7.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom7.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom7.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom7.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom7.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom7.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom7.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom7.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom7.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom7.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom7.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom7.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom7.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom7.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom7.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom7.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom7.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom7.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom7.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom7.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom7.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom7.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom7MouseClicked
@@ -13526,105 +13412,83 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CS11ActionPerformed
 
     private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
-        try {
+       try {
 
             DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
 
             int fila = Tnom8.getSelectedRow();
             NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
             NE.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tnom8.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tnom8.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tnom8.getValueAt(fila, 2)));
-            Bono.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
-            Bono1.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
+            Ap.setText(String.valueOf(Tnom8.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tnom8.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tnom8.getValueAt(fila, 4)));
+            ban.setText(String.valueOf(Tnom8.getValueAt(fila, 5)));
             cta.setText(String.valueOf(Tnom8.getValueAt(fila, 6)));
-            ban.setText(String.valueOf(Tnom8.getValueAt(fila, 7)));
-            Zon.setText(String.valueOf(Tnom8.getValueAt(fila, 8)));
-            ServN.setText(String.valueOf(Tnom8.getValueAt(fila, 9)));
-            sueldo.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
+            Zon.setText(String.valueOf(Tnom8.getValueAt(fila, 7)));
+            ServN.setText(String.valueOf(Tnom8.getValueAt(fila, 8)));
+            sueldo.setText(String.valueOf(Tnom8.getValueAt(fila, 9)));
+            Bono.setText(String.valueOf(Tnom8.getValueAt(fila, 10)));
             pd.setText(String.valueOf(Tnom8.getValueAt(fila, 11)));
             PH.setText(String.valueOf(Tnom8.getValueAt(fila, 12)));
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 13));
-            año.setDate(date);
-            String combo1 = model.getValueAt(fila, 14).toString();
+            String Quinc = model.getValueAt(fila, 13).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
-                if (Semana.getItemAt(i).equalsIgnoreCase(combo1)) {
+                if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            Date date2 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 15));
-            Fsab.setDate(date2);
-            Date date3 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 16));
-            FDom.setDate(date3);
-            Date date4 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 17));
-            FLun.setDate(date4);
-            Date date5 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 18));
-            Fmar.setDate(date5);
-            Date date6 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 19));
-            Fmier.setDate(date6);
-            Date date7 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 20));
-            FJuev.setDate(date7);
-            Date date8 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 21));
-            Fvier.setDate(date8);
-
-            String combo2 = model.getValueAt(fila, 22).toString();
-            for (int i = 0; i < SabT.getItemCount(); i++) {
-                if (SabT.getItemAt(i).equalsIgnoreCase(combo2)) {
-                    SabT.setSelectedIndex(i);
-                }
-            }
-            String combo3 = model.getValueAt(fila, 23).toString();
-            for (int i = 0; i < DomT.getItemCount(); i++) {
-                if (DomT.getItemAt(i).equalsIgnoreCase(combo3)) {
-                    DomT.setSelectedIndex(i);
-                }
-            }
-            String combo4 = model.getValueAt(fila, 24).toString();
-            for (int i = 0; i < LunT.getItemCount(); i++) {
-                if (LunT.getItemAt(i).equalsIgnoreCase(combo4)) {
-                    LunT.setSelectedIndex(i);
-                }
-            }
-            String combo5 = model.getValueAt(fila, 25).toString();
-            for (int i = 0; i < MarT.getItemCount(); i++) {
-                if (MarT.getItemAt(i).equalsIgnoreCase(combo5)) {
-                    MarT.setSelectedIndex(i);
-                }
-            }
-            String combo6 = model.getValueAt(fila, 26).toString();
-            for (int i = 0; i < MierT.getItemCount(); i++) {
-                if (MierT.getItemAt(i).equalsIgnoreCase(combo6)) {
-                    MierT.setSelectedIndex(i);
-                }
-            }
-            String combo7 = model.getValueAt(fila, 27).toString();
-            for (int i = 0; i < JueT.getItemCount(); i++) {
-                if (JueT.getItemAt(i).equalsIgnoreCase(combo7)) {
-                    JueT.setSelectedIndex(i);
-                }
-            }
-            String combo8 = model.getValueAt(fila, 28).toString();
-            for (int i = 0; i < VieT.getItemCount(); i++) {
-                if (VieT.getItemAt(i).equalsIgnoreCase(combo8)) {
-                    VieT.setSelectedIndex(i);
-                }
-            }
-            Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
-            FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 39)));
-
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 14));
+            año.setDate(date);
+            Dpi.setText(String.valueOf(Tnom8.getValueAt(fila, 15)));
+            pds.setText(String.valueOf(Tnom8.getValueAt(fila, 16)));
+            Ddv.setText(String.valueOf(Tnom8.getValueAt(fila, 17)));
+            PDDDV.setText(String.valueOf(Tnom8.getValueAt(fila, 18)));
+            DD.setText(String.valueOf(Tnom8.getValueAt(fila, 19)));
+            PDDD.setText(String.valueOf(Tnom8.getValueAt(fila, 20)));
+            DL.setText(String.valueOf(Tnom8.getValueAt(fila, 21)));
+            PDDL.setText(String.valueOf(Tnom8.getValueAt(fila, 22)));
+            dt.setText(String.valueOf(Tnom8.getValueAt(fila, 23)));
+            PDDT.setText(String.valueOf(Tnom8.getValueAt(fila, 24)));
+            DSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tnom8.getValueAt(fila, 26)));
+            FJ.setText(String.valueOf(Tnom8.getValueAt(fila, 27)));
+            DO.setText(String.valueOf(Tnom8.getValueAt(fila, 28)));
+            DF.setText(String.valueOf(Tnom8.getValueAt(fila, 29)));
+            PDDF.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
+            DFT.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
+            PDDFT.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
+            HE.setText(String.valueOf(Tnom8.getValueAt(fila, 33)));
+            THE.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
+            R.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
+            PCR.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
+            apy.setText(String.valueOf(Tnom8.getValueAt(fila, 37)));
+            Lugar.setText(String.valueOf(Tnom8.getValueAt(fila, 38)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 39)));
+            ADD.setText(String.valueOf(Tnom8.getValueAt(fila, 40)));
+            F.setText(String.valueOf(Tnom8.getValueAt(fila, 41)));
+            DPF.setText(String.valueOf(Tnom8.getValueAt(fila, 42)));
+            DI.setText(String.valueOf(Tnom8.getValueAt(fila, 43)));
+            RI.setText(String.valueOf(Tnom8.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tnom8.getValueAt(fila, 45)));
+            ISR.setText(String.valueOf(Tnom8.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tnom8.getValueAt(fila, 47)));
+            Sancion.setText(String.valueOf(Tnom8.getValueAt(fila, 48)));
+            Chamarra.setText(String.valueOf(Tnom8.getValueAt(fila, 49)));
+            Chaleco.setText(String.valueOf(Tnom8.getValueAt(fila, 50)));
+            Fde.setText(String.valueOf(Tnom8.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tnom8.getValueAt(fila, 52)));
+            Pantalon.setText(String.valueOf(Tnom8.getValueAt(fila, 53)));
+            Credencial.setText(String.valueOf(Tnom8.getValueAt(fila, 54)));
+            Bp.setText(String.valueOf(Tnom8.getValueAt(fila, 55)));
+            Playera.setText(String.valueOf(Tnom8.getValueAt(fila, 56)));
+            Corbata.setText(String.valueOf(Tnom8.getValueAt(fila, 57)));
+            ADN.setText(String.valueOf(Tnom8.getValueAt(fila, 58)));
+            DVT.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
+            cda.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
+            Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(NominaS_simss_5.class
+            Logger.getLogger(DepositosS_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom8MouseClicked
