@@ -189,7 +189,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
             TR.setText("0");
             MNV();
         } catch (HeadlessException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al agregar vale");
+            JOptionPane.showMessageDialog(null, "Error al agregar vale:" + e);
         }
     }
 

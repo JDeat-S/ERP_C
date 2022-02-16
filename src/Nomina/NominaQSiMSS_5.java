@@ -963,7 +963,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                     Tnom6.setEnabled(false);
                     Tnom7.setEnabled(false);
                     Tnom8.setEnabled(false);
-                    
+
                 }
                 if (LP.getP6() == 0) {
                     pago.setVisible(false);
@@ -975,7 +975,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                     pago6.setVisible(false);
                     pago7.setVisible(false);
                     pago8.setVisible(false);
-                                        pago.setEnabled(false);
+                    pago.setEnabled(false);
                     pago1.setEnabled(false);
                     pago2.setEnabled(false);
                     pago3.setEnabled(false);
@@ -998,7 +998,7 @@ public final class NominaQSiMSS_5 extends javax.swing.JFrame {
                 if (LP.getP10() == 0) {
                     Modm.setVisible(false);
                 }
-                 if (LP.getP11() == 0) {
+                if (LP.getP11() == 0) {
                     AgregarNP.setVisible(false);
                 }
             }
