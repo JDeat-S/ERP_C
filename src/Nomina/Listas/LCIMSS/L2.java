@@ -1,6 +1,6 @@
 package Nomina.Listas.LCIMSS;
 
-import Pruebas.Listas_CI_5_Pruebas;
+import Nomina.Listas.Listas_CI_5;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -57,7 +57,7 @@ public class L2 {
             Statement SLM1 = connect.createStatement();
             ResultSet LM1 = SLM1.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + "` WHERE `NDL` BETWEEN '"
                     + PL + "' AND '" + IL.getUNumR() + "' LIMIT 1");
-            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Listas de asistencia");
                 XSSFCellStyle Encabezado = libro.createCellStyle();
@@ -137,7 +137,7 @@ public class L2 {
                 cell.setCellStyle(Contenido);
 
                 cell = row.createCell(2);
-                spreadsheet.setColumnWidth(2, 8250);
+                spreadsheet.setColumnWidth(2, 8000);
                 cell.setCellValue("Nombre completo");
                 cell.setCellStyle(Contenido);
                 spreadsheet.addMergedRegion(
@@ -203,26 +203,33 @@ public class L2 {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellValue("Servicio");
-                    cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     2, //first row (0-based)
                                     2, //last row (0-based)
                                     4, //first column (0-based)
-                                    6 //last column (0-based)
+                                    7 //last column (0-based)
                             )
                     );
                     cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
+                    cell.setCellValue(LM1.getString("Apellido P") + " "
+                            + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
 
                     cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
+                    cell.setCellValue(LM1.getString("Apellido P") + " "
+                            + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
                     cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    //cell = row.createCell(7);
-                    //cell.setCellStyle(Contenido);
+                    cell.setCellStyle(Encabezado);
+
+                    cell.setCellValue(LM1.getString("Apellido P") + " "
+                            + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(7);
+                    cell.setCellValue(LM1.getString("Apellido P") + " "
+                            + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
                     cell = row.createCell(8);
                     cell.setCellValue(LM1.getString("Zona"));
                     spreadsheet.setColumnWidth(8, 4250);
@@ -230,7 +237,7 @@ public class L2 {
 
                     cell = row.createCell(9);
                     cell.setCellValue(LM1.getInt("NDL"));
-                    spreadsheet.setColumnWidth(9, 1500);
+                    spreadsheet.setColumnWidth(9, 1400);
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(5);
@@ -812,33 +819,40 @@ public class L2 {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellValue("Servicio");
-                    cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     24, //first row (0-based)
                                     24, //last row (0-based)
                                     4, //first column (0-based)
-                                    6 //last column (0-based)
+                                    7 //last column (0-based)
                             )
                     );
                     cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
+                    cell.setCellValue(LM2.getString("Apellido P") + " "
+                            + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
 
                     cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
+                    cell.setCellValue(LM2.getString("Apellido P") + " "
+                            + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
                     cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    //cell = row.createCell(7);
-                    //cell.setCellStyle(Contenido);
+                    cell.setCellStyle(Encabezado);
+
+                    cell.setCellValue(LM2.getString("Apellido P") + " "
+                            + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(7);
+                    cell.setCellValue(LM2.getString("Apellido P") + " "
+                            + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
                     cell = row.createCell(8);
                     cell.setCellValue(LM2.getString("Zona"));
                     spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
-                    spreadsheet.setColumnWidth(9, 1500);
+                    spreadsheet.setColumnWidth(9, 1400);
                     cell.setCellValue(LM2.getInt("NDL"));
                     cell.setCellStyle(Contenido);
 
@@ -862,7 +876,7 @@ public class L2 {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(2);
-                    spreadsheet.setColumnWidth(2, 8250);
+                    spreadsheet.setColumnWidth(2, 8000);
                     cell.setCellValue("Nombre completo");
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
@@ -1449,8 +1463,6 @@ public class L2 {
 
                 spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
                 libro.write(archivo);
-            } catch (SQLException ex) {
-                Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
@@ -1458,11 +1470,11 @@ public class L2 {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Listas_CI_5_Pruebas.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Listas_CI_5.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Listas_CI_5_Pruebas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Listas_CI_5.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
         }

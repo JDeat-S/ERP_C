@@ -1448,8 +1448,6 @@ public class L2 {
 
                 spreadsheet.setHorizontallyCenter(true); // Establecer la página impresa para que se centre horizontalmente
                 libro.write(archivo);
-            } catch (SQLException ex) {
-                Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {

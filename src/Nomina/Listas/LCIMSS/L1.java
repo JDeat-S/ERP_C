@@ -1,6 +1,5 @@
 package Nomina.Listas.LCIMSS;
 
-import Nomina.Listas.LSIMSS.*;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,7 +25,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class L1 {
 
     // <editor-fold defaultstate="collapsed" desc="Solo 1 lista">
-
     public void LIS(ItemsL IL) {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -55,7 +53,7 @@ public class L1 {
 
             Statement statement = connect.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona()
-                    + ".simss` WHERE `NDL` = '" + IL.getUNumR() + "'");
+                    + "` WHERE `NDL` = '" + IL.getUNumR() + "'");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Listas de asistencia");
@@ -202,26 +200,34 @@ public class L1 {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellValue("Servicio");
-                    cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     2, //first row (0-based)
                                     2, //last row (0-based)
                                     4, //first column (0-based)
-                                    6 //last column (0-based)
+                                    7 //last column (0-based)
                             )
                     );
                     cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
+                    cell.setCellValue(resultSet.getString("Apellido P") + " "
+                            + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
 
                     cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
+                    cell.setCellValue(resultSet.getString("Apellido P") + " "
+                            + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
                     cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    //cell = row.createCell(7);
-                    //cell.setCellStyle(Contenido);
+                    cell.setCellStyle(Encabezado);
+
+                    cell.setCellValue(resultSet.getString("Apellido P") + " "
+                            + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
+
+                    cell = row.createCell(7);
+                    cell.setCellValue(resultSet.getString("Apellido P") + " "
+                            + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                    cell.setCellStyle(Encabezado);
+
                     cell = row.createCell(8);
                     cell.setCellValue(resultSet.getString("Zona"));
                     spreadsheet.setColumnWidth(8, 4250);
@@ -786,7 +792,6 @@ public class L1 {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(L1.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
     }

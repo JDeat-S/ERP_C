@@ -96,7 +96,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIabel6.setVisible(false);
         FillLSIabel7.setVisible(false);
         FillLSIabel8.setVisible(false);
-        FillLSIabel9.setVisible(false);
         FillLSIAm.setVisible(false);
         FillLSIAm1.setVisible(false);
         FillLSIAm2.setVisible(false);
@@ -106,7 +105,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIAm6.setVisible(false);
         FillLSIAm7.setVisible(false);
         FillLSIAm8.setVisible(false);
-        FillLSIAm9.setVisible(false);
         FillLSIAp.setVisible(false);
         FillLSIAp1.setVisible(false);
         FillLSIAp2.setVisible(false);
@@ -116,7 +114,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIAp6.setVisible(false);
         FillLSIAp7.setVisible(false);
         FillLSIAp8.setVisible(false);
-        FillLSIAp9.setVisible(false);
         FillLSIName.setVisible(false);
         FillLSIName1.setVisible(false);
         FillLSIName2.setVisible(false);
@@ -126,7 +123,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIName6.setVisible(false);
         FillLSIName7.setVisible(false);
         FillLSIName8.setVisible(false);
-        FillLSIName9.setVisible(false);
         FillLSIQuin.setVisible(false);
         FillLSIQuin1.setVisible(false);
         FillLSIQuin2.setVisible(false);
@@ -136,7 +132,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIQuin6.setVisible(false);
         FillLSIQuin7.setVisible(false);
         FillLSIQuin8.setVisible(false);
-        FillLSIQuin9.setVisible(false);
         DiaCom1.setVisible(false);
         DiaCom2.setVisible(false);
         DiaCom3.setVisible(false);
@@ -195,7 +190,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIabel6.setVisible(false);
         FillLSIabel7.setVisible(false);
         FillLSIabel8.setVisible(false);
-        FillLSIabel9.setVisible(false);
         FillLSIAm.setVisible(false);
         FillLSIAm1.setVisible(false);
         FillLSIAm2.setVisible(false);
@@ -205,7 +199,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIAm6.setVisible(false);
         FillLSIAm7.setVisible(false);
         FillLSIAm8.setVisible(false);
-        FillLSIAm9.setVisible(false);
         FillLSIAp.setVisible(false);
         FillLSIAp1.setVisible(false);
         FillLSIAp2.setVisible(false);
@@ -215,7 +208,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIAp6.setVisible(false);
         FillLSIAp7.setVisible(false);
         FillLSIAp8.setVisible(false);
-        FillLSIAp9.setVisible(false);
         FillLSIName.setVisible(false);
         FillLSIName1.setVisible(false);
         FillLSIName2.setVisible(false);
@@ -225,7 +217,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIName6.setVisible(false);
         FillLSIName7.setVisible(false);
         FillLSIName8.setVisible(false);
-        FillLSIName9.setVisible(false);
         FillLSIQuin.setVisible(false);
         FillLSIQuin1.setVisible(false);
         FillLSIQuin2.setVisible(false);
@@ -235,7 +226,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIQuin6.setVisible(false);
         FillLSIQuin7.setVisible(false);
         FillLSIQuin8.setVisible(false);
-        FillLSIQuin9.setVisible(false);
         DiaCom1.setVisible(false);
         DiaCom2.setVisible(false);
         DiaCom3.setVisible(false);
@@ -425,17 +415,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         FillLSIQuin8 = new javax.swing.JComboBox<>();
         jScrollPane43 = new javax.swing.JScrollPane();
         TableLDASI8 = new javax.swing.JTable();
-        jScrollPane44 = new javax.swing.JScrollPane();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel49 = new javax.swing.JLabel();
-        FillLSI9 = new javax.swing.JComboBox<>();
-        FillLSIabel9 = new javax.swing.JLabel();
-        FillLSIAp9 = new javax.swing.JTextField();
-        FillLSIAm9 = new javax.swing.JTextField();
-        FillLSIName9 = new javax.swing.JTextField();
-        FillLSIQuin9 = new javax.swing.JComboBox<>();
-        jScrollPane45 = new javax.swing.JScrollPane();
-        TableLDASI9 = new javax.swing.JTable();
         DiaCor1 = new com.toedter.calendar.JDateChooser();
         DiaCor2 = new com.toedter.calendar.JDateChooser();
         DiaCor3 = new com.toedter.calendar.JDateChooser();
@@ -1426,106 +1405,7 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
 
         jScrollPane42.setViewportView(jPanel20);
 
-        jTabbedPane2.addTab("Santander Semanal", jScrollPane42);
-
-        jLabel49.setText("Filtro:");
-
-        FillLSI9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar filtro", "Apellido P", "Apellido M", "Nombre(s)", "Quincenas" }));
-        FillLSI9.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLSI9ItemStateChanged(evt);
-            }
-        });
-
-        FillLSIabel9.setText("jLabel12");
-
-        FillLSIAp9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLSIAp9KeyReleased(evt);
-            }
-        });
-
-        FillLSIAm9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLSIAm9KeyReleased(evt);
-            }
-        });
-
-        FillLSIName9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FillLSIName9KeyReleased(evt);
-            }
-        });
-
-        FillLSIQuin9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
-        FillLSIQuin9.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FillLSIQuin9ItemStateChanged(evt);
-            }
-        });
-
-        TableLDASI9.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        TableLDASI9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableLDASI9MouseClicked(evt);
-            }
-        });
-        jScrollPane45.setViewportView(TableLDASI9);
-
-        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
-        jPanel21.setLayout(jPanel21Layout);
-        jPanel21Layout.setHorizontalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 942, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addComponent(jLabel49)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIName9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(FillLSIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(152, Short.MAX_VALUE))
-        );
-        jPanel21Layout.setVerticalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(FillLSI9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLSIabel9)
-                    .addComponent(FillLSIAp9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLSIAm9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLSIName9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FillLSIQuin9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane45, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jScrollPane44.setViewportView(jPanel21);
-
-        jTabbedPane2.addTab("Santander Quincenal", jScrollPane44);
+        jTabbedPane2.addTab("Santander Quincenal", jScrollPane42);
 
         jScrollPane4.setViewportView(jTabbedPane2);
 
@@ -7036,7 +6916,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
                 pst.setString(466, ((JTextField) DiaCom15.getDateEditor().getUiComponent()).getText());
                 pst.setString(467, ((JTextField) DiaCom16.getDateEditor().getUiComponent()).getText());
                 pst.setString(468, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
-                pst.setString(468, ((JTextField) Fecha1.getDateEditor().getUiComponent()).getText());
                 pst.setInt(469, Integer.parseInt(LDA.getText()));
                 pst.setString(470, LDAZon.getSelectedItem().toString());
                 pst.setString(471, LDAQuin.getSelectedItem().toString());
@@ -7773,78 +7652,7 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de corporativo santander quincenal: " + error_mostrsr_pcda.getMessage());
 
         }
-
-        FiltroN = FillLSIName9.getText();
-        FAP = FillLSIAp9.getText();
-        FAM = FillLSIAm9.getText();
-        FQuin = FillLSIQuin9.getSelectedItem().toString();
-        SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`";
-
-        if (!"".equals(FiltroN)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FAP)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
-        } else if (!"".equals(FAM)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
-        } else if (!"".equals(FQuin)) {
-            SQL = "SELECT `NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)` FROM `nomina.listas.corporativo santander semanal.simss`"
-                    + " Where `Quincena` LIKE '%" + FQuin + "%'";
-        }
-
-        try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            TableLDASI9.setModel(modelo);
-            PreparedStatement ps;
-            ResultSet rs;
-
-            ps = con.prepareStatement(SQL);
-            rs = ps.executeQuery();
-
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Lista");
-            modelo.addColumn("Zona");//2
-            modelo.addColumn("Quincena");//2
-            modelo.addColumn("Apellido P");//9
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//9
-
-//ANCHOS
-            int[] anchos = {/*ND*/50, /*Zon*/ 50, /*Quin*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                TableLDASI9.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
-            while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-            ps.isClosed();
-            rs.isClosed();
-
-        } catch (SQLException error_mostrsr_pcda) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar datos de corporativo santander semanal: " + error_mostrsr_pcda.getMessage());
-
-        }
-
+        
     }
 
 
@@ -19890,173 +19698,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ExcelSIActionPerformed
 
-    private void FillLSIQuin9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin9ItemStateChanged
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSIQuin9ItemStateChanged
-
-    private void FillLSIName9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName9KeyReleased
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSIName9KeyReleased
-
-    private void FillLSIAm9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm9KeyReleased
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSIAm9KeyReleased
-
-    private void FillLSIAp9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp9KeyReleased
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSIAp9KeyReleased
-
-    private void FillLSI9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI9ItemStateChanged
-
-        if (FillLSI9.getSelectedIndex() == 0) {
-            FillLSIabel9.setVisible(false);
-            FillLSIAm9.setVisible(false);
-            FillLSIAm9.setText("");
-            FillLSIAp9.setVisible(false);
-            FillLSIAp9.setText("");
-            FillLSIName9.setVisible(false);
-            FillLSIName9.setText("");
-            FillLSIQuin9.setVisible(false);
-            FillLSIQuin9.setSelectedIndex(0);
-
-        }
-        if (FillLSI9.getSelectedIndex() == 1) {
-            FillLSIabel9.setVisible(true);
-            FillLSIabel9.setText("Buscar apellido P:");
-            FillLSIAm9.setVisible(false);
-            FillLSIAm9.setText("");
-            FillLSIAp9.setVisible(true);
-            FillLSIAp9.setText("");
-            FillLSIName9.setVisible(false);
-            FillLSIName9.setText("");
-            FillLSIQuin9.setVisible(false);
-            FillLSIQuin9.setSelectedIndex(0);
-
-        }
-        if (FillLSI9.getSelectedIndex() == 2) {
-            FillLSIabel9.setVisible(true);
-            FillLSIabel9.setText("Buscar apellido M:");
-            FillLSIAm9.setVisible(true);
-            FillLSIAm9.setText("");
-            FillLSIAp9.setVisible(false);
-            FillLSIAp9.setText("");
-            FillLSIName9.setVisible(false);
-            FillLSIName9.setText("");
-            FillLSIQuin9.setVisible(false);
-            FillLSIQuin9.setSelectedIndex(0);
-
-        }
-        if (FillLSI9.getSelectedIndex() == 3) {
-            FillLSIabel9.setVisible(true);
-            FillLSIabel9.setText("Buscar Nombre(s):");
-            FillLSIAm9.setVisible(false);
-            FillLSIAm9.setText("");
-            FillLSIAp9.setVisible(false);
-            FillLSIAp9.setText("");
-            FillLSIName9.setVisible(true);
-            FillLSIName9.setText("");
-            FillLSIQuin9.setVisible(false);
-            FillLSIQuin9.setSelectedIndex(0);
-        }
-        if (FillLSI9.getSelectedIndex() == 4) {
-            FillLSIabel9.setVisible(true);
-            FillLSIabel9.setText("Buscar Quincena:");
-            FillLSIAm9.setVisible(false);
-            FillLSIAm9.setText("");
-            FillLSIAp9.setVisible(false);
-            FillLSIAp9.setText("");
-            FillLSIName9.setVisible(false);
-            FillLSIName9.setText("");
-            FillLSIQuin9.setVisible(true);
-            FillLSIQuin9.setSelectedIndex(0);
-
-        }
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSI9ItemStateChanged
-
-    private void FillLSIQuin8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin8ItemStateChanged
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSIQuin8ItemStateChanged
-
-    private void FillLSIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName8KeyReleased
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSIName8KeyReleased
-
-    private void FillLSIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm8KeyReleased
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSIAm8KeyReleased
-
-    private void FillLSIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp8KeyReleased
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSIAp8KeyReleased
-
-    private void FillLSI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI8ItemStateChanged
-        if (FillLSI8.getSelectedIndex() == 0) {
-            FillLSIabel8.setVisible(false);
-            FillLSIAm8.setVisible(false);
-            FillLSIAm8.setText("");
-            FillLSIAp8.setVisible(false);
-            FillLSIAp8.setText("");
-            FillLSIName8.setVisible(false);
-            FillLSIName8.setText("");
-            FillLSIQuin8.setVisible(false);
-            FillLSIQuin8.setSelectedIndex(0);
-
-        }
-        if (FillLSI8.getSelectedIndex() == 1) {
-            FillLSIabel8.setVisible(true);
-            FillLSIabel8.setText("Buscar apellido P:");
-            FillLSIAm8.setVisible(false);
-            FillLSIAm8.setText("");
-            FillLSIAp8.setVisible(true);
-            FillLSIAp8.setText("");
-            FillLSIName8.setVisible(false);
-            FillLSIName8.setText("");
-            FillLSIQuin8.setVisible(false);
-            FillLSIQuin8.setSelectedIndex(0);
-
-        }
-        if (FillLSI8.getSelectedIndex() == 2) {
-            FillLSIabel8.setVisible(true);
-            FillLSIabel8.setText("Buscar apellido M:");
-            FillLSIAm8.setVisible(true);
-            FillLSIAm8.setText("");
-            FillLSIAp8.setVisible(false);
-            FillLSIAp8.setText("");
-            FillLSIName8.setVisible(false);
-            FillLSIName8.setText("");
-            FillLSIQuin8.setVisible(false);
-            FillLSIQuin8.setSelectedIndex(0);
-
-        }
-        if (FillLSI8.getSelectedIndex() == 3) {
-            FillLSIabel8.setVisible(true);
-            FillLSIabel8.setText("Buscar Nombre(s):");
-            FillLSIAm8.setVisible(false);
-            FillLSIAm8.setText("");
-            FillLSIAp8.setVisible(false);
-            FillLSIAp8.setText("");
-            FillLSIName8.setVisible(true);
-            FillLSIName8.setText("");
-            FillLSIQuin8.setVisible(false);
-            FillLSIQuin8.setSelectedIndex(0);
-        }
-        if (FillLSI8.getSelectedIndex() == 4) {
-            FillLSIabel8.setVisible(true);
-            FillLSIabel8.setText("Buscar Quincena:");
-            FillLSIAm8.setVisible(false);
-            FillLSIAm8.setText("");
-            FillLSIAp8.setVisible(false);
-            FillLSIAp8.setText("");
-            FillLSIName8.setVisible(false);
-            FillLSIName8.setText("");
-            FillLSIQuin8.setVisible(true);
-            FillLSIQuin8.setSelectedIndex(0);
-
-        }
-        MDLDASIMSS();
-    }//GEN-LAST:event_FillLSI8ItemStateChanged
-
     private void FillLSIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin7ItemStateChanged
         MDLDASIMSS();
     }//GEN-LAST:event_FillLSIQuin7ItemStateChanged
@@ -20762,34 +20403,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         ExcelSI.setVisible(true);
     }//GEN-LAST:event_TableLDASI7MouseClicked
 
-    private void TableLDASI8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI8MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDASI8.getModel();
-
-        int fila = TableLDASI8.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDASI8.getValueAt(fila, 0)));
-        String combo1 = model.getValueAt(fila, 2).toString();
-        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
-            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
-                LDAQuin.setSelectedIndex(i);
-            }
-        }
-        ExcelSI.setVisible(true);
-    }//GEN-LAST:event_TableLDASI8MouseClicked
-
-    private void TableLDASI9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI9MouseClicked
-        DefaultTableModel model = (DefaultTableModel) TableLDASI9.getModel();
-
-        int fila = TableLDASI9.getSelectedRow();
-        LDA.setText(String.valueOf(TableLDASI9.getValueAt(fila, 0)));
-        String combo1 = model.getValueAt(fila, 2).toString();
-        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
-            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
-                LDAQuin.setSelectedIndex(i);
-            }
-        }
-        ExcelSI.setVisible(true);
-    }//GEN-LAST:event_TableLDASI9MouseClicked
-
     private void FillLSI3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI3ItemStateChanged
 
         if (FillLSI4.getSelectedIndex() == 0) {
@@ -21070,6 +20683,103 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDA6ActionPerformed
 
+    private void TableLDASI8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableLDASI8MouseClicked
+        DefaultTableModel model = (DefaultTableModel) TableLDASI8.getModel();
+
+        int fila = TableLDASI8.getSelectedRow();
+        LDA.setText(String.valueOf(TableLDASI8.getValueAt(fila, 0)));
+        String combo1 = model.getValueAt(fila, 2).toString();
+        for (int i = 0; i < LDAQuin.getItemCount(); i++) {
+            if (LDAQuin.getItemAt(i).equalsIgnoreCase(combo1)) {
+                LDAQuin.setSelectedIndex(i);
+            }
+        }
+        ExcelSI.setVisible(true);
+    }//GEN-LAST:event_TableLDASI8MouseClicked
+
+    private void FillLSIQuin8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin8ItemStateChanged
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIQuin8ItemStateChanged
+
+    private void FillLSIName8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIName8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIName8KeyReleased
+
+    private void FillLSIAm8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAm8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAm8KeyReleased
+
+    private void FillLSIAp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FillLSIAp8KeyReleased
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSIAp8KeyReleased
+
+    private void FillLSI8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSI8ItemStateChanged
+        if (FillLSI8.getSelectedIndex() == 0) {
+            FillLSIabel8.setVisible(false);
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 1) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar apellido P:");
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(true);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 2) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar apellido M:");
+            FillLSIAm8.setVisible(true);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        if (FillLSI8.getSelectedIndex() == 3) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar Nombre(s):");
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(true);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(false);
+            FillLSIQuin8.setSelectedIndex(0);
+        }
+        if (FillLSI8.getSelectedIndex() == 4) {
+            FillLSIabel8.setVisible(true);
+            FillLSIabel8.setText("Buscar Quincena:");
+            FillLSIAm8.setVisible(false);
+            FillLSIAm8.setText("");
+            FillLSIAp8.setVisible(false);
+            FillLSIAp8.setText("");
+            FillLSIName8.setVisible(false);
+            FillLSIName8.setText("");
+            FillLSIQuin8.setVisible(true);
+            FillLSIQuin8.setSelectedIndex(0);
+
+        }
+        MDLDASIMSS();
+    }//GEN-LAST:event_FillLSI8ItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -21184,7 +20894,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FillLSI6;
     private javax.swing.JComboBox<String> FillLSI7;
     private javax.swing.JComboBox<String> FillLSI8;
-    private javax.swing.JComboBox<String> FillLSI9;
     private javax.swing.JTextField FillLSIAm;
     private javax.swing.JTextField FillLSIAm1;
     private javax.swing.JTextField FillLSIAm2;
@@ -21194,7 +20903,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FillLSIAm6;
     private javax.swing.JTextField FillLSIAm7;
     private javax.swing.JTextField FillLSIAm8;
-    private javax.swing.JTextField FillLSIAm9;
     private javax.swing.JTextField FillLSIAp;
     private javax.swing.JTextField FillLSIAp1;
     private javax.swing.JTextField FillLSIAp2;
@@ -21204,7 +20912,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FillLSIAp6;
     private javax.swing.JTextField FillLSIAp7;
     private javax.swing.JTextField FillLSIAp8;
-    private javax.swing.JTextField FillLSIAp9;
     private javax.swing.JTextField FillLSIName;
     private javax.swing.JTextField FillLSIName1;
     private javax.swing.JTextField FillLSIName2;
@@ -21214,7 +20921,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JTextField FillLSIName6;
     private javax.swing.JTextField FillLSIName7;
     private javax.swing.JTextField FillLSIName8;
-    private javax.swing.JTextField FillLSIName9;
     private javax.swing.JComboBox<String> FillLSIQuin;
     private javax.swing.JComboBox<String> FillLSIQuin1;
     private javax.swing.JComboBox<String> FillLSIQuin2;
@@ -21224,7 +20930,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FillLSIQuin6;
     private javax.swing.JComboBox<String> FillLSIQuin7;
     private javax.swing.JComboBox<String> FillLSIQuin8;
-    private javax.swing.JComboBox<String> FillLSIQuin9;
     private javax.swing.JLabel FillLSIabel;
     private javax.swing.JLabel FillLSIabel1;
     private javax.swing.JLabel FillLSIabel2;
@@ -21234,13 +20939,9 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JLabel FillLSIabel6;
     private javax.swing.JLabel FillLSIabel7;
     private javax.swing.JLabel FillLSIabel8;
-    private javax.swing.JLabel FillLSIabel9;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField LDA;
     private javax.swing.JMenuItem LDA1;
-    private javax.swing.JMenuItem LDA2;
-    private javax.swing.JMenuItem LDA3;
-    private javax.swing.JMenuItem LDA4;
     private javax.swing.JMenuItem LDA5;
     private javax.swing.JMenuItem LDA6;
     private javax.swing.JComboBox<String> LDAQuin;
@@ -21266,7 +20967,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JTable TableLDASI6;
     private javax.swing.JTable TableLDASI7;
     private javax.swing.JTable TableLDASI8;
-    private javax.swing.JTable TableLDASI9;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JLabel ULDA;
     private javax.swing.JLabel UNR;
@@ -21284,7 +20984,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -21320,7 +21019,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane26;
@@ -21342,8 +21040,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane41;
     private javax.swing.JScrollPane jScrollPane42;
     private javax.swing.JScrollPane jScrollPane43;
-    private javax.swing.JScrollPane jScrollPane44;
-    private javax.swing.JScrollPane jScrollPane45;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     // End of variables declaration//GEN-END:variables
