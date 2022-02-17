@@ -522,6 +522,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jLabel1.setText("A-22");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, 20));
 
+        NV.setEditable(false);
         NV.setForeground(new java.awt.Color(255, 51, 51));
         NV.setText("0");
         NV.setBorder(null);
@@ -621,6 +622,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jLabel10.setText("A-22");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 30, 20));
 
+        NV1.setEditable(false);
         NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         NV1.setForeground(new java.awt.Color(255, 51, 51));
         NV1.setText("0");

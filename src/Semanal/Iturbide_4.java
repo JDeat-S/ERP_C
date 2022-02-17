@@ -7,6 +7,7 @@ import Nomina.ModulosQ.*;
 import Nomina.*;
 import Admin.*;
 import Conexion.ConexionSQL;
+import Logicas.BDSemIturbide.*;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import RH.*;
@@ -33,6 +34,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -66,10 +68,33 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     Thread h1;
     Logica_usuarios usr;
     Logica_permisos LP;
-
+    ButtonGroup Timereport;
+    
     public Iturbide_4() {
         initComponents();
+        Timereport = new ButtonGroup();
+        Timereport.add(Gen);
+        Timereport.add(Mes);
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        CBXmes.setVisible(false);
+        Rec1.setVisible(false);
+        Rec2.setVisible(false);
+        Rec3.setVisible(false);
+        Rec4.setVisible(false);
+        Rec5.setVisible(false);
+        Rec6.setVisible(false);
+        Rec7.setVisible(false);
+        Rec8.setVisible(false);
+        Rec9.setVisible(false);
+        Entr1.setVisible(false);
+        Entr2.setVisible(false);
+        Entr3.setVisible(false);
+        Entr4.setVisible(false);
+        Entr5.setVisible(false);
+        Entr6.setVisible(false);
+        Entr7.setVisible(false);
+        Entr8.setVisible(false);
+        Entr9.setVisible(false);
         Otro.setVisible(false);
         Otro1.setVisible(false);
         Otro2.setVisible(false);
@@ -172,7 +197,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha9.setVisible(false);
         Servicio9.setVisible(false);
         Importe9.setVisible(false);
-
+        
         Fecha8.setVisible(false);
         Servicio8.setVisible(false);
         Importe8.setVisible(false);
@@ -182,11 +207,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha6.setVisible(false);
         Servicio6.setVisible(false);
         Importe6.setVisible(false);
-
+        
         Fecha5.setVisible(false);
         Servicio5.setVisible(false);
         Importe5.setVisible(false);
-
+        
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
@@ -377,14 +402,46 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         MostrarNDS();
         MDsem();
     }
-
+    
     public Iturbide_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         ARSC.setVisible(false);
-
+        Timereport = new ButtonGroup();
+        Timereport.add(Gen);
+        Timereport.add(Mes);
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
+        Rec.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec1.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec2.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec3.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec4.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec5.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec6.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec7.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec8.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec9.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec10.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        CBXmes.setVisible(false);
+        Rec1.setVisible(false);
+        Rec2.setVisible(false);
+        Rec3.setVisible(false);
+        Rec4.setVisible(false);
+        Rec5.setVisible(false);
+        Rec6.setVisible(false);
+        Rec7.setVisible(false);
+        Rec8.setVisible(false);
+        Rec9.setVisible(false);
+        Entr1.setVisible(false);
+        Entr2.setVisible(false);
+        Entr3.setVisible(false);
+        Entr4.setVisible(false);
+        Entr5.setVisible(false);
+        Entr6.setVisible(false);
+        Entr7.setVisible(false);
+        Entr8.setVisible(false);
+        Entr9.setVisible(false);
         Otro.setVisible(false);
         Otro1.setVisible(false);
         Otro2.setVisible(false);
@@ -487,7 +544,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha9.setVisible(false);
         Servicio9.setVisible(false);
         Importe9.setVisible(false);
-
+        
         Fecha8.setVisible(false);
         Servicio8.setVisible(false);
         Importe8.setVisible(false);
@@ -497,11 +554,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha6.setVisible(false);
         Servicio6.setVisible(false);
         Importe6.setVisible(false);
-
+        
         Fecha5.setVisible(false);
         Servicio5.setVisible(false);
         Importe5.setVisible(false);
-
+        
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
@@ -698,6 +755,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
             case 1 -> {
                 Menuadm.setVisible(false);
+                ESem.setVisible(false);
                 if (LP.getP1() == 0) {
                     Alumnos.setVisible(false);
                 }
@@ -730,7 +788,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
     }
-
+    
     public void Reporte2() {
         JFileChooser chooser1 = new JFileChooser();
         FileNameExtensionFilter filter1 = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -748,50 +806,50 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
-
+            
             Statement statementscc = connect.createStatement();
             Statement statementpen = connect.createStatement();
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-
+            
             ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
-
+            
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Ingresos y egresos"));
-
+                
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-
+                
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-
+                
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
+                
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-
+                
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
+                
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -813,13 +871,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.createRow(12);
                 spreadsheet.createRow(13);
                 spreadsheet.createRow(14);
-
+                
                 int i = 3;
                 while (NSem.next()) {
-
+                    
                     cell.setCellValue("Ingresos y egresos Semanal No. " + NDS.getText() + " de " + AutoFecha.getText());
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     0, //first row (0-based)
@@ -828,12 +886,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     12 //last column (0-based)
                             )
                     );
-
+                    
                     row = spreadsheet.createRow(1);
                     cell = row.createCell(0);
                     cell.setCellValue("Servicios con cobro");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -842,11 +900,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     3 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(4);
                     cell.setCellValue("Pensiones");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -855,11 +913,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     6 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(7);
                     cell.setCellValue("Gastos");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -868,11 +926,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     9 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(10);
                     cell.setCellValue("Vales");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -881,60 +939,60 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     12 //last column (0-based)
                             )
                     );
-
+                    
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(0);
                     cell.setCellValue("# Semanal");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(1);
                     cell.setCellValue("Fecha");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(2);
                     cell.setCellValue("Servicio");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(3);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(4);
                     cell.setCellValue("Servicio");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(5);
                     cell.setCellValue("# de padron");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(6);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(7);
                     cell.setCellValue("Concepto");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue("Lista de asistencia");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(10);
                     cell.setCellValue("# vale");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(11);
                     cell.setCellValue("Observacion");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(12);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-
+                    
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(0);
                     cell.setCellValue(NSem.getString("#Nsem"));
@@ -944,10 +1002,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-
+                
                 while (scc.next()) {
                     row = spreadsheet.getRow(i);
-
+                    
                     cell = row.createCell(2);
                     cell.setCellValue(scc.getString("Servicio"));
                     cell.setCellStyle(Contenido);
@@ -957,7 +1015,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-
+                
                 while (pen.next()) {
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(4);
@@ -972,7 +1030,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-
+                
                 while (gast.next()) {
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(7);
@@ -999,9 +1057,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString(5));
                     cell.setCellStyle(Contenido);
                     i++;
-
+                    
                 }
-
+                
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -1011,24 +1069,24 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-
+                
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-
+            
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     public void Reporte1() {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -1046,14 +1104,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
-
+            
             Statement statementscc = connect.createStatement();
             Statement statementpen = connect.createStatement();
             Statement statementgast = connect.createStatement();
@@ -1064,31 +1122,31 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
-
+            
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
-
+                
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-
+                
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-
+                
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
+                
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-
+                
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
+                
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -1098,12 +1156,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-
+                
                 while (NSem.next()) {
-
+                    
                     cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     0, //first row (0-based)
@@ -1114,12 +1172,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     );
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("MMM/YY"));
-
+                    
                     row = spreadsheet.createRow(1);
                     cell = row.createCell(2);
                     cell.setCellValue("Reporte General de Zona");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -1128,12 +1186,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     5 //last column (0-based)
                             )
                     );
-
+                    
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(2);
                     cell.setCellValue("Zona Sur 1");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     2, //first row (0-based)
@@ -1142,7 +1200,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     5 //last column (0-based)
                             )
                     );
-
+                    
                     row = spreadsheet.createRow(7);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
@@ -1169,7 +1227,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(8);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -1189,7 +1247,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(3);
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(4);
                     cell.setCellValue("INICIO");
                     cell.setCellStyle(Contenido);
@@ -1203,18 +1261,18 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(3);
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(8);
                     cell.setCellValue("Total de importe de servicios:");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TIS"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(4);
                     cell = row.createCell(3);
                     cell.setCellValue("FECHA: ");
@@ -1227,7 +1285,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     6 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(4);
                     cell.setCellValue(NSem.getString("Fecha"));
                     cell.setCellStyle(Contenido);
@@ -1235,15 +1293,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total de importe de pensiones:");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TIP"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(5);
                     cell = row.createCell(3);
                     cell.setCellValue("HORA: ");
@@ -1263,75 +1321,75 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total de servicios y pensiones");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(6);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total de gastos");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TG"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(7);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total de vales entregados: ");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TV"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.getRow(8);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total menos gastos y vales");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total restando gastos"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(9);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Debe entregar: ");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe entregar"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(10);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("El entrega: ");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("el entrega"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(11);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Debe: ");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe"));
                     cell.setCellStyle(Contenido);
-
+                    
                     NSem.isClosed();
                 }
                 spreadsheet.createRow(12);
@@ -1377,7 +1435,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(scc.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     i++;
-
+                    
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -1387,10 +1445,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     scc.isClosed();
                     statementscc.isClosed();
-
+                    
                 }
                 int x = 22;
-
+                
                 while (pen.next()) {
                     row = spreadsheet.createRow(20);
                     spreadsheet.addMergedRegion(
@@ -1418,7 +1476,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(21);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -1456,7 +1514,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(pen.getString("Fecha"));
@@ -1497,7 +1555,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(pen.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     x++;
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -1506,10 +1564,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(pen.getString("Total"));
                     cell.setCellStyle(Contenido);
                     pen.isClosed();
-
+                    
                 }
                 x = 35;
-
+                
                 while (gast.next()) {
                     row = spreadsheet.createRow(33);
                     spreadsheet.addMergedRegion(
@@ -1537,7 +1595,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(34);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -1575,7 +1633,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("# LISTA");
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(gast.getString("Fecha"));
@@ -1614,7 +1672,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(gast.getString("#Lista"));
                     cell.setCellStyle(Contenido);
                     x++;
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -1623,10 +1681,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(gast.getString("Total"));
                     cell.setCellStyle(Contenido);
                     gast.isClosed();
-
+                    
                 }
                 x = 48;
-
+                
                 while (val.next()) {
                     row = spreadsheet.createRow(46);
                     spreadsheet.addMergedRegion(
@@ -1654,7 +1712,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(47);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -1683,7 +1741,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(val.getString("Fecha"));
@@ -1713,7 +1771,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     x++;
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -1722,9 +1780,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString("Total"));
                     cell.setCellStyle(Contenido);
                     pen.isClosed();
-
+                    
                 }
-
+                
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -1734,42 +1792,42 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-
+                
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-
+            
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     public void ColorDB() {
         double DB = Double.parseDouble(DBe.getText());
         if (DB <= 0) {
             DBe.setBackground(Color.green);
-
+            
         } else {
             DBe.setBackground(Color.RED);
-
+            
         }
     }
-
+    
     public void MDsem() {
         //Buscar empleado
         String sem = txtsem.getText();
         /*String ShareAP = BusAPcdash.getText();
         String ShareAM = BusAMcdash.getText();*/
         String SQL = "SELECT * FROM `rh.semanal.inturbide.nsem`";
-
+        
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.nsem` where `#Nsem` LIKE '%" + sem + "%'";
         }
@@ -1780,7 +1838,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             where = " select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                     + " `Servicio` from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }*/
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1788,19 +1846,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             TSem.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Semanal");//1
             modelo.addColumn("Fecha de semanal");//2
             modelo.addColumn("Fecha de registro");//2
@@ -1819,13 +1877,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 120, 120, 50, 50, 40, 75, 75, 50, 50, 40, 40, 40, 40, 40};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1835,14 +1893,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos semanales: " + error_sh_cda.getMessage());
-
+            
         }
-
+        
         SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1850,19 +1908,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             TSem1.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Registro");//1
             modelo.addColumn("Semanal");//2
             modelo.addColumn("Fecha");
@@ -1872,13 +1930,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 40, 100, 100, 50, 75};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1888,14 +1946,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de servicios con cobro: " + error_sh_cda.getMessage());
-
+            
         }
-
+        
         SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1903,19 +1961,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             TSem2.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Registro");//1
             modelo.addColumn("Semanal");//2
             modelo.addColumn("Fecha");
@@ -1926,13 +1984,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 40, 150, 150, 50, 75, 75};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1942,14 +2000,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de servicios con cobro: " + error_sh_cda.getMessage());
-
+            
         }
-
+        
         SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1957,19 +2015,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             TSem3.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Registro");//1
             modelo.addColumn("Semanal");//2
             modelo.addColumn("Fecha");
@@ -1980,13 +2038,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 40, 150, 150, 50, 75, 75};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1996,14 +2054,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de servicios con cobro: " + error_sh_cda.getMessage());
-
+            
         }
-
+        
         SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2011,35 +2069,37 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             TSem4.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Registro");//1
             modelo.addColumn("Semanal");//2
             modelo.addColumn("Fecha");
             modelo.addColumn("Observaciones");//4
             modelo.addColumn("Importe");
             modelo.addColumn("Total");//6
+            modelo.addColumn("Recibe");//
+            modelo.addColumn("Entrega");//
 
 //Anchos
-            int[] anchos = {40, 40, 50, 150, 40, 75};
-
+            int[] anchos = {40, 40, 50, 150, 40, 75, 50, 50};
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2049,11 +2109,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de servicios con cobro: " + error_sh_cda.getMessage());
-
+            
         }
-
+        
     }
-
+    
     public void limpiar() {
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
@@ -2205,7 +2265,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         TDG.setText("0");
         TDV.setText("0");
     }
-
+    
     public void ADDSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
         String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `fecha de semanal`, `Fecha`, `hora`, `MMM/YY`,"
@@ -2213,7 +2273,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 + " `el entrega`, `Debe`, `Observaciones`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(NDS.getText()));
             pst.setString(2, ((JTextField) Fechasem.getDateEditor().getUiComponent()).getText());
             pst.setString(3, AutoFecha.getText());
@@ -2229,15 +2289,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(13, TDIDP.getText());
             pst.setString(14, TDG.getText());
             pst.setString(15, TDV.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal agregado");
-
+            
         } catch (HeadlessException | SQLException error_add_cda) {
             JOptionPane.showMessageDialog(null, "Error al agregar semanal: " + error_add_cda.getMessage());
         }
     }
-
+    
     public void MODSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
         String SQL = "UPDATE `rh.semanal.inturbide.nsem` SET `#Nsem` = ?, `fecha de semanal` = ?, `Fecha` = ?, `hora` = ?,"
@@ -2246,7 +2306,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 + " `TIP` = ?, `TG` = ?, `TV` = ? WHERE `rh.semanal.inturbide.nsem`.`#Nsem` = ?";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(SemSl.getText()));
             pst.setString(2, ((JTextField) Fechasem.getDateEditor().getUiComponent()).getText());
             pst.setString(3, AutoFecha.getText());
@@ -2263,15 +2323,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(14, TDG.getText());
             pst.setString(15, TDV.getText());
             pst.setInt(16, Integer.parseInt(SemSl.getText()));
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal modificado");
-
+            
         } catch (HeadlessException | SQLException error_add_cda) {
             JOptionPane.showMessageDialog(null, "Error al modificar semanal: " + error_add_cda.getMessage());
         }
     }
-
+    
     public void Addscc() {
         String SV, SV1, SV2, SV3, SV4, SV5, SV6, SV7, SV8, SV9;
         if (Servicio.getSelectedItem().toString().equals("Otro")) {
@@ -2333,13 +2393,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
         if (Mas1.isVisible()) {
@@ -2356,13 +2416,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
         if (Mas2.isVisible()) {
@@ -2385,13 +2445,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
         if (Mas3.isVisible()) {
@@ -2419,13 +2479,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro:  " + error_semanal);
-
+                
             }
         }
         if (Mas4.isVisible()) {
@@ -2458,13 +2518,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
         if (Mas5.isVisible()) {
@@ -2502,13 +2562,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
         if (Mas6.isVisible()) {
@@ -2551,13 +2611,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
         if (Mas7.isVisible()) {
@@ -2605,13 +2665,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(38, SV7);
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
         if (Mas8.isVisible()) {
@@ -2664,13 +2724,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(43, SV8);
                 pst.setString(44, Importe8.getText());
                 pst.setString(45, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
         if (Menos8.isVisible()) {
@@ -2729,20 +2789,20 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(48, SV9);
                 pst.setString(49, Importe9.getText());
                 pst.setString(50, TDIDS.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+                
             }
         }
     }
-
+    
     public void Addval() {
         if (Mas27.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
@@ -2751,18 +2811,20 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
         if (Mas28.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
-                    + " (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
@@ -2771,24 +2833,28 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
         if (Mas29.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
-                    + " (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
@@ -2797,350 +2863,441 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-                pst.setInt(13, Integer.parseInt(NVale2.getText()));
-                pst.setInt(14, Integer.parseInt(NDS.getText()));
-                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(16, ObsV2.getText());
-                pst.setString(17, Importe32.getText());
-                pst.setString(18, TDV.getText());
-
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                pst.setInt(17, Integer.parseInt(NVale2.getText()));
+                pst.setInt(18, Integer.parseInt(NDS.getText()));
+                pst.setString(19, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(20, ObsV2.getText());
+                pst.setString(21, Importe32.getText());
+                pst.setString(22, TDV.getText());
+                pst.setString(23, Rec2.getText());
+                pst.setString(24, Entr2.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
         if (Mas30.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
-                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
+                
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-                pst.setInt(13, Integer.parseInt(NVale2.getText()));
-                pst.setInt(14, Integer.parseInt(NDS.getText()));
-                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(16, ObsV2.getText());
-                pst.setString(17, Importe32.getText());
-                pst.setString(18, TDV.getText());
-                pst.setInt(19, Integer.parseInt(NVale3.getText()));
-                pst.setInt(20, Integer.parseInt(NDS.getText()));
-                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(22, ObsV3.getText());
-                pst.setString(23, Importe33.getText());
-                pst.setString(24, TDV.getText());
-
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                pst.setInt(17, Integer.parseInt(NVale2.getText()));
+                pst.setInt(18, Integer.parseInt(NDS.getText()));
+                pst.setString(19, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(20, ObsV2.getText());
+                pst.setString(21, Importe32.getText());
+                pst.setString(22, TDV.getText());
+                pst.setString(23, Rec2.getText());
+                pst.setString(24, Entr2.getText());
+                pst.setInt(25, Integer.parseInt(NVale3.getText()));
+                pst.setInt(26, Integer.parseInt(NDS.getText()));
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(28, ObsV3.getText());
+                pst.setString(29, Importe33.getText());
+                pst.setString(30, TDV.getText());
+                pst.setString(31, Rec3.getText());
+                pst.setString(32, Entr3.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales:  " + error_semanal);
-
+                
             }
         }
         if (Mas31.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
-                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
+                
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-                pst.setInt(13, Integer.parseInt(NVale2.getText()));
-                pst.setInt(14, Integer.parseInt(NDS.getText()));
-                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(16, ObsV2.getText());
-                pst.setString(17, Importe32.getText());
-                pst.setString(18, TDV.getText());
-                pst.setInt(19, Integer.parseInt(NVale3.getText()));
-                pst.setInt(20, Integer.parseInt(NDS.getText()));
-                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(22, ObsV3.getText());
-                pst.setString(23, Importe33.getText());
-                pst.setString(24, TDV.getText());
-                pst.setInt(25, Integer.parseInt(NVale4.getText()));
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                pst.setInt(17, Integer.parseInt(NVale2.getText()));
+                pst.setInt(18, Integer.parseInt(NDS.getText()));
+                pst.setString(19, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(20, ObsV2.getText());
+                pst.setString(21, Importe32.getText());
+                pst.setString(22, TDV.getText());
+                pst.setString(23, Rec2.getText());
+                pst.setString(24, Entr2.getText());
+                pst.setInt(25, Integer.parseInt(NVale3.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(28, ObsV4.getText());
-                pst.setString(29, Importe34.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(28, ObsV3.getText());
+                pst.setString(29, Importe33.getText());
                 pst.setString(30, TDV.getText());
-
+                pst.setString(31, Rec3.getText());
+                pst.setString(32, Entr3.getText());
+                pst.setInt(33, Integer.parseInt(NVale4.getText()));
+                pst.setInt(34, Integer.parseInt(NDS.getText()));
+                pst.setString(35, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(36, ObsV4.getText());
+                pst.setString(37, Importe34.getText());
+                pst.setString(38, TDV.getText());
+                pst.setString(39, Rec4.getText());
+                pst.setString(40, Entr4.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
         if (Mas32.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?),"
-                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
+                
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-                pst.setInt(13, Integer.parseInt(NVale2.getText()));
-                pst.setInt(14, Integer.parseInt(NDS.getText()));
-                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(16, ObsV2.getText());
-                pst.setString(17, Importe32.getText());
-                pst.setString(18, TDV.getText());
-                pst.setInt(19, Integer.parseInt(NVale3.getText()));
-                pst.setInt(20, Integer.parseInt(NDS.getText()));
-                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(22, ObsV3.getText());
-                pst.setString(23, Importe33.getText());
-                pst.setString(24, TDV.getText());
-                pst.setInt(25, Integer.parseInt(NVale4.getText()));
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                pst.setInt(17, Integer.parseInt(NVale2.getText()));
+                pst.setInt(18, Integer.parseInt(NDS.getText()));
+                pst.setString(19, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(20, ObsV2.getText());
+                pst.setString(21, Importe32.getText());
+                pst.setString(22, TDV.getText());
+                pst.setString(23, Rec2.getText());
+                pst.setString(24, Entr2.getText());
+                pst.setInt(25, Integer.parseInt(NVale3.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(28, ObsV4.getText());
-                pst.setString(29, Importe34.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(28, ObsV3.getText());
+                pst.setString(29, Importe33.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NVale5.getText()));
-                pst.setInt(32, Integer.parseInt(NDS.getText()));
-                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(34, ObsV5.getText());
-                pst.setString(35, Importe35.getText());
-                pst.setString(36, TDV.getText());
-
+                pst.setString(31, Rec3.getText());
+                pst.setString(32, Entr3.getText());
+                pst.setInt(33, Integer.parseInt(NVale4.getText()));
+                pst.setInt(34, Integer.parseInt(NDS.getText()));
+                pst.setString(35, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(36, ObsV4.getText());
+                pst.setString(37, Importe34.getText());
+                pst.setString(38, TDV.getText());
+                pst.setString(39, Rec4.getText());
+                pst.setString(40, Entr4.getText());
+                pst.setInt(41, Integer.parseInt(NVale5.getText()));
+                pst.setInt(42, Integer.parseInt(NDS.getText()));
+                pst.setString(43, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(44, ObsV5.getText());
+                pst.setString(45, Importe35.getText());
+                pst.setString(46, TDV.getText());
+                pst.setString(47, Rec5.getText());
+                pst.setString(48, Entr5.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
         if (Mas33.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
-                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
+                
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-                pst.setInt(13, Integer.parseInt(NVale2.getText()));
-                pst.setInt(14, Integer.parseInt(NDS.getText()));
-                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(16, ObsV2.getText());
-                pst.setString(17, Importe32.getText());
-                pst.setString(18, TDV.getText());
-                pst.setInt(19, Integer.parseInt(NVale3.getText()));
-                pst.setInt(20, Integer.parseInt(NDS.getText()));
-                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(22, ObsV3.getText());
-                pst.setString(23, Importe33.getText());
-                pst.setString(24, TDV.getText());
-                pst.setInt(25, Integer.parseInt(NVale4.getText()));
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                pst.setInt(17, Integer.parseInt(NVale2.getText()));
+                pst.setInt(18, Integer.parseInt(NDS.getText()));
+                pst.setString(19, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(20, ObsV2.getText());
+                pst.setString(21, Importe32.getText());
+                pst.setString(22, TDV.getText());
+                pst.setString(23, Rec2.getText());
+                pst.setString(24, Entr2.getText());
+                pst.setInt(25, Integer.parseInt(NVale3.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(28, ObsV4.getText());
-                pst.setString(29, Importe34.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(28, ObsV3.getText());
+                pst.setString(29, Importe33.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NVale5.getText()));
-                pst.setInt(32, Integer.parseInt(NDS.getText()));
-                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(34, ObsV5.getText());
-                pst.setString(35, Importe35.getText());
-                pst.setString(36, TDV.getText());
-                pst.setInt(37, Integer.parseInt(NVale6.getText()));
-                pst.setInt(38, Integer.parseInt(NDS.getText()));
-                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(40, ObsV6.getText());
-                pst.setString(41, Importe36.getText());
-                pst.setString(42, TDV.getText());
-
+                pst.setString(31, Rec3.getText());
+                pst.setString(32, Entr3.getText());
+                pst.setInt(33, Integer.parseInt(NVale4.getText()));
+                pst.setInt(34, Integer.parseInt(NDS.getText()));
+                pst.setString(35, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(36, ObsV4.getText());
+                pst.setString(37, Importe34.getText());
+                pst.setString(38, TDV.getText());
+                pst.setString(39, Rec4.getText());
+                pst.setString(40, Entr4.getText());
+                pst.setInt(41, Integer.parseInt(NVale5.getText()));
+                pst.setInt(42, Integer.parseInt(NDS.getText()));
+                pst.setString(43, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(44, ObsV5.getText());
+                pst.setString(45, Importe35.getText());
+                pst.setString(46, TDV.getText());
+                pst.setString(47, Rec5.getText());
+                pst.setString(48, Entr5.getText());
+                pst.setInt(49, Integer.parseInt(NVale6.getText()));
+                pst.setInt(50, Integer.parseInt(NDS.getText()));
+                pst.setString(51, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(52, ObsV6.getText());
+                pst.setString(53, Importe36.getText());
+                pst.setString(54, TDV.getText());
+                pst.setString(55, Rec6.getText());
+                pst.setString(56, Entr6.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
         if (Mas34.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
-                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
+                
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-                pst.setInt(13, Integer.parseInt(NVale2.getText()));
-                pst.setInt(14, Integer.parseInt(NDS.getText()));
-                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(16, ObsV2.getText());
-                pst.setString(17, Importe32.getText());
-                pst.setString(18, TDV.getText());
-                pst.setInt(19, Integer.parseInt(NVale3.getText()));
-                pst.setInt(20, Integer.parseInt(NDS.getText()));
-                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(22, ObsV3.getText());
-                pst.setString(23, Importe33.getText());
-                pst.setString(24, TDV.getText());
-                pst.setInt(25, Integer.parseInt(NVale4.getText()));
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                pst.setInt(17, Integer.parseInt(NVale2.getText()));
+                pst.setInt(18, Integer.parseInt(NDS.getText()));
+                pst.setString(19, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(20, ObsV2.getText());
+                pst.setString(21, Importe32.getText());
+                pst.setString(22, TDV.getText());
+                pst.setString(23, Rec2.getText());
+                pst.setString(24, Entr2.getText());
+                pst.setInt(25, Integer.parseInt(NVale3.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(28, ObsV4.getText());
-                pst.setString(29, Importe34.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(28, ObsV3.getText());
+                pst.setString(29, Importe33.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NVale5.getText()));
-                pst.setInt(32, Integer.parseInt(NDS.getText()));
-                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(34, ObsV5.getText());
-                pst.setString(35, Importe35.getText());
-                pst.setString(36, TDV.getText());
-                pst.setInt(37, Integer.parseInt(NVale6.getText()));
-                pst.setInt(38, Integer.parseInt(NDS.getText()));
-                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(40, ObsV6.getText());
-                pst.setString(41, Importe36.getText());
-                pst.setString(42, TDV.getText());
-                pst.setInt(43, Integer.parseInt(NVale7.getText()));
-                pst.setInt(44, Integer.parseInt(NDS.getText()));
-                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(46, ObsV7.getText());
-                pst.setString(47, Importe37.getText());
-                pst.setString(48, TDV.getText());
-
+                pst.setString(31, Rec3.getText());
+                pst.setString(32, Entr3.getText());
+                pst.setInt(33, Integer.parseInt(NVale4.getText()));
+                pst.setInt(34, Integer.parseInt(NDS.getText()));
+                pst.setString(35, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(36, ObsV4.getText());
+                pst.setString(37, Importe34.getText());
+                pst.setString(38, TDV.getText());
+                pst.setString(39, Rec4.getText());
+                pst.setString(40, Entr4.getText());
+                pst.setInt(41, Integer.parseInt(NVale5.getText()));
+                pst.setInt(42, Integer.parseInt(NDS.getText()));
+                pst.setString(43, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(44, ObsV5.getText());
+                pst.setString(45, Importe35.getText());
+                pst.setString(46, TDV.getText());
+                pst.setString(47, Rec5.getText());
+                pst.setString(48, Entr5.getText());
+                pst.setInt(49, Integer.parseInt(NVale6.getText()));
+                pst.setInt(50, Integer.parseInt(NDS.getText()));
+                pst.setString(51, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(52, ObsV6.getText());
+                pst.setString(53, Importe36.getText());
+                pst.setString(54, TDV.getText());
+                pst.setString(55, Rec6.getText());
+                pst.setString(56, Entr6.getText());
+                pst.setInt(57, Integer.parseInt(NVale7.getText()));
+                pst.setInt(58, Integer.parseInt(NDS.getText()));
+                pst.setString(59, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(60, ObsV7.getText());
+                pst.setString(61, Importe37.getText());
+                pst.setString(62, TDV.getText());
+                pst.setString(63, Rec7.getText());
+                pst.setString(64, Entr7.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
         if (Mas35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
-                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-
+                
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-                pst.setInt(13, Integer.parseInt(NVale2.getText()));
-                pst.setInt(14, Integer.parseInt(NDS.getText()));
-                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(16, ObsV2.getText());
-                pst.setString(17, Importe32.getText());
-                pst.setString(18, TDV.getText());
-                pst.setInt(19, Integer.parseInt(NVale3.getText()));
-                pst.setInt(20, Integer.parseInt(NDS.getText()));
-                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(22, ObsV3.getText());
-                pst.setString(23, Importe33.getText());
-                pst.setString(24, TDV.getText());
-                pst.setInt(25, Integer.parseInt(NVale4.getText()));
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                pst.setInt(17, Integer.parseInt(NVale2.getText()));
+                pst.setInt(18, Integer.parseInt(NDS.getText()));
+                pst.setString(19, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(20, ObsV2.getText());
+                pst.setString(21, Importe32.getText());
+                pst.setString(22, TDV.getText());
+                pst.setString(23, Rec2.getText());
+                pst.setString(24, Entr2.getText());
+                pst.setInt(25, Integer.parseInt(NVale3.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(28, ObsV4.getText());
-                pst.setString(29, Importe34.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(28, ObsV3.getText());
+                pst.setString(29, Importe33.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NVale5.getText()));
-                pst.setInt(32, Integer.parseInt(NDS.getText()));
-                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(34, ObsV5.getText());
-                pst.setString(35, Importe35.getText());
-                pst.setString(36, TDV.getText());
-                pst.setInt(37, Integer.parseInt(NVale6.getText()));
-                pst.setInt(38, Integer.parseInt(NDS.getText()));
-                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(40, ObsV6.getText());
-                pst.setString(41, Importe36.getText());
-                pst.setString(42, TDV.getText());
-                pst.setInt(43, Integer.parseInt(NVale7.getText()));
-                pst.setInt(44, Integer.parseInt(NDS.getText()));
-                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(46, ObsV7.getText());
-                pst.setString(47, Importe37.getText());
-                pst.setString(48, TDV.getText());
-                pst.setInt(49, Integer.parseInt(NVale8.getText()));
+                pst.setString(31, Rec3.getText());
+                pst.setString(32, Entr3.getText());
+                pst.setInt(33, Integer.parseInt(NVale4.getText()));
+                pst.setInt(34, Integer.parseInt(NDS.getText()));
+                pst.setString(35, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(36, ObsV4.getText());
+                pst.setString(37, Importe34.getText());
+                pst.setString(38, TDV.getText());
+                pst.setString(39, Rec4.getText());
+                pst.setString(40, Entr4.getText());
+                pst.setInt(41, Integer.parseInt(NVale5.getText()));
+                pst.setInt(42, Integer.parseInt(NDS.getText()));
+                pst.setString(43, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(44, ObsV5.getText());
+                pst.setString(45, Importe35.getText());
+                pst.setString(46, TDV.getText());
+                pst.setString(47, Rec5.getText());
+                pst.setString(48, Entr5.getText());
+                pst.setInt(49, Integer.parseInt(NVale6.getText()));
                 pst.setInt(50, Integer.parseInt(NDS.getText()));
-                pst.setString(51, DateFormat.getDateInstance().format(Fecha38.getDate()));
-                pst.setString(52, ObsV8.getText());
-                pst.setString(53, Importe38.getText());
+                pst.setString(51, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(52, ObsV6.getText());
+                pst.setString(53, Importe36.getText());
                 pst.setString(54, TDV.getText());
-
+                pst.setString(55, Rec6.getText());
+                pst.setString(56, Entr6.getText());
+                pst.setInt(57, Integer.parseInt(NVale7.getText()));
+                pst.setInt(58, Integer.parseInt(NDS.getText()));
+                pst.setString(59, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(60, ObsV7.getText());
+                pst.setString(61, Importe37.getText());
+                pst.setString(62, TDV.getText());
+                pst.setString(63, Rec7.getText());
+                pst.setString(64, Entr7.getText());
+                pst.setInt(65, Integer.parseInt(NVale8.getText()));
+                pst.setInt(66, Integer.parseInt(NDS.getText()));
+                pst.setString(67, DateFormat.getDateInstance().format(Fecha38.getDate()));
+                pst.setString(68, ObsV8.getText());
+                pst.setString(69, Importe38.getText());
+                pst.setString(70, TDV.getText());
+                pst.setString(71, Rec8.getText());
+                pst.setString(72, Entr8.getText());
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
         if (Menos35.isVisible()) {
-            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?), "
-                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), "
-                    + "(?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?)";
+            String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), "
+                    + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
@@ -3149,71 +3306,90 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(4, ObsV.getText());
                 pst.setString(5, Importe30.getText());
                 pst.setString(6, TDV.getText());
-                pst.setInt(7, Integer.parseInt(NVale1.getText()));
-                pst.setInt(8, Integer.parseInt(NDS.getText()));
-                pst.setString(9, DateFormat.getDateInstance().format(Fecha31.getDate()));
-                pst.setString(10, ObsV1.getText());
-                pst.setString(11, Importe31.getText());
-                pst.setString(12, TDV.getText());
-                pst.setInt(13, Integer.parseInt(NVale2.getText()));
-                pst.setInt(14, Integer.parseInt(NDS.getText()));
-                pst.setString(15, DateFormat.getDateInstance().format(Fecha32.getDate()));
-                pst.setString(16, ObsV2.getText());
-                pst.setString(17, Importe32.getText());
-                pst.setString(18, TDV.getText());
-                pst.setInt(19, Integer.parseInt(NVale3.getText()));
-                pst.setInt(20, Integer.parseInt(NDS.getText()));
-                pst.setString(21, DateFormat.getDateInstance().format(Fecha33.getDate()));
-                pst.setString(22, ObsV3.getText());
-                pst.setString(23, Importe33.getText());
-                pst.setString(24, TDV.getText());
-                pst.setInt(25, Integer.parseInt(NVale4.getText()));
+                pst.setString(7, Rec.getText());
+                pst.setString(8, Entr.getText());
+                pst.setInt(9, Integer.parseInt(NVale1.getText()));
+                pst.setInt(10, Integer.parseInt(NDS.getText()));
+                pst.setString(11, DateFormat.getDateInstance().format(Fecha31.getDate()));
+                pst.setString(12, ObsV1.getText());
+                pst.setString(13, Importe31.getText());
+                pst.setString(14, TDV.getText());
+                pst.setString(15, Rec1.getText());
+                pst.setString(16, Entr1.getText());
+                pst.setInt(17, Integer.parseInt(NVale2.getText()));
+                pst.setInt(18, Integer.parseInt(NDS.getText()));
+                pst.setString(19, DateFormat.getDateInstance().format(Fecha32.getDate()));
+                pst.setString(20, ObsV2.getText());
+                pst.setString(21, Importe32.getText());
+                pst.setString(22, TDV.getText());
+                pst.setString(23, Rec2.getText());
+                pst.setString(24, Entr2.getText());
+                pst.setInt(25, Integer.parseInt(NVale3.getText()));
                 pst.setInt(26, Integer.parseInt(NDS.getText()));
-                pst.setString(27, DateFormat.getDateInstance().format(Fecha34.getDate()));
-                pst.setString(28, ObsV4.getText());
-                pst.setString(29, Importe34.getText());
+                pst.setString(27, DateFormat.getDateInstance().format(Fecha33.getDate()));
+                pst.setString(28, ObsV3.getText());
+                pst.setString(29, Importe33.getText());
                 pst.setString(30, TDV.getText());
-                pst.setInt(31, Integer.parseInt(NVale5.getText()));
-                pst.setInt(32, Integer.parseInt(NDS.getText()));
-                pst.setString(33, DateFormat.getDateInstance().format(Fecha35.getDate()));
-                pst.setString(34, ObsV5.getText());
-                pst.setString(35, Importe35.getText());
-                pst.setString(36, TDV.getText());
-                pst.setInt(37, Integer.parseInt(NVale6.getText()));
-                pst.setInt(38, Integer.parseInt(NDS.getText()));
-                pst.setString(39, DateFormat.getDateInstance().format(Fecha36.getDate()));
-                pst.setString(40, ObsV6.getText());
-                pst.setString(41, Importe36.getText());
-                pst.setString(42, TDV.getText());
-                pst.setInt(43, Integer.parseInt(NVale7.getText()));
-                pst.setInt(44, Integer.parseInt(NDS.getText()));
-                pst.setString(45, DateFormat.getDateInstance().format(Fecha37.getDate()));
-                pst.setString(46, ObsV7.getText());
-                pst.setString(47, Importe37.getText());
-                pst.setString(48, TDV.getText());
-                pst.setInt(49, Integer.parseInt(NVale8.getText()));
+                pst.setString(31, Rec3.getText());
+                pst.setString(32, Entr3.getText());
+                pst.setInt(33, Integer.parseInt(NVale4.getText()));
+                pst.setInt(34, Integer.parseInt(NDS.getText()));
+                pst.setString(35, DateFormat.getDateInstance().format(Fecha34.getDate()));
+                pst.setString(36, ObsV4.getText());
+                pst.setString(37, Importe34.getText());
+                pst.setString(38, TDV.getText());
+                pst.setString(39, Rec4.getText());
+                pst.setString(40, Entr4.getText());
+                pst.setInt(41, Integer.parseInt(NVale5.getText()));
+                pst.setInt(42, Integer.parseInt(NDS.getText()));
+                pst.setString(43, DateFormat.getDateInstance().format(Fecha35.getDate()));
+                pst.setString(44, ObsV5.getText());
+                pst.setString(45, Importe35.getText());
+                pst.setString(46, TDV.getText());
+                pst.setString(47, Rec5.getText());
+                pst.setString(48, Entr5.getText());
+                pst.setInt(49, Integer.parseInt(NVale6.getText()));
                 pst.setInt(50, Integer.parseInt(NDS.getText()));
-                pst.setString(51, DateFormat.getDateInstance().format(Fecha38.getDate()));
-                pst.setString(52, ObsV8.getText());
-                pst.setString(53, Importe38.getText());
+                pst.setString(51, DateFormat.getDateInstance().format(Fecha36.getDate()));
+                pst.setString(52, ObsV6.getText());
+                pst.setString(53, Importe36.getText());
                 pst.setString(54, TDV.getText());
-                pst.setInt(55, Integer.parseInt(NVale9.getText()));
-                pst.setInt(56, Integer.parseInt(NDS.getText()));
-                pst.setString(57, DateFormat.getDateInstance().format(Fecha39.getDate()));
-                pst.setString(58, ObsV9.getText());
-                pst.setString(59, Importe39.getText());
-                pst.setString(60, TDV.getText());
-
+                pst.setString(55, Rec6.getText());
+                pst.setString(56, Entr6.getText());
+                pst.setInt(57, Integer.parseInt(NVale7.getText()));
+                pst.setInt(58, Integer.parseInt(NDS.getText()));
+                pst.setString(59, DateFormat.getDateInstance().format(Fecha37.getDate()));
+                pst.setString(60, ObsV7.getText());
+                pst.setString(61, Importe37.getText());
+                pst.setString(62, TDV.getText());
+                pst.setString(63, Rec7.getText());
+                pst.setString(64, Entr7.getText());
+                pst.setInt(65, Integer.parseInt(NVale8.getText()));
+                pst.setInt(66, Integer.parseInt(NDS.getText()));
+                pst.setString(67, DateFormat.getDateInstance().format(Fecha38.getDate()));
+                pst.setString(68, ObsV8.getText());
+                pst.setString(69, Importe38.getText());
+                pst.setString(70, TDV.getText());
+                pst.setString(71, Rec8.getText());
+                pst.setString(72, Entr8.getText());
+                pst.setInt(73, Integer.parseInt(NVale9.getText()));
+                pst.setInt(74, Integer.parseInt(NDS.getText()));
+                pst.setString(75, DateFormat.getDateInstance().format(Fecha39.getDate()));
+                pst.setString(76, ObsV9.getText());
+                pst.setString(77, Importe39.getText());
+                pst.setString(78, TDV.getText());
+                pst.setString(79, Rec9.getText());
+                pst.setString(80, Entr9.getText());
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+                
             }
         }
     }
-
+    
     public void Addspen() {
         if (Mas9.isVisible()) {
             String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
@@ -3225,13 +3401,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(4, NPadron.getText());
                 pst.setString(5, Importe10.getText());
                 pst.setString(6, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
         if (Mas10.isVisible()) {
@@ -3250,13 +3426,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(10, NPadron1.getText());
                 pst.setString(11, Importe11.getText());
                 pst.setString(12, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
         if (Mas11.isVisible()) {
@@ -3282,13 +3458,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(16, NPadron2.getText());
                 pst.setString(17, Importe12.getText());
                 pst.setString(18, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
         if (Mas12.isVisible()) {
@@ -3320,13 +3496,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(22, NPadron3.getText());
                 pst.setString(23, Importe13.getText());
                 pst.setString(24, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones:  " + error_semanal);
-
+                
             }
         }
         if (Mas13.isVisible()) {
@@ -3363,13 +3539,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(28, NPadron4.getText());
                 pst.setString(29, Importe14.getText());
                 pst.setString(30, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
         if (Mas14.isVisible()) {
@@ -3413,13 +3589,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(34, NPadron5.getText());
                 pst.setString(35, Importe15.getText());
                 pst.setString(36, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
         if (Mas15.isVisible()) {
@@ -3469,13 +3645,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(40, NPadron6.getText());
                 pst.setString(41, Importe16.getText());
                 pst.setString(42, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
         if (Mas16.isVisible()) {
@@ -3531,13 +3707,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(46, NPadron7.getText());
                 pst.setString(47, Importe17.getText());
                 pst.setString(48, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
         if (Mas17.isVisible()) {
@@ -3599,13 +3775,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(52, NPadron8.getText());
                 pst.setString(53, Importe18.getText());
                 pst.setString(54, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
         if (Menos17.isVisible()) {
@@ -3674,17 +3850,17 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(58, NPadron9.getText());
                 pst.setString(59, Importe19.getText());
                 pst.setString(60, TDIDP.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+                
             }
         }
     }
-
+    
     public void Addsgast() {
         if (Mas18.isVisible()) {
             String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
@@ -3696,13 +3872,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(4, Importe20.getText());
                 pst.setString(5, LDA.getText());
                 pst.setString(6, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
         if (Mas19.isVisible()) {
@@ -3721,13 +3897,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(10, Importe21.getText());
                 pst.setString(11, LDA1.getText());
                 pst.setString(12, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
         if (Mas20.isVisible()) {
@@ -3753,13 +3929,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(16, Importe22.getText());
                 pst.setString(17, LDA2.getText());
                 pst.setString(18, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
         if (Mas21.isVisible()) {
@@ -3791,13 +3967,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(22, Importe23.getText());
                 pst.setString(23, LDA3.getText());
                 pst.setString(24, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.:  " + error_semanal);
-
+                
             }
         }
         if (Mas22.isVisible()) {
@@ -3835,13 +4011,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(28, Importe24.getText());
                 pst.setString(29, LDA4.getText());
                 pst.setString(30, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
         if (Mas23.isVisible()) {
@@ -3885,13 +4061,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(34, Importe25.getText());
                 pst.setString(35, LDA5.getText());
                 pst.setString(36, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
         if (Mas24.isVisible()) {
@@ -3941,13 +4117,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(40, Importe26.getText());
                 pst.setString(41, LDA6.getText());
                 pst.setString(42, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
         if (Mas25.isVisible()) {
@@ -4003,13 +4179,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(46, Importe7.getText());
                 pst.setString(47, LDA7.getText());
                 pst.setString(48, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
         if (Mas26.isVisible()) {
@@ -4071,13 +4247,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(52, Importe28.getText());
                 pst.setString(53, LDA8.getText());
                 pst.setString(54, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
         if (Menos26.isVisible()) {
@@ -4146,17 +4322,17 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(58, Importe29.getText());
                 pst.setString(59, LDA9.getText());
                 pst.setString(60, TDG.getText());
-
+                
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+                
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+                
             }
         }
     }
-
+    
     @Override
     public void run() {
         Thread ct = Thread.currentThread();
@@ -4166,11 +4342,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException error) {
-
+                
             }
         }
     }
-
+    
     private void calcula() {
         Calendar Fechaactual = new GregorianCalendar();
         Date fechaHoraactual = new Date();
@@ -4190,7 +4366,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         min = Fechaactual.get(Calendar.MINUTE) > 9 ? "" + Fechaactual.get(Calendar.MINUTE) : "0" + Fechaactual.get(Calendar.MINUTE);
         seg = Fechaactual.get(Calendar.SECOND) > 9 ? "" + Fechaactual.get(Calendar.SECOND) : "0" + Fechaactual.get(Calendar.SECOND);
     }
-
+    
     public void Operaciones2() {
         int fila = TSem.getSelectedRow();
         SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
@@ -4208,7 +4384,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Servicios">
         double ImServ1 = Double.parseDouble(Importe40.getText());
         double ImServ2 = Double.parseDouble(TDIDS.getText());
-
+        
         double TotalServ = ImServ1 + ImServ2;
         this.TDIDS.setText("" + TotalServ + "");
         //</editor-fold>
@@ -4216,7 +4392,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Suma Pensiones">
         double ImPen1 = Double.parseDouble(Importe41.getText());
         double ImPen2 = Double.parseDouble(TDIDP.getText());
-
+        
         double TotalPen = ImPen1 + ImPen2;
         TDIDP.setText("" + TotalPen);
         //</editor-fold>
@@ -4224,7 +4400,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Total SYP">
         double TDSYP1 = Double.parseDouble(TDIDS.getText());
         double TDSYP2 = Double.parseDouble(TDIDP.getText());
-
+        
         double TotalSYP = TDSYP1 + TDSYP2;
         TDSYP.setText("" + TotalSYP);
         //</editor-fold>
@@ -4232,7 +4408,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Suma Gastos">
         double Gasto1 = Double.parseDouble(Importe42.getText());
         double Gasto2 = Double.parseDouble(TDG.getText());
-
+        
         double TotalGas = Gasto1 + Gasto2;
         TDG.setText("" + TotalGas);
         //</editor-fold>
@@ -4254,7 +4430,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         //</editor-fold>
         ColorDB();
     }
-
+    
     public void Operaciones() {
         // <editor-fold defaultstate="collapsed" desc="Suma Servicios">
         double ImServ1 = Double.parseDouble(Importe.getText());
@@ -4267,7 +4443,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         double ImServ8 = Double.parseDouble(Importe7.getText());
         double ImServ9 = Double.parseDouble(Importe8.getText());
         double ImServ10 = Double.parseDouble(Importe9.getText());
-
+        
         double TotalServ = ImServ1 + ImServ2 + ImServ3 + ImServ4 + ImServ5 + ImServ6 + ImServ7
                 + ImServ8 + ImServ9 + ImServ10;
         this.TDIDS.setText("" + TotalServ + "");
@@ -4284,7 +4460,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         double ImPen8 = Double.parseDouble(Importe17.getText());
         double ImPen9 = Double.parseDouble(Importe18.getText());
         double ImPen10 = Double.parseDouble(Importe19.getText());
-
+        
         double TotalPen = ImPen1 + ImPen2 + ImPen3 + ImPen4 + ImPen5 + ImPen6 + ImPen7 + ImPen8
                 + ImPen9 + ImPen10;
         TDIDP.setText("" + TotalPen);
@@ -4293,7 +4469,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Total SYP">
         double TDSYP1 = Double.parseDouble(TDIDS.getText());
         double TDSYP2 = Double.parseDouble(TDIDP.getText());
-
+        
         double TotalSYP = TDSYP1 + TDSYP2;
         TDSYP.setText("" + TotalSYP);
         //</editor-fold>
@@ -4309,7 +4485,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         double Gasto8 = Double.parseDouble(Importe27.getText());
         double Gasto9 = Double.parseDouble(Importe28.getText());
         double Gasto10 = Double.parseDouble(Importe29.getText());
-
+        
         double TotalGas = Gasto1 + Gasto2 + Gasto3 + Gasto4 + Gasto5 + Gasto6 + Gasto7 + Gasto8
                 + Gasto9 + Gasto10;
         TDG.setText("" + TotalGas);
@@ -4336,25 +4512,25 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         //</editor-fold>
 
     }
-
+    
     public void MostrarNDS() {
         String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022' AND TABLE_NAME = 'rh.semanal.inturbide.nsem'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
             while (rs.next()) {
-
+                
                 NDS.setText("" + (Integer.parseInt(rs.getString("AUTO_INCREMENT"))));
             }
             st.isClosed();
             rs.isClosed();
         } catch (SQLException e) {
-
+            
             JOptionPane.showMessageDialog(null, "Error al mostrar numero de padron " + e);
-
+            
         }
     }
-
+    
     @SuppressWarnings("unchecked")
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -4609,6 +4785,24 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         NVale7 = new javax.swing.JTextField();
         NVale8 = new javax.swing.JTextField();
         NVale9 = new javax.swing.JTextField();
+        Rec1 = new javax.swing.JTextField();
+        Rec2 = new javax.swing.JTextField();
+        Rec3 = new javax.swing.JTextField();
+        Rec4 = new javax.swing.JTextField();
+        Rec5 = new javax.swing.JTextField();
+        Rec6 = new javax.swing.JTextField();
+        Rec7 = new javax.swing.JTextField();
+        Rec8 = new javax.swing.JTextField();
+        Rec9 = new javax.swing.JTextField();
+        Entr1 = new javax.swing.JTextField();
+        Entr2 = new javax.swing.JTextField();
+        Entr3 = new javax.swing.JTextField();
+        Entr4 = new javax.swing.JTextField();
+        Entr5 = new javax.swing.JTextField();
+        Entr6 = new javax.swing.JTextField();
+        Entr7 = new javax.swing.JTextField();
+        Entr8 = new javax.swing.JTextField();
+        Entr9 = new javax.swing.JTextField();
         Mas27 = new javax.swing.JButton();
         Menos27 = new javax.swing.JButton();
         Mas28 = new javax.swing.JButton();
@@ -4629,6 +4823,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Menos35 = new javax.swing.JButton();
         NVale = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        Rec = new javax.swing.JTextField();
+        jLabel65 = new javax.swing.JLabel();
+        Entr = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         TMGYV = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -4651,6 +4849,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel39 = new javax.swing.JLabel();
         SemSl = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
+        ESem = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
@@ -4670,10 +4869,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jScrollPane20 = new javax.swing.JScrollPane();
         jPanel16 = new javax.swing.JPanel();
         jLabel62 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        TDR = new javax.swing.JComboBox<>();
+        Gen = new javax.swing.JRadioButton();
+        Mes = new javax.swing.JRadioButton();
+        CBXmes = new javax.swing.JComboBox<>();
+        jLabel63 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
@@ -4742,6 +4942,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel60 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jLabel66 = new javax.swing.JLabel();
+        Rec10 = new javax.swing.JTextField();
+        jLabel67 = new javax.swing.JLabel();
+        Entr10 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         Fechasem = new com.toedter.calendar.JDateChooser();
         jLabel61 = new javax.swing.JLabel();
@@ -4771,6 +4975,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -4783,7 +4989,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Semanal Inturbide");
@@ -6606,6 +6811,24 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        Rec1.setEditable(false);
+
+        Rec2.setEditable(false);
+
+        Rec3.setEditable(false);
+
+        Rec4.setEditable(false);
+
+        Rec5.setEditable(false);
+
+        Rec6.setEditable(false);
+
+        Rec7.setEditable(false);
+
+        Rec8.setEditable(false);
+
+        Rec9.setEditable(false);
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -6634,7 +6857,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(Fecha36, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Fecha37, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Fecha38, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ObsV2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ObsV3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6655,30 +6878,96 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(Rec9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Entr9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Importe39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Rec9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Entr9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel7Layout.createSequentialGroup()
@@ -6875,77 +7164,91 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel42.setText("# Vale");
 
+        jLabel64.setText("Recibe");
+
+        Rec.setEditable(false);
+
+        jLabel65.setText("Entrega");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
+                        .addGap(147, 147, 147)
                         .addComponent(jLabel28))
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel42))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel25)
-                                        .addGap(119, 119, 119)
-                                        .addComponent(jLabel11)
-                                        .addGap(83, 83, 83)
-                                        .addComponent(jLabel29))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel42))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(Mas27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas28)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas30)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas31)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas32)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Mas35))
+                                .addComponent(jLabel25)
+                                .addGap(119, 119, 119)
+                                .addComponent(jLabel11)
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel29))
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(Menos27)
+                                .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos28)
+                                .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos29)
+                                .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Rec, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel64))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel65)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(Entr, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos30)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(Mas27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas28)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas30)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Mas32))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(Menos27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos28)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos29)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos30)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos31)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Menos32)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos31)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Mas33)
+                                    .addComponent(Menos33))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos32)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Mas34)
+                                    .addComponent(Menos34))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Menos35)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Mas35)
+                                    .addComponent(Menos35)))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6958,20 +7261,23 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel29)
                         .addComponent(jLabel11)
-                        .addComponent(jLabel42)))
+                        .addComponent(jLabel42)
+                        .addComponent(jLabel64)
+                        .addComponent(jLabel65)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Fecha30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(ObsV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Importe30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Rec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Entr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(NVale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Mas27)
                             .addComponent(Mas28)
@@ -6979,20 +7285,28 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                             .addComponent(Mas30)
                             .addComponent(Mas31)
                             .addComponent(Mas32)
-                            .addComponent(Mas33)
                             .addComponent(Mas34)
                             .addComponent(Mas35))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Menos27)
-                            .addComponent(Menos28)
-                            .addComponent(Menos29)
-                            .addComponent(Menos30)
-                            .addComponent(Menos31)
-                            .addComponent(Menos32)
-                            .addComponent(Menos33)
-                            .addComponent(Menos34)
-                            .addComponent(Menos35))))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Menos27)
+                                    .addComponent(Menos28)
+                                    .addComponent(Menos29)
+                                    .addComponent(Menos30)
+                                    .addComponent(Menos31)
+                                    .addComponent(Menos32)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(Menos35))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(Menos34))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(Mas33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Menos33)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -7071,6 +7385,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel40.setText("Recrear reporte semanal:");
 
+        ESem.setText("Eliminar Semanal");
+        ESem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ESemActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -7091,22 +7412,25 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(SemSl)
-                        .addGap(0, 310, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ESem)
+                        .addGap(0, 240, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel14)
                         .addComponent(txtsem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel38)
                         .addComponent(jLabel40))
+                    .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel39)
-                        .addComponent(SemSl)))
+                        .addComponent(SemSl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ESem)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
                 .addContainerGap())
@@ -7254,30 +7578,58 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel62.setText("Tipo de reporte:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingresos y egresos", "Solo datos de servicios", "Solo pensiones", "Solo gastos", "Solo Vales" }));
+        TDR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingresos y egresos", "Datos de servicios", "Datos de pensiones", "Datos de gastos", "Datos de Vales" }));
+        TDR.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                TDRItemStateChanged(evt);
+            }
+        });
 
-        jRadioButton1.setText("General");
+        Gen.setText("General");
+        Gen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenActionPerformed(evt);
+            }
+        });
 
-        jRadioButton2.setText("Mes");
+        Mes.setText("Mes");
+        Mes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MesActionPerformed(evt);
+            }
+        });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        CBXmes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
+        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel63.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel63.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel63MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel62)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addContainerGap()
+                        .addComponent(jLabel62)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addComponent(Gen)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mes)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CBXmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TDR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(jLabel63)))
                 .addContainerGap(575, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
@@ -7286,13 +7638,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel62)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TDR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(243, Short.MAX_VALUE))
+                    .addComponent(Gen)
+                    .addComponent(Mes)
+                    .addComponent(CBXmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel63)
+                .addContainerGap(221, Short.MAX_VALUE))
         );
 
         jScrollPane20.setViewportView(jPanel16);
@@ -7679,6 +8033,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        jLabel66.setText("Recibe");
+
+        Rec10.setEditable(false);
+
+        jLabel67.setText("Entrega");
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
@@ -7693,21 +8053,30 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(jLabel58)
-                                .addGap(119, 119, 119)
-                                .addComponent(jLabel60)
-                                .addGap(83, 83, 83)
-                                .addComponent(jLabel57))
-                            .addGroup(jPanel15Layout.createSequentialGroup()
                                 .addComponent(Fecha43, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ObsV10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton7))))
-                    .addComponent(jButton11))
-                .addContainerGap(200, Short.MAX_VALUE))
+                                .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel15Layout.createSequentialGroup()
+                                .addComponent(jLabel58)
+                                .addGap(119, 119, 119)
+                                .addComponent(jLabel60)
+                                .addGap(83, 83, 83)
+                                .addComponent(jLabel57)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Rec10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel66))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel67)
+                            .addComponent(Entr10, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jButton11)
+                        .addGap(250, 250, 250)
+                        .addComponent(jButton7)))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7718,17 +8087,22 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel57)
                         .addComponent(jLabel60)
-                        .addComponent(jLabel59)))
+                        .addComponent(jLabel59)
+                        .addComponent(jLabel66)
+                        .addComponent(jLabel67)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Fecha43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(ObsV10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(Importe43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton7))
+                        .addComponent(Rec10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Entr10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(NVale10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton11)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton11)
+                    .addComponent(jButton7))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -7816,9 +8190,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                         .addComponent(TDG)
                                         .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                                         .addComponent(DBe))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, 0)
-                                        .addComponent(NDS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(NDS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -8096,7 +8468,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         jMenu6.setText("Semanales");
 
-        jMenuItem10.setText("Inturbide");
+        jMenuItem10.setText("Iturbide");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
@@ -8119,6 +8491,22 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
         jMenu6.add(jMenuItem12);
+
+        jMenuItem15.setText("Reimprimir vale");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem15);
+
+        jMenuItem16.setText("Generar vale de efectivo");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem16);
 
         jMenu5.add(jMenu6);
 
@@ -8210,14 +8598,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
         Semanales.add(jMenuItem13);
-
-        jMenuItem14.setText("Reimprimir vale");
-        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem14ActionPerformed(evt);
-            }
-        });
-        Semanales.add(jMenuItem14);
 
         jMenuBar1.add(Semanales);
 
@@ -9005,6 +9385,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Importe39KeyReleased
 
     private void Menos27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos27ActionPerformed
+        Rec1.setVisible(false);
+        Entr1.setVisible(false);
         NVale1.setVisible(false);
         Fecha31.setVisible(false);
         ObsV1.setVisible(false);
@@ -9015,6 +9397,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos27ActionPerformed
 
     private void Mas27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas27ActionPerformed
+        Rec1.setVisible(true);
+        Entr1.setVisible(true);
         NVale1.setVisible(true);
         Fecha31.setVisible(true);
         ObsV1.setVisible(true);
@@ -9025,6 +9409,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas27ActionPerformed
 
     private void Menos28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos28ActionPerformed
+        Rec2.setVisible(false);
+        Entr2.setVisible(false);
         NVale2.setVisible(false);
         Fecha32.setVisible(false);
         ObsV2.setVisible(false);
@@ -9036,6 +9422,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos28ActionPerformed
 
     private void Mas28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas28ActionPerformed
+        Rec2.setVisible(true);
+        Entr2.setVisible(true);
         NVale2.setVisible(true);
         Fecha32.setVisible(true);
         ObsV2.setVisible(true);
@@ -9047,6 +9435,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas28ActionPerformed
 
     private void Mas29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas29ActionPerformed
+        Rec3.setVisible(true);
+        Entr3.setVisible(true);
         NVale3.setVisible(true);
         Fecha33.setVisible(true);
         ObsV3.setVisible(true);
@@ -9059,6 +9449,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas29ActionPerformed
 
     private void Menos29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos29ActionPerformed
+        Rec3.setVisible(false);
+        Entr3.setVisible(false);
         NVale3.setVisible(false);
         Fecha33.setVisible(false);
         ObsV3.setVisible(false);
@@ -9070,6 +9462,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos29ActionPerformed
 
     private void Menos30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos30ActionPerformed
+        Rec4.setVisible(false);
+        Entr4.setVisible(false);
         NVale4.setVisible(false);
         Fecha34.setVisible(false);
         ObsV4.setVisible(false);
@@ -9081,6 +9475,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos30ActionPerformed
 
     private void Mas30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas30ActionPerformed
+        Rec4.setVisible(true);
+        Entr4.setVisible(true);
         NVale4.setVisible(true);
         Fecha34.setVisible(true);
         ObsV4.setVisible(true);
@@ -9092,6 +9488,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas30ActionPerformed
 
     private void Menos31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos31ActionPerformed
+        Rec5.setVisible(false);
+        Entr5.setVisible(false);
         NVale5.setVisible(false);
         Fecha35.setVisible(false);
         ObsV5.setVisible(false);
@@ -9103,6 +9501,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos31ActionPerformed
 
     private void Menos32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos32ActionPerformed
+        Rec6.setVisible(false);
+        Entr6.setVisible(false);
         NVale6.setVisible(false);
         Fecha36.setVisible(false);
         ObsV6.setVisible(false);
@@ -9114,6 +9514,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos32ActionPerformed
 
     private void Mas31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas31ActionPerformed
+        Rec5.setVisible(true);
+        Entr5.setVisible(true);
         NVale5.setVisible(true);
         Fecha35.setVisible(true);
         ObsV5.setVisible(true);
@@ -9125,6 +9527,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas31ActionPerformed
 
     private void Menos33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos33ActionPerformed
+        Rec7.setVisible(false);
+        Entr7.setVisible(false);
         NVale7.setVisible(false);
         Fecha37.setVisible(false);
         ObsV7.setVisible(false);
@@ -9136,6 +9540,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos33ActionPerformed
 
     private void Mas32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas32ActionPerformed
+        Rec6.setVisible(true);
+        Entr6.setVisible(true);
         NVale6.setVisible(true);
         Fecha36.setVisible(true);
         ObsV6.setVisible(true);
@@ -9147,6 +9553,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas32ActionPerformed
 
     private void Mas33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas33ActionPerformed
+        Rec7.setVisible(true);
+        Entr7.setVisible(true);
         NVale7.setVisible(true);
         Fecha37.setVisible(true);
         ObsV7.setVisible(true);
@@ -9158,6 +9566,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas33ActionPerformed
 
     private void Menos34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos34ActionPerformed
+        Rec8.setVisible(false);
+        Entr8.setVisible(false);
         NVale8.setVisible(false);
         Fecha38.setVisible(false);
         ObsV8.setVisible(false);
@@ -9169,6 +9579,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos34ActionPerformed
 
     private void Menos35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menos35ActionPerformed
+        Rec9.setVisible(false);
+        Entr9.setVisible(false);
         NVale9.setVisible(false);
         Fecha39.setVisible(false);
         ObsV9.setVisible(false);
@@ -9180,6 +9592,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Menos35ActionPerformed
 
     private void Mas34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas34ActionPerformed
+        Rec8.setVisible(true);
+        Entr8.setVisible(true);
         NVale8.setVisible(true);
         Fecha38.setVisible(true);
         ObsV8.setVisible(true);
@@ -9191,6 +9605,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Mas34ActionPerformed
 
     private void Mas35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mas35ActionPerformed
+        Rec9.setVisible(true);
+        Entr9.setVisible(true);
         NVale9.setVisible(true);
         Fecha39.setVisible(true);
         ObsV9.setVisible(true);
@@ -9223,7 +9639,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 12)));
         TDG.setText(String.valueOf(TSem.getValueAt(fila, 13)));
         TDV.setText(String.valueOf(TSem.getValueAt(fila, 14)));
-
+        
         DBe.setEnabled(false);
         EEntrega.setEnabled(false);
         ARSC.setVisible(true);
@@ -9252,14 +9668,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
-
+            
             Statement statementscc = connect.createStatement();
             Statement statementpen = connect.createStatement();
             Statement statementgast = connect.createStatement();
@@ -9270,31 +9686,31 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
-
+            
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
-
+                
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-
+                
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-
+                
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
+                
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-
+                
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
+                
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -9304,12 +9720,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-
+                
                 while (NSem.next()) {
-
+                    
                     cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     0, //first row (0-based)
@@ -9320,12 +9736,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     );
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("MMM/YY"));
-
+                    
                     row = spreadsheet.createRow(1);
                     cell = row.createCell(2);
                     cell.setCellValue("Reporte General de Zona");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -9334,12 +9750,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     5 //last column (0-based)
                             )
                     );
-
+                    
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(2);
                     cell.setCellValue("Zona Sur 1");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     2, //first row (0-based)
@@ -9348,7 +9764,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     5 //last column (0-based)
                             )
                     );
-
+                    
                     row = spreadsheet.createRow(7);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
@@ -9375,7 +9791,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(8);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -9395,7 +9811,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(3);
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(4);
                     cell.setCellValue("INICIO");
                     cell.setCellStyle(Contenido);
@@ -9409,18 +9825,18 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(3);
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(8);
                     cell.setCellValue("Total de importe de servicios:");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TIS"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(4);
                     cell = row.createCell(3);
                     cell.setCellValue("FECHA: ");
@@ -9433,7 +9849,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     6 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(4);
                     cell.setCellValue(NSem.getString("fecha de semanal"));
                     cell.setCellStyle(Contenido);
@@ -9441,15 +9857,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total de importe de pensiones:");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TIP"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(5);
                     cell = row.createCell(3);
                     cell.setCellValue("HORA: ");
@@ -9469,75 +9885,75 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total de servicios y pensiones");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(6);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total de gastos");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TG"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(7);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total de vales entregados: ");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TV"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.getRow(8);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Total menos gastos y vales");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total restando gastos"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(9);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Debe entregar: ");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe entregar"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(10);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("El entrega: ");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("el entrega"));
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(11);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Debe: ");
                     cell.setCellStyle(Contenido);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe"));
                     cell.setCellStyle(Contenido);
-
+                    
                     NSem.isClosed();
                 }
                 spreadsheet.createRow(12);
@@ -9583,7 +9999,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(scc.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     i++;
-
+                    
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -9593,10 +10009,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     scc.isClosed();
                     statementscc.isClosed();
-
+                    
                 }
                 int x = 22;
-
+                
                 while (pen.next()) {
                     row = spreadsheet.createRow(20);
                     spreadsheet.addMergedRegion(
@@ -9624,7 +10040,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(21);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -9662,7 +10078,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(pen.getString("Fecha"));
@@ -9703,7 +10119,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(pen.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     x++;
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -9712,10 +10128,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(pen.getString("Total"));
                     cell.setCellStyle(Contenido);
                     pen.isClosed();
-
+                    
                 }
                 x = 35;
-
+                
                 while (gast.next()) {
                     row = spreadsheet.createRow(33);
                     spreadsheet.addMergedRegion(
@@ -9743,7 +10159,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(34);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -9781,7 +10197,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("# LISTA");
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(gast.getString("Fecha"));
@@ -9820,7 +10236,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(gast.getString("#Lista"));
                     cell.setCellStyle(Contenido);
                     x++;
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -9829,10 +10245,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(gast.getString("Total"));
                     cell.setCellStyle(Contenido);
                     gast.isClosed();
-
+                    
                 }
                 x = 48;
-
+                
                 while (val.next()) {
                     row = spreadsheet.createRow(46);
                     spreadsheet.addMergedRegion(
@@ -9860,7 +10276,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(47);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -9889,7 +10305,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Contenido);
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(val.getString("Fecha"));
@@ -9919,7 +10335,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     x++;
-
+                    
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -9928,9 +10344,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString("Total"));
                     cell.setCellStyle(Contenido);
                     pen.isClosed();
-
+                    
                 }
-
+                
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -9940,23 +10356,23 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-
+                
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-
+            
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         JFileChooser chooser1 = new JFileChooser();
         FileNameExtensionFilter filter1 = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
         chooser1.setSelectedFile(new File("Ingresos y egresos Semanal No. " + SemSl.getText()));
@@ -9973,50 +10389,50 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
-
+            
             Statement statementscc = connect.createStatement();
             Statement statementpen = connect.createStatement();
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-
+            
             ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
-
+            
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Ingresos y egresos"));
-
+                
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-
+                
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-
+                
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
+                
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-
+                
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-
+                
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -10026,7 +10442,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-
+                
                 spreadsheet.createRow(3);
                 spreadsheet.createRow(4);
                 spreadsheet.createRow(5);
@@ -10039,13 +10455,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.createRow(12);
                 spreadsheet.createRow(13);
                 spreadsheet.createRow(14);
-
+                
                 int i = 3;
                 while (NSem.next()) {
-
+                    
                     cell.setCellValue("Ingresos y egresos Semanal No. " + SemSl.getText() + " de " + AutoFecha.getText());
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     0, //first row (0-based)
@@ -10054,12 +10470,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     12 //last column (0-based)
                             )
                     );
-
+                    
                     row = spreadsheet.createRow(1);
                     cell = row.createCell(0);
                     cell.setCellValue("Servicios con cobro");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10068,11 +10484,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     3 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(4);
                     cell.setCellValue("Pensiones");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10081,11 +10497,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     6 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(7);
                     cell.setCellValue("Gastos");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10094,11 +10510,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     9 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(10);
                     cell.setCellValue("Vales");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10107,11 +10523,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     12 //last column (0-based)
                             )
                     );
-
+                    
                     cell = row.createCell(13);
                     cell.setCellValue("Descuadre");
                     cell.setCellStyle(Encabezado);
-
+                    
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10120,67 +10536,67 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     14 //last column (0-based)
                             )
                     );
-
+                    
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(0);
                     cell.setCellValue("# Semanal");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(1);
                     cell.setCellValue("Fecha");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(2);
                     cell.setCellValue("Servicio");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(3);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(4);
                     cell.setCellValue("Servicio");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(5);
                     cell.setCellValue("# de padron");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(6);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(7);
                     cell.setCellValue("Concepto");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(8);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(9);
                     cell.setCellValue("Lista de asistencia");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(10);
                     cell.setCellValue("# vale");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(11);
                     cell.setCellValue("Observacion");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(12);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-
+                    
                     cell = row.createCell(13);
                     cell.setCellValue("Debe");
                     cell.setCellStyle(Encabezado);
                     cell = row.createCell(14);
                     cell.setCellValue("Observaciones");
                     cell.setCellStyle(Encabezado);
-
+                    
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(0);
                     cell.setCellValue(NSem.getString("#Nsem"));
@@ -10196,10 +10612,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-
+                
                 while (scc.next()) {
                     row = spreadsheet.getRow(i);
-
+                    
                     cell = row.createCell(2);
                     cell.setCellValue(scc.getString("Servicio"));
                     cell.setCellStyle(Contenido);
@@ -10209,7 +10625,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-
+                
                 while (pen.next()) {
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(4);
@@ -10224,7 +10640,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-
+                
                 while (gast.next()) {
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(7);
@@ -10251,9 +10667,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString(5));
                     cell.setCellStyle(Contenido);
                     i++;
-
+                    
                 }
-
+                
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -10263,33 +10679,33 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-
+                
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-
+            
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel38MousePressed
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
-
+        
         Estadias_4 regr = new Estadias_4();
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
-
+        
         Tortas_4 regr = new Tortas_4();
         regr.setVisible(true);
         this.dispose();
@@ -10380,7 +10796,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_ODT2ActionPerformed
 
     private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
-
+        
         Empleados_4 RH = new Empleados_4(usr, LP);
         RH.setVisible(true);
         this.dispose();
@@ -10782,11 +11198,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        Rvales regr = new Rvales();
-        regr.setVisible(true);
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
-
     private void LDA10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA10ActionPerformed
         Listas_CI_5 regr = new Listas_CI_5(usr, LP);
         regr.setVisible(true);
@@ -10970,13 +11381,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(4, Importe42.getText());
             pst.setString(5, LDA12.getText());
             pst.setString(6, TDG.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-
+            
         } catch (SQLException error_semanal) {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-
+            
         }
 
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -10997,15 +11408,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(3, SV);
             pst.setString(4, Importe40.getText());
             pst.setString(5, TDIDS.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-
+            
             Importe40.setText("0");
             Servicio20.setSelectedIndex(0);
         } catch (SQLException error_semanal) {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-
+            
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -11020,16 +11431,16 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(4, NPadron10.getText());
             pst.setString(5, Importe41.getText());
             pst.setString(6, TDIDP.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
             Servicio21.setText("");
             NPadron10.setText("");
             Importe41.setText("0");
-
+            
         } catch (SQLException error_semanal) {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
+            
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -11040,8 +11451,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         MODSemanal();
-
-        String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+        
+        String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
             pst.setInt(1, Integer.parseInt(NVale10.getText()));
@@ -11050,18 +11461,137 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(4, ObsV10.getText());
             pst.setString(5, Importe43.getText());
             pst.setString(6, TDV.getText());
-
+            pst.setString(7, Rec10.getText());
+            pst.setString(8, Entr10.getText());
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
+            
             NVale10.setText("0");
             ObsV10.setText("");
             Importe43.setText("0");
+            Entr10.setText("0");
+            Rec10.setText("0");
         } catch (SQLException error_semanal) {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-
+            
         }
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void GenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenActionPerformed
+        if (Gen.isSelected() == true) {
+            CBXmes.setVisible(false);
+        }
+    }//GEN-LAST:event_GenActionPerformed
+
+    private void MesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesActionPerformed
+        if (Mes.isSelected() == true) {
+            CBXmes.setVisible(true);
+        }
+    }//GEN-LAST:event_MesActionPerformed
+
+    private void jLabel63MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel63MousePressed
+        ItemsSem IS = new ItemsSem();
+        IS.setMes(CBXmes.getSelectedItem().toString());
+        if (TDR.getSelectedIndex() == 0) {
+            if (Mes.isSelected() == true) {
+                
+                Logica_SemMes LEM = new Logica_SemMes();
+                LEM.SemxMes(IS);
+            }
+            if (Gen.isSelected() == true) {
+                
+                Logica_SemGen LEM = new Logica_SemGen();
+                LEM.Semgen();
+            }
+        }
+        if (TDR.getSelectedIndex() == 1) {
+            Logica_Semscc LEM = new Logica_Semscc();
+            LEM.Gastosgen();
+            
+        }
+        if (TDR.getSelectedIndex() == 2) {
+            Logica_Sempen LEM = new Logica_Sempen();
+            LEM.Gastosgen();
+            
+        }
+        if (TDR.getSelectedIndex() == 3) {
+            Logica_Semgast LEM = new Logica_Semgast();
+            LEM.Gastosgen();
+            
+        }
+        if (TDR.getSelectedIndex() == 4) {
+            Logica_Semval LEM = new Logica_Semval();
+            LEM.Gastosgen();
+            
+        }
+    }//GEN-LAST:event_jLabel63MousePressed
+
+    private void TDRItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TDRItemStateChanged
+        if (TDR.getSelectedIndex() >= 1) {
+            Gen.setVisible(false);
+            Mes.setVisible(false);
+            CBXmes.setVisible(false);
+            
+        } else {
+            Gen.setVisible(true);
+            Mes.setVisible(true);
+            CBXmes.setVisible(false);
+            
+        }
+    }//GEN-LAST:event_TDRItemStateChanged
+
+    private void ESemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ESemActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres Eliminar este semanal?");
+        if (i == 0) {
+            try {
+                
+                int filaseleccionada = TSem.getSelectedRow();
+                String sql = "delete from `rh.semanal.inturbide.nsem` where `#NSem` = " + TSem.getValueAt(filaseleccionada, 0);
+                java.sql.Statement st = con.createStatement();
+                int n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Datos de semanal eliminado.");
+                }
+                sql = "delete from `rh.semanal.inturbide.gast` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
+                st = con.createStatement();
+                n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Gastos de semanal eliminados.");
+                }
+                sql = "delete from `rh.semanal.inturbide.val` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
+                st = con.createStatement();
+                n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Vales de semanal eliminados.");
+                }
+                sql = "delete from `rh.semanal.inturbide.pen` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
+                st = con.createStatement();
+                n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Pensiones de semanal eliminados.");
+                }
+                sql = "delete from `rh.semanal.inturbide.scc` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
+                st = con.createStatement();
+                n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Servicios de semanal eliminados.");
+                }
+            } catch (HeadlessException | SQLException e) {
+                
+                JOptionPane.showMessageDialog(null, "Error al eliminar empleado: " + e.getMessage());
+                
+            }
+        }
+    }//GEN-LAST:event_ESemActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -11077,25 +11607,23 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Iturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Iturbide_4.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Iturbide_4.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Iturbide_4.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -11117,6 +11645,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem Alumnos;
     private javax.swing.JLabel AutoFecha;
     private javax.swing.JLabel Autohora;
+    private javax.swing.JComboBox<String> CBXmes;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA4;
     private javax.swing.JMenuItem CNQ;
@@ -11135,7 +11664,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel DE;
     private javax.swing.JMenu Depositos;
     private javax.swing.JTextField EEntrega;
+    private javax.swing.JButton ESem;
     private javax.swing.JMenuItem EmpleadosT;
+    private javax.swing.JTextField Entr;
+    private javax.swing.JTextField Entr1;
+    private javax.swing.JTextField Entr10;
+    private javax.swing.JTextField Entr2;
+    private javax.swing.JTextField Entr3;
+    private javax.swing.JTextField Entr4;
+    private javax.swing.JTextField Entr5;
+    private javax.swing.JTextField Entr6;
+    private javax.swing.JTextField Entr7;
+    private javax.swing.JTextField Entr8;
+    private javax.swing.JTextField Entr9;
     private javax.swing.JMenuItem Estadias;
     private com.toedter.calendar.JDateChooser Fecha;
     private com.toedter.calendar.JDateChooser Fecha1;
@@ -11182,6 +11723,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private com.toedter.calendar.JDateChooser Fecha8;
     private com.toedter.calendar.JDateChooser Fecha9;
     private com.toedter.calendar.JDateChooser Fechasem;
+    private javax.swing.JRadioButton Gen;
     private javax.swing.JMenuItem General1;
     private javax.swing.JMenuItem General2;
     private javax.swing.JTextField Importe;
@@ -11314,6 +11856,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton Menos8;
     private javax.swing.JButton Menos9;
     private javax.swing.JMenu Menuadm;
+    private javax.swing.JRadioButton Mes;
     private javax.swing.JTextField NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
@@ -11365,6 +11908,17 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem PRESQ;
     private javax.swing.JPanel Panel;
     private javax.swing.JPanel Panel2;
+    private javax.swing.JTextField Rec;
+    private javax.swing.JTextField Rec1;
+    private javax.swing.JTextField Rec10;
+    private javax.swing.JTextField Rec2;
+    private javax.swing.JTextField Rec3;
+    private javax.swing.JTextField Rec4;
+    private javax.swing.JTextField Rec5;
+    private javax.swing.JTextField Rec6;
+    private javax.swing.JTextField Rec7;
+    private javax.swing.JTextField Rec8;
+    private javax.swing.JTextField Rec9;
     private javax.swing.JLabel SemSl;
     private javax.swing.JMenu Semanales;
     private javax.swing.JComboBox<String> Servicio;
@@ -11392,6 +11946,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel TDG;
     private javax.swing.JLabel TDIDP;
     private javax.swing.JLabel TDIDS;
+    private javax.swing.JComboBox<String> TDR;
     private javax.swing.JLabel TDSYP;
     private javax.swing.JLabel TDV;
     private javax.swing.JLabel TMGYV;
@@ -11413,8 +11968,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -11474,6 +12027,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -11489,7 +12047,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
@@ -11512,8 +12071,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
