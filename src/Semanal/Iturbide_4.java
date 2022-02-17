@@ -37,6 +37,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -1801,7 +1802,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Semanal");//1
-            modelo.addColumn("Fecha");//2
+            modelo.addColumn("Fecha de semanal");//2
+            modelo.addColumn("Fecha de registro");//2
             modelo.addColumn("Hora");//
             modelo.addColumn("Mes y año");//4
             modelo.addColumn("Total de Serv y Pen");
@@ -1816,7 +1818,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             modelo.addColumn("TV");
 
 //Anchos
-            int[] anchos = {40, 120, 50, 50, 40, 75, 75, 50, 50, 40, 40, 40, 40, 40};
+            int[] anchos = {40, 120, 120, 50, 50, 40, 75, 75, 50, 50, 40, 40, 40, 40, 40};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -2206,26 +2208,27 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
     public void ADDSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
-        String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
+        String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `fecha de semanal`, `Fecha`, `hora`, `MMM/YY`,"
                 + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`,"
-                + " `el entrega`, `Debe`, `Observaciones`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `el entrega`, `Debe`, `Observaciones`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NDS.getText()));
-            pst.setString(2, AutoFecha.getText());
-            pst.setString(3, Autohora.getText());
-            pst.setString(4, mmyy);
-            pst.setString(5, TDSYP.getText());
-            pst.setString(6, TMGYV.getText());
-            pst.setString(7, DE.getText());
-            pst.setString(8, EEntrega.getText());
-            pst.setString(9, DBe.getText());
-            pst.setString(10, ObsDbe.getText());
-            pst.setString(11, TDIDS.getText());
-            pst.setString(12, TDIDP.getText());
-            pst.setString(13, TDG.getText());
-            pst.setString(14, TDV.getText());
+            pst.setString(2, ((JTextField) Fechasem.getDateEditor().getUiComponent()).getText());
+            pst.setString(3, AutoFecha.getText());
+            pst.setString(4, Autohora.getText());
+            pst.setString(5, mmyy);
+            pst.setString(6, TDSYP.getText());
+            pst.setString(7, TMGYV.getText());
+            pst.setString(8, DE.getText());
+            pst.setString(9, EEntrega.getText());
+            pst.setString(10, DBe.getText());
+            pst.setString(11, ObsDbe.getText());
+            pst.setString(12, TDIDS.getText());
+            pst.setString(13, TDIDP.getText());
+            pst.setString(14, TDG.getText());
+            pst.setString(15, TDV.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal agregado");
@@ -2237,7 +2240,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
     public void MODSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
-        String SQL = "UPDATE `rh.semanal.inturbide.nsem` SET `#Nsem` = ?, `Fecha` = ?, `hora` = ?,"
+        String SQL = "UPDATE `rh.semanal.inturbide.nsem` SET `#Nsem` = ?, `fecha de semanal` = ?, `Fecha` = ?, `hora` = ?,"
                 + " `MMM/YY` = ?, `Total de servicios y pensiones` = ?, `Total restando gastos` = ?,"
                 + " `Debe entregar` = ?, `el entrega` = ?, `Debe` = ?, `Observaciones` = ?, `TIS` = ?,"
                 + " `TIP` = ?, `TG` = ?, `TV` = ? WHERE `rh.semanal.inturbide.nsem`.`#Nsem` = ?";
@@ -2245,20 +2248,21 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(SemSl.getText()));
-            pst.setString(2, AutoFecha.getText());
-            pst.setString(3, Autohora.getText());
-            pst.setString(4, mmyy);
-            pst.setString(5, TDSYP.getText());
-            pst.setString(6, TMGYV.getText());
-            pst.setString(7, DE.getText());
-            pst.setString(8, EEntrega.getText());
-            pst.setString(9, DBe.getText());
-            pst.setString(10, ObsDbe.getText());
-            pst.setString(11, TDIDS.getText());
-            pst.setString(12, TDIDP.getText());
-            pst.setString(13, TDG.getText());
-            pst.setString(14, TDV.getText());
-            pst.setInt(15, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, ((JTextField) Fechasem.getDateEditor().getUiComponent()).getText());
+            pst.setString(3, AutoFecha.getText());
+            pst.setString(4, Autohora.getText());
+            pst.setString(5, mmyy);
+            pst.setString(6, TDSYP.getText());
+            pst.setString(7, TMGYV.getText());
+            pst.setString(8, DE.getText());
+            pst.setString(9, EEntrega.getText());
+            pst.setString(10, DBe.getText());
+            pst.setString(11, ObsDbe.getText());
+            pst.setString(12, TDIDS.getText());
+            pst.setString(13, TDIDP.getText());
+            pst.setString(14, TDG.getText());
+            pst.setString(15, TDV.getText());
+            pst.setInt(16, Integer.parseInt(SemSl.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal modificado");
@@ -4635,7 +4639,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jLabel33 = new javax.swing.JLabel();
         AutoFecha = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        NDS = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -4664,6 +4667,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jPanel11 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
         TSem4 = new javax.swing.JTable();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel62 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
@@ -4733,6 +4743,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         jButton7 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        Fechasem = new com.toedter.calendar.JDateChooser();
+        jLabel61 = new javax.swing.JLabel();
+        NDS = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -7007,16 +7020,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Autohora.setText("Autofecha");
 
         jLabel33.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel33.setText("Fecha:");
+        jLabel33.setText("Fecha de registro:");
 
         AutoFecha.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         AutoFecha.setText("jLabel34");
 
         jLabel34.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel34.setText("Numero de semanal:");
-
-        NDS.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        NDS.setText("0");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Datos de Semanales");
@@ -7059,7 +7069,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         SemSl.setText("0");
 
-        jLabel40.setText("Recrear reporte:");
+        jLabel40.setText("Recrear reporte semanal:");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -7242,6 +7252,53 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         jTabbedPane1.addTab("Vales", jScrollPane11);
 
+        jLabel62.setText("Tipo de reporte:");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingresos y egresos", "Solo datos de servicios", "Solo pensiones", "Solo gastos", "Solo Vales" }));
+
+        jRadioButton1.setText("General");
+
+        jRadioButton2.setText("Mes");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel62)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(575, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(243, Short.MAX_VALUE))
+        );
+
+        jScrollPane20.setViewportView(jPanel16);
+
+        jTabbedPane1.addTab("Reportes", jScrollPane20);
+
         jLabel20.setText("TIS: Total importe de servicios");
 
         jLabel24.setText("Significado de Iniciales:");
@@ -7358,7 +7415,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3))))
                     .addComponent(jButton8))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7451,7 +7508,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton5))))
                     .addComponent(jButton9))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7547,7 +7604,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                 .addGap(35, 35, 35)
                                 .addComponent(jLabel54))))
                     .addComponent(jButton10))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7650,7 +7707,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton7))))
                     .addComponent(jButton11))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7686,6 +7743,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        Fechasem.setDateFormatString("EEEE, dd/MMMM/yyyy");
+
+        jLabel61.setText("Fecha de semanal:");
+
+        NDS.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        NDS.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -7701,92 +7765,93 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel37)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel36)
-                                    .addComponent(jLabel37)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel24)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel35))
-                                        .addGap(111, 111, 111)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel45)
-                                            .addComponent(jLabel44)
-                                            .addComponent(jLabel43))))
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel35))
+                                .addGap(111, 111, 111)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel45)
+                                    .addComponent(jLabel44)
+                                    .addComponent(jLabel43))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(ARSC)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel5))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel34)
+                                    .addComponent(jLabel30)
+                                    .addComponent(jLabel31))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TMGYV)
+                                    .addComponent(TDV)
+                                    .addComponent(DE))
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(ARSC))
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TDIDP)
+                                    .addComponent(TDSYP)
+                                    .addComponent(TDIDS)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(TDG)
+                                        .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                        .addComponent(DBe))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(115, 115, 115)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel30)
-                                            .addComponent(jLabel31)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(jLabel5))
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addGap(0, 0, 0)
+                                        .addComponent(NDS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TDIDP)
-                                            .addComponent(TDSYP)
-                                            .addComponent(TDIDS))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel32)
-                                            .addComponent(jLabel33))
+                                        .addComponent(jLabel46)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(AutoFecha)
-                                            .addComponent(Autohora)))
+                                        .addComponent(ObsDbe))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TMGYV)
-                                            .addComponent(TDV)
-                                            .addComponent(DE))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(TDG)
-                                            .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                            .addComponent(DBe))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel46)
+                                                .addComponent(jButton1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(ObsDbe))
+                                                .addComponent(jButton2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton4)))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel61)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Fechasem, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel32)
+                                                    .addComponent(jLabel33))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel1)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jButton1)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jButton2)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jButton4)))
-                                                .addGap(0, 0, Short.MAX_VALUE))))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel34)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NDS)
-                                .addGap(411, 411, 411)))
-                        .addGap(51, 51, 51))))
+                                                    .addComponent(Autohora)
+                                                    .addComponent(AutoFecha))
+                                                .addGap(116, 116, 116)))))))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -7801,9 +7866,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                             .addComponent(TDIDS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel32)
-                                .addComponent(Autohora))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel32)
+                                    .addComponent(Autohora))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Fechasem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel18)
@@ -7841,10 +7911,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
-                            .addComponent(NDS)
                             .addComponent(jButton1)
                             .addComponent(jButton2)
-                            .addComponent(jButton4))
+                            .addComponent(jButton4)
+                            .addComponent(NDS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9143,16 +9213,16 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private void TSemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TSemMouseClicked
         int fila = TSem.getSelectedRow();
         SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
-        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 4)));
-        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 5)));
-        DE.setText(String.valueOf(TSem.getValueAt(fila, 6)));
-        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 7)));
-        DBe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
-        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
-        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
-        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
-        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
-        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 5)));
+        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 6)));
+        DE.setText(String.valueOf(TSem.getValueAt(fila, 7)));
+        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        DBe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
+        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 10)));
+        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 11)));
+        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 12)));
+        TDG.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+        TDV.setText(String.valueOf(TSem.getValueAt(fila, 14)));
 
         DBe.setEnabled(false);
         EEntrega.setEnabled(false);
@@ -9365,7 +9435,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     );
 
                     cell = row.createCell(4);
-                    cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellValue(NSem.getString("fecha de semanal"));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(5);
                     cell.setCellStyle(Contenido);
@@ -10965,6 +11035,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         MODSemanal();
+        MDsem();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -11110,6 +11181,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private com.toedter.calendar.JDateChooser Fecha7;
     private com.toedter.calendar.JDateChooser Fecha8;
     private com.toedter.calendar.JDateChooser Fecha9;
+    private com.toedter.calendar.JDateChooser Fechasem;
     private javax.swing.JMenuItem General1;
     private javax.swing.JMenuItem General2;
     private javax.swing.JTextField Importe;
@@ -11242,7 +11314,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton Menos8;
     private javax.swing.JButton Menos9;
     private javax.swing.JMenu Menuadm;
-    private javax.swing.JLabel NDS;
+    private javax.swing.JTextField NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
     private javax.swing.JTextField NPadron10;
@@ -11341,6 +11413,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -11398,6 +11472,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -11427,6 +11503,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -11435,6 +11512,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -11447,6 +11526,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;

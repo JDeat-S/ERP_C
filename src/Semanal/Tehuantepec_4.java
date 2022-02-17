@@ -44,6 +44,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -946,7 +947,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                     cell = row.createCell(0);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(1);
-                    cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellValue(NSem.getString("fecha de semanal"));
                     cell.setCellStyle(Contenido);
                     i++;
                 }
@@ -1038,7 +1039,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
     public void MODSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
-        String SQL = "UPDATE `rh.semanal.tehuantepec.nsem` SET `#Nsem` = ?, `Fecha` = ?, `hora` = ?,"
+        String SQL = "UPDATE `rh.semanal.tehuantepec.nsem` SET `#Nsem` = ?, `fecha de semanal` = ?, `Fecha` = ?, `hora` = ?,"
                 + " `MMM/YY` = ?, `Total de servicios y pensiones` = ?, `Total restando gastos` = ?,"
                 + " `Debe entregar` = ?, `el entrega` = ?, `Debe` = ?, `Observaciones` = ?, `TIS` = ?,"
                 + " `TIP` = ?, `TG` = ?, `TV` = ? WHERE `rh.semanal.tehuantepec.nsem`.`#Nsem` = ?";
@@ -1046,20 +1047,21 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(SemSl.getText()));
-            pst.setString(2, AutoFecha.getText());
-            pst.setString(3, Autohora.getText());
-            pst.setString(4, mmyy);
-            pst.setString(5, TDSYP.getText());
-            pst.setString(6, TMGYV.getText());
-            pst.setString(7, DE.getText());
-            pst.setString(8, EEntrega.getText());
-            pst.setString(9, DBe.getText());
-            pst.setString(10, ObsDbe.getText());
-            pst.setString(11, TDIDS.getText());
-            pst.setString(12, TDIDP.getText());
-            pst.setString(13, TDG.getText());
-            pst.setString(14, TDV.getText());
-            pst.setInt(15, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, ((JTextField) Fechasem.getDateEditor().getUiComponent()).getText());
+            pst.setString(3, AutoFecha.getText());
+            pst.setString(4, Autohora.getText());
+            pst.setString(5, mmyy);
+            pst.setString(6, TDSYP.getText());
+            pst.setString(7, TMGYV.getText());
+            pst.setString(8, DE.getText());
+            pst.setString(9, EEntrega.getText());
+            pst.setString(10, DBe.getText());
+            pst.setString(11, ObsDbe.getText());
+            pst.setString(12, TDIDS.getText());
+            pst.setString(13, TDIDP.getText());
+            pst.setString(14, TDG.getText());
+            pst.setString(15, TDV.getText());
+            pst.setInt(16, Integer.parseInt(SemSl.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal modificado");
@@ -1333,7 +1335,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                     );
 
                     cell = row.createCell(4);
-                    cell.setCellValue(NSem.getString("Fecha"));
+                    cell.setCellValue(NSem.getString("fecha de semanal"));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(5);
                     cell.setCellStyle(Contenido);
@@ -1906,11 +1908,12 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Semanal");//1
-            modelo.addColumn("Fecha");//2
+            modelo.addColumn("Fecha de semanal");//2
+            modelo.addColumn("Fecha de registro");//2
             modelo.addColumn("Hora");//
             modelo.addColumn("Mes y año");//4
             modelo.addColumn("Total de Serv y Pen");
-            modelo.addColumn("Total - gastos");//6
+            modelo.addColumn("Total - gastos y vales");//6
             modelo.addColumn("Debe entregar");
             modelo.addColumn("El entrega");
             modelo.addColumn("Debe");
@@ -1921,7 +1924,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             modelo.addColumn("TV");
 
 //Anchos
-            int[] anchos = {40, 120, 50, 50, 40, 75, 75, 50, 50, 40, 40, 40, 40, 40};
+            int[] anchos = {40, 120,120, 50, 50, 40, 75, 75, 50, 50, 40, 40, 40, 40, 40};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -2311,26 +2314,27 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
     public void ADDSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
-        String SQL = "INSERT INTO `rh.semanal.tehuantepec.nsem` (`#Nsem`, `Fecha`, `hora`, `MMM/YY`,"
+        String SQL = "INSERT INTO `rh.semanal.tehuantepec.nsem` (`#Nsem`, `fecha de semanal`, `Fecha`, `hora`, `MMM/YY`,"
                 + " `Total de servicios y pensiones`, `Total restando gastos`, `Debe entregar`,"
-                + " `el entrega`, `Debe`, `Observaciones`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " `el entrega`, `Debe`, `Observaciones`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.setInt(1, Integer.parseInt(NDS.getText()));
-            pst.setString(2, AutoFecha.getText());
-            pst.setString(3, Autohora.getText());
-            pst.setString(4, mmyy);
-            pst.setString(5, TDSYP.getText());
-            pst.setString(6, TMGYV.getText());
-            pst.setString(7, DE.getText());
-            pst.setString(8, EEntrega.getText());
-            pst.setString(9, DBe.getText());
-            pst.setString(10, ObsDbe.getText());
-            pst.setString(11, TDIDS.getText());
-            pst.setString(12, TDIDP.getText());
-            pst.setString(13, TDG.getText());
-            pst.setString(14, TDV.getText());
+            pst.setString(2, ((JTextField) Fechasem.getDateEditor().getUiComponent()).getText());
+            pst.setString(3, AutoFecha.getText());
+            pst.setString(4, Autohora.getText());
+            pst.setString(5, mmyy);
+            pst.setString(6, TDSYP.getText());
+            pst.setString(7, TMGYV.getText());
+            pst.setString(8, DE.getText());
+            pst.setString(9, EEntrega.getText());
+            pst.setString(10, DBe.getText());
+            pst.setString(11, ObsDbe.getText());
+            pst.setString(12, TDIDS.getText());
+            pst.setString(13, TDIDP.getText());
+            pst.setString(14, TDG.getText());
+            pst.setString(15, TDV.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal agregado");
@@ -4638,7 +4642,6 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         jLabel33 = new javax.swing.JLabel();
         AutoFecha = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        NDS = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -4742,6 +4745,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         jLabel44 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        Fechasem = new com.toedter.calendar.JDateChooser();
+        NDS = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -7012,9 +7018,6 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         jLabel34.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel34.setText("Numero de semanal:");
 
-        NDS.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        NDS.setText("0");
-
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Datos de Semanales");
 
@@ -7695,6 +7698,13 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         jLabel45.setText("Verde: esta correcto o saldo a favor.");
 
+        jLabel41.setText("Fecha de semanal:");
+
+        Fechasem.setDateFormatString("EEEE, dd/MMMM/yyyy");
+
+        NDS.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        NDS.setText("0");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -7732,36 +7742,33 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(115, 115, 115)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel30)
-                                            .addComponent(jLabel31)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(7, 7, 7)
-                                                .addComponent(jLabel5))
-                                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(TDIDP)
-                                            .addComponent(TDSYP)
-                                            .addComponent(TDIDS)
-                                            .addComponent(TDG)
-                                            .addComponent(TMGYV)
-                                            .addComponent(TDV)
-                                            .addComponent(DE))))
-                                .addGap(11, 11, 11)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jLabel5))
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TDIDP)
+                                    .addComponent(TDSYP)
+                                    .addComponent(TDIDS)
+                                    .addComponent(TDG)
+                                    .addComponent(TMGYV)
+                                    .addComponent(TDV)
+                                    .addComponent(DE)))
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel34))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel32)
                                             .addComponent(jLabel33))
@@ -7769,31 +7776,32 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(AutoFecha)
                                             .addComponent(Autohora)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(EEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                                            .addComponent(DBe))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel41)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel46)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(ObsDbe))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel1)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(jButton1)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jButton2)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jButton4)))
-                                                .addGap(0, 0, Short.MAX_VALUE))))))
+                                        .addComponent(Fechasem, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(NDS)
-                                .addGap(411, 411, 411)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(DBe, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NDS, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel46)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ObsDbe))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jButton1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jButton4)))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
                         .addGap(51, 51, 51))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(ARSC)
@@ -7814,7 +7822,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel32)
                                     .addComponent(Autohora))
-                                .addGap(107, 107, 107))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Fechasem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
@@ -7830,7 +7839,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel7)
-                                    .addComponent(TDG))
+                                    .addComponent(TDG)
+                                    .addComponent(jLabel41))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel12)
@@ -7842,8 +7852,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
-                                    .addComponent(DE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                    .addComponent(DE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30)
                             .addComponent(EEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -7856,10 +7866,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel34)
-                            .addComponent(NDS)
                             .addComponent(jButton1)
                             .addComponent(jButton2)
-                            .addComponent(jButton4))
+                            .addComponent(jButton4)
+                            .addComponent(NDS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -9160,17 +9170,17 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private void TSemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TSemMouseClicked
         int fila = TSem.getSelectedRow();
         SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
-        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 4)));
-        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 5)));
-        DE.setText(String.valueOf(TSem.getValueAt(fila, 6)));
-        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 7)));
-        DBe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
-        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
-        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
-        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
-        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
-        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
-
+        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 5)));
+        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 6)));
+        DE.setText(String.valueOf(TSem.getValueAt(fila, 7)));
+        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        DBe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
+        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 10)));
+        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 11)));
+        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 12)));
+        TDG.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+        TDV.setText(String.valueOf(TSem.getValueAt(fila, 14)));
+        
         DBe.setEnabled(false);
         EEntrega.setEnabled(false);
         ARSC.setVisible(true);
@@ -11003,6 +11013,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         MODSemanal();
+        MDsem();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -11147,6 +11158,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private com.toedter.calendar.JDateChooser Fecha7;
     private com.toedter.calendar.JDateChooser Fecha8;
     private com.toedter.calendar.JDateChooser Fecha9;
+    private com.toedter.calendar.JDateChooser Fechasem;
     private javax.swing.JMenuItem General1;
     private javax.swing.JMenuItem General2;
     private javax.swing.JTextField Importe;
@@ -11279,7 +11291,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JButton Menos8;
     private javax.swing.JButton Menos9;
     private javax.swing.JMenu Menuadm;
-    private javax.swing.JLabel NDS;
+    private javax.swing.JTextField NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
     private javax.swing.JTextField NPadron10;
@@ -11413,6 +11425,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;

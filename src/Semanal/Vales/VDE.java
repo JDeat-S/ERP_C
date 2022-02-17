@@ -518,9 +518,11 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("A-22");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, 20));
 
+        NV.setForeground(new java.awt.Color(255, 51, 51));
         NV.setText("0");
         NV.setBorder(null);
         NV.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -615,10 +617,12 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 51, 51));
         jLabel10.setText("A-22");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 30, 20));
 
         NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        NV1.setForeground(new java.awt.Color(255, 51, 51));
         NV1.setText("0");
         NV1.setBorder(null);
         jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 120, 20));
