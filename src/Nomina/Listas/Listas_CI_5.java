@@ -1412,7 +1412,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         jScrollPane4.setViewportView(jTabbedPane2);
 
-        jTabbedPane1.addTab("Listas sin IMSS", jScrollPane4);
+        jTabbedPane1.addTab("Listas con IMSS", jScrollPane4);
 
         DiaCor1.setDateFormatString("d");
 

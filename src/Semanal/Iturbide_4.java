@@ -28,6 +28,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -69,7 +70,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     Logica_usuarios usr;
     Logica_permisos LP;
     ButtonGroup Timereport;
-    
+
     public Iturbide_4() {
         initComponents();
         Timereport = new ButtonGroup();
@@ -197,7 +198,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha9.setVisible(false);
         Servicio9.setVisible(false);
         Importe9.setVisible(false);
-        
+
         Fecha8.setVisible(false);
         Servicio8.setVisible(false);
         Importe8.setVisible(false);
@@ -207,11 +208,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha6.setVisible(false);
         Servicio6.setVisible(false);
         Importe6.setVisible(false);
-        
+
         Fecha5.setVisible(false);
         Servicio5.setVisible(false);
         Importe5.setVisible(false);
-        
+
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
@@ -402,7 +403,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         MostrarNDS();
         MDsem();
     }
-    
+
     public Iturbide_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
@@ -544,7 +545,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha9.setVisible(false);
         Servicio9.setVisible(false);
         Importe9.setVisible(false);
-        
+
         Fecha8.setVisible(false);
         Servicio8.setVisible(false);
         Importe8.setVisible(false);
@@ -554,11 +555,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Fecha6.setVisible(false);
         Servicio6.setVisible(false);
         Importe6.setVisible(false);
-        
+
         Fecha5.setVisible(false);
         Servicio5.setVisible(false);
         Importe5.setVisible(false);
-        
+
         Fecha4.setVisible(false);
         Servicio4.setVisible(false);
         Importe4.setVisible(false);
@@ -788,7 +789,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         }
     }
-    
+
     public void Reporte2() {
         JFileChooser chooser1 = new JFileChooser();
         FileNameExtensionFilter filter1 = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -806,50 +807,50 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-            
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
-            
+
             Statement statementscc = connect.createStatement();
             Statement statementpen = connect.createStatement();
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-            
+
             ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
-            
+
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Ingresos y egresos"));
-                
+
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-                
+
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-                
+
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-                
+
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -871,13 +872,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.createRow(12);
                 spreadsheet.createRow(13);
                 spreadsheet.createRow(14);
-                
+
                 int i = 3;
                 while (NSem.next()) {
-                    
+
                     cell.setCellValue("Ingresos y egresos Semanal No. " + NDS.getText() + " de " + AutoFecha.getText());
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     0, //first row (0-based)
@@ -886,12 +887,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     12 //last column (0-based)
                             )
                     );
-                    
+
                     row = spreadsheet.createRow(1);
                     cell = row.createCell(0);
                     cell.setCellValue("Servicios con cobro");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -900,11 +901,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     3 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(4);
                     cell.setCellValue("Pensiones");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -913,11 +914,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     6 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(7);
                     cell.setCellValue("Gastos");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -926,11 +927,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     9 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(10);
                     cell.setCellValue("Vales");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -939,60 +940,60 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     12 //last column (0-based)
                             )
                     );
-                    
+
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(0);
                     cell.setCellValue("# Semanal");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(1);
                     cell.setCellValue("Fecha");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(2);
                     cell.setCellValue("Servicio");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(3);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(4);
                     cell.setCellValue("Servicio");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(5);
                     cell.setCellValue("# de padron");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(6);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(7);
                     cell.setCellValue("Concepto");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue("Lista de asistencia");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(10);
                     cell.setCellValue("# vale");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(11);
                     cell.setCellValue("Observacion");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(12);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-                    
+
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(0);
                     cell.setCellValue(NSem.getString("#Nsem"));
@@ -1002,10 +1003,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-                
+
                 while (scc.next()) {
                     row = spreadsheet.getRow(i);
-                    
+
                     cell = row.createCell(2);
                     cell.setCellValue(scc.getString("Servicio"));
                     cell.setCellStyle(Contenido);
@@ -1015,7 +1016,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-                
+
                 while (pen.next()) {
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(4);
@@ -1030,7 +1031,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-                
+
                 while (gast.next()) {
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(7);
@@ -1057,9 +1058,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString(5));
                     cell.setCellStyle(Contenido);
                     i++;
-                    
+
                 }
-                
+
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -1069,24 +1070,24 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-                
+
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-            
+
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void Reporte1() {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -1104,14 +1105,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-            
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
-            
+
             Statement statementscc = connect.createStatement();
             Statement statementpen = connect.createStatement();
             Statement statementgast = connect.createStatement();
@@ -1122,31 +1123,31 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
-            
+
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
-                
+
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-                
+
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-                
+
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-                
+
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -1156,12 +1157,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-                
+
                 while (NSem.next()) {
-                    
+
                     cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     0, //first row (0-based)
@@ -1172,12 +1173,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     );
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("MMM/YY"));
-                    
+
                     row = spreadsheet.createRow(1);
                     cell = row.createCell(2);
                     cell.setCellValue("Reporte General de Zona");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -1186,12 +1187,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     5 //last column (0-based)
                             )
                     );
-                    
+
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(2);
                     cell.setCellValue("Zona Sur 1");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     2, //first row (0-based)
@@ -1200,7 +1201,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     5 //last column (0-based)
                             )
                     );
-                    
+
                     row = spreadsheet.createRow(7);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
@@ -1227,7 +1228,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(8);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -1247,7 +1248,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(3);
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(4);
                     cell.setCellValue("INICIO");
                     cell.setCellStyle(Contenido);
@@ -1261,18 +1262,18 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(3);
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(8);
                     cell.setCellValue("Total de importe de servicios:");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TIS"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(4);
                     cell = row.createCell(3);
                     cell.setCellValue("FECHA: ");
@@ -1285,7 +1286,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     6 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(4);
                     cell.setCellValue(NSem.getString("Fecha"));
                     cell.setCellStyle(Contenido);
@@ -1293,15 +1294,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total de importe de pensiones:");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TIP"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(5);
                     cell = row.createCell(3);
                     cell.setCellValue("HORA: ");
@@ -1321,75 +1322,75 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total de servicios y pensiones");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(6);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total de gastos");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TG"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(7);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total de vales entregados: ");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TV"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.getRow(8);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total menos gastos y vales");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total restando gastos"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(9);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Debe entregar: ");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe entregar"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(10);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("El entrega: ");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("el entrega"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(11);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Debe: ");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe"));
                     cell.setCellStyle(Contenido);
-                    
+
                     NSem.isClosed();
                 }
                 spreadsheet.createRow(12);
@@ -1435,7 +1436,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(scc.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     i++;
-                    
+
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -1445,10 +1446,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     scc.isClosed();
                     statementscc.isClosed();
-                    
+
                 }
                 int x = 22;
-                
+
                 while (pen.next()) {
                     row = spreadsheet.createRow(20);
                     spreadsheet.addMergedRegion(
@@ -1476,7 +1477,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(21);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -1514,7 +1515,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(pen.getString("Fecha"));
@@ -1555,7 +1556,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(pen.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     x++;
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -1564,10 +1565,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(pen.getString("Total"));
                     cell.setCellStyle(Contenido);
                     pen.isClosed();
-                    
+
                 }
                 x = 35;
-                
+
                 while (gast.next()) {
                     row = spreadsheet.createRow(33);
                     spreadsheet.addMergedRegion(
@@ -1595,7 +1596,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(34);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -1633,7 +1634,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("# LISTA");
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(gast.getString("Fecha"));
@@ -1672,7 +1673,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(gast.getString("#Lista"));
                     cell.setCellStyle(Contenido);
                     x++;
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -1681,10 +1682,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(gast.getString("Total"));
                     cell.setCellStyle(Contenido);
                     gast.isClosed();
-                    
+
                 }
                 x = 48;
-                
+
                 while (val.next()) {
                     row = spreadsheet.createRow(46);
                     spreadsheet.addMergedRegion(
@@ -1712,7 +1713,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(47);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -1741,7 +1742,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(val.getString("Fecha"));
@@ -1771,7 +1772,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     x++;
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -1780,9 +1781,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString("Total"));
                     cell.setCellStyle(Contenido);
                     pen.isClosed();
-                    
+
                 }
-                
+
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -1792,42 +1793,42 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-                
+
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-            
+
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public void ColorDB() {
         double DB = Double.parseDouble(DBe.getText());
         if (DB <= 0) {
             DBe.setBackground(Color.green);
-            
+
         } else {
             DBe.setBackground(Color.RED);
-            
+
         }
     }
-    
+
     public void MDsem() {
         //Buscar empleado
         String sem = txtsem.getText();
         /*String ShareAP = BusAPcdash.getText();
         String ShareAM = BusAMcdash.getText();*/
         String SQL = "SELECT * FROM `rh.semanal.inturbide.nsem`";
-        
+
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.nsem` where `#Nsem` LIKE '%" + sem + "%'";
         }
@@ -1838,7 +1839,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             where = " select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`,"
                     + " `Servicio` from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
         }*/
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1846,19 +1847,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             TSem.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Semanal");//1
             modelo.addColumn("Fecha de semanal");//2
             modelo.addColumn("Fecha de registro");//2
@@ -1877,13 +1878,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 120, 120, 50, 50, 40, 75, 75, 50, 50, 40, 40, 40, 40, 40};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1893,14 +1894,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos semanales: " + error_sh_cda.getMessage());
-            
+
         }
-        
+
         SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.scc` where `Semanal` LIKE '%" + sem + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1908,19 +1909,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             TSem1.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Registro");//1
             modelo.addColumn("Semanal");//2
             modelo.addColumn("Fecha");
@@ -1930,13 +1931,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 40, 100, 100, 50, 75};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -1946,14 +1947,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de servicios con cobro: " + error_sh_cda.getMessage());
-            
+
         }
-        
+
         SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.pen` where `Semanal` LIKE '%" + sem + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -1961,19 +1962,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             TSem2.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Registro");//1
             modelo.addColumn("Semanal");//2
             modelo.addColumn("Fecha");
@@ -1984,13 +1985,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 40, 150, 150, 50, 75, 75};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem2.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2000,14 +2001,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de servicios con cobro: " + error_sh_cda.getMessage());
-            
+
         }
-        
+
         SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.gast` where `Semanal` LIKE '%" + sem + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2015,19 +2016,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             TSem3.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Registro");//1
             modelo.addColumn("Semanal");//2
             modelo.addColumn("Fecha");
@@ -2038,13 +2039,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 40, 150, 150, 50, 75, 75};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem3.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2054,14 +2055,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de servicios con cobro: " + error_sh_cda.getMessage());
-            
+
         }
-        
+
         SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
         if (!"".equals(sem)) {
             SQL = "SELECT * FROM `rh.semanal.inturbide.val` where `Semanal` LIKE '%" + sem + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -2069,19 +2070,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             TSem4.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Registro");//1
             modelo.addColumn("Semanal");//2
             modelo.addColumn("Fecha");
@@ -2093,13 +2094,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
 //Anchos
             int[] anchos = {40, 40, 50, 150, 40, 75, 50, 50};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 TSem4.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -2109,11 +2110,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         } catch (SQLException error_sh_cda) {
             JOptionPane.showMessageDialog(null, "Error al mostrar datos de servicios con cobro: " + error_sh_cda.getMessage());
-            
+
         }
-        
+
     }
-    
+
     public void limpiar() {
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
@@ -2265,7 +2266,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         TDG.setText("0");
         TDV.setText("0");
     }
-    
+
     public void ADDSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
         String SQL = "INSERT INTO `rh.semanal.inturbide.nsem` (`#Nsem`, `fecha de semanal`, `Fecha`, `hora`, `MMM/YY`,"
@@ -2273,7 +2274,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 + " `el entrega`, `Debe`, `Observaciones`, `TIS`, `TIP`, `TG`, `TV`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            
+
             pst.setInt(1, Integer.parseInt(NDS.getText()));
             pst.setString(2, ((JTextField) Fechasem.getDateEditor().getUiComponent()).getText());
             pst.setString(3, AutoFecha.getText());
@@ -2289,15 +2290,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(13, TDIDP.getText());
             pst.setString(14, TDG.getText());
             pst.setString(15, TDV.getText());
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal agregado");
-            
+
         } catch (HeadlessException | SQLException error_add_cda) {
             JOptionPane.showMessageDialog(null, "Error al agregar semanal: " + error_add_cda.getMessage());
         }
     }
-    
+
     public void MODSemanal() {
         String mmyy = new SimpleDateFormat("MMM-yy").format(Calendar.getInstance().getTime());
         String SQL = "UPDATE `rh.semanal.inturbide.nsem` SET `#Nsem` = ?, `fecha de semanal` = ?, `Fecha` = ?, `hora` = ?,"
@@ -2306,7 +2307,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 + " `TIP` = ?, `TG` = ?, `TV` = ? WHERE `rh.semanal.inturbide.nsem`.`#Nsem` = ?";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            
+
             pst.setInt(1, Integer.parseInt(SemSl.getText()));
             pst.setString(2, ((JTextField) Fechasem.getDateEditor().getUiComponent()).getText());
             pst.setString(3, AutoFecha.getText());
@@ -2323,15 +2324,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(14, TDG.getText());
             pst.setString(15, TDV.getText());
             pst.setInt(16, Integer.parseInt(SemSl.getText()));
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Semanal modificado");
-            
+
         } catch (HeadlessException | SQLException error_add_cda) {
             JOptionPane.showMessageDialog(null, "Error al modificar semanal: " + error_add_cda.getMessage());
         }
     }
-    
+
     public void Addscc() {
         String SV, SV1, SV2, SV3, SV4, SV5, SV6, SV7, SV8, SV9;
         if (Servicio.getSelectedItem().toString().equals("Otro")) {
@@ -2393,13 +2394,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(3, SV);
                 pst.setString(4, Importe.getText());
                 pst.setString(5, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
         if (Mas1.isVisible()) {
@@ -2416,13 +2417,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(8, SV1);
                 pst.setString(9, Importe1.getText());
                 pst.setString(10, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
         if (Mas2.isVisible()) {
@@ -2445,13 +2446,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(13, SV2);
                 pst.setString(14, Importe2.getText());
                 pst.setString(15, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
         if (Mas3.isVisible()) {
@@ -2479,13 +2480,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(18, SV3);
                 pst.setString(19, Importe3.getText());
                 pst.setString(20, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro:  " + error_semanal);
-                
+
             }
         }
         if (Mas4.isVisible()) {
@@ -2518,13 +2519,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(23, SV4);
                 pst.setString(24, Importe4.getText());
                 pst.setString(25, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
         if (Mas5.isVisible()) {
@@ -2562,13 +2563,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(28, SV5);
                 pst.setString(29, Importe5.getText());
                 pst.setString(30, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
         if (Mas6.isVisible()) {
@@ -2611,13 +2612,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(33, SV6);
                 pst.setString(34, Importe6.getText());
                 pst.setString(35, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
         if (Mas7.isVisible()) {
@@ -2665,13 +2666,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(38, SV7);
                 pst.setString(39, Importe7.getText());
                 pst.setString(40, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
         if (Mas8.isVisible()) {
@@ -2724,13 +2725,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(43, SV8);
                 pst.setString(44, Importe8.getText());
                 pst.setString(45, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
         if (Menos8.isVisible()) {
@@ -2789,17 +2790,17 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(48, SV9);
                 pst.setString(49, Importe9.getText());
                 pst.setString(50, TDIDS.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-                
+
             }
         }
     }
-    
+
     public void Addval() {
         if (Mas27.isVisible()) {
             String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -2813,13 +2814,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(6, TDV.getText());
                 pst.setString(7, Rec.getText());
                 pst.setString(8, Entr.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
         if (Mas28.isVisible()) {
@@ -2843,13 +2844,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(14, TDV.getText());
                 pst.setString(15, Rec1.getText());
                 pst.setString(16, Entr1.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
         if (Mas29.isVisible()) {
@@ -2881,13 +2882,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(22, TDV.getText());
                 pst.setString(23, Rec2.getText());
                 pst.setString(24, Entr2.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
         if (Mas30.isVisible()) {
@@ -2895,7 +2896,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                
+
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
@@ -2928,13 +2929,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(30, TDV.getText());
                 pst.setString(31, Rec3.getText());
                 pst.setString(32, Entr3.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales:  " + error_semanal);
-                
+
             }
         }
         if (Mas31.isVisible()) {
@@ -2942,7 +2943,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                
+
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
@@ -2983,13 +2984,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(38, TDV.getText());
                 pst.setString(39, Rec4.getText());
                 pst.setString(40, Entr4.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
         if (Mas32.isVisible()) {
@@ -2997,7 +2998,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                
+
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
@@ -3046,13 +3047,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(46, TDV.getText());
                 pst.setString(47, Rec5.getText());
                 pst.setString(48, Entr5.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
         if (Mas33.isVisible()) {
@@ -3060,7 +3061,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                
+
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
@@ -3117,13 +3118,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(54, TDV.getText());
                 pst.setString(55, Rec6.getText());
                 pst.setString(56, Entr6.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
         if (Mas34.isVisible()) {
@@ -3132,7 +3133,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     + "(?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                
+
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
@@ -3197,13 +3198,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(62, TDV.getText());
                 pst.setString(63, Rec7.getText());
                 pst.setString(64, Entr7.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
         if (Mas35.isVisible()) {
@@ -3212,7 +3213,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     + "(?, ?, ?, ?, ?, ?, ?, ?), (?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
-                
+
                 pst.setInt(1, Integer.parseInt(NVale.getText()));
                 pst.setInt(2, Integer.parseInt(NDS.getText()));
                 pst.setString(3, DateFormat.getDateInstance().format(Fecha30.getDate()));
@@ -3285,13 +3286,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(70, TDV.getText());
                 pst.setString(71, Rec8.getText());
                 pst.setString(72, Entr8.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
         if (Menos35.isVisible()) {
@@ -3382,14 +3383,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(80, Entr9.getText());
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-                
+
             }
         }
     }
-    
+
     public void Addspen() {
         if (Mas9.isVisible()) {
             String SQL = "INSERT INTO `rh.semanal.inturbide.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
@@ -3401,13 +3402,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(4, NPadron.getText());
                 pst.setString(5, Importe10.getText());
                 pst.setString(6, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
         if (Mas10.isVisible()) {
@@ -3426,13 +3427,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(10, NPadron1.getText());
                 pst.setString(11, Importe11.getText());
                 pst.setString(12, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
         if (Mas11.isVisible()) {
@@ -3458,13 +3459,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(16, NPadron2.getText());
                 pst.setString(17, Importe12.getText());
                 pst.setString(18, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
         if (Mas12.isVisible()) {
@@ -3496,13 +3497,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(22, NPadron3.getText());
                 pst.setString(23, Importe13.getText());
                 pst.setString(24, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones:  " + error_semanal);
-                
+
             }
         }
         if (Mas13.isVisible()) {
@@ -3534,18 +3535,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(22, NPadron3.getText());
                 pst.setString(23, Importe13.getText());
                 pst.setString(24, TDIDP.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
                 pst.setString(26, DateFormat.getDateInstance().format(Fecha14.getDate()));
                 pst.setString(27, Servicio14.getText());
                 pst.setString(28, NPadron4.getText());
                 pst.setString(29, Importe14.getText());
                 pst.setString(30, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
         if (Mas14.isVisible()) {
@@ -3589,13 +3591,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(34, NPadron5.getText());
                 pst.setString(35, Importe15.getText());
                 pst.setString(36, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
         if (Mas15.isVisible()) {
@@ -3645,13 +3647,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(40, NPadron6.getText());
                 pst.setString(41, Importe16.getText());
                 pst.setString(42, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
         if (Mas16.isVisible()) {
@@ -3707,13 +3709,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(46, NPadron7.getText());
                 pst.setString(47, Importe17.getText());
                 pst.setString(48, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
         if (Mas17.isVisible()) {
@@ -3775,13 +3777,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(52, NPadron8.getText());
                 pst.setString(53, Importe18.getText());
                 pst.setString(54, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
         if (Menos17.isVisible()) {
@@ -3850,17 +3852,17 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(58, NPadron9.getText());
                 pst.setString(59, Importe19.getText());
                 pst.setString(60, TDIDP.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-                
+
             }
         }
     }
-    
+
     public void Addsgast() {
         if (Mas18.isVisible()) {
             String SQL = " INSERT INTO `rh.semanal.inturbide.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
@@ -3872,13 +3874,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(4, Importe20.getText());
                 pst.setString(5, LDA.getText());
                 pst.setString(6, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
         if (Mas19.isVisible()) {
@@ -3897,13 +3899,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(10, Importe21.getText());
                 pst.setString(11, LDA1.getText());
                 pst.setString(12, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
         if (Mas20.isVisible()) {
@@ -3929,13 +3931,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(16, Importe22.getText());
                 pst.setString(17, LDA2.getText());
                 pst.setString(18, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
         if (Mas21.isVisible()) {
@@ -3967,13 +3969,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(22, Importe23.getText());
                 pst.setString(23, LDA3.getText());
                 pst.setString(24, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.:  " + error_semanal);
-                
+
             }
         }
         if (Mas22.isVisible()) {
@@ -4011,13 +4013,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(28, Importe24.getText());
                 pst.setString(29, LDA4.getText());
                 pst.setString(30, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
         if (Mas23.isVisible()) {
@@ -4061,13 +4063,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(34, Importe25.getText());
                 pst.setString(35, LDA5.getText());
                 pst.setString(36, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
         if (Mas24.isVisible()) {
@@ -4117,13 +4119,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(40, Importe26.getText());
                 pst.setString(41, LDA6.getText());
                 pst.setString(42, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
         if (Mas25.isVisible()) {
@@ -4179,13 +4181,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(46, Importe7.getText());
                 pst.setString(47, LDA7.getText());
                 pst.setString(48, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
         if (Mas26.isVisible()) {
@@ -4247,13 +4249,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(52, Importe28.getText());
                 pst.setString(53, LDA8.getText());
                 pst.setString(54, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
         if (Menos26.isVisible()) {
@@ -4322,17 +4324,17 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 pst.setString(58, Importe29.getText());
                 pst.setString(59, LDA9.getText());
                 pst.setString(60, TDG.getText());
-                
+
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-                
+
             } catch (SQLException error_semanal) {
                 JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-                
+
             }
         }
     }
-    
+
     @Override
     public void run() {
         Thread ct = Thread.currentThread();
@@ -4342,11 +4344,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException error) {
-                
+
             }
         }
     }
-    
+
     private void calcula() {
         Calendar Fechaactual = new GregorianCalendar();
         Date fechaHoraactual = new Date();
@@ -4366,25 +4368,25 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         min = Fechaactual.get(Calendar.MINUTE) > 9 ? "" + Fechaactual.get(Calendar.MINUTE) : "0" + Fechaactual.get(Calendar.MINUTE);
         seg = Fechaactual.get(Calendar.SECOND) > 9 ? "" + Fechaactual.get(Calendar.SECOND) : "0" + Fechaactual.get(Calendar.SECOND);
     }
-    
+
     public void Operaciones2() {
         int fila = TSem.getSelectedRow();
         SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
-        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 4)));
-        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 5)));
-        DE.setText(String.valueOf(TSem.getValueAt(fila, 6)));
-        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 7)));
-        DBe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
-        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
-        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
-        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
-        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
-        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 5)));
+        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 6)));
+        DE.setText(String.valueOf(TSem.getValueAt(fila, 7)));
+        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        DBe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
+        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 10)));
+        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 11)));
+        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 12)));
+        TDG.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+        TDV.setText(String.valueOf(TSem.getValueAt(fila, 14)));
 
         // <editor-fold defaultstate="collapsed" desc="Servicios">
         double ImServ1 = Double.parseDouble(Importe40.getText());
         double ImServ2 = Double.parseDouble(TDIDS.getText());
-        
+
         double TotalServ = ImServ1 + ImServ2;
         this.TDIDS.setText("" + TotalServ + "");
         //</editor-fold>
@@ -4392,7 +4394,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Suma Pensiones">
         double ImPen1 = Double.parseDouble(Importe41.getText());
         double ImPen2 = Double.parseDouble(TDIDP.getText());
-        
+
         double TotalPen = ImPen1 + ImPen2;
         TDIDP.setText("" + TotalPen);
         //</editor-fold>
@@ -4400,7 +4402,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Total SYP">
         double TDSYP1 = Double.parseDouble(TDIDS.getText());
         double TDSYP2 = Double.parseDouble(TDIDP.getText());
-        
+
         double TotalSYP = TDSYP1 + TDSYP2;
         TDSYP.setText("" + TotalSYP);
         //</editor-fold>
@@ -4408,7 +4410,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Suma Gastos">
         double Gasto1 = Double.parseDouble(Importe42.getText());
         double Gasto2 = Double.parseDouble(TDG.getText());
-        
+
         double TotalGas = Gasto1 + Gasto2;
         TDG.setText("" + TotalGas);
         //</editor-fold>
@@ -4430,7 +4432,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         //</editor-fold>
         ColorDB();
     }
-    
+
     public void Operaciones() {
         // <editor-fold defaultstate="collapsed" desc="Suma Servicios">
         double ImServ1 = Double.parseDouble(Importe.getText());
@@ -4443,7 +4445,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         double ImServ8 = Double.parseDouble(Importe7.getText());
         double ImServ9 = Double.parseDouble(Importe8.getText());
         double ImServ10 = Double.parseDouble(Importe9.getText());
-        
+
         double TotalServ = ImServ1 + ImServ2 + ImServ3 + ImServ4 + ImServ5 + ImServ6 + ImServ7
                 + ImServ8 + ImServ9 + ImServ10;
         this.TDIDS.setText("" + TotalServ + "");
@@ -4460,7 +4462,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         double ImPen8 = Double.parseDouble(Importe17.getText());
         double ImPen9 = Double.parseDouble(Importe18.getText());
         double ImPen10 = Double.parseDouble(Importe19.getText());
-        
+
         double TotalPen = ImPen1 + ImPen2 + ImPen3 + ImPen4 + ImPen5 + ImPen6 + ImPen7 + ImPen8
                 + ImPen9 + ImPen10;
         TDIDP.setText("" + TotalPen);
@@ -4469,7 +4471,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         // <editor-fold defaultstate="collapsed" desc="Total SYP">
         double TDSYP1 = Double.parseDouble(TDIDS.getText());
         double TDSYP2 = Double.parseDouble(TDIDP.getText());
-        
+
         double TotalSYP = TDSYP1 + TDSYP2;
         TDSYP.setText("" + TotalSYP);
         //</editor-fold>
@@ -4485,7 +4487,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         double Gasto8 = Double.parseDouble(Importe27.getText());
         double Gasto9 = Double.parseDouble(Importe28.getText());
         double Gasto10 = Double.parseDouble(Importe29.getText());
-        
+
         double TotalGas = Gasto1 + Gasto2 + Gasto3 + Gasto4 + Gasto5 + Gasto6 + Gasto7 + Gasto8
                 + Gasto9 + Gasto10;
         TDG.setText("" + TotalGas);
@@ -4512,25 +4514,25 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         //</editor-fold>
 
     }
-    
+
     public void MostrarNDS() {
         String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022' AND TABLE_NAME = 'rh.semanal.inturbide.nsem'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
             while (rs.next()) {
-                
+
                 NDS.setText("" + (Integer.parseInt(rs.getString("AUTO_INCREMENT"))));
             }
             st.isClosed();
             rs.isClosed();
         } catch (SQLException e) {
-            
+
             JOptionPane.showMessageDialog(null, "Error al mostrar numero de padron " + e);
-            
+
         }
     }
-    
+
     @SuppressWarnings("unchecked")
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -6628,6 +6630,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel11.setText("Observaciones");
 
+        ObsV.setEditable(false);
+
+        Importe30.setEditable(false);
         Importe30.setText("0");
         Importe30.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6638,8 +6643,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        Fecha30.setDateFormatString("dd MMM yyyy ");
+        Fecha30.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
+        Importe32.setEditable(false);
         Importe32.setText("0");
         Importe32.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6650,6 +6656,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        Importe37.setEditable(false);
         Importe37.setText("0");
         Importe37.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6660,6 +6667,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        Importe31.setEditable(false);
         Importe31.setText("0");
         Importe31.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6670,6 +6678,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        Importe33.setEditable(false);
         Importe33.setText("0");
         Importe33.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6680,8 +6689,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        Fecha36.setDateFormatString("dd MMM yyyy ");
+        ObsV4.setEditable(false);
 
+        ObsV9.setEditable(false);
+
+        Fecha36.setDateFormatString("'A' d 'de' MMMM 'de' y");
+
+        Importe34.setEditable(false);
         Importe34.setText("0");
         Importe34.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6692,20 +6706,25 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        Fecha31.setDateFormatString("dd MMM yyyy ");
+        ObsV3.setEditable(false);
 
-        Fecha38.setDateFormatString("dd MMM yyyy ");
+        Fecha31.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha39.setDateFormatString("dd MMM yyyy ");
+        Fecha38.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha33.setDateFormatString("dd MMM yyyy ");
+        Fecha39.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha37.setDateFormatString("dd MMM yyyy ");
+        Fecha33.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha34.setDateFormatString("dd MMM yyyy ");
+        Fecha37.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha35.setDateFormatString("dd MMM yyyy ");
+        Fecha34.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
+        Fecha35.setDateFormatString("'A' d 'de' MMMM 'de' y");
+
+        ObsV6.setEditable(false);
+
+        Importe35.setEditable(false);
         Importe35.setText("0");
         Importe35.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6716,6 +6735,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        Importe38.setEditable(false);
         Importe38.setText("0");
         Importe38.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6726,6 +6746,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        ObsV2.setEditable(false);
+
+        Importe39.setEditable(false);
         Importe39.setText("0");
         Importe39.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6736,6 +6759,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        ObsV8.setEditable(false);
+
+        Importe36.setEditable(false);
         Importe36.setText("0");
         Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6746,10 +6772,19 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        Fecha32.setDateFormatString("dd MMM yyyy ");
+        Fecha32.setDateFormatString("'A' d 'de' MMMM 'de' y");
+
+        ObsV1.setEditable(false);
+
+        ObsV7.setEditable(false);
+
+        ObsV5.setEditable(false);
 
         NVale1.setText("0");
         NVale1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale1KeyTyped(evt);
             }
@@ -6757,6 +6792,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale2.setText("0");
         NVale2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale2KeyTyped(evt);
             }
@@ -6764,6 +6802,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale3.setText("0");
         NVale3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale3KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale3KeyTyped(evt);
             }
@@ -6771,6 +6812,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale4.setText("0");
         NVale4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale4KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale4KeyTyped(evt);
             }
@@ -6778,6 +6822,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale5.setText("0");
         NVale5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale5KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale5KeyTyped(evt);
             }
@@ -6785,6 +6832,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale6.setText("0");
         NVale6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale6KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale6KeyTyped(evt);
             }
@@ -6792,6 +6842,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale7.setText("0");
         NVale7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale7KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale7KeyTyped(evt);
             }
@@ -6799,6 +6852,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale8.setText("0");
         NVale8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale8KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale8KeyTyped(evt);
             }
@@ -6806,6 +6862,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale9.setText("0");
         NVale9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale9KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale9KeyTyped(evt);
             }
@@ -6828,6 +6887,24 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Rec8.setEditable(false);
 
         Rec9.setEditable(false);
+
+        Entr1.setEditable(false);
+
+        Entr2.setEditable(false);
+
+        Entr3.setEditable(false);
+
+        Entr4.setEditable(false);
+
+        Entr5.setEditable(false);
+
+        Entr6.setEditable(false);
+
+        Entr7.setEditable(false);
+
+        Entr8.setEditable(false);
+
+        Entr9.setEditable(false);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -7157,6 +7234,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale.setText("0");
         NVale.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NValeKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NValeKeyTyped(evt);
             }
@@ -7169,6 +7249,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Rec.setEditable(false);
 
         jLabel65.setText("Entrega");
+
+        Entr.setEditable(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -7258,12 +7340,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 .addGap(1, 1, 1)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel29)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel42)
-                        .addComponent(jLabel64)
-                        .addComponent(jLabel65)))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel64, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel65))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -8000,6 +8083,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         NVale10.setText("0");
         NVale10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale10KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale10KeyTyped(evt);
             }
@@ -8007,6 +8093,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
         Fecha43.setDateFormatString("dd MMM yyyy ");
 
+        Importe43.setEditable(false);
         Importe43.setText("0");
         Importe43.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -8016,6 +8103,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 Importe43KeyTyped(evt);
             }
         });
+
+        ObsV10.setEditable(false);
 
         jLabel60.setText("Observaciones");
 
@@ -8038,6 +8127,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Rec10.setEditable(false);
 
         jLabel67.setText("Entrega");
+
+        Entr10.setEditable(false);
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -9639,7 +9730,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 12)));
         TDG.setText(String.valueOf(TSem.getValueAt(fila, 13)));
         TDV.setText(String.valueOf(TSem.getValueAt(fila, 14)));
-        
+
         DBe.setEnabled(false);
         EEntrega.setEnabled(false);
         ARSC.setVisible(true);
@@ -9668,14 +9759,14 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-            
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
-            
+
             Statement statementscc = connect.createStatement();
             Statement statementpen = connect.createStatement();
             Statement statementgast = connect.createStatement();
@@ -9686,31 +9777,31 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
-            
+
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
-                
+
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-                
+
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-                
+
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-                
+
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -9720,12 +9811,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-                
+
                 while (NSem.next()) {
-                    
+
                     cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     0, //first row (0-based)
@@ -9736,12 +9827,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     );
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("MMM/YY"));
-                    
+
                     row = spreadsheet.createRow(1);
                     cell = row.createCell(2);
                     cell.setCellValue("Reporte General de Zona");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -9750,12 +9841,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     5 //last column (0-based)
                             )
                     );
-                    
+
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(2);
                     cell.setCellValue("Zona Sur 1");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     2, //first row (0-based)
@@ -9764,7 +9855,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     5 //last column (0-based)
                             )
                     );
-                    
+
                     row = spreadsheet.createRow(7);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
@@ -9791,7 +9882,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(8);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -9811,7 +9902,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(3);
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(4);
                     cell.setCellValue("INICIO");
                     cell.setCellStyle(Contenido);
@@ -9825,18 +9916,18 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(3);
                     cell = row.createCell(6);
                     cell.setCellValue(NSem.getString("#Nsem"));
                     cell = row.createCell(8);
                     cell.setCellValue("Total de importe de servicios:");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TIS"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(4);
                     cell = row.createCell(3);
                     cell.setCellValue("FECHA: ");
@@ -9849,7 +9940,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     6 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(4);
                     cell.setCellValue(NSem.getString("fecha de semanal"));
                     cell.setCellStyle(Contenido);
@@ -9857,15 +9948,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total de importe de pensiones:");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TIP"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(5);
                     cell = row.createCell(3);
                     cell.setCellValue("HORA: ");
@@ -9885,75 +9976,75 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total de servicios y pensiones");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total de servicios y pensiones"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(6);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total de gastos");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TG"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(7);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total de vales entregados: ");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("TV"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.getRow(8);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Total menos gastos y vales");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Total restando gastos"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(9);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Debe entregar: ");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe entregar"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(10);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("El entrega: ");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("el entrega"));
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(11);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Debe: ");
                     cell.setCellStyle(Contenido);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue(NSem.getString("Debe"));
                     cell.setCellStyle(Contenido);
-                    
+
                     NSem.isClosed();
                 }
                 spreadsheet.createRow(12);
@@ -9999,7 +10090,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(scc.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     i++;
-                    
+
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -10009,10 +10100,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     scc.isClosed();
                     statementscc.isClosed();
-                    
+
                 }
                 int x = 22;
-                
+
                 while (pen.next()) {
                     row = spreadsheet.createRow(20);
                     spreadsheet.addMergedRegion(
@@ -10040,7 +10131,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(21);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -10078,7 +10169,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("IMPORTE");
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(pen.getString("Fecha"));
@@ -10119,7 +10210,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(pen.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     x++;
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -10128,10 +10219,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(pen.getString("Total"));
                     cell.setCellStyle(Contenido);
                     pen.isClosed();
-                    
+
                 }
                 x = 35;
-                
+
                 while (gast.next()) {
                     row = spreadsheet.createRow(33);
                     spreadsheet.addMergedRegion(
@@ -10159,7 +10250,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(34);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -10197,7 +10288,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("# LISTA");
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(gast.getString("Fecha"));
@@ -10236,7 +10327,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(gast.getString("#Lista"));
                     cell.setCellStyle(Contenido);
                     x++;
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -10245,10 +10336,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(gast.getString("Total"));
                     cell.setCellStyle(Contenido);
                     gast.isClosed();
-                    
+
                 }
                 x = 48;
-                
+
                 while (val.next()) {
                     row = spreadsheet.createRow(46);
                     spreadsheet.addMergedRegion(
@@ -10276,7 +10367,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(7);
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(47);
                     cell = row.createCell(0);
                     cell.setCellValue("FECHA");
@@ -10305,7 +10396,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell = row.createCell(7);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Contenido);
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(0);
                     cell.setCellValue(val.getString("Fecha"));
@@ -10335,7 +10426,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString("Importe"));
                     cell.setCellStyle(Contenido);
                     x++;
-                    
+
                     row = spreadsheet.createRow(x);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
@@ -10344,9 +10435,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString("Total"));
                     cell.setCellStyle(Contenido);
                     pen.isClosed();
-                    
+
                 }
-                
+
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -10356,23 +10447,23 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-                
+
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-            
+
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         JFileChooser chooser1 = new JFileChooser();
         FileNameExtensionFilter filter1 = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
         chooser1.setSelectedFile(new File("Ingresos y egresos Semanal No. " + SemSl.getText()));
@@ -10389,50 +10480,50 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-            
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
                     "Servidor",
                     "Confort1022"
             );
-            
+
             Statement statementscc = connect.createStatement();
             Statement statementpen = connect.createStatement();
             Statement statementgast = connect.createStatement();
             Statement statementval = connect.createStatement();
             Statement statementNsem = connect.createStatement();
-            
+
             ResultSet scc = statementscc.executeQuery("SELECT * FROM `rh.semanal.inturbide.scc` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet pen = statementpen.executeQuery("SELECT * FROM `rh.semanal.inturbide.pen` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet gast = statementgast.executeQuery("SELECT * FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.inturbide.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
-            
+
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Ingresos y egresos"));
-                
+
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-                
+
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-                
+
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-                
+
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -10442,7 +10533,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-                
+
                 spreadsheet.createRow(3);
                 spreadsheet.createRow(4);
                 spreadsheet.createRow(5);
@@ -10455,13 +10546,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.createRow(12);
                 spreadsheet.createRow(13);
                 spreadsheet.createRow(14);
-                
+
                 int i = 3;
                 while (NSem.next()) {
-                    
+
                     cell.setCellValue("Ingresos y egresos Semanal No. " + SemSl.getText() + " de " + AutoFecha.getText());
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     0, //first row (0-based)
@@ -10470,12 +10561,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     12 //last column (0-based)
                             )
                     );
-                    
+
                     row = spreadsheet.createRow(1);
                     cell = row.createCell(0);
                     cell.setCellValue("Servicios con cobro");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10484,11 +10575,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     3 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(4);
                     cell.setCellValue("Pensiones");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10497,11 +10588,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     6 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(7);
                     cell.setCellValue("Gastos");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10510,11 +10601,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     9 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(10);
                     cell.setCellValue("Vales");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10523,11 +10614,11 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     12 //last column (0-based)
                             )
                     );
-                    
+
                     cell = row.createCell(13);
                     cell.setCellValue("Descuadre");
                     cell.setCellStyle(Encabezado);
-                    
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     1, //first row (0-based)
@@ -10536,67 +10627,67 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                                     14 //last column (0-based)
                             )
                     );
-                    
+
                     row = spreadsheet.createRow(2);
                     cell = row.createCell(0);
                     cell.setCellValue("# Semanal");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(1);
                     cell.setCellValue("Fecha");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(2);
                     cell.setCellValue("Servicio");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(3);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(4);
                     cell.setCellValue("Servicio");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(5);
                     cell.setCellValue("# de padron");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(6);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(7);
                     cell.setCellValue("Concepto");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(9);
                     cell.setCellValue("Lista de asistencia");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(10);
                     cell.setCellValue("# vale");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(11);
                     cell.setCellValue("Observacion");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(12);
                     cell.setCellValue("Importe");
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(13);
                     cell.setCellValue("Debe");
                     cell.setCellStyle(Encabezado);
                     cell = row.createCell(14);
                     cell.setCellValue("Observaciones");
                     cell.setCellStyle(Encabezado);
-                    
+
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(0);
                     cell.setCellValue(NSem.getString("#Nsem"));
@@ -10612,10 +10703,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-                
+
                 while (scc.next()) {
                     row = spreadsheet.getRow(i);
-                    
+
                     cell = row.createCell(2);
                     cell.setCellValue(scc.getString("Servicio"));
                     cell.setCellStyle(Contenido);
@@ -10625,7 +10716,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-                
+
                 while (pen.next()) {
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(4);
@@ -10640,7 +10731,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     i++;
                 }
                 i = 3;
-                
+
                 while (gast.next()) {
                     row = spreadsheet.getRow(i);
                     cell = row.createCell(7);
@@ -10667,9 +10758,9 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     cell.setCellValue(val.getString(5));
                     cell.setCellStyle(Contenido);
                     i++;
-                    
+
                 }
-                
+
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -10679,52 +10770,52 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-                
+
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-            
+
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jLabel38MousePressed
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
-        
-        Estadias_4 regr = new Estadias_4();
+
+        Estadias_4 regr = new Estadias_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
-        
-        Tortas_4 regr = new Tortas_4();
+
+        Tortas_4 regr = new Tortas_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        DepositosQ_4 regr = new DepositosQ_4();
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Tehuantepec_4 regr = new Tehuantepec_4();
+        Tehuantepec_4 regr = new Tehuantepec_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        PT_4 regr = new PT_4();
+        PT_4 regr = new PT_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -10796,7 +10887,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_ODT2ActionPerformed
 
     private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
-        
+
         Empleados_4 RH = new Empleados_4(usr, LP);
         RH.setVisible(true);
         this.dispose();
@@ -11194,7 +11285,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Servicio9ItemStateChanged
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        VDE regr = new VDE();
+        VDE regr = new VDE(usr, LP);
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
@@ -11381,13 +11472,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(4, Importe42.getText());
             pst.setString(5, LDA12.getText());
             pst.setString(6, TDG.getText());
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
-            
+
         } catch (SQLException error_semanal) {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
-            
+
         }
 
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -11408,15 +11499,15 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(3, SV);
             pst.setString(4, Importe40.getText());
             pst.setString(5, TDIDS.getText());
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Reporte semanal agregado");
-            
+
             Importe40.setText("0");
             Servicio20.setSelectedIndex(0);
         } catch (SQLException error_semanal) {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
-            
+
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -11431,16 +11522,16 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(4, NPadron10.getText());
             pst.setString(5, Importe41.getText());
             pst.setString(6, TDIDP.getText());
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
             Servicio21.setText("");
             NPadron10.setText("");
             Importe41.setText("0");
-            
+
         } catch (SQLException error_semanal) {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-            
+
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -11451,7 +11542,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         MODSemanal();
-        
+
         String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
@@ -11463,10 +11554,10 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             pst.setString(6, TDV.getText());
             pst.setString(7, Rec10.getText());
             pst.setString(8, Entr10.getText());
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-            
+
             NVale10.setText("0");
             ObsV10.setText("");
             Importe43.setText("0");
@@ -11474,7 +11565,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             Rec10.setText("0");
         } catch (SQLException error_semanal) {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
-            
+
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -11495,12 +11586,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         IS.setMes(CBXmes.getSelectedItem().toString());
         if (TDR.getSelectedIndex() == 0) {
             if (Mes.isSelected() == true) {
-                
+
                 Logica_SemMes LEM = new Logica_SemMes();
                 LEM.SemxMes(IS);
             }
             if (Gen.isSelected() == true) {
-                
+
                 Logica_SemGen LEM = new Logica_SemGen();
                 LEM.Semgen();
             }
@@ -11508,22 +11599,22 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         if (TDR.getSelectedIndex() == 1) {
             Logica_Semscc LEM = new Logica_Semscc();
             LEM.Gastosgen();
-            
+
         }
         if (TDR.getSelectedIndex() == 2) {
             Logica_Sempen LEM = new Logica_Sempen();
             LEM.Gastosgen();
-            
+
         }
         if (TDR.getSelectedIndex() == 3) {
             Logica_Semgast LEM = new Logica_Semgast();
             LEM.Gastosgen();
-            
+
         }
         if (TDR.getSelectedIndex() == 4) {
             Logica_Semval LEM = new Logica_Semval();
             LEM.Gastosgen();
-            
+
         }
     }//GEN-LAST:event_jLabel63MousePressed
 
@@ -11532,12 +11623,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             Gen.setVisible(false);
             Mes.setVisible(false);
             CBXmes.setVisible(false);
-            
+
         } else {
             Gen.setVisible(true);
             Mes.setVisible(true);
             CBXmes.setVisible(false);
-            
+
         }
     }//GEN-LAST:event_TDRItemStateChanged
 
@@ -11545,7 +11636,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres Eliminar este semanal?");
         if (i == 0) {
             try {
-                
+
                 int filaseleccionada = TSem.getSelectedRow();
                 String sql = "delete from `rh.semanal.inturbide.nsem` where `#NSem` = " + TSem.getValueAt(filaseleccionada, 0);
                 java.sql.Statement st = con.createStatement();
@@ -11578,20 +11669,354 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                     JOptionPane.showMessageDialog(null, "Servicios de semanal eliminados.");
                 }
             } catch (HeadlessException | SQLException e) {
-                
+
                 JOptionPane.showMessageDialog(null, "Error al eliminar empleado: " + e.getMessage());
-                
+
             }
         }
     }//GEN-LAST:event_ESemActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        // TODO add your handling code here:
+        Rvales regr = new Rvales(usr, LP);
+        regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        // TODO add your handling code here:
+        VDE regr = new VDE(usr, LP);
+        regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void NValeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NValeKeyReleased
+
+        try {
+            int id = Integer.parseInt(NVale.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha30.setDate(date);
+                Importe30.setText(rs.getString(3));
+                Rec.setText(rs.getString(4));
+                Entr.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NValeKeyReleased
+
+    private void NVale1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale1KeyReleased
+        try {
+            int id = Integer.parseInt(NVale1.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV1.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha31.setDate(date);
+                Importe31.setText(rs.getString(3));
+                Rec1.setText(rs.getString(4));
+                Entr1.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale1KeyReleased
+
+    private void NVale2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale2KeyReleased
+        try {
+            int id = Integer.parseInt(NVale2.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV2.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha32.setDate(date);
+                Importe32.setText(rs.getString(3));
+                Rec2.setText(rs.getString(4));
+                Entr2.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale2KeyReleased
+
+    private void NVale3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale3KeyReleased
+        try {
+            int id = Integer.parseInt(NVale3.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV3.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha33.setDate(date);
+                Importe33.setText(rs.getString(3));
+                Rec3.setText(rs.getString(4));
+                Entr3.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale3KeyReleased
+
+    private void NVale4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale4KeyReleased
+        try {
+            int id = Integer.parseInt(NVale4.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV4.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha34.setDate(date);
+                Importe34.setText(rs.getString(3));
+                Rec4.setText(rs.getString(4));
+                Entr4.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale4KeyReleased
+
+    private void NVale5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale5KeyReleased
+        try {
+            int id = Integer.parseInt(NVale5.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV5.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha35.setDate(date);
+                Importe35.setText(rs.getString(3));
+                Rec5.setText(rs.getString(4));
+                Entr5.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale5KeyReleased
+
+    private void NVale6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale6KeyReleased
+        try {
+            int id = Integer.parseInt(NVale6.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV6.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha36.setDate(date);
+                Importe36.setText(rs.getString(3));
+                Rec6.setText(rs.getString(4));
+                Entr6.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale6KeyReleased
+
+    private void NVale7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale7KeyReleased
+        try {
+            int id = Integer.parseInt(NVale7.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV7.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha37.setDate(date);
+                Importe37.setText(rs.getString(3));
+                Rec7.setText(rs.getString(4));
+                Entr7.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale7KeyReleased
+
+    private void NVale8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale8KeyReleased
+        try {
+            int id = Integer.parseInt(NVale8.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV8.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha38.setDate(date);
+                Importe38.setText(rs.getString(3));
+                Rec8.setText(rs.getString(4));
+                Entr8.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale8KeyReleased
+
+    private void NVale9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale9KeyReleased
+        try {
+            int id = Integer.parseInt(NVale9.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV9.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha39.setDate(date);
+                Importe39.setText(rs.getString(3));
+                Rec9.setText(rs.getString(4));
+                Entr9.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale9KeyReleased
+
+    private void NVale10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale10KeyReleased
+
+        try {
+            int id = Integer.parseInt(NVale10.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV10.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha43.setDate(date);
+                Importe43.setText(rs.getString(3));
+                Rec10.setText(rs.getString(4));
+                Entr10.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+
+    }//GEN-LAST:event_NVale10KeyReleased
 
     /**
      * @param args the command line arguments
@@ -11607,13 +12032,13 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                    
+
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Iturbide_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            
+
         }
         //</editor-fold>
         //</editor-fold>

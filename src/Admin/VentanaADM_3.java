@@ -15,18 +15,24 @@ import RH.*;
 import Nomina.*;
 import Conexion.ConexionSQL;
 import Logicas.*;
+import Semanal.Vales.Rvales;
 import java.awt.HeadlessException;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -58,6 +64,16 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         FillAp.setVisible(false);
         FillAm.setVisible(false);
         Filname.setVisible(false);
+        BName.setVisible(false);
+        BAPNom.setVisible(false);
+        BAMNom.setVisible(false);
+        Filtro1.setVisible(false);
+        Filtro2.setVisible(false);
+        BName1.setVisible(false);
+        BAPNom1.setVisible(false);
+        BAMNom1.setVisible(false);
+        shareN();
+        MDACT();
 
     }
 
@@ -79,8 +95,156 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         FillAp.setVisible(false);
         FillAm.setVisible(false);
         Filname.setVisible(false);
+        Filtro1.setVisible(false);
+        BName.setVisible(false);
+        BAPNom.setVisible(false);
+        BAMNom.setVisible(false);
+        Filtro2.setVisible(false);
+        BName1.setVisible(false);
+        BAPNom1.setVisible(false);
+        BAMNom1.setVisible(false);
         setTitle("Ventana ADM # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
+        shareN();
+        MDACT();
+    }
+
+    public void MDACT() {
+        //Buscar empleado
+        String Share = BName1.getText();
+        String ShareAP = BAPNom1.getText();
+        String ShareAM = BAMNom1.getText();
+        String where = "SELECT * FROM `admin.reciboefectivo`";
+
+        if (!"".equals(Share)) {
+            where = " select * "
+                    + "from `admin.reciboefectivo` WHERE `Nombre(s)` LIKE '%" + Share + "%'";
+        } else if (!"".equals(ShareAP)) {
+            where = " select * "
+                    + "from `admin.reciboefectivo` WHERE `Apellido P` LIKE '%" + ShareAP + "%'";
+        } else if (!"".equals(ShareAM)) {
+            where = " select * "
+                    + "from `admin.reciboefectivo` WHERE `Apellido M` LIKE '%" + ShareAM + "%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            share1.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Registro");
+            modelo.addColumn("# Empleado");
+            modelo.addColumn("Apellido P");//1
+            modelo.addColumn("Apellido M");//
+            modelo.addColumn("Nombre(s)");//3
+            modelo.addColumn("Activo");
+
+//Anchos
+            int[] anchos = {50, /*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150, 50};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                share1.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+        } catch (SQLException error_sharenom) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
+
+        }
+
+    }
+
+    public void shareN() {
+        //Buscar empleado
+        String Share = BName.getText();
+        String ShareAP = BAPNom.getText();
+        String ShareAM = BAMNom.getText();
+        String where = "SELECT `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados`"
+                + " where `Status` LIKE '%Vigente%'";
+
+        if (!"".equals(Share)) {
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)` "
+                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
+        } else if (!"".equals(ShareAP)) {
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)` "
+                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
+        } else if (!"".equals(ShareAM)) {
+            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)` "
+                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
+        }
+
+        try {
+            //Cargar datos
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+//Nombre de la tabla
+            share.setModel(modelo);
+            PreparedStatement ps;
+            ResultSet rs;
+
+            ps = con.prepareStatement(where);
+            rs = ps.executeQuery();
+
+            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            modelo.addColumn("# Empleado");
+            modelo.addColumn("Apellido P");//1
+            modelo.addColumn("Apellido M");//
+            modelo.addColumn("Nombre(s)");//3
+
+//Anchos
+            int[] anchos = {/*numE*/35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150};
+
+            for (int x = 0; x < cantidadColumnas; x++) {
+                //Nombre tabla
+                share.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+            }
+
+            while (rs.next()) {
+                Object[] filas = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    filas[i] = rs.getObject(i + 1);
+                }
+                modelo.addRow(filas);
+            }
+            ps.isClosed();
+            rs.isClosed();
+        } catch (SQLException error_sharenom) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
+
+        }
 
     }
 
@@ -289,6 +453,38 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         txtbtnpduadd = new javax.swing.JLabel();
         btnpdumod = new javax.swing.JPanel();
         txtbtnpdumod = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        BName = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        share = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
+        FiltrosNom = new javax.swing.JComboBox<>();
+        BAMNom = new javax.swing.JTextField();
+        Filtro1 = new javax.swing.JLabel();
+        BAPNom = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        NR = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        NE = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        ApEDE = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        AmEDE = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        nameEDE = new javax.swing.JTextField();
+        ACT = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
+        BName1 = new javax.swing.JTextField();
+        BAPNom1 = new javax.swing.JTextField();
+        Filtro2 = new javax.swing.JLabel();
+        BAMNom1 = new javax.swing.JTextField();
+        FiltrosNom1 = new javax.swing.JComboBox<>();
+        jLabel21 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        share1 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -533,7 +729,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                             .addComponent(cbxfillusrs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel2);
@@ -902,6 +1098,254 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Acceso de perfil de usuario", jScrollPane3);
 
+        BName.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BNameKeyReleased(evt);
+            }
+        });
+
+        share.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
+            }
+        ));
+        share.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shareMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(share);
+
+        jLabel28.setText("Filtrar por:");
+
+        FiltrosNom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        FiltrosNom.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosNomItemStateChanged(evt);
+            }
+        });
+
+        BAMNom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BAMNomKeyReleased(evt);
+            }
+        });
+
+        Filtro1.setText("Buscar empleado:");
+
+        BAPNom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BAPNomKeyReleased(evt);
+            }
+        });
+
+        jLabel9.setText("# Registro:");
+
+        NR.setEditable(false);
+        NR.setText("0");
+
+        jLabel10.setText("# Empleado:");
+
+        jLabel11.setText("Apellido P:");
+
+        jLabel12.setText("Apellido M:");
+
+        jLabel15.setText("Nombres:");
+
+        ACT.setText("Activo.");
+
+        jButton1.setText("Agregar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Modificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("Filtrar por:");
+
+        BName1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BName1KeyReleased(evt);
+            }
+        });
+
+        BAPNom1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BAPNom1KeyReleased(evt);
+            }
+        });
+
+        Filtro2.setText("Buscar empleado:");
+
+        BAMNom1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BAMNom1KeyReleased(evt);
+            }
+        });
+
+        FiltrosNom1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        FiltrosNom1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                FiltrosNom1ItemStateChanged(evt);
+            }
+        });
+
+        jLabel21.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Registros de Entrega de efectivo");
+
+        share1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
+            }
+        ));
+        share1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                share1MouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(share1);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NR, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ApEDE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AmEDE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nameEDE, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ACT)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel28)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(FiltrosNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Filtro1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BAPNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel29)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(FiltrosNom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(Filtro2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BName1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BAPNom1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BAMNom1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel21)
+                            .addGap(204, 204, 204)))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Filtro1)
+                    .addComponent(BName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAPNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FiltrosNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel9)
+                    .addComponent(NR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(NE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(ApEDE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(AmEDE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(nameEDE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ACT)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1)
+                        .addComponent(jButton2))
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Filtro2)
+                    .addComponent(BName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAPNom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BAMNom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FiltrosNom1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jPanel1);
+
+        jTabbedPane1.addTab("Registro para entrega de efectivo", jScrollPane1);
+
         Menuadm.setText("Todas las ventanas");
 
         jMenu2.setText("Area Nomina");
@@ -1105,7 +1549,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1005, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2383,6 +2827,197 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDA3ActionPerformed
 
+    private void BNameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BNameKeyReleased
+        shareN();
+    }//GEN-LAST:event_BNameKeyReleased
+
+    private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
+
+        int seleccionar = share.getSelectedRow();
+        NE.setText(String.valueOf(share.getValueAt(seleccionar, 0)));
+        ApEDE.setText(String.valueOf(share.getValueAt(seleccionar, 1)));
+        AmEDE.setText(String.valueOf(share.getValueAt(seleccionar, 2)));
+        nameEDE.setText(String.valueOf(share.getValueAt(seleccionar, 3)));
+
+    }//GEN-LAST:event_shareMouseClicked
+
+    private void FiltrosNomItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosNomItemStateChanged
+
+        String dt = (String) FiltrosNom.getSelectedItem();
+        if (dt.equals("Selecciona filtro")) {
+            Filtro1.setVisible(false);
+            Filtro1.setText("");
+            BName.setVisible(false);
+            BName.setText("");
+            BAPNom.setText("");
+            BAPNom.setVisible(false);
+            BAMNom.setVisible(false);
+            BAMNom.setText("");
+            shareN();
+        }
+        if (dt.equals("Apellido P")) {
+            Filtro1.setVisible(true);
+            Filtro1.setText("Buscar por Apellido P:");
+            BName.setVisible(false);
+            BName.setText("");
+            BAPNom.setText("");
+            BAPNom.setVisible(true);
+            BAMNom.setVisible(false);
+            BAMNom.setText("");
+            shareN();
+        }
+        if (dt.equals("Apellido M")) {
+            Filtro1.setVisible(true);
+            Filtro1.setText("Buscar por Apellido M:");
+            BName.setVisible(false);
+            BName.setText("");
+            BAPNom.setText("");
+            BAPNom.setVisible(false);
+            BAMNom.setVisible(true);
+            BAMNom.setText("");
+            shareN();
+        }
+        if (dt.equals("Nombre(s)")) {
+            Filtro1.setVisible(true);
+            Filtro1.setText("Buscar por Nombre(s):");
+            BName.setVisible(true);
+            BName.setText("");
+            BAPNom.setText("");
+            BAPNom.setVisible(false);
+            BAMNom.setVisible(false);
+            BAMNom.setText("");
+            shareN();
+        }
+    }//GEN-LAST:event_FiltrosNomItemStateChanged
+
+    private void BAMNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAMNomKeyReleased
+        shareN();
+    }//GEN-LAST:event_BAMNomKeyReleased
+
+    private void BAPNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAPNomKeyReleased
+        shareN();
+    }//GEN-LAST:event_BAPNomKeyReleased
+
+    private void BName1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BName1KeyReleased
+        MDACT();
+    }//GEN-LAST:event_BName1KeyReleased
+
+    private void BAPNom1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAPNom1KeyReleased
+        MDACT();
+    }//GEN-LAST:event_BAPNom1KeyReleased
+
+    private void BAMNom1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAMNom1KeyReleased
+        MDACT();
+
+    }//GEN-LAST:event_BAMNom1KeyReleased
+
+    private void FiltrosNom1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosNom1ItemStateChanged
+        MDACT();
+    }//GEN-LAST:event_FiltrosNom1ItemStateChanged
+
+    private void share1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_share1MouseClicked
+        try {
+            int seleccionar = share1.getSelectedRow();
+            NR.setText(String.valueOf(share1.getValueAt(seleccionar, 0)));
+            NE.setText(String.valueOf(share1.getValueAt(seleccionar, 1)));
+            ApEDE.setText(String.valueOf(share1.getValueAt(seleccionar, 2)));
+            AmEDE.setText(String.valueOf(share1.getValueAt(seleccionar, 3)));
+            nameEDE.setText(String.valueOf(share1.getValueAt(seleccionar, 4)));
+            int id = Integer.parseInt(share1.getValueAt(seleccionar, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `Activo` from `admin.reciboefectivo` where `#registro` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                if (rs.getString(1).equals("Si")) {
+                    ACT.setSelected(true);
+                } else {
+                    ACT.setSelected(false);
+                }
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(VentanaADM_3.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_share1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String ACEDE;
+        if (ACT.isSelected() == true) {
+            ACEDE = "Si";
+        } else {
+            ACEDE = "No";
+        }
+        String SQL = "INSERT INTO `admin.reciboefectivo` (`#registro`, `# Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Activo`) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NR.getText()));
+            pst.setString(2, NE.getText());
+            pst.setString(3, ApEDE.getText());
+            pst.setString(4, AmEDE.getText());
+            pst.setString(5, nameEDE.getText());
+            pst.setString(6, ACEDE);
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Registro agregado.");
+            
+            NE.setText("");
+            NR.setText("0");
+            ApEDE.setText("");
+            AmEDE.setText("");
+            nameEDE.setText("");
+            ACT.setSelected(false);
+            MDACT();
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al agregar registro: " + e);
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String ACEDE;
+        if (ACT.isSelected() == true) {
+            ACEDE = "Si";
+        } else {
+            ACEDE = "No";
+        }
+        String SQL = "UPDATE `admin.reciboefectivo` SET `#registro` = ?, `# Empleado` = ?, "
+                + "`Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Activo` = ? WHERE `admin.reciboefectivo`.`#registro` = ?";
+
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NR.getText()));
+            pst.setString(2, NE.getText());
+            pst.setString(3, ApEDE.getText());
+            pst.setString(4, AmEDE.getText());
+            pst.setString(5, nameEDE.getText());
+            pst.setString(6, ACEDE);
+            pst.setInt(7, Integer.parseInt(NR.getText()));
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Registro modificado.");
+            
+            NE.setText("");
+            NR.setText("0");
+            ApEDE.setText("");
+            AmEDE.setText("");
+            nameEDE.setText("");
+            ACT.setSelected(false);
+            MDACT();
+
+        } catch (HeadlessException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al modificar registro: " + e);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2420,9 +3055,18 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JRadioButton AAADN;
     private javax.swing.JRadioButton AAADRH;
     private javax.swing.JCheckBox AAS;
+    private javax.swing.JCheckBox ACT;
     private javax.swing.JRadioButton ADM;
+    private javax.swing.JTextField AmEDE;
     private javax.swing.JTextField Amadduser;
+    private javax.swing.JTextField ApEDE;
     private javax.swing.JTextField Apadduser;
+    private javax.swing.JTextField BAMNom;
+    private javax.swing.JTextField BAMNom1;
+    private javax.swing.JTextField BAPNom;
+    private javax.swing.JTextField BAPNom1;
+    private javax.swing.JTextField BName;
+    private javax.swing.JTextField BName1;
     private javax.swing.JPanel Btnpduadd;
     private javax.swing.JMenuItem CDA;
     private javax.swing.JMenuItem CDA4;
@@ -2432,11 +3076,17 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JTextField FillAm;
     private javax.swing.JTextField FillAp;
     private javax.swing.JTextField Filname;
+    private javax.swing.JLabel Filtro1;
+    private javax.swing.JLabel Filtro2;
+    private javax.swing.JComboBox<String> FiltrosNom;
+    private javax.swing.JComboBox<String> FiltrosNom1;
     private javax.swing.JMenuItem General;
     private javax.swing.JTextField IDuser;
     private javax.swing.JMenuItem LDA;
     private javax.swing.JMenuItem LDA3;
     private javax.swing.JMenu Menuadm;
+    private javax.swing.JTextField NE;
+    private javax.swing.JTextField NR;
     private javax.swing.JTextField Nameadduser;
     private javax.swing.JTextField NumP;
     private javax.swing.JMenuItem ODT;
@@ -2472,21 +3122,31 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JPanel btnadd;
     private javax.swing.JPanel btnpdumod;
     private javax.swing.JComboBox<String> cbxfillusrs;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -2501,16 +3161,23 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField nameEDE;
     private javax.swing.JTextField passuserad;
+    private javax.swing.JTable share;
+    private javax.swing.JTable share1;
     private javax.swing.JLabel txtbtnadd;
     private javax.swing.JLabel txtbtnmod;
     private javax.swing.JLabel txtbtnpduadd;

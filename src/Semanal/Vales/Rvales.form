@@ -273,6 +273,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="NV">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="ff" type="rgb"/>
             </Property>
@@ -302,6 +303,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="Importe">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="text" type="java.lang.String" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -328,6 +330,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="RD">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -363,6 +366,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="Concepto">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -388,6 +392,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="En">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -428,6 +433,7 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="ImporteEsc">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="12" style="0"/>
@@ -524,7 +530,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="460" y="0" width="480" height="250"/>
+              <AbsoluteConstraints x="440" y="0" width="500" height="260"/>
             </Constraint>
           </Constraints>
 
@@ -550,6 +556,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="NV1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="10" style="0"/>
                 </Property>
@@ -563,7 +570,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="320" y="40" width="120" height="20"/>
+                  <AbsoluteConstraints x="320" y="40" width="160" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -583,6 +590,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="Importe1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="10" style="0"/>
                 </Property>
@@ -616,6 +624,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="RD1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="10" style="0"/>
                 </Property>
@@ -657,6 +666,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="Concepto1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="10" style="0"/>
                 </Property>
@@ -666,7 +676,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="240" y="70" width="200" height="20"/>
+                  <AbsoluteConstraints x="240" y="70" width="240" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -685,6 +695,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="En1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="10" style="0"/>
                 </Property>
@@ -694,7 +705,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="280" y="100" width="160" height="20"/>
+                  <AbsoluteConstraints x="280" y="100" width="200" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -704,7 +715,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="240" y="130" width="200" height="-1"/>
+                  <AbsoluteConstraints x="240" y="130" width="240" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -722,6 +733,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="ImporteEsc1">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto" size="10" style="0"/>
@@ -780,28 +792,28 @@
             <Component class="javax.swing.JSeparator" name="jSeparator7">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="240" y="90" width="200" height="10"/>
+                  <AbsoluteConstraints x="240" y="90" width="240" height="10"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator8">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="210" y="200" width="120" height="10"/>
+                  <AbsoluteConstraints x="210" y="180" width="270" height="10"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator9">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="320" y="60" width="120" height="10"/>
+                  <AbsoluteConstraints x="320" y="60" width="160" height="10"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator10">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="490" y="90" width="130" height="10"/>
+                  <AbsoluteConstraints x="210" y="220" width="270" height="10"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -827,18 +839,22 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="10" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Recibe"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="250" y="210" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="320" y="180" width="50" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator12">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="280" y="120" width="160" height="10"/>
+                  <AbsoluteConstraints x="280" y="120" width="200" height="10"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -856,12 +872,51 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Component class="javax.swing.JLabel" name="Rec1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="10" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="210" y="160" width="270" height="20"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel47">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="10" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Entrega"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="330" y="220" width="-1" height="20"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+            <Component class="javax.swing.JLabel" name="Entr1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="10" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="210" y="200" width="270" height="20"/>
+                </Constraint>
+              </Constraints>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JSeparator" name="jSeparator13">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="400" width="120" height="10"/>
+              <AbsoluteConstraints x="30" y="390" width="370" height="10"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -871,7 +926,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="90" y="410" width="-1" height="-1"/>
+              <AbsoluteConstraints x="190" y="400" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -888,17 +943,17 @@
         <Component class="javax.swing.JSeparator" name="jSeparator14">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="270" y="400" width="120" height="10"/>
+              <AbsoluteConstraints x="30" y="490" width="370" height="10"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel26">
+        <Component class="javax.swing.JLabel" name="jLabel48">
           <Properties>
             <Property name="text" type="java.lang.String" value="Entrega"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="310" y="410" width="-1" height="-1"/>
+              <AbsoluteConstraints x="190" y="500" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -915,7 +970,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="460" y="250" width="480" height="320"/>
+              <AbsoluteConstraints x="440" y="260" width="500" height="310"/>
             </Constraint>
           </Constraints>
 
@@ -933,7 +988,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="B1000" min="-2" pref="75" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -958,12 +1013,12 @@
                                                       </Group>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="B200" min="-2" pref="75" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="B500" min="-2" pref="75" max="-2" attributes="0"/>
                                                   </Group>
@@ -989,14 +1044,14 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="52" max="32767" attributes="0"/>
+                      <EmptySpace pref="72" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
@@ -1079,26 +1134,26 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="B1000" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="SB1000" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="SB500" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="B500" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="SB200" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="B200" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1178,7 +1233,7 @@
                           <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="TR" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1189,46 +1244,49 @@
                 <Property name="text" type="java.lang.String" value="Denominacion."/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel27">
+            <Component class="javax.swing.JLabel" name="jLabel26">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$1000"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="B1000">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B1000KeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel28">
+            <Component class="javax.swing.JLabel" name="jLabel27">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$500"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="B500">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B500KeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel29">
+            <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$200"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="B200">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B200KeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel30">
+            <Component class="javax.swing.JLabel" name="jLabel29">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Billete"/>
@@ -1236,6 +1294,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="B100">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1249,6 +1308,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="B50">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1262,6 +1322,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="B20">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1280,6 +1341,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="M1">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1293,6 +1355,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="M10">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1301,6 +1364,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="M050">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1309,6 +1373,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="M20">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1317,6 +1382,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="M2">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1335,6 +1401,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="M5">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
               <Events>
@@ -1467,7 +1534,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel46">
+        <Component class="javax.swing.JLabel" name="jLabel30">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Roboto" size="18" style="0"/>
@@ -1477,6 +1544,26 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="110" y="10" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Rec">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="30" y="360" width="370" height="30"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Entr">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="30" y="460" width="370" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

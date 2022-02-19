@@ -3,7 +3,6 @@ package Semanal.Vales;
 import Conexion.ConexionSQL;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -20,6 +19,7 @@ import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -47,6 +47,10 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
     public VDE() {
         initComponents();
+        EDF zz8 = new EDF();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
+        Entr.setModel(modelzonas8);
+        Entr1.setModel(modelzonas8);
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         this.setLocationRelativeTo(null);
@@ -56,12 +60,18 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
     public VDE(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
+        EDF zz8 = new EDF();
+        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
+        Entr.setModel(modelzonas8);
+        Entr1.setModel(modelzonas8);
         Fecha.setCalendar(fecha_actual);
         Fecha1.setCalendar(fecha_actual);
         this.usr = usr;
         this.LP = LP;
         this.setLocationRelativeTo(null);
         MNV();
+        Rec.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+        Rec1.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
     }
 
     public void TDEN() {
@@ -100,7 +110,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         String SQL = "INSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`,"
                 + " `en`, `fecha`, `BPescrito`, `B1000`, `SB1000`, `B500`, `SB500`, `B200`, `SB200`,"
                 + " `B100`, `SB100`, `B50`, `SB50`, `B20`, `SB20`, `M20`, `SM20`, `M10`, `SM10`, `M5`,"
-                + " `SM5`, `M2`, `SM2`, `M1`, `SM1`, `M050`, `SM050`, `total real`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,"
+                + " `SM5`, `M2`, `SM2`, `M1`, `SM1`, `M050`, `SM050`, `total real`, `recibe`, `entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
@@ -137,6 +147,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
             pst.setString(30, M050.getText());
             pst.setString(31, SM050.getText());
             pst.setString(32, TR.getText());
+            pst.setString(33, Rec.getText());
+            pst.setString(34, Entr.getSelectedItem().toString());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Vale registrado.");
@@ -372,6 +384,9 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jLabel20 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel23 = new javax.swing.JLabel();
+        Rec1 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        Entr1 = new javax.swing.JComboBox<>();
         jSeparator13 = new javax.swing.JSeparator();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -424,6 +439,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jLabel45 = new javax.swing.JLabel();
         TR = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
+        Rec = new javax.swing.JLabel();
+        Entr = new javax.swing.JComboBox<>();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
 
@@ -627,7 +644,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         NV1.setForeground(new java.awt.Color(255, 51, 51));
         NV1.setText("0");
         NV1.setBorder(null);
-        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 120, 20));
+        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 160, 20));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -663,7 +680,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         Concepto1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Concepto1.setBorder(null);
-        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 200, 20));
+        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 240, 20));
 
         jLabel15.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel15.setText("En:");
@@ -671,10 +688,10 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         En1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         En1.setBorder(null);
-        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 160, 20));
+        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 200, 20));
 
         Fecha1.setDateFormatString("'A' d 'de' MMMM 'de' y");
-        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 200, -1));
+        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 240, -1));
 
         ImporteEsc1.setColumns(20);
         ImporteEsc1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
@@ -695,37 +712,55 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 100, 10));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 200, 10));
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, 10));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 120, 10));
-        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 130, 10));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 240, 10));
+        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 270, 10));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 160, 10));
+        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 270, 10));
 
         jLabel19.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel19.setText("PRESTIGE DE MEXICO S.A DE C.V");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
         jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
 
+        jLabel20.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Recibe");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
-        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 160, 10));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 50, 20));
+        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 200, 10));
 
         jLabel23.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel23.setText("# Vale");
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 50, 20));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 480, 250));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 120, 10));
+        Rec1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        Rec1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Rec1.setText("jLabel46");
+        jPanel2.add(Rec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 270, 20));
+
+        jLabel47.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabel47.setText("Entrega");
+        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 20));
+
+        Entr1.setBackground(new java.awt.Color(255, 255, 255));
+        Entr1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        Entr1.setForeground(new java.awt.Color(0, 0, 0));
+        Entr1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Entr1.setBorder(null);
+        jPanel2.add(Entr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 270, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 500, 260));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 370, 10));
 
         jLabel21.setText("Recibe");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
 
         jLabel22.setText("# Vale");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 20));
-        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 120, 10));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 370, 10));
 
         jLabel24.setText("Entrega");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, -1, -1));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -957,7 +992,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                         .addComponent(jLabel41)
                         .addGap(27, 27, 27)
                         .addComponent(jLabel43)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1099,14 +1134,24 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
                     .addComponent(TR))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 480, 320));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 500, 310));
 
         jLabel30.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel30.setText("CONFORT SERVICE PRESTIGE ");
         jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+
+        Rec.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Rec.setText("jLabel47");
+        jPanel1.add(Rec, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 370, 30));
+
+        Entr.setBackground(new java.awt.Color(255, 255, 255));
+        Entr.setForeground(new java.awt.Color(0, 0, 0));
+        Entr.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Entr.setBorder(null);
+        jPanel1.add(Entr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 370, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 570));
 
@@ -1331,6 +1376,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField Concepto1;
     private javax.swing.JTextField En;
     private javax.swing.JTextField En1;
+    private javax.swing.JComboBox<String> Entr;
+    private javax.swing.JComboBox<String> Entr1;
     private com.toedter.calendar.JDateChooser Fecha;
     private com.toedter.calendar.JDateChooser Fecha1;
     private javax.swing.JPanel Harder1;
@@ -1349,6 +1396,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField NV1;
     private javax.swing.JTextField RD;
     private javax.swing.JTextField RD1;
+    private javax.swing.JLabel Rec;
+    private javax.swing.JLabel Rec1;
     private javax.swing.JTextField SB100;
     private javax.swing.JTextField SB1000;
     private javax.swing.JTextField SB20;
@@ -1404,6 +1453,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

@@ -35,6 +35,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -84,17 +85,6 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Timereport.add(Gen);
         Timereport.add(Mes);
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        Rec.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec1.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec2.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec3.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec4.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec5.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec6.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec7.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec8.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec9.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec10.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
         CBXmes.setVisible(false);
         Rec1.setVisible(false);
         Rec2.setVisible(false);
@@ -1131,16 +1121,16 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     public void Operaciones2() {
         int fila = TSem.getSelectedRow();
         SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
-        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 4)));
-        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 5)));
-        DE.setText(String.valueOf(TSem.getValueAt(fila, 6)));
-        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 7)));
-        DBe.setText(String.valueOf(TSem.getValueAt(fila, 8)));
-        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
-        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 10)));
-        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 11)));
-        TDG.setText(String.valueOf(TSem.getValueAt(fila, 12)));
-        TDV.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+        TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 5)));
+        TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 6)));
+        DE.setText(String.valueOf(TSem.getValueAt(fila, 7)));
+        EEntrega.setText(String.valueOf(TSem.getValueAt(fila, 8)));
+        DBe.setText(String.valueOf(TSem.getValueAt(fila, 9)));
+        ObsDbe.setText(String.valueOf(TSem.getValueAt(fila, 10)));
+        TDIDS.setText(String.valueOf(TSem.getValueAt(fila, 11)));
+        TDIDP.setText(String.valueOf(TSem.getValueAt(fila, 12)));
+        TDG.setText(String.valueOf(TSem.getValueAt(fila, 13)));
+        TDV.setText(String.valueOf(TSem.getValueAt(fila, 14)));
 
         // <editor-fold defaultstate="collapsed" desc="Servicios">
         double ImServ1 = Double.parseDouble(Importe40.getText());
@@ -3605,6 +3595,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                 pst.setString(22, NPadron3.getText());
                 pst.setString(23, Importe13.getText());
                 pst.setString(24, TDIDP.getText());
+                pst.setInt(25, Integer.parseInt(NDS.getText()));
                 pst.setString(26, DateFormat.getDateInstance().format(Fecha14.getDate()));
                 pst.setString(27, Servicio14.getText());
                 pst.setString(28, NPadron4.getText());
@@ -4996,6 +4987,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Semanales = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Semanal Tehuantepec");
@@ -6627,6 +6619,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         jLabel11.setText("Observaciones");
 
+        ObsV.setEditable(false);
+
+        Importe30.setEditable(false);
         Importe30.setText("0");
         Importe30.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6637,8 +6632,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
-        Fecha30.setDateFormatString("dd MMM yyyy ");
+        Fecha30.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
+        Importe32.setEditable(false);
         Importe32.setText("0");
         Importe32.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6649,6 +6645,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
+        Importe37.setEditable(false);
         Importe37.setText("0");
         Importe37.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6659,6 +6656,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
+        Importe31.setEditable(false);
         Importe31.setText("0");
         Importe31.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6669,6 +6667,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
+        Importe33.setEditable(false);
         Importe33.setText("0");
         Importe33.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6679,8 +6678,13 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
-        Fecha36.setDateFormatString("dd MMM yyyy ");
+        ObsV4.setEditable(false);
 
+        ObsV9.setEditable(false);
+
+        Fecha36.setDateFormatString("'A' d 'de' MMMM 'de' y");
+
+        Importe34.setEditable(false);
         Importe34.setText("0");
         Importe34.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6691,20 +6695,25 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
-        Fecha31.setDateFormatString("dd MMM yyyy ");
+        ObsV3.setEditable(false);
 
-        Fecha38.setDateFormatString("dd MMM yyyy ");
+        Fecha31.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha39.setDateFormatString("dd MMM yyyy ");
+        Fecha38.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha33.setDateFormatString("dd MMM yyyy ");
+        Fecha39.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha37.setDateFormatString("dd MMM yyyy ");
+        Fecha33.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha34.setDateFormatString("dd MMM yyyy ");
+        Fecha37.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
-        Fecha35.setDateFormatString("dd MMM yyyy ");
+        Fecha34.setDateFormatString("'A' d 'de' MMMM 'de' y");
 
+        Fecha35.setDateFormatString("'A' d 'de' MMMM 'de' y");
+
+        ObsV6.setEditable(false);
+
+        Importe35.setEditable(false);
         Importe35.setText("0");
         Importe35.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6715,6 +6724,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
+        Importe38.setEditable(false);
         Importe38.setText("0");
         Importe38.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6725,6 +6735,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
+        ObsV2.setEditable(false);
+
+        Importe39.setEditable(false);
         Importe39.setText("0");
         Importe39.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6735,6 +6748,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
+        ObsV8.setEditable(false);
+
+        Importe36.setEditable(false);
         Importe36.setText("0");
         Importe36.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -6745,10 +6761,19 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
-        Fecha32.setDateFormatString("dd MMM yyyy ");
+        Fecha32.setDateFormatString("'A' d 'de' MMMM 'de' y");
+
+        ObsV1.setEditable(false);
+
+        ObsV7.setEditable(false);
+
+        ObsV5.setEditable(false);
 
         NVale1.setText("0");
         NVale1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale1KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale1KeyTyped(evt);
             }
@@ -6756,6 +6781,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale2.setText("0");
         NVale2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale2KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale2KeyTyped(evt);
             }
@@ -6763,6 +6791,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale3.setText("0");
         NVale3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale3KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale3KeyTyped(evt);
             }
@@ -6770,6 +6801,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale4.setText("0");
         NVale4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale4KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale4KeyTyped(evt);
             }
@@ -6777,6 +6811,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale5.setText("0");
         NVale5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale5KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale5KeyTyped(evt);
             }
@@ -6784,6 +6821,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale6.setText("0");
         NVale6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale6KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale6KeyTyped(evt);
             }
@@ -6791,6 +6831,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale7.setText("0");
         NVale7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale7KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale7KeyTyped(evt);
             }
@@ -6798,6 +6841,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale8.setText("0");
         NVale8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale8KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale8KeyTyped(evt);
             }
@@ -6805,6 +6851,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale9.setText("0");
         NVale9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale9KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale9KeyTyped(evt);
             }
@@ -6827,6 +6876,24 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Rec8.setEditable(false);
 
         Rec9.setEditable(false);
+
+        Entr1.setEditable(false);
+
+        Entr2.setEditable(false);
+
+        Entr3.setEditable(false);
+
+        Entr4.setEditable(false);
+
+        Entr5.setEditable(false);
+
+        Entr6.setEditable(false);
+
+        Entr7.setEditable(false);
+
+        Entr8.setEditable(false);
+
+        Entr9.setEditable(false);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -7156,6 +7223,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale.setText("0");
         NVale.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NValeKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NValeKeyTyped(evt);
             }
@@ -7168,6 +7238,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Rec.setEditable(false);
 
         jLabel65.setText("Entrega");
+
+        Entr.setEditable(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -7257,12 +7329,13 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                 .addGap(1, 1, 1)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel29)
-                        .addComponent(jLabel11)
-                        .addComponent(jLabel42)
-                        .addComponent(jLabel64)
-                        .addComponent(jLabel65)))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel64, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel65))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -7999,6 +8072,9 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         NVale10.setText("0");
         NVale10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NVale10KeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 NVale10KeyTyped(evt);
             }
@@ -8006,6 +8082,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         Fecha43.setDateFormatString("dd MMM yyyy ");
 
+        Importe43.setEditable(false);
         Importe43.setText("0");
         Importe43.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -8015,6 +8092,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                 Importe43KeyTyped(evt);
             }
         });
+
+        ObsV10.setEditable(false);
 
         jLabel60.setText("Observaciones");
 
@@ -8037,6 +8116,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Rec10.setEditable(false);
 
         jLabel67.setText("Entrega");
+
+        Entr10.setEditable(false);
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -8601,6 +8682,14 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
         Semanales.add(jMenuItem4);
+
+        jMenuItem14.setText("Generar vale de efectivo");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem14);
 
         jMenuBar1.add(Semanales);
 
@@ -10423,27 +10512,26 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     }//GEN-LAST:event_jLabel38MousePressed
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
-
-        Estadias_4 regr = new Estadias_4();
+        Estadias_4 regr = new Estadias_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
 
-        Tortas_4 regr = new Tortas_4();
+        Tortas_4 regr = new Tortas_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_EmpleadosTActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        DepositosQ_4 regr = new DepositosQ_4();
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Iturbide_4 regr = new Iturbide_4();
+        Iturbide_4 regr = new Iturbide_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -11001,73 +11089,127 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         MDsem();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void NVale10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale10KeyTyped
-        char car = evt.getKeyChar();
-        if ((car < '0' || car > '9'))
-            evt.consume();
-    }//GEN-LAST:event_NVale10KeyTyped
+    private void TDRItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TDRItemStateChanged
+        if (TDR.getSelectedIndex() >= 1) {
+            Gen.setVisible(false);
+            Mes.setVisible(false);
+            CBXmes.setVisible(false);
 
-    private void Importe43KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyReleased
-        Operaciones2();
-    }//GEN-LAST:event_Importe43KeyReleased
-
-    private void Importe43KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyTyped
-        char car = evt.getKeyChar();
-        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
-            evt.consume();
-    }//GEN-LAST:event_Importe43KeyTyped
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        MODSemanal();
-
-        String SQL = "INSERT INTO `rh.semanal.tehuantepec.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
-            pst.setInt(1, Integer.parseInt(NVale10.getText()));
-            pst.setInt(2, Integer.parseInt(SemSl.getText()));
-            pst.setString(3, DateFormat.getDateInstance().format(Fecha43.getDate()));
-            pst.setString(4, ObsV10.getText());
-            pst.setString(5, Importe43.getText());
-            pst.setString(6, TDV.getText());
-            pst.setString(7, Rec10.getText());
-            pst.setString(8, Entr10.getText());
-
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Datos de vales agregados");
-
-            NVale10.setText("0");
-            ObsV10.setText("");
-            Importe43.setText("0");
-            Entr10.setText("0");
-            Rec10.setText("0");
-        } catch (SQLException error_semanal) {
-            JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+        } else {
+            Gen.setVisible(true);
+            Mes.setVisible(true);
+            CBXmes.setVisible(false);
 
         }
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_TDRItemStateChanged
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        DBe.setEnabled(true);
-        EEntrega.setEnabled(true);
-        jButton2.setEnabled(true);
-        ARSC.setVisible(false);
-        Panel.setVisible(true);
-        Panel2.setVisible(true);
-        jPanel3.setVisible(true);
-        jPanel5.setVisible(true);
-        SemSl.setText("0");
-        TDSYP.setText("0");
-        TMGYV.setText("0");
-        DE.setText("0");
-        EEntrega.setText("0");
-        DBe.setText("0");
-        ObsDbe.setText("0");
-        TDIDS.setText("0");
-        TDIDP.setText("0");
-        TDG.setText("0");
-        TDV.setText("0");
-        ColorDB();
-    }//GEN-LAST:event_jButton11ActionPerformed
+    private void GenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenActionPerformed
+        if (Gen.isSelected() == true) {
+            CBXmes.setVisible(false);
+        }
+    }//GEN-LAST:event_GenActionPerformed
+
+    private void MesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesActionPerformed
+        if (Mes.isSelected() == true) {
+            CBXmes.setVisible(true);
+        }
+    }//GEN-LAST:event_MesActionPerformed
+
+    private void jLabel63MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel63MousePressed
+        ItemsSem IS = new ItemsSem();
+        IS.setMes(CBXmes.getSelectedItem().toString());
+        if (TDR.getSelectedIndex() == 0) {
+            if (Mes.isSelected() == true) {
+
+                Logica_SemMes LEM = new Logica_SemMes();
+                LEM.SemxMes(IS);
+            }
+            if (Gen.isSelected() == true) {
+
+                Logica_SemGen LEM = new Logica_SemGen();
+                LEM.Semgen();
+            }
+        }
+        if (TDR.getSelectedIndex() == 1) {
+            Logica_Semscc LEM = new Logica_Semscc();
+            LEM.Gastosgen();
+
+        }
+        if (TDR.getSelectedIndex() == 2) {
+            Logica_Sempen LEM = new Logica_Sempen();
+            LEM.Gastosgen();
+
+        }
+        if (TDR.getSelectedIndex() == 3) {
+            Logica_Semgast LEM = new Logica_Semgast();
+            LEM.Gastosgen();
+
+        }
+        if (TDR.getSelectedIndex() == 4) {
+            Logica_Semval LEM = new Logica_Semval();
+            LEM.Gastosgen();
+
+        }
+    }//GEN-LAST:event_jLabel63MousePressed
+
+    private void ESemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ESemActionPerformed
+        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres Eliminar este semanal?");
+        if (i == 0) {
+            try {
+
+                int filaseleccionada = TSem.getSelectedRow();
+                String sql = "delete from `rh.semanal.tehuantepec.nsem` where `#NSem` = " + TSem.getValueAt(filaseleccionada, 0);
+                java.sql.Statement st = con.createStatement();
+                int n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Datos de semanal eliminado.");
+                }
+                sql = "delete from `rh.semanal.tehuantepec.gast` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
+                st = con.createStatement();
+                n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Gastos de semanal eliminados.");
+                }
+                sql = "delete from `rh.semanal.tehuantepec.val` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
+                st = con.createStatement();
+                n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Vales de semanal eliminados.");
+                }
+                sql = "delete from `rh.semanal.tehuantepec.pen` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
+                st = con.createStatement();
+                n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Pensiones de semanal eliminados.");
+                }
+                sql = "delete from `rh.semanal.tehuantepec.scc` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
+                st = con.createStatement();
+                n = st.executeUpdate(sql);
+                if (n >= 0) {
+                    JOptionPane.showMessageDialog(null, "Servicios de semanal eliminados.");
+                }
+            } catch (HeadlessException | SQLException e) {
+
+                JOptionPane.showMessageDialog(null, "Error al eliminar empleado: " + e.getMessage());
+
+            }
+        }
+    }//GEN-LAST:event_ESemActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        VDE regr = new VDE(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        Rvales regr = new Rvales(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        VDE regr = new VDE(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void Importe30KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe30KeyReleased
         Operaciones();
@@ -11179,11 +11321,69 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             evt.consume();
     }//GEN-LAST:event_Importe36KeyTyped
 
+    private void NVale1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale1KeyReleased
+        try {
+            int id = Integer.parseInt(NVale1.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV1.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha31.setDate(date);
+                Importe31.setText(rs.getString(3));
+                Rec1.setText(rs.getString(4));
+                Entr1.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale1KeyReleased
+
     private void NVale1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale1KeyTyped
         char car = evt.getKeyChar();
         if ((car < '0' || car > '9'))
             evt.consume();
     }//GEN-LAST:event_NVale1KeyTyped
+
+    private void NVale2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale2KeyReleased
+        try {
+            int id = Integer.parseInt(NVale2.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV2.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha32.setDate(date);
+                Importe32.setText(rs.getString(3));
+                Rec2.setText(rs.getString(4));
+                Entr2.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale2KeyReleased
 
     private void NVale2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale2KeyTyped
         char car = evt.getKeyChar();
@@ -11191,11 +11391,69 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             evt.consume();
     }//GEN-LAST:event_NVale2KeyTyped
 
+    private void NVale3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale3KeyReleased
+        try {
+            int id = Integer.parseInt(NVale3.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV3.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha33.setDate(date);
+                Importe33.setText(rs.getString(3));
+                Rec3.setText(rs.getString(4));
+                Entr3.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale3KeyReleased
+
     private void NVale3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale3KeyTyped
         char car = evt.getKeyChar();
         if ((car < '0' || car > '9'))
             evt.consume();
     }//GEN-LAST:event_NVale3KeyTyped
+
+    private void NVale4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale4KeyReleased
+        try {
+            int id = Integer.parseInt(NVale4.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV4.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha34.setDate(date);
+                Importe34.setText(rs.getString(3));
+                Rec4.setText(rs.getString(4));
+                Entr4.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale4KeyReleased
 
     private void NVale4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale4KeyTyped
         char car = evt.getKeyChar();
@@ -11203,11 +11461,69 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             evt.consume();
     }//GEN-LAST:event_NVale4KeyTyped
 
+    private void NVale5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale5KeyReleased
+        try {
+            int id = Integer.parseInt(NVale5.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV5.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha35.setDate(date);
+                Importe35.setText(rs.getString(3));
+                Rec5.setText(rs.getString(4));
+                Entr5.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale5KeyReleased
+
     private void NVale5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale5KeyTyped
         char car = evt.getKeyChar();
         if ((car < '0' || car > '9'))
             evt.consume();
     }//GEN-LAST:event_NVale5KeyTyped
+
+    private void NVale6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale6KeyReleased
+        try {
+            int id = Integer.parseInt(NVale6.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV6.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha36.setDate(date);
+                Importe36.setText(rs.getString(3));
+                Rec6.setText(rs.getString(4));
+                Entr6.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale6KeyReleased
 
     private void NVale6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale6KeyTyped
         char car = evt.getKeyChar();
@@ -11215,17 +11531,104 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             evt.consume();
     }//GEN-LAST:event_NVale6KeyTyped
 
+    private void NVale7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale7KeyReleased
+        try {
+            int id = Integer.parseInt(NVale7.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV7.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha37.setDate(date);
+                Importe37.setText(rs.getString(3));
+                Rec7.setText(rs.getString(4));
+                Entr7.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale7KeyReleased
+
     private void NVale7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale7KeyTyped
         char car = evt.getKeyChar();
         if ((car < '0' || car > '9'))
             evt.consume();
     }//GEN-LAST:event_NVale7KeyTyped
 
+    private void NVale8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale8KeyReleased
+        try {
+            int id = Integer.parseInt(NVale8.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV8.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha38.setDate(date);
+                Importe38.setText(rs.getString(3));
+                Rec8.setText(rs.getString(4));
+                Entr8.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale8KeyReleased
+
     private void NVale8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale8KeyTyped
         char car = evt.getKeyChar();
         if ((car < '0' || car > '9'))
             evt.consume();
     }//GEN-LAST:event_NVale8KeyTyped
+
+    private void NVale9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale9KeyReleased
+        try {
+            int id = Integer.parseInt(NVale9.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV9.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha39.setDate(date);
+                Importe39.setText(rs.getString(3));
+                Rec9.setText(rs.getString(4));
+                Entr9.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale9KeyReleased
 
     private void NVale9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale9KeyTyped
         char car = evt.getKeyChar();
@@ -11465,127 +11868,139 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         //Mas36.setVisible(false);
     }//GEN-LAST:event_Menos35ActionPerformed
 
+    private void NValeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NValeKeyReleased
+
+        try {
+            int id = Integer.parseInt(NVale.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha30.setDate(date);
+                Importe30.setText(rs.getString(3));
+                Rec.setText(rs.getString(4));
+                Entr.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NValeKeyReleased
+
     private void NValeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NValeKeyTyped
         char car = evt.getKeyChar();
         if ((car < '0' || car > '9'))
             evt.consume();
     }//GEN-LAST:event_NValeKeyTyped
 
-    private void TDRItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TDRItemStateChanged
-        if (TDR.getSelectedIndex() >= 1) {
-            Gen.setVisible(false);
-            Mes.setVisible(false);
-            CBXmes.setVisible(false);
+    private void NVale10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale10KeyReleased
 
-        } else {
-            Gen.setVisible(true);
-            Mes.setVisible(true);
-            CBXmes.setVisible(false);
+        try {
+            int id = Integer.parseInt(NVale10.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT `Concepto`, `fecha`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
 
-        }
-    }//GEN-LAST:event_TDRItemStateChanged
-
-    private void GenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenActionPerformed
-        if (Gen.isSelected() == true) {
-            CBXmes.setVisible(false);
-        }
-    }//GEN-LAST:event_GenActionPerformed
-
-    private void MesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesActionPerformed
-        if (Mes.isSelected() == true) {
-            CBXmes.setVisible(true);
-        }
-    }//GEN-LAST:event_MesActionPerformed
-
-    private void jLabel63MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel63MousePressed
-        ItemsSem IS = new ItemsSem();
-        IS.setMes(CBXmes.getSelectedItem().toString());
-        if (TDR.getSelectedIndex() == 0) {
-            if (Mes.isSelected() == true) {
-
-                Logica_SemMes LEM = new Logica_SemMes();
-                LEM.SemxMes(IS);
-            }
-            if (Gen.isSelected() == true) {
-
-                Logica_SemGen LEM = new Logica_SemGen();
-                LEM.Semgen();
-            }
-        }
-        if (TDR.getSelectedIndex() == 1) {
-            Logica_Semscc LEM = new Logica_Semscc();
-            LEM.Gastosgen();
-
-        }
-        if (TDR.getSelectedIndex() == 2) {
-            Logica_Sempen LEM = new Logica_Sempen();
-            LEM.Gastosgen();
-
-        }
-        if (TDR.getSelectedIndex() == 3) {
-            Logica_Semgast LEM = new Logica_Semgast();
-            LEM.Gastosgen();
-
-        }
-        if (TDR.getSelectedIndex() == 4) {
-            Logica_Semval LEM = new Logica_Semval();
-            LEM.Gastosgen();
-
-        }
-    }//GEN-LAST:event_jLabel63MousePressed
-
-    private void ESemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ESemActionPerformed
-        int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres Eliminar este semanal?");
-        if (i == 0) {
-            try {
-
-                int filaseleccionada = TSem.getSelectedRow();
-                String sql = "delete from `rh.semanal.tehuantepec.nsem` where `#NSem` = " + TSem.getValueAt(filaseleccionada, 0);
-                java.sql.Statement st = con.createStatement();
-                int n = st.executeUpdate(sql);
-                if (n >= 0) {
-                    JOptionPane.showMessageDialog(null, "Datos de semanal eliminado.");
-                }
-                sql = "delete from `rh.semanal.tehuantepec.gast` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
-                st = con.createStatement();
-                n = st.executeUpdate(sql);
-                if (n >= 0) {
-                    JOptionPane.showMessageDialog(null, "Gastos de semanal eliminados.");
-                }
-                sql = "delete from `rh.semanal.tehuantepec.val` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
-                st = con.createStatement();
-                n = st.executeUpdate(sql);
-                if (n >= 0) {
-                    JOptionPane.showMessageDialog(null, "Vales de semanal eliminados.");
-                }
-                sql = "delete from `rh.semanal.tehuantepec.pen` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
-                st = con.createStatement();
-                n = st.executeUpdate(sql);
-                if (n >= 0) {
-                    JOptionPane.showMessageDialog(null, "Pensiones de semanal eliminados.");
-                }
-                sql = "delete from `rh.semanal.tehuantepec.scc` where `Semanal` = " + TSem.getValueAt(filaseleccionada, 0);
-                st = con.createStatement();
-                n = st.executeUpdate(sql);
-                if (n >= 0) {
-                    JOptionPane.showMessageDialog(null, "Servicios de semanal eliminados.");
-                }
-            } catch (HeadlessException | SQLException e) {
-
-                JOptionPane.showMessageDialog(null, "Error al eliminar empleado: " + e.getMessage());
+            while (rs.next()) {
+                ObsV10.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha43.setDate(date);
+                Importe43.setText(rs.getString(3));
+                Rec10.setText(rs.getString(4));
+                Entr10.setText(rs.getString(5));
 
             }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_ESemActionPerformed
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NVale10KeyReleased
 
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        VDE regr = new VDE();
-        regr.setVisible(true);
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
+    private void NVale10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVale10KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9'))
+            evt.consume();
+    }//GEN-LAST:event_NVale10KeyTyped
 
-    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem15ActionPerformed
+    private void Importe43KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyReleased
+        Operaciones2();
+    }//GEN-LAST:event_Importe43KeyReleased
+
+    private void Importe43KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe43KeyTyped
+        char car = evt.getKeyChar();
+        if ((car < '0' || car > '9') && (car < '.' || car > '.'))
+            evt.consume();
+    }//GEN-LAST:event_Importe43KeyTyped
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        MODSemanal();
+
+        String SQL = "INSERT INTO `rh.semanal.inturbide.val` (`Numregistro`, `Semanal`, `Fecha`, `Observaciones`, `Importe`, `Total`, `Recibe`, `Entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NVale10.getText()));
+            pst.setInt(2, Integer.parseInt(SemSl.getText()));
+            pst.setString(3, DateFormat.getDateInstance().format(Fecha43.getDate()));
+            pst.setString(4, ObsV10.getText());
+            pst.setString(5, Importe43.getText());
+            pst.setString(6, TDV.getText());
+            pst.setString(7, Rec10.getText());
+            pst.setString(8, Entr10.getText());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos de vales agregados");
+
+            NVale10.setText("0");
+            ObsV10.setText("");
+            Importe43.setText("0");
+            Entr10.setText("0");
+            Rec10.setText("0");
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
+
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        DBe.setEnabled(true);
+        EEntrega.setEnabled(true);
+        jButton2.setEnabled(true);
+        ARSC.setVisible(false);
+        Panel.setVisible(true);
+        Panel2.setVisible(true);
+        jPanel3.setVisible(true);
+        jPanel5.setVisible(true);
+        SemSl.setText("0");
+        TDSYP.setText("0");
+        TMGYV.setText("0");
+        DE.setText("0");
+        EEntrega.setText("0");
+        DBe.setText("0");
+        ObsDbe.setText("0");
+        TDIDS.setText("0");
+        TDIDP.setText("0");
+        TDG.setText("0");
+        TDV.setText("0");
+        ColorDB();
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -12067,6 +12482,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

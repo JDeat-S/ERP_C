@@ -3109,12 +3109,14 @@
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel25" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                                       <Component id="jLabel64" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -3202,9 +3204,13 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="ObsV">
+                      <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Importe30">
                       <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                       <Events>
@@ -3214,7 +3220,7 @@
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="Fecha30">
                       <Properties>
-                        <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                        <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                       </Properties>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel7">
@@ -3469,6 +3475,7 @@
                       <SubComponents>
                         <Component class="javax.swing.JTextField" name="Importe32">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3478,6 +3485,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe37">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3487,6 +3495,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe31">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3496,6 +3505,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe33">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3504,16 +3514,23 @@
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV4">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV9">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha36">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe34">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3522,46 +3539,53 @@
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV3">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha31">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha38">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha39">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha33">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha37">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha34">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha35">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV6">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe35">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3571,6 +3595,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe38">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3579,9 +3604,13 @@
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV2">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe39">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3590,9 +3619,13 @@
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV8">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe36">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -3602,20 +3635,30 @@
                         </Component>
                         <Component class="com.toedter.calendar.JDateChooser" name="Fecha32">
                           <Properties>
-                            <Property name="dateFormatString" type="java.lang.String" value="dd MMM yyyy "/>
+                            <Property name="dateFormatString" type="java.lang.String" value="&apos;A&apos; d &apos;de&apos; MMMM &apos;de&apos; y"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV1">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV7">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV5">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NVale1">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale1KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale1KeyTyped"/>
                           </Events>
                         </Component>
@@ -3624,6 +3667,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale2KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale2KeyTyped"/>
                           </Events>
                         </Component>
@@ -3632,6 +3676,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale3KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale3KeyTyped"/>
                           </Events>
                         </Component>
@@ -3640,6 +3685,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale4KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale4KeyTyped"/>
                           </Events>
                         </Component>
@@ -3648,6 +3694,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale5KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale5KeyTyped"/>
                           </Events>
                         </Component>
@@ -3656,6 +3703,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale6KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale6KeyTyped"/>
                           </Events>
                         </Component>
@@ -3664,6 +3712,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale7KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale7KeyTyped"/>
                           </Events>
                         </Component>
@@ -3672,6 +3721,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale8KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale8KeyTyped"/>
                           </Events>
                         </Component>
@@ -3680,6 +3730,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale9KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale9KeyTyped"/>
                           </Events>
                         </Component>
@@ -3729,22 +3780,49 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr1">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr2">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr3">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr4">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr5">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr6">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr7">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr8">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr9">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3933,6 +4011,7 @@
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                       <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NValeKeyReleased"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NValeKeyTyped"/>
                       </Events>
                     </Component>
@@ -3957,6 +4036,9 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="Entr">
+                      <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -5256,6 +5338,7 @@
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale10KeyReleased"/>
                             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NVale10KeyTyped"/>
                           </Events>
                         </Component>
@@ -5266,6 +5349,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="Importe43">
                           <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
                             <Property name="text" type="java.lang.String" value="0"/>
                           </Properties>
                           <Events>
@@ -5274,6 +5358,9 @@
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="ObsV10">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel60">
                           <Properties>
@@ -5312,6 +5399,9 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="Entr10">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
