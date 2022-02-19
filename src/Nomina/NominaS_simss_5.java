@@ -7138,12 +7138,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
@@ -7551,7 +7549,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("# lista");//1
+           modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -7601,12 +7599,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
@@ -7713,7 +7709,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("# lista");//1
+           modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -7763,12 +7759,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
@@ -7926,12 +7920,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
@@ -8038,7 +8030,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("# lista");//1
+           modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -8088,12 +8080,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
@@ -8251,12 +8241,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
@@ -8414,12 +8402,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
@@ -8577,12 +8563,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
@@ -8690,7 +8674,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("# lista");//1
+           modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -8740,12 +8724,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             modelo.addColumn("Pago por dias festivos");//46
             modelo.addColumn("Dias festivos trabajados");
             modelo.addColumn("Pago por dias festivos trabajados");//48
-            modelo.addColumn("Horas extra");
-            modelo.addColumn("total de horas extra");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Lugar");//46
-            modelo.addColumn("Adicionales");//48
+            modelo.addColumn("Adicionales");
             modelo.addColumn("Horas extra");
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
