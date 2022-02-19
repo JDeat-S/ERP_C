@@ -28,7 +28,7 @@ public class L1 {
     public void LIS(ItemsL IL) {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Listas de asistencia de la " + IL.getLDAQuincena() + " zona "
+        chooser.setSelectedFile(new File("Listas de asistencia semanales de la " + IL.getLDAQuincena() + " zona "
                 + IL.getLDAzona()));
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");

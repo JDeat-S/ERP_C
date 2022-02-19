@@ -1,7 +1,5 @@
 package Nomina.Listas.Semanales.LSIMSS;
 
-import Nomina.Listas.LSIMSS.*;
-import Nomina.Listas.Listas_SI_5;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,7 +28,7 @@ public class L14 {
     public void LIS(ItemsL IL) {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
-        chooser.setSelectedFile(new File("Listas de asistencia de la " + IL.getLDAQuincena() + " zona "
+        chooser.setSelectedFile(new File("Listas de asistencia semanales de la " + IL.getLDAQuincena() + " zona "
                 + IL.getLDAzona()));
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
@@ -55,11 +53,13 @@ public class L14 {
 
             int PL = (IL.getUNumR() - IL.getNDLista()) + 1;
             Statement SLM1 = connect.createStatement();
-            ResultSet LM1 = SLM1.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
+            ResultSet LM1 = SLM1.executeQuery("SELECT * FROM `nomina.listasem." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
                     + PL + "' AND '" + IL.getUNumR() + "' LIMIT 1");
+
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Listas de asistencia");
+
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -116,7 +116,7 @@ public class L14 {
                                 7 //last column (0-based)
                         )
                 );
-
+//quincena etc mañana
                 row = spreadsheet.createRow(4);
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
@@ -137,7 +137,7 @@ public class L14 {
                 cell.setCellStyle(Contenido);
 
                 cell = row.createCell(2);
-                spreadsheet.setColumnWidth(2, 8000);
+                spreadsheet.setColumnWidth(2, 8250);
                 cell.setCellValue("Nombre completo");
                 cell.setCellStyle(Contenido);
                 spreadsheet.addMergedRegion(
@@ -184,11 +184,9 @@ public class L14 {
                 );
 
                 while (LM1.next()) {
-
                     row = spreadsheet.createRow(2);
-                    row.setHeight((short) 400);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM1.getString("Quincena") + " " + LM1.getString("y 1/16"));
+                    cell.setCellValue(LM1.getString("Semana") + " " + LM1.getString("y 1/16"));
                     cell.setCellStyle(Contenido);
 
                     spreadsheet.addMergedRegion(
@@ -229,12 +227,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(9);
+                    spreadsheet.setColumnWidth(9, 1500);
                     cell.setCellValue(LM1.getInt("NDL"));
-                    spreadsheet.setColumnWidth(9, 1400);
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(5);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM1.getInt("dd 1/16"));
@@ -267,7 +265,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(6);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM1.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -300,7 +298,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(7);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM1.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -333,7 +331,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(8);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM1.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -366,7 +364,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(9);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM1.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -399,7 +397,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(10);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM1.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -432,7 +430,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(11);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM1.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -463,113 +461,65 @@ public class L14 {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(9);
                     cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(12);
-                    row.setHeight((short) 600);
+                }
+                Statement SLM2 = connect.createStatement();
+                ResultSet LM2 = SLM2.executeQuery("SELECT * FROM `nomina.listasem." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 2");
+                while (LM2.next()) {
+                    row = spreadsheet.createRow(13);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM1.getInt("dd 8/23"));
-                    cell.setCellStyle(Stilodd);
-                    cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 8/23"));
-                    cell.setCellStyle(StiloEEEE);
-                    cell = row.createCell(2);
+                    cell.setCellValue(LM2.getString("Semana") + " " + LM2.getString("y 1/16"));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    12, //first row (0-based)
-                                    12, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
+                                    13, //first row (0-based)
+                                    13, //last row (0-based)
+                                    0, //first column (0-based)
+                                    2 //last column (0-based)
                             )
                     );
-                    cell = row.createCell(8);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(9);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(13);
-                    row.setHeight((short) 600);
-                    cell = row.createCell(0);
-                    cell.setCellValue(LM1.getInt("dd 9/24"));
-                    cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 9/24"));
-                    cell.setCellStyle(StiloEEEE);
+                    cell.setCellStyle(Contenido);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
+                    cell.setCellValue("Servicio");
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     13, //first row (0-based)
                                     13, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
                             )
                     );
-                    cell = row.createCell(8);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(9);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(14);
-                    row.setHeight((short) 600);
-                    cell = row.createCell(0);
-                    cell.setCellValue(LM1.getInt("dd 10/25"));
-                    cell.setCellStyle(Stilodd);
-                    cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 10/25"));
-                    cell.setCellStyle(StiloEEEE);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
                     cell = row.createCell(4);
                     cell.setCellStyle(Contenido);
+
                     cell = row.createCell(5);
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    14, //first row (0-based)
-                                    14, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
-                            )
-                    );
+                    //cell = row.createCell(7);
+                    //cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
+                    cell.setCellValue(LM2.getString("Zona"));
+                    spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
+
                     cell = row.createCell(9);
+                    spreadsheet.setColumnWidth(9, 1500);
+                    cell.setCellValue(LM2.getInt("NDL"));
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(15);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM1.getInt("dd 11/26"));
+                    cell.setCellValue(LM2.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 11/26"));
+                    cell.setCellValue(LM2.getString("EEEE 8/23"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -597,12 +547,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(16);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM1.getInt("dd 12/27"));
+                    cell.setCellValue(LM2.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 12/27"));
+                    cell.setCellValue(LM2.getString("EEEE 9/24"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -630,12 +580,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(17);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM1.getInt("dd 13/28"));
+                    cell.setCellValue(LM2.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 13/28"));
+                    cell.setCellValue(LM2.getString("EEEE 10/25"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -663,12 +613,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(18);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM1.getInt("dd 14/29"));
+                    cell.setCellValue(LM2.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 14/29"));
+                    cell.setCellValue(LM2.getString("EEEE 11/26"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -696,12 +646,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(19);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM1.getInt("dd 15/30"));
+                    cell.setCellValue(LM2.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 15/30"));
+                    cell.setCellValue(LM2.getString("EEEE 12/27"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -729,12 +679,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(20);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM1.getString("dd 31"));
+                    cell.setCellValue(LM2.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM1.getString("EEEE 31"));
+                    cell.setCellValue(LM2.getString("EEEE 13/28"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -761,92 +711,145 @@ public class L14 {
                     cell = row.createCell(9);
                     cell.setCellStyle(Contenido);
 
-                }
-                Statement sLM2 = connect.createStatement();
-                ResultSet LM2 = sLM2.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
-                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 2");
+                    row = spreadsheet.createRow(21);
+                    row.setHeight((short) 560);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM2.getInt("dd 14/29"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM2.getString("EEEE 14/29"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    21, //first row (0-based)
+                                    21, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
 
-                while (LM2.next()) {
-                    row = spreadsheet.createRow((short) 22);
+                    row = spreadsheet.createRow(22);
+                    row.setHeight((short) 560);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM2.getInt("dd 15/30"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM2.getString("EEEE 15/30"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    22, //first row (0-based)
+                                    22, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(23);
+                    row.setHeight((short) 560);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM2.getString("dd 31"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM2.getString("EEEE 31"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    23, //first row (0-based)
+                                    23, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                }
+
+                Statement sLM3 = connect.createStatement();
+                ResultSet LM3 = sLM3.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 3");
+
+                while (LM3.next()) {
+                    row = spreadsheet.createRow(24);
                     cell = (XSSFCell) row.createCell((short) 0);
                     cell.setCellValue("L I S T A  D E  A S I S T E N C I A");
                     cell.setCellStyle(Encabezado);
 
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    22, //first row (0-based)
-                                    22, //last row (0-based)
+                                    24, //first row (0-based)
+                                    24, //last row (0-based)
                                     0, //first column (0-based)
                                     9 //last column (0-based)
                             )
                     );
-                    row = spreadsheet.createRow(23);
+
+                    row = spreadsheet.createRow(25);
                     cell = row.createCell(2);
                     cell.setCellValue("CONFORT SERVICE PRESTIGE DE MEXICO S.A. DE C.V.");
                     cell.setCellStyle(Encabezado);
 
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    23, //first row (0-based)
-                                    23, //last row (0-based)
+                                    25, //first row (0-based)
+                                    25, //last row (0-based)
                                     2, //first column (0-based)
                                     7 //last column (0-based)
                             )
                     );
-
-                    row = spreadsheet.createRow(24);
-                    row.setHeight((short) 400);
-                    cell = row.createCell(0);
-                    cell.setCellValue(LM2.getString("Quincena") + " " + LM2.getString("y 1/16"));
-                    cell.setCellStyle(Contenido);
-
+//quincena etc mañana
+                    row = spreadsheet.createRow(28);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    24, //first row (0-based)
-                                    24, //last row (0-based)
-                                    0, //first column (0-based)
-                                    2 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(1);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellValue("Servicio");
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    24, //first row (0-based)
-                                    24, //last row (0-based)
-                                    4, //first column (0-based)
-                                    6 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    //cell = row.createCell(7);
-                    //cell.setCellStyle(Contenido);
-                    cell = row.createCell(8);
-                    cell.setCellValue(LM2.getString("Zona"));
-                    spreadsheet.setColumnWidth(8, 4250);
-                    cell.setCellStyle(Contenido);
-
-                    cell = row.createCell(9);
-                    spreadsheet.setColumnWidth(9, 1400);
-                    cell.setCellValue(LM2.getInt("NDL"));
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(26);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    26, //first row (0-based)
-                                    26, //last row (0-based)
+                                    28, //first row (0-based)
+                                    28, //last row (0-based)
                                     0, //first column (0-based)
                                     1 //last column (0-based)
                             )
@@ -862,13 +865,13 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     cell = row.createCell(2);
-                    spreadsheet.setColumnWidth(2, 8000);
+                    spreadsheet.setColumnWidth(2, 8250);
                     cell.setCellValue("Nombre completo");
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    26, //first row (0-based)
-                                    26, //last row (0-based)
+                                    28, //first row (0-based)
+                                    28, //last row (0-based)
                                     1, //first column (0-based)
                                     3 //last column (0-based)
                             )
@@ -901,86 +904,67 @@ public class L14 {
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    26, //first row (0-based)
-                                    26, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
-                            )
-                    );
-
-                    row = spreadsheet.createRow(27);
-                    row.setHeight((short) 600);
-                    cell = row.createCell(0);
-                    cell.setCellStyle(Stilodd);
-                    cell.setCellValue(LM2.getInt("dd 1/16"));
-                    cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 1/16"));
-                    cell.setCellStyle(StiloEEEE);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    27, //first row (0-based)
-                                    27, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
-                            )
-                    );
-                    cell = row.createCell(8);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(9);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(28);
-                    row.setHeight((short) 600);
-                    cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 2/17"));
-                    cell.setCellStyle(Stilodd);
-                    cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 2/17"));
-                    cell.setCellStyle(StiloEEEE);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
                                     28, //first row (0-based)
                                     28, //last row (0-based)
                                     8, //first column (0-based)
                                     9 //last column (0-based)
                             )
                     );
-                    cell = row.createCell(8);
+
+                    row = spreadsheet.createRow(26);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM3.getString("Semana") + " " + LM3.getString("y 1/16"));
                     cell.setCellStyle(Contenido);
+
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    26, //first row (0-based)
+                                    26, //last row (0-based)
+                                    0, //first column (0-based)
+                                    2 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(1);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellValue("Servicio");
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    26, //first row (0-based)
+                                    26, //last row (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    //cell = row.createCell(7);
+                    //cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellValue(LM3.getString("Zona"));
+                    spreadsheet.setColumnWidth(8, 4250);
+                    cell.setCellStyle(Contenido);
+
                     cell = row.createCell(9);
+                    spreadsheet.setColumnWidth(9, 1500);
+                    cell.setCellValue(LM3.getInt("NDL"));
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(29);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
+                    cell.setCellValue(LM3.getInt("dd 1/16"));
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 3/18"));
+                    cell.setCellValue(LM3.getString("EEEE 1/16"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1008,12 +992,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(30);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 4/19"));
+                    cell.setCellValue(LM3.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 4/19"));
+                    cell.setCellValue(LM3.getString("EEEE 2/17"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1041,12 +1025,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(31);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 5/20"));
+                    cell.setCellValue(LM3.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 5/20"));
+                    cell.setCellValue(LM3.getString("EEEE 3/18"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1074,12 +1058,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(32);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 6/21"));
+                    cell.setCellValue(LM3.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 6/21"));
+                    cell.setCellValue(LM3.getString("EEEE 4/19"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1107,12 +1091,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(33);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 7/22"));
+                    cell.setCellValue(LM3.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 7/22"));
+                    cell.setCellValue(LM3.getString("EEEE 5/20"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1140,12 +1124,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(34);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 8/23"));
+                    cell.setCellValue(LM3.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 8/23"));
+                    cell.setCellValue(LM3.getString("EEEE 6/21"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1173,12 +1157,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(35);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 9/24"));
+                    cell.setCellValue(LM3.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 9/24"));
+                    cell.setCellValue(LM3.getString("EEEE 7/22"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1204,113 +1188,65 @@ public class L14 {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(9);
                     cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(36);
-                    row.setHeight((short) 600);
+                }
+                Statement SLM4 = connect.createStatement();
+                ResultSet LM4 = SLM4.executeQuery("SELECT * FROM `nomina.listasem." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
+                        + PL + "' AND '" + IL.getUNumR() + "' LIMIT 4");
+                while (LM4.next()) {
+                    row = spreadsheet.createRow(37);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 10/25"));
-                    cell.setCellStyle(Stilodd);
-                    cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 10/25"));
-                    cell.setCellStyle(StiloEEEE);
-                    cell = row.createCell(2);
+                    cell.setCellValue(LM4.getString("Semana") + " " + LM4.getString("y 1/16"));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
+
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    36, //first row (0-based)
-                                    36, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
+                                    37, //first row (0-based)
+                                    37, //last row (0-based)
+                                    0, //first column (0-based)
+                                    2 //last column (0-based)
                             )
                     );
-                    cell = row.createCell(8);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(9);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(37);
-                    row.setHeight((short) 600);
-                    cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 11/26"));
-                    cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 11/26"));
-                    cell.setCellStyle(StiloEEEE);
+                    cell.setCellStyle(Contenido);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
+                    cell.setCellValue("Servicio");
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     37, //first row (0-based)
                                     37, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
+                                    4, //first column (0-based)
+                                    6 //last column (0-based)
                             )
                     );
-                    cell = row.createCell(8);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(9);
-                    cell.setCellStyle(Contenido);
-
-                    row = spreadsheet.createRow(38);
-                    row.setHeight((short) 600);
-                    cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 12/27"));
-                    cell.setCellStyle(Stilodd);
-                    cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 12/27"));
-                    cell.setCellStyle(StiloEEEE);
-                    cell = row.createCell(2);
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(3);
-                    cell.setCellStyle(Contenido);
                     cell = row.createCell(4);
                     cell.setCellStyle(Contenido);
+
                     cell = row.createCell(5);
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(6);
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellStyle(Contenido);
-                    spreadsheet.addMergedRegion(
-                            new CellRangeAddress(
-                                    38, //first row (0-based)
-                                    38, //last row (0-based)
-                                    8, //first column (0-based)
-                                    9 //last column (0-based)
-                            )
-                    );
+                    //cell = row.createCell(7);
+                    //cell.setCellStyle(Contenido);
                     cell = row.createCell(8);
+                    cell.setCellValue(LM4.getString("Zona"));
+                    spreadsheet.setColumnWidth(8, 4250);
                     cell.setCellStyle(Contenido);
+
                     cell = row.createCell(9);
+                    spreadsheet.setColumnWidth(9, 1500);
+                    cell.setCellValue(LM4.getInt("NDL"));
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(39);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 13/28"));
+                    cell.setCellValue(LM4.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 13/28"));
+                    cell.setCellValue(LM4.getString("EEEE 8/23"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1338,12 +1274,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(40);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 14/29"));
+                    cell.setCellValue(LM4.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 14/29"));
+                    cell.setCellValue(LM4.getString("EEEE 9/24"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1371,12 +1307,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(41);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getInt("dd 15/30"));
+                    cell.setCellValue(LM4.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 15/30"));
+                    cell.setCellValue(LM4.getString("EEEE 10/25"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1404,12 +1340,12 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(42);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
-                    cell.setCellValue(LM2.getString("dd 31"));
+                    cell.setCellValue(LM4.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
                     cell = row.createCell(1);
-                    cell.setCellValue(LM2.getString("EEEE 31"));
+                    cell.setCellValue(LM4.getString("EEEE 11/26"));
                     cell.setCellStyle(StiloEEEE);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
@@ -1435,9 +1371,174 @@ public class L14 {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(9);
                     cell.setCellStyle(Contenido);
-                }
 
-                Statement sLM3 = connect.createStatement();
+                    row = spreadsheet.createRow(43);
+                    row.setHeight((short) 560);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM4.getInt("dd 12/27"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM4.getString("EEEE 12/27"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    43, //first row (0-based)
+                                    43, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(44);
+                    row.setHeight((short) 560);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM4.getInt("dd 13/28"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM4.getString("EEEE 13/28"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    44, //first row (0-based)
+                                    44, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(45);
+                    row.setHeight((short) 560);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM4.getInt("dd 14/29"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM4.getString("EEEE 14/29"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    45, //first row (0-based)
+                                    45, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(46);
+                    row.setHeight((short) 560);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM4.getInt("dd 15/30"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM4.getString("EEEE 15/30"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    46, //first row (0-based)
+                                    46, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                    row = spreadsheet.createRow(47);
+                    row.setHeight((short) 560);
+                    cell = row.createCell(0);
+                    cell.setCellValue(LM4.getString("dd 31"));
+                    cell.setCellStyle(Stilodd);
+                    cell = row.createCell(1);
+                    cell.setCellValue(LM4.getString("EEEE 31"));
+                    cell.setCellStyle(StiloEEEE);
+                    cell = row.createCell(2);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellStyle(Contenido);
+                    spreadsheet.addMergedRegion(
+                            new CellRangeAddress(
+                                    47, //first row (0-based)
+                                    47, //last row (0-based)
+                                    8, //first column (0-based)
+                                    9 //last column (0-based)
+                            )
+                    );
+                    cell = row.createCell(8);
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellStyle(Contenido);
+
+                }
+/*                Statement sLM3 = connect.createStatement();
                 ResultSet LM3 = sLM3.executeQuery("SELECT * FROM `nomina.listas." + IL.getLDAzona() + ".simss` WHERE `NDL` BETWEEN '"
                         + PL + "' AND '" + IL.getUNumR() + "' LIMIT 3");
 
@@ -1586,7 +1687,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(49);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM3.getInt("dd 1/16"));
@@ -1619,7 +1720,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(50);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -1652,7 +1753,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(51);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -1685,7 +1786,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(52);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -1718,7 +1819,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(53);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -1751,7 +1852,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(54);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -1784,7 +1885,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(55);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -1817,7 +1918,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(56);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -1850,7 +1951,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(57);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -1883,7 +1984,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(58);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -1916,7 +2017,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(59);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -1949,7 +2050,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(60);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -1982,7 +2083,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(61);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -2015,7 +2116,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(62);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -2048,7 +2149,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(63);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -2081,7 +2182,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(64);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM3.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -2263,7 +2364,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(71);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM4.getInt("dd 1/16"));
@@ -2296,7 +2397,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(72);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -2329,7 +2430,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(73);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -2362,7 +2463,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(74);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -2395,7 +2496,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(75);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -2428,7 +2529,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(76);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -2461,7 +2562,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(77);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -2494,7 +2595,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(78);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -2527,7 +2628,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(79);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -2560,7 +2661,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(80);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -2593,7 +2694,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(81);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -2626,7 +2727,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(82);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -2659,7 +2760,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(83);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -2692,7 +2793,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(84);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -2725,7 +2826,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(85);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -2758,7 +2859,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(86);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM4.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -2940,7 +3041,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(93);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM5.getInt("dd 1/16"));
@@ -2973,7 +3074,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(94);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -3006,7 +3107,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(95);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -3039,7 +3140,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(96);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -3072,7 +3173,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(97);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -3105,7 +3206,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(98);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -3138,7 +3239,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(99);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -3171,7 +3272,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(100);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -3204,7 +3305,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(101);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -3237,7 +3338,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(102);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -3270,7 +3371,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(103);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -3303,7 +3404,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(104);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -3336,7 +3437,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(105);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -3369,7 +3470,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(106);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -3402,7 +3503,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(107);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -3435,7 +3536,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(108);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM5.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -3617,7 +3718,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(115);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM6.getInt("dd 1/16"));
@@ -3650,7 +3751,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(116);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -3683,7 +3784,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(117);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -3716,7 +3817,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(118);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -3749,7 +3850,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(119);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -3782,7 +3883,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(120);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -3815,7 +3916,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(121);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -3848,7 +3949,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(122);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -3881,7 +3982,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(123);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -3914,7 +4015,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(124);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -3947,7 +4048,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(125);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -3980,7 +4081,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(126);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -4013,7 +4114,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(127);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -4046,7 +4147,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(128);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -4079,7 +4180,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(129);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -4112,7 +4213,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(130);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM6.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -4293,7 +4394,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(137);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM7.getInt("dd 1/16"));
@@ -4326,7 +4427,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(138);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -4359,7 +4460,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(139);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -4392,7 +4493,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(140);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -4425,7 +4526,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(141);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -4458,7 +4559,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(142);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -4491,7 +4592,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(143);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -4524,7 +4625,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(144);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -4557,7 +4658,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(145);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -4590,7 +4691,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(146);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -4623,7 +4724,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(147);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -4656,7 +4757,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(148);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -4689,7 +4790,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(149);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -4722,7 +4823,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(150);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -4755,7 +4856,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(151);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -4788,7 +4889,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(152);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM7.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -4970,7 +5071,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(159);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM8.getInt("dd 1/16"));
@@ -5003,7 +5104,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(160);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -5036,7 +5137,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(161);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -5069,7 +5170,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(162);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -5102,7 +5203,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(163);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -5135,7 +5236,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(164);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -5168,7 +5269,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(165);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -5201,7 +5302,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(166);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -5234,7 +5335,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(167);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -5267,7 +5368,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(168);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -5300,7 +5401,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(169);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -5333,7 +5434,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(170);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -5366,7 +5467,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(171);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -5399,7 +5500,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(172);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -5432,7 +5533,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(173);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -5465,7 +5566,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(174);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM8.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -5647,7 +5748,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(181);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM9.getInt("dd 1/16"));
@@ -5680,7 +5781,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(182);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -5713,7 +5814,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(183);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -5746,7 +5847,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(184);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -5779,7 +5880,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(185);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -5812,7 +5913,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(186);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -5845,7 +5946,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(187);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -5878,7 +5979,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(188);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -5911,7 +6012,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(189);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -5944,7 +6045,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(190);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -5977,7 +6078,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(191);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -6010,7 +6111,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(192);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -6043,7 +6144,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(193);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -6076,7 +6177,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(194);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -6109,7 +6210,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(195);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -6142,7 +6243,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(196);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM9.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -6323,7 +6424,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(203);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM10.getInt("dd 1/16"));
@@ -6356,7 +6457,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(204);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -6389,7 +6490,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(205);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -6422,7 +6523,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(206);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -6455,7 +6556,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(207);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -6488,7 +6589,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(208);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -6521,7 +6622,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(209);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -6554,7 +6655,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(210);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -6587,7 +6688,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(211);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -6620,7 +6721,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(212);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -6653,7 +6754,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(213);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -6686,7 +6787,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(214);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -6719,7 +6820,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(215);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -6752,7 +6853,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(216);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -6785,7 +6886,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(217);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -6818,7 +6919,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(218);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM10.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -7000,7 +7101,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(225);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM11.getInt("dd 1/16"));
@@ -7033,7 +7134,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(226);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -7066,7 +7167,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(227);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -7099,7 +7200,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(228);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -7132,7 +7233,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(229);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -7165,7 +7266,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(230);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -7198,7 +7299,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(231);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -7231,7 +7332,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(232);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -7264,7 +7365,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(233);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -7297,7 +7398,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(234);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -7330,7 +7431,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(235);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -7363,7 +7464,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(236);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -7396,7 +7497,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(237);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -7429,7 +7530,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(238);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -7462,7 +7563,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(239);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -7495,7 +7596,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(240);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM11.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -7677,7 +7778,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(247);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM12.getInt("dd 1/16"));
@@ -7710,7 +7811,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(248);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -7743,7 +7844,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(249);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -7776,7 +7877,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(250);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -7809,7 +7910,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(251);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -7842,7 +7943,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(252);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -7875,7 +7976,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(253);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -7908,7 +8009,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(254);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -7941,7 +8042,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(255);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -7974,7 +8075,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(256);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -8007,7 +8108,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(257);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -8040,7 +8141,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(258);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -8073,7 +8174,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(259);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -8106,7 +8207,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(260);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -8139,7 +8240,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(261);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -8172,7 +8273,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(262);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM12.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -8354,7 +8455,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(269);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM13.getInt("dd 1/16"));
@@ -8387,7 +8488,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(270);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -8420,7 +8521,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(271);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -8453,7 +8554,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(272);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -8486,7 +8587,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(273);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -8519,7 +8620,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(274);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -8552,7 +8653,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(275);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -8585,7 +8686,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(276);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -8618,7 +8719,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(277);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -8651,7 +8752,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(278);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -8684,7 +8785,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(279);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -8717,7 +8818,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(280);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -8750,7 +8851,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(281);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -8783,7 +8884,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(282);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -8816,7 +8917,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(283);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -8849,7 +8950,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(284);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM13.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -9031,7 +9132,7 @@ public class L14 {
                     );
 
                     row = spreadsheet.createRow(291);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellStyle(Stilodd);
                     cell.setCellValue(LM14.getInt("dd 1/16"));
@@ -9064,7 +9165,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(292);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 2/17"));
                     cell.setCellStyle(Stilodd);
@@ -9097,7 +9198,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(293);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 3/18"));
                     cell.setCellStyle(Stilodd);
@@ -9130,7 +9231,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(294);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 4/19"));
                     cell.setCellStyle(Stilodd);
@@ -9163,7 +9264,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(295);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 5/20"));
                     cell.setCellStyle(Stilodd);
@@ -9196,7 +9297,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(296);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 6/21"));
                     cell.setCellStyle(Stilodd);
@@ -9229,7 +9330,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(297);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 7/22"));
                     cell.setCellStyle(Stilodd);
@@ -9262,7 +9363,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(298);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 8/23"));
                     cell.setCellStyle(Stilodd);
@@ -9295,7 +9396,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(299);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 9/24"));
                     cell.setCellStyle(Stilodd);
@@ -9328,7 +9429,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(300);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 10/25"));
                     cell.setCellStyle(Stilodd);
@@ -9361,7 +9462,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(301);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 11/26"));
                     cell.setCellStyle(Stilodd);
@@ -9394,7 +9495,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(302);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 12/27"));
                     cell.setCellStyle(Stilodd);
@@ -9427,7 +9528,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(303);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 13/28"));
                     cell.setCellStyle(Stilodd);
@@ -9460,7 +9561,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(304);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 14/29"));
                     cell.setCellStyle(Stilodd);
@@ -9493,7 +9594,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(305);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getInt("dd 15/30"));
                     cell.setCellStyle(Stilodd);
@@ -9526,7 +9627,7 @@ public class L14 {
                     cell.setCellStyle(Contenido);
 
                     row = spreadsheet.createRow(306);
-                    row.setHeight((short) 600);
+                    row.setHeight((short) 560);
                     cell = row.createCell(0);
                     cell.setCellValue(LM14.getString("dd 31"));
                     cell.setCellStyle(Stilodd);
@@ -9558,7 +9659,7 @@ public class L14 {
                     cell = row.createCell(9);
                     cell.setCellStyle(Contenido);
                 }
-
+*/
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical
@@ -9578,12 +9679,10 @@ public class L14 {
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
-                Logger.getLogger(Listas_SI_5.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(L14.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Listas_SI_5.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(L14.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

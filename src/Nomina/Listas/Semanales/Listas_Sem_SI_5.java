@@ -2567,7 +2567,7 @@ public final class Listas_Sem_SI_5 extends javax.swing.JFrame {
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
-                IL.setNDLista(Integer.parseInt(NDL.getText()));
+                IL.setNDLista(Integer.parseInt(NDL.getText())*2);
 
                 L2 L02 = new L2();
                 L02.LIS(IL);
