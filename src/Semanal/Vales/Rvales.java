@@ -317,20 +317,23 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel20 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
         jLabel23 = new javax.swing.JLabel();
+        Rec1 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        Entr1 = new javax.swing.JLabel();
         jSeparator13 = new javax.swing.JSeparator();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jSeparator14 = new javax.swing.JSeparator();
-        jLabel26 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         B1000 = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
         B500 = new javax.swing.JTextField();
-        jLabel29 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         B200 = new javax.swing.JTextField();
-        jLabel30 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         B100 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         B50 = new javax.swing.JTextField();
@@ -368,7 +371,9 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         TR = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        Rec = new javax.swing.JLabel();
+        Entr = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -527,9 +532,12 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("A-22");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, 20));
 
+        NV.setEditable(false);
+        NV.setForeground(new java.awt.Color(255, 51, 51));
         NV.setText("0");
         NV.setBorder(null);
         NV.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -542,6 +550,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel2.setText("Bueno por:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
+        Importe.setEditable(false);
         Importe.setText("0");
         Importe.setBorder(null);
         Importe.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -554,6 +563,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel3.setText("Recibi de:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
+        RD.setEditable(false);
         RD.setBorder(null);
         RD.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -568,6 +578,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel5.setText("Concepto:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
 
+        Concepto.setEditable(false);
         Concepto.setBorder(null);
         Concepto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -579,6 +590,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel6.setText("En:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
+        En.setEditable(false);
         En.setBorder(null);
         En.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -595,6 +607,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         });
         jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 200, -1));
 
+        ImporteEsc.setEditable(false);
         ImporteEsc.setColumns(20);
         ImporteEsc.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ImporteEsc.setLineWrap(true);
@@ -624,19 +637,23 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 51, 51));
         jLabel10.setText("A-22");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 30, 20));
 
+        NV1.setEditable(false);
         NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        NV1.setForeground(new java.awt.Color(255, 51, 51));
         NV1.setText("0");
         NV1.setBorder(null);
-        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 120, 20));
+        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 160, 20));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Bueno por:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 57, 20));
 
+        Importe1.setEditable(false);
         Importe1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Importe1.setText("0");
         Importe1.setBorder(null);
@@ -652,6 +669,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel12.setText("Recibi de:");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 45, 20));
 
+        RD1.setEditable(false);
         RD1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         RD1.setBorder(null);
         jPanel2.add(RD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 165, 20));
@@ -664,21 +682,24 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel14.setText("Concepto:");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
 
+        Concepto1.setEditable(false);
         Concepto1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Concepto1.setBorder(null);
-        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 200, 20));
+        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 240, 20));
 
         jLabel15.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel15.setText("En:");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 30, -1));
 
+        En1.setEditable(false);
         En1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         En1.setBorder(null);
-        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 160, 20));
+        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 200, 20));
 
         Fecha1.setDateFormatString("'A' d 'de' MMMM 'de' y");
-        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 200, -1));
+        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 240, -1));
 
+        ImporteEsc1.setEditable(false);
         ImporteEsc1.setColumns(20);
         ImporteEsc1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         ImporteEsc1.setLineWrap(true);
@@ -698,45 +719,60 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 100, 10));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 200, 10));
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 120, 10));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 120, 10));
-        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 130, 10));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 240, 10));
+        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 270, 10));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 160, 10));
+        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 270, 10));
 
         jLabel19.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel19.setText("PRESTIGE DE MEXICO S.A DE C.V");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
         jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
 
+        jLabel20.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Recibe");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
-        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 160, 10));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 50, 20));
+        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 200, 10));
 
         jLabel23.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel23.setText("# Vale");
         jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 50, 20));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 480, 250));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 120, 10));
+        Rec1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        Rec1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(Rec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 270, 20));
+
+        jLabel47.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        jLabel47.setText("Entrega");
+        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 20));
+
+        Entr1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+        Entr1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(Entr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 270, 20));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 500, 260));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 370, 10));
 
         jLabel21.setText("Recibe");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
 
         jLabel22.setText("# Vale");
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 20));
-        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 120, 10));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 370, 10));
 
-        jLabel26.setText("Entrega");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
+        jLabel48.setText("Entrega");
+        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel25.setText("Denominacion.");
 
-        jLabel27.setText("$1000");
+        jLabel26.setText("$1000");
 
+        B1000.setEditable(false);
         B1000.setText("0");
         B1000.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -744,8 +780,9 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             }
         });
 
-        jLabel28.setText("$500");
+        jLabel27.setText("$500");
 
+        B500.setEditable(false);
         B500.setText("0");
         B500.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -753,8 +790,9 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             }
         });
 
-        jLabel29.setText("$200");
+        jLabel28.setText("$200");
 
+        B200.setEditable(false);
         B200.setText("0");
         B200.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -762,9 +800,10 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             }
         });
 
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("Billete");
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("Billete");
 
+        B100.setEditable(false);
         B100.setText("0");
         B100.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -774,6 +813,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel31.setText("$100");
 
+        B50.setEditable(false);
         B50.setText("0");
         B50.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -783,6 +823,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel32.setText("$50");
 
+        B20.setEditable(false);
         B20.setText("0");
         B20.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -794,6 +835,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel34.setText("$20");
 
+        M1.setEditable(false);
         M1.setText("0");
         M1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -803,6 +845,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel35.setText("$2");
 
+        M10.setEditable(false);
         M10.setText("0");
         M10.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -810,6 +853,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             }
         });
 
+        M050.setEditable(false);
         M050.setText("0");
         M050.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -817,6 +861,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             }
         });
 
+        M20.setEditable(false);
         M20.setText("0");
         M20.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -824,6 +869,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             }
         });
 
+        M2.setEditable(false);
         M2.setText("0");
         M2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -835,6 +881,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel39.setText("$1");
 
+        M5.setEditable(false);
         M5.setText("0");
         M5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -913,7 +960,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel27)
+                                .addComponent(jLabel26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(B1000, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -934,11 +981,11 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                                                     .addComponent(B50, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(B20, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel29)
+                                                .addComponent(jLabel28)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(B200, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel28)
+                                                .addComponent(jLabel27)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(B500, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -955,12 +1002,12 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                                         .addComponent(TR))))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jLabel30)
+                        .addComponent(jLabel29)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel41)
                         .addGap(27, 27, 27)
                         .addComponent(jLabel43)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1023,23 +1070,23 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel30)
+                            .addComponent(jLabel29)
                             .addComponent(jLabel41)
                             .addComponent(jLabel43))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel27)
+                            .addComponent(jLabel26)
                             .addComponent(B1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(SB1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SB500, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28)
+                            .addComponent(jLabel27)
                             .addComponent(B500, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SB200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel29)
+                            .addComponent(jLabel28)
                             .addComponent(B200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1102,14 +1149,20 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
                     .addComponent(TR))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 480, 320));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 500, 310));
 
-        jLabel46.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel46.setText("CONFORT SERVICE PRESTIGE ");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+        jLabel30.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel30.setText("CONFORT SERVICE PRESTIGE ");
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+
+        Rec.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(Rec, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 370, 30));
+
+        Entr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(Entr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 370, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 940, 570));
 
@@ -1214,7 +1267,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             ps = con.prepareStatement("select `B1000`, `SB1000`, `B500`, `SB500`, "
                     + "`B200`, `SB200`, `B100`, `SB100`, `B50`, `SB50`, `B20`, `SB20`, "
                     + "`M20`, `SM20`, `M10`, `SM10`, `M5`, `SM5`, `M2`, `SM2`, `M1`, "
-                    + "`SM1`, `M050`, `SM050`, `total real` from `semanal.vales` where `#vale` = ?");
+                    + "`SM1`, `M050`, `SM050`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             java.sql.Statement st = con.createStatement();
@@ -1245,6 +1298,10 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 M050.setText(rs.getString(23));
                 SM050.setText(rs.getString(24));
                 TR.setText(rs.getString(25));
+                Rec.setText(rs.getString(26));
+                Rec1.setText(rs.getString(26));
+                Entr.setText(rs.getString(27));
+                Entr1.setText(rs.getString(27));
                 
             }
             ps.isClosed();
@@ -1391,6 +1448,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField Concepto1;
     private javax.swing.JTextField En;
     private javax.swing.JTextField En1;
+    private javax.swing.JLabel Entr;
+    private javax.swing.JLabel Entr1;
     private com.toedter.calendar.JDateChooser Fecha;
     private com.toedter.calendar.JDateChooser Fecha1;
     private javax.swing.JPanel Harder1;
@@ -1410,6 +1469,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField NVSearch;
     private javax.swing.JTextField RD;
     private javax.swing.JTextField RD1;
+    private javax.swing.JLabel Rec;
+    private javax.swing.JLabel Rec1;
     private javax.swing.JTextField SB100;
     private javax.swing.JTextField SB1000;
     private javax.swing.JTextField SB20;
@@ -1466,7 +1527,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
