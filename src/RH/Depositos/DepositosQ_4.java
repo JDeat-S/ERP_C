@@ -7664,7 +7664,6 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                     .addGroup(jPanel35Layout.createSequentialGroup()
                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel35Layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
                                 .addComponent(jLabel181)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -8038,7 +8037,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
         Semanales.setText("Semanales");
 
-        jMenuItem2.setText("Inturbide");
+        jMenuItem2.setText("Iturbide");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);

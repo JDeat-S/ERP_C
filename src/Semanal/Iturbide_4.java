@@ -413,17 +413,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Timereport.add(Mes);
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        Rec.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec1.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec2.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec3.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec4.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec5.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec6.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec7.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec8.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec9.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec10.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
         CBXmes.setVisible(false);
         Rec1.setVisible(false);
         Rec2.setVisible(false);
