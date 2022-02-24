@@ -48,7 +48,8 @@ public final class PresS_5 extends javax.swing.JFrame {
 
     public PresS_5() {
         initComponents();
-
+        NL.setVisible(false);
+        NP.setVisible(false);
         LabelPrestamos.setVisible(false);
         BE.setVisible(false);
         BE.setText("");
@@ -73,6 +74,8 @@ public final class PresS_5 extends javax.swing.JFrame {
         initComponents();
         this.usr = usr;
         this.LP = LP;
+        NL.setVisible(false);
+        NP.setVisible(false);
         LabelPrestamos.setVisible(false);
         BE.setVisible(false);
         BE.setText("");
@@ -218,6 +221,8 @@ public final class PresS_5 extends javax.swing.JFrame {
         jScrollPane12 = new javax.swing.JScrollPane();
         TPPRES = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        NP = new javax.swing.JTextField();
+        NL = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -727,7 +732,7 @@ public final class PresS_5 extends javax.swing.JFrame {
 
         LabelFPDP.setText("jLabel158");
 
-        FiltrosTPDP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        FiltrosTPDP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)", "# Prestamo", "# Lista" }));
         FiltrosTPDP.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosTPDPItemStateChanged(evt);
@@ -778,6 +783,10 @@ public final class PresS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FilPDPAm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NL, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addGap(0, 811, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -793,7 +802,9 @@ public final class PresS_5 extends javax.swing.JFrame {
                     .addComponent(FilPDPname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilPDPAp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilPDPAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(NP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1262,6 +1273,12 @@ public final class PresS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FAM)) {
             where = "SELECT * FROM `nomina.pagos.prestamosem`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(NL.getText())) {
+            where = "SELECT * FROM `nomina.pagos.prestamosem`"
+                    + " Where `#Lista` LIKE '%" + NL.getText() + "%'";
+        } else if (!"".equals(NP.getText())) {
+            where = "SELECT * FROM `nomina.pagos.prestamosem`"
+                    + " Where `#prestamo` LIKE '%" + NP.getText() + "%'";
         }
 
         try {
@@ -1802,6 +1819,10 @@ public final class PresS_5 extends javax.swing.JFrame {
     private void FiltrosTPDPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosTPDPItemStateChanged
         String FTP = (String) FiltrosTPDP.getSelectedItem();
         if (FTP.equals("Selecciona filtro")) {
+            NL.setVisible(false);
+            NP.setVisible(false);
+            NL.setText("");
+            NP.setText("");
             LabelFPDP.setVisible(false);
             FilPDPname.setVisible(false);
             FilPDPname.setText("");
@@ -1812,6 +1833,10 @@ public final class PresS_5 extends javax.swing.JFrame {
             MDTPPres();
         }
         if (FTP.equals("Apellido P")) {
+            NL.setVisible(false);
+            NP.setVisible(false);
+            NL.setText("");
+            NP.setText("");
             LabelFPDP.setVisible(true);
             LabelFPDP.setText("Buscar por Apellido P:");
             FilPDPname.setVisible(false);
@@ -1823,6 +1848,10 @@ public final class PresS_5 extends javax.swing.JFrame {
             MDTPPres();
         }
         if (FTP.equals("Apellido M")) {
+            NL.setVisible(false);
+            NP.setVisible(false);
+            NL.setText("");
+            NP.setText("");
             LabelFPDP.setVisible(true);
             LabelFPDP.setText("Buscar por Apellido M:");
             FilPDPname.setVisible(false);
@@ -1834,6 +1863,10 @@ public final class PresS_5 extends javax.swing.JFrame {
             MDTPPres();
         }
         if (FTP.equals("Nombre(s)")) {
+            NL.setVisible(false);
+            NP.setVisible(false);
+            NL.setText("");
+            NP.setText("");
             LabelFPDP.setVisible(true);
             LabelFPDP.setText("Buscar por Nombre(s):");
             FilPDPname.setVisible(true);
@@ -1844,6 +1877,36 @@ public final class PresS_5 extends javax.swing.JFrame {
             FilPDPAm.setVisible(false);
             MDTPPres();
 
+        }
+        if (FTP.equals("# Lista")) {
+            NL.setVisible(true);
+            NP.setVisible(false);
+            NL.setText("");
+            NP.setText("");
+            LabelFPDP.setVisible(true);
+            LabelFPDP.setText("Buscar por # Lista:");
+            FilPDPname.setVisible(false);
+            FilPDPname.setText("");
+            FilPDPAp.setText("");
+            FilPDPAp.setVisible(false);
+            FilPDPAm.setText("");
+            FilPDPAm.setVisible(false);
+            MDTPPres();
+        }
+        if (FTP.equals("# Prestamo")) {
+            NL.setVisible(false);
+            NP.setVisible(true);
+            NL.setText("");
+            NP.setText("");
+            LabelFPDP.setVisible(true);
+            LabelFPDP.setText("Buscar por # Prestamo:");
+            FilPDPname.setVisible(false);
+            FilPDPname.setText("");
+            FilPDPAp.setText("");
+            FilPDPAp.setVisible(false);
+            FilPDPAm.setText("");
+            FilPDPAm.setVisible(false);
+            MDTPPres();
         }
     }//GEN-LAST:event_FiltrosTPDPItemStateChanged
 
@@ -2141,6 +2204,8 @@ public final class PresS_5 extends javax.swing.JFrame {
     private javax.swing.JMenu Menuadm;
     private javax.swing.JComboBox<String> Mes;
     private javax.swing.JTextField Metodo;
+    private javax.swing.JTextField NL;
+    private javax.swing.JTextField NP;
     private javax.swing.JTextField Namepres;
     private javax.swing.JMenuItem NomGen;
     private javax.swing.JMenuItem NomSemGen;

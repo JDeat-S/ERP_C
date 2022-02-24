@@ -52,6 +52,8 @@ public final class ODTS_5 extends javax.swing.JFrame {
     public ODTS_5() {
         initComponents();
         MDT();
+        NL.setVisible(false);
+        NODT.setVisible(false);
         LabelODT1.setVisible(false);
         BusnameODT.setVisible(false);
         BusnameODT.setText("");
@@ -83,12 +85,10 @@ public final class ODTS_5 extends javax.swing.JFrame {
         this.usr = usr;
         this.LP = LP;
         MDT();
-        LabelODT1.setVisible(false);
+        NL.setVisible(false);
+        NODT.setVisible(false);
         BusnameODT.setVisible(false);
-        BusnameODT.setText("");
-        BusapshODT.setText("");
         BusapshODT.setVisible(false);
-        BusamshODT.setText("");
         BusamshODT.setVisible(false);
         IAT = new ButtonGroup();
         IAT.add(Si);
@@ -559,6 +559,12 @@ public final class ODTS_5 extends javax.swing.JFrame {
         } else if (!"".equals(FAM)) {
             where = "SELECT * FROM `nominasem.pagos.odt`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(NL.getText())) {
+            where = "SELECT * FROM `nominasem.pagos.odt`"
+                    + " Where `#Lista` LIKE '%" + NL.getText() + "%'";
+        } else if (!"".equals(NODT.getText())) {
+            where = "SELECT * FROM `nominasem.pagos.odt`"
+                    + " Where `# de orden` LIKE '%" + NODT.getText() + "%'";
         }
 
         try {
@@ -743,6 +749,8 @@ public final class ODTS_5 extends javax.swing.JFrame {
         FilApPODT = new javax.swing.JTextField();
         FilAmPODT = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        NL = new javax.swing.JTextField();
+        NODT = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -1422,7 +1430,7 @@ public final class ODTS_5 extends javax.swing.JFrame {
 
         jLabel153.setText("Filtros:");
 
-        FiltrosPDODT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        FiltrosPDODT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)", "# Orden", "# Lista" }));
         FiltrosPDODT.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltrosPDODTItemStateChanged(evt);
@@ -1457,6 +1465,18 @@ public final class ODTS_5 extends javax.swing.JFrame {
             }
         });
 
+        NL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NLKeyReleased(evt);
+            }
+        });
+
+        NODT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NODTKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
@@ -1478,6 +1498,10 @@ public final class ODTS_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FilAmPODT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NL, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NODT, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addGap(0, 1065, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -1493,7 +1517,9 @@ public final class ODTS_5 extends javax.swing.JFrame {
                     .addComponent(FilnamePODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilApPODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilAmPODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(NL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NODT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -1847,12 +1873,10 @@ public final class ODTS_5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CTKeyReleased
-
         DAR();
     }//GEN-LAST:event_CTKeyReleased
 
     private void PagadoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PagadoKeyReleased
-
         DAR1();
     }//GEN-LAST:event_PagadoKeyReleased
 
@@ -2766,6 +2790,10 @@ public final class ODTS_5 extends javax.swing.JFrame {
     private void FiltrosPDODTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosPDODTItemStateChanged
         String FTP = (String) FiltrosPDODT.getSelectedItem();
         if (FTP.equals("Selecciona filtro")) {
+            NL.setVisible(false);
+            NL.setText("");
+            NODT.setVisible(false);
+            NODT.setText("");
             LabelfilPODT.setVisible(false);
             FilnamePODT.setVisible(false);
             FilnamePODT.setText("");
@@ -2776,6 +2804,10 @@ public final class ODTS_5 extends javax.swing.JFrame {
             MDTPODT();
         }
         if (FTP.equals("Apellido P")) {
+            NL.setVisible(false);
+            NL.setText("");
+            NODT.setVisible(false);
+            NODT.setText("");
             LabelfilPODT.setVisible(true);
             LabelfilPODT.setText("Buscar por Apellido P:");
             FilnamePODT.setVisible(false);
@@ -2787,6 +2819,10 @@ public final class ODTS_5 extends javax.swing.JFrame {
             MDTPODT();
         }
         if (FTP.equals("Apellido M")) {
+            NL.setVisible(false);
+            NL.setText("");
+            NODT.setVisible(false);
+            NODT.setText("");
             LabelfilPODT.setVisible(true);
             LabelfilPODT.setText("Buscar por Apellido M:");
             FilnamePODT.setVisible(false);
@@ -2798,6 +2834,10 @@ public final class ODTS_5 extends javax.swing.JFrame {
             MDTPODT();
         }
         if (FTP.equals("Nombre(s)")) {
+            NL.setVisible(false);
+            NL.setText("");
+            NODT.setVisible(false);
+            NODT.setText("");
             LabelfilPODT.setVisible(true);
             LabelfilPODT.setText("Buscar por Nombre(s):");
             FilnamePODT.setVisible(true);
@@ -2808,6 +2848,36 @@ public final class ODTS_5 extends javax.swing.JFrame {
             FilAmPODT.setVisible(false);
             MDTPODT();
 
+        }
+        if (FTP.equals("# Lista")) {
+            NL.setVisible(true);
+            NL.setText("");
+            NODT.setVisible(false);
+            NODT.setText("");
+            LabelfilPODT.setVisible(true);
+            LabelfilPODT.setText("Buscar por # Lista:");
+            FilnamePODT.setVisible(false);
+            FilnamePODT.setText("");
+            FilApPODT.setText("");
+            FilApPODT.setVisible(false);
+            FilAmPODT.setText("");
+            FilAmPODT.setVisible(false);
+            MDTPODT();
+        }
+        if (FTP.equals("# Orden")) {
+            NL.setVisible(false);
+            NL.setText("");
+            NODT.setVisible(true);
+            NODT.setText("");
+            LabelfilPODT.setVisible(true);
+            LabelfilPODT.setText("Buscar por # Orden:");
+            FilnamePODT.setVisible(false);
+            FilnamePODT.setText("");
+            FilApPODT.setText("");
+            FilApPODT.setVisible(false);
+            FilAmPODT.setText("");
+            FilAmPODT.setVisible(false);
+            MDTPODT();
         }
     }//GEN-LAST:event_FiltrosPDODTItemStateChanged
 
@@ -3030,6 +3100,15 @@ public final class ODTS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDA4ActionPerformed
 
+    private void NLKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NLKeyReleased
+        MDTPODT();
+    }//GEN-LAST:event_NLKeyReleased
+
+    private void NODTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NODTKeyReleased
+        MDTPODT();
+
+    }//GEN-LAST:event_NODTKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -3112,6 +3191,8 @@ public final class ODTS_5 extends javax.swing.JFrame {
     private javax.swing.JMenu Menuadm;
     private javax.swing.JTextField Modelo;
     private javax.swing.JButton Modificartaller;
+    private javax.swing.JTextField NL;
+    private javax.swing.JTextField NODT;
     private javax.swing.JTextField NameTaller;
     private javax.swing.JTextField Ndo;
     private javax.swing.JMenuItem NomGen;

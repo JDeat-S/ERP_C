@@ -11469,6 +11469,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
 
         }
+        MDsem();
 
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -11498,6 +11499,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -11522,6 +11525,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -11556,6 +11561,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void GenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenActionPerformed

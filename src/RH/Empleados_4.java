@@ -4408,8 +4408,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_ADMV1ActionPerformed
 
     private void jLabel31MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MousePressed
-        Logica_bd_RH obj = new Logica_bd_RH();
-        obj.BDRH();
+        BDEmpleados_4 regr = new BDEmpleados_4(usr, LP);
+        regr.setVisible(true);
+
     }//GEN-LAST:event_jLabel31MousePressed
 
     private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed

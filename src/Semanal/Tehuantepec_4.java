@@ -10948,6 +10948,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -11005,6 +11007,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
         }
+        MDsem();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -11059,6 +11062,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -11977,6 +11982,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed

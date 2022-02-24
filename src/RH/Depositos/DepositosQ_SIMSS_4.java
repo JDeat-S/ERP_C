@@ -935,7 +935,6 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     }
 
     // mostrar datos de nomina
-
     public void MDNFA() {
         //Buscar empleado
         String FiltroN = Nominab.getText();
@@ -2333,10 +2332,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -3763,6 +3762,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         THE = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
         PestañasPagos = new javax.swing.JTabbedPane();
         TPagos = new javax.swing.JScrollPane();
@@ -6186,6 +6186,13 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
 
         THE.setText("0");
 
+        jButton1.setText("Rembolso");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -6234,7 +6241,9 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addComponent(Adddeposito)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Adddeposito1))
+                                        .addComponent(Adddeposito1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton1))
                                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(FDD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(MDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6322,7 +6331,8 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Adddeposito)
-                            .addComponent(Adddeposito1))))
+                            .addComponent(Adddeposito1)
+                            .addComponent(jButton1))))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
 
@@ -12404,10 +12414,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep.getValueAt(fila, 50)));
@@ -12498,10 +12508,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep1.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep1.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep1.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep1.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep1.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep1.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep1.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep1.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep1.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep1.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep1.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep1.getValueAt(fila, 50)));
@@ -12593,10 +12603,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep2.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep2.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep2.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep2.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep2.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep2.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep2.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep2.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep2.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep2.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep2.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep2.getValueAt(fila, 50)));
@@ -12688,10 +12698,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep3.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep3.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep3.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep3.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep3.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep3.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep3.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep3.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep3.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep3.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep3.getValueAt(fila, 50)));
@@ -12782,10 +12792,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep4.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep4.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep4.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep4.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep4.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep4.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep4.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep4.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep4.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep4.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep4.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep4.getValueAt(fila, 50)));
@@ -12877,10 +12887,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep5.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep5.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep5.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep5.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep5.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep5.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep5.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep5.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep5.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep5.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep5.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep5.getValueAt(fila, 50)));
@@ -12971,10 +12981,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep6.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep6.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep6.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep6.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep6.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep6.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep6.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep6.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep6.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep6.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep6.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep6.getValueAt(fila, 50)));
@@ -13066,10 +13076,10 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep7.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep7.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep7.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep7.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep7.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep7.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep7.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep7.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep7.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep7.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep7.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep7.getValueAt(fila, 50)));
@@ -13146,6 +13156,55 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Dpi.setText("0");
+        pds.setText("0");
+        Ddv.setText("0");
+        PDDDV.setText("0");
+        DD.setText("0");
+        PDDD.setText("0");
+        DL.setText("0");
+        PDDL.setText("0");
+        dt.setText("0");
+        PDDT.setText("0");
+        Bono.setText("0");
+        sueldo.setText("0");
+        DSGS.setText("0");
+        PDDDDSGS.setText("0");
+        FJ.setText("0");
+        DO.setText("0");
+        R.setText("0");
+        PCR.setText("0");
+        apy.setText("0");
+        Lugar.setText("");
+        ADD.setText("0");
+        F.setText("0");
+        DPF.setText("0");
+        DI.setText("0");
+        Fdb.setText("0");
+        Sancion.setText("0");
+        Chamarra.setText("0");
+        Chaleco.setText("0");
+        Fde.setText("0");
+        Grua.setText("0");
+        Pantalon.setText("0");
+        Credencial.setText("0");
+        Bp.setText("0");
+        Playera.setText("0");
+        Corbata.setText("0");
+        Presp.setText("0");
+        cda.setText("0");
+        Odtp.setText("0");
+        AdN.setText("0");
+        PH.setText("0");
+        THE.setText("0");
+        HE.setText("0");
+        RI.setText("0");
+        RF.setText("0");
+        NomISR.setText("0");
+        deposito();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -13522,6 +13581,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTextField filtroNDFP5;
     private javax.swing.JTextField filtroNDFP6;
     private javax.swing.JTextField filtroNDFP7;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
