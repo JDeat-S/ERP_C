@@ -59,6 +59,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         VDA.add(AAADN);
         VDA.add(AAADRH);
         VDA.add(ADM);
+        VDA.add(AADP);
         MDusers();
         MDRoles();
         FillAp.setVisible(false);
@@ -90,6 +91,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         VDA.add(AAADN);
         VDA.add(AAADRH);
         VDA.add(ADM);
+        VDA.add(AADP);
         MDusers();
         MDRoles();
         FillAp.setVisible(false);
@@ -453,6 +455,12 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         txtbtnpduadd = new javax.swing.JLabel();
         btnpdumod = new javax.swing.JPanel();
         txtbtnpdumod = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        AADP = new javax.swing.JRadioButton();
+        P1PEN = new javax.swing.JCheckBox();
+        P2PEN = new javax.swing.JCheckBox();
+        P3PEN = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         BName = new javax.swing.JTextField();
@@ -513,6 +521,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         Depositos = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -677,7 +686,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         .addGap(162, 162, 162)
                         .addComponent(jLabel19))
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -729,7 +738,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                             .addComponent(cbxfillusrs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel2);
@@ -1027,6 +1036,57 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             .addComponent(txtbtnpdumod, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
+        jLabel22.setText("Area Pensiones");
+
+        AADP.setText("Acceso a area de Pensiones");
+        AADP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AADPActionPerformed(evt);
+            }
+        });
+
+        P1PEN.setText("Agregar Pensiones");
+        P1PEN.setEnabled(false);
+
+        P2PEN.setText("Modificar Pensiones");
+        P2PEN.setEnabled(false);
+
+        P3PEN.setText("Mostrar Pensiones");
+        P3PEN.setEnabled(false);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(209, Short.MAX_VALUE)
+                .addComponent(jLabel22)
+                .addGap(205, 205, 205))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AADP)
+                    .addComponent(P1PEN)
+                    .addComponent(P2PEN)
+                    .addComponent(P3PEN))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AADP)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(P1PEN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(P2PEN)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(P3PEN)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1054,11 +1114,14 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                     .addComponent(btnpdumod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(ADM))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1070,7 +1133,9 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1091,7 +1156,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         .addComponent(Btnpduadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnpdumod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(jPanel3);
@@ -1251,7 +1316,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 573, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -1339,7 +1404,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                     .addComponent(jLabel29))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(285, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -1541,6 +1606,14 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         });
         Menuadm.add(ZYS);
 
+        jMenuItem7.setText("Edicion Pagos");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(jMenuItem7);
+
         jMenuBar1.add(Menuadm);
 
         setJMenuBar(jMenuBar1);
@@ -1549,11 +1622,15 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1005, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -1652,6 +1729,13 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
     private void AAADNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AAADNActionPerformed
         if (AAADN.isSelected() == true) {
+
+            P1PEN.setEnabled(false);
+            P2PEN.setEnabled(false);
+            P3PEN.setEnabled(false);
+            P1PEN.setSelected(false);
+            P2PEN.setSelected(false);
+            P3PEN.setSelected(false);
             P1Nom.setSelected(true);
             P2Nom.setSelected(true);
             P3Nom.setSelected(true);
@@ -2037,7 +2121,12 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P5RH.setEnabled(true);
                         P6RH.setEnabled(true);
                         P7RH.setEnabled(true);
-
+                        P1PEN.setEnabled(false);
+                        P2PEN.setEnabled(false);
+                        P3PEN.setEnabled(false);
+                        P1PEN.setSelected(false);
+                        P2PEN.setSelected(false);
+                        P3PEN.setSelected(false);
                     }
 
                     case "2" -> {
@@ -2130,6 +2219,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                             default -> {
                             }
                         }
+
                         P1RH.setSelected(false);
                         P2RH.setSelected(false);
                         P3RH.setSelected(false);
@@ -2148,6 +2238,143 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P9Nom.setEnabled(true);
                         P10Nom.setEnabled(true);
                         P11Nom.setEnabled(true);
+                        P1RH.setEnabled(false);
+                        P2RH.setEnabled(false);
+                        P3RH.setEnabled(false);
+                        P4RH.setEnabled(false);
+                        P5RH.setEnabled(false);
+                        P6RH.setEnabled(false);
+                        P7RH.setEnabled(false);
+                        P1PEN.setEnabled(false);
+                        P2PEN.setEnabled(false);
+                        P3PEN.setEnabled(false);
+                        P1PEN.setSelected(false);
+                        P2PEN.setSelected(false);
+                        P3PEN.setSelected(false);
+                    }
+                    case "4" -> {
+                        AADP.setSelected(true);
+                        switch (rs.getString("P1")) {
+                            case "0" ->
+                                P1PEN.setSelected(false);
+                            case "1" ->
+                                P1PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P2")) {
+                            case "0" ->
+                                P2PEN.setSelected(false);
+                            case "1" ->
+                                P2PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P3")) {
+                            case "0" ->
+                                P3PEN.setSelected(false);
+                            case "1" ->
+                                P3PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        /* switch (rs.getString("P4")) {
+                            case "0" ->
+                                P4PEN.setSelected(false);
+                            case "1" ->
+                                P4PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P5")) {
+                            case "0" ->
+                                P5PEN.setSelected(false);
+                            case "1" ->
+                                P5PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P6")) {
+                            case "0" ->
+                                P6PEN.setSelected(false);
+                            case "1" ->
+                                P6PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P7")) {
+                            case "0" ->
+                                P7PEN.setSelected(false);
+                            case "1" ->
+                                P7PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P8")) {
+                            case "0" ->
+                                P8PEN.setSelected(false);
+                            case "1" ->
+                                P8PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P9")) {
+                            case "0" ->
+                                P9PEN.setSelected(false);
+                            case "1" ->
+                                P9PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P10")) {
+                            case "0" ->
+                                P10PEN.setSelected(false);
+                            case "1" ->
+                                P10PEN.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P11")) {
+                            case "0" ->
+                                P11PEN.setSelected(false);
+                            case "1" ->
+                                P11PEN.setSelected(true);
+                            default -> {
+                        }
+                        }*/
+
+                        P1RH.setSelected(false);
+                        P2RH.setSelected(false);
+                        P3RH.setSelected(false);
+                        P4RH.setSelected(false);
+                        P5RH.setSelected(false);
+                        P6RH.setSelected(false);
+                        P7RH.setSelected(false);
+                        P1Nom.setEnabled(false);
+                        P2Nom.setEnabled(false);
+                        P3Nom.setEnabled(false);
+                        P4Nom.setEnabled(false);
+                        P5Nom.setEnabled(false);
+                        P6Nom.setEnabled(false);
+                        P7Nom.setEnabled(false);
+                        P8Nom.setEnabled(false);
+                        P9Nom.setEnabled(false);
+                        P10Nom.setEnabled(false);
+                        P11Nom.setEnabled(false);
+                        P1Nom.setSelected(false);
+                        P2Nom.setSelected(false);
+                        P3Nom.setSelected(false);
+                        P4Nom.setSelected(false);
+                        P5Nom.setSelected(false);
+                        P6Nom.setSelected(false);
+                        P7Nom.setSelected(false);
+                        P8Nom.setSelected(false);
+                        P9Nom.setSelected(false);
+                        P10Nom.setSelected(false);
+                        P11Nom.setSelected(false);
+                        P1PEN.setEnabled(true);
+                        P2PEN.setEnabled(true);
+                        P3PEN.setEnabled(true);
                         P1RH.setEnabled(false);
                         P2RH.setEnabled(false);
                         P3RH.setEnabled(false);
@@ -2414,44 +2641,111 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             } catch (HeadlessException | SQLException error_add_usr) {
                 JOptionPane.showMessageDialog(null, "Error al modificar perfi de usuario: " + error_add_usr.getMessage());
             }
-            P1Nom.setSelected(false);
-            P2Nom.setSelected(false);
-            P3Nom.setSelected(false);
-            P4Nom.setSelected(false);
-            P5Nom.setSelected(false);
-            P6Nom.setSelected(false);
-            P7Nom.setSelected(false);
-            P8Nom.setSelected(false);
-            P9Nom.setSelected(false);
-            P10Nom.setSelected(false);
-            P11Nom.setSelected(false);
-            P1RH.setSelected(false);
-            P2RH.setSelected(false);
-            P3RH.setSelected(false);
-            P4RH.setSelected(false);
-            P5RH.setSelected(false);
-            P6RH.setSelected(false);
-            P7RH.setSelected(false);
-            P1Nom.setEnabled(false);
-            P2Nom.setEnabled(false);
-            P3Nom.setEnabled(false);
-            P4Nom.setEnabled(false);
-            P5Nom.setEnabled(false);
-            P6Nom.setEnabled(false);
-            P7Nom.setEnabled(false);
-            P8Nom.setEnabled(false);
-            P9Nom.setEnabled(false);
-            P10Nom.setEnabled(false);
-            P11Nom.setEnabled(false);
-            P1RH.setEnabled(false);
-            P2RH.setEnabled(false);
-            P3RH.setEnabled(false);
-            P4RH.setEnabled(false);
-            P5RH.setEnabled(false);
-            P6RH.setEnabled(false);
-            P7RH.setEnabled(false);
         }
 
+        if (AADP.isSelected() == true) {
+            VDAPDU = 4;
+
+            if (P1PEN.isSelected() == true) {
+                P1 = 1;
+            } else {
+                P1 = 0;
+            }
+            if (P2PEN.isSelected() == true) {
+                P2 = 1;
+            } else {
+                P2 = 0;
+            }
+            if (P3PEN.isSelected() == true) {
+                P3 = 1;
+            } else {
+                P3 = 0;
+            }
+            P4 = 0;
+            P5 = 0;
+            P6 = 0;
+            P7 = 0;
+            P8 = 0;
+            P9 = 0;
+            P10 = 0;
+            P11 = 0;
+
+            String SQL = "INSERT INTO `admin.tou` (`id_TDO`, `Usuario`,"
+                    + " `Ventana de acceso`, `P1`, `P2`, `P3`, `P4`, `P5`, `P6`, `P7`,"
+                    + " `P8`, `P9`, `P10`, `P11`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setInt(1, Integer.parseInt(NumP.getText()));
+                pst.setString(2, PDUadd.getText());
+                pst.setInt(3, VDAPDU);
+                pst.setInt(4, P1);
+                pst.setInt(5, P2);
+                pst.setInt(6, P3);
+                pst.setInt(7, P4);
+                pst.setInt(8, P5);
+                pst.setInt(9, P6);
+                pst.setInt(10, P7);
+                pst.setInt(11, P8);
+                pst.setInt(12, P9);
+                pst.setInt(13, P10);
+                pst.setInt(14, P11);
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+
+                //limpiar
+                NumP.setText("0");
+                PDUadd.setText("");
+
+                MDRoles();
+
+            } catch (HeadlessException | SQLException error_add_usr) {
+                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+            }
+        }
+        P1Nom.setSelected(false);
+        P2Nom.setSelected(false);
+        P3Nom.setSelected(false);
+        P4Nom.setSelected(false);
+        P5Nom.setSelected(false);
+        P6Nom.setSelected(false);
+        P7Nom.setSelected(false);
+        P8Nom.setSelected(false);
+        P9Nom.setSelected(false);
+        P10Nom.setSelected(false);
+        P11Nom.setSelected(false);
+        P1RH.setSelected(false);
+        P2RH.setSelected(false);
+        P3RH.setSelected(false);
+        P4RH.setSelected(false);
+        P5RH.setSelected(false);
+        P6RH.setSelected(false);
+        P7RH.setSelected(false);
+        P1Nom.setEnabled(false);
+        P2Nom.setEnabled(false);
+        P3Nom.setEnabled(false);
+        P4Nom.setEnabled(false);
+        P5Nom.setEnabled(false);
+        P6Nom.setEnabled(false);
+        P7Nom.setEnabled(false);
+        P8Nom.setEnabled(false);
+        P9Nom.setEnabled(false);
+        P10Nom.setEnabled(false);
+        P11Nom.setEnabled(false);
+        P1RH.setEnabled(false);
+        P2RH.setEnabled(false);
+        P3RH.setEnabled(false);
+        P4RH.setEnabled(false);
+        P5RH.setEnabled(false);
+        P6RH.setEnabled(false);
+        P7RH.setEnabled(false);
+        P1PEN.setEnabled(false);
+        P2PEN.setEnabled(false);
+        P3PEN.setEnabled(false);
+        P1PEN.setSelected(false);
+        P2PEN.setSelected(false);
+        P3PEN.setSelected(false);
         Btnpduadd.setVisible(true);
         txtbtnadd.setVisible(true);
         PDUMod.setText("N/A");
@@ -2496,7 +2790,12 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             P5RH.setEnabled(false);
             P6RH.setEnabled(false);
             P7RH.setEnabled(false);
-
+            P1PEN.setEnabled(false);
+            P2PEN.setEnabled(false);
+            P3PEN.setEnabled(false);
+            P1PEN.setSelected(false);
+            P2PEN.setSelected(false);
+            P3PEN.setSelected(false);
         }
     }//GEN-LAST:event_ADMActionPerformed
 
@@ -2538,6 +2837,12 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             P5RH.setEnabled(true);
             P6RH.setEnabled(true);
             P7RH.setEnabled(true);
+            P1PEN.setEnabled(false);
+            P2PEN.setEnabled(false);
+            P3PEN.setEnabled(false);
+            P1PEN.setSelected(false);
+            P2PEN.setSelected(false);
+            P3PEN.setSelected(false);
         }
     }//GEN-LAST:event_AAADRHActionPerformed
 
@@ -2756,45 +3061,112 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             } catch (HeadlessException | SQLException error_add_usr) {
                 JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
             }
-            P1Nom.setSelected(false);
-            P2Nom.setSelected(false);
-            P3Nom.setSelected(false);
-            P4Nom.setSelected(false);
-            P5Nom.setSelected(false);
-            P6Nom.setSelected(false);
-            P7Nom.setSelected(false);
-            P8Nom.setSelected(false);
-            P9Nom.setSelected(false);
-            P10Nom.setSelected(false);
-            P11Nom.setSelected(false);
-            P1RH.setSelected(false);
-            P2RH.setSelected(false);
-            P3RH.setSelected(false);
-            P4RH.setSelected(false);
-            P5RH.setSelected(false);
-            P6RH.setSelected(false);
-            P7RH.setSelected(false);
-            P1Nom.setEnabled(false);
-            P2Nom.setEnabled(false);
-            P3Nom.setEnabled(false);
-            P4Nom.setEnabled(false);
-            P5Nom.setEnabled(false);
-            P6Nom.setEnabled(false);
-            P7Nom.setEnabled(false);
-            P8Nom.setEnabled(false);
-            P9Nom.setEnabled(false);
-            P10Nom.setEnabled(false);
-            P11Nom.setEnabled(false);
-            P1RH.setEnabled(false);
-            P2RH.setEnabled(false);
-            P3RH.setEnabled(false);
-            P4RH.setEnabled(false);
-            P5RH.setEnabled(false);
-            P6RH.setEnabled(false);
-            P7RH.setEnabled(false);
-            VDA.clearSelection();
+        }
+        if (AADP.isSelected() == true) {
+            VDAPDU = 4;
+
+            if (P1PEN.isSelected() == true) {
+                P1 = 1;
+            } else {
+                P1 = 0;
+            }
+            if (P2PEN.isSelected() == true) {
+                P2 = 1;
+            } else {
+                P2 = 0;
+            }
+            if (P3PEN.isSelected() == true) {
+                P3 = 1;
+            } else {
+                P3 = 0;
+            }
+            P4 = 0;
+            P5 = 0;
+            P6 = 0;
+            P7 = 0;
+            P8 = 0;
+            P9 = 0;
+            P10 = 0;
+            P11 = 0;
+
+            String SQL = "INSERT INTO `admin.tou` (`id_TDO`, `Usuario`,"
+                    + " `Ventana de acceso`, `P1`, `P2`, `P3`, `P4`, `P5`, `P6`, `P7`,"
+                    + " `P8`, `P9`, `P10`, `P11`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+
+                pst.setInt(1, Integer.parseInt(NumP.getText()));
+                pst.setString(2, PDUadd.getText());
+                pst.setInt(3, VDAPDU);
+                pst.setInt(4, P1);
+                pst.setInt(5, P2);
+                pst.setInt(6, P3);
+                pst.setInt(7, P4);
+                pst.setInt(8, P5);
+                pst.setInt(9, P6);
+                pst.setInt(10, P7);
+                pst.setInt(11, P8);
+                pst.setInt(12, P9);
+                pst.setInt(13, P10);
+                pst.setInt(14, P11);
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Perfil de usuario registrado");
+
+                //limpiar
+                NumP.setText("0");
+                PDUadd.setText("");
+
+                MDRoles();
+
+            } catch (HeadlessException | SQLException error_add_usr) {
+                JOptionPane.showMessageDialog(null, "Error al agregar perfi de usuario: " + error_add_usr.getMessage());
+            }
         }
 
+        P1Nom.setSelected(false);
+        P2Nom.setSelected(false);
+        P3Nom.setSelected(false);
+        P4Nom.setSelected(false);
+        P5Nom.setSelected(false);
+        P6Nom.setSelected(false);
+        P7Nom.setSelected(false);
+        P8Nom.setSelected(false);
+        P9Nom.setSelected(false);
+        P10Nom.setSelected(false);
+        P11Nom.setSelected(false);
+        P1RH.setSelected(false);
+        P2RH.setSelected(false);
+        P3RH.setSelected(false);
+        P4RH.setSelected(false);
+        P5RH.setSelected(false);
+        P6RH.setSelected(false);
+        P7RH.setSelected(false);
+        P1Nom.setEnabled(false);
+        P2Nom.setEnabled(false);
+        P3Nom.setEnabled(false);
+        P4Nom.setEnabled(false);
+        P5Nom.setEnabled(false);
+        P6Nom.setEnabled(false);
+        P7Nom.setEnabled(false);
+        P8Nom.setEnabled(false);
+        P9Nom.setEnabled(false);
+        P10Nom.setEnabled(false);
+        P11Nom.setEnabled(false);
+        P1RH.setEnabled(false);
+        P2RH.setEnabled(false);
+        P3RH.setEnabled(false);
+        P4RH.setEnabled(false);
+        P5RH.setEnabled(false);
+        P6RH.setEnabled(false);
+        P7RH.setEnabled(false);
+        P1PEN.setEnabled(false);
+        P2PEN.setEnabled(false);
+        P3PEN.setEnabled(false);
+        P1PEN.setSelected(false);
+        P2PEN.setSelected(false);
+        P3PEN.setSelected(false);
+        VDA.clearSelection();
     }//GEN-LAST:event_txtbtnpduaddMousePressed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
@@ -2967,7 +3339,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registro agregado.");
-            
+
             NE.setText("");
             NR.setText("0");
             ApEDE.setText("");
@@ -3004,7 +3376,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Registro modificado.");
-            
+
             NE.setText("");
             NR.setText("0");
             ApEDE.setText("");
@@ -3017,6 +3389,45 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al modificar registro: " + e);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        EdicionPagos_3 regr = new EdicionPagos_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void AADPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AADPActionPerformed
+        if (AADP.isSelected() == true) {
+            P1Nom.setSelected(false);
+            P2Nom.setSelected(false);
+            P3Nom.setSelected(false);
+            P4Nom.setSelected(false);
+            P5Nom.setSelected(false);
+            P6Nom.setSelected(false);
+            P7Nom.setSelected(false);
+            P8Nom.setSelected(false);
+            P9Nom.setSelected(false);
+            P10Nom.setSelected(false);
+            P11Nom.setSelected(false);
+            P1Nom.setEnabled(false);
+            P2Nom.setEnabled(false);
+            P3Nom.setEnabled(false);
+            P4Nom.setEnabled(false);
+            P5Nom.setEnabled(false);
+            P6Nom.setEnabled(false);
+            P7Nom.setEnabled(false);
+            P8Nom.setEnabled(false);
+            P9Nom.setEnabled(false);
+            P10Nom.setEnabled(false);
+            P11Nom.setEnabled(false);
+            P1PEN.setEnabled(true);
+            P2PEN.setEnabled(true);
+            P3PEN.setEnabled(true);
+            P1PEN.setSelected(true);
+            P2PEN.setSelected(true);
+            P3PEN.setSelected(true);
+        }
+    }//GEN-LAST:event_AADPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3054,6 +3465,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton AAADN;
     private javax.swing.JRadioButton AAADRH;
+    private javax.swing.JRadioButton AADP;
     private javax.swing.JCheckBox AAS;
     private javax.swing.JCheckBox ACT;
     private javax.swing.JRadioButton ADM;
@@ -3094,10 +3506,13 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JCheckBox P10Nom;
     private javax.swing.JCheckBox P11Nom;
     private javax.swing.JCheckBox P1Nom;
+    private javax.swing.JCheckBox P1PEN;
     private javax.swing.JCheckBox P1RH;
     private javax.swing.JCheckBox P2Nom;
+    private javax.swing.JCheckBox P2PEN;
     private javax.swing.JCheckBox P2RH;
     private javax.swing.JCheckBox P3Nom;
+    private javax.swing.JCheckBox P3PEN;
     private javax.swing.JCheckBox P3RH;
     private javax.swing.JCheckBox P4Nom;
     private javax.swing.JCheckBox P4RH;
@@ -3138,6 +3553,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -3159,12 +3575,14 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

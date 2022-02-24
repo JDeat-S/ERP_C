@@ -26,7 +26,7 @@ public class L2 {
 
     // <editor-fold defaultstate="collapsed" desc="Solo 2 listas">
     public void LIS(ItemsL IL) {
-                JFileChooser chooser = new JFileChooser();
+        JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
         chooser.setSelectedFile(new File("Listas de asistencia semanales de la " + IL.getLDAQuincena() + " zona "
                 + IL.getLDAzona()));

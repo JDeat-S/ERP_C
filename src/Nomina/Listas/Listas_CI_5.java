@@ -20993,7 +20993,7 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void LDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA1ActionPerformed
-        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        Listas_SI_5 regr = new Listas_SI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDA1ActionPerformed

@@ -2330,10 +2330,10 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -2474,10 +2474,10 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -2498,6 +2498,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Mes de pago");
             modelo.addColumn("Forma de pago");
             modelo.addColumn("Observaciones");
+
 
 //Anchos
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
@@ -2618,10 +2619,10 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
+             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -2642,6 +2643,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Mes de pago");
             modelo.addColumn("Forma de pago");
             modelo.addColumn("Observaciones");
+
 
 //Anchos
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
@@ -2762,10 +2764,10 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -2906,10 +2908,10 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -3196,10 +3198,10 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -3220,6 +3222,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Mes de pago");
             modelo.addColumn("Forma de pago");
             modelo.addColumn("Observaciones");
+
 
 //Anchos
             int[] anchos = {/*#F*/10, /*NL*/ 10, /*NE*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
@@ -3342,10 +3345,10 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             modelo.addColumn("Total de horas extra");
             modelo.addColumn("Faltas");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Sancion");
             modelo.addColumn("Chamarra");
@@ -8051,7 +8054,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
         Semanales.setText("Semanales");
 
-        jMenuItem2.setText("Inturbide");
+        jMenuItem2.setText("Iturbide");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);

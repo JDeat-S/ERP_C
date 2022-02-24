@@ -42,6 +42,9 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
     public CDAQ_5() {
         initComponents();
+        NL.setVisible(false);
+        NC.setVisible(false);
+
         MDCDA();
         sumaTA();
         MDTPCDA();
@@ -66,6 +69,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
     public CDAQ_5(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
+        NL.setVisible(false);
+        NC.setVisible(false);
         this.usr = usr;
         this.LP = LP;
         MDCDA();
@@ -251,6 +256,12 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         } else if (!"".equals(FAM)) {
             where = "SELECT * FROM `nomina.pagos.cda`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
+        } else if (!"".equals(NL.getText())) {
+            where = "SELECT * FROM `nomina.pagos.cda`"
+                    + " Where `#Lista` LIKE '%" + NL.getText() + "%'";
+        } else if (!"".equals(NC.getText())) {
+            where = "SELECT * FROM `nomina.pagos.cda`"
+                    + " Where `#caja` LIKE '%" + NC.getText() + "%'";
         }
 
         try {
@@ -630,6 +641,8 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         NQna = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        NL = new javax.swing.JTextField();
+        NC = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -1224,7 +1237,7 @@ public final class CDAQ_5 extends javax.swing.JFrame {
 
         jLabel155.setText("Filtro:");
 
-        FilPCDA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
+        FilPCDA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)", "# Lista", "# Caja" }));
         FilPCDA.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FilPCDAItemStateChanged(evt);
@@ -1278,6 +1291,18 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             }
         });
 
+        NL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NLKeyReleased(evt);
+            }
+        });
+
+        NC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NCKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1321,6 +1346,10 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FilAMPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NL, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NC, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
                         .addContainerGap(713, Short.MAX_VALUE))
                     .addComponent(jScrollPane1)))
@@ -1338,7 +1367,9 @@ public final class CDAQ_5 extends javax.swing.JFrame {
                     .addComponent(FilnamePCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilAPPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilAMPCDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(NL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -2002,6 +2033,10 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private void FilPCDAItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FilPCDAItemStateChanged
         String FTP = (String) FilPCDA.getSelectedItem();
         if (FTP.equals("Selecciona filtro")) {
+            NL.setVisible(false);
+            NL.setText("");
+            NC.setText("");
+            NC.setVisible(false);
             labelpcda.setVisible(false);
             FilnamePCDA.setVisible(false);
             FilnamePCDA.setText("");
@@ -2012,6 +2047,10 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             MDTPCDA();
         }
         if (FTP.equals("Apellido P")) {
+            NL.setVisible(false);
+            NC.setVisible(false);
+            NL.setText("");
+            NC.setText("");
             labelpcda.setVisible(true);
             labelpcda.setText("Buscar por Apellido P:");
             FilnamePCDA.setVisible(false);
@@ -2023,6 +2062,10 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             MDTPCDA();
         }
         if (FTP.equals("Apellido M")) {
+            NL.setVisible(false);
+            NC.setVisible(false);
+            NL.setText("");
+            NC.setText("");
             labelpcda.setVisible(true);
             labelpcda.setText("Buscar por Apellido M:");
             FilnamePCDA.setVisible(false);
@@ -2034,9 +2077,45 @@ public final class CDAQ_5 extends javax.swing.JFrame {
             MDTPCDA();
         }
         if (FTP.equals("Nombre(s)")) {
+            NL.setVisible(false);
+            NC.setVisible(false);
+            NL.setText("");
+            NC.setText("");
             labelpcda.setVisible(true);
             labelpcda.setText("Buscar por Nombre(s):");
             FilnamePCDA.setVisible(true);
+            FilnamePCDA.setText("");
+            FilAPPCDA.setText("");
+            FilAPPCDA.setVisible(false);
+            FilAMPCDA.setText("");
+            FilAMPCDA.setVisible(false);
+            MDTPCDA();
+
+        }
+        if (FTP.equals("# Lista")) {
+            NL.setVisible(true);
+            NC.setVisible(false);
+            NL.setText("");
+            NC.setText("");
+            labelpcda.setVisible(true);
+            labelpcda.setText("Buscar por # Lista:");
+            FilnamePCDA.setVisible(false);
+            FilnamePCDA.setText("");
+            FilAPPCDA.setText("");
+            FilAPPCDA.setVisible(false);
+            FilAMPCDA.setText("");
+            FilAMPCDA.setVisible(false);
+            MDTPCDA();
+
+        }
+        if (FTP.equals("# Caja")) {
+            NL.setVisible(false);
+            NC.setVisible(true);
+            NL.setText("");
+            NC.setText("");
+            labelpcda.setVisible(true);
+            labelpcda.setText("Buscar por # Caja:");
+            FilnamePCDA.setVisible(false);
             FilnamePCDA.setText("");
             FilAPPCDA.setText("");
             FilAPPCDA.setVisible(false);
@@ -2335,6 +2414,48 @@ public final class CDAQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDA4ActionPerformed
 
+    private void NLKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NLKeyReleased
+        MDTPCDA();
+        if (MMAPagos.isSelected() == true) {
+            double t = 0;
+            double p;
+            if (TPCDA.getRowCount() > 0) {
+                for (int i = 0; i < TPCDA.getRowCount(); i++) {
+                    p = Double.parseDouble(TPCDA.getValueAt(i, 10).toString());
+                    t += p;
+                }
+                MADE.setText("" + t);
+            } else {
+
+            }
+        }
+        if (MMAPagos.isSelected() == false) {
+            MADE.setText("0");
+
+        }
+    }//GEN-LAST:event_NLKeyReleased
+
+    private void NCKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NCKeyReleased
+        MDTPCDA();
+        if (MMAPagos.isSelected() == true) {
+            double t = 0;
+            double p;
+            if (TPCDA.getRowCount() > 0) {
+                for (int i = 0; i < TPCDA.getRowCount(); i++) {
+                    p = Double.parseDouble(TPCDA.getValueAt(i, 10).toString());
+                    t += p;
+                }
+                MADE.setText("" + t);
+            } else {
+
+            }
+        }
+        if (MMAPagos.isSelected() == false) {
+            MADE.setText("0");
+
+        }
+    }//GEN-LAST:event_NCKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -2411,7 +2532,9 @@ public final class CDAQ_5 extends javax.swing.JFrame {
     private javax.swing.JCheckBox MMAPagos;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JButton ModCDA;
+    private javax.swing.JTextField NC;
     private javax.swing.JTextField NFpagocda;
+    private javax.swing.JTextField NL;
     private javax.swing.JTextField NQna;
     private javax.swing.JTextField NREcda;
     private javax.swing.JMenuItem NomGen;

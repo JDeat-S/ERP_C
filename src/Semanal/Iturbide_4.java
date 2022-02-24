@@ -413,17 +413,6 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         Timereport.add(Mes);
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        Rec.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec1.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec2.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec3.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec4.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec5.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec6.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec7.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec8.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec9.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec10.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
         CBXmes.setVisible(false);
         Rec1.setVisible(false);
         Rec2.setVisible(false);
@@ -11480,6 +11469,7 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
 
         }
+        MDsem();
 
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -11509,6 +11499,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -11533,6 +11525,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -11567,6 +11561,8 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
 
         }
+        MDsem();
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void GenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenActionPerformed

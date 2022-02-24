@@ -411,17 +411,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         this.usr = usr;
         this.LP = LP;
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        Rec.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec1.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec2.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec3.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec4.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec5.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec6.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec7.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec8.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec9.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec10.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
         Rec1.setVisible(false);
         Rec2.setVisible(false);
         Rec3.setVisible(false);
@@ -10952,6 +10941,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
 
         }
+                MDsem();
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -11009,6 +11000,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
         }
+                MDsem();
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -11063,6 +11056,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
 
         }
+                MDsem();
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -11976,6 +11971,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
 
         }
+                MDsem();
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed

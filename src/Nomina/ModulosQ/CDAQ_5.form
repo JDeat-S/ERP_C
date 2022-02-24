@@ -1287,6 +1287,10 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="FilAMPCDA" min="-2" pref="100" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="NL" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="NC" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace pref="713" max="32767" attributes="0"/>
                               </Group>
@@ -1309,6 +1313,8 @@
                               <Component id="FilAPPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FilAMPCDA" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="NL" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="NC" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1428,11 +1434,13 @@
                 <Component class="javax.swing.JComboBox" name="FilPCDA">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
+                      <StringArray count="6">
                         <StringItem index="0" value="Selecciona filtro"/>
                         <StringItem index="1" value="Apellido P"/>
                         <StringItem index="2" value="Apellido M"/>
                         <StringItem index="3" value="Nombre(s)"/>
+                        <StringItem index="4" value="# Lista"/>
+                        <StringItem index="5" value="# Caja"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1512,6 +1520,16 @@
                   </Properties>
                   <Events>
                     <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel5MousePressed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="NL">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NLKeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="NC">
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NCKeyReleased"/>
                   </Events>
                 </Component>
               </SubComponents>
