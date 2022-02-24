@@ -2112,11 +2112,16 @@ public final class Listas_Sem_SI_5 extends javax.swing.JFrame {
 
         }
         if (LDAQuin.getSelectedIndex() == 5) {
+            Sem1 = "3ra semana de febrero";
+            Sem2 = "4ta semana de febrero";
+
+        }
+        if (LDAQuin.getSelectedIndex() == 6) {
             Sem1 = "1ra semana de marzo";
             Sem2 = "2da semana de marzo";
 
         }
-        if (LDAQuin.getSelectedIndex() == 6) {
+        if (LDAQuin.getSelectedIndex() == 7) {
             Sem1 = "3ra semana de marzo";
             Sem2 = "4ta semana de marzo";
 
@@ -5533,7 +5538,7 @@ public final class Listas_Sem_SI_5 extends javax.swing.JFrame {
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
-                IL.setNDLista(Integer.parseInt(NDL.getText())*2);
+                IL.setNDLista(Integer.parseInt(NDL.getText()) * 2);
 
                 L8 L08 = new L8();
                 L08.LIS(IL);
@@ -6271,7 +6276,7 @@ public final class Listas_Sem_SI_5 extends javax.swing.JFrame {
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
-                IL.setNDLista(Integer.parseInt(NDL.getText())*2);
+                IL.setNDLista(Integer.parseInt(NDL.getText()) * 2);
 
                 L9 L09 = new L9();
                 L09.LIS(IL);
@@ -7083,7 +7088,7 @@ public final class Listas_Sem_SI_5 extends javax.swing.JFrame {
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
-                IL.setNDLista(Integer.parseInt(NDL.getText())*2);
+                IL.setNDLista(Integer.parseInt(NDL.getText()) * 2);
 
                 L10 L010 = new L10();
                 L010.LIS(IL);
@@ -8101,7 +8106,7 @@ public final class Listas_Sem_SI_5 extends javax.swing.JFrame {
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
-                IL.setNDLista(Integer.parseInt(NDL.getText())*2);
+                IL.setNDLista(Integer.parseInt(NDL.getText()) * 2);
 
                 L11 L011 = new L11();
                 L011.LIS(IL);
@@ -9060,7 +9065,7 @@ public final class Listas_Sem_SI_5 extends javax.swing.JFrame {
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
-                IL.setNDLista(Integer.parseInt(NDL.getText())*2);
+                IL.setNDLista(Integer.parseInt(NDL.getText()) * 2);
 
                 L12 L012 = new L12();
                 L012.LIS(IL);
@@ -10226,7 +10231,7 @@ public final class Listas_Sem_SI_5 extends javax.swing.JFrame {
                 IL.setLDAQuincena(LDAQuin.getSelectedItem().toString());
                 IL.setLDAzona(LDAZon.getSelectedItem().toString());
                 IL.setUNumR(Integer.parseInt(UNR.getText()));
-                IL.setNDLista(Integer.parseInt(NDL.getText())*2);
+                IL.setNDLista(Integer.parseInt(NDL.getText()) * 2);
 
                 L13 L013 = new L13();
                 L013.LIS(IL);

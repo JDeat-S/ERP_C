@@ -20,6 +20,7 @@ import Logicas.BDNomQ.Logica_bd_pagosODTQ;
 import Logicas.BDNomQ.Logica_bd_pagosPresQ;
 import Logicas.BDNomS.Logica_bd_pagosCDAS;
 import Logicas.BDNomS.Logica_bd_pagosPresS;
+import Pensiones.PensionesVP_7;
 import Semanal.Vales.Rvales;
 import java.awt.HeadlessException;
 import java.awt.print.Printable;
@@ -612,6 +613,7 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         ADMV2 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2062,6 +2064,14 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         });
         Menuadm.add(ADMV2);
 
+        jMenuItem10.setText("Pensiones");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(jMenuItem10);
+
         jMenuBar1.add(Menuadm);
 
         setJMenuBar(jMenuBar1);
@@ -3143,6 +3153,12 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        PensionesVP_7 regr = new PensionesVP_7(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3362,6 +3378,7 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

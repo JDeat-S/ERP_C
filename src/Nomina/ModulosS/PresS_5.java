@@ -252,6 +252,7 @@ public final class PresS_5 extends javax.swing.JFrame {
         jMenuItem16 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         ADMV2 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         Nomsem = new javax.swing.JMenuItem();
@@ -1016,6 +1017,14 @@ public final class PresS_5 extends javax.swing.JFrame {
             }
         });
         Menuadm.add(ADMV2);
+
+        jMenuItem7.setText("Edicion Pagos");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(jMenuItem7);
 
         jMenuBar1.add(Menuadm);
 
@@ -2128,6 +2137,12 @@ public final class PresS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDA4ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        EdicionPagos_3 regr = new EdicionPagos_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2276,6 +2291,7 @@ public final class PresS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel5;
