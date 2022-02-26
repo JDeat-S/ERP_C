@@ -3,19 +3,24 @@ package Semanal.Vales;
 import Conexion.ConexionSQL;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,8 +30,18 @@ import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.ss.usermodel.PaperSize;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -245,8 +260,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         }
         Graphics2D g2d = (Graphics2D) graphics;
         //Punto donde empezará a imprimir dentro la pagina (100, 50)
-        g2d.translate(pageFormat.getImageableX() + 100,
-                pageFormat.getImageableY() + 50);
+        g2d.translate(pageFormat.getImageableX(),
+                pageFormat.getImageableY());
         g2d.scale(0.50, 0.50); //Reducción de la impresión al 50%
         jPanel1.printAll(graphics);
         return PAGE_EXISTS;
@@ -281,9 +296,6 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         Fecha = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         ImporteEsc = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -304,15 +316,11 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         Fecha1 = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
         ImporteEsc1 = new javax.swing.JTextArea();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
-        jLabel19 = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
         jLabel20 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
@@ -371,9 +379,9 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         TR = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         Rec = new javax.swing.JLabel();
         Entr = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -403,18 +411,17 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         btngen.setLayout(btngenLayout);
         btngenLayout.setHorizontalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btngenLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtngen, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(txtbtngen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1170, Short.MAX_VALUE)
         );
         btngenLayout.setVerticalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btngenLayout.createSequentialGroup()
-                .addComponent(txtbtngen, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(txtbtngen, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 760, 940, 90));
+        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 1170, 90));
 
         Harder1.setBackground(new java.awt.Color(255, 255, 255));
         Harder1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -448,8 +455,8 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         Harder1Layout.setHorizontalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Harder1Layout.createSequentialGroup()
-                .addComponent(Move, javax.swing.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Move, javax.swing.GroupLayout.DEFAULT_SIZE, 1052, Short.MAX_VALUE)
+                .addGap(78, 78, 78))
         );
         Harder1Layout.setVerticalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -458,7 +465,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 .addComponent(Move, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
+        getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 40));
 
         btnexit.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -483,20 +490,18 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         btnexit.setLayout(btnexitLayout);
         btnexitLayout.setHorizontalGroup(
             btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnexitLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         btnexitLayout.setVerticalGroup(
             btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnexitLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, -1, -1));
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 0, -1, -1));
 
         Tvales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -516,7 +521,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         });
         jScrollPane3.setViewportView(Tvales);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 940, 110));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1170, 110));
 
         jLabel24.setText("# Vale:");
         getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, 20));
@@ -534,7 +539,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("A-22");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, 20));
 
         NV.setEditable(false);
         NV.setForeground(new java.awt.Color(255, 51, 51));
@@ -545,10 +550,10 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 NVKeyReleased(evt);
             }
         });
-        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 90, 20));
+        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 90, 20));
 
         jLabel2.setText("Bueno por:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         Importe.setEditable(false);
         Importe.setText("0");
@@ -558,10 +563,10 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 ImporteKeyReleased(evt);
             }
         });
-        jPanel1.add(Importe, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 20));
+        jPanel1.add(Importe, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 120, 20));
 
         jLabel3.setText("Recibi de:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         RD.setEditable(false);
         RD.setBorder(null);
@@ -570,13 +575,13 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 RDKeyReleased(evt);
             }
         });
-        jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 160, 20));
+        jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 160, 20));
 
         jLabel4.setText("Cantidad de:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
 
         jLabel5.setText("Concepto:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         Concepto.setEditable(false);
         Concepto.setBorder(null);
@@ -585,10 +590,10 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 ConceptoKeyReleased(evt);
             }
         });
-        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 250, 20));
+        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 240, 20));
 
         jLabel6.setText("En:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         En.setEditable(false);
         En.setBorder(null);
@@ -597,7 +602,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 EnKeyReleased(evt);
             }
         });
-        jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 120, 20));
+        jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 120, 20));
 
         Fecha.setDateFormatString("'A' d 'de' MMMM 'de' y");
         Fecha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -605,31 +610,21 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 FechaMousePressed(evt);
             }
         });
-        jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 200, -1));
+        jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 190, -1));
 
         ImporteEsc.setEditable(false);
         ImporteEsc.setColumns(20);
-        ImporteEsc.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        ImporteEsc.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         ImporteEsc.setLineWrap(true);
         ImporteEsc.setRows(5);
         jScrollPane1.setViewportView(ImporteEsc);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 222, -1));
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel7.setText("DE MEXICO S.A DE C.V");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
-
-        jLabel8.setText("RECIBO DE DINERO.");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, -1, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, 10));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, 10));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 170, 10));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 90, 10));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 250, 10));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 340, 50));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 120, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 330, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 170, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 90, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 240, 10));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -639,19 +634,19 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 51, 51));
         jLabel10.setText("A-22");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 30, 20));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 20));
 
         NV1.setEditable(false);
         NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         NV1.setForeground(new java.awt.Color(255, 51, 51));
         NV1.setText("0");
         NV1.setBorder(null);
-        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 160, 20));
+        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 100, 20));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Bueno por:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 57, 20));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 57, 20));
 
         Importe1.setEditable(false);
         Importe1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
@@ -662,7 +657,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 Importe1KeyReleased(evt);
             }
         });
-        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 100, 20));
+        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 100, 20));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -676,28 +671,28 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel13.setText("Cantidad de:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel14.setText("Concepto:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         Concepto1.setEditable(false);
         Concepto1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Concepto1.setBorder(null);
-        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 240, 20));
+        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 180, 20));
 
         jLabel15.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel15.setText("En:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 30, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 20, -1));
 
         En1.setEditable(false);
         En1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         En1.setBorder(null);
-        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 200, 20));
+        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 130, 20));
 
         Fecha1.setDateFormatString("'A' d 'de' MMMM 'de' y");
-        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 240, -1));
+        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 180, -1));
 
         ImporteEsc1.setEditable(false);
         ImporteEsc1.setColumns(20);
@@ -706,64 +701,49 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         ImporteEsc1.setRows(5);
         jScrollPane2.setViewportView(ImporteEsc1);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, -1));
-
-        jLabel16.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel16.setText("CONFORT SERVICE");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel17.setText("RECIBO DE DINERO.");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 100, 10));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 240, 10));
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 270, 10));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 160, 10));
-        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 270, 10));
-
-        jLabel19.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel19.setText("PRESTIGE DE MEXICO S.A DE C.V");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 360, 60));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 100, 10));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 180, 10));
+        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 190, 10));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 100, 10));
+        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 190, 10));
         jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Recibe");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 50, 20));
-        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 200, 10));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 50, 20));
+        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 130, 10));
 
         jLabel23.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel23.setText("# Vale");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 50, 20));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 40, 20));
 
         Rec1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         Rec1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(Rec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 270, 20));
+        jPanel2.add(Rec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 190, 20));
 
         jLabel47.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabel47.setText("Entrega");
-        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 20));
+        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 20));
 
         Entr1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         Entr1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(Entr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 270, 20));
+        jPanel2.add(Entr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 190, 20));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 500, 260));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 370, 10));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 380, 380));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 310, 10));
 
         jLabel21.setText("Recibe");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, -1, -1));
 
         jLabel22.setText("# Vale");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 20));
-        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 370, 10));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 20));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 310, 10));
 
         jLabel48.setText("Entrega");
-        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, -1, -1));
+        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -951,10 +931,6 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(jLabel25)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
@@ -1007,7 +983,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                         .addComponent(jLabel41)
                         .addGap(27, 27, 27)
                         .addComponent(jLabel43)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1059,7 +1035,11 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                     .addComponent(SM2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SM1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SM050, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29))
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel25)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1149,22 +1129,27 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
                     .addComponent(TR))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 500, 310));
-
-        jLabel30.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel30.setText("CONFORT SERVICE PRESTIGE ");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 430, 380));
 
         Rec.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(Rec, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 370, 30));
+        jPanel1.add(Rec, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 310, 30));
 
         Entr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(Entr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 370, 30));
+        jPanel1.add(Entr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 310, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 940, 570));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 1170, -1));
+
+        jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Microsoft-Excel-Logo.png"))); // NOI18N
+        jLabel46.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel46.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel46MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1302,7 +1287,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                 Rec1.setText(rs.getString(26));
                 Entr.setText(rs.getString(27));
                 Entr1.setText(rs.getString(27));
-                
+
             }
             ps.isClosed();
             rs.isClosed();
@@ -1407,6 +1392,317 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         TDEN();
     }//GEN-LAST:event_M5KeyReleased
 
+    private void jLabel46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel46MouseClicked
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
+        chooser.setSelectedFile(new File("Reporte de Datos BD"));
+        chooser.setFileFilter(filter);
+        chooser.setDialogTitle("Guardar archivo");
+        chooser.setAcceptAllFileFilterUsed(false);
+        if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+            String ruta = chooser.getSelectedFile().toString().concat(".xlsx"); //extención del archivo excel
+        }
+        try {
+            String ruta = chooser.getSelectedFile().toString().concat(".xlsx");
+            File archivoXLS = new File(ruta);
+            if (archivoXLS.exists()) {
+                archivoXLS.delete();
+            }
+            archivoXLS.createNewFile();
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection(
+                    "jdbc:mysql://192.168.1.170:3306/confort2022",
+                    "Servidor",
+                    "Confort1022"
+            );
+            Statement RHstatement = connect.createStatement();
+            ResultSet resultSetRH = RHstatement.executeQuery("SELECT * FROM `semanal.vales`");
+            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+                XSSFWorkbook libro = new XSSFWorkbook();
+                XSSFSheet spreadsheet = libro.createSheet("Datos vales");
+
+                XSSFCellStyle Encabezado = libro.createCellStyle();
+                Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+
+                XSSFCellStyle Stilodd = libro.createCellStyle();
+
+                Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
+                Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle StiloEEEE = libro.createCellStyle();
+
+                StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
+                StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
+
+                XSSFCellStyle Contenido = libro.createCellStyle();
+                Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
+                Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
+                Contenido.setBorderBottom(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
+                Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                XSSFRow row = spreadsheet.createRow((short) 0);
+                XSSFCell cell = (XSSFCell) row.createCell((short) 0);
+                cell.setCellValue("Datos vales");
+                cell.setCellStyle(Encabezado);
+
+                spreadsheet.addMergedRegion(
+                        new CellRangeAddress(
+                                0, //first row (0-based)
+                                0, //last row (0-based)
+                                0, //first column (0-based)
+                                5 //last column (0-based)
+                        )
+                );
+                row = spreadsheet.createRow(1);
+                cell = row.createCell(0);
+                cell.setCellValue("# Vale");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(1);
+                cell.setCellValue("Bueno por:");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(2);
+                cell.setCellValue("Recibi de");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(3);
+                cell.setCellValue("Concepto");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(4);
+                cell.setCellValue("EN");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(5);
+                cell.setCellValue("Fecha");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(6);
+                cell.setCellValue("Cantidad");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(7);
+                cell.setCellValue("Billetes 1000");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(8);
+                cell.setCellValue("Subtotal 1000");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(9);
+                cell.setCellValue("Billetes 500");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(10);
+                cell.setCellValue("Subtotal 500");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(11);
+                cell.setCellValue("Billetes 200");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(12);
+                cell.setCellValue("Subtotal 200");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(13);
+                cell.setCellValue("Billetes 100");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(14);
+                cell.setCellValue("Subtotal 100");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(15);
+                cell.setCellValue("Billetes 50");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(16);
+                cell.setCellValue("Subtotal 50");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(17);
+                cell.setCellValue("Billetes 20");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(18);
+                cell.setCellValue("Subtotal 20");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(19);
+                cell.setCellValue("Monedas 20");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(20);
+                cell.setCellValue("Subtotal 20");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(21);
+                cell.setCellValue("Monedas 10");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(22);
+                cell.setCellValue("Subtotal 10");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(23);
+                cell.setCellValue("Monedas 5");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(24);
+                cell.setCellValue("Subtotal 5");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(25);
+                cell.setCellValue("Monedas 2");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(26);
+                cell.setCellValue("Subtotal 2");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(27);
+                cell.setCellValue("Monedas 1");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(28);
+                cell.setCellValue("Subtotal 1");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(29);
+                cell.setCellValue("Monedas 0.50");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(30);
+                cell.setCellValue("Subtotal 0.50");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(31);
+                cell.setCellValue("Total real");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(32);
+                cell.setCellValue("Recibe");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(33);
+                cell.setCellValue("Entrega");
+
+                int i = 2;
+
+                while (resultSetRH.next()) {
+                    row = spreadsheet.createRow(i);
+                    cell = row.createCell(0);
+                    cell.setCellValue(resultSetRH.getInt(1));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellValue(resultSetRH.getString(2));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellValue(resultSetRH.getString(3));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellValue(resultSetRH.getString(4));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(4);
+                    cell.setCellValue(resultSetRH.getString(5));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(5);
+                    cell.setCellValue(resultSetRH.getString(6));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(6);
+                    cell.setCellValue(resultSetRH.getString(7));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(7);
+                    cell.setCellValue(resultSetRH.getDouble(8));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(8);
+                    cell.setCellValue(resultSetRH.getDouble(9));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(9);
+                    cell.setCellValue(resultSetRH.getDouble(10));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(10);
+                    cell.setCellValue(resultSetRH.getDouble(11));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(11);
+                    cell.setCellValue(resultSetRH.getDouble(12));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(12);
+                    cell.setCellValue(resultSetRH.getDouble(13));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(13);
+                    cell.setCellValue(resultSetRH.getDouble(14));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(14);
+                    cell.setCellValue(resultSetRH.getDouble(15));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(15);
+                    cell.setCellValue(resultSetRH.getDouble(16));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(16);
+                    cell.setCellValue(resultSetRH.getDouble(17));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(17);
+                    cell.setCellValue(resultSetRH.getDouble(18));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(18);
+                    cell.setCellValue(resultSetRH.getDouble(19));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(19);
+                    cell.setCellValue(resultSetRH.getDouble(20));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(20);
+                    cell.setCellValue(resultSetRH.getDouble(21));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(21);
+                    cell.setCellValue(resultSetRH.getDouble(22));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(22);
+                    cell.setCellValue(resultSetRH.getDouble(23));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(23);
+                    cell.setCellValue(resultSetRH.getDouble(24));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(24);
+                    cell.setCellValue(resultSetRH.getDouble(25));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(25);
+                    cell.setCellValue(resultSetRH.getDouble(26));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(26);
+                    cell.setCellValue(resultSetRH.getDouble(27));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(27);
+                    cell.setCellValue(resultSetRH.getDouble(28));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(28);
+                    cell.setCellValue(resultSetRH.getDouble(29));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(29);
+                    cell.setCellValue(resultSetRH.getDouble(30));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(30);
+                    cell.setCellValue(resultSetRH.getDouble(31));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(31);
+                    cell.setCellValue(resultSetRH.getDouble(32));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(32);
+                    cell.setCellValue(resultSetRH.getString(33));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(33);
+                    cell.setCellValue(resultSetRH.getString(34));
+                    cell.setCellStyle(Contenido);
+                    i++;
+                }
+
+                spreadsheet.getPrintSetup();
+                spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
+                spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
+                spreadsheet.setMargin(HSSFSheet.BottomMargin, (double) 0.1); // Margen (abajo)
+                spreadsheet.setMargin(HSSFSheet.LeftMargin, (double) 0.1); // Margen (izquierda)
+                spreadsheet.setMargin(HSSFSheet.RightMargin, (double) 0.1); // Margen (derecha)
+                spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
+                spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
+                spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
+
+                spreadsheet.setVerticallyCenter(true);
+                libro.write(archivo);
+            }
+            Desktop.getDesktop().open(archivoXLS);
+        } catch (IOException | NumberFormatException e) {
+
+            try {
+                throw e;
+            } catch (IOException | NumberFormatException ex) {
+                Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_jLabel46MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1494,10 +1790,6 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -1510,7 +1802,6 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1527,13 +1818,11 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

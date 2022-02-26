@@ -283,6 +283,89 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reporte"/>
+          </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="jMenu7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Estacionamiento"/>
+              </Properties>
+              <SubComponents>
+                <Menu class="javax.swing.JMenu" name="jMenu8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tehuantepec"/>
+                  </Properties>
+                  <SubComponents>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Por mes"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="General"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                  </SubComponents>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Iturbide"/>
+                  </Properties>
+                  <SubComponents>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Por mes"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="General"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                  </SubComponents>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu12">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Puente titla"/>
+                  </Properties>
+                  <SubComponents>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Por mes"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem14ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem15">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="General"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem15ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                  </SubComponents>
+                </Menu>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
+        </Menu>
       </SubComponents>
     </Menu>
   </NonVisualComponents>
@@ -363,37 +446,42 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="NR" min="-2" pref="130" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Group type="102" attributes="0">
+                                                      <Component id="año" min="-2" pref="223" max="-2" attributes="0"/>
+                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="Placas" max="32767" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
                                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <Component id="Placas" max="32767" attributes="0"/>
-                                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                                  <Component id="Modelo" max="32767" attributes="0"/>
-                                                                  <Component id="Marca" max="32767" attributes="0"/>
-                                                                  <Component id="MAIL" max="32767" attributes="0"/>
-                                                                  <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
-                                                                  <Component id="Ap" alignment="0" max="32767" attributes="0"/>
-                                                                  <Component id="Am" alignment="0" max="32767" attributes="0"/>
-                                                                  <Component id="Name" alignment="0" max="32767" attributes="0"/>
-                                                              </Group>
-                                                              <EmptySpace max="-2" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel14" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel18" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
+                                                          <Component id="Modelo" max="32767" attributes="0"/>
+                                                          <Component id="Marca" max="32767" attributes="0"/>
+                                                          <Component id="MAIL" max="32767" attributes="0"/>
+                                                          <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="Ap" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="Am" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="Name" alignment="0" max="32767" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel17" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel14" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel18" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                               <Component id="jScrollPane4" max="32767" attributes="0"/>
@@ -420,7 +508,7 @@
                                                           <Component id="IVA" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
-                                                  <Component id="año" alignment="0" min="-2" pref="223" max="-2" attributes="0"/>
+                                                  <Component id="Mescbx" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -526,7 +614,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                           <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
@@ -590,15 +678,17 @@
                                           <Component id="TP" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="Status" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="año" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="AddPen" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ModPen" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
-                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="año" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AddPen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ModPen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Mescbx" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTabbedPane2" pref="280" max="32767" attributes="0"/>
@@ -1354,6 +1444,35 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModPenActionPerformed"/>
                       </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel35">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Mes:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="Mescbx">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="13">
+                            <StringItem index="0" value="."/>
+                            <StringItem index="1" value="Enero"/>
+                            <StringItem index="2" value="Febrero"/>
+                            <StringItem index="3" value="Marzo"/>
+                            <StringItem index="4" value="Abril"/>
+                            <StringItem index="5" value="Mayo"/>
+                            <StringItem index="6" value="Junio"/>
+                            <StringItem index="7" value="Julio"/>
+                            <StringItem index="8" value="Agosto"/>
+                            <StringItem index="9" value="Septiembre"/>
+                            <StringItem index="10" value="Octubre"/>
+                            <StringItem index="11" value="Noviembre"/>
+                            <StringItem index="12" value="Diciembre"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>

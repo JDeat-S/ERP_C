@@ -318,7 +318,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         }
         Graphics2D g2d = (Graphics2D) graphics;
         //Punto donde empezará a imprimir dentro la pagina (100, 50)
-        g2d.translate(pageFormat.getImageableX() + 100,
+        g2d.translate(pageFormat.getImageableX(),
                 pageFormat.getImageableY() + 50);
         g2d.scale(0.50, 0.50); //Reducción de la impresión al 50%
         jPanel1.printAll(graphics);
@@ -333,6 +333,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         txtbtngen = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
         Move = new javax.swing.JLabel();
+        btnexit = new javax.swing.JPanel();
+        txtbtnexit = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         NV = new javax.swing.JTextField();
@@ -348,9 +350,6 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         Fecha = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         ImporteEsc = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
@@ -371,15 +370,11 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         Fecha1 = new com.toedter.calendar.JDateChooser();
         jScrollPane2 = new javax.swing.JScrollPane();
         ImporteEsc1 = new javax.swing.JTextArea();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
-        jLabel19 = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
         jLabel20 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
@@ -391,7 +386,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jSeparator14 = new javax.swing.JSeparator();
-        jLabel24 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -438,11 +433,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         TR = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         Rec = new javax.swing.JLabel();
         Entr = new javax.swing.JComboBox<>();
-        btnexit = new javax.swing.JPanel();
-        txtbtnexit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -472,20 +464,14 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         btngen.setLayout(btngenLayout);
         btngenLayout.setHorizontalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btngenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtbtngen, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(txtbtngen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1170, Short.MAX_VALUE)
         );
         btngenLayout.setVerticalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btngenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(txtbtngen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
         );
 
-        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 940, 70));
+        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 1170, 70));
 
         Harder1.setBackground(new java.awt.Color(255, 255, 255));
         Harder1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -519,8 +505,8 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         Harder1Layout.setHorizontalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Harder1Layout.createSequentialGroup()
-                .addComponent(Move, javax.swing.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Move, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
+                .addGap(46, 46, 46))
         );
         Harder1Layout.setVerticalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,7 +515,43 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 .addComponent(Move, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
+        getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 40));
+
+        btnexit.setBackground(new java.awt.Color(255, 255, 255));
+
+        txtbtnexit.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        txtbtnexit.setForeground(new java.awt.Color(0, 0, 0));
+        txtbtnexit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtbtnexit.setText("x");
+        txtbtnexit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtbtnexit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtbtnexitMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtbtnexitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtbtnexitMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnexitLayout = new javax.swing.GroupLayout(btnexit);
+        btnexit.setLayout(btnexitLayout);
+        btnexitLayout.setHorizontalGroup(
+            btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        btnexitLayout.setVerticalGroup(
+            btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 0, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -537,7 +559,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
 
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("A-22");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, 20));
 
         NV.setEditable(false);
         NV.setForeground(new java.awt.Color(255, 51, 51));
@@ -548,10 +570,10 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 NVKeyReleased(evt);
             }
         });
-        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 90, 20));
+        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 90, 20));
 
         jLabel2.setText("Bueno por:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         Importe.setText("0");
         Importe.setBorder(null);
@@ -560,10 +582,10 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 ImporteKeyReleased(evt);
             }
         });
-        jPanel1.add(Importe, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 20));
+        jPanel1.add(Importe, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 120, 20));
 
         jLabel3.setText("Recibi de:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         RD.setBorder(null);
         RD.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -571,13 +593,13 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 RDKeyReleased(evt);
             }
         });
-        jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 160, 20));
+        jPanel1.add(RD, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 160, 20));
 
         jLabel4.setText("Cantidad de:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
 
         jLabel5.setText("Concepto:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
         Concepto.setBorder(null);
         Concepto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -585,10 +607,10 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 ConceptoKeyReleased(evt);
             }
         });
-        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 250, 20));
+        jPanel1.add(Concepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 240, 20));
 
         jLabel6.setText("En:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         En.setBorder(null);
         En.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -596,7 +618,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 EnKeyReleased(evt);
             }
         });
-        jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 120, 20));
+        jPanel1.add(En, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 120, 20));
 
         Fecha.setDateFormatString("'A' d 'de' MMMM 'de' y");
         Fecha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -604,30 +626,20 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 FechaMousePressed(evt);
             }
         });
-        jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 200, -1));
+        jPanel1.add(Fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 190, -1));
 
         ImporteEsc.setColumns(20);
-        ImporteEsc.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        ImporteEsc.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         ImporteEsc.setLineWrap(true);
         ImporteEsc.setRows(5);
         jScrollPane1.setViewportView(ImporteEsc);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 222, -1));
-
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel7.setText("DE MEXICO S.A DE C.V");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, -1, -1));
-
-        jLabel8.setText("RECIBO DE DINERO.");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, -1, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 120, 10));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 340, 10));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 170, 10));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 90, 10));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 250, 10));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 340, 50));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 330, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 90, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 240, 10));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -637,20 +649,21 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 51, 51));
         jLabel10.setText("A-22");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 30, 20));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 20));
 
         NV1.setEditable(false);
         NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         NV1.setForeground(new java.awt.Color(255, 51, 51));
         NV1.setText("0");
         NV1.setBorder(null);
-        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 160, 20));
+        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 100, 20));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Bueno por:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 57, 20));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 57, 20));
 
+        Importe1.setEditable(false);
         Importe1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Importe1.setText("0");
         Importe1.setBorder(null);
@@ -659,108 +672,95 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 Importe1KeyReleased(evt);
             }
         });
-        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 100, 20));
+        jPanel2.add(Importe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 100, 20));
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Recibi de:");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 45, 20));
 
+        RD1.setEditable(false);
         RD1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         RD1.setBorder(null);
         jPanel2.add(RD1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 165, 20));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel13.setText("Cantidad de:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, -1, -1));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel14.setText("Concepto:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
+        Concepto1.setEditable(false);
         Concepto1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         Concepto1.setBorder(null);
-        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 240, 20));
+        jPanel2.add(Concepto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 180, 20));
 
         jLabel15.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel15.setText("En:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 30, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 20, -1));
 
+        En1.setEditable(false);
         En1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         En1.setBorder(null);
-        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 200, 20));
+        jPanel2.add(En1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 130, 20));
 
         Fecha1.setDateFormatString("'A' d 'de' MMMM 'de' y");
-        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 240, -1));
+        jPanel2.add(Fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 180, -1));
 
+        ImporteEsc1.setEditable(false);
         ImporteEsc1.setColumns(20);
         ImporteEsc1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         ImporteEsc1.setLineWrap(true);
         ImporteEsc1.setRows(5);
         jScrollPane2.setViewportView(ImporteEsc1);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, -1));
-
-        jLabel16.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel16.setText("CONFORT SERVICE");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel17.setText("RECIBO DE DINERO.");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 100, 10));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 240, 10));
-        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 270, 10));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 160, 10));
-        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 270, 10));
-
-        jLabel19.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
-        jLabel19.setText("PRESTIGE DE MEXICO S.A DE C.V");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 360, 60));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 100, 10));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 180, 10));
+        jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 190, 10));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 100, 10));
+        jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 190, 10));
         jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Recibe");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 50, 20));
-        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 200, 10));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 50, 20));
+        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 130, 10));
 
         jLabel23.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel23.setText("# Vale");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 50, 20));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 40, 20));
 
         Rec1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         Rec1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Rec1.setText("jLabel46");
-        jPanel2.add(Rec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 270, 20));
+        jPanel2.add(Rec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 190, 20));
 
         jLabel47.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         jLabel47.setText("Entrega");
-        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 20));
+        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 20));
 
         Entr1.setBackground(new java.awt.Color(255, 255, 255));
+        Entr1.setEditable(true);
         Entr1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        Entr1.setForeground(new java.awt.Color(0, 0, 0));
         Entr1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Entr1.setBorder(null);
-        jPanel2.add(Entr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 270, -1));
+        jPanel2.add(Entr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 200, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 500, 260));
-        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 370, 10));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 380, 380));
+        jPanel1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 310, 10));
 
         jLabel21.setText("Recibe");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
 
         jLabel22.setText("# Vale");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, -1, 20));
-        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 370, 10));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 20));
+        jPanel1.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 310, 10));
 
-        jLabel24.setText("Entrega");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, -1, -1));
+        jLabel48.setText("Entrega");
+        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -936,10 +936,6 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(jLabel25)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
@@ -992,7 +988,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                         .addComponent(jLabel41)
                         .addGap(27, 27, 27)
                         .addComponent(jLabel43)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1044,7 +1040,11 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                     .addComponent(SM2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SM1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SM050, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29))
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel25)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1134,64 +1134,19 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
                     .addComponent(TR))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 500, 310));
-
-        jLabel30.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel30.setText("CONFORT SERVICE PRESTIGE ");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 430, 380));
 
         Rec.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Rec.setText("jLabel47");
-        jPanel1.add(Rec, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 370, 30));
+        jPanel1.add(Rec, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 310, 30));
 
         Entr.setBackground(new java.awt.Color(255, 255, 255));
-        Entr.setForeground(new java.awt.Color(0, 0, 0));
         Entr.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        Entr.setBorder(null);
-        jPanel1.add(Entr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 370, -1));
+        jPanel1.add(Entr, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 310, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 570));
-
-        btnexit.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtbtnexit.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
-        txtbtnexit.setForeground(new java.awt.Color(0, 0, 0));
-        txtbtnexit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtbtnexit.setText("x");
-        txtbtnexit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txtbtnexit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtbtnexitMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txtbtnexitMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                txtbtnexitMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout btnexitLayout = new javax.swing.GroupLayout(btnexit);
-        btnexit.setLayout(btnexitLayout);
-        btnexitLayout.setHorizontalGroup(
-            btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnexitLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        btnexitLayout.setVerticalGroup(
-            btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnexitLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1170, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1217,32 +1172,6 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_Harder1MousePressed
-
-    private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
-        Importe1.setText(Importe.getText());
-        ImporteEsc.setText(Convertir(Importe.getText(), true));
-        ImporteEsc1.setText(ImporteEsc.getText());
-    }//GEN-LAST:event_ImporteKeyReleased
-
-    private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
-        ImporteEsc1.setText(Convertir(Importe1.getText(), true));
-    }//GEN-LAST:event_Importe1KeyReleased
-
-    private void NVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVKeyReleased
-        NV1.setText(NV.getText());
-    }//GEN-LAST:event_NVKeyReleased
-
-    private void ConceptoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConceptoKeyReleased
-        Concepto1.setText(Concepto.getText());
-    }//GEN-LAST:event_ConceptoKeyReleased
-
-    private void EnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EnKeyReleased
-        En1.setText(En.getText());
-    }//GEN-LAST:event_EnKeyReleased
-
-    private void RDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RDKeyReleased
-        RD1.setText(RD.getText());
-    }//GEN-LAST:event_RDKeyReleased
 
     private void txtbtngenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseClicked
         agregarvale();
@@ -1272,9 +1201,35 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         this.dispose();
     }//GEN-LAST:event_txtbtnexitMouseClicked
 
+    private void NVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVKeyReleased
+        NV1.setText(NV.getText());
+    }//GEN-LAST:event_NVKeyReleased
+
+    private void ImporteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ImporteKeyReleased
+        Importe1.setText(Importe.getText());
+        ImporteEsc.setText(Convertir(Importe.getText(), true));
+        ImporteEsc1.setText(ImporteEsc.getText());
+    }//GEN-LAST:event_ImporteKeyReleased
+
+    private void RDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RDKeyReleased
+        RD1.setText(RD.getText());
+    }//GEN-LAST:event_RDKeyReleased
+
+    private void ConceptoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ConceptoKeyReleased
+        Concepto1.setText(Concepto.getText());
+    }//GEN-LAST:event_ConceptoKeyReleased
+
+    private void EnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EnKeyReleased
+        En1.setText(En.getText());
+    }//GEN-LAST:event_EnKeyReleased
+
     private void FechaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FechaMousePressed
         Fecha1.setDate(Fecha.getDate());
     }//GEN-LAST:event_FechaMousePressed
+
+    private void Importe1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Importe1KeyReleased
+        ImporteEsc1.setText(Convertir(Importe1.getText(), true));
+    }//GEN-LAST:event_Importe1KeyReleased
 
     private void B1000KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B1000KeyReleased
         SB1000.setText("" + (BM * Double.parseDouble(B1000.getText())));
@@ -1306,35 +1261,35 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         TDEN();
     }//GEN-LAST:event_B20KeyReleased
 
-    private void M20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M20KeyReleased
-        SM20.setText("" + (MV * Double.parseDouble(M20.getText())));
+    private void M1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M1KeyReleased
+        SM1.setText("" + (MU * Double.parseDouble(M1.getText())));
         TDEN();
-    }//GEN-LAST:event_M20KeyReleased
+    }//GEN-LAST:event_M1KeyReleased
 
     private void M10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M10KeyReleased
         SM10.setText("" + (MD * Double.parseDouble(M10.getText())));
         TDEN();
     }//GEN-LAST:event_M10KeyReleased
 
-    private void M5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M5KeyReleased
-        SM5.setText("" + (MC * Double.parseDouble(M5.getText())));
+    private void M050KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M050KeyReleased
+        SM050.setText("" + (MCENT * Double.parseDouble(M050.getText())));
         TDEN();
-    }//GEN-LAST:event_M5KeyReleased
+    }//GEN-LAST:event_M050KeyReleased
+
+    private void M20KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M20KeyReleased
+        SM20.setText("" + (MV * Double.parseDouble(M20.getText())));
+        TDEN();
+    }//GEN-LAST:event_M20KeyReleased
 
     private void M2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M2KeyReleased
         SM2.setText("" + (MDOS * Double.parseDouble(M2.getText())));
         TDEN();
     }//GEN-LAST:event_M2KeyReleased
 
-    private void M1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M1KeyReleased
-        SM1.setText("" + (MU * Double.parseDouble(M1.getText())));
+    private void M5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M5KeyReleased
+        SM5.setText("" + (MC * Double.parseDouble(M5.getText())));
         TDEN();
-    }//GEN-LAST:event_M1KeyReleased
-
-    private void M050KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M050KeyReleased
-        SM050.setText("" + (MCENT * Double.parseDouble(M050.getText())));
-        TDEN();
-    }//GEN-LAST:event_M050KeyReleased
+    }//GEN-LAST:event_M5KeyReleased
 
     /**
      * @param args the command line arguments
@@ -1420,23 +1375,17 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -1454,11 +1403,9 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

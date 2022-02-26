@@ -8,6 +8,7 @@ import Nomina.ModulosQ.*;
 import Nomina.ModulosS.*;
 import Nomina.*;
 import Nomina.Listas.*;
+import Pensiones.Logicas.*;
 import RH.*;
 import RH.Depositos.*;
 import Semanal.*;
@@ -200,6 +201,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             modelo.addColumn("Razon social");
             modelo.addColumn("# Padron");
             modelo.addColumn("Inicio de pension");
+            modelo.addColumn("Mes");
             modelo.addColumn("Fin de pension");
             modelo.addColumn("Importe");
             modelo.addColumn("Recargo");
@@ -213,7 +215,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NF*/50, /*NL*/ 50, /*NF*/ 50,/*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
                 /*SERV*/ 50, /*QUIN*/ 60, /*NQ*/ 50, /*PAG*/ 60, /*PEN*/ 60,/*PDODT*/ 60, 70, 70, 70, 70,
-                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
+                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -292,6 +294,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             modelo.addColumn("Razon social");
             modelo.addColumn("# Padron");
             modelo.addColumn("Inicio de pension");
+            modelo.addColumn("Mes");
             modelo.addColumn("Fin de pension");
             modelo.addColumn("Importe");
             modelo.addColumn("Recargo");
@@ -305,7 +308,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NF*/50, /*NL*/ 50, /*NF*/ 50,/*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
                 /*SERV*/ 50, /*QUIN*/ 60, /*NQ*/ 50, /*PAG*/ 60, /*PEN*/ 60,/*PDODT*/ 60, 70, 70, 70, 70,
-                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
+                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -384,6 +387,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             modelo.addColumn("Razon social");
             modelo.addColumn("# Padron");
             modelo.addColumn("Inicio de pension");
+            modelo.addColumn("Mes");
             modelo.addColumn("Fin de pension");
             modelo.addColumn("Importe");
             modelo.addColumn("Recargo");
@@ -397,7 +401,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NF*/50, /*NL*/ 50, /*NF*/ 50,/*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
                 /*SERV*/ 50, /*QUIN*/ 60, /*NQ*/ 50, /*PAG*/ 60, /*PEN*/ 60,/*PDODT*/ 60, 70, 70, 70, 70,
-                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
+                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -529,6 +533,8 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         AddPen = new javax.swing.JButton();
         Status = new javax.swing.JComboBox<>();
         ModPen = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        Mescbx = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -563,6 +569,17 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         jMenuItem18 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         ADMV1 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu12 = new javax.swing.JMenu();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -985,6 +1002,10 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             }
         });
 
+        jLabel35.setText("Mes:");
+
+        Mescbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1008,32 +1029,36 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NR, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel35))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Placas)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel15))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(Modelo)
+                                            .addComponent(Marca)
+                                            .addComponent(MAIL)
+                                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Ap, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Am, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Name, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(Placas)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel15))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(Modelo)
-                                                    .addComponent(Marca)
-                                                    .addComponent(MAIL)
-                                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Ap, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Am, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(Name, javax.swing.GroupLayout.Alignment.LEADING))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(jScrollPane4)
@@ -1056,7 +1081,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                                             .addComponent(jLabel26)
                                             .addComponent(Rec)
                                             .addComponent(IVA)))
-                                    .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Mescbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1191,14 +1216,16 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                             .addComponent(jLabel18)
                             .addComponent(jLabel26)
                             .addComponent(TP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AddPen)
-                            .addComponent(ModPen)))
+                            .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddPen)
+                    .addComponent(ModPen)
+                    .addComponent(jLabel35)
+                    .addComponent(Mescbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                 .addContainerGap())
@@ -1446,6 +1473,74 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
 
         jMenuBar1.add(Menuadm);
 
+        jMenu1.setText("Reporte");
+
+        jMenu7.setText("Estacionamiento");
+
+        jMenu8.setText("Tehuantepec");
+
+        jMenuItem2.setText("Por mes");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem2);
+
+        jMenuItem3.setText("General");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem3);
+
+        jMenu7.add(jMenu8);
+
+        jMenu11.setText("Iturbide");
+
+        jMenuItem4.setText("Por mes");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu11.add(jMenuItem4);
+
+        jMenuItem9.setText("General");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu11.add(jMenuItem9);
+
+        jMenu7.add(jMenu11);
+
+        jMenu12.setText("Puente titla");
+
+        jMenuItem14.setText("Por mes");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jMenuItem14);
+
+        jMenuItem15.setText("General");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jMenuItem15);
+
+        jMenu7.add(jMenu12);
+
+        jMenu1.add(jMenu7);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1465,9 +1560,9 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     private void AddPenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPenActionPerformed
         String SQL = "INSERT INTO `pensiones." + Est.getSelectedItem().toString() + "` (`#registro`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Direccion`, `Mail`, "
                 + "`#Casa`, `#Oficina`, `#Celular`, `Observaciones`, `Placas`, `Marca`, `Modelo`, `Año`, `Color`, `Clase auto`,"
-                + " `Tipo de pension`, `Status`, `Referencia Bancaria`, `Razon Social`, `#padron`, `Iniciopension`, `Finpension`, "
+                + " `Tipo de pension`, `Status`, `Referencia Bancaria`, `Razon Social`, `#padron`, `Iniciopension`, `mes`, `Finpension`, "
                 + "`Importe`, `Recargo`, `IVA`, `Total a pagar`, `Total pagado`, `Fecha de pago`, `Metodo`, `CTE`) VALUES "
-                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
             pst.setInt(1, Integer.parseInt(NR.getText()));
@@ -1492,15 +1587,16 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             pst.setString(20, RS.getText());
             pst.setString(21, NP.getText());
             pst.setString(22, IDP.getText());
-            pst.setString(23, FDP.getText());
-            pst.setString(24, Importe.getText());
-            pst.setString(25, RecImporte.getText());
-            pst.setString(26, IVAImporte.getText());
-            pst.setString(27, TAP.getText());
-            pst.setString(28, TP.getText());
-            pst.setString(29, FechaDP.getText());
-            pst.setString(30, Metodo.getText());
-            pst.setString(31, NS.getText());
+            pst.setString(23, Mescbx.getSelectedItem().toString());
+            pst.setString(24, FDP.getText());
+            pst.setString(25, Importe.getText());
+            pst.setString(26, RecImporte.getText());
+            pst.setString(27, IVAImporte.getText());
+            pst.setString(28, TAP.getText());
+            pst.setString(29, TP.getText());
+            pst.setString(30, FechaDP.getText());
+            pst.setString(31, Metodo.getText());
+            pst.setString(32, NS.getText());
 
             pst.executeUpdate();
 
@@ -1524,6 +1620,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             CDA.setText("");
             TDP.setText("");
             Status.setSelectedIndex(0);
+            Mescbx.setSelectedIndex(0);
             RB.setText("");
             RS.setText("");
             NP.setText("0");
@@ -1611,7 +1708,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                 + " `#Casa` = ?, `#Oficina` = ?, `#Celular` = ?, `Observaciones` = ?, `Placas` = ?,"
                 + " `Marca` = ?, `Modelo` = ?, `Año` = ?, `Color` = ?, `Clase auto` = ?, `Tipo de pension` = ?,"
                 + " `Status` = ?, `Referencia Bancaria` = ?, `Razon Social` = ?, `#padron` = ?,"
-                + " `Iniciopension` = ?, `Finpension` = ?, `Importe` = ?, `Recargo` = ?, `IVA` = ?,"
+                + " `Iniciopension` = ?, `Mes` = ?, `Finpension` = ?, `Importe` = ?, `Recargo` = ?, `IVA` = ?,"
                 + " `Total a pagar` = ?, `Total pagado` = ?, `Fecha de pago` = ?, `Metodo` = ?, `CTE` = ?"
                 + " WHERE `pensiones." + Est.getSelectedItem().toString() + "`.`#registro` = ?";
         try {
@@ -1638,16 +1735,17 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             pst.setString(20, RS.getText());
             pst.setString(21, NP.getText());
             pst.setString(22, IDP.getText());
-            pst.setString(23, FDP.getText());
-            pst.setString(24, Importe.getText());
-            pst.setString(25, RecImporte.getText());
-            pst.setString(26, IVAImporte.getText());
-            pst.setString(27, TAP.getText());
-            pst.setString(28, TP.getText());
-            pst.setString(29, FechaDP.getText());
-            pst.setString(30, Metodo.getText());
-            pst.setString(31, NS.getText());
-            pst.setInt(32, Integer.parseInt(NR.getText()));
+            pst.setString(23, Mescbx.getSelectedItem().toString());
+            pst.setString(24, FDP.getText());
+            pst.setString(25, Importe.getText());
+            pst.setString(26, RecImporte.getText());
+            pst.setString(27, IVAImporte.getText());
+            pst.setString(28, TAP.getText());
+            pst.setString(29, TP.getText());
+            pst.setString(30, FechaDP.getText());
+            pst.setString(31, Metodo.getText());
+            pst.setString(32, NS.getText());
+            pst.setInt(33, Integer.parseInt(NR.getText()));
 
             pst.executeUpdate();
 
@@ -1671,6 +1769,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             CDA.setText("");
             TDP.setText("");
             Status.setSelectedIndex(0);
+            Mescbx.setSelectedIndex(0);
             RB.setText("");
             RS.setText("");
             NP.setText("0");
@@ -1723,15 +1822,21 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         RS.setText(String.valueOf(TTehuantepec.getValueAt(fila, 19)));
         NP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 20)));
         IDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 21)));
-        FDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 22)));
-        Importe.setText(String.valueOf(TTehuantepec.getValueAt(fila, 23)));
-        RecImporte.setText(String.valueOf(TTehuantepec.getValueAt(fila, 24)));
-        IVAImporte.setText(String.valueOf(TTehuantepec.getValueAt(fila, 25)));
-        TAP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 26)));
-        TP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 27)));
-        FDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 28)));
-        Metodo.setText(String.valueOf(TTehuantepec.getValueAt(fila, 29)));
-        NS.setText(String.valueOf(TTehuantepec.getValueAt(fila, 30)));
+        String combo5 = model.getValueAt(fila, 22).toString();
+        for (int i = 0; i < Mescbx.getItemCount(); i++) {
+            if (Mescbx.getItemAt(i).equalsIgnoreCase(combo5)) {
+                Mescbx.setSelectedIndex(i);
+            }
+        }
+        FDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 23)));
+        Importe.setText(String.valueOf(TTehuantepec.getValueAt(fila, 24)));
+        RecImporte.setText(String.valueOf(TTehuantepec.getValueAt(fila, 25)));
+        IVAImporte.setText(String.valueOf(TTehuantepec.getValueAt(fila, 26)));
+        TAP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 27)));
+        TP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 28)));
+        FDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 29)));
+        Metodo.setText(String.valueOf(TTehuantepec.getValueAt(fila, 30)));
+        NS.setText(String.valueOf(TTehuantepec.getValueAt(fila, 31)));
 
         if (Double.parseDouble(RecImporte.getText()) >= 0.1) {
             Rec.setSelected(true);
@@ -1777,15 +1882,21 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         RS.setText(String.valueOf(Titurbide.getValueAt(fila, 19)));
         NP.setText(String.valueOf(Titurbide.getValueAt(fila, 20)));
         IDP.setText(String.valueOf(Titurbide.getValueAt(fila, 21)));
-        FDP.setText(String.valueOf(Titurbide.getValueAt(fila, 22)));
-        Importe.setText(String.valueOf(Titurbide.getValueAt(fila, 23)));
-        RecImporte.setText(String.valueOf(Titurbide.getValueAt(fila, 24)));
-        IVAImporte.setText(String.valueOf(Titurbide.getValueAt(fila, 25)));
-        TAP.setText(String.valueOf(Titurbide.getValueAt(fila, 26)));
-        TP.setText(String.valueOf(Titurbide.getValueAt(fila, 27)));
-        FDP.setText(String.valueOf(Titurbide.getValueAt(fila, 28)));
-        Metodo.setText(String.valueOf(Titurbide.getValueAt(fila, 29)));
-        NS.setText(String.valueOf(Titurbide.getValueAt(fila, 30)));
+        String combo5 = model.getValueAt(fila, 22).toString();
+        for (int i = 0; i < Mescbx.getItemCount(); i++) {
+            if (Mescbx.getItemAt(i).equalsIgnoreCase(combo5)) {
+                Mescbx.setSelectedIndex(i);
+            }
+        }
+        FDP.setText(String.valueOf(Titurbide.getValueAt(fila, 23)));
+        Importe.setText(String.valueOf(Titurbide.getValueAt(fila, 24)));
+        RecImporte.setText(String.valueOf(Titurbide.getValueAt(fila, 25)));
+        IVAImporte.setText(String.valueOf(Titurbide.getValueAt(fila, 26)));
+        TAP.setText(String.valueOf(Titurbide.getValueAt(fila, 27)));
+        TP.setText(String.valueOf(Titurbide.getValueAt(fila, 28)));
+        FDP.setText(String.valueOf(Titurbide.getValueAt(fila, 29)));
+        Metodo.setText(String.valueOf(Titurbide.getValueAt(fila, 30)));
+        NS.setText(String.valueOf(Titurbide.getValueAt(fila, 31)));
 
         if (Double.parseDouble(RecImporte.getText()) >= 0.1) {
             Rec.setSelected(true);
@@ -1831,15 +1942,21 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         RS.setText(String.valueOf(Tptetitla.getValueAt(fila, 19)));
         NP.setText(String.valueOf(Tptetitla.getValueAt(fila, 20)));
         IDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 21)));
-        FDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 22)));
-        Importe.setText(String.valueOf(Tptetitla.getValueAt(fila, 23)));
-        RecImporte.setText(String.valueOf(Tptetitla.getValueAt(fila, 24)));
-        IVAImporte.setText(String.valueOf(Tptetitla.getValueAt(fila, 25)));
-        TAP.setText(String.valueOf(Tptetitla.getValueAt(fila, 26)));
-        TP.setText(String.valueOf(Tptetitla.getValueAt(fila, 27)));
-        FDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 28)));
-        Metodo.setText(String.valueOf(Tptetitla.getValueAt(fila, 29)));
-        NS.setText(String.valueOf(Tptetitla.getValueAt(fila, 30)));
+        String combo5 = model.getValueAt(fila, 22).toString();
+        for (int i = 0; i < Mescbx.getItemCount(); i++) {
+            if (Mescbx.getItemAt(i).equalsIgnoreCase(combo5)) {
+                Mescbx.setSelectedIndex(i);
+            }
+        }
+        FDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 23)));
+        Importe.setText(String.valueOf(Tptetitla.getValueAt(fila, 24)));
+        RecImporte.setText(String.valueOf(Tptetitla.getValueAt(fila, 25)));
+        IVAImporte.setText(String.valueOf(Tptetitla.getValueAt(fila, 26)));
+        TAP.setText(String.valueOf(Tptetitla.getValueAt(fila, 27)));
+        TP.setText(String.valueOf(Tptetitla.getValueAt(fila, 28)));
+        FDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 29)));
+        Metodo.setText(String.valueOf(Tptetitla.getValueAt(fila, 30)));
+        NS.setText(String.valueOf(Tptetitla.getValueAt(fila, 31)));
 
         if (Double.parseDouble(RecImporte.getText()) >= 0.1) {
             Rec.setSelected(true);
@@ -2189,6 +2306,36 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ADMV1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        PMtehuantepec regr = new PMtehuantepec(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        PMiturbide regr = new PMiturbide(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        PMptetitla regr = new PMptetitla(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        LogicaPenTehuantepec obj = new LogicaPenTehuantepec();
+        obj.Pensiones();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        LogicaPenIturbide obj = new LogicaPenIturbide();
+        obj.Pensiones();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        LogicaPenptetitla obj = new LogicaPenptetitla();
+        obj.Pensiones();
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2261,6 +2408,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     private javax.swing.JTextField MAIL;
     private javax.swing.JTextField Marca;
     private javax.swing.JMenu Menuadm;
+    private javax.swing.JComboBox<String> Mescbx;
     private javax.swing.JTextField Metodo;
     private javax.swing.JButton ModPen;
     private javax.swing.JTextField Modelo;
@@ -2319,18 +2467,24 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -2338,12 +2492,18 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
