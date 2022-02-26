@@ -19,6 +19,7 @@ import Filtros.*;
 import Inicio.Inicio_1;
 import Logicas.*;
 import Nomina.Listas.Listas_SI_5;
+import Nomina.Listas.Semanales.Listas_Sem_SI_5;
 import VentanasDReportes.RepNomSem_7;
 import java.awt.*;
 import java.awt.event.ItemEvent;
@@ -932,7 +933,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                     CDA.setVisible(false);
                 }
                 if (LP.getP3() == 0) {
-                    LDA.setVisible(false);
+                    LDAS.setVisible(false);
+                    LDAQ.setVisible(false);
                 }
                 if (LP.getP4() == 0) {
                     Reportes.setVisible(false);
@@ -5178,8 +5180,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         CDA = new javax.swing.JMenuItem();
         PRES = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        LDA = new javax.swing.JMenuItem();
+        LDAQ = new javax.swing.JMenu();
+        LDA2 = new javax.swing.JMenuItem();
         LDA1 = new javax.swing.JMenuItem();
+        LDAS = new javax.swing.JMenu();
+        LDA4 = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
@@ -10532,13 +10537,15 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jMenu1.add(jMenu2);
 
-        LDA.setText("Listas de asistencia C/IMSS ");
-        LDA.addActionListener(new java.awt.event.ActionListener() {
+        LDAQ.setText("Listas de asistencia Quin");
+
+        LDA2.setText("Listas de asistencia C/IMSS ");
+        LDA2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LDAActionPerformed(evt);
+                LDA2ActionPerformed(evt);
             }
         });
-        jMenu1.add(LDA);
+        LDAQ.add(LDA2);
 
         LDA1.setText("Listas de asistencia S/IMSS");
         LDA1.addActionListener(new java.awt.event.ActionListener() {
@@ -10546,7 +10553,21 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 LDA1ActionPerformed(evt);
             }
         });
-        jMenu1.add(LDA1);
+        LDAQ.add(LDA1);
+
+        jMenu1.add(LDAQ);
+
+        LDAS.setText("Listas de asistencia Sem");
+
+        LDA4.setText("Listas de asistencia S/IMSS ");
+        LDA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA4ActionPerformed(evt);
+            }
+        });
+        LDAS.add(LDA4);
+
+        jMenu1.add(LDAS);
 
         jMenuBar1.add(jMenu1);
 
@@ -22646,12 +22667,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_NomSemGenActionPerformed
 
-    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
-        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_LDAActionPerformed
-
     private void FDPItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FDPItemStateChanged
         FunMD();
     }//GEN-LAST:event_FDPItemStateChanged
@@ -22827,11 +22842,23 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ODT3ActionPerformed
 
+    private void LDA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA2ActionPerformed
+        Listas_CI_5 regr = new Listas_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA2ActionPerformed
+
     private void LDA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA1ActionPerformed
         Listas_SI_5 regr = new Listas_SI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDA1ActionPerformed
+
+    private void LDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA4ActionPerformed
+        Listas_Sem_SI_5 regr = new Listas_Sem_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -23599,8 +23626,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JButton Imprimir6;
     private javax.swing.JButton Imprimir7;
     private javax.swing.JButton Imprimir8;
-    private javax.swing.JMenuItem LDA;
     private javax.swing.JMenuItem LDA1;
+    private javax.swing.JMenuItem LDA2;
+    private javax.swing.JMenuItem LDA4;
+    private javax.swing.JMenu LDAQ;
+    private javax.swing.JMenu LDAS;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBE1;
     private javax.swing.JLabel LabelBE2;

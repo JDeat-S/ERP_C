@@ -16,6 +16,7 @@ import ColoresT.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
 import Logicas.*;
+import Pensiones.PensionesVP_7;
 import RH.*;
 import java.sql.ResultSetMetaData;
 import java.awt.HeadlessException;
@@ -1001,6 +1002,8 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         Depositos = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
         ADMV2 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Zonas y Servicios");
@@ -1953,6 +1956,22 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         });
         Menuadm.add(ADMV2);
 
+        jMenuItem7.setText("Edicion Pagos");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(jMenuItem7);
+
+        jMenuItem12.setText("Pensiones");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        Menuadm.add(jMenuItem12);
+
         jMenuBar1.add(Menuadm);
 
         setJMenuBar(jMenuBar1);
@@ -2463,6 +2482,18 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDA3ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        EdicionPagos_3 regr = new EdicionPagos_3(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        PensionesVP_7 regr = new PensionesVP_7(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2599,10 +2630,12 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;

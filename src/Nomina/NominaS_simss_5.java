@@ -20,6 +20,7 @@ import Filtros.FiltrosZonas;
 import Inicio.Inicio_1;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
+import Nomina.Listas.Semanales.Listas_Sem_SI_5;
 import VentanasDReportes.RepNomSem_7;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
@@ -724,7 +725,8 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                     CDA.setVisible(false);
                 }
                 if (LP.getP3() == 0) {
-                    LDA.setVisible(false);
+                    LDAQ.setVisible(false);
+                    LDAS.setVisible(false);
                 }
                 if (LP.getP4() == 0) {
                     Reportes.setVisible(false);
@@ -1457,8 +1459,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         CDA = new javax.swing.JMenuItem();
         PRES = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        LDAQ = new javax.swing.JMenu();
         LDA = new javax.swing.JMenuItem();
-        LDA3 = new javax.swing.JMenuItem();
+        LDA4 = new javax.swing.JMenuItem();
+        LDAS = new javax.swing.JMenu();
+        LDA5 = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
@@ -6675,21 +6680,37 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jMenu3.add(jMenu11);
 
+        LDAQ.setText("Listas de asistencia Quin");
+
         LDA.setText("Listas de asistencia C/IMSS ");
         LDA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LDAActionPerformed(evt);
             }
         });
-        jMenu3.add(LDA);
+        LDAQ.add(LDA);
 
-        LDA3.setText("Listas de asistencia S/IMSS");
-        LDA3.addActionListener(new java.awt.event.ActionListener() {
+        LDA4.setText("Listas de asistencia S/IMSS");
+        LDA4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LDA3ActionPerformed(evt);
+                LDA4ActionPerformed(evt);
             }
         });
-        jMenu3.add(LDA3);
+        LDAQ.add(LDA4);
+
+        jMenu3.add(LDAQ);
+
+        LDAS.setText("Listas de asistencia Sem");
+
+        LDA5.setText("Listas de asistencia S/IMSS ");
+        LDA5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA5ActionPerformed(evt);
+            }
+        });
+        LDAS.add(LDA5);
+
+        jMenu3.add(LDAS);
 
         jMenuBar1.add(jMenu3);
 
@@ -17460,11 +17481,17 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDAActionPerformed
 
-    private void LDA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA3ActionPerformed
+    private void LDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA4ActionPerformed
         Listas_SI_5 regr = new Listas_SI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_LDA3ActionPerformed
+    }//GEN-LAST:event_LDA4ActionPerformed
+
+    private void LDA5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA5ActionPerformed
+        Listas_Sem_SI_5 regr = new Listas_Sem_SI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -17717,7 +17744,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem LDA;
     private javax.swing.JMenuItem LDA1;
     private javax.swing.JMenuItem LDA2;
-    private javax.swing.JMenuItem LDA3;
+    private javax.swing.JMenuItem LDA4;
+    private javax.swing.JMenuItem LDA5;
+    private javax.swing.JMenu LDAQ;
+    private javax.swing.JMenu LDAS;
     private javax.swing.JButton LS;
     private javax.swing.JLabel LabelBE;
     private javax.swing.JLabel LabelBE1;
