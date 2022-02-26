@@ -1585,9 +1585,15 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ULDA))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ULDA))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TADIMSS))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1658,16 +1664,10 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(152, 152, 152)
-                                    .addComponent(jLabel2)
-                                    .addGap(89, 89, 89))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(TADIMSS)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(152, 152, 152)
+                                .addComponent(jLabel2)
+                                .addGap(89, 89, 89)))))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -2595,7 +2595,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 1) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -2742,7 +2742,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 2) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -2960,7 +2960,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 3) {
 
             String SQL = "INSERT INTO `nomina.listasem" + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -3252,7 +3252,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 4) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -3618,7 +3618,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 5) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -4059,7 +4059,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 6) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -4575,7 +4575,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 7) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -5296,7 +5296,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 8) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -5960,7 +5960,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 9) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -6698,7 +6698,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 10) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -7642,7 +7642,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 11) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -8521,9 +8521,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
             }
             //</editor-fold>
 
-        }
-
-        // <editor-fold defaultstate="collapsed" desc="Solo 12 listas">
+        }  // <editor-fold defaultstate="collapsed" desc="Solo 12 listas">
         if (Integer.parseInt(NDL.getText()) == 12) {
 
             String SQL = "INSERT INTO `nomina.listasem." + LDAZon.getSelectedItem().toString() + "` "
@@ -9619,7 +9617,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
         if (Integer.parseInt(NDL.getText()) == 13) {
 
             String SQL = "INSERT INTO `nomina.listas." + LDAZon.getSelectedItem().toString() + "` "
-                    + "(`NDL`, `Zona`, `Quincena`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
+                    + "(`NDL`, `Zona`, `Semana`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
                     + "`dd 1/16`, `dd 2/17`, `dd 3/18`, `dd 4/19`, `dd 5/20`, `dd 6/21`, `dd 7/22`,"
                     + " `dd 8/23`, `dd 9/24`, `dd 10/25`, `dd 11/26`, `dd 12/27`, `dd 13/28`, `dd 14/29`,"
                     + " `dd 15/30`, `dd 31`, `EEEE 1/16`, `EEEE 2/17`, `EEEE 3/18`, `EEEE 4/19`, `EEEE 5/20`,"
@@ -10651,7 +10649,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
     }
 
-  public void MDLDASIMSS() {
+    public void MDLDASIMSS() {
         String FiltroN = FillLSIName.getText();
         String FAP = FillLSIAp.getText();
         String FAM = FillLSIAm.getText();
@@ -11606,7 +11604,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -11707,7 +11705,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             //</editor-fold>
@@ -11819,7 +11817,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             //</editor-fold>
@@ -11931,7 +11929,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -12043,7 +12041,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -12156,7 +12154,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -12271,7 +12269,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -12382,7 +12380,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -12495,7 +12493,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -12608,7 +12606,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -12723,7 +12721,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -12836,7 +12834,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -12949,7 +12947,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -13062,7 +13060,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -13177,7 +13175,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -13290,7 +13288,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -13405,7 +13403,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -13518,7 +13516,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -13631,7 +13629,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -13744,7 +13742,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -13859,7 +13857,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -13972,7 +13970,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -14085,7 +14083,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -14198,7 +14196,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -14313,7 +14311,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -14462,7 +14460,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -14575,7 +14573,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             //</editor-fold>
@@ -14685,7 +14683,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             //</editor-fold>
@@ -14794,7 +14792,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -14903,7 +14901,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -15012,7 +15010,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -15123,7 +15121,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -15232,7 +15230,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -15341,7 +15339,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -15450,7 +15448,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -15561,7 +15559,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -15670,7 +15668,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -15779,7 +15777,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -15888,7 +15886,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -15999,7 +15997,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -16108,7 +16106,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -16219,7 +16217,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -16328,7 +16326,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -16437,7 +16435,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -16546,7 +16544,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -16657,7 +16655,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -16766,7 +16764,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -16875,7 +16873,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -16984,7 +16982,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -17095,7 +17093,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -17239,7 +17237,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -17340,7 +17338,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             //</editor-fold>
@@ -17452,7 +17450,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             //</editor-fold>
@@ -17564,7 +17562,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -17676,7 +17674,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -17789,7 +17787,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -17904,7 +17902,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -18015,7 +18013,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -18128,7 +18126,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -18241,7 +18239,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -18356,7 +18354,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -18469,7 +18467,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -18582,7 +18580,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -18695,7 +18693,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -18810,7 +18808,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -18923,7 +18921,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -19038,7 +19036,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -19151,7 +19149,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -19264,7 +19262,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -19377,7 +19375,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -19492,7 +19490,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -19605,7 +19603,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -19718,7 +19716,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -19831,7 +19829,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -19946,7 +19944,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -20095,7 +20093,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
 
             }
@@ -20208,7 +20206,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             //</editor-fold>
@@ -20318,7 +20316,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }
             //</editor-fold>
@@ -20427,7 +20425,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Feb B">
@@ -20536,7 +20534,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -20645,7 +20643,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 Marzo">
@@ -20756,7 +20754,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -20865,7 +20863,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 abril">
@@ -20974,7 +20972,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -21083,7 +21081,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 may">
@@ -21194,7 +21192,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -21303,7 +21301,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jun">
@@ -21412,7 +21410,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -21521,7 +21519,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 jul">
@@ -21632,7 +21630,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -21741,7 +21739,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 ago">
@@ -21852,7 +21850,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -21961,7 +21959,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 sep">
@@ -22070,7 +22068,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -22179,7 +22177,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 oct">
@@ -22290,7 +22288,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -22399,7 +22397,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 nov">
@@ -22508,7 +22506,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
 
@@ -22617,7 +22615,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
             // <editor-fold defaultstate="collapsed" desc="Q2 dic">
@@ -22728,7 +22726,7 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
 
                 } catch (ParseException ex) {
                     Logger.getLogger(Listas_Sem_SI_5.class
-                        .getName()).log(Level.SEVERE, null, ex);
+                            .getName()).log(Level.SEVERE, null, ex);
                 }
             }//</editor-fold>
         }
@@ -23609,9 +23607,9 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
         if (NDL.getText().isEmpty() || LDAQuin.getSelectedIndex() == 0 || LDAZon.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "No puedes dejar los siguientes campos sin seleccionar o vacios: \n"
-                + "Zona\n"
-                + "Quincena\n"
-                + "Listas a generar");
+                    + "Zona\n"
+                    + "Quincena\n"
+                    + "Listas a generar");
         } else {
             if (Integer.parseInt(NDL.getText()) == 0) {
                 JOptionPane.showMessageDialog(null, "Coloca el numero de listas a generar");
@@ -23662,23 +23660,6 @@ public final class Listas_Sem_CI_5 extends javax.swing.JFrame {
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
