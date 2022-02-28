@@ -217,9 +217,9 @@ public class L1 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM1.getString("Apellido P") + " "
                             + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM1.getString("Apellido P") + " "
                             + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -507,9 +507,9 @@ public class L1 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM2.getString("Apellido P") + " "
                             + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM2.getString("Apellido P") + " "
                             + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -827,6 +827,7 @@ public class L1 {
                     cell.setCellStyle(Contenido);
 
                 }
+                
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(true); // Dirección de impresión, true: horizontal, false: vertical

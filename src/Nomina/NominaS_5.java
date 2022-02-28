@@ -20,7 +20,7 @@ import Filtros.FiltrosZonas;
 import Inicio.Inicio_1;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
-import Nomina.Listas.Semanales.Listas_Sem_SI_5;
+import Nomina.Listas.Semanales.*;
 import VentanasDReportes.RepNomSem_7;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
@@ -1455,6 +1455,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
         LDA4 = new javax.swing.JMenuItem();
         LDAS = new javax.swing.JMenu();
         LDA5 = new javax.swing.JMenuItem();
+        LDA6 = new javax.swing.JMenuItem();
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
@@ -6651,6 +6652,14 @@ public final class NominaS_5 extends javax.swing.JFrame {
             }
         });
         LDAS.add(LDA5);
+
+        LDA6.setText("Listas de asistencia C/IMSS ");
+        LDA6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDA6ActionPerformed(evt);
+            }
+        });
+        LDAS.add(LDA6);
 
         jMenu3.add(LDAS);
 
@@ -17439,6 +17448,12 @@ public final class NominaS_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDA5ActionPerformed
 
+    private void LDA6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA6ActionPerformed
+        Listas_Sem_CI_5 regr = new Listas_Sem_CI_5(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LDA6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -17686,6 +17701,7 @@ public final class NominaS_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem LDA3;
     private javax.swing.JMenuItem LDA4;
     private javax.swing.JMenuItem LDA5;
+    private javax.swing.JMenuItem LDA6;
     private javax.swing.JMenu LDAQ;
     private javax.swing.JMenu LDAS;
     private javax.swing.JButton LS;
