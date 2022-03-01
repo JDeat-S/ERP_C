@@ -166,11 +166,6 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         FiltrosZonas zz8 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
         LDAZon.setModel(modelzonas8);
-        FillLSIabel9.setVisible(false);
-        FillLSIAm9.setVisible(false);
-        FillLSIAp9.setVisible(false);
-        FillLSIName9.setVisible(false);
-        FillLSIQuin9.setVisible(false);
         Fecha1.setVisible(false);
         DiaCor1.setVisible(false);
         DiaCor2.setVisible(false);

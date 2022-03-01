@@ -74,7 +74,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.tehuantepec` WHERE `mes` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.tehuantepec` WHERE `mes de registro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Pensiones " + CbxMes.getSelectedItem().toString());
@@ -175,7 +175,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
                 cell.setCellValue("Status");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(18);
-                cell.setCellValue("Referencia Bancaria");
+                cell.setCellValue("Mes de registro");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(19);
                 cell.setCellValue("Razon Social");
@@ -184,39 +184,41 @@ public class PMtehuantepec extends javax.swing.JFrame {
                 cell.setCellValue("# Padron");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(21);
-                cell.setCellValue("Inicio de pension");
+                cell.setCellValue("Dia");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(22);
                 cell.setCellValue("Mes");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(23);
-                cell.setCellValue("Fin de pension");
+                cell.setCellValue("Dia");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(24);
-                cell.setCellValue("Importe");
+                cell.setCellValue("Dia");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(25);
-                cell.setCellValue("Recargo");
+                cell.setCellValue("Importe");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(26);
-                cell.setCellValue("IVA");
+                cell.setCellValue("Recargo");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(27);
-                cell.setCellValue("Total a pagar");
+                cell.setCellValue("IVA");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(28);
-                cell.setCellValue("Total pagado");
+                cell.setCellValue("Total a pagar");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(29);
-                cell.setCellValue("Fecha de pago");
+                cell.setCellValue("Total pagado");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(30);
-                cell.setCellValue("Metodo");
+                cell.setCellValue("Fecha de pago");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(31);
+                cell.setCellValue("Metodo");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(32);
                 cell.setCellValue("Semanal");
                 cell.setCellStyle(Contenido);
-                
 
                 int i = 2;
 
@@ -295,7 +297,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
                     cell.setCellValue(rs.getString(24));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(24);
-                    cell.setCellValue(rs.getDouble(25));
+                    cell.setCellValue(rs.getString(25));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(25);
                     cell.setCellValue(rs.getDouble(26));
@@ -310,13 +312,16 @@ public class PMtehuantepec extends javax.swing.JFrame {
                     cell.setCellValue(rs.getDouble(29));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(29);
-                    cell.setCellValue(rs.getString(30));
+                    cell.setCellValue(rs.getDouble(30));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(30);
                     cell.setCellValue(rs.getString(31));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(31);
                     cell.setCellValue(rs.getString(32));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(32);
+                    cell.setCellValue(rs.getString(33));
                     cell.setCellStyle(Contenido);
 
                     i++;

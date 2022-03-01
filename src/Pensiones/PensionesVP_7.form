@@ -494,9 +494,8 @@
                                                           </Group>
                                                           <Component id="Status" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
@@ -512,7 +511,6 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="FDP" min="-2" pref="120" max="-2" attributes="0"/>
                                                   <Component id="TAP" min="-2" pref="120" max="-2" attributes="0"/>
                                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                                       <Component id="IVAImporte" alignment="0" max="32767" attributes="0"/>
@@ -522,25 +520,29 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                              <Group type="102" alignment="0" attributes="0">
-                                                                  <Component id="IDP" min="-2" pref="120" max="-2" attributes="0"/>
+                                                              <Group type="102" attributes="0">
+                                                                  <Component id="INIDIPEN" min="-2" pref="29" max="-2" attributes="0"/>
+                                                                  <EmptySpace max="-2" attributes="0"/>
+                                                                  <Component id="INIMESPEN" min="-2" max="-2" attributes="0"/>
                                                                   <EmptySpace max="32767" attributes="0"/>
                                                                   <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                                                               </Group>
-                                                              <Group type="102" attributes="0">
+                                                              <Group type="102" alignment="0" attributes="0">
                                                                   <Component id="NP" min="-2" pref="120" max="-2" attributes="0"/>
-                                                                  <EmptySpace max="32767" attributes="0"/>
-                                                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <Group type="102" attributes="0">
-                                                                  <Component id="RS" min="-2" pref="120" max="-2" attributes="0"/>
                                                                   <EmptySpace max="32767" attributes="0"/>
                                                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                                                               </Group>
-                                                              <Group type="102" attributes="0">
-                                                                  <Component id="RB" min="-2" pref="120" max="-2" attributes="0"/>
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <Component id="RS" min="-2" pref="120" max="-2" attributes="0"/>
                                                                   <EmptySpace max="32767" attributes="0"/>
                                                                   <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace max="32767" attributes="0"/>
+                                                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                                                               </Group>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
@@ -560,12 +562,17 @@
                                                           <Component id="Est" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="FINDIPEN" min="-2" pref="29" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="FINMESPEN" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="343" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="354" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jTabbedPane2" alignment="0" pref="1417" max="32767" attributes="0"/>
+                                  <Component id="jTabbedPane2" alignment="0" pref="1437" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -585,10 +592,10 @@
                                   <Component id="Ap" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="TC" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="RB" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="FechaDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="RS" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -596,10 +603,10 @@
                                   <Component id="Am" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="TO" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="RS" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Metodo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NP" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -607,10 +614,10 @@
                                   <Component id="Name" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="CEL" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="NP" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="NS" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -621,15 +628,17 @@
                                           <Component id="jScrollPane4" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="IDP" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   <Component id="Est" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="INIDIPEN" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="INIMESPEN" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
                                                   <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="FINDIPEN" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="FINMESPEN" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
@@ -852,13 +861,6 @@
                         <Property name="text" type="java.lang.String" value="Status:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel19">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Referencia Bancaria:"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="RB">
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel20">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Razon Social:"/>
@@ -881,14 +883,10 @@
                         <Property name="text" type="java.lang.String" value="Inicio de pension:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="IDP">
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel23">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Fin de pension:"/>
                       </Properties>
-                    </Component>
-                    <Component class="javax.swing.JTextField" name="FDP">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
                       <Properties>
@@ -1015,7 +1013,7 @@
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jScrollPane7" alignment="0" pref="1387" max="32767" attributes="0"/>
+                                              <Component id="jScrollPane7" alignment="0" pref="1407" max="32767" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -1154,7 +1152,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jScrollPane9" alignment="0" pref="1387" max="32767" attributes="0"/>
+                                              <Component id="jScrollPane9" alignment="0" pref="1407" max="32767" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -1293,7 +1291,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jScrollPane11" alignment="0" pref="1387" max="32767" attributes="0"/>
+                                              <Component id="jScrollPane11" alignment="0" pref="1407" max="32767" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -1426,10 +1424,11 @@
                     <Component class="javax.swing.JComboBox" name="Status">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
+                          <StringArray count="4">
                             <StringItem index="0" value="."/>
                             <StringItem index="1" value="Debe"/>
                             <StringItem index="2" value="Pagado"/>
+                            <StringItem index="3" value="Baja"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -1447,10 +1446,72 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel35">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Mes:"/>
+                        <Property name="text" type="java.lang.String" value="Mes de registro:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="Mescbx">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="13">
+                            <StringItem index="0" value="."/>
+                            <StringItem index="1" value="Enero"/>
+                            <StringItem index="2" value="Febrero"/>
+                            <StringItem index="3" value="Marzo"/>
+                            <StringItem index="4" value="Abril"/>
+                            <StringItem index="5" value="Mayo"/>
+                            <StringItem index="6" value="Junio"/>
+                            <StringItem index="7" value="Julio"/>
+                            <StringItem index="8" value="Agosto"/>
+                            <StringItem index="9" value="Septiembre"/>
+                            <StringItem index="10" value="Octubre"/>
+                            <StringItem index="11" value="Noviembre"/>
+                            <StringItem index="12" value="Diciembre"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel19">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Dia"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel34">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Mes"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="INIDIPEN">
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="INIMESPEN">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="13">
+                            <StringItem index="0" value="."/>
+                            <StringItem index="1" value="Enero"/>
+                            <StringItem index="2" value="Febrero"/>
+                            <StringItem index="3" value="Marzo"/>
+                            <StringItem index="4" value="Abril"/>
+                            <StringItem index="5" value="Mayo"/>
+                            <StringItem index="6" value="Junio"/>
+                            <StringItem index="7" value="Julio"/>
+                            <StringItem index="8" value="Agosto"/>
+                            <StringItem index="9" value="Septiembre"/>
+                            <StringItem index="10" value="Octubre"/>
+                            <StringItem index="11" value="Noviembre"/>
+                            <StringItem index="12" value="Diciembre"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="FINDIPEN">
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="FINMESPEN">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="13">
