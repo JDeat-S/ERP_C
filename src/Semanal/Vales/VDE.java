@@ -557,11 +557,13 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("A-22");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, 20));
 
         NV.setEditable(false);
+        NV.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         NV.setForeground(new java.awt.Color(255, 51, 51));
         NV.setText("0");
         NV.setBorder(null);
@@ -570,11 +572,12 @@ public final class VDE extends javax.swing.JFrame implements Printable {
                 NVKeyReleased(evt);
             }
         });
-        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 90, 20));
+        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 80, 20));
 
         jLabel2.setText("Bueno por:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
+        Importe.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         Importe.setText("0");
         Importe.setBorder(null);
         Importe.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -638,7 +641,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, 10));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 330, 10));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 90, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 80, 10));
         jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 240, 10));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -646,17 +649,17 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 51, 51));
         jLabel10.setText("A-22");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 20));
 
         NV1.setEditable(false);
-        NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        NV1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         NV1.setForeground(new java.awt.Color(255, 51, 51));
         NV1.setText("0");
         NV1.setBorder(null);
-        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 100, 20));
+        jPanel2.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 90, 20));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -664,7 +667,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 57, 20));
 
         Importe1.setEditable(false);
-        Importe1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        Importe1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         Importe1.setText("0");
         Importe1.setBorder(null);
         Importe1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -720,7 +723,7 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 100, 10));
         jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 180, 10));
         jPanel2.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 190, 10));
-        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 100, 10));
+        jPanel2.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 90, 10));
         jPanel2.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 190, 10));
         jPanel2.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 170, 10));
 
@@ -744,7 +747,6 @@ public final class VDE extends javax.swing.JFrame implements Printable {
         jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 20));
 
         Entr1.setBackground(new java.awt.Color(255, 255, 255));
-        Entr1.setEditable(true);
         Entr1.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         Entr1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel2.add(Entr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 200, -1));

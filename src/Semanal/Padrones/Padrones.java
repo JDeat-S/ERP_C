@@ -16,13 +16,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.regex.Pattern;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 /**
  *
@@ -36,18 +34,24 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     Calendar fecha_actual = new GregorianCalendar();
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
+    ButtonGroup CVeh;
+    ButtonGroup TDserv;
 
     double BM = 1000, BQ = 500, BD = 200, BC = 100, BCIN = 50, BV = 20,
             MV = 20, MD = 10, MC = 5, MDOS = 2, MU = 1, MCENT = 0.50;
 
     public Padrones() {
         initComponents();
-        EDF zz8 = new EDF();
-        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
-        Entr.setModel(modelzonas8);
-        Entr1.setModel(modelzonas8);
-        Fecha.setCalendar(fecha_actual);
-        Fecha1.setCalendar(fecha_actual);
+        CVeh = new ButtonGroup();
+        CVeh.add(cv1);
+        CVeh.add(cv2);
+        CVeh.add(cv3);
+        CVeh.add(cv4);
+        CVeh.add(cv5);
+        TDserv = new ButtonGroup();
+        TDserv.add(tds12);
+        TDserv.add(tds24);
+
         this.setLocationRelativeTo(null);
         MNV();
 
@@ -55,21 +59,20 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
 
     public Padrones(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
-        EDF zz8 = new EDF();
-        DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
-        Entr.setModel(modelzonas8);
-        Entr1.setModel(modelzonas8);
-        Fecha.setCalendar(fecha_actual);
-        Fecha1.setCalendar(fecha_actual);
+        CVeh = new ButtonGroup();
+        CVeh.add(cv1);
+        CVeh.add(cv2);
+        CVeh.add(cv3);
+        CVeh.add(cv4);
+        CVeh.add(cv5);
+        TDserv = new ButtonGroup();
+        TDserv.add(tds12);
+        TDserv.add(tds24);
         this.usr = usr;
         this.LP = LP;
         this.setLocationRelativeTo(null);
         MNV();
-        Rec.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-        Rec1.setText(usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
     }
-
-
 
     public void MNV() {
         String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022'"
@@ -79,8 +82,8 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
             ResultSet rs = st.executeQuery(SQL);
             while (rs.next()) {
 
-                NV.setText("" + Integer.parseInt(rs.getString("AUTO_INCREMENT")));
-                NV1.setText("" + Integer.parseInt(rs.getString("AUTO_INCREMENT")));
+                NF.setText("" + Integer.parseInt(rs.getString("AUTO_INCREMENT")));
+                COBRO.setText("" + Integer.parseInt(rs.getString("AUTO_INCREMENT")));
 
             }
             st.isClosed();
@@ -93,52 +96,81 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     }
 
     public void agregarvale() {
-
-        String SQL = "INSERT INTO `semanal.vales` (`#vale`, `buenopor`, `Recibi de`, `Concepto`,"
-                + " `en`, `fecha`, `BPescrito`, `B1000`, `SB1000`, `B500`, `SB500`, `B200`, `SB200`,"
-                + " `B100`, `SB100`, `B50`, `SB50`, `B20`, `SB20`, `M20`, `SM20`, `M10`, `SM10`, `M5`,"
-                + " `SM5`, `M2`, `SM2`, `M1`, `SM1`, `M050`, `SM050`, `total real`, `recibe`, `entrega`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String CV = null, fac, tds = null;
+        if (cv1.isSelected()) {
+            CV = "Clase 1";
+        }
+        if (cv2.isSelected()) {
+            CV = "Clase 2";
+        }
+        if (cv3.isSelected()) {
+            CV = "Clase 3";
+        }
+        if (cv4.isSelected()) {
+            CV = "Clase 4";
+        }
+        if (cv5.isSelected()) {
+            CV = "Clase 5";
+        }
+        if (factura.isSelected() == true) {
+            fac = "si";
+        } else {
+            fac = "no";
+        }
+        if (tds12.isSelected()) {
+            tds = "12 horas";
+        }
+        if (tds24.isSelected()) {
+            tds = "24 horas";
+        }
+        String SQL = "INSERT INTO `semanal.padrones." + Estacionamiento.getSelectedItem().toString() + "` (`#Folio`, `monto`, `Apellido P`,"
+                + " `Apellido M`, `Nombre(s)`, `calle`, `num`, `interior`, `Colonia`,"
+                + " `C.P`, `delegacion`, `Telefono 1`, `Telefono 2`, `Telefono 3`,"
+                + " `RFC`, `PART`, `celular`, `marca 1`, `modelo 1`, `placas 1`,"
+                + " `color 1`, `marca 2`, `modelo 2`, `placas 2`, `color 2`, `Marca 3`,"
+                + " `modelo 3`, `palcas 3`, `color 3`, `PRecibepago`, `PRecibefactura`,"
+                + " `Factrura`, `clase`, `tipo de servicio`) VALUES (?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            pst.setInt(1, Integer.parseInt(NV.getText()));
-            pst.setString(2, Importe.getText());
-            pst.setString(3, RD.getText());
-            pst.setString(4, Concepto.getText());
-            pst.setString(5, En.getText());
-            pst.setString(6, ((JTextField) Fecha.getDateEditor().getUiComponent()).getText());
-            pst.setString(7, ImporteEsc.getText());
-            pst.setString(8, B1000.getText());
-            pst.setString(9, SB1000.getText());
-            pst.setString(10, B500.getText());
-            pst.setString(11, SB500.getText());
-            pst.setString(12, B200.getText());
-            pst.setString(13, SB200.getText());
-            pst.setString(14, B100.getText());
-            pst.setString(15, SB100.getText());
-            pst.setString(16, B50.getText());
-            pst.setString(17, SB50.getText());
-            pst.setString(18, B20.getText());
-            pst.setString(19, SB20.getText());
-            pst.setString(20, M20.getText());
-            pst.setString(21, SM20.getText());
-            pst.setString(22, M10.getText());
-            pst.setString(23, SM10.getText());
-            pst.setString(24, M5.getText());
-            pst.setString(25, SM5.getText());
-            pst.setString(26, M2.getText());
-            pst.setString(27, SM2.getText());
-            pst.setString(28, M1.getText());
-            pst.setString(29, SM1.getText());
-            pst.setString(30, M050.getText());
-            pst.setString(31, SM050.getText());
-            pst.setString(32, TR.getText());
-            pst.setString(33, Rec.getText());
-            pst.setString(34, Entr.getSelectedItem().toString());
+            pst.setInt(1, Integer.parseInt(NF.getText()));
+            pst.setString(2, COBRO.getText());
+            pst.setString(3, Ap.getText());
+            pst.setString(4, Am.getText());
+            pst.setString(5, Name.getText());
+            pst.setString(6, Calle.getText());
+            pst.setString(7, Num.getText());
+            pst.setString(8, interior.getText());
+            pst.setString(9, colonia.getText());
+            pst.setString(10, cp.getText());
+            pst.setString(11, delegacion.getText());
+            pst.setString(12, tel1.getText());
+            pst.setString(13, tel2.getText());
+            pst.setString(14, tel3.getText());
+            pst.setString(15, rfc.getText());
+            pst.setString(16, part.getText());
+            pst.setString(17, cel.getText());
+            pst.setString(18, marca1.getText());
+            pst.setString(19, modelo1.getText());
+            pst.setString(20, placas1.getText());
+            pst.setString(21, color1.getText());
+            pst.setString(22, marca2.getText());
+            pst.setString(23, modelo2.getText());
+            pst.setString(24, placas2.getText());
+            pst.setString(25, color2.getText());
+            pst.setString(26, marca3.getText());
+            pst.setString(27, modelo3.getText());
+            pst.setString(28, placas3.getText());
+            pst.setString(29, color3.getText());
+            pst.setString(30, prp.getText());
+            pst.setString(31, prf.getText());
+            pst.setString(32, fac);
+            pst.setString(33, CV);
+            pst.setString(34, tds);
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Vale registrado.");
+            JOptionPane.showMessageDialog(null, "pension en " + Estacionamiento.getSelectedItem().toString() + " registrada.");
 
             try {
                 PrinterJob job = PrinterJob.getPrinterJob();
@@ -147,46 +179,40 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
                 job.print();
             } catch (PrinterException ex) {
             }
-            NV.setText("0");
-            Importe.setText("");
-            RD.setText("");
-            Concepto.setText("");
-            En.setText("");
-            Fecha.setDate(null);
-            ImporteEsc.setText("");
-            NV1.setText("0");
-            Importe1.setText("");
-            RD1.setText("");
-            Concepto1.setText("");
-            En1.setText("");
-            Fecha1.setDate(null);
-            ImporteEsc1.setText("");
-            B1000.setText("0");
-            SB1000.setText("0");
-            B500.setText("0");
-            SB500.setText("0");
-            B200.setText("0");
-            SB200.setText("0");
-            B100.setText("0");
-            SB100.setText("0");
-            B50.setText("0");
-            SB50.setText("0");
-            B20.setText("0");
-            SB20.setText("0");
-            M20.setText("0");
-            SM20.setText("0");
-            M10.setText("0");
-            SM10.setText("0");
-            M5.setText("0");
-            SM5.setText("0");
-            M2.setText("0");
-            SM2.setText("0");
-            M1.setText("0");
-            SM1.setText("0");
-            M050.setText("0");
-            SM050.setText("0");
-            TR.setText("0");
+            NF.setText("0");
+            COBRO.setText("");
+            Ap.setText("");
+            Am.setText("");
+            Name.setText("");
+            Calle.setText("");
+            Num.setText("");
+            interior.setText("");
+            colonia.setText("");
+            cp.setText("");
+            delegacion.setText("");
+            tel1.setText("");
+            tel2.setText("");
+            tel3.setText("");
+            rfc.setText("");
+            part.setText("");
+            cel.setText("");
+            marca1.setText("");
+            modelo1.setText("");
+            placas1.setText("");
+            color1.setText("");
+            marca2.setText("");
+            modelo2.setText("");
+            placas2.setText("");
+            color2.setText("");
+            marca3.setText("");
+            modelo3.setText("");
+            placas3.setText("");
+            color3.setText("");
+            prp.setText("");
+            prf.setText("");
+            
             MNV();
+            
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar vale:" + e);
         }
@@ -198,8 +224,8 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
             return NO_SUCH_PAGE;
         }
         Graphics2D g2d = (Graphics2D) graphics;
-        g2d.translate(pageFormat.getImageableX(),
-                pageFormat.getImageableY());
+        g2d.translate(pageFormat.getImageableX() + 10,
+                pageFormat.getImageableY() + 15);
         g2d.scale(0.50, 0.50); //Reducción de la impresión al 50%
         jPanel1.printAll(graphics);
         return PAGE_EXISTS;
@@ -211,61 +237,57 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
 
         btngen = new javax.swing.JPanel();
         txtbtngen = new javax.swing.JLabel();
+        Estacionamiento = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
         Move = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        NV = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
+        NF = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        NV1 = new javax.swing.JTextField();
-        jSeparator6 = new javax.swing.JSeparator();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        COBRO = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jSeparator7 = new javax.swing.JSeparator();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
+        Ap = new javax.swing.JTextField();
+        Am = new javax.swing.JTextField();
+        Name = new javax.swing.JTextField();
+        Calle = new javax.swing.JTextField();
+        Num = new javax.swing.JTextField();
+        interior = new javax.swing.JTextField();
+        colonia = new javax.swing.JTextField();
+        delegacion = new javax.swing.JTextField();
+        tel2 = new javax.swing.JTextField();
+        cel = new javax.swing.JTextField();
+        rfc = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        marca2 = new javax.swing.JTextField();
+        marca1 = new javax.swing.JTextField();
+        marca3 = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
+        color3 = new javax.swing.JTextField();
+        color2 = new javax.swing.JTextField();
+        color1 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
+        modelo3 = new javax.swing.JTextField();
+        modelo2 = new javax.swing.JTextField();
+        modelo1 = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        placas3 = new javax.swing.JTextField();
+        placas2 = new javax.swing.JTextField();
+        placas1 = new javax.swing.JTextField();
+        prf = new javax.swing.JTextField();
+        part = new javax.swing.JTextField();
+        tel3 = new javax.swing.JTextField();
+        tel1 = new javax.swing.JTextField();
+        prp = new javax.swing.JTextField();
+        factura = new javax.swing.JCheckBox();
+        cp = new javax.swing.JTextField();
+        cv5 = new javax.swing.JRadioButton();
+        cv1 = new javax.swing.JRadioButton();
+        cv2 = new javax.swing.JRadioButton();
+        cv3 = new javax.swing.JRadioButton();
+        cv4 = new javax.swing.JRadioButton();
+        tds24 = new javax.swing.JRadioButton();
+        tds12 = new javax.swing.JRadioButton();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
 
@@ -275,11 +297,12 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btngen.setBackground(new java.awt.Color(255, 255, 255));
+        btngen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtbtngen.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
         txtbtngen.setForeground(new java.awt.Color(0, 0, 0));
         txtbtngen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtbtngen.setText("Agregar vale.");
+        txtbtngen.setText("Agregar Padron.");
         txtbtngen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         txtbtngen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -293,20 +316,38 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
             }
         });
 
+        Estacionamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "tehuantepec", "puente titla", "iturbide" }));
+
+        jLabel1.setText("Estacionamiento");
+
         javax.swing.GroupLayout btngenLayout = new javax.swing.GroupLayout(btngen);
         btngen.setLayout(btngenLayout);
         btngenLayout.setHorizontalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btngenLayout.createSequentialGroup()
-                .addComponent(txtbtngen, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 974, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Estacionamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(30, 30, 30))
         );
         btngenLayout.setVerticalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addGroup(btngenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btngenLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Estacionamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 14, Short.MAX_VALUE))
+                    .addGroup(btngenLayout.createSequentialGroup()
+                        .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
-        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 940, 70));
+        getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, 1110, 70));
 
         Harder1.setBackground(new java.awt.Color(255, 255, 255));
         Harder1.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
@@ -340,7 +381,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
         Harder1Layout.setHorizontalGroup(
             Harder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Harder1Layout.createSequentialGroup()
-                .addComponent(Move, javax.swing.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
+                .addComponent(Move, javax.swing.GroupLayout.DEFAULT_SIZE, 1064, Short.MAX_VALUE)
                 .addContainerGap())
         );
         Harder1Layout.setVerticalGroup(
@@ -350,219 +391,238 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
                 .addComponent(Move, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
+        getContentPane().add(Harder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 40));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        NV.setEditable(false);
-        NV.setForeground(new java.awt.Color(255, 51, 51));
-        NV.setText("0");
-        NV.setBorder(null);
-        NV.addKeyListener(new java.awt.event.KeyAdapter() {
+        NF.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
+        NF.setText("0");
+        NF.setBorder(null);
+        NF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                NVKeyReleased(evt);
+                NFKeyReleased(evt);
             }
         });
-        jPanel1.add(NV, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, 90, 20));
+        jPanel1.add(NF, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 60, 90, 20));
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel8.setText("Tehuantepec #20, Colonia Roma Sur, Delegacion Cuautemoc, C.P 06760");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logovale.png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, 90, 10));
-
-        jLabel22.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel22.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel22.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
         jLabel22.setText("# Folio:");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 20, -1, 20));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 60, -1, 20));
 
-        jLabel30.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("CONFORT SERVICE PRESTIGE DE MEXICO S.A DE C.V");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 10, 490, -1));
-
-        jLabel46.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel46.setText("RFC: CSP1109158K");
-        jPanel1.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
-
-        jLabel48.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel48.setText("Telefono: 52-64-76-87");
-        jPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel1.setText("PADRÒN PARA EL SEGURO DE AUTOMOVILES");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, -1, -1));
-
+        jLabel7.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel7.setText("$");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 50, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 90, -1, -1));
 
-        NV1.setEditable(false);
-        NV1.setText("0");
-        NV1.setBorder(null);
-        NV1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                NV1KeyReleased(evt);
-            }
-        });
-        jPanel1.add(NV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 50, 90, 20));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 90, 10));
-
-        jLabel10.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel10.setText("Estimado Usuario.");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
-
-        jLabel11.setText("PARA LA DEBIDA PROTECCIÒN DE SU AUTOMÒVIL, FAVOR DE PROPORCIONAR LOS SIGUIENTES DATOS");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        COBRO.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        COBRO.setText("0");
+        COBRO.setBorder(null);
+        jPanel1.add(COBRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 100, 90, 20));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setText("Apellido P:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 7, -1, -1));
+        Ap.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Ap.setText("Apellido P:");
+        Ap.setBorder(null);
+        jPanel2.add(Ap, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 230, -1));
 
-        jTextField1.setBorder(null);
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 7, 150, -1));
+        Am.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Am.setText("Apellido M");
+        Am.setBorder(null);
+        jPanel2.add(Am, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 260, -1));
 
-        jLabel13.setText("Apellido M:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 7, -1, -1));
+        Name.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Name.setText("Nombre(s)");
+        Name.setBorder(null);
+        jPanel2.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 310, -1));
 
-        jTextField2.setBorder(null);
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 7, 150, -1));
+        Calle.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Calle.setText("Calle");
+        Calle.setBorder(null);
+        jPanel2.add(Calle, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 800, -1));
 
-        jLabel14.setText("Nombre(s):");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(609, 7, -1, -1));
+        Num.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Num.setText("Num");
+        Num.setBorder(null);
+        jPanel2.add(Num, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 150, -1));
 
-        jTextField3.setBorder(null);
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(678, 7, 150, -1));
-        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 29, 898, -1));
+        interior.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        interior.setText("Int");
+        interior.setBorder(null);
+        jPanel2.add(interior, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 120, -1));
 
-        jLabel15.setText("# Cliente");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, -1));
+        colonia.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        colonia.setText("COLONIA");
+        colonia.setBorder(null);
+        jPanel2.add(colonia, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 220, -1));
 
-        jTextField4.setBorder(null);
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 7, 100, -1));
+        delegacion.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        delegacion.setText("DELEGACION");
+        delegacion.setBorder(null);
+        jPanel2.add(delegacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 90, 190, -1));
 
-        jLabel16.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel16.setText("Domicilio o despacho:");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        tel2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        tel2.setText("TELEFONO 2");
+        tel2.setBorder(null);
+        jPanel2.add(tel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 190, -1));
 
-        jLabel17.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel17.setText("Calle:");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, -1, -1));
+        cel.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        cel.setText("CELULAR");
+        cel.setBorder(null);
+        jPanel2.add(cel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 220, -1));
 
-        jTextField5.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField5.setBorder(null);
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 720, -1));
-
-        jLabel18.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel18.setText("Num.");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
-
-        jTextField6.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField6.setBorder(null);
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 100, -1));
-
-        jLabel19.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel19.setText("Int.");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
-
-        jTextField7.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField7.setBorder(null);
-        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 120, -1));
-
-        jLabel20.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel20.setText("Colonia:");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
-
-        jTextField8.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField8.setBorder(null);
-        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 100, -1));
-
-        jLabel21.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
-
-        jLabel23.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel23.setText("C.P.");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, -1, -1));
-
-        jTextField9.setBorder(null);
-        jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 110, -1));
-
-        jLabel24.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel24.setText("Delegacion:");
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, -1, -1));
-
-        jTextField10.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField10.setBorder(null);
-        jPanel2.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, 220, -1));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 80, 910, -1));
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel2.setText("Telefono:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel3.setText("Part:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
-
-        jTextField11.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField11.setText("jTextField11");
-        jTextField11.setBorder(null);
-        jPanel2.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 150, -1));
-
-        jTextField12.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField12.setText("jTextField12");
-        jTextField12.setBorder(null);
-        jPanel2.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 150, -1));
-
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel4.setText("Cel:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
-
-        jTextField13.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField13.setText("jTextField13");
-        jTextField13.setBorder(null);
-        jPanel2.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 160, -1));
-
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jLabel5.setText("R.F.C");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
-
-        jTextField14.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
-        jTextField14.setText("jTextField14");
-        jTextField14.setBorder(null);
-        jPanel2.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 140, -1));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 132, 900, -1));
+        rfc.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        rfc.setText("RFC");
+        rfc.setBorder(null);
+        jPanel2.add(rfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 260, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 290, 50));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 900, 50));
+        marca2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        marca2.setText("MARCA");
+        marca2.setBorder(null);
+        jPanel3.add(marca2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 180, 30));
+
+        marca1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        marca1.setText("MARCA");
+        marca1.setBorder(null);
+        jPanel3.add(marca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 180, -1));
+
+        marca3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        marca3.setText("MARCA");
+        marca3.setBorder(null);
+        jPanel3.add(marca3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 180, -1));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 260, 130));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 300, 50));
+
+        color3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        color3.setText("COLOR");
+        color3.setBorder(null);
+        jPanel5.add(color3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 200, -1));
+
+        color2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        color2.setText("COLOR");
+        color2.setBorder(null);
+        jPanel5.add(color2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 200, -1));
+
+        color1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        color1.setText("COLOR");
+        color1.setBorder(null);
+        jPanel5.add(color1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 200, -1));
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 210, 270, 130));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 310, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 900, 310));
+        modelo3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        modelo3.setText("MODELO");
+        modelo3.setBorder(null);
+        jPanel6.add(modelo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 190, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 940, 570));
+        modelo2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        modelo2.setText("MODELO");
+        modelo2.setBorder(null);
+        jPanel6.add(modelo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 190, -1));
+
+        modelo1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        modelo1.setText("MODELO");
+        modelo1.setBorder(null);
+        jPanel6.add(modelo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 190, -1));
+
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 280, 130));
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        placas3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        placas3.setText("PLACAS");
+        placas3.setBorder(null);
+        jPanel7.add(placas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 190, -1));
+
+        placas2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        placas2.setText("PLACAS");
+        placas2.setBorder(null);
+        jPanel7.add(placas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 190, -1));
+
+        placas1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        placas1.setText("PLACAS");
+        placas1.setBorder(null);
+        jPanel7.add(placas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 190, -1));
+
+        jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 260, 130));
+
+        prf.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        prf.setText("PERSONA RECIBE FACTURA");
+        prf.setBorder(null);
+        jPanel2.add(prf, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 360, -1));
+
+        part.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        part.setText("PART");
+        part.setBorder(null);
+        jPanel2.add(part, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 200, -1));
+
+        tel3.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        tel3.setText("TELEFONO 3");
+        tel3.setBorder(null);
+        jPanel2.add(tel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 190, -1));
+
+        tel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        tel1.setText("TELEFONO 1");
+        tel1.setBorder(null);
+        jPanel2.add(tel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 200, -1));
+
+        prp.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        prp.setText("PERSONA RECIBE PAGO");
+        prp.setBorder(null);
+        jPanel2.add(prp, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 360, -1));
+
+        factura.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        factura.setText("Factura.");
+        jPanel2.add(factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 350, -1, -1));
+
+        cp.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        cp.setText("C.P");
+        cp.setBorder(null);
+        jPanel2.add(cp, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 140, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 1070, 440));
+
+        cv5.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
+        cv5.setText("5");
+        jPanel1.add(cv5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 620, -1, -1));
+
+        cv1.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
+        cv1.setText("1");
+        jPanel1.add(cv1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 620, -1, -1));
+
+        cv2.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
+        cv2.setText("2");
+        jPanel1.add(cv2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 620, -1, -1));
+
+        cv3.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
+        cv3.setText("3");
+        jPanel1.add(cv3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 620, -1, -1));
+
+        cv4.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
+        cv4.setText("4");
+        jPanel1.add(cv4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 620, -1, -1));
+
+        tds24.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
+        tds24.setText("24 HRS");
+        jPanel1.add(tds24, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 620, -1, -1));
+
+        tds12.setFont(new java.awt.Font("Dialog", 0, 22)); // NOI18N
+        tds12.setText("12 HRS");
+        jPanel1.add(tds12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 620, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1110, 680));
 
         btnexit.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -587,20 +647,18 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
         btnexit.setLayout(btnexitLayout);
         btnexitLayout.setHorizontalGroup(
             btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnexitLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         btnexitLayout.setVerticalGroup(
             btnexitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnexitLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnexitLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(txtbtnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, -1, -1));
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -627,9 +685,9 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
         yMouse = evt.getY();
     }//GEN-LAST:event_Harder1MousePressed
 
-    private void NVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NVKeyReleased
-        NV1.setText(NV.getText());
-    }//GEN-LAST:event_NVKeyReleased
+    private void NFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NFKeyReleased
+        COBRO.setText(NF.getText());
+    }//GEN-LAST:event_NFKeyReleased
 
     private void txtbtngenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseClicked
         agregarvale();
@@ -658,10 +716,6 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     private void txtbtnexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseClicked
         this.dispose();
     }//GEN-LAST:event_txtbtnexitMouseClicked
-
-    private void NV1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NV1KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NV1KeyReleased
 
     /**
      * @param args the command line arguments
@@ -696,63 +750,59 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Am;
+    private javax.swing.JTextField Ap;
+    private javax.swing.JTextField COBRO;
+    private javax.swing.JTextField Calle;
+    private javax.swing.JComboBox<String> Estacionamiento;
     private javax.swing.JPanel Harder1;
     private javax.swing.JLabel Move;
-    private javax.swing.JTextField NV;
-    private javax.swing.JTextField NV1;
+    private javax.swing.JTextField NF;
+    private javax.swing.JTextField Name;
+    private javax.swing.JTextField Num;
     private javax.swing.JPanel btnexit;
     private javax.swing.JPanel btngen;
+    private javax.swing.JTextField cel;
+    private javax.swing.JTextField colonia;
+    private javax.swing.JTextField color1;
+    private javax.swing.JTextField color2;
+    private javax.swing.JTextField color3;
+    private javax.swing.JTextField cp;
+    private javax.swing.JRadioButton cv1;
+    private javax.swing.JRadioButton cv2;
+    private javax.swing.JRadioButton cv3;
+    private javax.swing.JRadioButton cv4;
+    private javax.swing.JRadioButton cv5;
+    private javax.swing.JTextField delegacion;
+    private javax.swing.JCheckBox factura;
+    private javax.swing.JTextField interior;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JTextField marca1;
+    private javax.swing.JTextField marca2;
+    private javax.swing.JTextField marca3;
+    private javax.swing.JTextField modelo1;
+    private javax.swing.JTextField modelo2;
+    private javax.swing.JTextField modelo3;
+    private javax.swing.JTextField part;
+    private javax.swing.JTextField placas1;
+    private javax.swing.JTextField placas2;
+    private javax.swing.JTextField placas3;
+    private javax.swing.JTextField prf;
+    private javax.swing.JTextField prp;
+    private javax.swing.JTextField rfc;
+    private javax.swing.JRadioButton tds12;
+    private javax.swing.JRadioButton tds24;
+    private javax.swing.JTextField tel1;
+    private javax.swing.JTextField tel2;
+    private javax.swing.JTextField tel3;
     private javax.swing.JLabel txtbtnexit;
     private javax.swing.JLabel txtbtngen;
     // End of variables declaration//GEN-END:variables

@@ -5966,6 +5966,12 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        NPadron.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadronKeyReleased(evt);
+            }
+        });
+
         jLabel26.setText("# De padron");
 
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
@@ -12013,6 +12019,35 @@ public final class Iturbide_4 extends javax.swing.JFrame implements Runnable {
         ColorDB();
 
     }//GEN-LAST:event_NVale10KeyReleased
+
+    private void NPadronKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadronKeyReleased
+        try {
+            int id = Integer.parseInt(NPadron.getText());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("SELECT * FROM `pensiones.iturbide` where `#padron` = ? AND `Status` LIKE '%Debe%'");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+
+            while (rs.next()) {
+                ObsV10.setText(rs.getString(1));
+                Date date = new SimpleDateFormat("'A' d 'de' MMMM 'de' y").parse(rs.getString(2));
+                Fecha43.setDate(date);
+                Importe43.setText(rs.getString(3));
+                Rec10.setText(rs.getString(4));
+                Entr10.setText(rs.getString(5));
+
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (ParseException | SQLException ex) {
+            Logger.getLogger(Iturbide_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadronKeyReleased
 
     /**
      * @param args the command line arguments

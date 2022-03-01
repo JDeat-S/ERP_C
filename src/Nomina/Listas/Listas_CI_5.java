@@ -531,6 +531,11 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
         LDA.setEditable(false);
         LDA.setText("0");
+        LDA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LDAActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("# Lista");
 
@@ -19371,13 +19376,13 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 Connection connect = DriverManager.getConnection(
-                        "jdbc:mysql://192.168.1.170:3306/confort2020",
-                        "root",
-                        ""
+                        "jdbc:mysql://192.168.1.170:3306/confort2022",
+                        "Servidor",
+                        "Confort1022"
                 );
 
                 Statement statement = connect.createStatement();
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getSelectedItem().toString() + "` WHERE " + LDA.getText());
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM `nomina.listas." + LDAZon.getSelectedItem().toString() + "` WHERE `NDL` LIKE '%" + LDA.getText() + "%'");
                 try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                     XSSFWorkbook libro = new XSSFWorkbook();
                     XSSFSheet spreadsheet = libro.createSheet("Lista " + LDA.getText() + " de " + LDAZon.getSelectedItem().toString() + "de la " + LDAQuin.getSelectedItem().toString());
@@ -19525,26 +19530,33 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                         cell.setCellStyle(Contenido);
                         cell = row.createCell(2);
                         cell.setCellStyle(Contenido);
-                        cell = row.createCell(3);
-                        cell.setCellValue("Servicio");
-                        cell.setCellStyle(Contenido);
                         spreadsheet.addMergedRegion(
                                 new CellRangeAddress(
                                         2, //first row (0-based)
                                         2, //last row (0-based)
                                         4, //first column (0-based)
-                                        6 //last column (0-based)
+                                        7 //last column (0-based)
                                 )
                         );
                         cell = row.createCell(4);
-                        cell.setCellStyle(Contenido);
+                        cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                        cell.setCellStyle(Encabezado);
 
                         cell = row.createCell(5);
-                        cell.setCellStyle(Contenido);
+                        cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
                         cell = row.createCell(6);
-                        cell.setCellStyle(Contenido);
-                        //cell = row.createCell(7);
-                        //cell.setCellStyle(Contenido);
+                        cell.setCellStyle(Encabezado);
+
+                        cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                        cell.setCellStyle(Encabezado);
+
+                        cell = row.createCell(7);
+                        cell.setCellValue(resultSet.getString("Apellido P") + " "
+                                + resultSet.getString("Apellido M") + " " + resultSet.getString("Nombre(s)"));
+                        cell.setCellStyle(Encabezado);
                         cell = row.createCell(8);
                         cell.setCellValue(resultSet.getString("Zona"));
                         spreadsheet.setColumnWidth(8, 4250);
@@ -20117,9 +20129,10 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
                 Logger.getLogger(Listas_CI_5.class
                         .getName()).log(Level.SEVERE, null, ex);
             }
+        }
             LDAZon.setSelectedIndex(0);
             LDAQuin.setSelectedIndex(0);
-        }
+            LDA.setText("0");
     }//GEN-LAST:event_ExcelSIActionPerformed
 
     private void FillLSIQuin7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FillLSIQuin7ItemStateChanged
@@ -21233,6 +21246,10 @@ public final class Listas_CI_5 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDA7ActionPerformed
+
+    private void LDAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LDAActionPerformed
 
     /**
      * @param args the command line arguments
