@@ -119,7 +119,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     }
 
     public void operaciones() {
-        double recargo = 0, IVA = 0;
+        double recargo, IVAop;
         if (Rec.isSelected() == true) {
             recargo = 280;
             RecImporte.setText("" + recargo);
@@ -129,14 +129,14 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
 
         }
         if (this.IVA.isSelected() == true) {
-            IVA = 0.16;
-            IVAImporte.setText("" + (Double.parseDouble(Importe.getText()) * IVA));
+            IVAop = 0.16;
+            IVAImporte.setText("" + (Double.parseDouble(Importe.getText()) * IVAop));
         } else {
-            IVA = 0;
-            IVAImporte.setText("" + (Double.parseDouble(Importe.getText()) * IVA));
+            IVAop = 0;
+            IVAImporte.setText("" + (Double.parseDouble(Importe.getText()) * IVAop));
 
         }
-        double total = (Double.parseDouble(Importe.getText()) * IVA) + Double.parseDouble(Importe.getText()) + recargo;
+        double total = (Double.parseDouble(Importe.getText()) * IVAop) + Double.parseDouble(Importe.getText()) + recargo;
         TAP.setText("" + total);
     }
 
@@ -197,12 +197,13 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             modelo.addColumn("Clase de auto");
             modelo.addColumn("Tipo de pension");
             modelo.addColumn("Status");
-            modelo.addColumn("Referencia bancaria");
+            modelo.addColumn("Mes");
             modelo.addColumn("Razon social");
             modelo.addColumn("# Padron");
-            modelo.addColumn("Inicio de pension");
-            modelo.addColumn("Mes");
-            modelo.addColumn("Fin de pension");
+            modelo.addColumn("dia Inicio de pension");
+            modelo.addColumn("Mes Inicio de pension");
+            modelo.addColumn("Dia Fin de pension");
+            modelo.addColumn("Mes Fin de pension");
             modelo.addColumn("Importe");
             modelo.addColumn("Recargo");
             modelo.addColumn("IVA");
@@ -215,7 +216,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NF*/50, /*NL*/ 50, /*NF*/ 50,/*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
                 /*SERV*/ 50, /*QUIN*/ 60, /*NQ*/ 50, /*PAG*/ 60, /*PEN*/ 60,/*PDODT*/ 60, 70, 70, 70, 70,
-                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
+                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -290,12 +291,13 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             modelo.addColumn("Clase de auto");
             modelo.addColumn("Tipo de pension");
             modelo.addColumn("Status");
-            modelo.addColumn("Referencia bancaria");
+            modelo.addColumn("Mes");
             modelo.addColumn("Razon social");
             modelo.addColumn("# Padron");
-            modelo.addColumn("Inicio de pension");
-            modelo.addColumn("Mes");
-            modelo.addColumn("Fin de pension");
+            modelo.addColumn("dia Inicio de pension");
+            modelo.addColumn("Mes Inicio de pension");
+            modelo.addColumn("Dia Fin de pension");
+            modelo.addColumn("Mes Fin de pension");
             modelo.addColumn("Importe");
             modelo.addColumn("Recargo");
             modelo.addColumn("IVA");
@@ -308,7 +310,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NF*/50, /*NL*/ 50, /*NF*/ 50,/*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
                 /*SERV*/ 50, /*QUIN*/ 60, /*NQ*/ 50, /*PAG*/ 60, /*PEN*/ 60,/*PDODT*/ 60, 70, 70, 70, 70,
-                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
+                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -383,12 +385,13 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             modelo.addColumn("Clase de auto");
             modelo.addColumn("Tipo de pension");
             modelo.addColumn("Status");
-            modelo.addColumn("Referencia bancaria");
+            modelo.addColumn("Mes");
             modelo.addColumn("Razon social");
             modelo.addColumn("# Padron");
-            modelo.addColumn("Inicio de pension");
-            modelo.addColumn("Mes");
-            modelo.addColumn("Fin de pension");
+            modelo.addColumn("dia Inicio de pension");
+            modelo.addColumn("Mes Inicio de pension");
+            modelo.addColumn("Dia Fin de pension");
+            modelo.addColumn("Mes Fin de pension");
             modelo.addColumn("Importe");
             modelo.addColumn("Recargo");
             modelo.addColumn("IVA");
@@ -401,7 +404,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
 //ANCHOS
             int[] anchos = {/*NF*/50, /*NL*/ 50, /*NF*/ 50,/*NE*/ 50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*ZON*/ 50,
                 /*SERV*/ 50, /*QUIN*/ 60, /*NQ*/ 50, /*PAG*/ 60, /*PEN*/ 60,/*PDODT*/ 60, 70, 70, 70, 70,
-                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70};
+                70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70,70};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -468,16 +471,12 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         CDA = new javax.swing.JTextField();
         TDP = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        RB = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         RS = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         NP = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        IDP = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        FDP = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         Importe = new javax.swing.JTextField();
         Rec = new javax.swing.JCheckBox();
@@ -535,6 +534,12 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         ModPen = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
         Mescbx = new javax.swing.JComboBox<>();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        INIDIPEN = new javax.swing.JTextField();
+        INIMESPEN = new javax.swing.JComboBox<>();
+        FINDIPEN = new javax.swing.JTextField();
+        FINMESPEN = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         Menuadm = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -629,8 +634,6 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
         jScrollPane4.setViewportView(ObsPen);
 
         jLabel18.setText("Status:");
-
-        jLabel19.setText("Referencia Bancaria:");
 
         jLabel20.setText("Razon Social:");
 
@@ -749,7 +752,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1387, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1407, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -848,7 +851,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 1387, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 1407, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel32)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -947,7 +950,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 1387, Short.MAX_VALUE)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 1407, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel33)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -993,7 +996,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             }
         });
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Debe", "Pagado" }));
+        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Debe", "Pagado", "Baja" }));
 
         ModPen.setText("Modificar");
         ModPen.addActionListener(new java.awt.event.ActionListener() {
@@ -1002,9 +1005,17 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             }
         });
 
-        jLabel35.setText("Mes:");
+        jLabel35.setText("Mes de registro:");
 
         Mescbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
+        jLabel19.setText("Dia");
+
+        jLabel34.setText("Mes");
+
+        INIMESPEN.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
+        FINMESPEN.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1069,9 +1080,8 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                                                 .addComponent(CDA)
                                                 .addComponent(TDP))
                                             .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(24, 24, 24)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel19)
                                             .addComponent(jLabel20)
                                             .addComponent(jLabel21)
                                             .addComponent(jLabel22)
@@ -1084,7 +1094,6 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                                     .addComponent(Mescbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TAP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(IVAImporte, javax.swing.GroupLayout.Alignment.LEADING)
@@ -1093,22 +1102,26 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(IDP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(INIDIPEN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(INIMESPEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(jLabel27))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                                     .addComponent(NP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel30))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(jLabel29))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                                     .addComponent(RS, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel29))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(RB, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel28))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(jLabel19)
+                                                    .addGap(38, 38, 38)
+                                                    .addComponent(jLabel34)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jLabel28)))
+                                                    .addComponent(jLabel30)))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addComponent(AddPen)
@@ -1120,9 +1133,13 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                                             .addComponent(FechaDP, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                             .addComponent(Metodo, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                                             .addComponent(NS, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                            .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(0, 343, Short.MAX_VALUE))
-                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1417, Short.MAX_VALUE))
+                                            .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(FINDIPEN, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(FINMESPEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 354, Short.MAX_VALUE))
+                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1437, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -1138,30 +1155,30 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                     .addComponent(Ap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(TC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19)
-                    .addComponent(RB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28)
-                    .addComponent(FechaDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FechaDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20)
+                    .addComponent(RS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(Am, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(TO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20)
-                    .addComponent(RS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29)
-                    .addComponent(Metodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Metodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21)
+                    .addComponent(NP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
                     .addComponent(CEL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21)
-                    .addComponent(NP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30)
-                    .addComponent(NS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel34))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1171,14 +1188,16 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(IDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel22)
                                     .addComponent(jLabel27)
-                                    .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(INIDIPEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(INIMESPEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel23)
-                                    .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(FINDIPEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FINMESPEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel24)
@@ -1558,11 +1577,12 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddPenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPenActionPerformed
-        String SQL = "INSERT INTO `pensiones." + Est.getSelectedItem().toString() + "` (`#registro`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Direccion`, `Mail`, "
-                + "`#Casa`, `#Oficina`, `#Celular`, `Observaciones`, `Placas`, `Marca`, `Modelo`, `Año`, `Color`, `Clase auto`,"
-                + " `Tipo de pension`, `Status`, `Referencia Bancaria`, `Razon Social`, `#padron`, `Iniciopension`, `mes`, `Finpension`, "
-                + "`Importe`, `Recargo`, `IVA`, `Total a pagar`, `Total pagado`, `Fecha de pago`, `Metodo`, `CTE`) VALUES "
-                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `pensiones." + Est.getSelectedItem().toString() + "` (`#registro`, `Apellido P`, `Apellido M`,"
+                + " `Nombre(s)`, `Direccion`, `Mail`, `#Casa`, `#Oficina`, `#Celular`, `Observaciones`,"
+                + " `Placas`, `Marca`, `Modelo`, `Año`, `Color`, `Clase auto`, `Tipo de pension`, `Status`, ´mes de registro´,"
+                + " `Razon Social`, `#padron`, `diaInicio`, `mesinicio`, `diafin`, `mesfin`, `Importe`,"
+                + " `Recargo`, `IVA`, `Total a pagar`, `Total pagado`, `Fecha de pago`, `Metodo`, `CTE`) VALUES "
+                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
             pst.setInt(1, Integer.parseInt(NR.getText()));
@@ -1583,20 +1603,21 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             pst.setString(16, CDA.getText());
             pst.setString(17, TDP.getText());
             pst.setString(18, Status.getSelectedItem().toString());
-            pst.setString(19, RB.getText());
+            pst.setString(19, Mescbx.getSelectedItem().toString());
             pst.setString(20, RS.getText());
             pst.setString(21, NP.getText());
-            pst.setString(22, IDP.getText());
-            pst.setString(23, Mescbx.getSelectedItem().toString());
-            pst.setString(24, FDP.getText());
-            pst.setString(25, Importe.getText());
-            pst.setString(26, RecImporte.getText());
-            pst.setString(27, IVAImporte.getText());
-            pst.setString(28, TAP.getText());
-            pst.setString(29, TP.getText());
-            pst.setString(30, FechaDP.getText());
-            pst.setString(31, Metodo.getText());
-            pst.setString(32, NS.getText());
+            pst.setString(22, INIDIPEN.getText());
+            pst.setString(23, INIMESPEN.getSelectedItem().toString());
+            pst.setString(24, FINDIPEN.getText());
+            pst.setString(25, FINMESPEN.getSelectedItem().toString());
+            pst.setString(26, Importe.getText());
+            pst.setString(27, RecImporte.getText());
+            pst.setString(28, IVAImporte.getText());
+            pst.setString(29, TAP.getText());
+            pst.setString(30, TP.getText());
+            pst.setString(31, FechaDP.getText());
+            pst.setString(32, Metodo.getText());
+            pst.setString(33, NS.getText());
 
             pst.executeUpdate();
 
@@ -1620,12 +1641,13 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             CDA.setText("");
             TDP.setText("");
             Status.setSelectedIndex(0);
+            INIMESPEN.setSelectedIndex(0);
+            FINMESPEN.setSelectedIndex(0);
             Mescbx.setSelectedIndex(0);
-            RB.setText("");
+            INIDIPEN.setText("");
             RS.setText("");
             NP.setText("0");
-            IDP.setText("");
-            FDP.setText("");
+            FINDIPEN.setText("");
             Importe.setText("0");
             RecImporte.setText("0");
             IVAImporte.setText("0");
@@ -1731,21 +1753,22 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             pst.setString(16, CDA.getText());
             pst.setString(17, TDP.getText());
             pst.setString(18, Status.getSelectedItem().toString());
-            pst.setString(19, RB.getText());
+            pst.setString(19, Mescbx.getSelectedItem().toString());
             pst.setString(20, RS.getText());
             pst.setString(21, NP.getText());
-            pst.setString(22, IDP.getText());
-            pst.setString(23, Mescbx.getSelectedItem().toString());
-            pst.setString(24, FDP.getText());
-            pst.setString(25, Importe.getText());
-            pst.setString(26, RecImporte.getText());
-            pst.setString(27, IVAImporte.getText());
-            pst.setString(28, TAP.getText());
-            pst.setString(29, TP.getText());
-            pst.setString(30, FechaDP.getText());
-            pst.setString(31, Metodo.getText());
-            pst.setString(32, NS.getText());
-            pst.setInt(33, Integer.parseInt(NR.getText()));
+            pst.setString(22, INIDIPEN.getText());
+            pst.setString(23, INIMESPEN.getSelectedItem().toString());
+            pst.setString(24, FINDIPEN.getText());
+            pst.setString(25, FINMESPEN.getSelectedItem().toString());
+            pst.setString(26, Importe.getText());
+            pst.setString(27, RecImporte.getText());
+            pst.setString(28, IVAImporte.getText());
+            pst.setString(29, TAP.getText());
+            pst.setString(30, TP.getText());
+            pst.setString(31, FechaDP.getText());
+            pst.setString(32, Metodo.getText());
+            pst.setString(33, NS.getText());
+            pst.setInt(34, Integer.parseInt(NR.getText()));
 
             pst.executeUpdate();
 
@@ -1770,11 +1793,12 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             TDP.setText("");
             Status.setSelectedIndex(0);
             Mescbx.setSelectedIndex(0);
-            RB.setText("");
+            INIMESPEN.setSelectedIndex(0);
+            FINMESPEN.setSelectedIndex(0);
+            INIDIPEN.setText("");
             RS.setText("");
             NP.setText("0");
-            IDP.setText("");
-            FDP.setText("");
+            FINDIPEN.setText("");
             Importe.setText("0");
             RecImporte.setText("0");
             IVAImporte.setText("0");
@@ -1818,25 +1842,36 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                 Status.setSelectedIndex(i);
             }
         }
-        RB.setText(String.valueOf(TTehuantepec.getValueAt(fila, 18)));
-        RS.setText(String.valueOf(TTehuantepec.getValueAt(fila, 19)));
-        NP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 20)));
-        IDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 21)));
-        String combo5 = model.getValueAt(fila, 22).toString();
+        String combo5 = model.getValueAt(fila, 18).toString();
         for (int i = 0; i < Mescbx.getItemCount(); i++) {
             if (Mescbx.getItemAt(i).equalsIgnoreCase(combo5)) {
                 Mescbx.setSelectedIndex(i);
             }
         }
-        FDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 23)));
-        Importe.setText(String.valueOf(TTehuantepec.getValueAt(fila, 24)));
-        RecImporte.setText(String.valueOf(TTehuantepec.getValueAt(fila, 25)));
-        IVAImporte.setText(String.valueOf(TTehuantepec.getValueAt(fila, 26)));
-        TAP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 27)));
-        TP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 28)));
-        FDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 29)));
-        Metodo.setText(String.valueOf(TTehuantepec.getValueAt(fila, 30)));
-        NS.setText(String.valueOf(TTehuantepec.getValueAt(fila, 31)));
+        RS.setText(String.valueOf(TTehuantepec.getValueAt(fila, 19)));
+        NP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 20)));
+        INIDIPEN.setText(String.valueOf(TTehuantepec.getValueAt(fila, 21)));
+        String combo6 = model.getValueAt(fila, 22).toString();
+        for (int i = 0; i < INIMESPEN.getItemCount(); i++) {
+            if (INIMESPEN.getItemAt(i).equalsIgnoreCase(combo6)) {
+                INIMESPEN.setSelectedIndex(i);
+            }
+        }
+        FINDIPEN.setText(String.valueOf(TTehuantepec.getValueAt(fila, 23)));
+        String combo7 = model.getValueAt(fila, 24).toString();
+        for (int i = 0; i < FINMESPEN.getItemCount(); i++) {
+            if (FINMESPEN.getItemAt(i).equalsIgnoreCase(combo7)) {
+                FINMESPEN.setSelectedIndex(i);
+            }
+        }
+        Importe.setText(String.valueOf(TTehuantepec.getValueAt(fila, 25)));
+        RecImporte.setText(String.valueOf(TTehuantepec.getValueAt(fila, 26)));
+        IVAImporte.setText(String.valueOf(TTehuantepec.getValueAt(fila, 27)));
+        TAP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 28)));
+        TP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 29)));
+        FechaDP.setText(String.valueOf(TTehuantepec.getValueAt(fila, 30)));
+        Metodo.setText(String.valueOf(TTehuantepec.getValueAt(fila, 31)));
+        NS.setText(String.valueOf(TTehuantepec.getValueAt(fila, 32)));
 
         if (Double.parseDouble(RecImporte.getText()) >= 0.1) {
             Rec.setSelected(true);
@@ -1878,25 +1913,36 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                 Status.setSelectedIndex(i);
             }
         }
-        RB.setText(String.valueOf(Titurbide.getValueAt(fila, 18)));
-        RS.setText(String.valueOf(Titurbide.getValueAt(fila, 19)));
-        NP.setText(String.valueOf(Titurbide.getValueAt(fila, 20)));
-        IDP.setText(String.valueOf(Titurbide.getValueAt(fila, 21)));
-        String combo5 = model.getValueAt(fila, 22).toString();
+        String combo5 = model.getValueAt(fila, 18).toString();
         for (int i = 0; i < Mescbx.getItemCount(); i++) {
             if (Mescbx.getItemAt(i).equalsIgnoreCase(combo5)) {
                 Mescbx.setSelectedIndex(i);
             }
         }
-        FDP.setText(String.valueOf(Titurbide.getValueAt(fila, 23)));
-        Importe.setText(String.valueOf(Titurbide.getValueAt(fila, 24)));
-        RecImporte.setText(String.valueOf(Titurbide.getValueAt(fila, 25)));
-        IVAImporte.setText(String.valueOf(Titurbide.getValueAt(fila, 26)));
-        TAP.setText(String.valueOf(Titurbide.getValueAt(fila, 27)));
-        TP.setText(String.valueOf(Titurbide.getValueAt(fila, 28)));
-        FDP.setText(String.valueOf(Titurbide.getValueAt(fila, 29)));
-        Metodo.setText(String.valueOf(Titurbide.getValueAt(fila, 30)));
-        NS.setText(String.valueOf(Titurbide.getValueAt(fila, 31)));
+        RS.setText(String.valueOf(Titurbide.getValueAt(fila, 19)));
+        NP.setText(String.valueOf(Titurbide.getValueAt(fila, 20)));
+        INIDIPEN.setText(String.valueOf(Titurbide.getValueAt(fila, 21)));
+        String combo6 = model.getValueAt(fila, 22).toString();
+        for (int i = 0; i < INIMESPEN.getItemCount(); i++) {
+            if (INIMESPEN.getItemAt(i).equalsIgnoreCase(combo6)) {
+                INIMESPEN.setSelectedIndex(i);
+            }
+        }
+        FINDIPEN.setText(String.valueOf(Titurbide.getValueAt(fila, 23)));
+        String combo7 = model.getValueAt(fila, 24).toString();
+        for (int i = 0; i < FINMESPEN.getItemCount(); i++) {
+            if (FINMESPEN.getItemAt(i).equalsIgnoreCase(combo7)) {
+                FINMESPEN.setSelectedIndex(i);
+            }
+        }
+        Importe.setText(String.valueOf(Titurbide.getValueAt(fila, 25)));
+        RecImporte.setText(String.valueOf(Titurbide.getValueAt(fila, 26)));
+        IVAImporte.setText(String.valueOf(Titurbide.getValueAt(fila, 27)));
+        TAP.setText(String.valueOf(Titurbide.getValueAt(fila, 28)));
+        TP.setText(String.valueOf(Titurbide.getValueAt(fila, 29)));
+        FechaDP.setText(String.valueOf(Titurbide.getValueAt(fila, 30)));
+        Metodo.setText(String.valueOf(Titurbide.getValueAt(fila, 31)));
+        NS.setText(String.valueOf(Titurbide.getValueAt(fila, 32)));
 
         if (Double.parseDouble(RecImporte.getText()) >= 0.1) {
             Rec.setSelected(true);
@@ -1938,25 +1984,36 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
                 Status.setSelectedIndex(i);
             }
         }
-        RB.setText(String.valueOf(Tptetitla.getValueAt(fila, 18)));
-        RS.setText(String.valueOf(Tptetitla.getValueAt(fila, 19)));
-        NP.setText(String.valueOf(Tptetitla.getValueAt(fila, 20)));
-        IDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 21)));
-        String combo5 = model.getValueAt(fila, 22).toString();
+        String combo5 = model.getValueAt(fila, 18).toString();
         for (int i = 0; i < Mescbx.getItemCount(); i++) {
             if (Mescbx.getItemAt(i).equalsIgnoreCase(combo5)) {
                 Mescbx.setSelectedIndex(i);
             }
         }
-        FDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 23)));
-        Importe.setText(String.valueOf(Tptetitla.getValueAt(fila, 24)));
-        RecImporte.setText(String.valueOf(Tptetitla.getValueAt(fila, 25)));
-        IVAImporte.setText(String.valueOf(Tptetitla.getValueAt(fila, 26)));
-        TAP.setText(String.valueOf(Tptetitla.getValueAt(fila, 27)));
-        TP.setText(String.valueOf(Tptetitla.getValueAt(fila, 28)));
-        FDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 29)));
-        Metodo.setText(String.valueOf(Tptetitla.getValueAt(fila, 30)));
-        NS.setText(String.valueOf(Tptetitla.getValueAt(fila, 31)));
+        RS.setText(String.valueOf(Tptetitla.getValueAt(fila, 19)));
+        NP.setText(String.valueOf(Tptetitla.getValueAt(fila, 20)));
+        INIDIPEN.setText(String.valueOf(Tptetitla.getValueAt(fila, 21)));
+        String combo6 = model.getValueAt(fila, 22).toString();
+        for (int i = 0; i < INIMESPEN.getItemCount(); i++) {
+            if (INIMESPEN.getItemAt(i).equalsIgnoreCase(combo6)) {
+                INIMESPEN.setSelectedIndex(i);
+            }
+        }
+        FINDIPEN.setText(String.valueOf(Tptetitla.getValueAt(fila, 23)));
+        String combo7 = model.getValueAt(fila, 24).toString();
+        for (int i = 0; i < FINMESPEN.getItemCount(); i++) {
+            if (FINMESPEN.getItemAt(i).equalsIgnoreCase(combo7)) {
+                FINMESPEN.setSelectedIndex(i);
+            }
+        }
+        Importe.setText(String.valueOf(Tptetitla.getValueAt(fila, 25)));
+        RecImporte.setText(String.valueOf(Tptetitla.getValueAt(fila, 26)));
+        IVAImporte.setText(String.valueOf(Tptetitla.getValueAt(fila, 27)));
+        TAP.setText(String.valueOf(Tptetitla.getValueAt(fila, 28)));
+        TP.setText(String.valueOf(Tptetitla.getValueAt(fila, 29)));
+        FechaDP.setText(String.valueOf(Tptetitla.getValueAt(fila, 30)));
+        Metodo.setText(String.valueOf(Tptetitla.getValueAt(fila, 31)));
+        NS.setText(String.valueOf(Tptetitla.getValueAt(fila, 32)));
 
         if (Double.parseDouble(RecImporte.getText()) >= 0.1) {
             Rec.setSelected(true);
@@ -2390,13 +2447,15 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     private javax.swing.JTextArea Direccion;
     private javax.swing.JComboBox<String> Est;
     private javax.swing.JMenuItem Estadias;
-    private javax.swing.JTextField FDP;
+    private javax.swing.JTextField FINDIPEN;
+    private javax.swing.JComboBox<String> FINMESPEN;
     private javax.swing.JTextField FechaDP;
     private javax.swing.JComboBox<String> FilTehuantepec;
     private javax.swing.JComboBox<String> Filiturbide;
     private javax.swing.JComboBox<String> Filptetitla;
     private javax.swing.JMenuItem General1;
-    private javax.swing.JTextField IDP;
+    private javax.swing.JTextField INIDIPEN;
+    private javax.swing.JComboBox<String> INIMESPEN;
     private javax.swing.JCheckBox IVA;
     private javax.swing.JTextField IVAImporte;
     private javax.swing.JTextField Importe;
@@ -2424,7 +2483,6 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     private javax.swing.JTextArea ObsPen;
     private javax.swing.JMenuItem PRESQ;
     private javax.swing.JTextField Placas;
-    private javax.swing.JTextField RB;
     private javax.swing.JTextField RS;
     private javax.swing.JCheckBox Rec;
     private javax.swing.JTextField RecImporte;
@@ -2467,6 +2525,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

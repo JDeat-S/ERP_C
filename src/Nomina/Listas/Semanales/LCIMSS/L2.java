@@ -217,9 +217,9 @@ public class L2 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM1.getString("Apellido P") + " "
                             + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM1.getString("Apellido P") + " "
                             + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -507,9 +507,9 @@ public class L2 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM2.getString("Apellido P") + " "
                             + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM2.getString("Apellido P") + " "
                             + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -960,9 +960,9 @@ public class L2 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM3.getString("Apellido P") + " "
                             + LM3.getString("Apellido M") + " " + LM3.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM3.getString("Apellido P") + " "
                             + LM3.getString("Apellido M") + " " + LM3.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -1250,9 +1250,9 @@ public class L2 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM4.getString("Apellido P") + " "
                             + LM4.getString("Apellido M") + " " + LM4.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM4.getString("Apellido P") + " "
                             + LM4.getString("Apellido M") + " " + LM4.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -1593,9 +1593,7 @@ public class L2 {
                 Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(L2.class.getName()).log(Level.SEVERE, null, ex);
         }
 

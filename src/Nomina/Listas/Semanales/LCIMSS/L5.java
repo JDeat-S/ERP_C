@@ -217,9 +217,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM1.getString("Apellido P") + " "
                             + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM1.getString("Apellido P") + " "
                             + LM1.getString("Apellido M") + " " + LM1.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -507,9 +507,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM2.getString("Apellido P") + " "
                             + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM2.getString("Apellido P") + " "
                             + LM2.getString("Apellido M") + " " + LM2.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -960,9 +960,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM3.getString("Apellido P") + " "
                             + LM3.getString("Apellido M") + " " + LM3.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM3.getString("Apellido P") + " "
                             + LM3.getString("Apellido M") + " " + LM3.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -1250,9 +1250,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM4.getString("Apellido P") + " "
                             + LM4.getString("Apellido M") + " " + LM4.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM4.getString("Apellido P") + " "
                             + LM4.getString("Apellido M") + " " + LM4.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -1637,9 +1637,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM5.getString("Apellido P") + " "
                             + LM5.getString("Apellido M") + " " + LM5.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM5.getString("Apellido P") + " "
                             + LM5.getString("Apellido M") + " " + LM5.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -1980,8 +1980,8 @@ public class L5 {
                     cell.setCellStyle(Contenido);
                     spreadsheet.addMergedRegion(
                             new CellRangeAddress(
-                                    60, //first row (0-based)
-                                    60, //last row (0-based)
+                                    61, //first row (0-based)
+                                    61, //last row (0-based)
                                     4, //first column (0-based)
                                     7 //last column (0-based)
                             )
@@ -1994,9 +1994,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM6.getString("Apellido P") + " "
                             + LM6.getString("Apellido M") + " " + LM6.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM6.getString("Apellido P") + " "
                             + LM6.getString("Apellido M") + " " + LM6.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -2379,9 +2379,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM7.getString("Apellido P") + " "
                             + LM7.getString("Apellido M") + " " + LM7.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM7.getString("Apellido P") + " "
                             + LM7.getString("Apellido M") + " " + LM7.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -2390,7 +2390,7 @@ public class L5 {
                     cell.setCellValue(LM7.getString("Apellido P") + " "
                             + LM7.getString("Apellido M") + " " + LM7.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue(LM7.getString("Zona"));
                     spreadsheet.setColumnWidth(8, 4250);
@@ -2735,9 +2735,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM8.getString("Apellido P") + " "
                             + LM8.getString("Apellido M") + " " + LM8.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM8.getString("Apellido P") + " "
                             + LM8.getString("Apellido M") + " " + LM8.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -2746,7 +2746,7 @@ public class L5 {
                     cell.setCellValue(LM8.getString("Apellido P") + " "
                             + LM8.getString("Apellido M") + " " + LM8.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
-                    
+
                     cell = row.createCell(8);
                     cell.setCellValue(LM8.getString("Zona"));
                     spreadsheet.setColumnWidth(8, 4250);
@@ -3105,7 +3105,7 @@ public class L5 {
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(2);
                     cell.setCellStyle(Contenido);
-                   spreadsheet.addMergedRegion(
+                    spreadsheet.addMergedRegion(
                             new CellRangeAddress(
                                     98, //first row (0-based)
                                     98, //last row (0-based)
@@ -3121,9 +3121,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM9.getString("Apellido P") + " "
                             + LM9.getString("Apellido M") + " " + LM9.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM9.getString("Apellido P") + " "
                             + LM9.getString("Apellido M") + " " + LM9.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
@@ -3132,6 +3132,7 @@ public class L5 {
                     cell.setCellValue(LM9.getString("Apellido P") + " "
                             + LM9.getString("Apellido M") + " " + LM9.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);
+
                     cell = row.createCell(8);
                     cell.setCellValue(LM9.getString("Zona"));
                     spreadsheet.setColumnWidth(8, 4250);
@@ -3476,9 +3477,9 @@ public class L5 {
                     cell = row.createCell(5);
                     cell.setCellValue(LM10.getString("Apellido P") + " "
                             + LM10.getString("Apellido M") + " " + LM10.getString("Nombre(s)"));
-                    cell = row.createCell(6);
                     cell.setCellStyle(Encabezado);
 
+                    cell = row.createCell(6);
                     cell.setCellValue(LM10.getString("Apellido P") + " "
                             + LM10.getString("Apellido M") + " " + LM10.getString("Nombre(s)"));
                     cell.setCellStyle(Encabezado);

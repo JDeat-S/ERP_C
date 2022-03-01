@@ -339,14 +339,52 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
-            <MenuItem class="javax.swing.JMenuItem" name="LDA1">
+            <Menu class="javax.swing.JMenu" name="LDAQ">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS"/>
+                <Property name="text" type="java.lang.String" value="Listas de asistencia Quin"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA1ActionPerformed"/>
-              </Events>
-            </MenuItem>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="LDA2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia C/IMSS "/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA2ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="LDA1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA1ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="LDAS">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listas de asistencia Sem"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="LDA4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia S/IMSS "/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA4ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="LDA7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Listas de asistencia C/IMSS "/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LDA7ActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="Reportes">
@@ -551,7 +589,6 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -712,7 +749,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="LISTA DE ASISTENCIA S/IMSS"/>
+                <Property name="text" type="java.lang.String" value="LISTA DE ASISTENCIA C/IMSS"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
@@ -796,8 +833,8 @@
                 <Container class="javax.swing.JScrollPane" name="jScrollPane4">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Listas sin IMSS">
-                        <Property name="tabTitle" type="java.lang.String" value="Listas sin IMSS"/>
+                      <JTabbedPaneConstraints tabName="Listas C/IMSS">
+                        <Property name="tabTitle" type="java.lang.String" value="Listas C/IMSS"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
