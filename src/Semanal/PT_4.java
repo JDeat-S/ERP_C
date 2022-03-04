@@ -17,6 +17,7 @@ import RH.Depositos.DepositosQ_4;
 import RH.Empleados_4;
 import RH.Estadias_4;
 import RH.Tortas_4;
+import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
 import ServiciosSem.ServPtetitla;
@@ -774,6 +775,552 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             default -> {
             }
         }
+    }
+
+    public void MODpen() {
+        double falt = 0.0, tfalt, TPAGADO = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt = rs.getDouble(1);
+                TPAGADO = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt = falt - Double.parseDouble(Importe10.getText());
+        double tpag = TPAGADO + Double.parseDouble(Importe10.getText());
+
+        if (tfalt == 0.0) {
+            if (Mas9.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas9.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+        double falt1 = 0.0, tfalt1, TPAGADO1 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron1.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt1 = rs.getDouble(1);
+                TPAGADO1 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt1 = falt1 - Double.parseDouble(Importe11.getText());
+        double tpag1 = TPAGADO1 + Double.parseDouble(Importe11.getText());
+        if (tfalt1 == 0.0) {
+            if (Mas10.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas10.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+        double falt2 = 0.0, tfalt2, TPAGADO2 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron2.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt2 = rs.getDouble(1);
+                TPAGADO2 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt2 = falt2 - Double.parseDouble(Importe12.getText());
+        double tpag2 = TPAGADO2 + Double.parseDouble(Importe12.getText());
+        if (tfalt2 == 0.0) {
+            if (Mas11.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas11.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+        double falt3 = 0.0, tfalt3, TPAGADO3 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron3.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt3 = rs.getDouble(1);
+                TPAGADO3 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt3 = falt3 - Double.parseDouble(Importe13.getText());
+        double tpag3 = TPAGADO3 + Double.parseDouble(Importe13.getText());
+        if (tfalt3 == 0.0) {
+            if (Mas12.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas12.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+        double falt4 = 0.0, tfalt4, TPAGADO4 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron4.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt4 = rs.getDouble(1);
+                TPAGADO4 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt4 = falt4 - Double.parseDouble(Importe14.getText());
+        double tpag4 = TPAGADO4 + Double.parseDouble(Importe14.getText());
+        if (tfalt4 == 0.0) {
+            if (Mas13.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas13.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+        double falt5 = 0.0, tfalt5, TPAGADO5 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron5.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt5 = rs.getDouble(1);
+                TPAGADO5 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt5 = falt5 - Double.parseDouble(Importe15.getText());
+        double tpag5 = TPAGADO5 + Double.parseDouble(Importe15.getText());
+        if (tfalt5 == 0.0) {
+            if (Mas14.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas14.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+        double falt6 = 0.0, tfalt6, TPAGADO6 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron6.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt6 = rs.getDouble(1);
+                TPAGADO6 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt6 = falt6 - Double.parseDouble(Importe16.getText());
+        double tpag6 = TPAGADO6 + Double.parseDouble(Importe16.getText());
+        if (tfalt6 == 0.0) {
+            if (Mas15.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas15.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+        double falt7 = 0.0, tfalt7, TPAGADO7 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron7.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt7 = rs.getDouble(1);
+                TPAGADO7 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt7 = falt7 - Double.parseDouble(Importe17.getText());
+        double tpag7 = TPAGADO7 + Double.parseDouble(Importe17.getText());
+        if (tfalt7 == 0.0) {
+            if (Mas16.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas16.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+        double falt8 = 0.0, tfalt8, TPAGADO8 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron8.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt8 = rs.getDouble(1);
+                TPAGADO8 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt8 = falt8 - Double.parseDouble(Importe18.getText());
+        double tpag8 = TPAGADO8 + Double.parseDouble(Importe18.getText());
+        if (tfalt8 == 0.0) {
+            if (Mas17.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag8 + "', `faltante` = '" + tfalt8 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha18.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron8.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Mas17.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag8 + "', `faltante` = '" + tfalt8 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha18.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron8.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+
+        double falt9 = 0.0, tfalt9, TPAGADO9 = 0;
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Tpagado` FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron9.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                falt9 = rs.getDouble(1);
+                TPAGADO9 = rs.getDouble(2);
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tfalt9 = falt9 - Double.parseDouble(Importe19.getText());
+        double tpag9 = TPAGADO9 + Double.parseDouble(Importe19.getText());
+        if (tfalt9 == 0.0) {
+            if (Menos17.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Pagado',"
+                        + " `Tpagado` = '" + tpag9 + "', `faltante` = '" + tfalt9 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha19.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron9.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        } else {
+            if (Menos17.isVisible()) {
+                String SQL = "UPDATE `pensiones.puente titla` SET `Status` = 'Debe',"
+                        + " `Tpagado` = '" + tpag9 + "', `faltante` = '" + tfalt9 + "', "
+                        + "`FdPago` = '" + ((JTextField) Fecha19.getDateEditor().getUiComponent()).getText() + "',"
+                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla`.`#padron` LIKE '%" + NPadron9.getText() + "%'";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                } catch (SQLException error_semanal) {
+                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                }
+            }
+        }
+
     }
 
     public void MODSemanal() {
@@ -4966,6 +5513,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         ADMV1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -4978,6 +5526,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Semanal Inturbide");
@@ -5820,6 +6369,60 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        NPadron1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron1KeyReleased(evt);
+            }
+        });
+
+        NPadron2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron2KeyReleased(evt);
+            }
+        });
+
+        NPadron3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron3KeyReleased(evt);
+            }
+        });
+
+        NPadron4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron4KeyReleased(evt);
+            }
+        });
+
+        NPadron5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron5KeyReleased(evt);
+            }
+        });
+
+        NPadron6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron6KeyReleased(evt);
+            }
+        });
+
+        NPadron7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron7KeyReleased(evt);
+            }
+        });
+
+        NPadron8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron8KeyReleased(evt);
+            }
+        });
+
+        NPadron9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron9KeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -5963,6 +6566,12 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                     .addComponent(Fecha19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        NPadron.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadronKeyReleased(evt);
+            }
+        });
 
         jLabel26.setText("# De padron");
 
@@ -8587,6 +9196,14 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         });
         jMenu6.add(jMenuItem16);
 
+        jMenuItem18.setText("Generar padron");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem18);
+
         jMenu5.add(jMenu6);
 
         Menuadm.add(jMenu5);
@@ -8677,6 +9294,14 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             }
         });
         Semanales.add(jMenuItem13);
+
+        jMenuItem19.setText("Generar padron");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem19);
 
         jMenuBar1.add(Semanales);
 
@@ -10887,6 +11512,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_LDA11ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        MODpen();
         ADDSemanal();
         Addscc();
         Addsgast();
@@ -10941,7 +11567,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de servicios con cobro: " + error_semanal);
 
         }
-                MDsem();
+        MDsem();
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -11000,7 +11626,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
         }
-                MDsem();
+        MDsem();
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -11056,7 +11682,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
 
         }
-                MDsem();
+        MDsem();
 
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -11971,7 +12597,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(null, "Error al agregar datos de vales: " + error_semanal);
 
         }
-                MDsem();
+        MDsem();
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -11997,6 +12623,246 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         TDV.setText("0");
         ColorDB();
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void NPadronKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadronKeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`  "
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio10.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe10.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadronKeyReleased
+
+    private void NPadron1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron1KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)` "
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron1.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio11.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe11.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron1KeyReleased
+
+    private void NPadron2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron2KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron2.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio12.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe12.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron2KeyReleased
+
+    private void NPadron3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron3KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron3.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio13.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe13.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron3KeyReleased
+
+    private void NPadron4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron4KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron4.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio14.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe14.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron4KeyReleased
+
+    private void NPadron5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron5KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron5.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio15.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe15.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron5KeyReleased
+
+    private void NPadron6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron6KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron6.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio16.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe16.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron6KeyReleased
+
+    private void NPadron7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron7KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron7.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio17.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe17.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron7KeyReleased
+
+    private void NPadron8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron8KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron8.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio18.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe18.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron8KeyReleased
+
+    private void NPadron9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron9KeyReleased
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
+                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron9.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio19.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe19.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones();
+        ColorDB();
+    }//GEN-LAST:event_NPadron9KeyReleased
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        Padrones regr = new Padrones(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        Padrones regr = new Padrones(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -12456,6 +13322,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

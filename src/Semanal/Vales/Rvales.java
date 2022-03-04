@@ -542,6 +542,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, 20));
 
         NV.setEditable(false);
+        NV.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         NV.setForeground(new java.awt.Color(255, 51, 51));
         NV.setText("0");
         NV.setBorder(null);
@@ -556,6 +557,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
         Importe.setEditable(false);
+        Importe.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         Importe.setText("0");
         Importe.setBorder(null);
         Importe.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -637,7 +639,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, -1, 20));
 
         NV1.setEditable(false);
-        NV1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        NV1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         NV1.setForeground(new java.awt.Color(255, 51, 51));
         NV1.setText("0");
         NV1.setBorder(null);
@@ -649,7 +651,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 57, 20));
 
         Importe1.setEditable(false);
-        Importe1.setFont(new java.awt.Font("Roboto", 0, 10)); // NOI18N
+        Importe1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Importe1.setText("0");
         Importe1.setBorder(null);
         Importe1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1255,7 +1257,6 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
                     + "`SM1`, `M050`, `SM050`, `total real`, `recibe`, `entrega` from `semanal.vales` where `#vale` = ?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
-            java.sql.Statement st = con.createStatement();
 
             while (rs.next()) {
                 B1000.setText(rs.getString(1));
@@ -1723,9 +1724,7 @@ public final class Rvales extends javax.swing.JFrame implements Printable {
             java.util.logging.Logger.getLogger(Rvales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {

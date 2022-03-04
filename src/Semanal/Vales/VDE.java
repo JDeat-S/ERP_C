@@ -1176,7 +1176,13 @@ public final class VDE extends javax.swing.JFrame implements Printable {
     }//GEN-LAST:event_Harder1MousePressed
 
     private void txtbtngenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseClicked
-        agregarvale();
+        if (Double.parseDouble(Importe.getText()) == Double.parseDouble(TR.getText())) {
+            agregarvale();
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Los valores no coinciden en bueno por y Total real.");
+
+        }
     }//GEN-LAST:event_txtbtngenMouseClicked
 
     private void txtbtngenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseEntered

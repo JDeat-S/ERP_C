@@ -1,4 +1,5 @@
 package Nomina;
+import Nomina.Prenomina.*;
 
 import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
@@ -1468,6 +1469,9 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         Reportes = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Nomina Semanal General");
@@ -6740,6 +6744,26 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
         });
         Reportes.add(jMenuItem16);
+
+        jMenu4.setText("Pre-nomina");
+
+        jMenuItem17.setText("Semanal");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem17);
+
+        jMenuItem18.setText("Quincenal");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem18);
+
+        Reportes.add(jMenu4);
 
         jMenuBar1.add(Reportes);
 
@@ -17508,6 +17532,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_LDA6ActionPerformed
 
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        PrenominaS regr = new PrenominaS();
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        PremonimaQ regr = new PremonimaQ();
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -18122,6 +18156,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
@@ -18134,6 +18169,8 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
