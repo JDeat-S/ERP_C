@@ -18,8 +18,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -53,7 +54,6 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
         TDserv.add(tds24);
 
         this.setLocationRelativeTo(null);
-        MNV();
 
     }
 
@@ -71,31 +71,111 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
         this.usr = usr;
         this.LP = LP;
         this.setLocationRelativeTo(null);
-        MNV();
+    }
+
+    public void OBData() {
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `TaPagar`, `Apellido P`, `Apellido M`,"
+                    + " `Nombre(s)`, `Direccion`, `Tel Casa`, `Tel Oficina`, `Celular`, "
+                    + "`marca 1`, `modelo 1`, `Placas 1`, `Color 1`, `marca 2`, `modelo 2`,"
+                    + " `Placas 2`, `Color 2`, `marca 3`, `modelo 3`, `Placas 3`, `Color 3`, "
+                    + " `ClaseDA`, `Tdpension` FROM `pensiones." + Est.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NF.getText() + "%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                COBRO.setText(rs.getString(1));
+                Ap.setText(rs.getString(2));
+                Am.setText(rs.getString(3));
+                Name.setText(rs.getString(4));
+                Calle.setText(rs.getString(5));
+                tel1.setText(rs.getString(6));
+                tel2.setText(rs.getString(7));
+                cel.setText(rs.getString(8));
+                marca1.setText(rs.getString(9));
+                modelo1.setText(rs.getString(10));
+                placas1.setText(rs.getString(11));
+                color1.setText(rs.getString(12));
+                marca2.setText(rs.getString(13));
+                modelo2.setText(rs.getString(14));
+                placas2.setText(rs.getString(15));
+                color2.setText(rs.getString(16));
+                marca3.setText(rs.getString(17));
+                modelo3.setText(rs.getString(18));
+                placas3.setText(rs.getString(19));
+                color3.setText(rs.getString(20));
+                if (rs.getString(21).equals("Auto")) {
+                    cv1.setSelected(true);
+                }
+                if (rs.getString(21).equals("Camioneta")) {
+                    cv2.setSelected(true);
+                }
+                if (rs.getString(21).equals("Camion")) {
+                    cv3.setSelected(true);
+                }
+                if (rs.getString(21).equals("Comerciante")) {
+                    cv4.setSelected(true);
+                }
+                if (rs.getString(21).equals("Bicicleta/triciclo")){
+                    cv5.setSelected(true);
+                }
+                if (rs.getString(22).equals("12 HRS DIA")) {
+                    tds12.setSelected(true);
+                }
+                if (rs.getString(22).equals("12 HRS NOCHE")) {
+                    tds12.setSelected(true);
+                }
+                if (rs.getString(22).equals("24 HRS")) {
+                    tds24.setSelected(true);
+                }
+                prf.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void MNV() {
         String SQL = "SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'confort2022'"
-                + " AND TABLE_NAME = 'semanal.vales'";
+                + " AND TABLE_NAME = 'semanal.padrones." + Est.getSelectedItem().toString() + ".control'";
         try {
             java.sql.Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(SQL);
             while (rs.next()) {
 
                 NF.setText("" + Integer.parseInt(rs.getString("AUTO_INCREMENT")));
-                COBRO.setText("" + Integer.parseInt(rs.getString("AUTO_INCREMENT")));
 
             }
             st.isClosed();
             rs.isClosed();
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "Error al obtener utimo vale registrado: " + e);
+            JOptionPane.showMessageDialog(null, "Error al obtener el ultimo padron registrado: " + e);
 
         }
     }
 
     public void agregarvale() {
+
+        String SQL = "INSERT INTO `semanal.padrones." + Est.getSelectedItem().toString() + ".control` (`#Folio`, `Apellido P`, `Apellido M`, `Nombre(s)`) VALUES (?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(NF.getText()));
+            pst.setString(2, Ap.getText());
+            pst.setString(3, Am.getText());
+            pst.setString(4, Name.getText());
+
+            pst.executeUpdate();
+
+            pst.isClosed();
+        } catch (SQLException error_AddLDA) {
+            JOptionPane.showMessageDialog(null, "Error al registrar pension: " + error_AddLDA);
+        }
+
         String CV = null, fac, tds = null;
         if (cv1.isSelected()) {
             CV = "Clase 1";
@@ -123,7 +203,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
         if (tds24.isSelected()) {
             tds = "24 horas";
         }
-        String SQL = "INSERT INTO `semanal.padrones." + Estacionamiento.getSelectedItem().toString() + "` (`#Folio`, `monto`, `Apellido P`,"
+        SQL = "INSERT INTO `semanal.padrones." + Est.getSelectedItem().toString() + "` (`#Folio`, `monto`, `Apellido P`,"
                 + " `Apellido M`, `Nombre(s)`, `calle`, `num`, `interior`, `Colonia`,"
                 + " `C.P`, `delegacion`, `Telefono 1`, `Telefono 2`, `Telefono 3`,"
                 + " `RFC`, `PART`, `celular`, `marca 1`, `modelo 1`, `placas 1`,"
@@ -170,7 +250,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
             pst.setString(34, tds);
 
             pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "pension en " + Estacionamiento.getSelectedItem().toString() + " registrada.");
+            JOptionPane.showMessageDialog(null, "pension en " + Est.getSelectedItem().toString() + " registrada.");
 
             try {
                 PrinterJob job = PrinterJob.getPrinterJob();
@@ -210,9 +290,9 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
             color3.setText("");
             prp.setText("");
             prf.setText("");
-            
+
             MNV();
-            
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar vale:" + e);
         }
@@ -237,7 +317,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
 
         btngen = new javax.swing.JPanel();
         txtbtngen = new javax.swing.JLabel();
-        Estacionamiento = new javax.swing.JComboBox<>();
+        Est = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
         Move = new javax.swing.JLabel();
@@ -316,7 +396,12 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
             }
         });
 
-        Estacionamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "tehuantepec", "puente titla", "iturbide" }));
+        Est.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "tehuantepec", "puente titla", "iturbide" }));
+        Est.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                EstItemStateChanged(evt);
+            }
+        });
 
         jLabel1.setText("Estacionamiento");
 
@@ -328,7 +413,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
                 .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 974, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Estacionamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(30, 30, 30))
         );
@@ -340,7 +425,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
                     .addGroup(btngenLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Estacionamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 14, Short.MAX_VALUE))
                     .addGroup(btngenLayout.createSequentialGroup()
                         .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -690,7 +775,10 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     }//GEN-LAST:event_NFKeyReleased
 
     private void txtbtngenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseClicked
+
         agregarvale();
+        MNV();
+        OBData();
     }//GEN-LAST:event_txtbtngenMouseClicked
 
     private void txtbtngenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtngenMouseEntered
@@ -716,6 +804,11 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     private void txtbtnexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtbtnexitMouseClicked
         this.dispose();
     }//GEN-LAST:event_txtbtnexitMouseClicked
+
+    private void EstItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_EstItemStateChanged
+        MNV();
+        OBData();
+    }//GEN-LAST:event_EstItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -754,7 +847,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField Ap;
     private javax.swing.JTextField COBRO;
     private javax.swing.JTextField Calle;
-    private javax.swing.JComboBox<String> Estacionamiento;
+    private javax.swing.JComboBox<String> Est;
     private javax.swing.JPanel Harder1;
     private javax.swing.JLabel Move;
     private javax.swing.JTextField NF;

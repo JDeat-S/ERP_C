@@ -1,5 +1,6 @@
 package Admin;
 
+import Nomina.Prenomina.*;
 import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Semanal.PT_4;
@@ -21,7 +22,9 @@ import Logicas.BDNomQ.Logica_bd_pagosPresQ;
 import Logicas.BDNomS.Logica_bd_pagosCDAS;
 import Logicas.BDNomS.Logica_bd_pagosPresS;
 import Pensiones.PensionesVP_7;
+import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
+import Semanal.Vales.VDE;
 import java.awt.HeadlessException;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
@@ -601,6 +604,9 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         ODT2 = new javax.swing.JMenuItem();
         LDA = new javax.swing.JMenuItem();
         LDA3 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -609,6 +615,9 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
         Depositos = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
@@ -1977,6 +1986,26 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         });
         jMenu2.add(LDA3);
 
+        jMenu6.setText("Pre-nomina");
+
+        jMenuItem17.setText("Semanal");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem17);
+
+        jMenuItem19.setText("Quincenal");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem19);
+
+        jMenu2.add(jMenu6);
+
         Menuadm.add(jMenu2);
 
         jMenu1.setText("Area RH");
@@ -2030,6 +2059,30 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
             }
         });
         jMenu5.add(jMenuItem8);
+
+        jMenuItem15.setText("Generar vale de efectivo");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem15);
+
+        jMenuItem16.setText("Reimprimir vale");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem16);
+
+        jMenuItem18.setText("Generar padron");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem18);
 
         jMenu1.add(jMenu5);
 
@@ -3159,6 +3212,31 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        VDE regr = new VDE(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        Rvales regr = new Rvales(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        Padrones regr = new Padrones(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        PrenominaS regr = new PrenominaS();
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        PremonimaQ regr = new PremonimaQ();
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3376,9 +3454,15 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

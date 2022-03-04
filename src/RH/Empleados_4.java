@@ -24,6 +24,7 @@ import Logicas.BDRH.Logica_bd_RHIMSS;
 import RH.Depositos.DepositosQ_SIMSS_4;
 import RH.Depositos.DepositosS_4;
 import RH.Depositos.DepositosS_SIMSS_4;
+import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
 import ZyS.Servicios;
@@ -1478,6 +1479,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem22 = new javax.swing.JMenuItem();
         jMenuItem23 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
         Depositos2 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem18 = new javax.swing.JMenuItem();
@@ -1502,6 +1504,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Interface de Recursos Humanos");
@@ -2970,6 +2973,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem23);
 
+        jMenuItem17.setText("Generar padron");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem17);
+
         jMenu5.add(jMenu6);
 
         Depositos2.setText("Depositos");
@@ -3135,6 +3146,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         });
         Semanales.add(jMenuItem13);
+
+        jMenuItem14.setText("Generar padron");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem14);
 
         jMenuBar1.add(Semanales);
 
@@ -4499,6 +4518,16 @@ public final class Empleados_4 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem23ActionPerformed
 
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        Padrones regr = new Padrones(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        Padrones regr = new Padrones(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4715,8 +4744,10 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;

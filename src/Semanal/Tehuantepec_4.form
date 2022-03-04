@@ -216,6 +216,14 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem13ActionPerformed"/>
                       </Events>
                     </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem19">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Generar padron"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem19ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
                     <MenuItem class="javax.swing.JMenuItem" name="jMenuItem15">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Reimprimir vale"/>
@@ -328,6 +336,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem14ActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem18">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Generar padron"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem18ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -2235,26 +2251,56 @@
                           </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron1">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron1KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron2">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron2KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron3">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron3KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron4">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron4KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron5">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron5KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron6">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron6KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron7">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron7KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron8">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron8KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron9">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron9KeyReleased"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Component class="javax.swing.JTextField" name="NPadron">
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadronKeyReleased"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel26">
                       <Properties>

@@ -17,6 +17,8 @@ import Inicio.Inicio_1;
 import Logicas.*;
 import Nomina.*;
 import RH.Depositos.*;
+import Semanal.Padrones.Padrones;
+import Semanal.Vales.VDE;
 import java.awt.HeadlessException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -493,6 +495,8 @@ public final class Estadias_4 extends javax.swing.JFrame {
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem21 = new javax.swing.JMenuItem();
+        jMenuItem22 = new javax.swing.JMenuItem();
         Depositos1 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
@@ -516,6 +520,8 @@ public final class Estadias_4 extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
+        jMenuItem20 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1070,6 +1076,22 @@ public final class Estadias_4 extends javax.swing.JFrame {
         });
         jMenu6.add(jMenuItem12);
 
+        jMenuItem21.setText("Generar padron");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem21);
+
+        jMenuItem22.setText("Generar vale de efectivo");
+        jMenuItem22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem22ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem22);
+
         jMenu5.add(jMenu6);
 
         Depositos1.setText("Depositos");
@@ -1227,6 +1249,22 @@ public final class Estadias_4 extends javax.swing.JFrame {
             }
         });
         Semanales.add(jMenuItem4);
+
+        jMenuItem19.setText("Generar padron");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem19);
+
+        jMenuItem20.setText("Generar vale de efectivo");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        Semanales.add(jMenuItem20);
 
         jMenuBar1.add(Semanales);
 
@@ -1621,6 +1659,26 @@ public final class Estadias_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        Padrones regr = new Padrones(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+        VDE regr = new VDE(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
+
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+        Padrones regr = new Padrones(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
+
+    private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
+        VDE regr = new VDE(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem22ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1763,7 +1821,11 @@ public final class Estadias_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
+    private javax.swing.JMenuItem jMenuItem22;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

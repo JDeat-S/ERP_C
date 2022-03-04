@@ -1,4 +1,5 @@
 package Admin;
+import Nomina.Prenomina.*;
 
 import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
@@ -18,6 +19,9 @@ import Filtros.FiltrosZonas;
 import Logicas.*;
 import Pensiones.PensionesVP_7;
 import RH.*;
+import Semanal.Padrones.Padrones;
+import Semanal.Vales.Rvales;
+import Semanal.Vales.VDE;
 import java.sql.ResultSetMetaData;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -991,6 +995,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         ODT2 = new javax.swing.JMenuItem();
         LDA = new javax.swing.JMenuItem();
         LDA3 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem21 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         General = new javax.swing.JMenuItem();
         Estadias = new javax.swing.JMenuItem();
@@ -999,6 +1006,9 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
         Depositos = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
         ADMV2 = new javax.swing.JMenuItem();
@@ -1877,6 +1887,26 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         });
         jMenu5.add(LDA3);
 
+        jMenu4.setText("Pre-nomina");
+
+        jMenuItem20.setText("Semanal");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem20);
+
+        jMenuItem21.setText("Quincenal");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem21);
+
+        jMenu5.add(jMenu4);
+
         Menuadm.add(jMenu5);
 
         jMenu8.setText("Area RH");
@@ -1930,6 +1960,30 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
             }
         });
         jMenu9.add(jMenuItem15);
+
+        jMenuItem17.setText("Generar vale de efectivo");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem17);
+
+        jMenuItem18.setText("Reimprimir vale");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem18);
+
+        jMenuItem19.setText("Generar padron");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem19);
 
         jMenu8.add(jMenu9);
 
@@ -2494,6 +2548,31 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        VDE regr = new VDE(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        Rvales regr = new Rvales(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        Padrones regr = new Padrones(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+        PrenominaS regr = new PrenominaS();
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
+
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+        PremonimaQ regr = new PremonimaQ();
+        regr.setVisible(true);
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2622,6 +2701,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
@@ -2635,6 +2715,11 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
+    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
