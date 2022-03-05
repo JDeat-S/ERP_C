@@ -52,14 +52,14 @@ import javax.swing.table.DefaultTableModel;
  * @author JDeat
  */
 public final class DepositosQ_4 extends javax.swing.JFrame {
-
+    
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
     ColorRH colores = new ColorRH();
     Logica_usuarios usr;
     Logica_permisos LP;
-
+    
     public DepositosQ_4() {
         initComponents();
         FunMD();
@@ -97,10 +97,10 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         año.setCalendar(fecha_actual);
-
+        
         setIconImage(new ImageIcon(DepositosQ_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
-
+    
     public DepositosQ_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
@@ -155,7 +155,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         setIconImage(new ImageIcon(DepositosQ_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         setTitle("RH: Depositos imss Quincenales # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
-
+        
         switch (LP.getVDA()) {
             case 0 -> {
             }
@@ -176,37 +176,43 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
             case 2 -> {
                 Menuadm.setVisible(false);
-
+                
             }
             default -> {
             }
         }
     }
-
+    
     @SuppressWarnings("unchecked")
-
+    
     public void Modeposito() {
-        String SQL = "UPDATE `rh.depositos." + Zon.getText() + "` SET `#Folio` = ?, `#Lista` = ?,"
-                + " `#Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?,"
-                + " `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, `Bono` = ?, `Banco` = ?,"
-                + " `Cuenta de banco` = ?, `Por dia` = ?, `por hora` = ?, `Quincena del mes` = ?,"
-                + " `Año` = ?, `Dias de incapacidad` = ?, `Pago seguro` = ?, `Dias de vacaciones` = ?,"
-                + " `Pago de vacaciones` = ?, `Dias de descanso` = ?, `Pago de dias descansados` = ?,"
-                + " `Dias laborados` = ?, `Pago de dias laborados` = ?, `Descansos trabajados` = ?,"
-                + " `Pago de Descansos trabajados` = ?, `DSGS` = ?, `Pago de dias de DSGS` = ?,"
-                + " `Faltas justificadas` = ?, `Descanso otorgado` = ?, `Dias festivos` = ?,"
-                + " `Pago de dias festivos` = ?, `Dias festivos trabajados` = ?,"
-                + " `Pago de dias festivos trabajados` = ?, `Retardos` = ?, `Pago con retardos` = ?, `Apoyo` = ?,"
-                + " `Lugar` = ?, `Rembolso` = ?, `Adicionales` = ?, `horas extra` = ?, `total de horas extra` = ?,"
-                + " `Faltas` = ?, `Descuento por faltas` = ?, `Infonavit` = ?, `Fonacot` = ?, `ISR` = ?,"
-                + " `Descuento imss` = ?, `Faltantes de boleto` = ?, `Sancion` = ?, `Chamarra` = ?, `Chaleco` = ?, "
-                + "`Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, `Credencial` = ?, `Boleto perdido` = ?,"
-                + " `Playera` = ?, `Corbata` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?, "
-                + "`Adelanto de nomina` = ?, `Deposito` = ?, `Fecha de deposito` = ?, `Mes de pago` = ?, `Forma de pago` = ?, "
-                + "`Observaciones` = ? WHERE `rh.depositos." + Zon.getText() + "`.`#Folio` = ?";
+        String SQL = "UPDATE `rh.depositos.corporativo santander quincenal`"
+                + " SET `#Folio` = ?, `#Lista` = ?, `#Empleado` = ?, `Apellido P` = ?,"
+                + " `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?,"
+                + " `Bono` = ?, `Banco` = ?, `Cuenta de banco` = ?, `Por dia` = ?, `por hora` = ?,"
+                + " `Quincena del mes` = ?, `Año` = ?, `Dias de incapacidad` = ?, `Pago seguro` = ?,"
+                + " `Dias de vacaciones` = ?, `Pago de vacaciones` = ?, `Dias de descanso` = ?,"
+                + " `Pago de dias descansados` = ?, `Dias laborados` = ?, `Pago de dias laborados` = ?,"
+                + " `Descansos trabajados` = ?, `Pago de Descansos trabajados` = ?, `DSGS` = ?,"
+                + " `Pago de dias de DSGS` = ?, `Faltas justificadas` = ?, `Descanso otorgado` = ?, "
+                + "`Dias festivos` = ?, `Pago de dias festivos` = ?, `Dias festivos trabajados` = ?,"
+                + " `Pago de dias festivos trabajados` = ?, `Retardos` = ?, `Pago con retardos` = ?, "
+                + "`Apoyo` = ?, `Lugar` = ?, `Rembolso` = ?, `Adicionales` = ?, `horas extra` = ?,"
+                + " `total de horas extra` = ?, `Faltas` = ?, `Descuento por faltas` = ?, `Infonavit` = ?,"
+                + " `Fonacot` = ?, `ISR` = ?, `Descuento imss` = ?, `Faltantes de boleto` = ?, `Sancion` = ?,"
+                + " `Chamarra` = ?, `Chaleco` = ?, `Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?,"
+                + " `Credencial` = ?, `Boleto perdido` = ?, `Playera` = ?, `Corbata` = ?,"
+                + " `Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?,"
+                + " `Adelanto de nomina` = ?, `fecha de alta` = ?, `SDI` = ?, `Total percepciones` = ?, "
+                + "`Total gravable` = ?, `subsidio empleo` = ?, `total deducciones` = ?,"
+                + " `total efectivo` = ?, `neto pagado` = ?, `sueldo bruto` = ?, `subsidio` = ?, "
+                + "`carga patronal` = ?, `Sub total` = ?, `Total sin iva` = ?, `pago real` = ?, `otro` = ?,"
+                + " `Deposito` = ?, `Fecha de deposito` = ?, `Mes de pago` = ?, `Forma de pago` = ?,"
+                + " `Observaciones` = ? WHERE `rh.depositos.corporativo santander quincenal`.`#Folio` = ?";
+        
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
             pst.setString(2, NDL.getText());
             pst.setString(3, NEnom.getText());
@@ -270,24 +276,39 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             pst.setString(61, cda.getText());
             pst.setString(62, Odtp.getText());
             pst.setString(63, AdN.getText());
-            pst.setString(64, deposito.getText());
-            pst.setString(65, ((JTextField) FDD.getDateEditor().getUiComponent()).getText());
-            pst.setString(66, MDP.getSelectedItem().toString());
-            pst.setString(67, FDP.getText());
-            pst.setString(68, Obsdeposito.getText());
-            pst.setInt(69, Integer.parseInt(NFnom.getText()));
-
+            pst.setString(64, ((JTextField) FechaDA.getDateEditor().getUiComponent()).getText());
+            pst.setString(65, SDI.getText());
+            pst.setString(66, TP.getText());
+            pst.setString(67, TG.getText());
+            pst.setString(68, SubsidioE.getText());
+            pst.setString(69, TDeducciones.getText());
+            pst.setString(70, TotalEf.getText());
+            pst.setString(71, NPagado.getText());
+            pst.setString(72, SBruto.getText());
+            pst.setString(73, Subsidio.getText());
+            pst.setString(74, CargaP.getText());
+            pst.setString(75, SBtotal.getText());
+            pst.setString(76, TSIVA.getText());
+            pst.setString(77, PReal.getText());
+            pst.setString(78, Otros.getText());
+            pst.setString(79, deposito.getText());
+            pst.setString(80, ((JTextField) FDD.getDateEditor().getUiComponent()).getText());
+            pst.setString(81, MDP.getSelectedItem().toString());
+            pst.setString(82, FDP.getText());
+            pst.setString(83, Obsdeposito.getText());
+            pst.setInt(84, Integer.parseInt(NFnom.getText()));
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito Modificado.");
-
+            
             Cleardeposito();
             FunMD();
-
+            
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar deposito: " + e.getMessage());
         }
     }
-
+    
     public void FunMD() {
         MDNSQ();
         MDepSQ();
@@ -303,7 +324,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina8.getSelectedItem().toString();
         String FiltroFol = FiltroNDF8.getText();
-
+        
         if (!"".equals(FiltroN)) {
             SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
@@ -317,7 +338,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         } else if (!"".equals(FiltroQuin)) {
             SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-
+        
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -325,19 +346,19 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-
+                
             };
 //Nombre de la tabla
             Tnom8.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -413,13 +434,13 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*INF*/ 50, /*FON*/ 50, /*ISR*/ 50,/*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -429,13 +450,11 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
-
+            
         }
-
+        
     }
-
-
-
+    
     public void desv() {
         double desv1 = Double.parseDouble(this.Fdb.getText());
         double desv2 = Double.parseDouble(this.Fde.getText());
@@ -449,12 +468,12 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         double desv10 = Double.parseDouble(this.Chaleco.getText());
         double desv11 = Double.parseDouble(this.Credencial.getText());
         double desv12 = Double.parseDouble(this.AdN.getText());
-
+        
         double total = desv1 + desv2 + desv3 + desv4 + desv5 + desv6 + desv7
                 + desv8 + desv9 + desv10 + desv11 + desv12;
         this.DVT.setText("" + total + "");
     }
-
+    
     public void Cleardeposito() {
         NFnom.setText("0");
         NEnom.setText("");
@@ -521,30 +540,35 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         RF.setText("0");
         NomISR.setText("0");
     }
-
+    
     public void Agregardeposito() {
-        String SQL = "INSERT INTO `rh.depositos." + Zon.getText() + "`"
+        String SQL = "INSERT INTO `rh.depositos.corporativo santander quincenal`"
                 + " (`#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, "
-                + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, "
-                + "`Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, "
-                + "`Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, "
-                + "`Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, "
-                + "`Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, "
-                + "`Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`,"
-                + " `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, "
-                + "`Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, "
-                + "`horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`,"
-                + " `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, "
-                + "`Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`,"
-                + " `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, "
-                + "`Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, "
-                + "`Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`) VALUES"
-                + " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, "
+                + "`Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, "
+                + "`Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`,"
+                + " `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`,"
+                + " `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`,"
+                + " `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`,"
+                + " `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`,"
+                + " `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`,"
+                + " `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, "
+                + "`total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`,"
+                + " `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`,"
+                + " `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`,"
+                + " `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`,"
+                + " `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Fecha de alta`,"
+                + " `SDI`, `Total percepciones`, `Total Gravable`, `Subsidio empleo`,"
+                + " `total deducciones`, `total efectivo`, `neto pagado`, `sueldobruto`,"
+                + " `subsidio`, `carga patronal`, `Sub total`, `Total sin IVA`, `Pago real`,"
+                + " `Otros`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`,"
+                + " `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
+            
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
             pst.setString(2, NDL.getText());
             pst.setString(3, NEnom.getText());
@@ -613,41 +637,41 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             pst.setString(66, MDP.getSelectedItem().toString());
             pst.setString(67, FDP.getText());
             pst.setString(68, Obsdeposito.getText());
-
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito agregado.");
-
+            
             Cleardeposito();
             FunMD();
-
+            
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar deposito: " + e.getMessage());
         }
     }
-
+    
     public void MDepSQ() {
-        String SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal`";
+        String SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal`";
         String FiltroN = busp8.getText();
         String FAPNom = BAppag8.getText();
         String FAMNom = Bampag8.getText();
         String FiltroSnom = FiltroServP8.getSelectedItem().toString();
         String FiltroQuin = FiltroQP8.getSelectedItem().toString();
         String FiltroFol = filtroNDFP8.getText();
-
+        
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal`"
+            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT * FROM `rh.depositos.c` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.c` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal`"
+            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT * FROM `rh.depositos.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -661,13 +685,13 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             Tdep8.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-
+            
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-
+            
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-
+            
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
             modelo.addColumn("# Empleado");
@@ -749,13 +773,13 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*GRUA*/ 50, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 50, /*PLAY*/ 50,
                 /*CORB*/ 50, /*PDP*/ 50, /*CDA*/ 50, /*ODT*/ 50, /*ADN*/ 50,
                 /*DEP*/ 60, /*FDD*/ 60, /*MDP*/ 50, /*FDP*/ 51,/*OBS*/ 1000};
-
+            
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tdep8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
+                
             }
-
+            
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -765,10 +789,9 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar depositos en sur 2 " + e.getMessage());
-
+            
         }
     }
-
 
     //Calculo de deposito
     public void deposito() {
@@ -808,16 +831,16 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 + Double.parseDouble(this.PCR.getText()) + Double.parseDouble(this.PDDFT.getText())
                 + Double.parseDouble(this.PDDF.getText()) + Double.parseDouble(this.PDDL.getText())
                 + Double.parseDouble(this.PDDDV.getText()) + Double.parseDouble(this.THE.getText()));
-
+        
         double Egresos = (Double.parseDouble(this.DVT.getText())
                 + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
                 + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
                 + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
                 + Double.parseDouble(RF.getText()) + Double.parseDouble(NomISR.getText()));
-
+        
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));
-
+        
     }
 
 
@@ -2194,7 +2217,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
         jLabel4.setText("SDI");
 
-        jLabel6.setText("Total precepciones:");
+        jLabel6.setText("Total percepciones:");
 
         jLabel29.setText("Otros");
 
@@ -2988,7 +3011,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CorbataKeyReleased
 
     private void PlayeraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PlayeraKeyReleased
-
+        
         desv();
         deposito();
     }//GEN-LAST:event_PlayeraKeyReleased
@@ -3133,7 +3156,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
-
+        
         Empleados_4 RH = new Empleados_4(usr, LP);
         RH.setVisible(true);
         this.dispose();
@@ -3176,14 +3199,14 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
-
+        
         Estadias_4 regr = new Estadias_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
-
+        
         Tortas_4 regr = new Tortas_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
@@ -3257,9 +3280,9 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
     private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
-
+            
             int fila = Tnom8.getSelectedRow();
             NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
@@ -3385,7 +3408,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             FiltroNDF8.setVisible(false);
             LabelBNDF8.setVisible(false);
             FunMD();
-
+            
         }
         if (FTD8.equals("Filtrar por Apellido P")) {
             Nominab8.setText("");
@@ -3594,7 +3617,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             filtroNDFP8.setText("");
             LabelNDFP8.setVisible(false);
             FunMD();
-
+            
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
             busp8.setVisible(true);
@@ -3748,9 +3771,9 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
     private void Tdep8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep8MousePressed
         try {
-
+            
             DefaultTableModel model = (DefaultTableModel) Tdep8.getModel();
-
+            
             int fila = Tdep8.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep8.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep8.getValueAt(fila, 1)));
@@ -3802,10 +3825,10 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             THE.setText(String.valueOf(Tdep8.getValueAt(fila, 41)));
             F.setText(String.valueOf(Tdep8.getValueAt(fila, 42)));
             DPF.setText(String.valueOf(Tdep8.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep8.getValueAt(fila, 44)));
-            RI.setText(String.valueOf(Tdep8.getValueAt(fila, 45)));
-            RF.setText(String.valueOf(Tdep8.getValueAt(fila, 46)));
-            NomISR.setText(String.valueOf(Tdep8.getValueAt(fila, 47)));
+            DI.setText(String.valueOf(Tdep8.getValueAt(fila, 47)));
+            RI.setText(String.valueOf(Tdep8.getValueAt(fila, 44)));
+            RF.setText(String.valueOf(Tdep8.getValueAt(fila, 45)));
+            NomISR.setText(String.valueOf(Tdep8.getValueAt(fila, 46)));
             Fdb.setText(String.valueOf(Tdep8.getValueAt(fila, 48)));
             Sancion.setText(String.valueOf(Tdep8.getValueAt(fila, 49)));
             Chamarra.setText(String.valueOf(Tdep8.getValueAt(fila, 50)));
@@ -3832,10 +3855,47 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep8.getValueAt(fila, 66)));
             Obsdeposito.setText(String.valueOf(Tdep8.getValueAt(fila, 67)));
-
+            
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            int seleccionar = Tdep8.getSelectedRow();
+            int id = Integer.parseInt(Tdep8.getValueAt(seleccionar, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select fecha de alta`, `SDI`, `Total percepciones`,"
+                    + " `Total gravable`, `subsidio empleo`, `total deducciones`, `total efectivo`, "
+                    + "`neto pagado`, `sueldo bruto`, `subsidio`, `carga patronal`, `Sub total`,"
+                    + "`Total sin iva`, `pago real`, `otro` FROM ``rh.depositos.corporativo santander quincenal` where `#Folio` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            java.sql.Statement st = con.createStatement();
+            
+            while (rs.next()) {
+                Date date1 = new SimpleDateFormat("d MMM y").parse((rs.getString(1)));
+                FDD.setDate(date1);
+                SDI.setText(rs.getString(2));
+                TP.setText(rs.getString(3));
+                TG.setText(rs.getString(4));
+                SubsidioE.setText(rs.getString(5));
+                TDeducciones.setText(rs.getString(6));
+                TotalEf.setText(rs.getString(7));
+                NPagado.setText(rs.getString(8));
+                SBruto.setText(rs.getString(9));
+                Subsidio.setText(rs.getString(10));
+                CargaP.setText(rs.getString(11));
+                SBtotal.setText(rs.getString(12));
+                TSIVA.setText(rs.getString(13));
+                PReal.setText(rs.getString(14));
+                Otros.setText(rs.getString(15));
+            }
+            ps.isClosed();
+            rs.isClosed();
+            
+        } catch (SQLException | ParseException ex) {
+            Logger.getLogger(DepositosQ_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         desv();
     }//GEN-LAST:event_Tdep8MousePressed
