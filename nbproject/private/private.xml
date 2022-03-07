@@ -20,11 +20,13 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Pensiones/PensionesVP_7.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/BDRH/DepCIMSS/Logica_BDDep_CSQ.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Depositos/Santander/DepositosQ_SIMSS_4.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/BDRH/DepSIMSS/Logica_BDDep_CSQ.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Depositos/Santander/DepositosQ_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Empleados_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Tortas_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Depositos/DepositosS_SIMSS_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Movimientos/Movimientos_GEN.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Depositos/Santander/DepositosSSan_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Estadias_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Admin/AltasZyS_3.java</file>
         </group>
     </open-files>
 </project-private>

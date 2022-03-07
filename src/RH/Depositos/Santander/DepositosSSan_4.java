@@ -20,8 +20,13 @@ import Logicas.BDRH.DepSemCIMSS.*;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import Nomina.*;
-import RH.Depositos.*;
-import RH.*;
+import RH.Depositos.DepositosQ_4;
+import RH.Depositos.DepositosQ_SIMSS_4;
+import RH.Depositos.DepositosS_4;
+import RH.Depositos.DepositosS_SIMSS_4;
+import RH.Empleados_4;
+import RH.Estadias_4;
+import RH.Tortas_4;
 import Semanal.*;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
@@ -3262,8 +3267,8 @@ public final class DepositosSSan_4 extends javax.swing.JFrame {
 
     private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
 
-        Empleados_4 RH = new Empleados_4(usr, LP);
-        RH.setVisible(true);
+        Empleados_4 EMHEN = new Empleados_4(usr, LP);
+        EMHEN.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_General1ActionPerformed
 

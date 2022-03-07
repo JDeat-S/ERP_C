@@ -1,7 +1,6 @@
 package Admin;
 
 import Nomina.Prenomina.*;
-import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -13,6 +12,14 @@ import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
 import RH.*;
+import RH.Depositos.DepositosQ_4;
+import RH.Depositos.DepositosQ_SIMSS_4;
+import RH.Depositos.DepositosS_4;
+import RH.Depositos.DepositosS_SIMSS_4;
+import RH.Depositos.Santander.DepositosQSan_4;
+import RH.Depositos.Santander.DepositosQsan_SIMSS_4;
+import RH.Depositos.Santander.DepositosSSan_4;
+import RH.Depositos.Santander.DepositosSSan_SIMSS_4;
 import Nomina.*;
 import Conexion.ConexionSQL;
 import Logicas.*;
@@ -26,8 +33,6 @@ import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
 import java.awt.HeadlessException;
-import RH.Depositos.*;
-import RH.Depositos.Santander.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -3297,52 +3302,52 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
-        regr.setVisible(true);
+        DepositosQ_4 DQ = new DepositosQ_4(usr, LP);
+        DQ.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        DepositosQ_SIMSS_4 regr = new DepositosQ_SIMSS_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
-    private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
-        DepositosQSan_4 regr = new DepositosQSan_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem24ActionPerformed
-
     private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem25ActionPerformed
-        DepositosQsan_SIMSS_4 regr = new DepositosQsan_SIMSS_4(usr, LP);
-        regr.setVisible(true);
+        DepositosQsan_SIMSS_4 DSQSI = new DepositosQsan_SIMSS_4(usr, LP);
+        DSQSI.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem25ActionPerformed
 
-    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
-        DepositosS_4 regr = new DepositosS_4(usr, LP);
-        regr.setVisible(true);
+    private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
+        DepositosQSan_4 DQSAN = new DepositosQSan_4(usr, LP);
+        DQSAN.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem20ActionPerformed
+    }//GEN-LAST:event_jMenuItem24ActionPerformed
 
-    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
-        DepositosS_SIMSS_4 regr = new DepositosS_SIMSS_4(usr, LP);
-        regr.setVisible(true);
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        DepositosQ_SIMSS_4 DQSI = new DepositosQ_SIMSS_4(usr, LP);
+        DQSI.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem21ActionPerformed
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
+        DepositosSSan_SIMSS_4 DSSANSI = new DepositosSSan_SIMSS_4(usr, LP);
+        DSSANSI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem27ActionPerformed
 
     private void jMenuItem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem26ActionPerformed
-        DepositosSSan_4 regr = new DepositosSSan_4(usr, LP);
-        regr.setVisible(true);
+        DepositosSSan_4 DSSAN = new DepositosSSan_4(usr, LP);
+        DSSAN.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem26ActionPerformed
 
-    private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
-        DepositosSSan_SIMSS_4 regr = new DepositosSSan_SIMSS_4(usr, LP);
-        regr.setVisible(true);
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+        DepositosS_SIMSS_4 DSSI = new DepositosS_SIMSS_4(usr, LP);
+        DSSI.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem27ActionPerformed
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+        DepositosS_4 DS = new DepositosS_4(usr, LP);
+        DS.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
 
     /**
      * @param args the command line arguments

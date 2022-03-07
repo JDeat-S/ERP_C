@@ -1,6 +1,5 @@
 package Semanal;
 
-import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Nomina.ModulosS.*;
 import Nomina.ModulosQ.*;
@@ -13,8 +12,14 @@ import Logicas.Logica_usuarios;
 import RH.*;
 import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
-import RH.Depositos.*;
-import RH.Depositos.Santander.*;
+import RH.Depositos.DepositosQ_4;
+import RH.Depositos.DepositosQ_SIMSS_4;
+import RH.Depositos.DepositosS_4;
+import RH.Depositos.DepositosS_SIMSS_4;
+import RH.Depositos.Santander.DepositosQSan_4;
+import RH.Depositos.Santander.DepositosQsan_SIMSS_4;
+import RH.Depositos.Santander.DepositosSSan_4;
+import RH.Depositos.Santander.DepositosSSan_SIMSS_4;
 import Semanal.Vales.VDE;
 import ServiciosSem.ServInturbide;
 import java.awt.Color;

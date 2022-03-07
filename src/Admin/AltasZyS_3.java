@@ -1,7 +1,6 @@
 package Admin;
 import Nomina.Prenomina.*;
 
-import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -12,7 +11,6 @@ import Nomina.ModulosS.PresS_5;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
-import RH.Depositos.*;
 import RH.Depositos.Santander.*;
 import Nomina.*;
 import ColoresT.*;
@@ -21,6 +19,10 @@ import Filtros.FiltrosZonas;
 import Logicas.*;
 import Pensiones.PensionesVP_7;
 import RH.*;
+import RH.Depositos.DepositosQ_4;
+import RH.Depositos.DepositosQ_SIMSS_4;
+import RH.Depositos.DepositosS_4;
+import RH.Depositos.DepositosS_SIMSS_4;
 import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;

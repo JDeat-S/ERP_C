@@ -1,6 +1,5 @@
 package RH;
 
-import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -20,11 +19,14 @@ import ColoresT.ColorRH;
 import Inicio.Inicio_1;
 import Logicas.*;
 import Logicas.BDRH.Logica_bd_RHIMSS;
+import RH.Depositos.DepositosQ_4;
 import RH.Depositos.DepositosQ_SIMSS_4;
 import RH.Depositos.DepositosS_4;
 import RH.Depositos.DepositosS_SIMSS_4;
-import RH.Depositos.Santander.*;
-import Semanal.Padrones.Padrones;
+import RH.Depositos.Santander.DepositosQSan_4;
+import RH.Depositos.Santander.DepositosQsan_SIMSS_4;
+import RH.Depositos.Santander.DepositosSSan_4;
+import RH.Depositos.Santander.DepositosSSan_SIMSS_4;import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
 import ZyS.Servicios;
@@ -1994,7 +1996,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         );
 
         mod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        mod.setText("Modificar");
+        mod.setText("Modificaciones");
         mod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modActionPerformed(evt);

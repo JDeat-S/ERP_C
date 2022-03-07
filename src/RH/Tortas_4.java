@@ -1,8 +1,13 @@
 package RH;
 
-import RH.Depositos.*;
-import RH.Depositos.Santander.*;
 import RH.Depositos.DepositosQ_4;
+import RH.Depositos.DepositosQ_SIMSS_4;
+import RH.Depositos.DepositosS_4;
+import RH.Depositos.DepositosS_SIMSS_4;
+import RH.Depositos.Santander.DepositosQSan_4;
+import RH.Depositos.Santander.DepositosQsan_SIMSS_4;
+import RH.Depositos.Santander.DepositosSSan_4;
+import RH.Depositos.Santander.DepositosSSan_SIMSS_4;
 import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
