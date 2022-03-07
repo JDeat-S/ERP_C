@@ -1,5 +1,6 @@
 package RH.Depositos.Santander;
 
+import RH.Depositos.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
@@ -19,7 +20,7 @@ import Filtros.FiltroServ;
 import Filtros.FiltrosZonas;
 import ColoresT.ColorRH;
 import Inicio.Inicio_1;
-import Logicas.BDRH.DepCIMSS.*;
+import Logicas.BDRH.DepSIMSS.*;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import Nomina.*;
@@ -51,22 +52,25 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author JDeat
  */
-public final class DepositosQ_4 extends javax.swing.JFrame {
-    
+public final class DepositosQsan_SIMSS_4 extends javax.swing.JFrame {
+
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
     Calendar fecha_actual = new GregorianCalendar();
     ColorRH colores = new ColorRH();
     Logica_usuarios usr;
     Logica_permisos LP;
-    
-    public DepositosQ_4() {
+
+    public DepositosQsan_SIMSS_4() {
         initComponents();
         FunMD();
         // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
         FiltrosZonas zz8 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
         FZservicio8.setModel(modelzonas8);
+        FiltrosZonas FSZP7 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP7 = new DefaultComboBoxModel(FSZP7.mostrarzonas());
+        FiltroSZP8.setModel(modelFSZP7);
         //</editor-fold>
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
         busp8.setVisible(false);
@@ -93,15 +97,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         LabelBQ8.setVisible(false);
         FiltroNDF8.setVisible(false);
         LabelBNDF8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
+
         //</editor-fold>
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         año.setCalendar(fecha_actual);
-        
-        setIconImage(new ImageIcon(DepositosQ_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+
+        setIconImage(new ImageIcon(DepositosQsan_SIMSS_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
     }
-    
-    public DepositosQ_4(Logica_usuarios usr, Logica_permisos LP) {
+
+    public DepositosQsan_SIMSS_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -110,20 +127,11 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         FiltrosZonas zz8 = new FiltrosZonas();
         DefaultComboBoxModel modelzonas8 = new DefaultComboBoxModel(zz8.mostrarzonas());
         FZservicio8.setModel(modelzonas8);
+        FiltrosZonas FSZP7 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP7 = new DefaultComboBoxModel(FSZP7.mostrarzonas());
+        FiltroSZP8.setModel(modelFSZP7);
         //</editor-fold>
         // <editor-fold defaultstate="collapsed" desc="Campos invisibles">
-        LabelBE8.setVisible(false);
-        FApT8.setVisible(false);
-        FAmT8.setVisible(false);
-        Nominab8.setVisible(false);
-        FiltroSnomina8.setVisible(false);
-        LabelBS8.setVisible(false);
-        FZservicio8.setVisible(false);
-        LabelSZ8.setVisible(false);
-        FiltroQuincenanomina8.setVisible(false);
-        LabelBQ8.setVisible(false);
-        FiltroNDF8.setVisible(false);
-        LabelBNDF8.setVisible(false);
         busp8.setVisible(false);
         BAppag8.setVisible(false);
         Bampag8.setVisible(false);
@@ -148,14 +156,27 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         LabelBQ8.setVisible(false);
         FiltroNDF8.setVisible(false);
         LabelBNDF8.setVisible(false);
+        Nominab8.setVisible(false);
+        FiltroSnomina8.setVisible(false);
+        LabelBS8.setVisible(false);
+        FZservicio8.setVisible(false);
+        LabelSZ8.setVisible(false);
+        FiltroQuincenanomina8.setVisible(false);
+        LabelBQ8.setVisible(false);
+        FiltroNDF8.setVisible(false);
+        LabelBNDF8.setVisible(false);
+        LabelBE8.setVisible(false);
+        FApT8.setVisible(false);
+        FAmT8.setVisible(false);
         //</editor-fold>
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
         año.setCalendar(fecha_actual);
-        setIconImage(new ImageIcon(DepositosQ_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        setTitle("RH: Depositos imss Quincenales # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
+
+        setIconImage(new ImageIcon(DepositosQsan_SIMSS_4.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
+        setTitle("RH: Depositos Santander sin imss Quincenales # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
-        
+
         switch (LP.getVDA()) {
             case 0 -> {
             }
@@ -176,17 +197,17 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
             case 2 -> {
                 Menuadm.setVisible(false);
-                
+
             }
             default -> {
             }
         }
     }
-    
+
     @SuppressWarnings("unchecked")
-    
+
     public void Modeposito() {
-        String SQL = "UPDATE `rh.depositos.corporativo santander quincenal`"
+        String SQL = "UPDATE `rh.depositos.corporativo santander quincenal.simss`"
                 + " SET `#Folio` = ?, `#Lista` = ?, `#Empleado` = ?, `Apellido P` = ?,"
                 + " `Apellido M` = ?, `Nombre(s)` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?,"
                 + " `Bono` = ?, `Banco` = ?, `Cuenta de banco` = ?, `Por dia` = ?, `por hora` = ?,"
@@ -205,14 +226,14 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 + " `Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?,"
                 + " `Adelanto de nomina` = ?, `fecha de alta` = ?, `SDI` = ?, `Total percepciones` = ?, "
                 + "`Total gravable` = ?, `subsidio empleo` = ?, `total deducciones` = ?,"
-                + " `total efectivo` = ?, `neto pagado` = ?, `sueldo bruto` = ?, `subsidio` = ?, "
-                + "`carga patronal` = ?, `Sub total` = ?, `Total sin iva` = ?, `pago real` = ?, `otro` = ?,"
+                + " `total efectivo` = ?, `neto pagado` = ?, `sueldobruto` = ?, `subsidio` = ?, "
+                + "`carga patronal` = ?, `Sub total` = ?, `Total sin iva` = ?, `pago real` = ?, `Otros` = ?,"
                 + " `Deposito` = ?, `Fecha de deposito` = ?, `Mes de pago` = ?, `Forma de pago` = ?,"
-                + " `Observaciones` = ? WHERE `rh.depositos.corporativo santander quincenal`.`#Folio` = ?";
-        
+                + " `Observaciones` = ? WHERE `rh.depositos.corporativo santander quincenal.simss`.`#Folio` = ?";
+
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            
+
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
             pst.setString(2, NDL.getText());
             pst.setString(3, NEnom.getText());
@@ -297,18 +318,18 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             pst.setString(82, FDP.getText());
             pst.setString(83, Obsdeposito.getText());
             pst.setInt(84, Integer.parseInt(NFnom.getText()));
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito Modificado.");
-            
+
             Cleardeposito();
             FunMD();
-            
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al modificar deposito: " + e.getMessage());
         }
     }
-    
+
     public void FunMD() {
         MDNSQ();
         MDepSQ();
@@ -318,27 +339,27 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     public void MDNSQ() {
         //Buscar empleado
         String FiltroN = Nominab8.getText();
-        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal`";
+        String SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss`";
         String FAPNom = FApT8.getText();
         String FAMNom = FAmT8.getText();
         String FiltroSnom = FiltroSnomina8.getSelectedItem().toString();
         String FiltroQuin = FiltroQuincenanomina8.getSelectedItem().toString();
         String FiltroFol = FiltroNDF8.getText();
-        
+
         if (!"".equals(FiltroN)) {
-            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
+            SQL = "Select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "select `#lista`, `#empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`, `Cuenta de banco`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `por dia`, `por hora`, `quincena del mes`, `año`,`Dias de incapacidad`, `Pago de seguro`, `Dias de vacaciones`, `Pago de dias de vacaciones`, `Dias descansados`, `Pago de dias descansados`, `Dias Laborados`, `Pago de dias laborados`, `Descansos Trabajados`, `Pago de dias trabajados`, `Descanso sin goce de sueldo`, `Pago de dias de DSGS`, `Faltas Justificadas`, `Descanso Otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `horas extra`, `total de horas extra`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `Faltas`, `Descuento por faltas`, `Desc IMSS`, `Infonavit`, `fonacot`, `ISR`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina`, `Total de DV`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Deposito` from `nomina.detallada.corporativo santander quincenal.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
-        
+
         try {
             //Cargar datos
             DefaultTableModel modelo = new DefaultTableModel() {
@@ -346,19 +367,19 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 public boolean isCellEditable(int filas, int columna) {
                     return false;
                 }
-                
+
             };
 //Nombre de la tabla
             Tnom8.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//2
             modelo.addColumn("Apellido P");
@@ -434,13 +455,13 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*DPF*/ 120, /*INF*/ 50, /*FON*/ 50, /*ISR*/ 50,/*DI*/ 50, /*FDB*/ 80, /*SAN*/ 45, /*CHAM*/ 50, /*CHAL*/ 45,
                 /*FDE*/ 120, /*GRUA*/ 35, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 100, /*PLAY*/ 45,
                 /*COR*/ 50, /*adn*/ 60, /*TDDV*/ 60, /*PDP*/ 100, /*CDA*/ 75, /*ODT*/ 75, /*DEP*/ 120};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tnom8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -450,11 +471,12 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
         } catch (SQLException error_ND_FA) {
             JOptionPane.showMessageDialog(null, "Error al mostrar Datos de Foraneos Acapulco: " + error_ND_FA.getMessage());
-            
+
         }
-        
+
     }
-    
+
+    //fin de mostrar datos
     public void desv() {
         double desv1 = Double.parseDouble(this.Fdb.getText());
         double desv2 = Double.parseDouble(this.Fde.getText());
@@ -468,12 +490,12 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         double desv10 = Double.parseDouble(this.Chaleco.getText());
         double desv11 = Double.parseDouble(this.Credencial.getText());
         double desv12 = Double.parseDouble(this.AdN.getText());
-        
+
         double total = desv1 + desv2 + desv3 + desv4 + desv5 + desv6 + desv7
                 + desv8 + desv9 + desv10 + desv11 + desv12;
         this.DVT.setText("" + total + "");
     }
-    
+
     public void Cleardeposito() {
         NFnom.setText("0");
         NEnom.setText("");
@@ -530,7 +552,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         FDD.setDate(null);
         MDP.setSelectedIndex(0);
         FDP.setText("");
-        Obsdeposito.setText("");
+        Obsdeposito.setText("0");
         ban.setText("");
         cta.setText("");
         PH.setText("");
@@ -539,10 +561,25 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         RI.setText("0");
         RF.setText("0");
         NomISR.setText("0");
+        FechaDA.setDate(null);
+        SDI.setText("");
+        TP.setText("");
+        TG.setText("");
+        SubsidioE.setText("");
+        TDeducciones.setText("");
+        TotalEf.setText("");
+        NPagado.setText("");
+        SBruto.setText("");
+        Subsidio.setText("");
+        CargaP.setText("");
+        SBtotal.setText("");
+        TSIVA.setText("");
+        PReal.setText("");
+        Otros.setText("");
     }
-    
+
     public void Agregardeposito() {
-        String SQL = "INSERT INTO `rh.depositos.corporativo santander quincenal`"
+        String SQL = "INSERT INTO `rh.depositos.corporativo santander quincenal.simss`"
                 + " (`#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, "
                 + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, "
                 + "`Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, "
@@ -568,7 +605,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-            
+
             pst.setInt(1, Integer.parseInt(NFnom.getText()));
             pst.setString(2, NDL.getText());
             pst.setString(3, NEnom.getText());
@@ -632,46 +669,61 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             pst.setString(61, cda.getText());
             pst.setString(62, Odtp.getText());
             pst.setString(63, AdN.getText());
-            pst.setString(64, deposito.getText());
-            pst.setString(65, ((JTextField) FDD.getDateEditor().getUiComponent()).getText());
-            pst.setString(66, MDP.getSelectedItem().toString());
-            pst.setString(67, FDP.getText());
-            pst.setString(68, Obsdeposito.getText());
-            
+            pst.setString(64, ((JTextField) FechaDA.getDateEditor().getUiComponent()).getText());
+            pst.setString(65, SDI.getText());
+            pst.setString(66, TP.getText());
+            pst.setString(67, TG.getText());
+            pst.setString(68, SubsidioE.getText());
+            pst.setString(69, TDeducciones.getText());
+            pst.setString(70, TotalEf.getText());
+            pst.setString(71, NPagado.getText());
+            pst.setString(72, SBruto.getText());
+            pst.setString(73, Subsidio.getText());
+            pst.setString(74, CargaP.getText());
+            pst.setString(75, SBtotal.getText());
+            pst.setString(76, TSIVA.getText());
+            pst.setString(77, PReal.getText());
+            pst.setString(78, Otros.getText());
+            pst.setString(79, deposito.getText());
+            pst.setString(80, ((JTextField) FDD.getDateEditor().getUiComponent()).getText());
+            pst.setString(81, MDP.getSelectedItem().toString());
+            pst.setString(82, FDP.getText());
+            pst.setString(83, Obsdeposito.getText());
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito agregado.");
-            
+
             Cleardeposito();
             FunMD();
-            
+
         } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al agregar deposito: " + e.getMessage());
         }
     }
-    
+
     public void MDepSQ() {
-        String SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal`";
+        String SQL = "SELECT  `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal.simss`";
         String FiltroN = busp8.getText();
         String FAPNom = BAppag8.getText();
         String FAMNom = Bampag8.getText();
         String FiltroSnom = FiltroServP8.getSelectedItem().toString();
         String FiltroQuin = FiltroQP8.getSelectedItem().toString();
         String FiltroFol = filtroNDFP8.getText();
-        
+
         if (!"".equals(FiltroN)) {
-            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal`"
+            SQL = "SELECT  `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal.simss`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FiltroFol)) {
-            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.c` Where `#lista` LIKE '%" + FiltroFol + "%'";
+            SQL = "SELECT  `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.c.simss` Where `#lista` LIKE '%" + FiltroFol + "%'";
         } else if (!"".equals(FAPNom)) {
-            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal` Where `Apellido P` LIKE '%" + FAPNom + "%'";
+            SQL = "SELECT  `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal.simss` Where `Apellido P` LIKE '%" + FAPNom + "%'";
         } else if (!"".equals(FAMNom)) {
-            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal` Where `Apellido M` LIKE '%" + FAMNom + "%'";
+            SQL = "SELECT  `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal.simss` Where `Apellido M` LIKE '%" + FAMNom + "%'";
         } else if (!"".equals(FiltroSnom)) {
-            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal`"
+            SQL = "SELECT  `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal.simss`"
                     + " Where `Servicio` LIKE '%" + FiltroSnom + "%'";
         } else if (!"".equals(FiltroQuin)) {
-            SQL = "SELECT `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
+            SQL = "SELECT  `#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Quincena del mes`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones` FROM `rh.depositos.corporativo santander quincenal.simss` Where `quincena del mes` LIKE '%" + FiltroQuin + "%'";
         }
         try {
             //Cargar datos
@@ -685,13 +737,13 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             Tdep8.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            
+
             ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
-            
+
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
-            
+
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
             modelo.addColumn("# Empleado");
@@ -773,13 +825,13 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*GRUA*/ 50, /*PAN*/ 50, /*CRED*/ 50, /*BP*/ 50, /*PLAY*/ 50,
                 /*CORB*/ 50, /*PDP*/ 50, /*CDA*/ 50, /*ODT*/ 50, /*ADN*/ 50,
                 /*DEP*/ 60, /*FDD*/ 60, /*MDP*/ 50, /*FDP*/ 51,/*OBS*/ 1000};
-            
+
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 Tdep8.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-                
+
             }
-            
+
             while (rs.next()) {
                 Object[] filas = new Object[cantidadColumnas];
                 for (int i = 0; i < cantidadColumnas; i++) {
@@ -789,7 +841,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al mostrar depositos en sur 2 " + e.getMessage());
-            
+
         }
     }
 
@@ -831,16 +883,16 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 + Double.parseDouble(this.PCR.getText()) + Double.parseDouble(this.PDDFT.getText())
                 + Double.parseDouble(this.PDDF.getText()) + Double.parseDouble(this.PDDL.getText())
                 + Double.parseDouble(this.PDDDV.getText()) + Double.parseDouble(this.THE.getText()));
-        
+
         double Egresos = (Double.parseDouble(this.DVT.getText())
                 + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
                 + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
                 + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
                 + Double.parseDouble(RF.getText()) + Double.parseDouble(NomISR.getText()));
-        
+
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Ingresos - Egresos));
-        
+
     }
 
 
@@ -905,7 +957,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         jScrollPane16 = new javax.swing.JScrollPane();
         Obsdeposito = new javax.swing.JTextArea();
         Adddeposito = new javax.swing.JButton();
-        Moddeposito = new javax.swing.JButton();
+        Adddeposito1 = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jLabel122 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
@@ -1020,36 +1072,37 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         THE = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        FechaDA = new com.toedter.calendar.JDateChooser();
+        jLabel4 = new javax.swing.JLabel();
+        SDI = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        TP = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        TG = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         SubsidioE = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         TDeducciones = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        Subsidio = new javax.swing.JTextField();
         TotalEf = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         NPagado = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         SBruto = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        SBtotal = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        CargaP = new javax.swing.JTextField();
+        Subsidio = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        Otros = new javax.swing.JTextField();
-        FechaDA = new com.toedter.calendar.JDateChooser();
-        jLabel4 = new javax.swing.JLabel();
-        SDI = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        TP = new javax.swing.JTextField();
-        PReal = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        TG = new javax.swing.JTextField();
-        TSIVA = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        CargaP = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        SBtotal = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
+        TSIVA = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        PReal = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        Otros = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jScrollPane12 = new javax.swing.JScrollPane();
         PestañasPagos = new javax.swing.JTabbedPane();
         TPagos8 = new javax.swing.JScrollPane();
@@ -1099,8 +1152,8 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         Depositos1 = new javax.swing.JMenu();
         jMenu9 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
@@ -1112,10 +1165,15 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         General = new javax.swing.JMenuItem();
         Depositos = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem24 = new javax.swing.JMenuItem();
+        jMenuItem25 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem26 = new javax.swing.JMenuItem();
+        jMenuItem27 = new javax.swing.JMenuItem();
         Semanales = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -1479,11 +1537,11 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
         });
 
-        Moddeposito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        Moddeposito.setText("Modificar");
-        Moddeposito.addActionListener(new java.awt.event.ActionListener() {
+        Adddeposito1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
+        Adddeposito1.setText("Modificar");
+        Adddeposito1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModdepositoActionPerformed(evt);
+                Adddeposito1ActionPerformed(evt);
             }
         });
 
@@ -2199,6 +2257,16 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
         THE.setText("0");
 
+        jLabel2.setText("Fecha de alta:");
+
+        jLabel4.setText("SDI");
+
+        jLabel6.setText("Total percepciones:");
+
+        jLabel7.setText("Total Gravable:");
+
+        jLabel8.setText("Subsidio empleo:");
+
         jLabel10.setText("Total deducciones:");
 
         jLabel11.setText("Total efectivo:");
@@ -2209,25 +2277,22 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
         jLabel22.setText("Subsidio");
 
-        jLabel24.setText("Sub total:");
-
         jLabel23.setText("Carga patronal:");
 
-        jLabel2.setText("Fecha de alta:");
+        jLabel24.setText("Sub total:");
 
-        jLabel4.setText("SDI");
-
-        jLabel6.setText("Total percepciones:");
-
-        jLabel29.setText("Otros");
-
-        jLabel7.setText("Total Gravable:");
+        jLabel27.setText("Total sin IVA:");
 
         jLabel28.setText("Pago real:");
 
-        jLabel8.setText("Subsidio empleo:");
+        jLabel29.setText("Otros");
 
-        jLabel27.setText("Total sin IVA:");
+        jButton1.setText("Rembolso");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -2277,7 +2342,9 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addComponent(Adddeposito)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Moddeposito))
+                                        .addComponent(Adddeposito1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton1))
                                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(FDD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(MDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2291,31 +2358,30 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                         .addGap(136, 136, 136)
                         .addComponent(jLabel133)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel42))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(THE, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(HE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel24)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel14))
                         .addGroup(jPanel9Layout.createSequentialGroup()
-                            .addGap(35, 35, 35)
+                            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel14)))
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel41)
+                                .addComponent(jLabel42))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(THE, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(HE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING)))
@@ -2325,7 +2391,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                     .addComponent(jLabel29))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(FechaDA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FechaDA, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                     .addComponent(SDI)
                     .addComponent(TP)
                     .addComponent(TG)
@@ -2339,136 +2405,141 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                     .addComponent(SBtotal)
                     .addComponent(TSIVA)
                     .addComponent(PReal)
-                    .addComponent(Otros, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Otros))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(40, 40, 40)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(FechaDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel2))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel4)
+                                            .addComponent(SDI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel6)
+                                            .addComponent(TP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel7)
+                                            .addComponent(TG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel8)
+                                            .addComponent(SubsidioE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel10)
+                                            .addComponent(TDeducciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel11)
+                                            .addComponent(TotalEf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel14)
+                                            .addComponent(NPagado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel41)
                                             .addComponent(HE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(jLabel42)
-                                            .addComponent(THE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(THE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel18)
+                                            .addComponent(SBruto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel22)
+                                            .addComponent(Subsidio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel23)
+                                    .addComponent(CargaP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel24)
+                                    .addComponent(SBtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel27)
+                                    .addComponent(TSIVA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
                                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jLabel133)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Datgen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel101)
-                                        .addComponent(jLabel1))
-                                    .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel89)
-                                    .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel40)
-                                    .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel28)
+                                    .addComponent(PReal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel123)
-                                    .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel102)
-                                    .addComponent(FDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel106)
-                                    .addComponent(MDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel109)
-                                    .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel110)
-                                    .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Adddeposito)
-                                    .addComponent(Moddeposito)))))
+                                    .addComponent(jLabel29)
+                                    .addComponent(Otros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+                        .addComponent(jLabel133)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Datgen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(Quincenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel101)
+                                .addComponent(jLabel1))
+                            .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel89)
+                            .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel40)
+                            .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel123)
+                            .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FechaDA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel102)
+                            .addComponent(FDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(SDI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel106)
+                            .addComponent(MDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(TP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel109)
+                            .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel110)
+                            .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(TG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(SubsidioE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(TDeducciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(TotalEf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(NPagado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18)
-                            .addComponent(SBruto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel22)
-                            .addComponent(Subsidio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel23)
-                            .addComponent(CargaP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel24)
-                            .addComponent(SBtotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel27)
-                            .addComponent(TSIVA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel28)
-                            .addComponent(PReal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel29)
-                            .addComponent(Otros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(136, Short.MAX_VALUE))
+                            .addComponent(Adddeposito)
+                            .addComponent(Adddeposito1)
+                            .addComponent(jButton1))))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         jScrollPane10.setViewportView(jPanel9);
@@ -2615,7 +2686,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS23))
-                        .addGap(0, 7194, Short.MAX_VALUE)))
+                        .addGap(0, 7114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel37Layout.setVerticalGroup(
@@ -2829,21 +2900,21 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
         jMenu9.setText("Quincenales");
 
-        jMenuItem1.setText("Depositos C/ IMSS");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu9.add(jMenuItem1);
-
-        jMenuItem13.setText("Depositos S/ IMSS");
+        jMenuItem13.setText("Depositos C/ IMSS");
         jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem13ActionPerformed(evt);
             }
         });
         jMenu9.add(jMenuItem13);
+
+        jMenuItem14.setText("Depositos S/ IMSS");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem14);
 
         Depositos1.add(jMenu9);
 
@@ -2922,6 +2993,14 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
         jMenu7.setText("Quincenales");
 
+        jMenuItem1.setText("Depositos C/ IMSS");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem1);
+
         jMenuItem9.setText("Depositos S/ IMSS");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2929,6 +3008,22 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
         });
         jMenu7.add(jMenuItem9);
+
+        jMenuItem24.setText("Santander Depositos C/ IMSS");
+        jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem24ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem24);
+
+        jMenuItem25.setText("Santander Depositos S/ IMSS");
+        jMenuItem25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem25ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem25);
 
         Depositos.add(jMenu7);
 
@@ -2949,6 +3044,22 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
         });
         jMenu8.add(jMenuItem16);
+
+        jMenuItem26.setText("Santander Depositos C/ IMSS");
+        jMenuItem26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem26ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem26);
+
+        jMenuItem27.setText("Santander Depositos S/ IMSS");
+        jMenuItem27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem27ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem27);
 
         Depositos.add(jMenu8);
 
@@ -3011,7 +3122,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_CorbataKeyReleased
 
     private void PlayeraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PlayeraKeyReleased
-        
+
         desv();
         deposito();
     }//GEN-LAST:event_PlayeraKeyReleased
@@ -3061,10 +3172,10 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_FdbKeyReleased
 
-    private void ModdepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModdepositoActionPerformed
+    private void Adddeposito1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Adddeposito1ActionPerformed
         Modeposito();
         FunMD();
-    }//GEN-LAST:event_ModdepositoActionPerformed
+    }//GEN-LAST:event_Adddeposito1ActionPerformed
 
     private void AdddepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdddepositoActionPerformed
         Agregardeposito();
@@ -3156,7 +3267,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void General1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_General1ActionPerformed
-        
+
         Empleados_4 RH = new Empleados_4(usr, LP);
         RH.setVisible(true);
         this.dispose();
@@ -3199,14 +3310,14 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_ZYSActionPerformed
 
     private void AlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnosActionPerformed
-        
+
         Estadias_4 regr = new Estadias_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_AlumnosActionPerformed
 
     private void EmpleadosTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpleadosTActionPerformed
-        
+
         Tortas_4 regr = new Tortas_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
@@ -3280,9 +3391,9 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
     private void Tnom8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tnom8MouseClicked
         try {
-            
+
             DefaultTableModel model = (DefaultTableModel) Tnom8.getModel();
-            
+
             int fila = Tnom8.getSelectedRow();
             NDL.setText(String.valueOf(Tnom8.getValueAt(fila, 0)));
             NEnom.setText(String.valueOf(Tnom8.getValueAt(fila, 1)));
@@ -3355,7 +3466,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             Odtp.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
             deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 63)));
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosQ_4.class
+            Logger.getLogger(DepositosQsan_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Tnom8MouseClicked
@@ -3408,7 +3519,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             FiltroNDF8.setVisible(false);
             LabelBNDF8.setVisible(false);
             FunMD();
-            
+
         }
         if (FTD8.equals("Filtrar por Apellido P")) {
             Nominab8.setText("");
@@ -3617,7 +3728,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             filtroNDFP8.setText("");
             LabelNDFP8.setVisible(false);
             FunMD();
-            
+
         }
         if (FP.equals("Filtrar por Nombre(s)")) {
             busp8.setVisible(true);
@@ -3771,9 +3882,9 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
     private void Tdep8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep8MousePressed
         try {
-            
+
             DefaultTableModel model = (DefaultTableModel) Tdep8.getModel();
-            
+
             int fila = Tdep8.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep8.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep8.getValueAt(fila, 1)));
@@ -3855,9 +3966,9 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep8.getValueAt(fila, 66)));
             Obsdeposito.setText(String.valueOf(Tdep8.getValueAt(fila, 67)));
-            
+
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosQ_4.class
+            Logger.getLogger(DepositosQsan_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         try {
@@ -3865,17 +3976,17 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             int id = Integer.parseInt(Tdep8.getValueAt(seleccionar, 0).toString());
             PreparedStatement ps;
             ResultSet rs;
-            ps = con.prepareStatement("select fecha de alta`, `SDI`, `Total percepciones`,"
+            ps = con.prepareStatement("select `fecha de alta`, `SDI`, `Total percepciones`,"
                     + " `Total gravable`, `subsidio empleo`, `total deducciones`, `total efectivo`, "
-                    + "`neto pagado`, `sueldo bruto`, `subsidio`, `carga patronal`, `Sub total`,"
-                    + "`Total sin iva`, `pago real`, `otro` FROM ``rh.depositos.corporativo santander quincenal` where `#Folio` = ?");
+                    + "`neto pagado`, `sueldobruto`, `subsidio`, `carga patronal`, `Sub total`,"
+                    + "`Total sin iva`, `pago real`, `Otros` FROM `rh.depositos.corporativo santander quincenal` where `#Folio` = ?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
             java.sql.Statement st = con.createStatement();
-            
+
             while (rs.next()) {
-                Date date1 = new SimpleDateFormat("d MMM y").parse((rs.getString(1)));
-                FDD.setDate(date1);
+                Date date1 = new SimpleDateFormat("d MMM y").parse((String) rs.getString(1));
+                FechaDA.setDate(date1);
                 SDI.setText(rs.getString(2));
                 TP.setText(rs.getString(3));
                 TG.setText(rs.getString(4));
@@ -3893,18 +4004,124 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             }
             ps.isClosed();
             rs.isClosed();
-            
+
         } catch (SQLException | ParseException ex) {
-            Logger.getLogger(DepositosQ_4.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DepositosQSan_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         desv();
     }//GEN-LAST:event_Tdep8MousePressed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        DepositosQSan_4 regr = new DepositosQSan_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        DepositosQsan_SIMSS_4 regr = new DepositosQsan_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        DepositosSSan_4 regr = new DepositosSSan_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        DepositosSSan_SIMSS_4 regr = new DepositosSSan_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        FechaDA.setDate(null);
+        SDI.setText("");
+        TP.setText("");
+        TG.setText("");
+        SubsidioE.setText("");
+        TDeducciones.setText("");
+        TotalEf.setText("");
+        NPagado.setText("");
+        SBruto.setText("");
+        Subsidio.setText("");
+        CargaP.setText("");
+        SBtotal.setText("");
+        TSIVA.setText("");
+        PReal.setText("");
+        Otros.setText("");
+        Dpi.setText("0");
+        pds.setText("0");
+        Ddv.setText("0");
+        PDDDV.setText("0");
+        DD.setText("0");
+        PDDD.setText("0");
+        DL.setText("0");
+        PDDL.setText("0");
+        dt.setText("0");
+        PDDT.setText("0");
+        Bono.setText("0");
+        sueldo.setText("0");
+        DSGS.setText("0");
+        PDDDDSGS.setText("0");
+        FJ.setText("0");
+        DO.setText("0");
+        R.setText("0");
+        PCR.setText("0");
+        apy.setText("0");
+        Lugar.setText("");
+        ADD.setText("0");
+        F.setText("0");
+        DPF.setText("0");
+        DI.setText("0");
+        Fdb.setText("0");
+        Sancion.setText("0");
+        Chamarra.setText("0");
+        Chaleco.setText("0");
+        Fde.setText("0");
+        Grua.setText("0");
+        Pantalon.setText("0");
+        Credencial.setText("0");
+        Bp.setText("0");
+        Playera.setText("0");
+        Corbata.setText("0");
+        Presp.setText("0");
+        cda.setText("0");
+        Odtp.setText("0");
+        AdN.setText("0");
+        PH.setText("0");
+        THE.setText("0");
+        HE.setText("0");
+        RI.setText("0");
+        RF.setText("0");
+        NomISR.setText("0");
+        deposito();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         DepositosQ_SIMSS_4 regr = new DepositosQ_SIMSS_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
+        DepositosQSan_4 regr = new DepositosQSan_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem24ActionPerformed
+
+    private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem25ActionPerformed
+        DepositosQsan_SIMSS_4 regr = new DepositosQsan_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem25ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
         DepositosS_4 regr = new DepositosS_4(usr, LP);
@@ -3918,29 +4135,17 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
+    private void jMenuItem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem26ActionPerformed
+        DepositosSSan_4 regr = new DepositosSSan_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jMenuItem26ActionPerformed
 
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        DepositosQ_SIMSS_4 regr = new DepositosQ_SIMSS_4(usr, LP);
+    private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
+        DepositosSSan_SIMSS_4 regr = new DepositosSSan_SIMSS_4(usr, LP);
         regr.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
-
-    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
-        DepositosS_4 regr = new DepositosS_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem17ActionPerformed
-
-    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-        DepositosS_SIMSS_4 regr = new DepositosS_SIMSS_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem18ActionPerformed
+    }//GEN-LAST:event_jMenuItem27ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3959,12 +4164,12 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DepositosQ_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DepositosQsan_SIMSS_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new DepositosQ_4().setVisible(true);
+            new DepositosQsan_SIMSS_4().setVisible(true);
         });
     }
 
@@ -3973,6 +4178,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem ADMV1;
     private javax.swing.JTextField AdN;
     private javax.swing.JButton Adddeposito;
+    private javax.swing.JButton Adddeposito1;
     private javax.swing.JMenuItem Alumnos;
     private javax.swing.JTextField Ap;
     private javax.swing.JTextField BAppag8;
@@ -4043,7 +4249,6 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Lugar;
     private javax.swing.JComboBox<String> MDP;
     private javax.swing.JMenu Menuadm;
-    private javax.swing.JButton Moddeposito;
     private javax.swing.JTextField NDL;
     private javax.swing.JTextField NEnom;
     private javax.swing.JTextField NFnom;
@@ -4108,6 +4313,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     private javax.swing.JTextField deposito;
     private javax.swing.JTextField dt;
     private javax.swing.JTextField filtroNDFP8;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -4213,11 +4419,16 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem24;
+    private javax.swing.JMenuItem jMenuItem25;
+    private javax.swing.JMenuItem jMenuItem26;
+    private javax.swing.JMenuItem jMenuItem27;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

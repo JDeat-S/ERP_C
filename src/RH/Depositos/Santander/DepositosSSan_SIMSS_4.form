@@ -210,53 +210,45 @@
                     </MenuItem>
                   </SubComponents>
                 </Menu>
-                <Menu class="javax.swing.JMenu" name="Depositos1">
+                <Menu class="javax.swing.JMenu" name="Depositos">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Depositos"/>
                   </Properties>
                   <SubComponents>
-                    <Menu class="javax.swing.JMenu" name="jMenu9">
+                    <Menu class="javax.swing.JMenu" name="jMenu7">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Quincenales"/>
                       </Properties>
                       <SubComponents>
-                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem13">
+                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Depositos C/ IMSS"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem13ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
                           </Events>
                         </MenuItem>
-                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
+                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Depositos S/ IMSS"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem14ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
                           </Events>
                         </MenuItem>
                       </SubComponents>
                     </Menu>
-                    <Menu class="javax.swing.JMenu" name="jMenu10">
+                    <Menu class="javax.swing.JMenu" name="jMenu8">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Semanales"/>
                       </Properties>
                       <SubComponents>
-                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem17">
+                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem15">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Depositos C/ IMSS"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem17ActionPerformed"/>
-                          </Events>
-                        </MenuItem>
-                        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem18">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Depositos S/ IMSS"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem18ActionPerformed"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem15ActionPerformed"/>
                           </Events>
                         </MenuItem>
                       </SubComponents>
@@ -321,45 +313,85 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GeneralActionPerformed"/>
               </Events>
             </MenuItem>
-            <Menu class="javax.swing.JMenu" name="Depositos">
+            <Menu class="javax.swing.JMenu" name="Depositos1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Depositos"/>
               </Properties>
               <SubComponents>
-                <Menu class="javax.swing.JMenu" name="jMenu7">
+                <Menu class="javax.swing.JMenu" name="jMenu9">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Quincenales"/>
                   </Properties>
                   <SubComponents>
-                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem13">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Depositos C/ IMSS"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem13ActionPerformed"/>
                       </Events>
                     </MenuItem>
-                  </SubComponents>
-                </Menu>
-                <Menu class="javax.swing.JMenu" name="jMenu8">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Semanales"/>
-                  </Properties>
-                  <SubComponents>
-                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem15">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="Depositos C/ IMSS"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem15ActionPerformed"/>
-                      </Events>
-                    </MenuItem>
-                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem16">
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Depositos S/ IMSS"/>
                       </Properties>
                       <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem14ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem24">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Santander Depositos C/ IMSS"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem24ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem25">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Santander Depositos S/ IMSS"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem25ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                  </SubComponents>
+                </Menu>
+                <Menu class="javax.swing.JMenu" name="jMenu10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Semanales"/>
+                  </Properties>
+                  <SubComponents>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem16">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Depositos C/ IMSS"/>
+                      </Properties>
+                      <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem16ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem17">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Depositos S/ IMSS"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem17ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem26">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Santander Depositos C/ IMSS"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem26ActionPerformed"/>
+                      </Events>
+                    </MenuItem>
+                    <MenuItem class="javax.swing.JMenuItem" name="jMenuItem27">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Santander Depositos S/ IMSS"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem27ActionPerformed"/>
                       </Events>
                     </MenuItem>
                   </SubComponents>
@@ -455,18 +487,18 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="TDFA8">
+                <Container class="javax.swing.JScrollPane" name="jScrollPane22">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Santander quincenal">
-                        <Property name="tabTitle" type="java.lang.String" value="Santander quincenal"/>
+                      <JTabbedPaneConstraints tabName="Santander semanal">
+                        <Property name="tabTitle" type="java.lang.String" value="Santander semanal"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel36">
+                    <Container class="javax.swing.JPanel" name="jPanel39">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="cc" type="rgb"/>
@@ -477,44 +509,48 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel186" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltrosTD8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                                          <Component id="LabelBE8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Nominab8" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FApT8" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FAmT8" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelSZ8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FZservicio8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBS8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroSnomina8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBQ8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroQuincenanomina8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="LabelBNDF8" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="FiltroNDF8" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FiltrosTD8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                                  <Component id="LabelBE8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="Nominab8" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FApT8" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FAmT8" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                                  <Component id="LabelSZ8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FZservicio8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="LabelBS8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FiltroSnomina8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="LabelBQ8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FiltroQuincenanomina8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="LabelBNDF8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="FiltroNDF8" min="-2" pref="100" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="CS11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <Component id="CS22" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jScrollPane39" min="-2" pref="4489" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="8091" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane28" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -531,7 +567,7 @@
                                       <Component id="FiltroQuincenanomina8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelSZ8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FZservicio8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel186" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltrosTD8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="LabelBNDF8" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="FiltroNDF8" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -539,110 +575,29 @@
                                       <Component id="FAmT8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane28" min="-2" pref="627" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                  <Component id="CS22" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="154" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane39" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CS11" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="206" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane28">
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                          <SubComponents>
-                            <Component class="javax.swing.JTable" name="Tnom8">
-                              <Properties>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="50" rowCount="4">
-                                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 5" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 6" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 7" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 8" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 9" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 10" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 11" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 12" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 13" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 14" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 15" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 16" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 17" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 18" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 19" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 20" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 21" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 22" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 23" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 24" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 25" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 26" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 27" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 28" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 29" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 30" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 31" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 32" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 33" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 34" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 35" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 36" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 37" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 38" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 39" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 40" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 41" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 42" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 43" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 44" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 45" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 46" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 47" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 48" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 49" type="java.lang.Object"/>
-                                    <Column editable="true" title="Title 50" type="java.lang.Object"/>
-                                  </Table>
-                                </Property>
-                                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                                </Property>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom8MouseClicked"/>
-                              </Events>
-                            </Component>
-                          </SubComponents>
-                        </Container>
-                        <Component class="javax.swing.JLabel" name="LabelBE8">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Empleado:"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="Nominab8">
+                        <Component class="javax.swing.JTextField" name="FApT8">
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab8KeyReleased"/>
-                          </Events>
-                        </Component>
-                        <Component class="javax.swing.JButton" name="CS22">
-                          <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
-                            </Property>
-                            <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS22ActionPerformed"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT8KeyReleased"/>
                           </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBS8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar Servicio:"/>
                           </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="FAmT8">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT8KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroSnomina8">
                           <Properties>
@@ -661,39 +616,62 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQ8">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar Quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar Semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQuincenanomina8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
+                              <StringArray count="49">
                                 <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="1er semana Febrero"/>
+                                <StringItem index="6" value="2da semana Febrero"/>
+                                <StringItem index="7" value="3er semana Febrero"/>
+                                <StringItem index="8" value="4ta semana Febrero"/>
+                                <StringItem index="9" value="1er semana Marzo"/>
+                                <StringItem index="10" value="2da semana Marzo"/>
+                                <StringItem index="11" value="3er semana Marzo"/>
+                                <StringItem index="12" value="4ta semana Marzo"/>
+                                <StringItem index="13" value="1er semana Abril"/>
+                                <StringItem index="14" value="2da semana Abril"/>
+                                <StringItem index="15" value="3er semana Abril"/>
+                                <StringItem index="16" value="4ta semana Abril"/>
+                                <StringItem index="17" value="1er semana Mayo"/>
+                                <StringItem index="18" value="2da semana Mayo"/>
+                                <StringItem index="19" value="3er semana Mayo"/>
+                                <StringItem index="20" value="4ta semana Mayo"/>
+                                <StringItem index="21" value="1er semana Junio"/>
+                                <StringItem index="22" value="2da semana Junio"/>
+                                <StringItem index="23" value="3er semana Junio"/>
+                                <StringItem index="24" value="4ta semana Junio"/>
+                                <StringItem index="25" value="1er semana Julio"/>
+                                <StringItem index="26" value="2da semana Julio"/>
+                                <StringItem index="27" value="3er semana Julio"/>
+                                <StringItem index="28" value="4ta semana Julio"/>
+                                <StringItem index="29" value="1er semana Agosto"/>
+                                <StringItem index="30" value="2da semana Agosto"/>
+                                <StringItem index="31" value="3er semana Agosto"/>
+                                <StringItem index="32" value="4ta semana Agosto"/>
+                                <StringItem index="33" value="1er semana Septiembre"/>
+                                <StringItem index="34" value="2da semana Septiembre"/>
+                                <StringItem index="35" value="3er semana Septiembre"/>
+                                <StringItem index="36" value="4ta semana Septiembre"/>
+                                <StringItem index="37" value="1er semana Octubre"/>
+                                <StringItem index="38" value="2da semana Octubre"/>
+                                <StringItem index="39" value="3er semana Octubre"/>
+                                <StringItem index="40" value="4ta semana Octubre"/>
+                                <StringItem index="41" value="1er semana Noviembre"/>
+                                <StringItem index="42" value="2da semana Noviembre"/>
+                                <StringItem index="43" value="3er semana Noviembre"/>
+                                <StringItem index="44" value="4ta semana Noviembre"/>
+                                <StringItem index="45" value="1er semana Diciembre"/>
+                                <StringItem index="46" value="2da semana Diciembre"/>
+                                <StringItem index="47" value="3er semana Diciembre"/>
+                                <StringItem index="48" value="4ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -722,9 +700,14 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel186">
+                        <Component class="javax.swing.JLabel" name="jLabel74">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Filtros:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="LabelBE8">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Buscar Empleado:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltrosTD8">
@@ -736,7 +719,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
@@ -748,6 +731,11 @@
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
+                        <Component class="javax.swing.JTextField" name="Nominab8">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Nominab8KeyReleased"/>
+                          </Events>
+                        </Component>
                         <Component class="javax.swing.JLabel" name="LabelBNDF8">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Buscar por # Lista"/>
@@ -758,16 +746,41 @@
                             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FiltroNDF8KeyReleased"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FApT8">
+                        <Component class="javax.swing.JButton" name="CS11">
+                          <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/Imagenes/cerrarsesionlogo.jpg"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Cerrar sesion"/>
+                          </Properties>
                           <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FApT8KeyReleased"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CS11ActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="FAmT8">
-                          <Events>
-                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FAmT8KeyReleased"/>
-                          </Events>
-                        </Component>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane39">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTable" name="Tnom8">
+                              <Properties>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="4" rowCount="4">
+                                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                                  </Table>
+                                </Property>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Tnom8MouseClicked"/>
+                              </Events>
+                            </Component>
+                          </SubComponents>
+                        </Container>
                       </SubComponents>
                     </Container>
                   </SubComponents>
@@ -829,7 +842,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Quincenas" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Semana" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel101" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -849,6 +862,8 @@
                                                   <Component id="Adddeposito" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="Adddeposito1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="FDD" max="32767" attributes="0"/>
@@ -871,34 +886,36 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel41" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel42" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel41" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel42" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="THE" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="HE" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="THE" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="HE" alignment="0" min="-2" pref="81" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel24" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel11" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel14" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel18" alignment="1" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel22" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -908,27 +925,35 @@
                               </Group>
                               <Component id="jLabel27" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel28" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel29" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="FechaDA" pref="149" max="32767" attributes="0"/>
-                              <Component id="SDI" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TP" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TG" alignment="0" max="32767" attributes="0"/>
-                              <Component id="SubsidioE" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TDeducciones" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TotalEf" alignment="0" max="32767" attributes="0"/>
-                              <Component id="NPagado" alignment="0" max="32767" attributes="0"/>
-                              <Component id="SBruto" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Subsidio" alignment="0" max="32767" attributes="0"/>
-                              <Component id="CargaP" alignment="0" max="32767" attributes="0"/>
-                              <Component id="SBtotal" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TSIVA" alignment="0" max="32767" attributes="0"/>
-                              <Component id="PReal" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Otros" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="FFS" max="32767" attributes="0"/>
+                                  <Component id="FechaDA" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="SDI" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TP" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TG" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="SubsidioE" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TDeducciones" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TotalEf" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="NPagado" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="SBruto" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Subsidio" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="CargaP" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="SBtotal" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TSIVA" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PReal" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Otros" pref="149" max="32767" attributes="0"/>
+                                  <Component id="FIS" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace pref="82" max="32767" attributes="0"/>
+                          <EmptySpace pref="48" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -938,114 +963,106 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="FechaDA" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SDI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TG" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SubsidioE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TDeducciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TotalEf" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="NPagado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SBruto" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Subsidio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CargaP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SBtotal" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TSIVA" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="PReal" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Otros" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                  <Component id="FIS" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="FFS" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jPanel18" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="FechaDA" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="SDI" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="TP" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="TG" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="SubsidioE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="TDeducciones" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="TotalEf" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="NPagado" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
+                                          <Component id="jPanel17" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="HE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="THE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="SBruto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="Subsidio" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="HE" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="CargaP" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="SBtotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="TSIVA" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="THE" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                          <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="PReal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Otros" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jPanel16" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
@@ -1057,7 +1074,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="Quincenas" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Semana" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel101" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -1099,10 +1116,11 @@
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="Adddeposito" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="Adddeposito1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="124" max="32767" attributes="0"/>
+                          <EmptySpace pref="136" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1172,7 +1190,7 @@
                                           <Component id="DPF" alignment="0" pref="80" max="32767" attributes="0"/>
                                           <Component id="RI" alignment="0" max="32767" attributes="0"/>
                                           <Component id="RF" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="NomISR" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="ISR" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1209,7 +1227,7 @@
                                   <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="cda" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="NomISR" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ISR" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1232,7 +1250,6 @@
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DIActionPerformed"/>
                         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="DIKeyReleased"/>
                       </Events>
                     </Component>
@@ -1259,7 +1276,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel61">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Ahorro por Qna:"/>
+                        <Property name="text" type="java.lang.String" value="Ahorro por Sem:"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel85">
@@ -1326,7 +1343,7 @@
                         <Property name="text" type="java.lang.String" value="ISR"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="NomISR">
+                    <Component class="javax.swing.JTextField" name="ISR">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
@@ -1343,36 +1360,71 @@
                     <Property name="text" type="java.lang.String" value="Por dia:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="Quincenas">
+                <Component class="javax.swing.JComboBox" name="Semana">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="26">
-                        <StringItem index="0" value="Selecciona una Quincena"/>
-                        <StringItem index="1" value="1ra Quincena de Enero"/>
-                        <StringItem index="2" value="2da Quincena de Enero"/>
-                        <StringItem index="3" value="1ra Quincena de Febrero"/>
-                        <StringItem index="4" value="2da Quincena de Febrero"/>
-                        <StringItem index="5" value="2da Quincena de Feb B"/>
-                        <StringItem index="6" value="1ra Quincena de Marzo"/>
-                        <StringItem index="7" value="2da Quincena de Marzo"/>
-                        <StringItem index="8" value="1ra Quincena de Abril"/>
-                        <StringItem index="9" value="2da Quincena de Abril"/>
-                        <StringItem index="10" value="1ra Quincena de Mayo"/>
-                        <StringItem index="11" value="2da Quincena de Mayo"/>
-                        <StringItem index="12" value="1ra Quincena de Junio"/>
-                        <StringItem index="13" value="2da Quincena de Junio"/>
-                        <StringItem index="14" value="1ra Quincena de Julio"/>
-                        <StringItem index="15" value="2da Quincena de Julio"/>
-                        <StringItem index="16" value="1ra Quincena de Agosto"/>
-                        <StringItem index="17" value="2da Quincena de Agosto"/>
-                        <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                        <StringItem index="19" value="2da Quincena de Septiembre"/>
-                        <StringItem index="20" value="1ra Quincena de Octubre"/>
-                        <StringItem index="21" value="2da Quincena de Octubre"/>
-                        <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                        <StringItem index="23" value="2da Quincena de Noviembre"/>
-                        <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                        <StringItem index="25" value="2da Quincena de Diciembre"/>
+                      <StringArray count="61">
+                        <StringItem index="0" value="Selecciona semana"/>
+                        <StringItem index="1" value="1er semana Enero"/>
+                        <StringItem index="2" value="2da semana Enero"/>
+                        <StringItem index="3" value="3er semana Enero"/>
+                        <StringItem index="4" value="4ta semana Enero"/>
+                        <StringItem index="5" value="5ta semana Enero"/>
+                        <StringItem index="6" value="1er semana Febrero"/>
+                        <StringItem index="7" value="2da semana Febrero"/>
+                        <StringItem index="8" value="3er semana Febrero"/>
+                        <StringItem index="9" value="4ta semana Febrero"/>
+                        <StringItem index="10" value="5ta semana Febrero"/>
+                        <StringItem index="11" value="1er semana Marzo"/>
+                        <StringItem index="12" value="2da semana Marzo"/>
+                        <StringItem index="13" value="3er semana Marzo"/>
+                        <StringItem index="14" value="4ta semana Marzo"/>
+                        <StringItem index="15" value="5ta semana Marzo"/>
+                        <StringItem index="16" value="1er semana Abril"/>
+                        <StringItem index="17" value="2da semana Abril"/>
+                        <StringItem index="18" value="3er semana Abril"/>
+                        <StringItem index="19" value="4ta semana Abril"/>
+                        <StringItem index="20" value="5ta semana Abril"/>
+                        <StringItem index="21" value="1er semana Mayo"/>
+                        <StringItem index="22" value="2da semana Mayo"/>
+                        <StringItem index="23" value="3er semana Mayo"/>
+                        <StringItem index="24" value="4ta semana Mayo"/>
+                        <StringItem index="25" value="5ta semana Mayo"/>
+                        <StringItem index="26" value="1er semana Junio"/>
+                        <StringItem index="27" value="2da semana Junio"/>
+                        <StringItem index="28" value="3er semana Junio"/>
+                        <StringItem index="29" value="4ta semana Junio"/>
+                        <StringItem index="30" value="5ta semana Junio"/>
+                        <StringItem index="31" value="1er semana Julio"/>
+                        <StringItem index="32" value="2da semana Julio"/>
+                        <StringItem index="33" value="3er semana Julio"/>
+                        <StringItem index="34" value="4ta semana Julio"/>
+                        <StringItem index="35" value="5ta semana Julio"/>
+                        <StringItem index="36" value="1er semana Agosto"/>
+                        <StringItem index="37" value="2da semana Agosto"/>
+                        <StringItem index="38" value="3er semana Agosto"/>
+                        <StringItem index="39" value="4ta semana Agosto"/>
+                        <StringItem index="40" value="5ta semana Agosto"/>
+                        <StringItem index="41" value="1er semana Septiembre"/>
+                        <StringItem index="42" value="2da semana Septiembre"/>
+                        <StringItem index="43" value="3er semana Septiembre"/>
+                        <StringItem index="44" value="4ta semana Septiembre"/>
+                        <StringItem index="45" value="5ta semana Septiembre"/>
+                        <StringItem index="46" value="1er semana Octubre"/>
+                        <StringItem index="47" value="2da semana Octubre"/>
+                        <StringItem index="48" value="3er semana Octubre"/>
+                        <StringItem index="49" value="4ta semana Octubre"/>
+                        <StringItem index="50" value="5ta semana Octubre"/>
+                        <StringItem index="51" value="1er semana Noviembre"/>
+                        <StringItem index="52" value="2da semana Noviembre"/>
+                        <StringItem index="53" value="3er semana Noviembre"/>
+                        <StringItem index="54" value="4ta semana Noviembre"/>
+                        <StringItem index="55" value="5ta semana Noviembre"/>
+                        <StringItem index="56" value="1er semana Diciembre"/>
+                        <StringItem index="57" value="2da semana Diciembre"/>
+                        <StringItem index="58" value="3er semana Diciembre"/>
+                        <StringItem index="59" value="4ta semana Diciembre"/>
+                        <StringItem index="60" value="5ta semana Diciembre"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -1536,7 +1588,7 @@
                                           <Component id="Bp" alignment="0" pref="65" max="32767" attributes="0"/>
                                           <Component id="Playera" alignment="0" pref="65" max="32767" attributes="0"/>
                                           <Component id="Corbata" alignment="0" pref="65" max="32767" attributes="0"/>
-                                          <Component id="AdN" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="ADN" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -1603,7 +1655,7 @@
                                   <Component id="jLabel132" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Grua" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel167" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="AdN" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ADN" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1780,12 +1832,12 @@
                         <Property name="text" type="java.lang.String" value="Adelanto de nomina:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="AdN">
+                    <Component class="javax.swing.JTextField" name="ADN">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AdNKeyReleased"/>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ADNKeyReleased"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="DVT">
@@ -1967,7 +2019,7 @@
                                   <Component id="Ap" alignment="0" pref="100" max="32767" attributes="0"/>
                                   <Component id="am" alignment="0" pref="100" max="32767" attributes="0"/>
                                   <Component id="name" alignment="0" pref="100" max="32767" attributes="0"/>
-                                  <Component id="NEnom" alignment="0" pref="100" max="32767" attributes="0"/>
+                                  <Component id="NE" alignment="0" pref="100" max="32767" attributes="0"/>
                                   <Component id="NFnom" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1985,7 +2037,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel141" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="NEnom" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -2046,7 +2098,7 @@
                         <Property name="text" type="java.lang.String" value="# empleado:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="NEnom">
+                    <Component class="javax.swing.JTextField" name="NE">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
@@ -2571,7 +2623,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Quincena:"/>
+                    <Property name="text" type="java.lang.String" value="Semana:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="deposito">
@@ -2615,110 +2667,127 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Fecha de alta:"/>
-                  </Properties>
-                </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="FechaDA">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel4">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="SDI"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="SDI">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel6">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Total percepciones:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="TP">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Total Gravable:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="TG">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Subsidio empleo:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="SubsidioE">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel10">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Total deducciones:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="TDeducciones">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Total efectivo:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="TotalEf">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel14">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Neto pagado:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="NPagado">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel18">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Sueldo bruto:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="SBruto">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel22">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Subsidio"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="Subsidio">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel23">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Carga patronal:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="CargaP">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel24">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Sub total:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="SBtotal">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel27">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Total sin IVA:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="TSIVA">
+                <Component class="javax.swing.JTextField" name="PReal">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel28">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Pago real:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="PReal">
+                <Component class="javax.swing.JTextField" name="TSIVA">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel27">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Total sin IVA:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="SBtotal">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel24">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Sub total:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Otros">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel29">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Otros"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="Otros">
+                <Component class="com.toedter.calendar.JDateChooser" name="FechaDA">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Fecha de alta:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="TP">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Total percepciones:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="SDI">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="SDI"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="TDeducciones">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Total deducciones:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="SubsidioE">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Subsidio empleo:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="TG">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel7">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Total Gravable:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel18">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Sueldo bruto:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="NPagado">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel14">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Neto pagado:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="TotalEf">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Total efectivo:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="CargaP">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel23">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Carga patronal:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="Subsidio">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel22">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Subsidio"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="SBruto">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Periodo:"/>
+                  </Properties>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="FIS">
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="FFS">
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Rembolso"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -2742,8 +2811,8 @@
                 <Container class="javax.swing.JScrollPane" name="TPagos8">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Santander quincenal">
-                        <Property name="tabTitle" type="java.lang.String" value="Santander quincenal"/>
+                      <JTabbedPaneConstraints tabName="Santander semanal">
+                        <Property name="tabTitle" type="java.lang.String" value="Santander semanal"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2799,7 +2868,7 @@
                                               </Group>
                                               <Component id="CS23" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="7114" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="7223" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -2943,39 +3012,74 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="LabelBQP8">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="Buscar quincena:"/>
+                            <Property name="text" type="java.lang.String" value="Buscar semana:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="FiltroQP8">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="26">
-                                <StringItem index="0" value=" "/>
-                                <StringItem index="1" value="1ra Quincena de Enero"/>
-                                <StringItem index="2" value="2da Quincena de Enero"/>
-                                <StringItem index="3" value="1ra Quincena de Febrero"/>
-                                <StringItem index="4" value="2da Quincena de Febrero"/>
-                                <StringItem index="5" value="2da Quincena de Feb B"/>
-                                <StringItem index="6" value="1ra Quincena de Marzo"/>
-                                <StringItem index="7" value="2da Quincena de Marzo"/>
-                                <StringItem index="8" value="1ra Quincena de Abril"/>
-                                <StringItem index="9" value="2da Quincena de Abril"/>
-                                <StringItem index="10" value="1ra Quincena de Mayo"/>
-                                <StringItem index="11" value="2da Quincena de Mayo"/>
-                                <StringItem index="12" value="1ra Quincena de Junio"/>
-                                <StringItem index="13" value="2da Quincena de Junio"/>
-                                <StringItem index="14" value="1ra Quincena de Julio"/>
-                                <StringItem index="15" value="2da Quincena de Julio"/>
-                                <StringItem index="16" value="1ra Quincena de Agosto"/>
-                                <StringItem index="17" value="2da Quincena de Agosto"/>
-                                <StringItem index="18" value="1ra Quincena de Septiembre"/>
-                                <StringItem index="19" value="2da Quincena de Septiembre"/>
-                                <StringItem index="20" value="1ra Quincena de Octubre"/>
-                                <StringItem index="21" value="2da Quincena de Octubre"/>
-                                <StringItem index="22" value="1ra Quincena de Noviembre"/>
-                                <StringItem index="23" value="2da Quincena de Noviembre"/>
-                                <StringItem index="24" value="1ra Quincena de Diciembre"/>
-                                <StringItem index="25" value="2da Quincena de Diciembre"/>
+                              <StringArray count="61">
+                                <StringItem index="0" value=""/>
+                                <StringItem index="1" value="1er semana Enero"/>
+                                <StringItem index="2" value="2da semana Enero"/>
+                                <StringItem index="3" value="3er semana Enero"/>
+                                <StringItem index="4" value="4ta semana Enero"/>
+                                <StringItem index="5" value="5ta semana Enero"/>
+                                <StringItem index="6" value="1er semana Febrero"/>
+                                <StringItem index="7" value="2da semana Febrero"/>
+                                <StringItem index="8" value="3er semana Febrero"/>
+                                <StringItem index="9" value="4ta semana Febrero"/>
+                                <StringItem index="10" value="5ta semana Febrero"/>
+                                <StringItem index="11" value="1er semana Marzo"/>
+                                <StringItem index="12" value="2da semana Marzo"/>
+                                <StringItem index="13" value="3er semana Marzo"/>
+                                <StringItem index="14" value="4ta semana Marzo"/>
+                                <StringItem index="15" value="5ta semana Marzo"/>
+                                <StringItem index="16" value="1er semana Abril"/>
+                                <StringItem index="17" value="2da semana Abril"/>
+                                <StringItem index="18" value="3er semana Abril"/>
+                                <StringItem index="19" value="4ta semana Abril"/>
+                                <StringItem index="20" value="5ta semana Abril"/>
+                                <StringItem index="21" value="1er semana Mayo"/>
+                                <StringItem index="22" value="2da semana Mayo"/>
+                                <StringItem index="23" value="3er semana Mayo"/>
+                                <StringItem index="24" value="4ta semana Mayo"/>
+                                <StringItem index="25" value="5ta semana Mayo"/>
+                                <StringItem index="26" value="1er semana Junio"/>
+                                <StringItem index="27" value="2da semana Junio"/>
+                                <StringItem index="28" value="3er semana Junio"/>
+                                <StringItem index="29" value="4ta semana Junio"/>
+                                <StringItem index="30" value="5ta semana Junio"/>
+                                <StringItem index="31" value="1er semana Julio"/>
+                                <StringItem index="32" value="2da semana Julio"/>
+                                <StringItem index="33" value="3er semana Julio"/>
+                                <StringItem index="34" value="4ta semana Julio"/>
+                                <StringItem index="35" value="5ta semana Julio"/>
+                                <StringItem index="36" value="1er semana Agosto"/>
+                                <StringItem index="37" value="2da semana Agosto"/>
+                                <StringItem index="38" value="3er semana Agosto"/>
+                                <StringItem index="39" value="4ta semana Agosto"/>
+                                <StringItem index="40" value="5ta semana Agosto"/>
+                                <StringItem index="41" value="1er semana Septiembre"/>
+                                <StringItem index="42" value="2da semana Septiembre"/>
+                                <StringItem index="43" value="3er semana Septiembre"/>
+                                <StringItem index="44" value="4ta semana Septiembre"/>
+                                <StringItem index="45" value="5ta semana Septiembre"/>
+                                <StringItem index="46" value="1er semana Octubre"/>
+                                <StringItem index="47" value="2da semana Octubre"/>
+                                <StringItem index="48" value="3er semana Octubre"/>
+                                <StringItem index="49" value="4ta semana Octubre"/>
+                                <StringItem index="50" value="5ta semana Octubre"/>
+                                <StringItem index="51" value="1er semana Noviembre"/>
+                                <StringItem index="52" value="2da semana Noviembre"/>
+                                <StringItem index="53" value="3er semana Noviembre"/>
+                                <StringItem index="54" value="4ta semana Noviembre"/>
+                                <StringItem index="55" value="5ta semana Noviembre"/>
+                                <StringItem index="56" value="1er semana Diciembre"/>
+                                <StringItem index="57" value="2da semana Diciembre"/>
+                                <StringItem index="58" value="3er semana Diciembre"/>
+                                <StringItem index="59" value="4ta semana Diciembre"/>
+                                <StringItem index="60" value="5ta semana Diciembre"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -3000,7 +3104,7 @@
                                 <StringItem index="2" value="Filtrar por Apellido M"/>
                                 <StringItem index="3" value="Filtrar por Nombre(s)"/>
                                 <StringItem index="4" value="Filtrar por Servicio"/>
-                                <StringItem index="5" value="Filtrar por quincena"/>
+                                <StringItem index="5" value="Filtrar por semana"/>
                                 <StringItem index="6" value="Filtrar por # Lista"/>
                               </StringArray>
                             </Property>
