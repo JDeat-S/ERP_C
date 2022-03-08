@@ -1,4 +1,4 @@
-package RH.Movimientos;
+package RH.Expedientes;
 
 import Conexion.ConexionSQL;
 import Logicas.*;
@@ -41,7 +41,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author JDEAT
  */
-public final class Movimientos_GEN extends javax.swing.JFrame {
+public final class Expedientes_4 extends javax.swing.JFrame {
 
     int xMouse, yMouse;
     Logica_usuarios usr;
@@ -49,7 +49,7 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
 
-    public Movimientos_GEN() {
+    public Expedientes_4() {
         initComponents();
         this.setLocationRelativeTo(null);
         Zonas zz = new Zonas();
@@ -59,7 +59,7 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
 
     }
 
-    public Movimientos_GEN(Logica_usuarios usr, Logica_permisos LP) {
+    public Expedientes_4(Logica_usuarios usr, Logica_permisos LP) {
         initComponents();
         this.usr = usr;
         this.LP = LP;
@@ -1699,7 +1699,7 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Movimientos_GEN.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Expedientes_4.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_shareMouseClicked
 
@@ -1721,14 +1721,15 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Movimientos_GEN.class
+            java.util.logging.Logger.getLogger(Expedientes_4.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Movimientos_GEN().setVisible(true);
+            new Expedientes_4().setVisible(true);
         });
     }
 

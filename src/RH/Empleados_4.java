@@ -27,7 +27,7 @@ import RH.Depositos.Santander.DepositosQSan_4;
 import RH.Depositos.Santander.DepositosQsan_SIMSS_4;
 import RH.Depositos.Santander.DepositosSSan_4;
 import RH.Depositos.Santander.DepositosSSan_SIMSS_4;
-import RH.Movimientos.Movimientos_GEN;
+import RH.Expedientes.Expedientes_4;
 import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
@@ -4607,7 +4607,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem27ActionPerformed
 
     private void mod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mod1ActionPerformed
-        Movimientos_GEN regr = new Movimientos_GEN(usr, LP);
+        Expedientes_4 regr = new Expedientes_4(usr, LP);
         regr.setVisible(true);
     }//GEN-LAST:event_mod1ActionPerformed
 
