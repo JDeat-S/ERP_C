@@ -27,6 +27,7 @@ import RH.Depositos.Santander.DepositosQSan_4;
 import RH.Depositos.Santander.DepositosQsan_SIMSS_4;
 import RH.Depositos.Santander.DepositosSSan_4;
 import RH.Depositos.Santander.DepositosSSan_SIMSS_4;
+import RH.Movimientos.Movimientos_GEN;
 import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
@@ -1363,6 +1364,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         mod = new javax.swing.JButton();
         add = new javax.swing.JButton();
         Cs = new javax.swing.JButton();
+        mod1 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         FiltroNG = new javax.swing.JTextField();
@@ -1997,7 +1999,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         );
 
         mod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        mod.setText("Modificaciones");
+        mod.setText("Modificar");
         mod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modActionPerformed(evt);
@@ -2020,6 +2022,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
         });
 
+        mod1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
+        mod1.setText("Movimientos empleados");
+        mod1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mod1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout GeneralLayout = new javax.swing.GroupLayout(General);
         General.setLayout(GeneralLayout);
         GeneralLayout.setHorizontalGroup(
@@ -2037,11 +2047,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(125, 125, 125)
-                        .addComponent(mod)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(add)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cs)))
+                        .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(GeneralLayout.createSequentialGroup()
+                                .addComponent(mod)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(add)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Cs))
+                            .addComponent(mod1))))
                 .addContainerGap(284, Short.MAX_VALUE))
         );
         GeneralLayout.setVerticalGroup(
@@ -2062,7 +2075,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
                                 .addGroup(GeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(mod)
                                     .addComponent(add)
-                                    .addComponent(Cs)))))
+                                    .addComponent(Cs))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mod1))))
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(185, Short.MAX_VALUE))
         );
@@ -4591,6 +4606,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem27ActionPerformed
 
+    private void mod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mod1ActionPerformed
+        Movimientos_GEN regr = new Movimientos_GEN(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_mod1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4846,6 +4866,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JButton mod;
+    private javax.swing.JButton mod1;
     private javax.swing.JButton modIMSS;
     private javax.swing.JTextField nameimss;
     private javax.swing.JTextField namesimss;

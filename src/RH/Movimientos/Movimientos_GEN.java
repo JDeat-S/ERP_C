@@ -1,14 +1,12 @@
 package RH.Movimientos;
 
-import ColoresT.ColorRH;
 import Conexion.ConexionSQL;
-import Filtros.FiltrosZonas;
 import Logicas.*;
-import Logicas.BDRH.Logica_bd_RH;
 import ZyS.Servicios;
 import ZyS.Zonas;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -20,11 +18,14 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -96,7 +97,6 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");//1
             modelo.addColumn("Apellido M");//
             modelo.addColumn("Nombre(s)");//3
-    
 
 //Anchos
             int[] anchos = {/*numE*/35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150};
@@ -117,8 +117,494 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
             ps.isClosed();
             rs.isClosed();
         } catch (SQLException error_sharenom) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos empleados: " + error_sharenom.getMessage());
 
+        }
+
+    }
+
+    public void MDMov() {
+        if (TDM.getSelectedIndex() == 0) {
+            DefaultTableModel modelo = new DefaultTableModel() {
+                @Override
+                public boolean isCellEditable(int filas, int columna) {
+                    return false;
+                }
+
+            };
+            Tmov.setModel(modelo);
+        }
+        if (TDM.getSelectedIndex() == 1) {
+            String where = "SELECT * FROM `rh.empleados.movimientos.bajas`"
+                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
+                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+            try {
+                //Cargar datos
+                DefaultTableModel modelo = new DefaultTableModel() {
+                    @Override
+                    public boolean isCellEditable(int filas, int columna) {
+                        return false;
+                    }
+
+                };
+//Nombre de la tabla
+                Tmov.setModel(modelo);
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(where);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+                int cantidadColumnas = rsMd.getColumnCount();
+
+                modelo.addColumn("# Registro");
+                modelo.addColumn("# Empleado");
+                modelo.addColumn("Apellido P");//1
+                modelo.addColumn("Apellido M");//
+                modelo.addColumn("Nombre(s)");//3
+                modelo.addColumn("Fecha baja");//3
+                modelo.addColumn("Tipo de baja");//3
+                modelo.addColumn("Fecha de registro");//3
+                modelo.addColumn("Registrado por");//3
+
+//Anchos
+                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
+                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
+
+                for (int x = 0; x < cantidadColumnas; x++) {
+                    //Nombre tabla
+                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+                }
+
+                while (rs.next()) {
+                    Object[] filas = new Object[cantidadColumnas];
+                    for (int i = 0; i < cantidadColumnas; i++) {
+                        filas[i] = rs.getObject(i + 1);
+                    }
+                    modelo.addRow(filas);
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar registros de bajas: " + error_sharenom.getMessage());
+
+            }
+        }
+        if (TDM.getSelectedIndex() == 2) {
+            String where = "SELECT * FROM `rh.empleados.movimientos.reingreso`"
+                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
+                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+            try {
+                //Cargar datos
+                DefaultTableModel modelo = new DefaultTableModel() {
+                    @Override
+                    public boolean isCellEditable(int filas, int columna) {
+                        return false;
+                    }
+
+                };
+//Nombre de la tabla
+                Tmov.setModel(modelo);
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(where);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+                int cantidadColumnas = rsMd.getColumnCount();
+
+                modelo.addColumn("# Registro");
+                modelo.addColumn("# Empleado");
+                modelo.addColumn("Apellido P");//1
+                modelo.addColumn("Apellido M");//
+                modelo.addColumn("Nombre(s)");//3
+                modelo.addColumn("Fecha reingreso");//3
+                modelo.addColumn("Fecha de registro");//3
+                modelo.addColumn("Registrado por");//3
+
+//Anchos
+                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
+                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
+
+                for (int x = 0; x < cantidadColumnas; x++) {
+                    //Nombre tabla
+                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+                }
+
+                while (rs.next()) {
+                    Object[] filas = new Object[cantidadColumnas];
+                    for (int i = 0; i < cantidadColumnas; i++) {
+                        filas[i] = rs.getObject(i + 1);
+                    }
+                    modelo.addRow(filas);
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar registros de reingreso: " + error_sharenom.getMessage());
+
+            }
+        }
+        if (TDM.getSelectedIndex() == 3) {
+            String where = "SELECT * FROM `rh.empleados.movimientos.cdsalario`"
+                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
+                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+            try {
+                //Cargar datos
+                DefaultTableModel modelo = new DefaultTableModel() {
+                    @Override
+                    public boolean isCellEditable(int filas, int columna) {
+                        return false;
+                    }
+
+                };
+//Nombre de la tabla
+                Tmov.setModel(modelo);
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(where);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+                int cantidadColumnas = rsMd.getColumnCount();
+
+                modelo.addColumn("# Registro");
+                modelo.addColumn("# Empleado");
+                modelo.addColumn("Apellido P");//1
+                modelo.addColumn("Apellido M");//
+                modelo.addColumn("Nombre(s)");//3
+                modelo.addColumn("Salario");//3
+                modelo.addColumn("Bono");//3
+                modelo.addColumn("Fecha de registro");//3
+                modelo.addColumn("Registrado por");//3
+
+//Anchos
+                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
+                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
+
+                for (int x = 0; x < cantidadColumnas; x++) {
+                    //Nombre tabla
+                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+                }
+
+                while (rs.next()) {
+                    Object[] filas = new Object[cantidadColumnas];
+                    for (int i = 0; i < cantidadColumnas; i++) {
+                        filas[i] = rs.getObject(i + 1);
+                    }
+                    modelo.addRow(filas);
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar registros de cambios de salario: " + error_sharenom.getMessage());
+
+            }
+        }
+        if (TDM.getSelectedIndex() == 4) {
+            String where = "SELECT * FROM `rh.empleados.movimientos.cdszonyserv`"
+                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
+                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+            try {
+                //Cargar datos
+                DefaultTableModel modelo = new DefaultTableModel() {
+                    @Override
+                    public boolean isCellEditable(int filas, int columna) {
+                        return false;
+                    }
+
+                };
+//Nombre de la tabla
+                Tmov.setModel(modelo);
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(where);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+                int cantidadColumnas = rsMd.getColumnCount();
+
+                modelo.addColumn("# Registro");
+                modelo.addColumn("# Empleado");
+                modelo.addColumn("Apellido P");//1
+                modelo.addColumn("Apellido M");//
+                modelo.addColumn("Nombre(s)");//3
+                modelo.addColumn("Zona");//3
+                modelo.addColumn("Servicio");//3
+                modelo.addColumn("Fecha de registro");//3
+                modelo.addColumn("Registrado por");//3
+
+//Anchos
+                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
+                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
+
+                for (int x = 0; x < cantidadColumnas; x++) {
+                    //Nombre tabla
+                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+                }
+
+                while (rs.next()) {
+                    Object[] filas = new Object[cantidadColumnas];
+                    for (int i = 0; i < cantidadColumnas; i++) {
+                        filas[i] = rs.getObject(i + 1);
+                    }
+                    modelo.addRow(filas);
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar registros de cambios de Zona y servicio: " + error_sharenom.getMessage());
+
+            }
+        }
+        if (TDM.getSelectedIndex() == 5) {
+            String where = "SELECT * FROM `rh.empleados.movimientos.aguinaldo`"
+                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
+                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+            try {
+                //Cargar datos
+                DefaultTableModel modelo = new DefaultTableModel() {
+                    @Override
+                    public boolean isCellEditable(int filas, int columna) {
+                        return false;
+                    }
+
+                };
+//Nombre de la tabla
+                Tmov.setModel(modelo);
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(where);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+                int cantidadColumnas = rsMd.getColumnCount();
+
+                modelo.addColumn("# Registro");
+                modelo.addColumn("# Empleado");
+                modelo.addColumn("Apellido P");//1
+                modelo.addColumn("Apellido M");//
+                modelo.addColumn("Nombre(s)");//3
+                modelo.addColumn("Aguinaldo");//3
+                modelo.addColumn("Fecha de registro");//3
+                modelo.addColumn("Registrado por");//3
+
+//Anchos
+                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
+                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
+
+                for (int x = 0; x < cantidadColumnas; x++) {
+                    //Nombre tabla
+                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+                }
+
+                while (rs.next()) {
+                    Object[] filas = new Object[cantidadColumnas];
+                    for (int i = 0; i < cantidadColumnas; i++) {
+                        filas[i] = rs.getObject(i + 1);
+                    }
+                    modelo.addRow(filas);
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar registros de aguinaldo"
+                        + ": " + error_sharenom.getMessage());
+
+            }
+        }
+        if (TDM.getSelectedIndex() == 6) {
+            String where = "SELECT * FROM `rh.empleados.movimientos.vacaciones`"
+                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
+                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+            try {
+                //Cargar datos
+                DefaultTableModel modelo = new DefaultTableModel() {
+                    @Override
+                    public boolean isCellEditable(int filas, int columna) {
+                        return false;
+                    }
+
+                };
+//Nombre de la tabla
+                Tmov.setModel(modelo);
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(where);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+                int cantidadColumnas = rsMd.getColumnCount();
+
+                modelo.addColumn("# Registro");
+                modelo.addColumn("# Empleado");
+                modelo.addColumn("Apellido P");//1
+                modelo.addColumn("Apellido M");//
+                modelo.addColumn("Nombre(s)");//3
+                modelo.addColumn("Vacaciones");//3
+                modelo.addColumn("Inicio");//3
+                modelo.addColumn("Fin");//3
+                modelo.addColumn("Observaciones");//3
+                modelo.addColumn("Fecha de registro");//3
+                modelo.addColumn("Registrado por");//3
+
+//Anchos
+                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
+                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50, 50, 50, 50};
+
+                for (int x = 0; x < cantidadColumnas; x++) {
+                    //Nombre tabla
+                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+                }
+
+                while (rs.next()) {
+                    Object[] filas = new Object[cantidadColumnas];
+                    for (int i = 0; i < cantidadColumnas; i++) {
+                        filas[i] = rs.getObject(i + 1);
+                    }
+                    modelo.addRow(filas);
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar registros de cambios de vacaciones: " + error_sharenom.getMessage());
+
+            }
+        }
+        if (TDM.getSelectedIndex() == 7) {
+            String where = "SELECT * FROM `rh.empleados.movimientos.ptu`"
+                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
+                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+            try {
+                //Cargar datos
+                DefaultTableModel modelo = new DefaultTableModel() {
+                    @Override
+                    public boolean isCellEditable(int filas, int columna) {
+                        return false;
+                    }
+
+                };
+//Nombre de la tabla
+                Tmov.setModel(modelo);
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(where);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+                int cantidadColumnas = rsMd.getColumnCount();
+
+                modelo.addColumn("# Registro");
+                modelo.addColumn("# Empleado");
+                modelo.addColumn("Apellido P");//1
+                modelo.addColumn("Apellido M");//
+                modelo.addColumn("Nombre(s)");//3
+                modelo.addColumn("PTU");//3
+                modelo.addColumn("Fecha de registro");//3
+                modelo.addColumn("Registrado por");//3
+
+//Anchos
+                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,
+                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
+
+                for (int x = 0; x < cantidadColumnas; x++) {
+                    //Nombre tabla
+                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+                }
+
+                while (rs.next()) {
+                    Object[] filas = new Object[cantidadColumnas];
+                    for (int i = 0; i < cantidadColumnas; i++) {
+                        filas[i] = rs.getObject(i + 1);
+                    }
+                    modelo.addRow(filas);
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar registros de PTU: " + error_sharenom.getMessage());
+
+            }
+        }
+        if (TDM.getSelectedIndex() == 8) {
+            String where = "SELECT * FROM `rh.empleados.movimientos.actaadm`"
+                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
+                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+            try {
+                //Cargar datos
+                DefaultTableModel modelo = new DefaultTableModel() {
+                    @Override
+                    public boolean isCellEditable(int filas, int columna) {
+                        return false;
+                    }
+
+                };
+//Nombre de la tabla
+                Tmov.setModel(modelo);
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(where);
+                rs = ps.executeQuery();
+
+                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
+                int cantidadColumnas = rsMd.getColumnCount();
+
+                modelo.addColumn("# Registro");
+                modelo.addColumn("# Empleado");
+                modelo.addColumn("Apellido P");//1
+                modelo.addColumn("Apellido M");//
+                modelo.addColumn("Nombre(s)");//3
+                modelo.addColumn("Acta");//3
+                modelo.addColumn("Fecha de acta");//3
+                modelo.addColumn("Fecha de registro");//3
+                modelo.addColumn("Registrado por");//3
+
+//Anchos
+                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
+                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
+
+                for (int x = 0; x < cantidadColumnas; x++) {
+                    //Nombre tabla
+                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+
+                }
+
+                while (rs.next()) {
+                    Object[] filas = new Object[cantidadColumnas];
+                    for (int i = 0; i < cantidadColumnas; i++) {
+                        filas[i] = rs.getObject(i + 1);
+                    }
+                    modelo.addRow(filas);
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar registros de actas administrativas: " + error_sharenom.getMessage());
+
+            }
         }
 
     }
@@ -132,9 +618,9 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tmov = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        TDM = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         share = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
@@ -145,7 +631,7 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        NExp = new javax.swing.JTextField();
         APgen = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         AMgen = new javax.swing.JTextField();
@@ -163,24 +649,28 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
         jLabel66 = new javax.swing.JLabel();
         FI = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        Aguinaldo = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        Vacaciones = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        PeriodoIni = new com.toedter.calendar.JDateChooser();
         jLabel11 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        PeriodoFin = new com.toedter.calendar.JDateChooser();
         jLabel16 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        PTU = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        Actadm = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        fechacta = new com.toedter.calendar.JDateChooser();
         jLabel21 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        FBaja = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        Status = new javax.swing.JComboBox<>();
+        TDB = new javax.swing.JComboBox<>();
+        ADDreg = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Obs = new javax.swing.JTextArea();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
@@ -200,22 +690,27 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tmov.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(Tmov);
 
         jLabel1.setText("Tipo de modificacion:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "baja", "reingreso", "cambio de salario", "cambio de servcio", "cambio de zona", "aguinaldo", "vacaciones", "ptu", "acta administrativa" }));
+        TDM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Alta", "Baja", "Reingreso", "Cambio de salario", "Cambio de zona y/o Servicio", "Aguinaldo", "Vacaciones", "PTU", "Acta administrativa" }));
+        TDM.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                TDMItemStateChanged(evt);
+            }
+        });
 
         share.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -228,6 +723,11 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        share.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shareMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(share);
 
         jLabel3.setText("Buscar empleado:");
@@ -258,7 +758,7 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
 
         jLabel7.setText("# Expediente");
 
-        jTextField4.setEnabled(false);
+        NExp.setEnabled(false);
 
         APgen.setEnabled(false);
 
@@ -282,7 +782,6 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
 
         jLabel13.setText("Bono");
 
-        Serv.setEditable(true);
         Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
         Serv.setEnabled(false);
 
@@ -290,7 +789,6 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
 
         jLabel15.setText("Servicio");
 
-        zona.setEditable(true);
         zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
         zona.setEnabled(false);
         zona.addItemListener(new java.awt.event.ItemListener() {
@@ -299,48 +797,63 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
             }
         });
 
-        jLabel66.setText("Fecha ingreso:");
+        jLabel66.setText("Fecha re-ingreso:");
 
         FI.setEnabled(false);
 
         jLabel2.setText("Vacaciones:");
 
-        jTextField5.setEnabled(false);
+        Aguinaldo.setEnabled(false);
 
         jLabel8.setText("Aguinaldo:");
 
-        jTextField6.setEnabled(false);
+        Vacaciones.setEnabled(false);
 
         jLabel9.setText("Periodo:");
 
         jLabel10.setText("Inicio:");
 
-        jDateChooser1.setEnabled(false);
+        PeriodoIni.setEnabled(false);
 
         jLabel11.setText("Fin:");
 
-        jDateChooser2.setEnabled(false);
+        PeriodoFin.setEnabled(false);
 
         jLabel16.setText("PTU:");
 
-        jTextField7.setEnabled(false);
+        PTU.setEnabled(false);
 
         jLabel18.setText("Acta administrativa:");
 
-        jTextField8.setEnabled(false);
+        Actadm.setEnabled(false);
 
         jLabel20.setText("Fecha:");
 
-        jDateChooser3.setEnabled(false);
+        fechacta.setEnabled(false);
 
         jLabel21.setText("Fecha de baja:");
 
-        jTextField9.setEnabled(false);
+        FBaja.setEnabled(false);
 
         jLabel19.setText("Tipo de baja:");
 
-        Status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "BOLETINADO" }));
-        Status.setEnabled(false);
+        TDB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "BOLETINADO" }));
+        TDB.setEnabled(false);
+
+        ADDreg.setText("Agregar registro");
+        ADDreg.setEnabled(false);
+        ADDreg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADDregActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("Observaciones:");
+
+        Obs.setEditable(false);
+        Obs.setColumns(20);
+        Obs.setRows(5);
+        jScrollPane5.setViewportView(Obs);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -368,51 +881,69 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(Sueldo)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(APgen, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(AMgen, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NameGen, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Bono))
+                                .addComponent(FI, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FBaja, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ADDreg))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(54, 54, 54)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel16)))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel18))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2)))
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(Sueldo)
+                                            .addComponent(NExp, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(APgen, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(AMgen, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(NameGen, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(Bono)
+                                            .addComponent(TDM, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addGap(48, 48, 48)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel8)
+                                                    .addComponent(jLabel16)))
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel18))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                                    .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Vacaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel10)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(PeriodoIni, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(PeriodoFin, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Aguinaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(PTU, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGroup(jPanel3Layout.createSequentialGroup()
-                                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(Actadm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addComponent(jLabel20)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(51, 51, 51)
+                                                    .addComponent(fechacta, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel3Layout.createSequentialGroup()
                                                 .addComponent(jLabel3)
@@ -431,19 +962,8 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                                                         .addComponent(SHAM, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(SHNAME, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(FI, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -454,15 +974,15 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TDM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Aguinaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NExp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PTU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -470,7 +990,7 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                                     .addComponent(jLabel17)
                                     .addComponent(APgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel18)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Actadm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel20))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -481,7 +1001,7 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                                     .addComponent(jLabel62)
                                     .addComponent(NameGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9)))
-                            .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(fechacta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
@@ -501,32 +1021,37 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                         .addComponent(jLabel12)
                         .addComponent(Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel2)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Vacaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PeriodoFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(PeriodoIni, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(Bono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(Bono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel66)
                     .addComponent(FI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FBaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
-                    .addComponent(Status, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ADDreg))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -679,6 +1204,505 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
         shareemp();
     }//GEN-LAST:event_SHNAMEKeyReleased
 
+    private void TDMItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TDMItemStateChanged
+        if (TDM.getSelectedIndex() == 0) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(false);
+            Bono.setEnabled(false);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(false);
+            Obs.setEnabled(false);
+        }
+        if (TDM.getSelectedIndex() == 1) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(false);
+            Bono.setEnabled(false);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(true);
+            TDB.setEnabled(true);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(true);
+            Obs.setEnabled(false);
+
+        }
+        if (TDM.getSelectedIndex() == 2) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(false);
+            Bono.setEnabled(false);
+            FI.setEnabled(true);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(true);
+            Obs.setEnabled(false);
+
+        }
+        if (TDM.getSelectedIndex() == 3) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(true);
+            Bono.setEnabled(true);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(true);
+            Obs.setEnabled(false);
+        }
+        if (TDM.getSelectedIndex() == 4) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(false);
+            Bono.setEnabled(false);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(true);
+            Serv.setEnabled(true);
+            ADDreg.setEnabled(true);
+            Obs.setEnabled(false);
+        }
+        if (TDM.getSelectedIndex() == 5) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(false);
+            Bono.setEnabled(false);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(true);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(true);
+            Obs.setEnabled(false);
+        }
+        if (TDM.getSelectedIndex() == 6) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(false);
+            Bono.setEnabled(false);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(true);
+            PeriodoIni.setEnabled(true);
+            PeriodoFin.setEnabled(true);
+            Obs.setEnabled(true);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(true);
+        }
+        if (TDM.getSelectedIndex() == 7) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(false);
+            Bono.setEnabled(false);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(true);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(true);
+            Obs.setEnabled(false);
+        }
+        if (TDM.getSelectedIndex() == 8) {
+            NExp.setEnabled(false);
+            APgen.setEnabled(false);
+            AMgen.setEnabled(false);
+            NameGen.setEnabled(false);
+            Sueldo.setEnabled(false);
+            Bono.setEnabled(false);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(true);
+            fechacta.setEnabled(true);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(true);
+            Obs.setEnabled(false);
+        }
+        MDMov();
+    }//GEN-LAST:event_TDMItemStateChanged
+
+    private void ADDregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDregActionPerformed
+
+        if (TDM.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Selecciona tipo de movimiento");
+        }
+        if (TDM.getSelectedIndex() == 1) {
+            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+            String SQL = "INSERT INTO `rh.empleados.movimientos.bajas` (`#registro`,"
+                    + " `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Fecha baja`,"
+                    + " `tipo de baja`, `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setString(1, NExp.getText());
+                pst.setString(2, APgen.getText());
+                pst.setString(3, AMgen.getText());
+                pst.setString(4, NameGen.getText());
+                pst.setString(5, FBaja.getText());
+                pst.setString(6, TDB.getSelectedItem().toString());
+                pst.setString(7, dtf3.format(LocalDateTime.now()));
+                pst.setString(8, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Baja agregada.");
+                MDMov();
+
+                NExp.setText("0");
+                APgen.setText("");
+                AMgen.setText("");
+                NameGen.setText("");
+                FBaja.setText("");
+                TDB.setSelectedIndex(0);
+
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al registrar baja: \n" + e.getMessage());
+            }
+        }
+
+        if (TDM.getSelectedIndex() == 2) {
+            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+            String SQL = "INSERT INTO `rh.empleados.movimientos.reingreso` (`#registro`, `#Empleado`,"
+                    + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Fecha re-ingreso`,"
+                    + " `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setString(1, NExp.getText());
+                pst.setString(2, APgen.getText());
+                pst.setString(3, AMgen.getText());
+                pst.setString(4, NameGen.getText());
+                pst.setString(5, FI.getText());
+                pst.setString(6, dtf3.format(LocalDateTime.now()));
+                pst.setString(7, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "reingreso agregada.");
+                MDMov();
+
+                NExp.setText("0");
+                APgen.setText("");
+                AMgen.setText("");
+                NameGen.setText("");
+                FI.setText("");
+
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al registrar reingreso: \n" + e.getMessage());
+            }
+
+        }
+
+        if (TDM.getSelectedIndex() == 3) {
+            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+            String SQL = "INSERT INTO `rh.empleados.movimientos.cdsalario` (`#registro`, "
+                    + "`#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Salario`,"
+                    + " `Bono`, `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setString(1, NExp.getText());
+                pst.setString(2, APgen.getText());
+                pst.setString(3, AMgen.getText());
+                pst.setString(4, NameGen.getText());
+                pst.setString(5, Sueldo.getText());
+                pst.setString(6, Bono.getText());
+                pst.setString(7, dtf3.format(LocalDateTime.now()));
+                pst.setString(8, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Registro de salario agregada.");
+                MDMov();
+
+                NExp.setText("0");
+                APgen.setText("");
+                AMgen.setText("");
+                NameGen.setText("");
+                Sueldo.setText("0");
+                Bono.setText("0");
+
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al registrar salario o bono: \n" + e.getMessage());
+            }
+        }
+
+        if (TDM.getSelectedIndex() == 4) {
+            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+            String SQL = "INSERT INTO `rh.empleados.movimientos.cdszonyserv` (`#registro`, `#Empleado`, `Apellido P`, `Apellido M`,"
+                    + " `Nombre(s)`, `Zona`, `Servicio`, `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setString(1, NExp.getText());
+                pst.setString(2, APgen.getText());
+                pst.setString(3, AMgen.getText());
+                pst.setString(4, NameGen.getText());
+                pst.setString(5, zona.getSelectedItem().toString());
+                pst.setString(6, Serv.getSelectedItem().toString());
+                pst.setString(7, dtf3.format(LocalDateTime.now()));
+                pst.setString(8, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Cambio de zona y/o servicio agregada.");
+                MDMov();
+
+                NExp.setText("0");
+                APgen.setText("");
+                AMgen.setText("");
+                NameGen.setText("");
+                zona.setSelectedIndex(0);
+                Serv.setSelectedIndex(0);
+
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al registrar sueldo: \n" + e.getMessage());
+            }
+        }
+
+        if (TDM.getSelectedIndex() == 5) {
+            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+            String SQL = "INSERT INTO `rh.empleados.movimientos.aguinaldo` (`#registro`,"
+                    + " `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Aguinaldo`, "
+                    + "`fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setString(1, NExp.getText());
+                pst.setString(2, APgen.getText());
+                pst.setString(3, AMgen.getText());
+                pst.setString(4, NameGen.getText());
+                pst.setString(5, Aguinaldo.getText());
+                pst.setString(6, dtf3.format(LocalDateTime.now()));
+                pst.setString(7, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "aguinaldo agregado.");
+                MDMov();
+
+                NExp.setText("0");
+                APgen.setText("");
+                AMgen.setText("");
+                NameGen.setText("");
+                Aguinaldo.setText("");
+
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al registrar aguinaldo: \n" + e.getMessage());
+            }
+        }
+
+        if (TDM.getSelectedIndex() == 6) {
+            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+            String SQL = "INSERT INTO `rh.empleados.movimientos.vacaciones` (`#registro`, "
+                    + "`#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Vacaciones`, "
+                    + "`Fecha inicio`, `Observaciones`, `fecha de registro`, `registrado por`)"
+                    + " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setString(1, NExp.getText());
+                pst.setString(2, APgen.getText());
+                pst.setString(3, AMgen.getText());
+                pst.setString(4, NameGen.getText());
+                pst.setString(5, Vacaciones.getText());
+                pst.setString(6, ((JTextField) PeriodoIni.getDateEditor().getUiComponent()).getText());
+                pst.setString(7, ((JTextField) PeriodoFin.getDateEditor().getUiComponent()).getText());
+                pst.setString(8, Obs.getText());
+                pst.setString(9, dtf3.format(LocalDateTime.now()));
+                pst.setString(10, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "vaciones agregadas.");
+                MDMov();
+
+                NExp.setText("0");
+                APgen.setText("");
+                AMgen.setText("");
+                NameGen.setText("");
+                Vacaciones.setText("");
+                Obs.setText("");
+                PeriodoIni.setDate(null);
+                PeriodoFin.setDate(null);
+
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al registrar vacaciones: \n" + e.getMessage());
+            }
+        }
+
+        if (TDM.getSelectedIndex() == 7) {
+            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+            String SQL = "INSERT INTO `rh.empleados.movimientos.ptu` (`#registro`, `#Empleado`, `Apellido P`,"
+                    + " `Apellido M`, `Nombre(s)`, `PTU`, `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setString(1, NExp.getText());
+                pst.setString(2, APgen.getText());
+                pst.setString(3, AMgen.getText());
+                pst.setString(4, NameGen.getText());
+                pst.setString(5, PTU.getText());
+                pst.setString(6, dtf3.format(LocalDateTime.now()));
+                pst.setString(7, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "ptu agregado.");
+                MDMov();
+
+                NExp.setText("0");
+                APgen.setText("");
+                AMgen.setText("");
+                NameGen.setText("");
+                PTU.setText("");
+
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al registrar ptu: \n" + e.getMessage());
+            }
+        }
+
+        if (TDM.getSelectedIndex() == 8) {
+            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+            String SQL = "INSERT INTO `rh.empleados.movimientos.actaadm` (`#registro`, `#Empleado`, `Apellido P`,"
+                    + " `Apellido M`, `Nombre(s)`, `Actaadm`, `Fecha actaadm`,"
+                    + " `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setString(1, NExp.getText());
+                pst.setString(2, APgen.getText());
+                pst.setString(3, AMgen.getText());
+                pst.setString(4, NameGen.getText());
+                pst.setString(5, Actadm.getText());
+                pst.setString(6, ((JTextField) fechacta.getDateEditor().getUiComponent()).getText());
+                pst.setString(7, dtf3.format(LocalDateTime.now()));
+                pst.setString(8, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Acta administrativa agregada.");
+                MDMov();
+
+                NExp.setText("0");
+                APgen.setText("");
+                AMgen.setText("");
+                NameGen.setText("");
+                Actadm.setText("");
+                fechacta.setDate(null);
+
+            } catch (HeadlessException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al registrar acta administrativa: \n" + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_ADDregActionPerformed
+
+    private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
+        try {
+            int seleccionar = share.getSelectedRow();
+            int id = Integer.parseInt(share.getValueAt(seleccionar, 0).toString());
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Sueldo`, `Bono` FROM `rh.empleados`"
+                    + "where `# Exp` = ?");
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                NExp.setText(rs.getString(1));
+                APgen.setText(rs.getString(2));
+                AMgen.setText(rs.getString(3));
+                NameGen.setText(rs.getString(4));
+                Sueldo.setText(rs.getString(5));
+                Bono.setText(rs.getString(6));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Movimientos_GEN.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_shareMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -693,14 +1717,15 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Movimientos_GEN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Movimientos_GEN.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        //</editor-fold>
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new Movimientos_GEN().setVisible(true);
@@ -708,24 +1733,33 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ADDreg;
     private javax.swing.JTextField AMgen;
     private javax.swing.JTextField APgen;
+    private javax.swing.JTextField Actadm;
+    private javax.swing.JTextField Aguinaldo;
     private javax.swing.JTextField Bono;
+    private javax.swing.JTextField FBaja;
     private javax.swing.JTextField FI;
     private javax.swing.JPanel Harder1;
     private javax.swing.JLabel Move;
+    private javax.swing.JTextField NExp;
     private javax.swing.JTextField NameGen;
+    private javax.swing.JTextArea Obs;
+    private javax.swing.JTextField PTU;
+    private com.toedter.calendar.JDateChooser PeriodoFin;
+    private com.toedter.calendar.JDateChooser PeriodoIni;
     private javax.swing.JTextField SHAM;
     private javax.swing.JTextField SHAP;
     private javax.swing.JTextField SHNAME;
     private javax.swing.JComboBox<String> Serv;
-    private javax.swing.JComboBox<String> Status;
     private javax.swing.JTextField Sueldo;
+    private javax.swing.JComboBox<String> TDB;
+    private javax.swing.JComboBox<String> TDM;
+    private javax.swing.JTable Tmov;
+    private javax.swing.JTextField Vacaciones;
     private javax.swing.JPanel btnexit;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
+    private com.toedter.calendar.JDateChooser fechacta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -740,6 +1774,7 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel44;
@@ -755,14 +1790,8 @@ public final class Movimientos_GEN extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JTable share;
     private javax.swing.JLabel txtbtnexit;
     private javax.swing.JComboBox<String> zona;
