@@ -153,7 +153,7 @@ public class Logica_SemMes {
                 cell.setCellValue("Iturbide x hora");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(7);
-                cell.setCellValue("Inturbide baño");
+                cell.setCellValue("Iturbide baño");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(8);
                 cell.setCellValue("Cafe");

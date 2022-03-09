@@ -27,7 +27,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author JDeat
  */
 public class Logica_SemMes {
-    
+
     public void SemxMes(ItemsSem IS) {
         JFileChooser chooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xlsx");
@@ -45,7 +45,7 @@ public class Logica_SemMes {
                 archivoXLS.delete();
             }
             archivoXLS.createNewFile();
-            
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection(
                     "jdbc:mysql://192.168.1.170:3306/confort2022",
@@ -57,27 +57,27 @@ public class Logica_SemMes {
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Datos Semanales");
-                
+
                 XSSFCellStyle Encabezado = libro.createCellStyle();
                 Encabezado.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Encabezado.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
-                
+
                 XSSFCellStyle Stilodd = libro.createCellStyle();
-                
+
                 Stilodd.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 Stilodd.setAlignment(XSSFCellStyle.ALIGN_CENTER_SELECTION);
                 Stilodd.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle StiloEEEE = libro.createCellStyle();
-                
+
                 StiloEEEE.setBorderBottom(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 StiloEEEE.setAlignment(XSSFCellStyle.ALIGN_JUSTIFY);
                 StiloEEEE.setVerticalAlignment(XSSFCellStyle.VERTICAL_BOTTOM);
-                
+
                 XSSFCellStyle Contenido = libro.createCellStyle();
                 Contenido.setAlignment(XSSFCellStyle.ALIGN_CENTER);
                 Contenido.setVerticalAlignment(XSSFCellStyle.VERTICAL_CENTER);
@@ -85,11 +85,43 @@ public class Logica_SemMes {
                 Contenido.setBorderLeft(XSSFCellStyle.BORDER_THIN);
                 Contenido.setBorderRight(XSSFCellStyle.BORDER_THIN);
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
+                spreadsheet.createRow(2);
+                spreadsheet.createRow(3);
+                spreadsheet.createRow(4);
+                spreadsheet.createRow(5);
+                spreadsheet.createRow(6);
+                spreadsheet.createRow(7);
+                spreadsheet.createRow(8);
+                spreadsheet.createRow(9);
+                spreadsheet.createRow(10);
+                spreadsheet.createRow(11);
+                spreadsheet.createRow(12);
+                spreadsheet.createRow(13);
+                spreadsheet.createRow(14);
+                spreadsheet.createRow(15);
+                spreadsheet.createRow(16);
+                spreadsheet.createRow(17);
+                spreadsheet.createRow(18);
+                spreadsheet.createRow(19);
+                spreadsheet.createRow(20);
+                spreadsheet.createRow(21);
+                spreadsheet.createRow(22);
+                spreadsheet.createRow(23);
+                spreadsheet.createRow(24);
+                spreadsheet.createRow(25);
+                spreadsheet.createRow(26);
+                spreadsheet.createRow(27);
+                spreadsheet.createRow(28);
+                spreadsheet.createRow(29);
+                spreadsheet.createRow(30);
+                spreadsheet.createRow(31);
+                spreadsheet.createRow(32);
+                spreadsheet.createRow(33);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
                 cell.setCellValue("Ingresos y egresos");
                 cell.setCellStyle(Encabezado);
-                
+
                 spreadsheet.addMergedRegion(
                         new CellRangeAddress(
                                 0, //first row (0-based)
@@ -98,7 +130,7 @@ public class Logica_SemMes {
                                 5 //last column (0-based)
                         )
                 );
-                              row = spreadsheet.createRow(1);
+                row = spreadsheet.createRow(1);
                 cell = row.createCell(0);
                 cell.setCellValue("# Semanal");
                 cell.setCellStyle(Contenido);
@@ -112,37 +144,67 @@ public class Logica_SemMes {
                 cell.setCellValue("Hora de registro");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(4);
-                cell.setCellValue("Total servicios");
+                cell.setCellValue("puente titla x 1 dia");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(5);
-                cell.setCellValue("Total pensiones");
+                cell.setCellValue("puente titla x 12 hrs");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(6);
-                cell.setCellValue("Total servicios y pensiones");
+                cell.setCellValue("puente titla x hora");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(7);
-                cell.setCellValue("Total de gastos");
+                cell.setCellValue("puente titla baño");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(8);
-                cell.setCellValue("Total vales entregados");
+                cell.setCellValue("puente titla noche");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(9);
-                cell.setCellValue("Total menos gastos y vales");
+                cell.setCellValue("Cafe");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(10);
-                cell.setCellValue("Debe entregar");
+                cell.setCellValue("Total servicios");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(11);
-                cell.setCellValue("El entrega");
+                cell.setCellValue("Total pensiones");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(12);
+                cell.setCellValue("Total servicios y pensiones");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(13);
+                cell.setCellValue("Concepto");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(14);
+                cell.setCellValue("Importes");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(15);
+                cell.setCellValue("Total de gastos");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(16);
+                cell.setCellValue("Concepto");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(17);
+                cell.setCellValue("Importes");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(18);
+                cell.setCellValue("Total vales entregados");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(19);
+                cell.setCellValue("Total menos gastos y vales");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(20);
+                cell.setCellValue("Debe entregar");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(21);
+                cell.setCellValue("El entrega");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(22);
                 cell.setCellValue("Debe");
                 cell.setCellStyle(Contenido);
-                
+
                 int i = 2;
-                
+
                 while (RSSem.next()) {
-                    row = spreadsheet.createRow(i);
+                    row = spreadsheet.getRow(i);
                     cell = row.createCell(0);
                     cell.setCellValue(RSSem.getInt(1));
                     cell.setCellStyle(Contenido);
@@ -155,37 +217,330 @@ public class Logica_SemMes {
                     cell = row.createCell(3);
                     cell.setCellValue(RSSem.getString(4));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
+                    cell = row.createCell(10);
                     cell.setCellValue(RSSem.getDouble(12));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(5);
+                    cell = row.createCell(11);
                     cell.setCellValue(RSSem.getDouble(13));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
+                    cell = row.createCell(12);
                     cell.setCellValue(RSSem.getDouble(6));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
+                    cell = row.createCell(15);
                     cell.setCellValue(RSSem.getDouble(14));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(8);
+                    cell = row.createCell(18);
                     cell.setCellValue(RSSem.getDouble(15));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(9);
+                    cell = row.createCell(19);
                     cell.setCellValue(RSSem.getDouble(7));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(10);
+                    cell = row.createCell(20);
                     cell.setCellValue(RSSem.getDouble(8));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(11);
+                    cell = row.createCell(21);
                     cell.setCellValue(RSSem.getDouble(9));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(12);
+                    cell = row.createCell(22);
                     cell.setCellValue(RSSem.getDouble(10));
                     cell.setCellStyle(Contenido);
-                    
+
+                    Statement DServ = connect.createStatement();
+                    ResultSet RServ = DServ.executeQuery("SELECT `Importe` FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + ""
+                            + " AND `Servicio` LIKE '%puente titla x dia%' ");
+
+                    while (RServ.next()) {
+                        row = spreadsheet.getRow(i);
+                        cell = row.createCell(4);
+                        cell.setCellValue(RServ.getDouble(1));
+                        cell.setCellStyle(Contenido);
+
+                    }
+
+                    Statement DServ1 = connect.createStatement();
+                    ResultSet RServ1 = DServ1.executeQuery("SELECT `Importe` FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + ""
+                            + " AND `Servicio` LIKE '%puente titla  x 12 hrs%' ");
+
+                    while (RServ1.next()) {
+                        row = spreadsheet.getRow(i);
+                        cell = row.createCell(5);
+                        cell.setCellValue(RServ1.getDouble(1));
+                        cell.setCellStyle(Contenido);
+
+                    }
+                    Statement DServ2 = connect.createStatement();
+                    ResultSet RServ2 = DServ2.executeQuery("SELECT `Importe` FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + ""
+                            + " AND `Servicio` LIKE '%puente titla x hora%' ");
+
+                    while (RServ2.next()) {
+                        row = spreadsheet.getRow(i);
+                        cell = row.createCell(6);
+                        cell.setCellValue(RServ2.getDouble(1));
+                        cell.setCellStyle(Contenido);
+
+                    }
+                    Statement DServ3 = connect.createStatement();
+                    ResultSet RServ3 = DServ3.executeQuery("SELECT `Importe` FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + ""
+                            + " AND `Servicio` LIKE '%puente titla baño%' ");
+
+                    while (RServ3.next()) {
+                        row = spreadsheet.getRow(i);
+                        cell = row.createCell(7);
+                        cell.setCellValue(RServ3.getDouble(1));
+                        cell.setCellStyle(Contenido);
+
+                    }
+                    Statement DServ4 = connect.createStatement();
+                    ResultSet RServ4 = DServ4.executeQuery("SELECT `Importe` FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + ""
+                            + " AND `Servicio` LIKE '%puente titla noche%' ");
+
+                    while (RServ4.next()) {
+                        row = spreadsheet.getRow(i);
+                        cell = row.createCell(8);
+                        cell.setCellValue(RServ4.getDouble(1));
+                        cell.setCellStyle(Contenido);
+
+                    }
+                    Statement DServ5 = connect.createStatement();
+                    ResultSet RServ5 = DServ5.executeQuery("SELECT `Importe` FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + ""
+                            + " AND `Servicio` LIKE '%Cafe%' ");
+
+                    while (RServ5.next()) {
+                        row = spreadsheet.getRow(i);
+                        cell = row.createCell(9);
+                        cell.setCellValue(RServ5.getDouble(1));
+                        cell.setCellStyle(Contenido);
+
+                    }
+                    Statement DCon = connect.createStatement();
+                    ResultSet RCon = DCon.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 1");
+
+                    while (RCon.next()) {
+                        row = spreadsheet.getRow(i);
+                        cell = row.createCell(13);
+                        cell.setCellValue(RCon.getString(1));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(14);
+                        cell.setCellValue(RCon.getString(2));
+                        cell.setCellStyle(Contenido);
+
+                        Statement DCon1 = connect.createStatement();
+                        ResultSet RCo1 = DCon1.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 2");
+                        while (RCo1.next()) {
+                            row = spreadsheet.getRow(i);
+                            cell = row.getCell(13);
+                            cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1));
+                            cell = row.createCell(14);
+                            cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2));
+                            cell.setCellStyle(Contenido);
+
+                            Statement DCon2 = connect.createStatement();
+                            ResultSet RCo2 = DCon2.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 3");
+                            while (RCo2.next()) {
+                                row = spreadsheet.getRow(i);
+                                cell = row.getCell(13);
+                                cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1));
+                                cell = row.createCell(14);
+                                cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2));
+                                cell.setCellStyle(Contenido);
+
+                                Statement DCon3 = connect.createStatement();
+                                ResultSet RCo3 = DCon3.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 4");
+                                while (RCo3.next()) {
+                                    row = spreadsheet.getRow(i);
+                                    cell = row.getCell(13);
+                                    cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1));
+                                    cell = row.createCell(14);
+                                    cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2));
+                                    cell.setCellStyle(Contenido);
+
+                                    Statement DCon4 = connect.createStatement();
+                                    ResultSet RCo14 = DCon4.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 5");
+                                    while (RCo14.next()) {
+                                        row = spreadsheet.getRow(i);
+                                        cell = row.getCell(13);
+                                        cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1));
+                                        cell = row.createCell(14);
+                                        cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2));
+                                        cell.setCellStyle(Contenido);
+
+                                        Statement DCon5 = connect.createStatement();
+                                        ResultSet RCo5 = DCon5.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 6");
+                                        while (RCo5.next()) {
+                                            row = spreadsheet.getRow(i);
+                                            cell = row.getCell(13);
+                                            cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1));
+                                            cell = row.createCell(14);
+                                            cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2));
+                                            cell.setCellStyle(Contenido);
+
+                                            Statement DCon6 = connect.createStatement();
+                                            ResultSet RCo6 = DCon6.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 7");
+                                            while (RCo6.next()) {
+                                                row = spreadsheet.getRow(i);
+                                                cell = row.getCell(13);
+                                                cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1));
+                                                cell = row.createCell(14);
+                                                cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2));
+                                                cell.setCellStyle(Contenido);
+
+                                                Statement DCon7 = connect.createStatement();
+                                                ResultSet RCo7 = DCon7.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 8");
+                                                while (RCo7.next()) {
+                                                    row = spreadsheet.getRow(i);
+                                                    cell = row.getCell(13);
+                                                    cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1));
+                                                    cell = row.createCell(14);
+                                                    cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2));
+                                                    cell.setCellStyle(Contenido);
+                                                    /*
+                                                    Statement DCon8 = connect.createStatement();
+                                                    ResultSet RCo8 = DCon8.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 9");
+                                                    while (RCo8.next()) {
+                                                        row = spreadsheet.getRow(i);
+                                                        cell = row.getCell(13);
+                                                        cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1) + ", " + RCo8.getString(1));
+                                                        cell = row.createCell(14);
+                                                        cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2) + ", " + RCo8.getString(2));
+                                                        cell.setCellStyle(Contenido);
+                                                        
+                                                        Statement DCon9 = connect.createStatement();
+                                                        ResultSet RCo9 = DCon9.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.ptetitla.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 10");
+                                                        while (RCo9.next()) {
+                                                            row = spreadsheet.getRow(i);
+                                                            cell = row.getCell(13);
+                                                            cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1) + ", " + RCo8.getString(1) + ", " + RCo9.getString(1));
+                                                            cell = row.createCell(14);
+                                                            cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2) + ", " + RCo8.getString(2) + ", " + RCo9.getString(2));
+                                                            cell.setCellStyle(Contenido);
+
+                                                        }
+                                                    }*/
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Statement VCon = connect.createStatement();
+                    ResultSet RVCon = VCon.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 1");
+
+                    while (RVCon.next()) {
+                        row = spreadsheet.getRow(i);
+                        cell = row.createCell(16);
+                        cell.setCellValue(RVCon.getString(1));
+                        cell.setCellStyle(Contenido);
+                        cell = row.createCell(17);
+                        cell.setCellValue(RVCon.getString(2));
+                        cell.setCellStyle(Contenido);
+
+                        Statement DCon1 = connect.createStatement();
+                        ResultSet RCo1 = DCon1.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 2");
+                        while (RCo1.next()) {
+                            row = spreadsheet.getRow(i);
+                            cell = row.getCell(16);
+                            cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1));
+                            cell = row.createCell(17);
+                            cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2));
+                            cell.setCellStyle(Contenido);
+
+                            Statement DCon2 = connect.createStatement();
+                            ResultSet RCo2 = DCon2.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 3");
+                            while (RCo2.next()) {
+                                row = spreadsheet.getRow(i);
+                                cell = row.getCell(16);
+                                cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1));
+                                cell = row.createCell(17);
+                                cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2));
+                                cell.setCellStyle(Contenido);
+
+                                Statement DCon3 = connect.createStatement();
+                                ResultSet RCo3 = DCon3.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 4");
+                                while (RCo3.next()) {
+                                    row = spreadsheet.getRow(i);
+                                    cell = row.getCell(16);
+                                    cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1));
+                                    cell = row.createCell(17);
+                                    cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2));
+                                    cell.setCellStyle(Contenido);
+
+                                    Statement DCon4 = connect.createStatement();
+                                    ResultSet RCo14 = DCon4.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 5");
+                                    while (RCo14.next()) {
+                                        row = spreadsheet.getRow(i);
+                                        cell = row.getCell(16);
+                                        cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1));
+                                        cell = row.createCell(17);
+                                        cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2));
+                                        cell.setCellStyle(Contenido);
+
+                                        Statement DCon5 = connect.createStatement();
+                                        ResultSet RCo5 = DCon5.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 6");
+                                        while (RCo5.next()) {
+                                            row = spreadsheet.getRow(i);
+                                            cell = row.getCell(16);
+                                            cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1));
+                                            cell = row.createCell(17);
+                                            cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2));
+                                            cell.setCellStyle(Contenido);
+
+                                            Statement DCon6 = connect.createStatement();
+                                            ResultSet RCo6 = DCon6.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 7");
+                                            while (RCo6.next()) {
+                                                row = spreadsheet.getRow(i);
+                                                cell = row.getCell(16);
+                                                cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1));
+                                                cell = row.createCell(17);
+                                                cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2));
+                                                cell.setCellStyle(Contenido);
+
+                                                Statement DCon7 = connect.createStatement();
+                                                ResultSet RCo7 = DCon7.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 8");
+                                                while (RCo7.next()) {
+                                                    row = spreadsheet.getRow(i);
+                                                    cell = row.getCell(16);
+                                                    cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1));
+                                                    cell = row.createCell(17);
+                                                    cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2));
+                                                    cell.setCellStyle(Contenido);
+                                                    /*
+                                                    Statement DCon8 = connect.createStatement();
+                                                    ResultSet RCo8 = DCon8.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 9");
+                                                    while (RCo8.next()) {
+                                                        row = spreadsheet.getRow(i);
+                                                        cell = row.getCell(16);
+                                                        cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1) + ", " + RCo8.getString(1));
+                                                        cell = row.createCell(17);
+                                                        cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2) + ", " + RCo8.getString(2));
+                                                        cell.setCellStyle(Contenido);
+                                                        
+                                                        Statement DCon9 = connect.createStatement();
+                                                        ResultSet RCo9 = DCon9.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 10");
+                                                        while (RCo9.next()) {
+                                                            row = spreadsheet.getRow(i);
+                                                            cell = row.getCell(16);
+                                                            cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1) + ", " + RCo8.getString(1) + ", " + RCo9.getString(1));
+                                                            cell = row.createCell(17);
+                                                            cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2) + ", " + RCo8.getString(2) + ", " + RCo9.getString(2));
+                                                            cell.setCellStyle(Contenido);
+
+                                                        }
+                                                    }*/
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
                     i++;
+
                 }
-                
+
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -195,22 +550,22 @@ public class Logica_SemMes {
                 spreadsheet.setMargin(HSSFSheet.TopMargin, (double) 0.1); // Margen (arriba)
                 spreadsheet.setMargin(HSSFSheet.FooterMargin, (double) 0.1);
                 spreadsheet.setMargin(HSSFSheet.HeaderMargin, (double) 0.1);
-                
+
                 spreadsheet.setVerticallyCenter(true);
                 libro.write(archivo);
             }
             Desktop.getDesktop().open(archivoXLS);
         } catch (IOException | NumberFormatException e) {
-            
+
             try {
                 throw e;
             } catch (IOException | NumberFormatException ex) {
                 Logger.getLogger(Logica_SemMes.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Logica_SemMes.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 }
