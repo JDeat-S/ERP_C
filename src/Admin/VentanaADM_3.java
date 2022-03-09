@@ -1,7 +1,5 @@
 package Admin;
 
-import Nomina.Prenomina.*;
-import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -16,7 +14,17 @@ import RH.*;
 import Nomina.*;
 import Conexion.ConexionSQL;
 import Logicas.*;
+import Nomina.Prenomina.PremonimaQ;
+import Nomina.Prenomina.PrenominaS;
 import Pensiones.PensionesVP_7;
+import RH.Depositos.DepositosQ_4;
+import RH.Depositos.DepositosQ_SIMSS_4;
+import RH.Depositos.DepositosS_4;
+import RH.Depositos.DepositosS_SIMSS_4;
+import RH.Depositos.Santander.DepositosQSan_4;
+import RH.Depositos.Santander.DepositosQsan_SIMSS_4;
+import RH.Depositos.Santander.DepositosSSan_4;
+import RH.Depositos.Santander.DepositosSSan_SIMSS_4;
 import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
@@ -524,7 +532,16 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
         Depositos = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem24 = new javax.swing.JMenuItem();
+        jMenuItem25 = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem21 = new javax.swing.JMenuItem();
+        jMenuItem26 = new javax.swing.JMenuItem();
+        jMenuItem27 = new javax.swing.JMenuItem();
         ZYS = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
@@ -1635,14 +1652,77 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
         Depositos.setText("Depositos");
 
-        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenu7.setText("Quincenales");
+
         jMenuItem9.setText("Depositos C/ IMSS");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem9ActionPerformed(evt);
             }
         });
-        Depositos.add(jMenuItem9);
+        jMenu7.add(jMenuItem9);
+
+        jMenuItem11.setText("Depositos S/ IMSS");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem11);
+
+        jMenuItem24.setText("Santander Depositos C/ IMSS");
+        jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem24ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem24);
+
+        jMenuItem25.setText("Santander Depositos S/ IMSS");
+        jMenuItem25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem25ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem25);
+
+        Depositos.add(jMenu7);
+
+        jMenu8.setText("Semanales");
+
+        jMenuItem20.setText("Depositos C/ IMSS");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem20);
+
+        jMenuItem21.setText("Depositos S/ IMSS");
+        jMenuItem21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem21ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem21);
+
+        jMenuItem26.setText("Santander Depositos C/ IMSS");
+        jMenuItem26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem26ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem26);
+
+        jMenuItem27.setText("Santander Depositos S/ IMSS");
+        jMenuItem27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem27ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem27);
+
+        Depositos.add(jMenu8);
 
         jMenu1.add(Depositos);
 
@@ -3227,12 +3307,6 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         VDA.clearSelection();
     }//GEN-LAST:event_txtbtnpduaddMousePressed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
-
     private void CDA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CDA4ActionPerformed
         CDAS_5 regr = new CDAS_5(usr, LP);
         regr.setVisible(true);
@@ -3518,6 +3592,54 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        DepositosQ_4 regr = new DepositosQ_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        DepositosQ_SIMSS_4 regr = new DepositosQ_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
+        DepositosQSan_4 regr = new DepositosQSan_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem24ActionPerformed
+
+    private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem25ActionPerformed
+        DepositosQsan_SIMSS_4 regr = new DepositosQsan_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem25ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+        DepositosS_4 regr = new DepositosS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
+
+    private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
+        DepositosS_SIMSS_4 regr = new DepositosS_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem21ActionPerformed
+
+    private void jMenuItem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem26ActionPerformed
+        DepositosSSan_4 regr = new DepositosSSan_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem26ActionPerformed
+
+    private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
+        DepositosSSan_SIMSS_4 regr = new DepositosSSan_SIMSS_4(usr, LP);
+        regr.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem27ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3658,15 +3780,24 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
+    private javax.swing.JMenuItem jMenuItem24;
+    private javax.swing.JMenuItem jMenuItem25;
+    private javax.swing.JMenuItem jMenuItem26;
+    private javax.swing.JMenuItem jMenuItem27;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

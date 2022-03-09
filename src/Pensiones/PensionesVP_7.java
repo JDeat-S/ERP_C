@@ -2938,7 +2938,7 @@ public final class PensionesVP_7 extends javax.swing.JFrame {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PensionesVP_7.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (Double.parseDouble(RecImporte.getText()) >= 0.1) {
             Rec.setSelected(true);
