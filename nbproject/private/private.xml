@@ -20,15 +20,15 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/BDSemIturbide/Logica_SemMes.java</file>
             <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Expedientes/Expedientes_4.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Semanal/PT_4.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/BDRH/Logica_bd_RH.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/BDSemTehuantepec/Logica_SemGen.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Tortas_4.java</file>
             <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Semanal/Iturbide_4.java</file>
             <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/BDSemTehuantepec/Logica_SemMes.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/BDSemTehuantepec/GASTOS.java</file>
             <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/RH/Depositos/Santander/DepositosQsan_SIMSS_4.java</file>
             <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Semanal/Padrones/Padrones.java</file>
-            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Nomina/Listas/Listas_CI_5.java</file>
+            <file>file:/C:/Users/CONFORT/Documents/GitHub/ERP_Confort/src/Logicas/BDSemptetitla/Logica_SemMes.java</file>
         </group>
     </open-files>
 </project-private>

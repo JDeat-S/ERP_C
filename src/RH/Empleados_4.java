@@ -27,6 +27,7 @@ import RH.Depositos.Santander.DepositosQSan_4;
 import RH.Depositos.Santander.DepositosQsan_SIMSS_4;
 import RH.Depositos.Santander.DepositosSSan_4;
 import RH.Depositos.Santander.DepositosSSan_SIMSS_4;
+import RH.Expedientes.Datos;
 import RH.Expedientes.Expedientes_4;
 import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
@@ -60,6 +61,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     ColorRH colores = new ColorRH();
     Logica_usuarios usr;
     Logica_permisos LP;
+    Datos dat = new Datos();
 
     public Empleados_4() {
         initComponents();
@@ -2023,7 +2025,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         });
 
         mod1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        mod1.setText("Movimientos empleados");
+        mod1.setText("Historial de empelado");
         mod1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mod1ActionPerformed(evt);
@@ -4607,7 +4609,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem27ActionPerformed
 
     private void mod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mod1ActionPerformed
-        Expedientes_4 regr = new Expedientes_4(usr, LP);
+        dat.setNE(NExp.getText());
+        dat.setApellidoP(APgen.getText());
+        dat.setApellidoM(AMgen.getText());
+        dat.setName(NameGen.getText());
+        Expedientes_4 regr = new Expedientes_4(usr, LP, dat);
         regr.setVisible(true);
     }//GEN-LAST:event_mod1ActionPerformed
 
