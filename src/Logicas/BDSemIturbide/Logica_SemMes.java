@@ -1,5 +1,6 @@
 package Logicas.BDSemIturbide;
 
+import Conexion.ConexionSQL;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,6 +28,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author JDeat
  */
 public class Logica_SemMes {
+
+    Gastos gast = new Gastos();
+    vales val = new vales();
+    ConexionSQL cc = new ConexionSQL();
+    Connection con = cc.conexion();
 
     public void SemxMes(ItemsSem IS) {
         JFileChooser chooser = new JFileChooser();
@@ -343,231 +349,828 @@ public class Logica_SemMes {
                         cell.setCellStyle(Contenido);
 
                     }
-                    Statement DCon = connect.createStatement();
-                    ResultSet RCon = DCon.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 1");
+                    String SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + "";
+                    try {
+                        java.sql.Statement st = con.createStatement();
+                        int total = 0;
+                        ResultSet rs = st.executeQuery(SQL);
+                        while (rs.next()) {
+                            total++;
+                            if (total == 1) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 1";
 
-                    while (RCon.next()) {
-                        row = spreadsheet.getRow(i);
-                        cell = row.createCell(15);
-                        cell.setCellValue(RCon.getString(1));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(16);
-                        cell.setCellValue(RCon.getString(2));
-                        cell.setCellStyle(Contenido);
-
-                        Statement DCon1 = connect.createStatement();
-                        ResultSet RCo1 = DCon1.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 2");
-                        while (RCo1.next()) {
-                            row = spreadsheet.getRow(i);
-                            cell = row.getCell(15);
-                            cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1));
-                            cell = row.createCell(16);
-                            cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2));
-                            cell.setCellStyle(Contenido);
-
-                            Statement DCon2 = connect.createStatement();
-                            ResultSet RCo2 = DCon2.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 3");
-                            while (RCo2.next()) {
-                                row = spreadsheet.getRow(i);
-                                cell = row.getCell(15);
-                                cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1));
-                                cell = row.createCell(16);
-                                cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2));
-                                cell.setCellStyle(Contenido);
-
-                                Statement DCon3 = connect.createStatement();
-                                ResultSet RCo3 = DCon3.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 4");
-                                while (RCo3.next()) {
-                                    row = spreadsheet.getRow(i);
-                                    cell = row.getCell(15);
-                                    cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1));
-                                    cell = row.createCell(16);
-                                    cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2));
-                                    cell.setCellStyle(Contenido);
-
-                                    Statement DCon4 = connect.createStatement();
-                                    ResultSet RCo14 = DCon4.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 5");
-                                    while (RCo14.next()) {
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto1(RS1.getString(1));
+                                        gast.setImporte1(RS1.getString(2));
                                         row = spreadsheet.getRow(i);
-                                        cell = row.getCell(15);
-                                        cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1());
+                                        cell.setCellStyle(Contenido);
                                         cell = row.createCell(16);
-                                        cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2));
+                                        cell.setCellValue(gast.getImporte1());
                                         cell.setCellStyle(Contenido);
-
-                                        Statement DCon5 = connect.createStatement();
-                                        ResultSet RCo5 = DCon5.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 6");
-                                        while (RCo5.next()) {
-                                            row = spreadsheet.getRow(i);
-                                            cell = row.getCell(15);
-                                            cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1));
-                                            cell = row.createCell(16);
-                                            cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2));
-                                            cell.setCellStyle(Contenido);
-
-                                            Statement DCon6 = connect.createStatement();
-                                            ResultSet RCo6 = DCon6.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 7");
-                                            while (RCo6.next()) {
-                                                row = spreadsheet.getRow(i);
-                                                cell = row.getCell(15);
-                                                cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1));
-                                                cell = row.createCell(16);
-                                                cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2));
-                                                cell.setCellStyle(Contenido);
-
-                                                Statement DCon7 = connect.createStatement();
-                                                ResultSet RCo7 = DCon7.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 8");
-                                                while (RCo7.next()) {
-                                                    row = spreadsheet.getRow(i);
-                                                    cell = row.getCell(15);
-                                                    cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1));
-                                                    cell = row.createCell(16);
-                                                    cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2));
-                                                    cell.setCellStyle(Contenido);
-/*
-                                                    Statement DCon8 = connect.createStatement();
-                                                    ResultSet RCo8 = DCon8.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 9");
-                                                    while (RCo8.next()) {
-                                                        row = spreadsheet.getRow(i);
-                                                        cell = row.getCell(15);
-                                                        cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1) + ", " + RCo8.getString(1));
-                                                        cell = row.createCell(16);
-                                                        cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2) + ", " + RCo8.getString(2));
-                                                        cell.setCellStyle(Contenido);
-                                                        
-                                                        Statement DCon9 = connect.createStatement();
-                                                        ResultSet RCo9 = DCon9.executeQuery("SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 10");
-                                                        while (RCo9.next()) {
-                                                            row = spreadsheet.getRow(i);
-                                                            cell = row.getCell(15);
-                                                            cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1) + ", " + RCo8.getString(1) + ", " + RCo9.getString(1));
-                                                            cell = row.createCell(16);
-                                                            cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2) + ", " + RCo8.getString(2) + ", " + RCo9.getString(2));
-                                                            cell.setCellStyle(Contenido);
-
-                                                        }
-                                                    }*/
-                                                }
-                                            }
-                                        }
                                     }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
                                 }
                             }
+
+                            if (total == 2) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 2";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto2(RS1.getString(1));
+                                        gast.setImporte2(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2());
+                                        cell.setCellStyle(Contenido);
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 3) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 3";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto3(RS1.getString(1));
+                                        gast.setImporte3(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 4) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 4";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto4(RS1.getString(1));
+                                        gast.setImporte4(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 5) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 5";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto5(RS1.getString(1));
+                                        gast.setImporte5(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 6) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT  6";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto6(RS1.getString(1));
+                                        gast.setImporte6(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5() + ", " + gast.getGasto6());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5() + ", " + gast.getImporte6());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 7) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 7";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto7(RS1.getString(1));
+                                        gast.setImporte7(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5()
+                                                + ", " + gast.getGasto6() + ", " + gast.getGasto7());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5()
+                                                + ", " + gast.getImporte6() + ", " + gast.getImporte7());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 8) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 8";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto8(RS1.getString(1));
+                                        gast.setImporte8(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5()
+                                                + ", " + gast.getGasto6() + ", " + gast.getGasto7() + ", " + gast.getGasto8());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5()
+                                                + ", " + gast.getImporte6() + ", " + gast.getImporte7() + ", " + gast.getImporte8());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 9) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 9";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto9(RS1.getString(1));
+                                        gast.setImporte9(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5()
+                                                + ", " + gast.getGasto6() + ", " + gast.getGasto7() + ", " + gast.getGasto8() + ", " + gast.getGasto9());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5()
+                                                + ", " + gast.getImporte6() + ", " + gast.getImporte7() + ", " + gast.getImporte8() + ", " + gast.getImporte9());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 10) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 10";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto10(RS1.getString(1));
+                                        gast.setImporte10(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5()
+                                                + ", " + gast.getGasto6() + ", " + gast.getGasto7() + ", " + gast.getGasto8() + ", " + gast.getGasto9() + ", " + gast.getGasto10());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5()
+                                                + ", " + gast.getImporte6() + ", " + gast.getImporte7() + ", " + gast.getImporte8() + ", " + gast.getImporte9() + ", " + gast.getImporte10());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 11) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT  11";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto11(RS1.getString(1));
+                                        gast.setImporte11(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5()
+                                                + ", " + gast.getGasto6() + ", " + gast.getGasto7() + ", " + gast.getGasto8() + ", " + gast.getGasto9() + ", " + gast.getGasto10()
+                                                + ", " + gast.getGasto11());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5()
+                                                + ", " + gast.getImporte6() + ", " + gast.getImporte7() + ", " + gast.getImporte8() + ", " + gast.getImporte9() + ", " + gast.getImporte10()
+                                                + ", " + gast.getImporte11());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 12) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 12";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto12(RS1.getString(1));
+                                        gast.setImporte12(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5()
+                                                + ", " + gast.getGasto6() + ", " + gast.getGasto7() + ", " + gast.getGasto8() + ", " + gast.getGasto9() + ", " + gast.getGasto10()
+                                                + ", " + gast.getGasto11() + ", " + gast.getGasto12());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5()
+                                                + ", " + gast.getImporte6() + ", " + gast.getImporte7() + ", " + gast.getImporte8() + ", " + gast.getImporte9() + ", " + gast.getImporte10()
+                                                + ", " + gast.getImporte11() + ", " + gast.getImporte12());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 13) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 13";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto13(RS1.getString(1));
+                                        gast.setImporte13(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5()
+                                                + ", " + gast.getGasto6() + ", " + gast.getGasto7() + ", " + gast.getGasto8() + ", " + gast.getGasto9() + ", " + gast.getGasto10()
+                                                + ", " + gast.getGasto11() + ", " + gast.getGasto12() + ", " + gast.getGasto13());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5()
+                                                + ", " + gast.getImporte6() + ", " + gast.getImporte7() + ", " + gast.getImporte8() + ", " + gast.getImporte9() + ", " + gast.getImporte10()
+                                                + ", " + gast.getImporte11() + ", " + gast.getImporte12() + ", " + gast.getImporte13());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 14) {
+                                try {
+                                    SQL = "SELECT `Concepto`, `Importe` FROM `rh.semanal.inturbide.gast` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 14";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        gast.setGasto14(RS1.getString(1));
+                                        gast.setImporte14(RS1.getString(2));
+                                        cell = row.createCell(15);
+                                        cell.setCellValue(gast.getGasto1() + ", " + gast.getGasto2() + ", " + gast.getGasto3() + ", " + gast.getGasto4() + ", " + gast.getGasto5()
+                                                + ", " + gast.getGasto6() + ", " + gast.getGasto7() + ", " + gast.getGasto8() + ", " + gast.getGasto9() + ", " + gast.getGasto10()
+                                                + ", " + gast.getGasto11() + ", " + gast.getGasto12() + ", " + gast.getGasto13() + ", " + gast.getGasto14());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(16);
+                                        cell.setCellValue(gast.getImporte1() + ", " + gast.getImporte2() + ", " + gast.getImporte3() + ", " + gast.getImporte4() + ", " + gast.getImporte5()
+                                                + ", " + gast.getImporte6() + ", " + gast.getImporte7() + ", " + gast.getImporte8() + ", " + gast.getImporte9() + ", " + gast.getImporte10()
+                                                + ", " + gast.getImporte11() + ", " + gast.getImporte12() + ", " + gast.getImporte13() + ", " + gast.getImporte14());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+
                         }
+
+                        st.isClosed();
+                        rs.isClosed();
+                    } catch (SQLException e) {
+
                     }
-                    Statement VCon = connect.createStatement();
-                    ResultSet RVCon = VCon.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 1");
+                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + "";
+                    try {
+                        java.sql.Statement st = con.createStatement();
+                        int total = 0;
+                        ResultSet rs = st.executeQuery(SQL);
+                        while (rs.next()) {
+                            total++;
+                            if (total == 1) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 1";
 
-                    while (RVCon.next()) {
-                        row = spreadsheet.getRow(i);
-                        cell = row.createCell(18);
-                        cell.setCellValue(RVCon.getString(1));
-                        cell.setCellStyle(Contenido);
-                        cell = row.createCell(19);
-                        cell.setCellValue(RVCon.getString(2));
-                        cell.setCellStyle(Contenido);
-
-                        Statement DCon1 = connect.createStatement();
-                        ResultSet RCo1 = DCon1.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 2");
-                        while (RCo1.next()) {
-                            row = spreadsheet.getRow(i);
-                            cell = row.getCell(18);
-                            cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1));
-                            cell = row.createCell(19);
-                            cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2));
-                            cell.setCellStyle(Contenido);
-
-                            Statement DCon2 = connect.createStatement();
-                            ResultSet RCo2 = DCon2.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 3");
-                            while (RCo2.next()) {
-                                row = spreadsheet.getRow(i);
-                                cell = row.getCell(18);
-                                cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1));
-                                cell = row.createCell(19);
-                                cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2));
-                                cell.setCellStyle(Contenido);
-
-                                Statement DCon3 = connect.createStatement();
-                                ResultSet RCo3 = DCon3.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 4");
-                                while (RCo3.next()) {
-                                    row = spreadsheet.getRow(i);
-                                    cell = row.getCell(18);
-                                    cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1));
-                                    cell = row.createCell(19);
-                                    cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2));
-                                    cell.setCellStyle(Contenido);
-
-                                    Statement DCon4 = connect.createStatement();
-                                    ResultSet RCo14 = DCon4.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 5");
-                                    while (RCo14.next()) {
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV1(RS1.getString(1));
+                                        val.setOBS1(RS1.getString(2));
+                                        val.setImporte1(RS1.getString(3));
                                         row = spreadsheet.getRow(i);
-                                        cell = row.getCell(18);
-                                        cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1));
-                                        cell = row.createCell(19);
-                                        cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1());
                                         cell.setCellStyle(Contenido);
-
-                                        Statement DCon5 = connect.createStatement();
-                                        ResultSet RCo5 = DCon5.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 6");
-                                        while (RCo5.next()) {
-                                            row = spreadsheet.getRow(i);
-                                            cell = row.getCell(18);
-                                            cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1));
-                                            cell = row.createCell(19);
-                                            cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2));
-                                            cell.setCellStyle(Contenido);
-
-                                            Statement DCon6 = connect.createStatement();
-                                            ResultSet RCo6 = DCon6.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 7");
-                                            while (RCo6.next()) {
-                                                row = spreadsheet.getRow(i);
-                                                cell = row.getCell(18);
-                                                cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1));
-                                                cell = row.createCell(19);
-                                                cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2));
-                                                cell.setCellStyle(Contenido);
-
-                                                Statement DCon7 = connect.createStatement();
-                                                ResultSet RCo7 = DCon7.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 8");
-                                                while (RCo7.next()) {
-                                                    row = spreadsheet.getRow(i);
-                                                    cell = row.getCell(18);
-                                                    cell.setCellValue(RVCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1));
-                                                    cell = row.createCell(19);
-                                                    cell.setCellValue(RVCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2));
-                                                    cell.setCellStyle(Contenido);
-/*
-                                                    Statement DCon8 = connect.createStatement();
-                                                    ResultSet RCo8 = DCon8.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 9");
-                                                    while (RCo8.next()) {
-                                                        row = spreadsheet.getRow(i);
-                                                        cell = row.getCell(18);
-                                                        cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1) + ", " + RCo8.getString(1));
-                                                        cell = row.createCell(19);
-                                                        cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2) + ", " + RCo8.getString(2));
-                                                        cell.setCellStyle(Contenido);
-                                                        
-                                                        Statement DCon9 = connect.createStatement();
-                                                        ResultSet RCo9 = DCon9.executeQuery("SELECT `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 10");
-                                                        while (RCo9.next()) {
-                                                            row = spreadsheet.getRow(i);
-                                                            cell = row.getCell(18);
-                                                            cell.setCellValue(RCon.getString(1) + ", " + RCo1.getString(1) + ", " + RCo2.getString(1) + ", " + RCo3.getString(1) + ", " + RCo14.getString(1) + ", " + RCo5.getString(1) + ", " + RCo6.getString(1) + ", " + RCo7.getString(1) + ", " + RCo8.getString(1) + ", " + RCo9.getString(1));
-                                                            cell = row.createCell(19);
-                                                            cell.setCellValue(RCon.getString(2) + ", " + RCo1.getString(2) + ", " + RCo2.getString(2) + ", " + RCo3.getString(2) + ", " + RCo14.getString(2) + ", " + RCo5.getString(2) + ", " + RCo6.getString(2) + ", " + RCo7.getString(2) + ", " + RCo8.getString(2) + ", " + RCo9.getString(2));
-                                                            cell.setCellStyle(Contenido);
-
-                                                        }
-                                                    }*/
-                                                }
-                                            }
-                                        }
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1());
+                                        cell.setCellStyle(Contenido);
                                     }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
                                 }
                             }
+
+                            if (total == 2) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 2";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV2(RS1.getString(1));
+                                        val.setOBS2(RS1.getString(2));
+                                        val.setImporte2(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2());
+                                        cell.setCellStyle(Contenido);
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 3) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 3";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV3(RS1.getString(1));
+                                        val.setOBS3(RS1.getString(2));
+                                        val.setImporte3(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 4) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 4";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV4(RS1.getString(1));
+                                        val.setOBS4(RS1.getString(2));
+                                        val.setImporte4(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4());
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 5) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 5";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV5(RS1.getString(1));
+                                        val.setOBS5(RS1.getString(2));
+                                        val.setImporte5(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 6) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT  6";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV6(RS1.getString(1));
+                                        val.setOBS6(RS1.getString(2));
+                                        val.setImporte6(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5() + ", " + val.getImporte6());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 7) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 7";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV7(RS1.getString(1));
+                                        val.setOBS7(RS1.getString(2));
+                                        val.setImporte7(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6()
+                                                + "# vale:" + val.getNV7() + " Concepto:" + val.getOBS7());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5()
+                                                + ", " + val.getImporte6() + ", " + val.getImporte7());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 8) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 8";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV8(RS1.getString(1));
+                                        val.setOBS8(RS1.getString(2));
+                                        val.setImporte8(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6()
+                                                + ", " + "# vale:" + val.getNV7() + " Concepto:" + val.getOBS7() + ", " + "# vale:" + val.getNV8() + " Concepto:" + val.getOBS8());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5()
+                                                + ", " + val.getImporte6() + ", " + val.getImporte7() + ", " + val.getImporte8());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 9) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 9";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV9(RS1.getString(1));
+                                        val.setOBS9(RS1.getString(2));
+                                        val.setImporte9(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6()
+                                                + ", " + "# vale:" + val.getNV7() + " Concepto:" + val.getOBS7() + ", " + "# vale:" + val.getNV8() + " Concepto:" + val.getOBS8()
+                                                + ", " + "# vale:" + val.getNV9() + " Concepto:" + val.getOBS9());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5()
+                                                + ", " + val.getImporte6() + ", " + val.getImporte7() + ", " + val.getImporte8() + ", " + val.getImporte9());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 10) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 10";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV10(RS1.getString(1));
+                                        val.setOBS10(RS1.getString(2));
+                                        val.setImporte10(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6()
+                                                + ", " + "# vale:" + val.getNV7() + " Concepto:" + val.getOBS7() + ", " + "# vale:" + val.getNV8() + " Concepto:" + val.getOBS8()
+                                                + ", " + "# vale:" + val.getNV9() + " Concepto:" + val.getOBS9() + ", " + "# vale:" + val.getNV10() + " Concepto:" + val.getOBS10());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5()
+                                                + ", " + val.getImporte6() + ", " + val.getImporte7() + ", " + val.getImporte8() + ", " + val.getImporte9() + ", " + val.getImporte10());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 11) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT  11";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV11(RS1.getString(1));
+                                        val.setOBS11(RS1.getString(2));
+                                        val.setImporte11(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6()
+                                                + ", " + "# vale:" + val.getNV7() + " Concepto:" + val.getOBS7() + ", " + "# vale:" + val.getNV8() + " Concepto:" + val.getOBS8()
+                                                + ", " + "# vale:" + val.getNV9() + " Concepto:" + val.getOBS9() + ", " + "# vale:" + val.getNV10() + " Concepto:" + val.getOBS10()
+                                                + ", " + "# vale:" + val.getNV11() + " Concepto:" + val.getOBS11());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5()
+                                                + ", " + val.getImporte6() + ", " + val.getImporte7() + ", " + val.getImporte8() + ", " + val.getImporte9() + ", " + val.getImporte10()
+                                                + ", " + val.getImporte11());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 12) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 12";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV12(RS1.getString(1));
+                                        val.setOBS12(RS1.getString(2));
+                                        val.setImporte12(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6()
+                                                + ", " + "# vale:" + val.getNV7() + " Concepto:" + val.getOBS7() + ", " + "# vale:" + val.getNV8() + " Concepto:" + val.getOBS8()
+                                                + ", " + "# vale:" + val.getNV9() + " Concepto:" + val.getOBS9() + ", " + "# vale:" + val.getNV10() + " Concepto:" + val.getOBS10()
+                                                + ", " + "# vale:" + val.getNV11() + " Concepto:" + val.getOBS11() + ", " + "# vale:" + val.getNV12() + " Concepto:" + val.getOBS12());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5()
+                                                + ", " + val.getImporte6() + ", " + val.getImporte7() + ", " + val.getImporte8() + ", " + val.getImporte9() + ", " + val.getImporte10()
+                                                + ", " + val.getImporte11() + ", " + val.getImporte12());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 13) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 13";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV13(RS1.getString(1));
+                                        val.setOBS13(RS1.getString(2));
+                                        val.setImporte13(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6()
+                                                + ", " + "# vale:" + val.getNV7() + " Concepto:" + val.getOBS7() + ", " + "# vale:" + val.getNV8() + " Concepto:" + val.getOBS8()
+                                                + ", " + "# vale:" + val.getNV9() + " Concepto:" + val.getOBS9() + ", " + "# vale:" + val.getNV10() + " Concepto:" + val.getOBS10()
+                                                + ", " + "# vale:" + val.getNV11() + " Concepto:" + val.getOBS11() + ", " + "# vale:" + val.getNV12() + " Concepto:" + val.getOBS12()
+                                                + ", " + "# vale:" + val.getNV13() + " Concepto:" + val.getOBS13());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5()
+                                                + ", " + val.getImporte6() + ", " + val.getImporte7() + ", " + val.getImporte8() + ", " + val.getImporte9() + ", " + val.getImporte10()
+                                                + ", " + val.getImporte11() + ", " + val.getImporte12() + ", " + val.getImporte13());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+                            if (total == 14) {
+                                try {
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 14";
+
+                                    java.sql.Statement ST1 = con.createStatement();
+                                    total = 0;
+                                    ResultSet RS1 = ST1.executeQuery(SQL);
+                                    while (RS1.next()) {
+                                        total++;
+                                        val.setNV14(RS1.getString(1));
+                                        val.setOBS14(RS1.getString(2));
+                                        val.setImporte14(RS1.getString(3));
+                                        cell = row.createCell(18);
+                                        cell.setCellValue("# vale:" + val.getNV1() + " Concepto:" + val.getOBS1() + ", " + "# vale:" + val.getNV2() + " Concepto:" + val.getOBS2()
+                                                + ", " + "# vale:" + val.getNV3() + " Concepto:" + val.getOBS3() + ", " + "# vale:" + val.getNV4() + " Concepto:" + val.getOBS4()
+                                                + ", " + "# vale:" + val.getNV5() + " Concepto:" + val.getOBS5() + ", " + "# vale:" + val.getNV6() + " Concepto:" + val.getOBS6()
+                                                + ", " + "# vale:" + val.getNV7() + " Concepto:" + val.getOBS7() + ", " + "# vale:" + val.getNV8() + " Concepto:" + val.getOBS8()
+                                                + ", " + "# vale:" + val.getNV9() + " Concepto:" + val.getOBS9() + ", " + "# vale:" + val.getNV10() + " Concepto:" + val.getOBS10()
+                                                + ", " + "# vale:" + val.getNV11() + " Concepto:" + val.getOBS11() + ", " + "# vale:" + val.getNV12() + " Concepto:" + val.getOBS12()
+                                                + ", " + "# vale:" + val.getNV13() + " Concepto:" + val.getOBS13() + ", " + "# vale:" + val.getNV14() + " Concepto:" + val.getOBS14());
+                                        cell.setCellStyle(Contenido);
+                                        cell = row.createCell(19);
+                                        cell.setCellValue(val.getImporte1() + ", " + val.getImporte2() + ", " + val.getImporte3() + ", " + val.getImporte4() + ", " + val.getImporte5()
+                                                + ", " + val.getImporte6() + ", " + val.getImporte7() + ", " + val.getImporte8() + ", " + val.getImporte9() + ", " + val.getImporte10()
+                                                + ", " + val.getImporte11() + ", " + val.getImporte12() + ", " + val.getImporte13() + ", " + val.getImporte14());
+                                        cell.setCellStyle(Contenido);
+
+                                    }
+                                    ST1.isClosed();
+                                    RS1.isClosed();
+                                } catch (SQLException e) {
+
+                                }
+                            }
+
                         }
 
+                        st.isClosed();
+                        rs.isClosed();
+                    } catch (SQLException e) {
+
                     }
+
                     i++;
 
                 }

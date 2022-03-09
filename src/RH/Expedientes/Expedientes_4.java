@@ -55,8 +55,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         Zonas zz = new Zonas();
         DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
         zona.setModel(modelzonas);
-        shareemp();
-
+        
     }
 
     public Expedientes_4(Logica_usuarios usr, Logica_permisos LP) {
@@ -64,14 +63,17 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         this.usr = usr;
         this.LP = LP;
         this.setLocationRelativeTo(null);
-        shareemp();
     }
 
-    public void shareemp() {
-        //Buscar empleado
-        String where = "SELECT `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)` FROM `rh.empleados`"
-                + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
+
+    public void MDMov() {
+        String where = "SELECT `tipo de registro`, `Año`, `#Empleado`, `Apellido P`,"
+                + " `Apellido M`, `Nombre(s)`, `Sueldo`, `bono`, `Zona`, `Servicio`,"
+                + " `Aguinaldo`, `PTU`,  `Vacaciones`, `Periodoini`,"
+                + " `periodofin`, `observaciones`, `reingreso`, `baja`, `tipo de baja`, `Acta administrativa`, "
+                + " `Fecha actaadm`, `fecha de registro`, `registrado por` FROM `rh.empleados.movimientos`"
+                + " where `Apellido P` LIKE '%%' AND `Apellido M` LIKE '%%'"
+                + "AND `Nombre(s)` LIKE '%%'";
 
         try {
             //Cargar datos
@@ -83,7 +85,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
 
             };
 //Nombre de la tabla
-            share.setModel(modelo);
+            Tmov.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
@@ -93,17 +95,39 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
+            modelo.addColumn("Tipo de registro");
+            modelo.addColumn("Año");
             modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");//1
             modelo.addColumn("Apellido M");//
             modelo.addColumn("Nombre(s)");//3
+            modelo.addColumn("Sueldo");//3
+            modelo.addColumn("Fecha alta");//3
+            modelo.addColumn("Bono");//3
+            modelo.addColumn("Zona");//3
+            modelo.addColumn("Servicio");//3
+            modelo.addColumn("Aguinaldo");//3
+            modelo.addColumn("PTU");//3
+            modelo.addColumn("Vacaciones");//3
+            modelo.addColumn("inicio vacaciones");//3
+            modelo.addColumn("Fin vacaciones");//3
+            modelo.addColumn("observacinses de vacaciones");//3
+            modelo.addColumn("re-ingreso");//3
+            modelo.addColumn("Baja");//3
+            modelo.addColumn("Tipo de baja");//3
+            modelo.addColumn("Acta administrativa");//3
+            modelo.addColumn("Fecha acta");//3
+            modelo.addColumn("Fecha de registro");//3
+            modelo.addColumn("registrado por");//3
 
 //Anchos
-            int[] anchos = {/*numE*/35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150};
+            int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
+                /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50, 50, 50, 50, 50,
+                50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
-                share.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
+                Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
 
             }
 
@@ -117,494 +141,8 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             ps.isClosed();
             rs.isClosed();
         } catch (SQLException error_sharenom) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos empleados: " + error_sharenom.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar registros: " + error_sharenom.getMessage());
 
-        }
-
-    }
-
-    public void MDMov() {
-        if (TDM.getSelectedIndex() == 0) {
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-            Tmov.setModel(modelo);
-        }
-        if (TDM.getSelectedIndex() == 1) {
-            String where = "SELECT * FROM `rh.empleados.movimientos`"
-                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
-
-            try {
-                //Cargar datos
-                DefaultTableModel modelo = new DefaultTableModel() {
-                    @Override
-                    public boolean isCellEditable(int filas, int columna) {
-                        return false;
-                    }
-
-                };
-//Nombre de la tabla
-                Tmov.setModel(modelo);
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(where);
-                rs = ps.executeQuery();
-
-                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-                int cantidadColumnas = rsMd.getColumnCount();
-
-                modelo.addColumn("# Registro");
-                modelo.addColumn("# Empleado");
-                modelo.addColumn("Apellido P");//1
-                modelo.addColumn("Apellido M");//
-                modelo.addColumn("Nombre(s)");//3
-                modelo.addColumn("Fecha baja");//3
-                modelo.addColumn("Tipo de baja");//3
-                modelo.addColumn("Fecha de registro");//3
-                modelo.addColumn("Registrado por");//3
-
-//Anchos
-                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
-                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
-
-                for (int x = 0; x < cantidadColumnas; x++) {
-                    //Nombre tabla
-                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-                }
-
-                while (rs.next()) {
-                    Object[] filas = new Object[cantidadColumnas];
-                    for (int i = 0; i < cantidadColumnas; i++) {
-                        filas[i] = rs.getObject(i + 1);
-                    }
-                    modelo.addRow(filas);
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar registros de bajas: " + error_sharenom.getMessage());
-
-            }
-        }
-        if (TDM.getSelectedIndex() == 2) {
-            String where = "SELECT * FROM `rh.empleados.movimientos.reingreso`"
-                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
-
-            try {
-                //Cargar datos
-                DefaultTableModel modelo = new DefaultTableModel() {
-                    @Override
-                    public boolean isCellEditable(int filas, int columna) {
-                        return false;
-                    }
-
-                };
-//Nombre de la tabla
-                Tmov.setModel(modelo);
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(where);
-                rs = ps.executeQuery();
-
-                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-                int cantidadColumnas = rsMd.getColumnCount();
-
-                modelo.addColumn("# Registro");
-                modelo.addColumn("# Empleado");
-                modelo.addColumn("Apellido P");//1
-                modelo.addColumn("Apellido M");//
-                modelo.addColumn("Nombre(s)");//3
-                modelo.addColumn("Fecha reingreso");//3
-                modelo.addColumn("Fecha de registro");//3
-                modelo.addColumn("Registrado por");//3
-
-//Anchos
-                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
-                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
-
-                for (int x = 0; x < cantidadColumnas; x++) {
-                    //Nombre tabla
-                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-                }
-
-                while (rs.next()) {
-                    Object[] filas = new Object[cantidadColumnas];
-                    for (int i = 0; i < cantidadColumnas; i++) {
-                        filas[i] = rs.getObject(i + 1);
-                    }
-                    modelo.addRow(filas);
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar registros de reingreso: " + error_sharenom.getMessage());
-
-            }
-        }
-        if (TDM.getSelectedIndex() == 3) {
-            String where = "SELECT * FROM `rh.empleados.movimientos.cdsalario`"
-                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
-
-            try {
-                //Cargar datos
-                DefaultTableModel modelo = new DefaultTableModel() {
-                    @Override
-                    public boolean isCellEditable(int filas, int columna) {
-                        return false;
-                    }
-
-                };
-//Nombre de la tabla
-                Tmov.setModel(modelo);
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(where);
-                rs = ps.executeQuery();
-
-                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-                int cantidadColumnas = rsMd.getColumnCount();
-
-                modelo.addColumn("# Registro");
-                modelo.addColumn("# Empleado");
-                modelo.addColumn("Apellido P");//1
-                modelo.addColumn("Apellido M");//
-                modelo.addColumn("Nombre(s)");//3
-                modelo.addColumn("Salario");//3
-                modelo.addColumn("Bono");//3
-                modelo.addColumn("Fecha de registro");//3
-                modelo.addColumn("Registrado por");//3
-
-//Anchos
-                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
-                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
-
-                for (int x = 0; x < cantidadColumnas; x++) {
-                    //Nombre tabla
-                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-                }
-
-                while (rs.next()) {
-                    Object[] filas = new Object[cantidadColumnas];
-                    for (int i = 0; i < cantidadColumnas; i++) {
-                        filas[i] = rs.getObject(i + 1);
-                    }
-                    modelo.addRow(filas);
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar registros de cambios de salario: " + error_sharenom.getMessage());
-
-            }
-        }
-        if (TDM.getSelectedIndex() == 4) {
-            String where = "SELECT * FROM `rh.empleados.movimientos.cdszonyserv`"
-                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
-
-            try {
-                //Cargar datos
-                DefaultTableModel modelo = new DefaultTableModel() {
-                    @Override
-                    public boolean isCellEditable(int filas, int columna) {
-                        return false;
-                    }
-
-                };
-//Nombre de la tabla
-                Tmov.setModel(modelo);
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(where);
-                rs = ps.executeQuery();
-
-                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-                int cantidadColumnas = rsMd.getColumnCount();
-
-                modelo.addColumn("# Registro");
-                modelo.addColumn("# Empleado");
-                modelo.addColumn("Apellido P");//1
-                modelo.addColumn("Apellido M");//
-                modelo.addColumn("Nombre(s)");//3
-                modelo.addColumn("Zona");//3
-                modelo.addColumn("Servicio");//3
-                modelo.addColumn("Fecha de registro");//3
-                modelo.addColumn("Registrado por");//3
-
-//Anchos
-                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
-                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
-
-                for (int x = 0; x < cantidadColumnas; x++) {
-                    //Nombre tabla
-                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-                }
-
-                while (rs.next()) {
-                    Object[] filas = new Object[cantidadColumnas];
-                    for (int i = 0; i < cantidadColumnas; i++) {
-                        filas[i] = rs.getObject(i + 1);
-                    }
-                    modelo.addRow(filas);
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar registros de cambios de Zona y servicio: " + error_sharenom.getMessage());
-
-            }
-        }
-        if (TDM.getSelectedIndex() == 5) {
-            String where = "SELECT * FROM `rh.empleados.movimientos.aguinaldo`"
-                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
-
-            try {
-                //Cargar datos
-                DefaultTableModel modelo = new DefaultTableModel() {
-                    @Override
-                    public boolean isCellEditable(int filas, int columna) {
-                        return false;
-                    }
-
-                };
-//Nombre de la tabla
-                Tmov.setModel(modelo);
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(where);
-                rs = ps.executeQuery();
-
-                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-                int cantidadColumnas = rsMd.getColumnCount();
-
-                modelo.addColumn("# Registro");
-                modelo.addColumn("# Empleado");
-                modelo.addColumn("Apellido P");//1
-                modelo.addColumn("Apellido M");//
-                modelo.addColumn("Nombre(s)");//3
-                modelo.addColumn("Aguinaldo");//3
-                modelo.addColumn("Fecha de registro");//3
-                modelo.addColumn("Registrado por");//3
-
-//Anchos
-                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
-                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
-
-                for (int x = 0; x < cantidadColumnas; x++) {
-                    //Nombre tabla
-                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-                }
-
-                while (rs.next()) {
-                    Object[] filas = new Object[cantidadColumnas];
-                    for (int i = 0; i < cantidadColumnas; i++) {
-                        filas[i] = rs.getObject(i + 1);
-                    }
-                    modelo.addRow(filas);
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar registros de aguinaldo"
-                        + ": " + error_sharenom.getMessage());
-
-            }
-        }
-        if (TDM.getSelectedIndex() == 6) {
-            String where = "SELECT * FROM `rh.empleados.movimientos.vacaciones`"
-                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
-
-            try {
-                //Cargar datos
-                DefaultTableModel modelo = new DefaultTableModel() {
-                    @Override
-                    public boolean isCellEditable(int filas, int columna) {
-                        return false;
-                    }
-
-                };
-//Nombre de la tabla
-                Tmov.setModel(modelo);
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(where);
-                rs = ps.executeQuery();
-
-                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-                int cantidadColumnas = rsMd.getColumnCount();
-
-                modelo.addColumn("# Registro");
-                modelo.addColumn("# Empleado");
-                modelo.addColumn("Apellido P");//1
-                modelo.addColumn("Apellido M");//
-                modelo.addColumn("Nombre(s)");//3
-                modelo.addColumn("Vacaciones");//3
-                modelo.addColumn("Inicio");//3
-                modelo.addColumn("Fin");//3
-                modelo.addColumn("Observaciones");//3
-                modelo.addColumn("Fecha de registro");//3
-                modelo.addColumn("Registrado por");//3
-
-//Anchos
-                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
-                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50, 50, 50, 50};
-
-                for (int x = 0; x < cantidadColumnas; x++) {
-                    //Nombre tabla
-                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-                }
-
-                while (rs.next()) {
-                    Object[] filas = new Object[cantidadColumnas];
-                    for (int i = 0; i < cantidadColumnas; i++) {
-                        filas[i] = rs.getObject(i + 1);
-                    }
-                    modelo.addRow(filas);
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar registros de cambios de vacaciones: " + error_sharenom.getMessage());
-
-            }
-        }
-        if (TDM.getSelectedIndex() == 7) {
-            String where = "SELECT * FROM `rh.empleados.movimientos.ptu`"
-                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
-
-            try {
-                //Cargar datos
-                DefaultTableModel modelo = new DefaultTableModel() {
-                    @Override
-                    public boolean isCellEditable(int filas, int columna) {
-                        return false;
-                    }
-
-                };
-//Nombre de la tabla
-                Tmov.setModel(modelo);
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(where);
-                rs = ps.executeQuery();
-
-                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-                int cantidadColumnas = rsMd.getColumnCount();
-
-                modelo.addColumn("# Registro");
-                modelo.addColumn("# Empleado");
-                modelo.addColumn("Apellido P");//1
-                modelo.addColumn("Apellido M");//
-                modelo.addColumn("Nombre(s)");//3
-                modelo.addColumn("PTU");//3
-                modelo.addColumn("Fecha de registro");//3
-                modelo.addColumn("Registrado por");//3
-
-//Anchos
-                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,
-                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
-
-                for (int x = 0; x < cantidadColumnas; x++) {
-                    //Nombre tabla
-                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-                }
-
-                while (rs.next()) {
-                    Object[] filas = new Object[cantidadColumnas];
-                    for (int i = 0; i < cantidadColumnas; i++) {
-                        filas[i] = rs.getObject(i + 1);
-                    }
-                    modelo.addRow(filas);
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar registros de PTU: " + error_sharenom.getMessage());
-
-            }
-        }
-        if (TDM.getSelectedIndex() == 8) {
-            String where = "SELECT * FROM `rh.empleados.movimientos.actaadm`"
-                    + " where `Apellido P` LIKE '%" + SHAP.getText() + "%' AND `Apellido M` LIKE '%" + SHAM.getText() + "%'"
-                    + "AND `Nombre(s)` LIKE '%" + SHNAME.getText() + "%'";
-
-            try {
-                //Cargar datos
-                DefaultTableModel modelo = new DefaultTableModel() {
-                    @Override
-                    public boolean isCellEditable(int filas, int columna) {
-                        return false;
-                    }
-
-                };
-//Nombre de la tabla
-                Tmov.setModel(modelo);
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(where);
-                rs = ps.executeQuery();
-
-                ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-                int cantidadColumnas = rsMd.getColumnCount();
-
-                modelo.addColumn("# Registro");
-                modelo.addColumn("# Empleado");
-                modelo.addColumn("Apellido P");//1
-                modelo.addColumn("Apellido M");//
-                modelo.addColumn("Nombre(s)");//3
-                modelo.addColumn("Acta");//3
-                modelo.addColumn("Fecha de acta");//3
-                modelo.addColumn("Fecha de registro");//3
-                modelo.addColumn("Registrado por");//3
-
-//Anchos
-                int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
-                    /*Tipo baja*/ 50, /*Fecha de registro*/ 50, /*Registrado por*/ 50};
-
-                for (int x = 0; x < cantidadColumnas; x++) {
-                    //Nombre tabla
-                    Tmov.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-                }
-
-                while (rs.next()) {
-                    Object[] filas = new Object[cantidadColumnas];
-                    for (int i = 0; i < cantidadColumnas; i++) {
-                        filas[i] = rs.getObject(i + 1);
-                    }
-                    modelo.addRow(filas);
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar registros de actas administrativas: " + error_sharenom.getMessage());
-
-            }
         }
 
     }
@@ -617,19 +155,8 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        Tmov = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         TDM = new javax.swing.JComboBox<>();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        share = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        SHAP = new javax.swing.JTextField();
-        SHAM = new javax.swing.JTextField();
-        SHNAME = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         NExp = new javax.swing.JTextField();
         APgen = new javax.swing.JTextField();
@@ -672,7 +199,13 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         Obs = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        Año = new com.toedter.calendar.JDateChooser();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Tmov = new javax.swing.JTable();
+        jLabel24 = new javax.swing.JLabel();
+        FDI = new com.toedter.calendar.JDateChooser();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
@@ -692,19 +225,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        Tmov.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane3.setViewportView(Tmov);
-
         jLabel1.setText("Tipo de modificacion:");
 
         TDM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Alta", "Baja", "Reingreso", "Cambio de salario", "Cambio de zona y/o Servicio", "Aguinaldo", "Vacaciones", "PTU", "Acta administrativa" }));
@@ -713,50 +233,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 TDMItemStateChanged(evt);
             }
         });
-
-        share.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        share.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                shareMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(share);
-
-        jLabel3.setText("Buscar empleado:");
-
-        SHAP.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SHAPKeyReleased(evt);
-            }
-        });
-
-        SHAM.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SHAMKeyReleased(evt);
-            }
-        });
-
-        SHNAME.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SHNAMEKeyReleased(evt);
-            }
-        });
-
-        jLabel4.setText("Apellido P:");
-
-        jLabel5.setText("Apellido M:");
-
-        jLabel6.setText("Nombre(s)");
 
         jLabel7.setText("# Expediente");
 
@@ -859,15 +335,53 @@ public final class Expedientes_4 extends javax.swing.JFrame {
 
         jLabel23.setText("Año");
 
+        Año.setDateFormatString("yyyy");
+
+        Tmov.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane3.setViewportView(Tmov);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 4089, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jScrollPane6.setViewportView(jPanel1);
+
+        jLabel24.setText("Fecha ingreso:");
+
+        FDI.setEnabled(false);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(46, 46, 46)
@@ -913,14 +427,16 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addComponent(jLabel8)
                                                     .addComponent(jLabel16)))
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel18))
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                                                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jLabel18)
+                                                    .addComponent(jLabel24)))))
                                     .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -935,14 +451,14 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                                         .addComponent(jLabel11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(PeriodoFin, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(jPanel3Layout.createSequentialGroup()
                                                 .addComponent(Aguinaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(82, 82, 82)
                                                 .addComponent(jLabel23)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(Año, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
                                                 .addComponent(PTU, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -952,27 +468,9 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                                                     .addComponent(jLabel20)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addComponent(fechacta, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                                        .addGap(22, 22, 22)
-                                                        .addComponent(jLabel4)
-                                                        .addGap(43, 43, 43)
-                                                        .addComponent(jLabel5)
-                                                        .addGap(46, 46, 46)
-                                                        .addComponent(jLabel6))
-                                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                                        .addComponent(SHAP, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(SHAM, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(SHNAME, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(FDI, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(248, 248, 248)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -1003,31 +501,19 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                                     .addComponent(Actadm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel20))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel44)
-                                    .addComponent(AMgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel44)
+                                        .addComponent(AMgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel24))
+                                    .addComponent(FDI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel62)
                                     .addComponent(NameGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9)))
                             .addComponent(fechacta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(SHAP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SHAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SHNAME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)))
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1066,8 +552,8 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     .addComponent(TDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ADDreg))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(jPanel3);
@@ -1205,19 +691,32 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_zonaItemStateChanged
 
-    private void SHAPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SHAPKeyReleased
-        shareemp();
-    }//GEN-LAST:event_SHAPKeyReleased
-
-    private void SHAMKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SHAMKeyReleased
-        shareemp();
-    }//GEN-LAST:event_SHAMKeyReleased
-
-    private void SHNAMEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SHNAMEKeyReleased
-        shareemp();
-    }//GEN-LAST:event_SHNAMEKeyReleased
-
     private void TDMItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TDMItemStateChanged
+        NExp.setText("0");
+        APgen.setText("");
+        AMgen.setText("");
+        NameGen.setText("");
+        FBaja.setText("");
+        TDB.setSelectedIndex(0);
+        FI.setText("");
+        Sueldo.setText("0");
+        Bono.setText("0");
+        Aguinaldo.setText("");
+        zona.setSelectedIndex(0);
+        Serv.setSelectedIndex(0);
+        NExp.setText("0");
+        APgen.setText("");
+        AMgen.setText("");
+        NameGen.setText("");
+        Vacaciones.setText("");
+        Obs.setText("");
+        PeriodoIni.setDate(null);
+        PeriodoFin.setDate(null);
+        PTU.setText("");
+        Actadm.setText("");
+        fechacta.setDate(null);
+        FDI.setDate(null);
+
         if (TDM.getSelectedIndex() == 0) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
@@ -1241,6 +740,30 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             Obs.setEnabled(false);
         }
         if (TDM.getSelectedIndex() == 1) {
+            NExp.setEnabled(true);
+            APgen.setEnabled(true);
+            AMgen.setEnabled(true);
+            NameGen.setEnabled(true);
+            Sueldo.setEnabled(true);
+            Bono.setEnabled(true);
+            FDI.setEnabled(true);
+            FI.setEnabled(false);
+            Aguinaldo.setEnabled(false);
+            PTU.setEnabled(false);
+            Actadm.setEnabled(false);
+            fechacta.setEnabled(false);
+            Vacaciones.setEnabled(false);
+            PeriodoIni.setEnabled(false);
+            PeriodoFin.setEnabled(false);
+            FBaja.setEnabled(false);
+            TDB.setEnabled(false);
+            zona.setEnabled(false);
+            Serv.setEnabled(false);
+            ADDreg.setEnabled(true);
+            Obs.setEnabled(false);
+
+        }
+        if (TDM.getSelectedIndex() == 2) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
@@ -1261,9 +784,9 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             Serv.setEnabled(false);
             ADDreg.setEnabled(true);
             Obs.setEnabled(false);
-
+            FDI.setEnabled(false);
         }
-        if (TDM.getSelectedIndex() == 2) {
+        if (TDM.getSelectedIndex() == 3) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
@@ -1284,9 +807,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             Serv.setEnabled(false);
             ADDreg.setEnabled(true);
             Obs.setEnabled(false);
+            FDI.setEnabled(false);
 
         }
-        if (TDM.getSelectedIndex() == 3) {
+        if (TDM.getSelectedIndex() == 4) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
@@ -1307,8 +831,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             Serv.setEnabled(false);
             ADDreg.setEnabled(true);
             Obs.setEnabled(false);
+            FDI.setEnabled(false);
+
         }
-        if (TDM.getSelectedIndex() == 4) {
+        if (TDM.getSelectedIndex() == 5) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
@@ -1329,8 +855,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             Serv.setEnabled(true);
             ADDreg.setEnabled(true);
             Obs.setEnabled(false);
+            FDI.setEnabled(false);
+
         }
-        if (TDM.getSelectedIndex() == 5) {
+        if (TDM.getSelectedIndex() == 6) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
@@ -1351,8 +879,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             Serv.setEnabled(false);
             ADDreg.setEnabled(true);
             Obs.setEnabled(false);
+            FDI.setEnabled(false);
+
         }
-        if (TDM.getSelectedIndex() == 6) {
+        if (TDM.getSelectedIndex() == 7) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
@@ -1373,8 +903,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             zona.setEnabled(false);
             Serv.setEnabled(false);
             ADDreg.setEnabled(true);
+            FDI.setEnabled(false);
+
         }
-        if (TDM.getSelectedIndex() == 7) {
+        if (TDM.getSelectedIndex() == 8) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
@@ -1395,8 +927,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             Serv.setEnabled(false);
             ADDreg.setEnabled(true);
             Obs.setEnabled(false);
+            FDI.setEnabled(false);
+
         }
-        if (TDM.getSelectedIndex() == 8) {
+        if (TDM.getSelectedIndex() == 9) {
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
@@ -1417,304 +951,92 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             Serv.setEnabled(false);
             ADDreg.setEnabled(true);
             Obs.setEnabled(false);
+            FDI.setEnabled(false);
+
         }
         MDMov();
     }//GEN-LAST:event_TDMItemStateChanged
 
     private void ADDregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDregActionPerformed
+        if (((JTextField) Año.getDateEditor().getUiComponent()).getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Seleccione el año");
 
-        if (TDM.getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(null, "Selecciona tipo de movimiento");
-        }
-        if (TDM.getSelectedIndex() == 1) {
-            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "INSERT INTO `rh.empleados.movimientos.bajas` (`#registro`,"
-                    + " `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Fecha baja`,"
-                    + " `tipo de baja`, `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setString(1, NExp.getText());
-                pst.setString(2, APgen.getText());
-                pst.setString(3, AMgen.getText());
-                pst.setString(4, NameGen.getText());
-                pst.setString(5, FBaja.getText());
-                pst.setString(6, TDB.getSelectedItem().toString());
-                pst.setString(7, dtf3.format(LocalDateTime.now()));
-                pst.setString(8, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Baja agregada.");
-                MDMov();
-
-                NExp.setText("0");
-                APgen.setText("");
-                AMgen.setText("");
-                NameGen.setText("");
-                FBaja.setText("");
-                TDB.setSelectedIndex(0);
-
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar baja: \n" + e.getMessage());
+        } else {
+            if (TDM.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(null, "Selecciona tipo de movimiento");
             }
-        }
+            if (TDM.getSelectedIndex() >= 1) {
+                DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
+                String SQL = "INSERT INTO `rh.empleados.movimientos` (`#registro`, `tipo de registro`, `Año`,"
+                        + " `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Sueldo`,"
+                        + " `bono`, `Fecha de ingreso`, `Zona`, `Servicio`, `Aguinaldo`, `PTU`, `Vacaciones`,"
+                        + " `Periodoini`, `periodofin`, `observaciones`, `reingreso`, `baja`, `tipo de baja`,"
+                        + " `Acta administrativa`, `Fecha actaadm`, `fecha de registro`, `registrado por`)"
+                        + " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-        if (TDM.getSelectedIndex() == 2) {
-            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "INSERT INTO `rh.empleados.movimientos.reingreso` (`#registro`, `#Empleado`,"
-                    + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Fecha re-ingreso`,"
-                    + " `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+                try {
+                    PreparedStatement pst = con.prepareStatement(SQL);
+                    pst.setString(1, TDM.getSelectedItem().toString());
+                    pst.setString(2, ((JTextField) Año.getDateEditor().getUiComponent()).getText());
+                    pst.setString(3, NExp.getText());
+                    pst.setString(4, APgen.getText());
+                    pst.setString(5, AMgen.getText());
+                    pst.setString(6, NameGen.getText());
+                    pst.setString(7, Sueldo.getText());
+                    pst.setString(8, Bono.getText());
+                    pst.setString(9, ((JTextField) FDI.getDateEditor().getUiComponent()).getText());
+                    pst.setString(10, zona.getSelectedItem().toString());
+                    pst.setString(11, Serv.getSelectedItem().toString());
+                    pst.setString(12, Aguinaldo.getText());
+                    pst.setString(13, PTU.getText());
+                    pst.setString(14, Vacaciones.getText());
+                    pst.setString(15, ((JTextField) PeriodoIni.getDateEditor().getUiComponent()).getText());
+                    pst.setString(16, ((JTextField) PeriodoFin.getDateEditor().getUiComponent()).getText());
+                    pst.setString(17, Obs.getText());
+                    pst.setString(18, FBaja.getText());
+                    pst.setString(19, TDB.getSelectedItem().toString());
+                    pst.setString(20, FI.getText());
+                    pst.setString(21, Actadm.getText());
+                    pst.setString(22, ((JTextField) fechacta.getDateEditor().getUiComponent()).getText());
+                    pst.setString(23, dtf3.format(LocalDateTime.now()));
+                    pst.setString(24, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
 
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setString(1, NExp.getText());
-                pst.setString(2, APgen.getText());
-                pst.setString(3, AMgen.getText());
-                pst.setString(4, NameGen.getText());
-                pst.setString(5, FI.getText());
-                pst.setString(6, dtf3.format(LocalDateTime.now()));
-                pst.setString(7, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(null, "registro agregado.");
+                    MDMov();
 
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "reingreso agregada.");
-                MDMov();
+                    NExp.setText("0");
+                    APgen.setText("");
+                    AMgen.setText("");
+                    NameGen.setText("");
+                    FBaja.setText("");
+                    TDB.setSelectedIndex(0);
+                    FI.setText("");
+                    Sueldo.setText("0");
+                    Bono.setText("0");
+                    Aguinaldo.setText("");
+                    zona.setSelectedIndex(0);
+                    Serv.setSelectedIndex(0);
+                    NExp.setText("0");
+                    APgen.setText("");
+                    AMgen.setText("");
+                    NameGen.setText("");
+                    Vacaciones.setText("");
+                    Obs.setText("");
+                    PeriodoIni.setDate(null);
+                    PeriodoFin.setDate(null);
+                    FDI.setDate(null);
+                    PTU.setText("");
+                    Actadm.setText("");
+                    fechacta.setDate(null);
 
-                NExp.setText("0");
-                APgen.setText("");
-                AMgen.setText("");
-                NameGen.setText("");
-                FI.setText("");
-
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar reingreso: \n" + e.getMessage());
+                } catch (HeadlessException | SQLException e) {
+                    JOptionPane.showMessageDialog(null, "Error al registrar: \n" + e.getMessage());
+                }
             }
 
-        }
-
-        if (TDM.getSelectedIndex() == 3) {
-            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "INSERT INTO `rh.empleados.movimientos.cdsalario` (`#registro`, "
-                    + "`#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Salario`,"
-                    + " `Bono`, `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setString(1, NExp.getText());
-                pst.setString(2, APgen.getText());
-                pst.setString(3, AMgen.getText());
-                pst.setString(4, NameGen.getText());
-                pst.setString(5, Sueldo.getText());
-                pst.setString(6, Bono.getText());
-                pst.setString(7, dtf3.format(LocalDateTime.now()));
-                pst.setString(8, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Registro de salario agregada.");
-                MDMov();
-
-                NExp.setText("0");
-                APgen.setText("");
-                AMgen.setText("");
-                NameGen.setText("");
-                Sueldo.setText("0");
-                Bono.setText("0");
-
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar salario o bono: \n" + e.getMessage());
-            }
-        }
-
-        if (TDM.getSelectedIndex() == 4) {
-            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "INSERT INTO `rh.empleados.movimientos.cdszonyserv` (`#registro`, `#Empleado`, `Apellido P`, `Apellido M`,"
-                    + " `Nombre(s)`, `Zona`, `Servicio`, `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setString(1, NExp.getText());
-                pst.setString(2, APgen.getText());
-                pst.setString(3, AMgen.getText());
-                pst.setString(4, NameGen.getText());
-                pst.setString(5, zona.getSelectedItem().toString());
-                pst.setString(6, Serv.getSelectedItem().toString());
-                pst.setString(7, dtf3.format(LocalDateTime.now()));
-                pst.setString(8, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Cambio de zona y/o servicio agregada.");
-                MDMov();
-
-                NExp.setText("0");
-                APgen.setText("");
-                AMgen.setText("");
-                NameGen.setText("");
-                zona.setSelectedIndex(0);
-                Serv.setSelectedIndex(0);
-
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar sueldo: \n" + e.getMessage());
-            }
-        }
-
-        if (TDM.getSelectedIndex() == 5) {
-            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "INSERT INTO `rh.empleados.movimientos.aguinaldo` (`#registro`,"
-                    + " `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Aguinaldo`, "
-                    + "`fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
-
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setString(1, NExp.getText());
-                pst.setString(2, APgen.getText());
-                pst.setString(3, AMgen.getText());
-                pst.setString(4, NameGen.getText());
-                pst.setString(5, Aguinaldo.getText());
-                pst.setString(6, dtf3.format(LocalDateTime.now()));
-                pst.setString(7, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "aguinaldo agregado.");
-                MDMov();
-
-                NExp.setText("0");
-                APgen.setText("");
-                AMgen.setText("");
-                NameGen.setText("");
-                Aguinaldo.setText("");
-
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar aguinaldo: \n" + e.getMessage());
-            }
-        }
-
-        if (TDM.getSelectedIndex() == 6) {
-            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "INSERT INTO `rh.empleados.movimientos.vacaciones` (`#registro`, "
-                    + "`#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Vacaciones`, "
-                    + "`Fecha inicio`, `Observaciones`, `fecha de registro`, `registrado por`)"
-                    + " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setString(1, NExp.getText());
-                pst.setString(2, APgen.getText());
-                pst.setString(3, AMgen.getText());
-                pst.setString(4, NameGen.getText());
-                pst.setString(5, Vacaciones.getText());
-                pst.setString(6, ((JTextField) PeriodoIni.getDateEditor().getUiComponent()).getText());
-                pst.setString(7, ((JTextField) PeriodoFin.getDateEditor().getUiComponent()).getText());
-                pst.setString(8, Obs.getText());
-                pst.setString(9, dtf3.format(LocalDateTime.now()));
-                pst.setString(10, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "vaciones agregadas.");
-                MDMov();
-
-                NExp.setText("0");
-                APgen.setText("");
-                AMgen.setText("");
-                NameGen.setText("");
-                Vacaciones.setText("");
-                Obs.setText("");
-                PeriodoIni.setDate(null);
-                PeriodoFin.setDate(null);
-
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar vacaciones: \n" + e.getMessage());
-            }
-        }
-
-        if (TDM.getSelectedIndex() == 7) {
-            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "INSERT INTO `rh.empleados.movimientos.ptu` (`#registro`, `#Empleado`, `Apellido P`,"
-                    + " `Apellido M`, `Nombre(s)`, `PTU`, `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
-
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setString(1, NExp.getText());
-                pst.setString(2, APgen.getText());
-                pst.setString(3, AMgen.getText());
-                pst.setString(4, NameGen.getText());
-                pst.setString(5, PTU.getText());
-                pst.setString(6, dtf3.format(LocalDateTime.now()));
-                pst.setString(7, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "ptu agregado.");
-                MDMov();
-
-                NExp.setText("0");
-                APgen.setText("");
-                AMgen.setText("");
-                NameGen.setText("");
-                PTU.setText("");
-
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar ptu: \n" + e.getMessage());
-            }
-        }
-
-        if (TDM.getSelectedIndex() == 8) {
-            DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "INSERT INTO `rh.empleados.movimientos.actaadm` (`#registro`, `#Empleado`, `Apellido P`,"
-                    + " `Apellido M`, `Nombre(s)`, `Actaadm`, `Fecha actaadm`,"
-                    + " `fecha de registro`, `registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setString(1, NExp.getText());
-                pst.setString(2, APgen.getText());
-                pst.setString(3, AMgen.getText());
-                pst.setString(4, NameGen.getText());
-                pst.setString(5, Actadm.getText());
-                pst.setString(6, ((JTextField) fechacta.getDateEditor().getUiComponent()).getText());
-                pst.setString(7, dtf3.format(LocalDateTime.now()));
-                pst.setString(8, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Acta administrativa agregada.");
-                MDMov();
-
-                NExp.setText("0");
-                APgen.setText("");
-                AMgen.setText("");
-                NameGen.setText("");
-                Actadm.setText("");
-                fechacta.setDate(null);
-
-            } catch (HeadlessException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar acta administrativa: \n" + e.getMessage());
-            }
         }
     }//GEN-LAST:event_ADDregActionPerformed
-
-    private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
-        try {
-            int seleccionar = share.getSelectedRow();
-            int id = Integer.parseInt(share.getValueAt(seleccionar, 0).toString());
-            PreparedStatement ps;
-            ResultSet rs;
-            ps = con.prepareStatement("select `# Exp`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Sueldo`, `Bono` FROM `rh.empleados`"
-                    + "where `# Exp` = ?");
-            ps.setInt(1, id);
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                NExp.setText(rs.getString(1));
-                APgen.setText(rs.getString(2));
-                AMgen.setText(rs.getString(3));
-                NameGen.setText(rs.getString(4));
-                Sueldo.setText(rs.getString(5));
-                Bono.setText(rs.getString(6));
-            }
-            ps.isClosed();
-            rs.isClosed();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Expedientes_4.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_shareMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1752,8 +1074,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     private javax.swing.JTextField APgen;
     private javax.swing.JTextField Actadm;
     private javax.swing.JTextField Aguinaldo;
+    private com.toedter.calendar.JDateChooser Año;
     private javax.swing.JTextField Bono;
     private javax.swing.JTextField FBaja;
+    private com.toedter.calendar.JDateChooser FDI;
     private javax.swing.JTextField FI;
     private javax.swing.JPanel Harder1;
     private javax.swing.JLabel Move;
@@ -1763,9 +1087,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     private javax.swing.JTextField PTU;
     private com.toedter.calendar.JDateChooser PeriodoFin;
     private com.toedter.calendar.JDateChooser PeriodoIni;
-    private javax.swing.JTextField SHAM;
-    private javax.swing.JTextField SHAP;
-    private javax.swing.JTextField SHNAME;
     private javax.swing.JComboBox<String> Serv;
     private javax.swing.JTextField Sueldo;
     private javax.swing.JComboBox<String> TDB;
@@ -1774,7 +1095,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     private javax.swing.JTextField Vacaciones;
     private javax.swing.JPanel btnexit;
     private com.toedter.calendar.JDateChooser fechacta;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1791,24 +1111,21 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable share;
     private javax.swing.JLabel txtbtnexit;
     private javax.swing.JComboBox<String> zona;
     // End of variables declaration//GEN-END:variables
