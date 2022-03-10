@@ -438,6 +438,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
 
         jLabel5.setText("Fecha:");
 
+        FechaPTU.setDateFormatString("yyyy");
         FechaPTU.setEnabled(false);
 
         jLabel6.setText("Fecha de cambio:");
