@@ -74,8 +74,8 @@ public class PMiturbide extends javax.swing.JFrame {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.iturbide` WHERE `mes de registro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.iturbide` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Pensiones " + CbxMes.getSelectedItem().toString());
 
@@ -427,6 +427,44 @@ public class PMiturbide extends javax.swing.JFrame {
                     cell.setCellStyle(Contenido);
 
                     i++;
+                }
+                Statement efec = connect.createStatement();
+                ResultSet rsefec = efec.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.iturbide` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                row = spreadsheet.getRow(1);
+                cell = row.createCell(51);
+                cell.setCellValue("Pagadas en Efectivo");
+                cell.setCellStyle(Contenido);
+
+                while (rsefec.next()) {
+                    cell = row.createCell(52);
+                    cell.setCellValue(rsefec.getDouble(1));
+                    cell.setCellStyle(Contenido);
+                }
+                
+                Statement ctalic = connect.createStatement();
+                ResultSet rsctalic = ctalic.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.iturbide` WHERE `CTA lic` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                row = spreadsheet.getRow(2);
+                cell = row.createCell(51);
+                cell.setCellValue("Pagadas en Cuenta lic");
+                cell.setCellStyle(Contenido);
+
+                while (rsctalic.next()) {
+                    cell = row.createCell(52);
+                    cell.setCellValue(rsctalic.getDouble(1));
+                    cell.setCellStyle(Contenido);
+                }
+                
+                Statement ctacon = connect.createStatement();
+                ResultSet rsctacon = ctacon.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.iturbide` WHERE `CTA confort` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                row = spreadsheet.getRow(3);
+                cell = row.createCell(51);
+                cell.setCellValue("Pagadas en Cuenta confort");
+                cell.setCellStyle(Contenido);
+
+                while (rsctacon.next()) {
+                    cell = row.createCell(52);
+                    cell.setCellValue(rsctacon.getDouble(1));
+                    cell.setCellStyle(Contenido);
                 }
 
                 spreadsheet.getPrintSetup();
