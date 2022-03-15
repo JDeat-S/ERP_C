@@ -7,7 +7,7 @@ import Admin.*;
 import Conexion.ConexionSQL;
 import Logicas.*;
 import Logicas.Logica_usuarios;
-import Pensiones.PensionesVP_7;
+import Pensiones.PensionesVPIturbide_7;
 import java.awt.Color;
 import java.sql.*;
 import javax.swing.ImageIcon;
@@ -347,7 +347,7 @@ public class Inicio_1 extends javax.swing.JFrame {
                             }
                             
                             case "4" -> {
-                                PensionesVP_7 Nom = new PensionesVP_7(usr, LP);
+                                PensionesVPIturbide_7 Nom = new PensionesVPIturbide_7(usr, LP);
                                 Nom.setVisible(true);
                                 this.dispose();
                             }

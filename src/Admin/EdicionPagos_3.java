@@ -28,7 +28,7 @@ import Logicas.BDNomQ.Logica_bd_pagosODTQ;
 import Logicas.BDNomQ.Logica_bd_pagosPresQ;
 import Logicas.BDNomS.Logica_bd_pagosCDAS;
 import Logicas.BDNomS.Logica_bd_pagosPresS;
-import Pensiones.PensionesVP_7;
+import Pensiones.PensionesVPIturbide_7;
 import Semanal.Padrones.Padrones;
 import Semanal.Vales.Rvales;
 import Semanal.Vales.VDE;
@@ -3271,7 +3271,7 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-        PensionesVP_7 regr = new PensionesVP_7(usr, LP);
+        PensionesVPIturbide_7 regr = new PensionesVPIturbide_7(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem10ActionPerformed

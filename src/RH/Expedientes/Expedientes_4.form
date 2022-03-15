@@ -115,18 +115,23 @@
                                                           <Component id="Bono" max="32767" attributes="0"/>
                                                           <Component id="TDM" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                           <Group type="102" attributes="0">
-                                                              <EmptySpace max="-2" attributes="0"/>
                                                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace max="-2" attributes="0"/>
                                                               <Component id="FechaSYB" min="-2" pref="150" max="-2" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
-                                                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                                              <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                                  <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
+                                                              </Group>
                                                               <EmptySpace max="-2" attributes="0"/>
-                                                              <Component id="Año" min="-2" pref="95" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="Año" min="-2" pref="95" max="-2" attributes="0"/>
+                                                                  <Component id="FDI" max="32767" attributes="0"/>
+                                                              </Group>
                                                           </Group>
                                                       </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
@@ -152,43 +157,53 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="Vacaciones" min="-2" pref="100" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="PeriodoIni" min="-2" pref="150" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="PeriodoFin" min="-2" pref="150" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FDI" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="Aguinaldo" min="-2" pref="100" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="FDPAGUI" min="-2" pref="150" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="Actadm" min="-2" pref="100" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="fechacta" min="-2" pref="150" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="Vacaciones" min="-2" pref="100" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="PeriodoIni" min="-2" pref="150" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="PeriodoFin" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="Aguinaldo" min="-2" pref="100" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="FDPAGUI" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="PTU" min="-2" pref="100" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="FDAIMSS" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="Actadm" min="-2" pref="100" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="fechacta" min="-2" pref="150" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="PTU" min="-2" pref="100" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="FechaPTU" min="-2" pref="150" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="FechaPTU" min="-2" pref="150" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
+                                                      <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -236,40 +251,48 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="NExp" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="PTU" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="FechaPTU" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="APgen" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Actadm" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="103" groupAlignment="3" attributes="0">
+                                                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="NExp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="PTU" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="FDI" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="FechaPTU" max="32767" attributes="0"/>
+                                                  <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="AMgen" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="FDI" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="NameGen" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="3" attributes="0">
+                                                          <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="APgen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="Actadm" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="3" attributes="0">
+                                                          <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="AMgen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="FDAIMSS" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="3" attributes="0">
+                                                          <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="NameGen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Component id="fechacta" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="fechacta" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -348,17 +371,18 @@
                     <Component class="javax.swing.JComboBox" name="TDM">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="10">
+                          <StringArray count="11">
                             <StringItem index="0" value="."/>
-                            <StringItem index="1" value="Alta imss"/>
-                            <StringItem index="2" value="Baja"/>
-                            <StringItem index="3" value="Reingreso"/>
-                            <StringItem index="4" value="Cambio de salario"/>
-                            <StringItem index="5" value="Cambio de zona y/o Servicio"/>
-                            <StringItem index="6" value="Aguinaldo"/>
-                            <StringItem index="7" value="Vacaciones"/>
-                            <StringItem index="8" value="PTU"/>
-                            <StringItem index="9" value="Acta administrativa"/>
+                            <StringItem index="1" value="Fecha de ingreso"/>
+                            <StringItem index="2" value="Alta imss"/>
+                            <StringItem index="3" value="Baja"/>
+                            <StringItem index="4" value="Reingreso"/>
+                            <StringItem index="5" value="Cambio de salario"/>
+                            <StringItem index="6" value="Cambio de zona y/o Servicio"/>
+                            <StringItem index="7" value="Aguinaldo"/>
+                            <StringItem index="8" value="Vacaciones"/>
+                            <StringItem index="9" value="PTU"/>
+                            <StringItem index="10" value="Acta administrativa"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -634,19 +658,19 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane3" min="-2" pref="4089" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jScrollPane3" pref="5134" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane3" min="-2" pref="219" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jScrollPane3" min="-2" pref="219" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -701,7 +725,10 @@
                         <Property name="text" type="java.lang.String" value="Fecha de alta:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="FDI">
+                    <Component class="javax.swing.JTextField" name="FDAIMSS">
+                      <Properties>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel3">
                       <Properties>
@@ -730,6 +757,7 @@
                     </Component>
                     <Component class="com.toedter.calendar.JDateChooser" name="FechaPTU">
                       <Properties>
+                        <Property name="dateFormatString" type="java.lang.String" value="yyyy"/>
                         <Property name="enabled" type="boolean" value="false"/>
                       </Properties>
                     </Component>
@@ -764,11 +792,45 @@
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/Imagenes/Microsoft-Excel-Logo.png"/>
                         </Property>
+                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                          <Color id="Hand Cursor"/>
+                        </Property>
                       </Properties>
                       <Events>
                         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel25MousePressed"/>
                       </Events>
                     </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel26">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Fecha de ingreso"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="FDI">
+                      <Properties>
+                        <Property name="enabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel27">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Observacioenes"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTextArea" name="OBSPTU">
+                          <Properties>
+                            <Property name="columns" type="int" value="20"/>
+                            <Property name="rows" type="int" value="5"/>
+                            <Property name="enabled" type="boolean" value="false"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
                   </SubComponents>
                 </Container>
               </SubComponents>

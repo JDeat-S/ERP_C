@@ -74,8 +74,8 @@ public class PMptetitla extends javax.swing.JFrame {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.puente titla` WHERE `mes de registro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Pensiones " + CbxMes.getSelectedItem().toString());
 
@@ -119,7 +119,7 @@ public class PMptetitla extends javax.swing.JFrame {
                                 5 //last column (0-based)
                         )
                 );
-                                row = spreadsheet.createRow(1);
+                row = spreadsheet.createRow(1);
                 cell = row.createCell(0);
                 cell.setCellValue("# Registro");
                 cell.setCellStyle(Contenido);
@@ -425,10 +425,48 @@ public class PMptetitla extends javax.swing.JFrame {
                     cell = row.createCell(49);
                     cell.setCellValue(rs.getString(50));
                     cell.setCellStyle(Contenido);
-                    
+
                     i++;
                 }
+                Statement efec = connect.createStatement();
+                ResultSet rsefec = efec.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                row = spreadsheet.getRow(1);
+                cell = row.createCell(51);
+                cell.setCellValue("Pagadas en Efectivo");
+                cell.setCellStyle(Contenido);
 
+                while (rsefec.next()) {
+                    cell = row.createCell(52);
+                    cell.setCellValue(rsefec.getDouble(1));
+                    cell.setCellStyle(Contenido);
+                }
+
+                Statement ctalic = connect.createStatement();
+                ResultSet rsctalic = ctalic.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla` WHERE `CTA lic` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                row = spreadsheet.getRow(2);
+                cell = row.createCell(51);
+                cell.setCellValue("Pagadas en Cuenta lic");
+                cell.setCellStyle(Contenido);
+
+                while (rsctalic.next()) {
+                    cell = row.createCell(52);
+                    cell.setCellValue(rsctalic.getDouble(1));
+                    cell.setCellStyle(Contenido);
+                }
+
+                Statement ctacon = connect.createStatement();
+                ResultSet rsctacon = ctacon.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla` WHERE `CTA confort` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                row = spreadsheet.getRow(3);
+                cell = row.createCell(51);
+                cell.setCellValue("Pagadas en Cuenta confort");
+                cell.setCellStyle(Contenido);
+
+                while (rsctacon.next()) {
+                    cell = row.createCell(52);
+                    cell.setCellValue(rsctacon.getDouble(1));
+                    cell.setCellStyle(Contenido);
+                }
+                
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical

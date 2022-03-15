@@ -1701,6 +1701,10 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
                                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Mespen" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
@@ -1717,7 +1721,11 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel68" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="Mespen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
@@ -2373,6 +2381,35 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="# De padron"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel68">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Mes:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JComboBox" name="Mespen">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="13">
+                            <StringItem index="0" value="."/>
+                            <StringItem index="1" value="Enero"/>
+                            <StringItem index="2" value="Febrero"/>
+                            <StringItem index="3" value="Marzo"/>
+                            <StringItem index="4" value="Abril"/>
+                            <StringItem index="5" value="Mayo"/>
+                            <StringItem index="6" value="Junio"/>
+                            <StringItem index="7" value="Julio"/>
+                            <StringItem index="8" value="Agosto"/>
+                            <StringItem index="9" value="Septiembre"/>
+                            <StringItem index="10" value="Octubre"/>
+                            <StringItem index="11" value="Noviembre"/>
+                            <StringItem index="12" value="Diciembre"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -4932,7 +4969,13 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <Component id="jButton8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="Mespen1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace pref="197" max="32767" attributes="0"/>
                               </Group>
@@ -4966,7 +5009,11 @@
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel69" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Mespen1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -5040,6 +5087,35 @@
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel69">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Mes"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="Mespen1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="13">
+                                <StringItem index="0" value="."/>
+                                <StringItem index="1" value="Enero"/>
+                                <StringItem index="2" value="Febrero"/>
+                                <StringItem index="3" value="Marzo"/>
+                                <StringItem index="4" value="Abril"/>
+                                <StringItem index="5" value="Mayo"/>
+                                <StringItem index="6" value="Junio"/>
+                                <StringItem index="7" value="Julio"/>
+                                <StringItem index="8" value="Agosto"/>
+                                <StringItem index="9" value="Septiembre"/>
+                                <StringItem index="10" value="Octubre"/>
+                                <StringItem index="11" value="Noviembre"/>
+                                <StringItem index="12" value="Diciembre"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -5160,6 +5236,9 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="NPadron10">
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NPadron10KeyReleased"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel51">
                           <Properties>

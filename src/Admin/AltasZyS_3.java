@@ -17,7 +17,7 @@ import ColoresT.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
 import Logicas.*;
-import Pensiones.PensionesVP_7;
+import Pensiones.PensionesVPIturbide_7;
 import RH.*;
 import RH.Depositos.DepositosQ_4;
 import RH.Depositos.DepositosQ_SIMSS_4;
@@ -2613,7 +2613,7 @@ public final class AltasZyS_3 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        PensionesVP_7 regr = new PensionesVP_7(usr, LP);
+        PensionesVPIturbide_7 regr = new PensionesVPIturbide_7(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
