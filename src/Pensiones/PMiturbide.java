@@ -74,7 +74,7 @@ public class PMiturbide extends javax.swing.JFrame {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.iturbide` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.iturbide." + CbxMes.getSelectedItem().toString() + "` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
             try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Pensiones " + CbxMes.getSelectedItem().toString());

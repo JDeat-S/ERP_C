@@ -74,7 +74,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.tehuantepec` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.tehuantepec." + CbxMes.getSelectedItem().toString() + "` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Pensiones " + CbxMes.getSelectedItem().toString());
