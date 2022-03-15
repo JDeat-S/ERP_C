@@ -5222,6 +5222,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         NPadron9 = new javax.swing.JTextField();
         NPadron = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        Mespen = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -5454,6 +5456,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Otro10 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jLabel69 = new javax.swing.JLabel();
+        Mespen1 = new javax.swing.JComboBox<>();
         jScrollPane17 = new javax.swing.JScrollPane();
         jPanel13 = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
@@ -6601,6 +6605,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
         jLabel26.setText("# De padron");
 
+        jLabel68.setText("Mes:");
+
+        Mespen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
         Panel2.setLayout(Panel2Layout);
         Panel2Layout.setHorizontalGroup(
@@ -6669,7 +6677,11 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                         .addComponent(Menos17))))))
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addGap(207, 207, 207)
-                        .addComponent(jLabel13)))
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel68)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Mespen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Panel2Layout.setVerticalGroup(
@@ -6681,7 +6693,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                         .addComponent(jLabel15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel13)
+                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel68)
+                            .addComponent(Mespen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -8441,6 +8456,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             }
         });
 
+        jLabel69.setText("Mes");
+
+        Mespen1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -8465,7 +8484,12 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                                 .addComponent(Importe40, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3))))
-                    .addComponent(jButton8))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel69)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Mespen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(197, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -8490,7 +8514,10 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                         .addComponent(Otro10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton8)
+                    .addComponent(jLabel69)
+                    .addComponent(Mespen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -8513,6 +8540,12 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         Fecha41.setDateFormatString("dd MMM yyyy ");
 
         jLabel50.setText("# De padron");
+
+        NPadron10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron10KeyReleased(evt);
+            }
+        });
 
         jLabel51.setText("Importe");
 
@@ -12713,7 +12746,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`  "
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12736,7 +12769,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)` "
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron1.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron1.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12759,7 +12792,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron2.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron2.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12782,7 +12815,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron3.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron3.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12805,7 +12838,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron4.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron4.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12828,7 +12861,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron5.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron5.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12851,7 +12884,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron6.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron6.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12874,7 +12907,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron7.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron7.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12897,7 +12930,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron8.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron8.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12920,7 +12953,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.tehuantepec` where `#padron` LIKE '%" + NPadron9.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.tehuantepec." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron9.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12995,6 +13028,28 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem27ActionPerformed
+
+    private void NPadron10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron10KeyReleased
+         try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`  "
+                    + "FROM `pensiones.iturbide." + Mespen1.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron10.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio21.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe41.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones2();
+    }//GEN-LAST:event_NPadron10KeyReleased
 
     /**
      * @param args the command line arguments
@@ -13246,6 +13301,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JButton Menos9;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JRadioButton Mes;
+    private javax.swing.JComboBox<String> Mespen;
+    private javax.swing.JComboBox<String> Mespen1;
     private javax.swing.JTextField NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
@@ -13421,6 +13478,8 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

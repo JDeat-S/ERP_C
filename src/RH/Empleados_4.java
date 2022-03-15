@@ -2025,7 +2025,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         });
 
         mod1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        mod1.setText("Historial de empelado");
+        mod1.setText("Empelado");
         mod1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mod1ActionPerformed(evt);

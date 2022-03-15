@@ -81,7 +81,8 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
                     + " `Nombre(s)`, `Direccion`, `Tel Casa`, `Tel Oficina`, `Celular`, "
                     + "`marca 1`, `modelo 1`, `Placas 1`, `Color 1`, `marca 2`, `modelo 2`,"
                     + " `Placas 2`, `Color 2`, `marca 3`, `modelo 3`, `Placas 3`, `Color 3`, "
-                    + " `ClaseDA`, `Tdpension` FROM `pensiones." + Est.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NF.getText() + "%'");
+                    + " `ClaseDA`, `Tdpension` FROM `pensiones." + Est.getSelectedItem().toString() +
+                    "." + Mes.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NF.getText() + "%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -319,6 +320,8 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
         txtbtngen = new javax.swing.JLabel();
         Est = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Mes = new javax.swing.JComboBox<>();
         Harder1 = new javax.swing.JPanel();
         Move = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -405,12 +408,22 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
 
         jLabel1.setText("Estacionamiento");
 
+        jLabel2.setText("Mes");
+
+        Mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
         javax.swing.GroupLayout btngenLayout = new javax.swing.GroupLayout(btngen);
         btngen.setLayout(btngenLayout);
         btngenLayout.setHorizontalGroup(
             btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btngenLayout.createSequentialGroup()
-                .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 974, Short.MAX_VALUE)
+                .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(btngenLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -423,13 +436,17 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
                 .addContainerGap()
                 .addGroup(btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(btngenLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 14, Short.MAX_VALUE))
-                    .addGroup(btngenLayout.createSequentialGroup()
                         .addComponent(txtbtngen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(btngenLayout.createSequentialGroup()
+                        .addGroup(btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(btngenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Est, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 14, Short.MAX_VALUE))))
         );
 
         getContentPane().add(btngen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 720, 1110, 70));
@@ -849,6 +866,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     private javax.swing.JTextField Calle;
     private javax.swing.JComboBox<String> Est;
     private javax.swing.JPanel Harder1;
+    private javax.swing.JComboBox<String> Mes;
     private javax.swing.JLabel Move;
     private javax.swing.JTextField NF;
     private javax.swing.JTextField Name;
@@ -870,6 +888,7 @@ public final class Padrones extends javax.swing.JFrame implements Printable {
     private javax.swing.JCheckBox factura;
     private javax.swing.JTextField interior;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

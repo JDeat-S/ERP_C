@@ -800,7 +800,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt = falt - Double.parseDouble(Importe10.getText());
         double tpag = TPAGADO + Double.parseDouble(Importe10.getText());
@@ -855,7 +855,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt1 = falt1 - Double.parseDouble(Importe11.getText());
         double tpag1 = TPAGADO1 + Double.parseDouble(Importe11.getText());
@@ -909,7 +909,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt2 = falt2 - Double.parseDouble(Importe12.getText());
         double tpag2 = TPAGADO2 + Double.parseDouble(Importe12.getText());
@@ -963,7 +963,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt3 = falt3 - Double.parseDouble(Importe13.getText());
         double tpag3 = TPAGADO3 + Double.parseDouble(Importe13.getText());
@@ -1017,7 +1017,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt4 = falt4 - Double.parseDouble(Importe14.getText());
         double tpag4 = TPAGADO4 + Double.parseDouble(Importe14.getText());
@@ -1071,7 +1071,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt5 = falt5 - Double.parseDouble(Importe15.getText());
         double tpag5 = TPAGADO5 + Double.parseDouble(Importe15.getText());
@@ -1125,7 +1125,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt6 = falt6 - Double.parseDouble(Importe16.getText());
         double tpag6 = TPAGADO6 + Double.parseDouble(Importe16.getText());
@@ -1179,7 +1179,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt7 = falt7 - Double.parseDouble(Importe17.getText());
         double tpag7 = TPAGADO7 + Double.parseDouble(Importe17.getText());
@@ -1233,7 +1233,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt8 = falt8 - Double.parseDouble(Importe18.getText());
         double tpag8 = TPAGADO8 + Double.parseDouble(Importe18.getText());
@@ -1288,7 +1288,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
         tfalt9 = falt9 - Double.parseDouble(Importe19.getText());
         double tpag9 = TPAGADO9 + Double.parseDouble(Importe19.getText());
@@ -5212,6 +5212,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         NPadron9 = new javax.swing.JTextField();
         NPadron = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        Mespen = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -5456,6 +5458,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jLabel52 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jLabel69 = new javax.swing.JLabel();
+        Mespen1 = new javax.swing.JComboBox<>();
         jScrollPane18 = new javax.swing.JScrollPane();
         jPanel14 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
@@ -6591,6 +6595,10 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel26.setText("# De padron");
 
+        jLabel68.setText("Mes:");
+
+        Mespen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
         Panel2.setLayout(Panel2Layout);
         Panel2Layout.setHorizontalGroup(
@@ -6659,7 +6667,11 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                         .addComponent(Menos17))))))
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addGap(207, 207, 207)
-                        .addComponent(jLabel13)))
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel68)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Mespen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Panel2Layout.setVerticalGroup(
@@ -6671,7 +6683,10 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(jLabel15))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel13)
+                        .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel68)
+                            .addComponent(Mespen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -8504,6 +8519,12 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         jLabel50.setText("# De padron");
 
+        NPadron10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                NPadron10KeyReleased(evt);
+            }
+        });
+
         jLabel51.setText("Importe");
 
         jLabel52.setText("Servicio");
@@ -8521,6 +8542,10 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                 jButton9ActionPerformed(evt);
             }
         });
+
+        jLabel69.setText("Mes:");
+
+        Mespen1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -8548,7 +8573,12 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                 .addComponent(Importe41, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton5))))
-                    .addComponent(jButton9))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(jButton9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel69)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Mespen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(174, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -8575,7 +8605,10 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                         .addComponent(NPadron10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton9)
+                    .addComponent(jLabel69)
+                    .addComponent(Mespen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -11900,7 +11933,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        Rvales regr = new Rvales(usr, LP);
+        PT_4 regr = new PT_4(usr, LP);
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
@@ -12702,7 +12735,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`  "
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12725,7 +12758,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)` "
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron1.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron1.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12736,7 +12769,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12748,7 +12781,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron2.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron2.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12759,7 +12792,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12771,7 +12804,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron3.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron3.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12782,7 +12815,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12794,7 +12827,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron4.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron4.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12805,7 +12838,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12817,7 +12850,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron5.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron5.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12828,7 +12861,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12840,7 +12873,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron6.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron6.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12851,7 +12884,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12863,7 +12896,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron7.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron7.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12874,7 +12907,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12886,7 +12919,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron8.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron8.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12897,7 +12930,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12909,7 +12942,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`"
-                    + "FROM `pensiones.puente titla` where `#padron` LIKE '%" + NPadron9.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron9.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -12920,7 +12953,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             rs.isClosed();
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rvales.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Operaciones();
@@ -12984,6 +13017,28 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem27ActionPerformed
+
+    private void NPadron10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NPadron10KeyReleased
+       try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`  "
+                    + "FROM `pensiones.iturbide." + Mespen1.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron10.getText() + "%' AND `Status` LIKE '%Debe%'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Servicio21.setText(rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+                Importe41.setText(rs.getString(1));
+            }
+            ps.isClosed();
+            rs.isClosed();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(PT_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Operaciones2();
+    }//GEN-LAST:event_NPadron10KeyReleased
 
     /**
      * @param args the command line arguments
@@ -13251,6 +13306,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton Menos9;
     private javax.swing.JMenu Menuadm;
     private javax.swing.JRadioButton Mes;
+    private javax.swing.JComboBox<String> Mespen;
+    private javax.swing.JComboBox<String> Mespen1;
     private javax.swing.JTextField NDS;
     private javax.swing.JTextField NPadron;
     private javax.swing.JTextField NPadron1;
@@ -13426,6 +13483,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
