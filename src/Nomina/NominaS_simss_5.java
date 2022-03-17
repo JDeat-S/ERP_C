@@ -192,10 +192,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         LabelBSP.setVisible(false);
         LabelSZP.setVisible(false);
         LabelNDFP.setVisible(false);
-        Filtro1.setVisible(false);
-        BNameNom.setVisible(false);
-        BAPNom.setVisible(false);
-        BAMNom.setVisible(false);
         FApT.setVisible(false);
         FAmT.setVisible(false);
         BAppag.setVisible(false);
@@ -382,14 +378,9 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         FiltroNDF7.setVisible(false);
         LabelBNDF7.setVisible(false);
         //</editor-fold>
-        shareN();
-        sharepresnom();
         FunMD();
         setIconImage(new ImageIcon(NominaS_simss_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sumaDep();
-        sharecdanom();
-        sharepresnom();
-        shareODTnom();
     }
 
     public NominaS_simss_5(Logica_usuarios usr, Logica_permisos LP) {
@@ -510,10 +501,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         LabelBSP.setVisible(false);
         LabelSZP.setVisible(false);
         LabelNDFP.setVisible(false);
-        Filtro1.setVisible(false);
-        BNameNom.setVisible(false);
-        BAPNom.setVisible(false);
-        BAMNom.setVisible(false);
         FApT.setVisible(false);
         FAmT.setVisible(false);
         BAppag.setVisible(false);
@@ -700,14 +687,9 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         FiltroNDF7.setVisible(false);
         LabelBNDF7.setVisible(false);
         //</editor-fold>
-        shareN();
-        sharepresnom();
         FunMD();
         setIconImage(new ImageIcon(NominaS_simss_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
         sumaDep();
-        sharecdanom();
-        sharepresnom();
-        shareODTnom();
         setTitle("Nomina Semanal General. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
@@ -860,17 +842,9 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
         Bono1 = new javax.swing.JTextField();
-        BAPNom = new javax.swing.JTextField();
         pd = new javax.swing.JTextField();
-        BAMNom = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        FiltrosNom = new javax.swing.JComboBox<>();
-        jLabel28 = new javax.swing.JLabel();
         CS = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        share = new javax.swing.JTable();
-        Filtro1 = new javax.swing.JLabel();
-        BNameNom = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         PH = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
@@ -937,17 +911,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         DPF = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         DI = new javax.swing.JTextField();
-        jScrollPane24 = new javax.swing.JScrollPane();
-        SHPresnom = new javax.swing.JTable();
         jLabel144 = new javax.swing.JLabel();
-        jScrollPane25 = new javax.swing.JScrollPane();
-        SHCDAnom = new javax.swing.JTable();
         cda = new javax.swing.JTextField();
         jLabel263 = new javax.swing.JLabel();
         jLabel145 = new javax.swing.JLabel();
         jLabel146 = new javax.swing.JLabel();
-        jScrollPane26 = new javax.swing.JScrollPane();
-        SHODTnom = new javax.swing.JTable();
         jLabel264 = new javax.swing.JLabel();
         Odtp = new javax.swing.JTextField();
         jLabel130 = new javax.swing.JLabel();
@@ -986,16 +954,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         Modm = new javax.swing.JButton();
         deposito = new javax.swing.JTextField();
         jPanel22 = new javax.swing.JPanel();
-        jLabel50 = new javax.swing.JLabel();
-        jLabel91 = new javax.swing.JLabel();
-        jLabel127 = new javax.swing.JLabel();
-        jLabel155 = new javax.swing.JLabel();
-        jLabel157 = new javax.swing.JLabel();
-        jLabel160 = new javax.swing.JLabel();
-        jLabel168 = new javax.swing.JLabel();
-        jLabel169 = new javax.swing.JLabel();
-        jLabel170 = new javax.swing.JLabel();
-        jLabel171 = new javax.swing.JLabel();
         Pbs = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jLabel89 = new javax.swing.JLabel();
@@ -1028,6 +986,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         jLabel51 = new javax.swing.JLabel();
         jScrollPane27 = new javax.swing.JScrollPane();
         obs = new javax.swing.JTextArea();
+        jLabel127 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel171 = new javax.swing.JLabel();
+        jLabel170 = new javax.swing.JLabel();
+        jLabel169 = new javax.swing.JLabel();
+        jLabel168 = new javax.swing.JLabel();
+        jLabel160 = new javax.swing.JLabel();
+        jLabel157 = new javax.swing.JLabel();
+        jLabel155 = new javax.swing.JLabel();
         NomDetallada = new javax.swing.JScrollPane();
         PestanañasND = new javax.swing.JTabbedPane();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -1744,6 +1712,12 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jLabel27.setText("Nombres(s):");
 
+        name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nameKeyReleased(evt);
+            }
+        });
+
         jLabel54.setText("# Empleado");
 
         NE.setText("0");
@@ -1882,62 +1856,15 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        BAPNom.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BAPNomKeyReleased(evt);
-            }
-        });
-
         pd.setText("0");
 
-        BAMNom.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BAMNomKeyReleased(evt);
-            }
-        });
-
         jLabel26.setText("Por dia:");
-
-        FiltrosNom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
-        FiltrosNom.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FiltrosNomItemStateChanged(evt);
-            }
-        });
-
-        jLabel28.setText("Filtrar por:");
 
         CS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
         CS.setText("Cerrar sesion");
         CS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CSActionPerformed(evt);
-            }
-        });
-
-        share.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
-            }
-        ));
-        share.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                shareMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(share);
-
-        Filtro1.setText("Buscar empleado:");
-
-        BNameNom.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BNameNomKeyReleased(evt);
             }
         });
 
@@ -2310,44 +2237,8 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
         });
 
-        SHPresnom.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        SHPresnom.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SHPresnomMouseClicked(evt);
-            }
-        });
-        jScrollPane24.setViewportView(SHPresnom);
-
         jLabel144.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel144.setText("Prestamos:");
-
-        SHCDAnom.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        SHCDAnom.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SHCDAnomMouseClicked(evt);
-            }
-        });
-        jScrollPane25.setViewportView(SHCDAnom);
 
         cda.setText("0");
         cda.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2363,24 +2254,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         jLabel146.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel146.setText("Orden de Taller:");
-
-        SHODTnom.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        SHODTnom.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SHODTnomMouseClicked(evt);
-            }
-        });
-        jScrollPane26.setViewportView(SHODTnom);
 
         jLabel264.setText("Orden de taller:");
 
@@ -2471,6 +2344,91 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel262)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(F)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel137)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DPF))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel266)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel267)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel45)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel132)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NCDANom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel263)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel130)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(QAcdanom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel139)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TACDANOM, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel143)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel149)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NSODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel142)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PagODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel147)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PenODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel264)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel131)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NumPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel148)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NSprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel140)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pagadoprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel141)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pendienteprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel265)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(69, Short.MAX_VALUE))
+            .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
                         .addGap(257, 257, 257)
@@ -2484,97 +2442,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                             .addComponent(jLabel144)
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
-                                .addComponent(jLabel134))))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane26)
-                            .addComponent(jScrollPane24)
-                            .addComponent(jScrollPane25, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(jLabel262)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(F)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel137)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DPF))
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addComponent(jLabel24)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel266)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel267)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel45)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(jLabel132)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NCDANom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel263)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel130)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(QAcdanom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel139)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TACDANOM, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(jLabel143)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel149)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NSODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel142)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PagODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel147)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PenODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel264)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel11Layout.createSequentialGroup()
-                                        .addComponent(jLabel131)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NumPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel148)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NSprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel140)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Pagadoprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel141)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Pendienteprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel265)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 63, Short.MAX_VALUE)))))
+                                .addComponent(jLabel134)))))
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -2601,8 +2469,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel144)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel265)
@@ -2619,8 +2485,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel145)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel263)
                     .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2632,8 +2496,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                     .addComponent(TACDANOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel146)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2705,27 +2567,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         );
 
         jPanel22.setBackground(new java.awt.Color(204, 255, 255));
-
-        jLabel50.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel50.setText("Dias festivos.");
-
-        jLabel91.setText("- 1o. de enero.");
-
-        jLabel127.setText("- El primer lunes de febrero en conmemoración del 5 de febrero");
-
-        jLabel155.setText("- El tercer lunes de marzo en conmemoración del 21 de marzo");
-
-        jLabel157.setText("- 1o. de mayo");
-
-        jLabel160.setText("- 16 de septiembre");
-
-        jLabel168.setText("- El tercer lunes de noviembre en conmemoración del 20 de noviembre;");
-
-        jLabel169.setText("- El 1o. de diciembre de cada seis años, cuando corresponda a la transmisión del Poder Ejecutivo Federal");
-
-        jLabel170.setText("- 25 de diciembre");
-
-        jLabel171.setText("- El que determinen las leyes federales y locales electorales, en el caso de elecciones ordinarias, para efectuar la jornada electoral");
 
         Pbs.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -2962,66 +2803,14 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel160))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(jLabel50))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel91))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel127))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel169))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel157))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel155))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel168))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel170))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel171))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Pbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Pbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(457, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addComponent(Pbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel50)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel91)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel127)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel155)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel157)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel160)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel168)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel169)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel170)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel171)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3031,6 +2820,27 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         obs.setLineWrap(true);
         obs.setRows(5);
         jScrollPane27.setViewportView(obs);
+
+        jLabel127.setText("- El primer lunes de febrero en conmemoración del 5 de febrero");
+
+        jLabel91.setText("- 1o. de enero.");
+
+        jLabel50.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel50.setText("Dias festivos.");
+
+        jLabel171.setText("- El que determinen las leyes federales y locales electorales, en el caso de elecciones ordinarias, para efectuar la jornada electoral");
+
+        jLabel170.setText("- 25 de diciembre");
+
+        jLabel169.setText("- El 1o. de diciembre de cada seis años, cuando corresponda a la transmisión del Poder Ejecutivo Federal");
+
+        jLabel168.setText("- El tercer lunes de noviembre en conmemoración del 20 de noviembre;");
+
+        jLabel160.setText("- 16 de septiembre");
+
+        jLabel157.setText("- 1o. de mayo");
+
+        jLabel155.setText("- El tercer lunes de marzo en conmemoración del 21 de marzo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -3047,34 +2857,15 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane2)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel19)
+                                            .addComponent(jLabel26))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel26)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel19)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Clean))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel28)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(FiltrosNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Filtro1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(BNameNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(BAPNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(118, 118, 118)
-                                                .addComponent(CS)))
-                                        .addGap(0, 0, Short.MAX_VALUE))))
+                                            .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(Clean)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -3090,42 +2881,49 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                                                         .addGap(67, 67, 67)
                                                         .addComponent(jLabel51)))))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel160)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(212, 212, 212)
+                                                .addComponent(jLabel50))
+                                            .addComponent(jLabel91)
+                                            .addComponent(jLabel127)
+                                            .addComponent(jLabel169)
+                                            .addComponent(jLabel157)
+                                            .addComponent(jLabel155)
+                                            .addComponent(jLabel168)
+                                            .addComponent(jLabel170)
+                                            .addComponent(jLabel171)))
                                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addComponent(jLabel52)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CS)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel52)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(CS))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Filtro1)
-                            .addComponent(BNameNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BAPNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FiltrosNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel28)
-                            .addComponent(CS))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel26)
-                            .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel19)
-                            .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Clean)))
+                            .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Clean))
                     .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3143,7 +2941,28 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
                                         .addComponent(jLabel51)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel50)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel91)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel127)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel155)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel157)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel160)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel168)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel169)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel170)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel171))))
                     .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -6889,72 +6708,28 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
     }
 
-    public void shareODTnom() {
-        String FiltroN = BNameNom.getText();
-        String FAP = BAPNom.getText();
-        String FAM = BAMNom.getText();
-        String where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`";
-
-        if (!"".equals(FiltroN)) {
-            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%' AND `Status` LIKE '%Debe%'";
-        } else if (!"".equals(FAP)) {
-            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%' AND `Status` LIKE '%Debe%'";
-        } else if (!"".equals(FAM)) {
-            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Por Semana`,"
-                    + " `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%' ";
-        }
+   public void shareODTnom() {
+        String SQL = "SELECT `idTaller`,"
+                + " `Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
+                + "WHERE `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText()
+                + "%' AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%Debe%'";
 
         try {
             //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
 
-            };
-//Nombre de la tabla
-            SHODTnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Orden");
-            modelo.addColumn("Apellido P");//2
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Pago por Qna");
-            modelo.addColumn("Qnas pagadas");//6
-            modelo.addColumn("Pagado");
-            modelo.addColumn("Pendiente");//8
-
-//ANCHOS
-            int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPQ*/ 50,
-                /*QP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                SHODTnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
             while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
+                NODTnom.setText(rs.getString(1));
+                Odtp.setText(rs.getString(2));
+                NSODTnom.setText(rs.getString(3));
+                PagODTnom.setText(rs.getString(4));
+                PenODTnom.setText(rs.getString(5));
+
             }
             ps.isClosed();
             rs.isClosed();
@@ -6986,79 +6761,28 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }
 
     public void sharecdanom() {
-        String FiltroN = BNameNom.getText();
-        String FAP = BAPNom.getText();
-        String FAM = BAMNom.getText();
-        String where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
-                + " FROM `nominasem.cajadeahorro`";
-
-        if (!"".equals(FiltroN)) {
-            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado`"
-                    + "  FROM `nomina.cajadeahorro`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FAP)) {
-            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
-                    + " FROM `nominasem.cajadeahorro`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
-        } else if (!"".equals(FAM)) {
-            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
-                    + " FROM `nominasem.cajadeahorro`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
-        }
-
+        String SQL = "SELECT `#caja`, "
+                + "`Ahorro por semana`, `Semanas Ahorradas`, `Total Ahorrado` "
+                + " FROM `nominasem.cajadeahorro`"
+                + "WHERE `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText()
+                + "%' AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%vigente%'";
         try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            SHCDAnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Caja");
-            modelo.addColumn("Apellido P");//2
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Ahorro por Qna");
-            modelo.addColumn("Qnas ahorradas");//6
-            modelo.addColumn("Total ahorrado");
-
-//ANCHOS
-            int[] anchos = {/*NF*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*APQ*/ 50,
-                /*QA*/ 50, /*TA*/ 60};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                SHCDAnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
             while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
+                NCDANom.setText(rs.getString(1));
+                cda.setText(rs.getString(2));
+                QAcdanom.setText(rs.getString(3));
+                TACDANOM.setText(rs.getString(4));
             }
             ps.isClosed();
             rs.isClosed();
         } catch (SQLException error_sh_cda_nom) {
-            JOptionPane.showMessageDialog(null, "Error al compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al mostrar compartir datos de caja de ahorro en nomina: " + error_sh_cda_nom.getMessage());
 
         }
 
@@ -7463,82 +7187,34 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         }
     }
 
-    public void sharepresnom() {
-        String FiltroN = BNameNom.getText();
-        String FAP = BAPNom.getText();
-        String FAM = BAMNom.getText();
-        String where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`";
+        public void sharepresnom() {
 
-        if (!"".equals(FiltroN)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FAP)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
-        } else if (!"".equals(FAM)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
-        }
-
+        String SQL = "SELECT `idprestamos`,"
+                + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`"
+                + "WHERE `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText()
+                + "%' AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%Debe%'";
         try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            SHPresnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Prestamo");
-            modelo.addColumn("Apellido P");//2
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Pago por Sem");
-            modelo.addColumn("Sems pagadas");//6
-            modelo.addColumn("Pagado");
-            modelo.addColumn("Pendiente");//8
-
-//ANCHOS
-            int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPS*/ 50,
-                /*SP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                SHPresnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
             while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
-            }
-            rs.isClosed();
-            ps.isClosed();
+                NumPrenom.setText(rs.getString(1));
+                Presp.setText(rs.getString(2));
+                NSprenom.setText(rs.getString(3));
+                Pagadoprenom.setText(rs.getString(4));
+                Pendienteprenom.setText(rs.getString(5));
 
+            }
+            ps.isClosed();
+            rs.isClosed();
         } catch (SQLException error_sh_pre_nom) {
             JOptionPane.showMessageDialog(null, "Error al compartir prestamos con nomina: " + error_sh_pre_nom.getMessage());
 
         }
 
     }
-
     public void eliminarnom() {
 
         try {
@@ -10101,81 +9777,34 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
 //compartir empleados
     public void shareN() {
-        //Buscar empleado
-        String Share = BNameNom.getText();
-        String ShareAP = BAPNom.getText();
-        String ShareAM = BAMNom.getText();
-        String where = "SELECT `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
-                + " where `Status` LIKE '%Vigente%'";
-
-        if (!"".equals(Share)) {
-            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
-                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
-        } else if (!"".equals(ShareAP)) {
-            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
-                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
-        } else if (!"".equals(ShareAM)) {
-            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
-                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
-        }
+        String SQL = "SELECT `# Exp`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
+                + " where `Status` LIKE '%Vigente%' And `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText() + "%'"
+                + " AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%Vigente%'";
 
         try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            share.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Empleado");
-            modelo.addColumn("Apellido P");//1
-            modelo.addColumn("Apellido M");//
-            modelo.addColumn("Nombre(s)");//3
-            modelo.addColumn("Banco");//7
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//5
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
-
-//Anchos
-            int[] anchos = {/*numE*/35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150, /*Banco*/ 75, /*CTA*/ 50, /*zona*/ 60,
-                /*servicio*/ 100, /*sueldo*/ 60, /*bono*/ 40};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                share.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
             while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
+                NE.setText(rs.getString(1));
+                ban.setText(rs.getString(2));
+                cta.setText(rs.getString(3));
+                Zon.setText(rs.getString(4));
+                ServN.setText(rs.getString(5));
+                sueldo.setText(rs.getString(6));
+                Bono1.setText(rs.getString(7));
             }
             ps.isClosed();
             rs.isClosed();
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + e.getMessage());
+        } catch (SQLException error_sharenom) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
 
         }
-
     }
+
 
     public void deposito() {
         //por dia
@@ -10226,67 +9855,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
     }
 
-    private void BAPNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAPNomKeyReleased
-        sharepresnom();
-
-        shareN();
-    }//GEN-LAST:event_BAPNomKeyReleased
-
-    private void BAMNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAMNomKeyReleased
-        sharepresnom();
-
-        shareN();
-    }//GEN-LAST:event_BAMNomKeyReleased
-
-    private void FiltrosNomItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosNomItemStateChanged
-
-        String dt = (String) FiltrosNom.getSelectedItem();
-        if (dt.equals("Selecciona filtro")) {
-            Filtro1.setVisible(false);
-            Filtro1.setText("");
-            BNameNom.setVisible(false);
-            BNameNom.setText("");
-            BAPNom.setText("");
-            BAPNom.setVisible(false);
-            BAMNom.setVisible(false);
-            BAMNom.setText("");
-            shareN();
-        }
-        if (dt.equals("Apellido P")) {
-            Filtro1.setVisible(true);
-            Filtro1.setText("Buscar por Apellido P:");
-            BNameNom.setVisible(false);
-            BNameNom.setText("");
-            BAPNom.setText("");
-            BAPNom.setVisible(true);
-            BAMNom.setVisible(false);
-            BAMNom.setText("");
-            shareN();
-        }
-        if (dt.equals("Apellido M")) {
-            Filtro1.setVisible(true);
-            Filtro1.setText("Buscar por Apellido M:");
-            BNameNom.setVisible(false);
-            BNameNom.setText("");
-            BAPNom.setText("");
-            BAPNom.setVisible(false);
-            BAMNom.setVisible(true);
-            BAMNom.setText("");
-            shareN();
-        }
-        if (dt.equals("Nombre(s)")) {
-            Filtro1.setVisible(true);
-            Filtro1.setText("Buscar por Nombre(s):");
-            BNameNom.setVisible(true);
-            BNameNom.setText("");
-            BAPNom.setText("");
-            BAPNom.setVisible(false);
-            BAMNom.setVisible(false);
-            BAMNom.setText("");
-            shareN();
-        }
-    }//GEN-LAST:event_FiltrosNomItemStateChanged
-
     private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
@@ -10296,32 +9864,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_CSActionPerformed
-
-    private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
-
-        int seleccionar = share.getSelectedRow();
-        NE.setText(String.valueOf(share.getValueAt(seleccionar, 0)));
-        Ap.setText(String.valueOf(share.getValueAt(seleccionar, 1)));
-        am.setText(String.valueOf(share.getValueAt(seleccionar, 2)));
-        name.setText(String.valueOf(share.getValueAt(seleccionar, 3)));
-        ban.setText(String.valueOf(share.getValueAt(seleccionar, 4)));
-        cta.setText(String.valueOf(share.getValueAt(seleccionar, 5)));
-        Zon.setText(String.valueOf(share.getValueAt(seleccionar, 6)));
-        ServN.setText(String.valueOf(share.getValueAt(seleccionar, 7)));
-        sueldo.setText(String.valueOf(share.getValueAt(seleccionar, 8)));
-        Bono1.setText(String.valueOf(share.getValueAt(seleccionar, 9)));
-        double d1 = Double.parseDouble(sueldo.getText());
-        double Pordia = d1 / 7;
-        pd.setText("" + Pordia + "");
-        double Porhora = Pordia / 8;
-        PH.setText("" + Porhora + "");
-
-    }//GEN-LAST:event_shareMouseClicked
-
-    private void BNameNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BNameNomKeyReleased
-        sharepresnom();
-        shareN();
-    }//GEN-LAST:event_BNameNomKeyReleased
 
     private void AgregarNPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarNPActionPerformed
 
@@ -17362,38 +16904,9 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_DIKeyReleased
 
-    private void SHPresnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHPresnomMouseClicked
-        int fila = SHPresnom.getSelectedRow();
-        NumPrenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 0)));
-        Presp.setText(String.valueOf(SHPresnom.getValueAt(fila, 4)));
-        NSprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 5)));
-        Pagadoprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 6)));
-        Pendienteprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 7)));
-        deposito();
-    }//GEN-LAST:event_SHPresnomMouseClicked
-
-    private void SHCDAnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHCDAnomMouseClicked
-        int fila = SHCDAnom.getSelectedRow();
-        NCDANom.setText(String.valueOf(SHCDAnom.getValueAt(fila, 0)));
-        cda.setText(String.valueOf(SHCDAnom.getValueAt(fila, 4)));
-        QAcdanom.setText(String.valueOf(SHCDAnom.getValueAt(fila, 5)));
-        TACDANOM.setText(String.valueOf(SHCDAnom.getValueAt(fila, 6)));
-        deposito();
-    }//GEN-LAST:event_SHCDAnomMouseClicked
-
     private void cdaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cdaKeyReleased
         deposito();
     }//GEN-LAST:event_cdaKeyReleased
-
-    private void SHODTnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHODTnomMouseClicked
-        int fila = SHODTnom.getSelectedRow();
-        NODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 0)));
-        Odtp.setText(String.valueOf(SHODTnom.getValueAt(fila, 4)));
-        NSODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 5)));
-        PagODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 6)));
-        PenODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 7)));
-        deposito();
-    }//GEN-LAST:event_SHODTnomMouseClicked
 
     private void OdtpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OdtpKeyReleased
         deposito();
@@ -17542,6 +17055,37 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
+    private void nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameKeyReleased
+       sharepresnom();
+        sharecdanom();
+        sharepresnom();
+        shareODTnom();
+        shareN();
+        if (name.getText().isEmpty()) {
+                            NODTnom.setText("0");
+                Odtp.setText("0");
+                NSODTnom.setText("0");
+                PagODTnom.setText("0");
+                PenODTnom.setText("0");
+                NumPrenom.setText("0");
+                Presp.setText("0");
+                NSprenom.setText("0");
+                Pagadoprenom.setText("0");
+                Pendienteprenom.setText("0");
+                NCDANom.setText("0");
+                cda.setText("0");
+                QAcdanom.setText("0");
+                TACDANOM.setText("0");
+                NE.setText("0");
+                ban.setText("");
+                cta.setText("");
+                Zon.setText("");
+                ServN.setText("");
+                sueldo.setText("0");
+                Bono1.setText("0");
+        }
+    }//GEN-LAST:event_nameKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -17584,8 +17128,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTextField ADN;
     private javax.swing.JButton AgregarNP;
     private javax.swing.JTextField Ap;
-    private javax.swing.JTextField BAMNom;
-    private javax.swing.JTextField BAPNom;
     private javax.swing.JTextField BAppag;
     private javax.swing.JTextField BAppag1;
     private javax.swing.JTextField BAppag2;
@@ -17595,7 +17137,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BAppag6;
     private javax.swing.JTextField BAppag7;
     private javax.swing.JTextField BAppag8;
-    private javax.swing.JTextField BNameNom;
     private javax.swing.JTextField Bampag;
     private javax.swing.JTextField Bampag1;
     private javax.swing.JTextField Bampag2;
@@ -17698,7 +17239,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FZservicio8;
     private javax.swing.JTextField Fdb;
     private javax.swing.JTextField Fde;
-    private javax.swing.JLabel Filtro1;
     private javax.swing.JTextField FiltroNDF;
     private javax.swing.JTextField FiltroNDF1;
     private javax.swing.JTextField FiltroNDF2;
@@ -17753,7 +17293,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroSnomina6;
     private javax.swing.JComboBox<String> FiltroSnomina7;
     private javax.swing.JComboBox<String> FiltroSnomina8;
-    private javax.swing.JComboBox<String> FiltrosNom;
     private javax.swing.JComboBox<String> FiltrosP;
     private javax.swing.JComboBox<String> FiltrosP1;
     private javax.swing.JComboBox<String> FiltrosP2;
@@ -17957,9 +17496,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
     private javax.swing.JMenu Reportes;
-    private javax.swing.JTable SHCDAnom;
-    private javax.swing.JTable SHODTnom;
-    private javax.swing.JTable SHPresnom;
     private javax.swing.JComboBox<String> SabT;
     private javax.swing.JTextField Sancion;
     private javax.swing.JComboBox<String> Semana;
@@ -18095,7 +17631,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel266;
     private javax.swing.JLabel jLabel267;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -18212,14 +17747,10 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane23;
-    private javax.swing.JScrollPane jScrollPane24;
-    private javax.swing.JScrollPane jScrollPane25;
-    private javax.swing.JScrollPane jScrollPane26;
     private javax.swing.JScrollPane jScrollPane27;
     private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
@@ -18249,7 +17780,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     private javax.swing.JTable pago8;
     private javax.swing.JTextField pd;
     private javax.swing.JLabel pds;
-    private javax.swing.JTable share;
     private javax.swing.JTextField sueldo;
     // End of variables declaration//GEN-END:variables
 }
