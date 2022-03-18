@@ -1494,7 +1494,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
     }
 
-     public void shareODTnom() {
+    public void shareODTnom() {
         String SQL = "SELECT `idTaller`,"
                 + " `Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`"
                 + "WHERE `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText()
@@ -1571,7 +1571,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
     }
 
-     public void sharepresnom() {
+    public void sharepresnom() {
 
         String SQL = "SELECT `idprestamos`,"
                 + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`"
@@ -10390,6 +10390,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_BsiActionPerformed
 
     private void Dia16ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia16ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D16 = (String) Dia16.getSelectedItem();
 
         if (D16.equals(".")) {
@@ -10615,6 +10771,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia16ItemStateChanged
 
     private void Dia15ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia15ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D15 = (String) Dia15.getSelectedItem();
 
         if (D15.equals(".")) {
@@ -10839,6 +11151,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia15ItemStateChanged
 
     private void Dia14ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia14ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D14 = (String) Dia14.getSelectedItem();
 
         if (D14.equals(".")) {
@@ -11063,6 +11531,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia14ItemStateChanged
 
     private void Dia13ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia13ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D13 = (String) Dia13.getSelectedItem();
 
         if (D13.equals(".")) {
@@ -11288,6 +11912,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia13ItemStateChanged
 
     private void Dia12ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia12ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D12 = (String) Dia12.getSelectedItem();
 
         if (D12.equals(".")) {
@@ -11513,6 +12293,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia12ItemStateChanged
 
     private void Dia11ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia11ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D11 = (String) Dia11.getSelectedItem();
 
         if (D11.equals(".")) {
@@ -11737,6 +12673,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia11ItemStateChanged
 
     private void Dia10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia10ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D10 = (String) Dia10.getSelectedItem();
 
         if (D10.equals(".")) {
@@ -11961,6 +13053,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia10ItemStateChanged
 
     private void Dia9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia9ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D9 = (String) Dia9.getSelectedItem();
 
         if (D9.equals(".")) {
@@ -12185,6 +13433,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia9ItemStateChanged
 
     private void Dia8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia8ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D8 = (String) Dia8.getSelectedItem();
 
         if (D8.equals(".")) {
@@ -12409,6 +13813,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia8ItemStateChanged
 
     private void Dia7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia7ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D7 = (String) Dia7.getSelectedItem();
 
         if (D7.equals(".")) {
@@ -12633,6 +14193,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia7ItemStateChanged
 
     private void Dia6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia6ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D6 = (String) Dia6.getSelectedItem();
 
         if (D6.equals(".")) {
@@ -12857,6 +14573,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia6ItemStateChanged
 
     private void Dia5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia5ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D5 = (String) Dia5.getSelectedItem();
 
         if (D5.equals(".")) {
@@ -13080,6 +14952,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia5ItemStateChanged
 
     private void Dia4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia4ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D4 = (String) Dia4.getSelectedItem();
 
         if (D4.equals(".")) {
@@ -13304,6 +15332,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia4ItemStateChanged
 
     private void Dia3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia3ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D3 = (String) Dia3.getSelectedItem();
 
         if (D3.equals(".")) {
@@ -13528,6 +15712,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia3ItemStateChanged
 
     private void Dia2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia2ItemStateChanged
+        String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D2 = (String) Dia2.getSelectedItem();
 
         if (D2.equals(".")) {
@@ -13752,6 +16092,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia2ItemStateChanged
 
     private void Dia1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia1ItemStateChanged
+        String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D1 = (String) Dia1.getSelectedItem();
 
         if (D1.equals(".")) {

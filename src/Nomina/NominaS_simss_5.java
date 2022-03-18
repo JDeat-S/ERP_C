@@ -15348,6 +15348,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void SabTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_SabTItemStateChanged
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
         String D1 = (String) SabT.getSelectedItem();
 
         if (D1.equals(".")) {
@@ -15567,6 +15572,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_SabTItemStateChanged
 
     private void MierTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MierTItemStateChanged
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
         String D5 = (String) MierT.getSelectedItem();
 
         if (D5.equals(".")) {
@@ -15785,6 +15795,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_MierTItemStateChanged
 
     private void VieTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_VieTItemStateChanged
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
         String D7 = (String) VieT.getSelectedItem();
 
         if (D7.equals(".")) {
@@ -16004,6 +16019,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_VieTItemStateChanged
 
     private void JueTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JueTItemStateChanged
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
         String D6 = (String) JueT.getSelectedItem();
 
         if (D6.equals(".")) {
@@ -16223,6 +16243,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_JueTItemStateChanged
 
     private void LunTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LunTItemStateChanged
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
         String D3 = (String) LunT.getSelectedItem();
 
         if (D3.equals(".")) {
@@ -16442,6 +16467,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_LunTItemStateChanged
 
     private void DomTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DomTItemStateChanged
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
         String D2 = (String) DomT.getSelectedItem();
 
         if (D2.equals(".")) {
@@ -16661,6 +16691,11 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_DomTItemStateChanged
 
     private void MarTItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MarTItemStateChanged
+        double d1 = Double.parseDouble(sueldo.getText());
+        double Pordia = d1 / 7;
+        pd.setText("" + Pordia + "");
+        double Porhora = Pordia / 8;
+        PH.setText("" + Porhora + "");
         String D4 = (String) MarT.getSelectedItem();
 
         if (D4.equals(".")) {

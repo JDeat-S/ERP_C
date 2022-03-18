@@ -738,7 +738,7 @@ public class Logica_SemMes {
                     } catch (SQLException e) {
 
                     }
-                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + "";
+                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + "";
                     try {
                         java.sql.Statement st = con.createStatement();
                         int total = 0;
@@ -747,7 +747,7 @@ public class Logica_SemMes {
                             total++;
                             if (total == 1) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 1";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 1";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -774,7 +774,7 @@ public class Logica_SemMes {
 
                             if (total == 2) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 2";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 2";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -799,7 +799,7 @@ public class Logica_SemMes {
                             }
                             if (total == 3) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 3";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 3";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -826,7 +826,7 @@ public class Logica_SemMes {
                             }
                             if (total == 4) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 4";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 4";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -852,7 +852,7 @@ public class Logica_SemMes {
                             }
                             if (total == 5) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 5";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 5";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -880,7 +880,7 @@ public class Logica_SemMes {
                             }
                             if (total == 6) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT  6";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT  6";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -908,7 +908,7 @@ public class Logica_SemMes {
                             }
                             if (total == 7) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 7";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 7";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -938,7 +938,7 @@ public class Logica_SemMes {
                             }
                             if (total == 8) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 8";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 8";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -968,7 +968,7 @@ public class Logica_SemMes {
                             }
                             if (total == 9) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 9";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 9";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -999,7 +999,7 @@ public class Logica_SemMes {
                             }
                             if (total == 10) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 10";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 10";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -1030,7 +1030,7 @@ public class Logica_SemMes {
                             }
                             if (total == 11) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT  11";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT  11";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -1063,7 +1063,7 @@ public class Logica_SemMes {
                             }
                             if (total == 12) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 12";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 12";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -1096,7 +1096,7 @@ public class Logica_SemMes {
                             }
                             if (total == 13) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 13";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 13";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
@@ -1130,7 +1130,7 @@ public class Logica_SemMes {
                             }
                             if (total == 14) {
                                 try {
-                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.tehuantepec.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 14";
+                                    SQL = "SELECT `Numregistro`, `Observaciones`, `Importe` FROM `rh.semanal.inturbide.val` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + " LIMIT 14";
 
                                     java.sql.Statement ST1 = con.createStatement();
                                     total = 0;
