@@ -4613,6 +4613,10 @@ public final class Empleados_4 extends javax.swing.JFrame {
         dat.setApellidoP(APgen.getText());
         dat.setApellidoM(AMgen.getText());
         dat.setName(NameGen.getText());
+        dat.setCURP(CURP.getText());
+        dat.setNSS(NSS.getText());
+        dat.setRFC(RFC.getText());
+
         Expedientes_4 regr = new Expedientes_4(usr, LP, dat);
         regr.setVisible(true);
     }//GEN-LAST:event_mod1ActionPerformed
@@ -4636,6 +4640,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Empleados_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
