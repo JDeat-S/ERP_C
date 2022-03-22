@@ -253,22 +253,25 @@ public class PMptetitla extends javax.swing.JFrame {
                 cell.setCellValue("Mes Fin");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(44);
-                cell.setCellValue("Total a pagar");
+                cell.setCellValue("Ajuste");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(45);
-                cell.setCellValue("Total pagado");
+                cell.setCellValue("Total a pagar");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(46);
-                cell.setCellValue("Faltante");
+                cell.setCellValue("Total pagado");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(47);
-                cell.setCellValue("Fecha de pago");
+                cell.setCellValue("faltante");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(48);
-                cell.setCellValue("Metodo");
+                cell.setCellValue("fecha de pago");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(49);
                 cell.setCellValue("Metodo");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(50);
+                cell.setCellValue("Corte");
                 cell.setCellStyle(Contenido);
 
                 int i = 2;
@@ -425,11 +428,14 @@ public class PMptetitla extends javax.swing.JFrame {
                     cell = row.createCell(49);
                     cell.setCellValue(rs.getString(50));
                     cell.setCellStyle(Contenido);
+                    cell = row.createCell(50);
+                    cell.setCellValue(rs.getString(51));
+                    cell.setCellStyle(Contenido);
 
                     i++;
                 }
                 Statement efec = connect.createStatement();
-                ResultSet rsefec = efec.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla."+CbxMes.getSelectedItem().toString()+"` WHERE `metodo` LIKE '%Efectivo%'");
+                ResultSet rsefec = efec.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "` WHERE `metodo` LIKE '%Efectivo%'");
                 row = spreadsheet.getRow(1);
                 cell = row.createCell(51);
                 cell.setCellValue("Pagadas en Efectivo");
@@ -442,7 +448,7 @@ public class PMptetitla extends javax.swing.JFrame {
                 }
 
                 Statement ctalic = connect.createStatement();
-                ResultSet rsctalic = ctalic.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla."+CbxMes.getSelectedItem().toString()+"` WHERE `metodo` LIKE '%CTA lic%'");
+                ResultSet rsctalic = ctalic.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "` WHERE `metodo` LIKE '%CTA lic%'");
                 row = spreadsheet.getRow(2);
                 cell = row.createCell(51);
                 cell.setCellValue("Pagadas en Cuenta lic");
@@ -455,7 +461,7 @@ public class PMptetitla extends javax.swing.JFrame {
                 }
 
                 Statement ctacon = connect.createStatement();
-                ResultSet rsctacon = ctacon.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla."+CbxMes.getSelectedItem().toString()+"` WHERE `metodo` LIKE '%CTA confort%'");
+                ResultSet rsctacon = ctacon.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "` WHERE `metodo` LIKE '%CTA confort%'");
                 row = spreadsheet.getRow(3);
                 cell = row.createCell(51);
                 cell.setCellValue("Pagadas en Cuenta confort");
@@ -466,7 +472,7 @@ public class PMptetitla extends javax.swing.JFrame {
                     cell.setCellValue(rsctacon.getDouble(1));
                     cell.setCellStyle(Contenido);
                 }
-                
+
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -731,7 +737,6 @@ public class PMptetitla extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-      
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new PMptetitla().setVisible(true);

@@ -224,7 +224,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         Obs = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
-        Año = new com.toedter.calendar.JDateChooser();
+        FechaDI = new com.toedter.calendar.JDateChooser();
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -338,19 +338,19 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jPanel3.add(zona, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
 
         jLabel66.setText("Fecha re-ingreso:");
-        jPanel3.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jPanel3.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 156, -1, 20));
 
         FI.setEnabled(false);
         jPanel3.add(FI, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 145, -1));
 
         jLabel2.setText("Vacaciones:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 236, -1, 30));
 
         Aguinaldo.setEnabled(false);
         jPanel3.add(Aguinaldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 100, -1));
 
         jLabel8.setText("Aguinaldo:");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, -1));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 216, -1, 20));
 
         Vacaciones.setEnabled(false);
         jPanel3.add(Vacaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 100, -1));
@@ -415,10 +415,8 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jPanel3.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, -1, -1));
 
         jLabel23.setText("Fecha inicio");
-        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, -1, -1));
-
-        Año.setDateFormatString("yyyy");
-        jPanel3.add(Año, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 180, -1));
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 116, -1, 30));
+        jPanel3.add(FechaDI, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 180, -1));
 
         Tmov.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -455,7 +453,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 1479, -1));
 
         jLabel24.setText("Fecha de alta IMSS:");
-        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
+        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 146, -1, 30));
 
         FDAIMSS.setEnabled(false);
         jPanel3.add(FDAIMSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 180, -1));
@@ -994,7 +992,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setString(1, TDM.getSelectedItem().toString());
-                pst.setString(2, ((JTextField) Año.getDateEditor().getUiComponent()).getText());
+                pst.setString(2, ((JTextField) FechaDI.getDateEditor().getUiComponent()).getText());
                 pst.setString(3, NExp.getText());
                 pst.setString(4, FDI.getText());
                 pst.setString(5, APgen.getText());
@@ -1002,7 +1000,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 pst.setString(7, NameGen.getText());
                 pst.setString(8, Sueldo.getText());
                 pst.setString(9, Bono.getText());
-                pst.setString(10, ((JTextField) FechaSYB.getDateEditor().getUiComponent()).getText());
+ /*               pst.setString(10, ((JTextField) FechaSYB.getDateEditor().getUiComponent()).getText());
                 pst.setString(11, zona.getSelectedItem().toString());
                 pst.setString(12, Serv.getSelectedItem().toString());
                 pst.setString(13, ((JTextField) FechaZYS.getDateEditor().getUiComponent()).getText());
@@ -1020,7 +1018,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 pst.setString(25, FI.getText());
                 pst.setString(26, Actadm.getText());
                 pst.setString(27, ((JTextField) fechacta.getDateEditor().getUiComponent()).getText());
-                pst.setString(28, FDAIMSS.getText());
+*/                pst.setString(28, FDAIMSS.getText());
                 pst.setString(29, dtf3.format(LocalDateTime.now()));
                 pst.setString(30, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
                 pst.setInt(31, Integer.parseInt(Tmov.getValueAt(fila, 0).toString()));
@@ -1111,12 +1109,12 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 FDAIMSS.setText("");
                 PTU.setText("");
                 Actadm.setText("");
-                fechacta.setDate(null);
+/*                fechacta.setDate(null);
                 FechaPTU.setDate(null);
                 FDPAGUI.setDate(null);
                 FechaSYB.setDate(null);
                 FechaZYS.setDate(null);
-
+*/
             } catch (HeadlessException | SQLException e) {
                 JOptionPane.showMessageDialog(null, "Error al registrar: \n" + e.getMessage());
             }
@@ -1124,7 +1122,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_ModActionPerformed
 
     private void ADDregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDregActionPerformed
-        if (((JTextField) Año.getDateEditor().getUiComponent()).getText().isEmpty()) {
+        if (((JTextField) FechaDI.getDateEditor().getUiComponent()).getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Seleccione el año");
 
         } else {
@@ -1133,18 +1131,19 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             }
             if (TDM.getSelectedIndex() >= 1) {
                 DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-                String SQL = "INSERT INTO `rh.empleados.movimientos` (`#registro`, `tipo de registro`,"
-                + " `Año`, `#Empleado`, `fecha de ingreso`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Sueldo`, `bono`, `Fecha aplicado`, `Zona`, `Servicio`, `FechaCamZYS`,"
-                + " `Aguinaldo`, `FechaPAgui`, `PTU`, `Fecha PTU`, `observacionesptu`, `Vacaciones`, `Periodoini`"
-                + ", `periodofin`, `observaciones`, `reingreso`, `baja`, `tipo de baja`,"
-                + " `Acta administrativa`, `Fecha actaadm`, `Fecha alta imss`, `fecha de registro`, `registrado por`)"
-                + " VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String SQL = "INSERT INTO `rh.empleados.movimientos` (`#Movimiento`, `tipo de movimiento`,"
+                        + " `Fecha inicio`, `#Empleado`, `fecha de ingreso`,"
+                        + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Sueldo`, `bono`,"
+                        + " `Zona`, `Servicio`, `Aguinaldo`, `PTU`, `observacionesptu`, `Vacaciones`, "
+                        + "`Periodoini`, `periodofin`, `observaciones`, `reingreso`, `baja`, `tipo de baja`, "
+                        + "`Acta administrativa`, `Fecha alta imss`, `Uniforme`, `Acuse`, `fecha de registro`, "
+                        + "`registrado por`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                        + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 try {
                     PreparedStatement pst = con.prepareStatement(SQL);
                     pst.setString(1, TDM.getSelectedItem().toString());
-                    pst.setString(2, ((JTextField) Año.getDateEditor().getUiComponent()).getText());
+                    pst.setString(2, ((JTextField) FechaDI.getDateEditor().getUiComponent()).getText());
                     pst.setString(3, NExp.getText());
                     pst.setString(4, FDI.getText());
                     pst.setString(5, APgen.getText());
@@ -1152,9 +1151,8 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     pst.setString(7, NameGen.getText());
                     pst.setString(8, Sueldo.getText());
                     pst.setString(9, Bono.getText());
-                    pst.setString(10, ((JTextField) FechaSYB.getDateEditor().getUiComponent()).getText());
                     pst.setString(11, zona.getSelectedItem().toString());
-                    pst.setString(12, Serv.getSelectedItem().toString());
+             /*       pst.setString(12, Serv.getSelectedItem().toString());
                     pst.setString(13, ((JTextField) FechaZYS.getDateEditor().getUiComponent()).getText());
                     pst.setString(14, Aguinaldo.getText());
                     pst.setString(15, ((JTextField) FDPAGUI.getDateEditor().getUiComponent()).getText());
@@ -1170,7 +1168,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     pst.setString(25, FI.getText());
                     pst.setString(26, Actadm.getText());
                     pst.setString(27, ((JTextField) fechacta.getDateEditor().getUiComponent()).getText());
-                    pst.setString(28, FDAIMSS.getText());
+        */            pst.setString(28, FDAIMSS.getText());
                     pst.setString(29, dtf3.format(LocalDateTime.now()));
                     pst.setString(30, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
 
@@ -1260,12 +1258,12 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     FDAIMSS.setText("");
                     PTU.setText("");
                     Actadm.setText("");
-                    fechacta.setDate(null);
+     /*               fechacta.setDate(null);
                     FechaPTU.setDate(null);
                     FDPAGUI.setDate(null);
                     FechaSYB.setDate(null);
                     FechaZYS.setDate(null);
-                    OBSPTU.setText("");
+  */                  OBSPTU.setText("");
 
                 } catch (HeadlessException | SQLException e) {
                     JOptionPane.showMessageDialog(null, "Error al registrar: \n" + e.getMessage());
@@ -1286,7 +1284,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_zonaItemStateChanged
 
     private void TDMItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TDMItemStateChanged
-        FBaja.setText("");
+    /*    FBaja.setText("");
         TDB.setSelectedIndex(0);
         FI.setText("");
         Sueldo.setText("0");
@@ -1628,7 +1626,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             FechaSYB.setEnabled(false);
             FechaZYS.setEnabled(false);
         }
-        MDMov();
+   */     MDMov();
     }//GEN-LAST:event_TDMItemStateChanged
 
     /**
@@ -1667,13 +1665,13 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     private javax.swing.JTextField APgen;
     private javax.swing.JTextField Actadm;
     private javax.swing.JTextField Aguinaldo;
-    private com.toedter.calendar.JDateChooser Año;
     private javax.swing.JTextField Bono;
     private javax.swing.JButton Del;
     private javax.swing.JTextField FBaja;
     private javax.swing.JTextField FDAIMSS;
     private javax.swing.JTextField FDI;
     private javax.swing.JTextField FI;
+    private com.toedter.calendar.JDateChooser FechaDI;
     private javax.swing.JPanel Harder1;
     private javax.swing.JButton Mod;
     private javax.swing.JLabel Move;

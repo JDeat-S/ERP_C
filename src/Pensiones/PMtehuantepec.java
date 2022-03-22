@@ -253,22 +253,25 @@ public class PMtehuantepec extends javax.swing.JFrame {
                 cell.setCellValue("Mes Fin");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(44);
-                cell.setCellValue("Total a pagar");
+                cell.setCellValue("Ajuste");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(45);
-                cell.setCellValue("Total pagado");
+                cell.setCellValue("Total a pagar");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(46);
-                cell.setCellValue("Faltante");
+                cell.setCellValue("Total pagado");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(47);
-                cell.setCellValue("Fecha de pago");
+                cell.setCellValue("faltante");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(48);
-                cell.setCellValue("Metodo");
+                cell.setCellValue("fecha de pago");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(49);
                 cell.setCellValue("Metodo");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(50);
+                cell.setCellValue("Corte");
                 cell.setCellStyle(Contenido);
 
                 int i = 2;
@@ -425,6 +428,9 @@ public class PMtehuantepec extends javax.swing.JFrame {
                     cell = row.createCell(49);
                     cell.setCellValue(rs.getString(50));
                     cell.setCellStyle(Contenido);
+                    cell = row.createCell(50);
+                    cell.setCellValue(rs.getString(51));
+                    cell.setCellStyle(Contenido);       
                     
                     i++;
                 }
@@ -727,32 +733,11 @@ public class PMtehuantepec extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PMtehuantepec.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PMtehuantepec.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PMtehuantepec.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PMtehuantepec.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new PMtehuantepec().setVisible(true);
