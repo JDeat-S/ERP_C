@@ -150,8 +150,7 @@ public class Inicio_1 extends javax.swing.JFrame {
         Backgraund.add(Labeluser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         txtuser.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        txtuser.setForeground(new java.awt.Color(204, 204, 204));
-        txtuser.setText("Ingresa usuario");
+        txtuser.setForeground(new java.awt.Color(0, 0, 0));
         txtuser.setBorder(null);
         txtuser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -165,8 +164,7 @@ public class Inicio_1 extends javax.swing.JFrame {
         Labelpass.setText("Contraseña");
         Backgraund.add(Labelpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
-        txtpass.setForeground(new java.awt.Color(204, 204, 204));
-        txtpass.setText("***************");
+        txtpass.setForeground(new java.awt.Color(0, 0, 0));
         txtpass.setBorder(null);
         txtpass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

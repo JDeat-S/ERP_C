@@ -74,7 +74,7 @@ public class PMptetitla extends javax.swing.JFrame {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+            ResultSet rs = RHstatement.executeQuery("SELECT * FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "`");
             try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Pensiones " + CbxMes.getSelectedItem().toString());
@@ -253,22 +253,25 @@ public class PMptetitla extends javax.swing.JFrame {
                 cell.setCellValue("Mes Fin");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(44);
-                cell.setCellValue("Total a pagar");
+                cell.setCellValue("Ajuste");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(45);
-                cell.setCellValue("Total pagado");
+                cell.setCellValue("Total a pagar");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(46);
-                cell.setCellValue("Faltante");
+                cell.setCellValue("Total pagado");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(47);
-                cell.setCellValue("Fecha de pago");
+                cell.setCellValue("faltante");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(48);
-                cell.setCellValue("Metodo");
+                cell.setCellValue("fecha de pago");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(49);
                 cell.setCellValue("Metodo");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(50);
+                cell.setCellValue("Corte");
                 cell.setCellStyle(Contenido);
 
                 int i = 2;
@@ -342,7 +345,7 @@ public class PMptetitla extends javax.swing.JFrame {
                     cell.setCellValue(rs.getDouble(22));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(22);
-                    cell.setCellValue(rs.getDouble(23));
+                    cell.setCellValue(rs.getString(23));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(23);
                     cell.setCellValue(rs.getString(24));
@@ -425,11 +428,14 @@ public class PMptetitla extends javax.swing.JFrame {
                     cell = row.createCell(49);
                     cell.setCellValue(rs.getString(50));
                     cell.setCellStyle(Contenido);
+                    cell = row.createCell(50);
+                    cell.setCellValue(rs.getString(51));
+                    cell.setCellStyle(Contenido);
 
                     i++;
                 }
                 Statement efec = connect.createStatement();
-                ResultSet rsefec = efec.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla` WHERE `MDregistro` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                ResultSet rsefec = efec.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "` WHERE `metodo` LIKE '%Efectivo%'");
                 row = spreadsheet.getRow(1);
                 cell = row.createCell(51);
                 cell.setCellValue("Pagadas en Efectivo");
@@ -442,7 +448,7 @@ public class PMptetitla extends javax.swing.JFrame {
                 }
 
                 Statement ctalic = connect.createStatement();
-                ResultSet rsctalic = ctalic.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla` WHERE `CTA lic` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                ResultSet rsctalic = ctalic.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "` WHERE `metodo` LIKE '%CTA lic%'");
                 row = spreadsheet.getRow(2);
                 cell = row.createCell(51);
                 cell.setCellValue("Pagadas en Cuenta lic");
@@ -455,7 +461,7 @@ public class PMptetitla extends javax.swing.JFrame {
                 }
 
                 Statement ctacon = connect.createStatement();
-                ResultSet rsctacon = ctacon.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla` WHERE `CTA confort` LIKE '%" + CbxMes.getSelectedItem().toString() + "%'");
+                ResultSet rsctacon = ctacon.executeQuery("SELECT SUM(Tpagado) FROM `pensiones.puente titla." + CbxMes.getSelectedItem().toString() + "` WHERE `metodo` LIKE '%CTA confort%'");
                 row = spreadsheet.getRow(3);
                 cell = row.createCell(51);
                 cell.setCellValue("Pagadas en Cuenta confort");
@@ -466,7 +472,7 @@ public class PMptetitla extends javax.swing.JFrame {
                     cell.setCellValue(rsctacon.getDouble(1));
                     cell.setCellStyle(Contenido);
                 }
-                
+
                 spreadsheet.getPrintSetup();
                 spreadsheet.getPrintSetup().setPaperSize(PaperSize.LETTER_PAPER);
                 spreadsheet.getPrintSetup().setLandscape(false); // Dirección de impresión, true: horizontal, false: vertical
@@ -726,78 +732,9 @@ public class PMptetitla extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PMptetitla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PMptetitla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PMptetitla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PMptetitla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

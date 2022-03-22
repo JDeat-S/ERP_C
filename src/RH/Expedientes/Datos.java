@@ -10,6 +10,34 @@ public class Datos {
     private String ApellidoP;
     private String ApellidoM;
     private String NE;
+    private String CURP;
+    private String RFC;
+    private String NSS;
+    
+    public String getCURP() {
+        return CURP;
+    }
+
+    public void setCURP(String CURP) {
+        this.CURP = CURP;
+    }
+
+    public String getRFC() {
+        return RFC;
+    }
+
+    public void setRFC(String RFC) {
+        this.RFC = RFC;
+    }
+
+    public String getNSS() {
+        return NSS;
+    }
+
+    public void setNSS(String NSS) {
+        this.NSS = NSS;
+    }
+
 
     public String getNE() {
         return NE;

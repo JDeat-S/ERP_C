@@ -2025,7 +2025,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         });
 
         mod1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Lapizmod.jpg"))); // NOI18N
-        mod1.setText("Empelado");
+        mod1.setText("Historial Empleado");
         mod1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mod1ActionPerformed(evt);
@@ -4613,6 +4613,10 @@ public final class Empleados_4 extends javax.swing.JFrame {
         dat.setApellidoP(APgen.getText());
         dat.setApellidoM(AMgen.getText());
         dat.setName(NameGen.getText());
+        dat.setCURP(CURP.getText());
+        dat.setNSS(NSS.getText());
+        dat.setRFC(RFC.getText());
+
         Expedientes_4 regr = new Expedientes_4(usr, LP, dat);
         regr.setVisible(true);
     }//GEN-LAST:event_mod1ActionPerformed
@@ -4636,6 +4640,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Empleados_4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {

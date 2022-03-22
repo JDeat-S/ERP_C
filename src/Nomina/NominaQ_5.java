@@ -146,7 +146,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         año.setCalendar(fecha_actual);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        shareN();
         FunMD();
         Bono.setVisible(false);
         DAB = new ButtonGroup();
@@ -176,10 +175,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         LabelBSP.setVisible(false);
         LabelSZP.setVisible(false);
         LabelNDFP.setVisible(false);
-        Filtro1.setVisible(false);
-        BNameNom.setVisible(false);
-        BAPNom.setVisible(false);
-        BAMNom.setVisible(false);
         FApT.setVisible(false);
         FAmT.setVisible(false);
         BAppag.setVisible(false);
@@ -494,9 +489,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         //</editor-fold>
         sumaDep();
         setIconImage(new ImageIcon(NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        sharecdanom();
-        sharepresnom();
-        shareODTnom();
     }
 
     public NominaQ_5(Logica_usuarios usr, Logica_permisos LP) {
@@ -565,7 +557,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         año.setCalendar(fecha_actual);
         this.setLocationRelativeTo(null);
         this.setExtendedState(6);
-        shareN();
         FunMD();
         Bono.setVisible(false);
         DAB = new ButtonGroup();
@@ -595,10 +586,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         LabelBSP.setVisible(false);
         LabelSZP.setVisible(false);
         LabelNDFP.setVisible(false);
-        Filtro1.setVisible(false);
-        BNameNom.setVisible(false);
-        BAPNom.setVisible(false);
-        BAMNom.setVisible(false);
         FApT.setVisible(false);
         FAmT.setVisible(false);
         BAppag.setVisible(false);
@@ -913,9 +900,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         //</editor-fold>
         sumaDep();
         setIconImage(new ImageIcon(NominaQ_5.class.getClassLoader().getResource("Imagenes/Icono.png")).getImage());
-        sharecdanom();
-        sharepresnom();
-        shareODTnom();
         setTitle("Nomina Quincenal IMSS. # Usuario: " + usr.getId_user() + " " + usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre()
                 + " Tipo de ususario: " + usr.getNombre_tipo() + " Usuario: " + usr.getUsuario());
         switch (LP.getVDA()) {
@@ -1511,71 +1495,27 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }
 
     public void shareODTnom() {
-        String FiltroN = BNameNom.getText();
-        String FAP = BAPNom.getText();
-        String FAM = BAMNom.getText();
-        String where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`";
-
-        if (!"".equals(FiltroN)) {
-            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%' AND `Status` LIKE '%Debe%'";
-        } else if (!"".equals(FAP)) {
-            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%' AND `Status` LIKE '%Debe%'";
-        } else if (!"".equals(FAM)) {
-            where = "SELECT `idTaller`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Por quincenas`,"
-                    + " `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%' ";
-        }
+        String SQL = "SELECT `idTaller`,"
+                + " `Por quincenas`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.odt`"
+                + "WHERE `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText()
+                + "%' AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%Debe%'";
 
         try {
             //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
 
-            };
-//Nombre de la tabla
-            SHODTnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Orden");
-            modelo.addColumn("Apellido P");//2
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Pago por Qna");
-            modelo.addColumn("Qnas pagadas");//6
-            modelo.addColumn("Pagado");
-            modelo.addColumn("Pendiente");//8
-
-//ANCHOS
-            int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPQ*/ 50,
-                /*QP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                SHODTnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
             while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
+                NODTnom.setText(rs.getString(1));
+                Odtp.setText(rs.getString(2));
+                NQODTnom.setText(rs.getString(3));
+                PagODTnom.setText(rs.getString(4));
+                PenODTnom.setText(rs.getString(5));
+
             }
             ps.isClosed();
             rs.isClosed();
@@ -1632,70 +1572,24 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }
 
     public void sharepresnom() {
-        String FiltroN = BNameNom.getText();
-        String FAP = BAPNom.getText();
-        String FAM = BAMNom.getText();
-        String where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`";
 
-        if (!"".equals(FiltroN)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%' AND `Status` LIKE '%Debe%'";
-        } else if (!"".equals(FAP)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%' AND `Status` LIKE '%Debe%'";
-        } else if (!"".equals(FAM)) {
-            where = "SELECT `idprestamos`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%' AND `Status` LIKE '%Debe%'";
-        }
-
+        String SQL = "SELECT `idprestamos`,"
+                + " `Por quincena`, `Quincenas pagadas`, `Pagado`, `Pendiente` FROM `nomina.prestamos`"
+                + "WHERE `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText()
+                + "%' AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%Debe%'";
         try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            SHPresnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Prestamo");
-            modelo.addColumn("Apellido P");//2
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Pago por Qna");
-            modelo.addColumn("Qnas pagadas");//6
-            modelo.addColumn("Pagado");
-            modelo.addColumn("Pendiente");//8
-
-//ANCHOS
-            int[] anchos = {/*NP*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*PPQ*/ 50,
-                /*QP*/ 50, /*PAG*/ 60, /*PEN*/ 50};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                SHPresnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
             while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
+                NumPrenom.setText(rs.getString(1));
+                Presp.setText(rs.getString(2));
+                NQprenom.setText(rs.getString(3));
+                Pagadoprenom.setText(rs.getString(4));
+                Pendienteprenom.setText(rs.getString(5));
+
             }
             ps.isClosed();
             rs.isClosed();
@@ -1728,74 +1622,23 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }
 
     public void sharecdanom() {
-        String FiltroN = BNameNom.getText();
-        String FAP = BAPNom.getText();
-        String FAM = BAMNom.getText();
-        String where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
+        String SQL = "SELECT `#caja`, "
                 + " `Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado` "
-                + " FROM `nomina.cajadeahorro`";
-
-        if (!"".equals(FiltroN)) {
-            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`,"
-                    + " `Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado`"
-                    + "  FROM `nomina.cajadeahorro`"
-                    + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
-        } else if (!"".equals(FAP)) {
-            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado` "
-                    + " FROM `nomina.cajadeahorro`"
-                    + " Where `Apellido P` LIKE '%" + FAP + "%'";
-        } else if (!"".equals(FAM)) {
-            where = "SELECT `#caja`, `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                    + "`Ahorro por quincena`, `Quincenas Ahorradas`, `Total Ahorrado` "
-                    + " FROM `nomina.cajadeahorro`"
-                    + " Where `Apellido M` LIKE '%" + FAM + "%'";
-        }
-
+                + " FROM `nomina.cajadeahorro`"
+                + "WHERE `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText()
+                + "%' AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%vigente%'";
         try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            SHCDAnom.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Caja");
-            modelo.addColumn("Apellido P");//2
-            modelo.addColumn("Apellido M");
-            modelo.addColumn("Nombre(s)");//4
-            modelo.addColumn("Ahorro por Qna");
-            modelo.addColumn("Qnas ahorradas");//6
-            modelo.addColumn("Total ahorrado");
-
-//ANCHOS
-            int[] anchos = {/*NF*/50, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 50, /*APQ*/ 50,
-                /*QA*/ 50, /*TA*/ 60};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                SHCDAnom.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
             while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
+                NCDANom.setText(rs.getString(1));
+                cda.setText(rs.getString(2));
+                QAcdanom.setText(rs.getString(3));
+                TACDANOM.setText(rs.getString(4));
             }
             ps.isClosed();
             rs.isClosed();
@@ -1879,71 +1722,25 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }
 
     public void shareN() {
-        //Buscar empleado
-        String Share = BNameNom.getText();
-        String ShareAP = BAPNom.getText();
-        String ShareAM = BAMNom.getText();
-        String where = "SELECT `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
-                + " where `Status` LIKE '%Vigente%'";
-
-        if (!"".equals(Share)) {
-            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
-                    + "from `rh.empleados` WHERE `Nombre(s)` LIKE '%" + Share + "%' AND `Status` LIKE '%Vigente%'";
-        } else if (!"".equals(ShareAP)) {
-            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
-                    + "from `rh.empleados` WHERE `Apellido P` LIKE '%" + ShareAP + "%' AND `Status` LIKE '%Vigente%'";
-        } else if (!"".equals(ShareAM)) {
-            where = " select `# Exp`,`Apellido P`, `Apellido M`, `Nombre(s)`, `Banco`,`Cuenta bancaria`,`Zona`, `Servicio`, `Sueldo`, `Bono`  "
-                    + "from `rh.empleados` WHERE `Apellido M` LIKE '%" + ShareAM + "%' AND `Status` LIKE '%Vigente%'";
-        }
+        String SQL = "SELECT `# Exp`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
+                + " where `Status` LIKE '%Vigente%' And `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText() + "%'"
+                + " AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%Vigente%' AND `Entra a IMSS` LIKE '%si%'";
 
         try {
-            //Cargar datos
-            DefaultTableModel modelo = new DefaultTableModel() {
-                @Override
-                public boolean isCellEditable(int filas, int columna) {
-                    return false;
-                }
-
-            };
-//Nombre de la tabla
-            share.setModel(modelo);
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
-            ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
-            int cantidadColumnas = rsMd.getColumnCount();
-
-            modelo.addColumn("# Empleado");
-            modelo.addColumn("Apellido P");//1
-            modelo.addColumn("Apellido M");//
-            modelo.addColumn("Nombre(s)");//3
-            modelo.addColumn("Banco");//7
-            modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//5
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
-
-//Anchos
-            int[] anchos = {/*numE*/35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 150, /*Banco*/ 75, /*CTA*/ 50, /*zona*/ 60,
-                /*servicio*/ 100, /*sueldo*/ 60, /*bono*/ 40};
-
-            for (int x = 0; x < cantidadColumnas; x++) {
-                //Nombre tabla
-                share.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
-
-            }
-
             while (rs.next()) {
-                Object[] filas = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    filas[i] = rs.getObject(i + 1);
-                }
-                modelo.addRow(filas);
+                NEnom.setText(rs.getString(1));
+                ban.setText(rs.getString(2));
+                cta.setText(rs.getString(3));
+                Zon.setText(rs.getString(4));
+                ServN.setText(rs.getString(5));
+                sueldo.setText(rs.getString(6));
+                Bono1.setText(rs.getString(7));
             }
             ps.isClosed();
             rs.isClosed();
@@ -1951,7 +1748,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
 
         }
-
     }
 
     public void FunMD() {
@@ -4521,15 +4317,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         jLabel127 = new javax.swing.JLabel();
         NEnom = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        BAMNom = new javax.swing.JTextField();
-        FiltrosNom = new javax.swing.JComboBox<>();
-        jLabel28 = new javax.swing.JLabel();
         CS = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        share = new javax.swing.JTable();
-        BAPNom = new javax.swing.JTextField();
-        Filtro1 = new javax.swing.JLabel();
-        BNameNom = new javax.swing.JTextField();
         pd = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         Quincenas = new javax.swing.JComboBox<>();
@@ -4594,17 +4382,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         DPF = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         DI = new javax.swing.JTextField();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        SHPresnom = new javax.swing.JTable();
         jLabel144 = new javax.swing.JLabel();
-        jScrollPane18 = new javax.swing.JScrollPane();
-        SHCDAnom = new javax.swing.JTable();
         cda = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel145 = new javax.swing.JLabel();
         jLabel146 = new javax.swing.JLabel();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        SHODTnom = new javax.swing.JTable();
         jLabel29 = new javax.swing.JLabel();
         Odtp = new javax.swing.JTextField();
         jLabel130 = new javax.swing.JLabel();
@@ -4700,16 +4482,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         deposito = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        jLabel126 = new javax.swing.JLabel();
-        jLabel154 = new javax.swing.JLabel();
-        jLabel156 = new javax.swing.JLabel();
-        jLabel158 = new javax.swing.JLabel();
-        jLabel163 = new javax.swing.JLabel();
-        jLabel164 = new javax.swing.JLabel();
-        jLabel165 = new javax.swing.JLabel();
-        jLabel166 = new javax.swing.JLabel();
         Pbs = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel89 = new javax.swing.JLabel();
@@ -4741,6 +4513,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         PH = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
+        jLabel158 = new javax.swing.JLabel();
+        jLabel156 = new javax.swing.JLabel();
+        jLabel154 = new javax.swing.JLabel();
+        jLabel126 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel166 = new javax.swing.JLabel();
+        jLabel165 = new javax.swing.JLabel();
+        jLabel164 = new javax.swing.JLabel();
+        jLabel163 = new javax.swing.JLabel();
         NomDetallada = new javax.swing.JScrollPane();
         PestanañasND = new javax.swing.JTabbedPane();
         TDFA = new javax.swing.JScrollPane();
@@ -5214,6 +4996,12 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jLabel27.setText("Nombre(s):");
 
+        name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nameKeyReleased(evt);
+            }
+        });
+
         jLabel127.setText("# empleado:");
 
         NEnom.setText("0");
@@ -5232,11 +5020,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(DatgenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(NDL, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(Ap, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(am, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(NEnom, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                    .addComponent(NDL, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(Ap, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(am, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(NEnom, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                 .addContainerGap())
         );
         DatgenLayout.setVerticalGroup(
@@ -5267,58 +5055,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jLabel26.setText("Por dia:");
 
-        BAMNom.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BAMNomKeyReleased(evt);
-            }
-        });
-
-        FiltrosNom.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona filtro", "Apellido P", "Apellido M", "Nombre(s)" }));
-        FiltrosNom.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FiltrosNomItemStateChanged(evt);
-            }
-        });
-
-        jLabel28.setText("Filtrar por:");
-
         CS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrarsesionlogo.jpg"))); // NOI18N
         CS.setText("Cerrar sesion");
         CS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CSActionPerformed(evt);
-            }
-        });
-
-        share.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
-            }
-        ));
-        share.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                shareMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(share);
-
-        BAPNom.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BAPNomKeyReleased(evt);
-            }
-        });
-
-        Filtro1.setText("Buscar empleado:");
-
-        BNameNom.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                BNameNomKeyReleased(evt);
             }
         });
 
@@ -5714,7 +5455,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                         .addGap(72, 72, 72)
                         .addComponent(jLabel90)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Bono1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Bono1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -5725,11 +5466,11 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                             .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ServN, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(sueldo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(ban, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(cta, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(Zon))))
+                            .addComponent(ServN, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(sueldo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(ban, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(cta, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(Zon, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -5789,44 +5530,8 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             }
         });
 
-        SHPresnom.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        SHPresnom.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SHPresnomMouseClicked(evt);
-            }
-        });
-        jScrollPane17.setViewportView(SHPresnom);
-
         jLabel144.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel144.setText("Prestamos:");
-
-        SHCDAnom.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        SHCDAnom.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SHCDAnomMouseClicked(evt);
-            }
-        });
-        jScrollPane18.setViewportView(SHCDAnom);
 
         cda.setText("0");
         cda.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -5842,24 +5547,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jLabel146.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel146.setText("Orden de Taller:");
-
-        SHODTnom.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        SHODTnom.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SHODTnomMouseClicked(evt);
-            }
-        });
-        jScrollPane19.setViewportView(SHODTnom);
 
         jLabel29.setText("Orden de taller:");
 
@@ -5949,7 +5636,92 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(F)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel137)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DPF))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel45)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NomISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel132)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NCDANom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel130)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(QAcdanom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel139)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TACDANOM, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel143)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel149)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NQODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel142)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PagODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel147)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PenODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel131)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NumPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel148)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NQprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel140)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pagadoprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel141)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pendienteprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel74)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(69, Short.MAX_VALUE))
+            .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
                         .addGap(257, 257, 257)
@@ -5963,97 +5735,7 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                             .addComponent(jLabel144)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
-                                .addComponent(jLabel134))))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane19)
-                            .addComponent(jScrollPane17)
-                            .addComponent(jScrollPane18, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
-                                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel10Layout.createSequentialGroup()
-                                        .addComponent(jLabel18)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(F)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel137)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DPF))
-                                    .addGroup(jPanel10Layout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addComponent(jLabel24)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(DI, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel32)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(RI, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel39)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(RF, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel45)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NomISR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel10Layout.createSequentialGroup()
-                                        .addComponent(jLabel132)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NCDANom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel22)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel130)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(QAcdanom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel139)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(TACDANOM, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel10Layout.createSequentialGroup()
-                                        .addComponent(jLabel143)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel149)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NQODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel142)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PagODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel147)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PenODTnom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel29)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel10Layout.createSequentialGroup()
-                                        .addComponent(jLabel131)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NumPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel148)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NQprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel140)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Pagadoprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel141)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Pendienteprenom, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel74)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Presp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 63, Short.MAX_VALUE)))))
+                                .addComponent(jLabel134)))))
                 .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
@@ -6080,8 +5762,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel144)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel74)
@@ -6098,8 +5778,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel145)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6111,8 +5789,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                     .addComponent(TACDANOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel146)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Odtp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6525,27 +6201,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 
         jPanel21.setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel48.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel48.setText("Dias festivos.");
-
-        jLabel73.setText("- 1o. de enero.");
-
-        jLabel126.setText("- El primer lunes de febrero en conmemoración del 5 de febrero");
-
-        jLabel154.setText("- El tercer lunes de marzo en conmemoración del 21 de marzo");
-
-        jLabel156.setText("- 1o. de mayo");
-
-        jLabel158.setText("- 16 de septiembre");
-
-        jLabel163.setText("- El tercer lunes de noviembre en conmemoración del 20 de noviembre;");
-
-        jLabel164.setText("- El 1o. de diciembre de cada seis años, cuando corresponda a la transmisión del Poder Ejecutivo Federal");
-
-        jLabel165.setText("- 25 de diciembre");
-
-        jLabel166.setText("- El que determinen las leyes federales y locales electorales, en el caso de elecciones ordinarias, para efectuar la jornada electoral");
-
         Pbs.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel23.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -6781,71 +6436,41 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
-                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel158))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(jLabel48))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel73))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel126))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel164))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel156))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel154))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel163))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel165))
-                    .addGroup(jPanel21Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel166))
-                    .addComponent(Pbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Pbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(463, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Pbs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel48)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel73)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel126)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel154)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel156)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel158)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel163)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel164)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel165)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel166)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PH.setText("0");
 
         jLabel40.setText("Por hora:");
+
+        jLabel158.setText("- 16 de septiembre");
+
+        jLabel156.setText("- 1o. de mayo");
+
+        jLabel154.setText("- El tercer lunes de marzo en conmemoración del 21 de marzo");
+
+        jLabel126.setText("- El primer lunes de febrero en conmemoración del 5 de febrero");
+
+        jLabel73.setText("- 1o. de enero.");
+
+        jLabel48.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel48.setText("Dias festivos.");
+
+        jLabel166.setText("- El que determinen las leyes federales y locales electorales, en el caso de elecciones ordinarias, para efectuar la jornada electoral");
+
+        jLabel165.setText("- 25 de diciembre");
+
+        jLabel164.setText("- El 1o. de diciembre de cada seis años, cuando corresponda a la transmisión del Poder Ejecutivo Federal");
+
+        jLabel163.setText("- El tercer lunes de noviembre en conmemoración del 20 de noviembre;");
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -6866,31 +6491,16 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                                         .addComponent(jLabel133)
-                                        .addGap(119, 119, 119)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(CS)
+                                        .addGap(7, 7, 7)))
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel26))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel17Layout.createSequentialGroup()
-                                        .addComponent(jLabel28)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(FiltrosNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Filtro1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BNameNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BAPNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(72, 72, 72)
-                                        .addComponent(CS))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel17Layout.createSequentialGroup()
-                                        .addComponent(jLabel26)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel40)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6904,7 +6514,20 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                         .addComponent(jLabel12))
                                     .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel158)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(212, 212, 212)
+                                .addComponent(jLabel48))
+                            .addComponent(jLabel73)
+                            .addComponent(jLabel126)
+                            .addComponent(jLabel164)
+                            .addComponent(jLabel156)
+                            .addComponent(jLabel154)
+                            .addComponent(jLabel163)
+                            .addComponent(jLabel165)
+                            .addComponent(jLabel166))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(204, Short.MAX_VALUE))
@@ -6914,28 +6537,19 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Filtro1)
-                    .addComponent(BNameNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BAPNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BAMNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FiltrosNom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28)
                     .addComponent(CS)
                     .addComponent(jLabel133))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel40)
-                                    .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel26)
-                                    .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel26)
+                            .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel40)
+                            .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Datgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
@@ -6955,7 +6569,28 @@ public final class NominaQ_5 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel48)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel73)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel126)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel154)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel156)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel158)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel163)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel164)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel165)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel166)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -10755,6 +10390,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_BsiActionPerformed
 
     private void Dia16ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia16ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D16 = (String) Dia16.getSelectedItem();
 
         if (D16.equals(".")) {
@@ -10980,6 +10771,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia16ItemStateChanged
 
     private void Dia15ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia15ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D15 = (String) Dia15.getSelectedItem();
 
         if (D15.equals(".")) {
@@ -11204,6 +11151,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia15ItemStateChanged
 
     private void Dia14ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia14ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D14 = (String) Dia14.getSelectedItem();
 
         if (D14.equals(".")) {
@@ -11428,6 +11531,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia14ItemStateChanged
 
     private void Dia13ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia13ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D13 = (String) Dia13.getSelectedItem();
 
         if (D13.equals(".")) {
@@ -11653,6 +11912,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia13ItemStateChanged
 
     private void Dia12ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia12ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D12 = (String) Dia12.getSelectedItem();
 
         if (D12.equals(".")) {
@@ -11878,6 +12293,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia12ItemStateChanged
 
     private void Dia11ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia11ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D11 = (String) Dia11.getSelectedItem();
 
         if (D11.equals(".")) {
@@ -12102,6 +12673,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia11ItemStateChanged
 
     private void Dia10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia10ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D10 = (String) Dia10.getSelectedItem();
 
         if (D10.equals(".")) {
@@ -12326,6 +13053,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia10ItemStateChanged
 
     private void Dia9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia9ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D9 = (String) Dia9.getSelectedItem();
 
         if (D9.equals(".")) {
@@ -12550,6 +13433,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia9ItemStateChanged
 
     private void Dia8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia8ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D8 = (String) Dia8.getSelectedItem();
 
         if (D8.equals(".")) {
@@ -12774,6 +13813,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia8ItemStateChanged
 
     private void Dia7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia7ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D7 = (String) Dia7.getSelectedItem();
 
         if (D7.equals(".")) {
@@ -12998,6 +14193,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia7ItemStateChanged
 
     private void Dia6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia6ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D6 = (String) Dia6.getSelectedItem();
 
         if (D6.equals(".")) {
@@ -13222,6 +14573,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia6ItemStateChanged
 
     private void Dia5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia5ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D5 = (String) Dia5.getSelectedItem();
 
         if (D5.equals(".")) {
@@ -13445,6 +14952,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia5ItemStateChanged
 
     private void Dia4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia4ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D4 = (String) Dia4.getSelectedItem();
 
         if (D4.equals(".")) {
@@ -13669,6 +15332,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia4ItemStateChanged
 
     private void Dia3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia3ItemStateChanged
+String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D3 = (String) Dia3.getSelectedItem();
 
         if (D3.equals(".")) {
@@ -13893,6 +15712,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia3ItemStateChanged
 
     private void Dia2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia2ItemStateChanged
+        String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D2 = (String) Dia2.getSelectedItem();
 
         if (D2.equals(".")) {
@@ -14117,6 +16092,162 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_Dia2ItemStateChanged
 
     private void Dia1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Dia1ItemStateChanged
+        String Q = (String) Quincenas.getSelectedItem();
+        if (Q.equals("1ra Quincena de Enero")) {
+            double Q1E = 15;
+            double DIVE1 = Double.parseDouble(sueldo.getText());
+            double total = DIVE1 / Q1E;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Enero")) {
+            double Q2E = 16;
+            double divE2 = Double.parseDouble(sueldo.getText());
+            double total = divE2 / Q2E;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Febrero")) {
+            double Q1F = 15;
+            double divF1 = Double.parseDouble(sueldo.getText());
+            double total = divF1 / Q1F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Febrero")) {
+            double Q2F = 13;
+            double DIVF2 = Double.parseDouble(sueldo.getText());
+            double total = DIVF2 / Q2F;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Feb B")) {
+            double Q2FB = 14;
+            double DIVF2B = Double.parseDouble(sueldo.getText());
+            double total = DIVF2B / Q2FB;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Marzo")) {
+            double Q1MZ = 15;
+            double DIV1MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV1MZ / Q1MZ;
+            pd.setText("" + total + "");
+
+        }
+        if (Q.equals("2da Quincena de Marzo")) {
+            double Q2MZ = 16;
+            double DIV2MZ = Double.parseDouble(sueldo.getText());
+            double total = DIV2MZ / Q2MZ;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Abril")) {
+            double Q1ABL = 15;
+            double DIV1ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV1ABL / Q1ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Abril")) {
+            double Q2ABL = 15;
+            double DIV2ABL = Double.parseDouble(sueldo.getText());
+            double total = DIV2ABL / Q2ABL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Mayo")) {
+            double Q1MY = 15;
+            double DIV1MY = Double.parseDouble(sueldo.getText());
+            double total = DIV1MY / Q1MY;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Mayo")) {
+            double Q2MY = 16;
+            double DIV2MY = Double.parseDouble(sueldo.getText());
+            double total = DIV2MY / Q2MY;
+            pd.setText("" + total + "");
+        }
+
+        if (Q.equals("1ra Quincena de Junio")) {
+            double Q1JN = 15;
+            double DIV1JN = Double.parseDouble(sueldo.getText());
+            double total = DIV1JN / Q1JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Junio")) {
+            d.setText("16");
+            double Q2JN = 15;
+            double DIV2JN = Double.parseDouble(sueldo.getText());
+            double total = DIV2JN / Q2JN;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Julio")) {
+            double Q1JL = 15;
+            double DIV1JL = Double.parseDouble(sueldo.getText());
+            double total = DIV1JL / Q1JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Julio")) {
+            double Q2JL = 16;
+            double DIV2JL = Double.parseDouble(sueldo.getText());
+            double total = DIV2JL / Q2JL;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Agosto")) {
+            double Q1A = 15;
+            double DIV1A = Double.parseDouble(sueldo.getText());
+            double total = DIV1A / Q1A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Agosto")) {
+            double Q2A = 16;
+            double DIV2A = Double.parseDouble(sueldo.getText());
+            double total = DIV2A / Q2A;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Septiembre")) {
+            double Q1S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q1S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Septiembre")) {
+            double Q2S = 15;
+            double DIV1S = Double.parseDouble(sueldo.getText());
+            double total = DIV1S / Q2S;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Octubre")) {
+            double Q1O = 15;
+            double DIV1O = Double.parseDouble(sueldo.getText());
+            double total = DIV1O / Q1O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Octubre")) {
+            double Q2O = 16;
+            double DIV2Q = Double.parseDouble(sueldo.getText());
+            double total = DIV2Q / Q2O;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Noviembre")) {
+            double Q1N = 15;
+            double DIV1N = Double.parseDouble(sueldo.getText());
+            double total = DIV1N / Q1N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Noviembre")) {
+            double Q2N = 15;
+            double DIV2N = Double.parseDouble(sueldo.getText());
+            double total = DIV2N / Q2N;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("1ra Quincena de Diciembre")) {
+            double Q1D = 15;
+            double DIV1D = Double.parseDouble(sueldo.getText());
+            double total = DIV1D / Q1D;
+            pd.setText("" + total + "");
+        }
+        if (Q.equals("2da Quincena de Diciembre")) {
+            double Q2D = 16;
+            double DIV2D = Double.parseDouble(sueldo.getText());
+            double total = DIV2D / Q2D;
+            pd.setText("" + total + "");
+        }
         String D1 = (String) Dia1.getSelectedItem();
 
         if (D1.equals(".")) {
@@ -15430,1121 +17561,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         deposito();
     }//GEN-LAST:event_QuincenasItemStateChanged
 
-    private void BNameNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BNameNomKeyReleased
-        sharecdanom();
-        shareN();
-        sharepresnom();
-        shareODTnom();
-    }//GEN-LAST:event_BNameNomKeyReleased
-
-    private void BAPNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAPNomKeyReleased
-        sharecdanom();
-        shareN();
-        sharepresnom();
-        shareODTnom();
-    }//GEN-LAST:event_BAPNomKeyReleased
-
-    private void shareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shareMouseClicked
-
-        int seleccionar = share.getSelectedRow();
-        NEnom.setText(String.valueOf(share.getValueAt(seleccionar, 0)));
-        Ap.setText(String.valueOf(share.getValueAt(seleccionar, 1)));
-        am.setText(String.valueOf(share.getValueAt(seleccionar, 2)));
-        name.setText(String.valueOf(share.getValueAt(seleccionar, 3)));
-        ban.setText(String.valueOf(share.getValueAt(seleccionar, 4)));
-        cta.setText(String.valueOf(share.getValueAt(seleccionar, 5)));
-        Zon.setText(String.valueOf(share.getValueAt(seleccionar, 6)));
-        ServN.setText(String.valueOf(share.getValueAt(seleccionar, 7)));
-        sueldo.setText(String.valueOf(share.getValueAt(seleccionar, 8)));
-        Bono1.setText(String.valueOf(share.getValueAt(seleccionar, 9)));
-        String Q = (String) Quincenas.getSelectedItem();
-        if (Q.equals("1ra Quincena de Enero")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1E = 15;
-            double DIVE1 = Double.parseDouble(sueldo.getText());
-            double total = DIVE1 / Q1E;
-            pd.setText("" + total + "");
-
-        }
-        if (Q.equals("2da Quincena de Enero")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d15.setText("31");
-            d15.setVisible(true);
-            Dia16.setVisible(true);
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2E = 16;
-            double divE2 = Double.parseDouble(sueldo.getText());
-            double total = divE2 / Q2E;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Febrero")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1F = 15;
-            double divF1 = Double.parseDouble(sueldo.getText());
-            double total = divF1 / Q1F;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Febrero")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setVisible(false);
-            Dia14.setVisible(false);
-            d14.setVisible(false);
-            Dia15.setVisible(false);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2F = 13;
-            double DIVF2 = Double.parseDouble(sueldo.getText());
-            double total = DIVF2 / Q2F;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Feb B")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            Dia14.setVisible(true);
-            d13.setVisible(true);
-            d14.setVisible(false);
-            Dia15.setVisible(false);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2FB = 14;
-            double DIVF2B = Double.parseDouble(sueldo.getText());
-            double total = DIVF2B / Q2FB;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Marzo")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1MZ = 15;
-            double DIV1MZ = Double.parseDouble(sueldo.getText());
-            double total = DIV1MZ / Q1MZ;
-            pd.setText("" + total + "");
-
-        }
-        if (Q.equals("2da Quincena de Marzo")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d15.setText("31");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(true);
-            Dia16.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2MZ = 16;
-            double DIV2MZ = Double.parseDouble(sueldo.getText());
-            double total = DIV2MZ / Q2MZ;
-            pd.setText("" + total + "");
-        }
-
-        if (Q.equals("1ra Quincena de Abril")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1ABL = 15;
-            double DIV1ABL = Double.parseDouble(sueldo.getText());
-            double total = DIV1ABL / Q1ABL;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Abril")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2ABL = 15;
-            double DIV2ABL = Double.parseDouble(sueldo.getText());
-            double total = DIV2ABL / Q2ABL;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Mayo")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1MY = 15;
-            double DIV1MY = Double.parseDouble(sueldo.getText());
-            double total = DIV1MY / Q1MY;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Mayo")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d15.setText("31");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(true);
-            Dia16.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2MY = 16;
-            double DIV2MY = Double.parseDouble(sueldo.getText());
-            double total = DIV2MY / Q2MY;
-            pd.setText("" + total + "");
-        }
-
-        if (Q.equals("1ra Quincena de Junio")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1JN = 15;
-            double DIV1JN = Double.parseDouble(sueldo.getText());
-            double total = DIV1JN / Q1JN;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Junio")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d13.setVisible(true);
-            Dia13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2JN = 15;
-            double DIV2JN = Double.parseDouble(sueldo.getText());
-            double total = DIV2JN / Q2JN;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Julio")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1JL = 15;
-            double DIV1JL = Double.parseDouble(sueldo.getText());
-            double total = DIV1JL / Q1JL;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Julio")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d15.setText("31");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(true);
-            Dia16.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2JL = 16;
-            double DIV2JL = Double.parseDouble(sueldo.getText());
-            double total = DIV2JL / Q2JL;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Agosto")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1A = 15;
-            double DIV1A = Double.parseDouble(sueldo.getText());
-            double total = DIV1A / Q1A;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Agosto")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d15.setText("31");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(true);
-            Dia16.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2A = 16;
-            double DIV2A = Double.parseDouble(sueldo.getText());
-            double total = DIV2A / Q2A;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Septiembre")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1S = 15;
-            double DIV1S = Double.parseDouble(sueldo.getText());
-            double total = DIV1S / Q1S;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Septiembre")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2S = 15;
-            double DIV1S = Double.parseDouble(sueldo.getText());
-            double total = DIV1S / Q2S;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Octubre")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1O = 15;
-            double DIV1O = Double.parseDouble(sueldo.getText());
-            double total = DIV1O / Q1O;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Octubre")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d15.setText("31");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(true);
-            Dia16.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2O = 16;
-            double DIV2Q = Double.parseDouble(sueldo.getText());
-            double total = DIV2Q / Q2O;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Noviembre")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1N = 15;
-            double DIV1N = Double.parseDouble(sueldo.getText());
-            double total = DIV1N / Q1N;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Noviembre")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2N = 15;
-            double DIV2N = Double.parseDouble(sueldo.getText());
-            double total = DIV2N / Q2N;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("1ra Quincena de Diciembre")) {
-            d.setText("1");
-            d1.setText("2");
-            d2.setText("3");
-            d3.setText("4");
-            d4.setText("5");
-            d5.setText("6");
-            d6.setText("7");
-            d7.setText("8");
-            d8.setText("9");
-            d9.setText("10");
-            d10.setText("11");
-            d11.setText("12");
-            d12.setText("13");
-            d13.setText("14");
-            d14.setText("15");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(false);
-            Dia16.setVisible(false);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q1D = 15;
-            double DIV1D = Double.parseDouble(sueldo.getText());
-            double total = DIV1D / Q1D;
-            pd.setText("" + total + "");
-        }
-        if (Q.equals("2da Quincena de Diciembre")) {
-            d.setText("16");
-            d1.setText("17");
-            d2.setText("18");
-            d3.setText("19");
-            d4.setText("20");
-            d5.setText("21");
-            d6.setText("22");
-            d7.setText("23");
-            d8.setText("24");
-            d9.setText("25");
-            d10.setText("26");
-            d11.setText("27");
-            d12.setText("28");
-            d13.setText("29");
-            d14.setText("30");
-            d15.setText("31");
-            d13.setVisible(true);
-            Dia14.setVisible(true);
-            d14.setVisible(true);
-            Dia15.setVisible(true);
-            d15.setVisible(true);
-            Dia16.setVisible(true);
-            Dia1.setSelectedIndex(0);
-            Dia2.setSelectedIndex(0);
-            Dia3.setSelectedIndex(0);
-            Dia4.setSelectedIndex(0);
-            Dia5.setSelectedIndex(0);
-            Dia6.setSelectedIndex(0);
-            Dia7.setSelectedIndex(0);
-            Dia8.setSelectedIndex(0);
-            Dia9.setSelectedIndex(0);
-            Dia10.setSelectedIndex(0);
-            Dia11.setSelectedIndex(0);
-            Dia12.setSelectedIndex(0);
-            Dia13.setSelectedIndex(0);
-            Dia14.setSelectedIndex(0);
-            Dia15.setSelectedIndex(0);
-            Dia16.setSelectedIndex(0);
-            double Q2D = 16;
-            double DIV2D = Double.parseDouble(sueldo.getText());
-            double total = DIV2D / Q2D;
-            pd.setText("" + total + "");
-        }
-        deposito();
-    }//GEN-LAST:event_shareMouseClicked
-
     private void CSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSActionPerformed
 
         int i = JOptionPane.showConfirmDialog(this, "¿Seguro que quieres cerrar la sesion?");
@@ -16554,62 +17570,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_CSActionPerformed
-
-    private void FiltrosNomItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FiltrosNomItemStateChanged
-
-        String dt = (String) FiltrosNom.getSelectedItem();
-        if (dt.equals("Selecciona filtro")) {
-            Filtro1.setVisible(false);
-            Filtro1.setText("");
-            BNameNom.setVisible(false);
-            BNameNom.setText("");
-            BAPNom.setText("");
-            BAPNom.setVisible(false);
-            BAMNom.setVisible(false);
-            BAMNom.setText("");
-            shareN();
-        }
-        if (dt.equals("Apellido P")) {
-            Filtro1.setVisible(true);
-            Filtro1.setText("Buscar por Apellido P:");
-            BNameNom.setVisible(false);
-            BNameNom.setText("");
-            BAPNom.setText("");
-            BAPNom.setVisible(true);
-            BAMNom.setVisible(false);
-            BAMNom.setText("");
-            shareN();
-        }
-        if (dt.equals("Apellido M")) {
-            Filtro1.setVisible(true);
-            Filtro1.setText("Buscar por Apellido M:");
-            BNameNom.setVisible(false);
-            BNameNom.setText("");
-            BAPNom.setText("");
-            BAPNom.setVisible(false);
-            BAMNom.setVisible(true);
-            BAMNom.setText("");
-            shareN();
-        }
-        if (dt.equals("Nombre(s)")) {
-            Filtro1.setVisible(true);
-            Filtro1.setText("Buscar por Nombre(s):");
-            BNameNom.setVisible(true);
-            BNameNom.setText("");
-            BAPNom.setText("");
-            BAPNom.setVisible(false);
-            BAMNom.setVisible(false);
-            BAMNom.setText("");
-            shareN();
-        }
-    }//GEN-LAST:event_FiltrosNomItemStateChanged
-
-    private void BAMNomKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BAMNomKeyReleased
-        sharecdanom();
-        shareN();
-        sharepresnom();
-        shareODTnom();
-    }//GEN-LAST:event_BAMNomKeyReleased
 
     private void BampagKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BampagKeyReleased
         FunMD();
@@ -16847,35 +17807,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
         FunMD();
         sumaDep();
     }//GEN-LAST:event_buspKeyReleased
-
-    private void SHCDAnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHCDAnomMouseClicked
-        int fila = SHCDAnom.getSelectedRow();
-        NCDANom.setText(String.valueOf(SHCDAnom.getValueAt(fila, 0)));
-        cda.setText(String.valueOf(SHCDAnom.getValueAt(fila, 4)));
-        QAcdanom.setText(String.valueOf(SHCDAnom.getValueAt(fila, 5)));
-        TACDANOM.setText(String.valueOf(SHCDAnom.getValueAt(fila, 6)));
-        deposito();
-    }//GEN-LAST:event_SHCDAnomMouseClicked
-
-    private void SHPresnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHPresnomMouseClicked
-        int fila = SHPresnom.getSelectedRow();
-        NumPrenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 0)));
-        Presp.setText(String.valueOf(SHPresnom.getValueAt(fila, 4)));
-        NQprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 5)));
-        Pagadoprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 6)));
-        Pendienteprenom.setText(String.valueOf(SHPresnom.getValueAt(fila, 7)));
-        deposito();
-    }//GEN-LAST:event_SHPresnomMouseClicked
-
-    private void SHODTnomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHODTnomMouseClicked
-        int fila = SHODTnom.getSelectedRow();
-        NODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 0)));
-        Odtp.setText(String.valueOf(SHODTnom.getValueAt(fila, 4)));
-        NQODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 5)));
-        PagODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 6)));
-        PenODTnom.setText(String.valueOf(SHODTnom.getValueAt(fila, 7)));
-        deposito();
-    }//GEN-LAST:event_SHODTnomMouseClicked
 
     private void PDDDDSGSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PDDDDSGSKeyReleased
         deposito();
@@ -22894,20 +23825,51 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_LDA4ActionPerformed
 
     private void LDA5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LDA5ActionPerformed
-                Listas_Sem_CI_5 regr = new Listas_Sem_CI_5(usr, LP);
+        Listas_Sem_CI_5 regr = new Listas_Sem_CI_5(usr, LP);
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDA5ActionPerformed
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
-       PrenominaS regr = new PrenominaS();
+        PrenominaS regr = new PrenominaS();
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-       PremonimaQ regr = new PremonimaQ();
+        PremonimaQ regr = new PremonimaQ();
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameKeyReleased
+        sharepresnom();
+        sharecdanom();
+        sharepresnom();
+        shareODTnom();
+        shareN();
+        if (name.getText().isEmpty()) {
+            NODTnom.setText("0");
+            Odtp.setText("0");
+            NQODTnom.setText("0");
+            PagODTnom.setText("0");
+            PenODTnom.setText("0");
+            NumPrenom.setText("0");
+            Presp.setText("0");
+            NQprenom.setText("0");
+            Pagadoprenom.setText("0");
+            Pendienteprenom.setText("0");
+            NCDANom.setText("0");
+            cda.setText("0");
+            QAcdanom.setText("0");
+            TACDANOM.setText("0");
+            NEnom.setText("0");
+            ban.setText("");
+            cta.setText("");
+            Zon.setText("");
+            ServN.setText("");
+            sueldo.setText("0");
+            Bono1.setText("0");
+        }
+    }//GEN-LAST:event_nameKeyReleased
 
     /**
      * @param args the command line arguments
@@ -22945,8 +23907,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField AdN;
     private javax.swing.JButton AgregarNom;
     private javax.swing.JTextField Ap;
-    private javax.swing.JTextField BAMNom;
-    private javax.swing.JTextField BAPNom;
     private javax.swing.JTextField BAppag;
     private javax.swing.JTextField BAppag1;
     private javax.swing.JTextField BAppag2;
@@ -22956,7 +23916,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField BAppag6;
     private javax.swing.JTextField BAppag7;
     private javax.swing.JTextField BAppag8;
-    private javax.swing.JTextField BNameNom;
     private javax.swing.JTextField Bampag;
     private javax.swing.JTextField Bampag1;
     private javax.swing.JTextField Bampag2;
@@ -23078,7 +24037,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FZservicio8;
     private javax.swing.JTextField Fdb;
     private javax.swing.JTextField Fde;
-    private javax.swing.JLabel Filtro1;
     private javax.swing.JTextField FiltroNDF;
     private javax.swing.JTextField FiltroNDF1;
     private javax.swing.JTextField FiltroNDF2;
@@ -23133,7 +24091,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> FiltroSnomina6;
     private javax.swing.JComboBox<String> FiltroSnomina7;
     private javax.swing.JComboBox<String> FiltroSnomina8;
-    private javax.swing.JComboBox<String> FiltrosNom;
     private javax.swing.JComboBox<String> FiltrosP;
     private javax.swing.JComboBox<String> FiltrosP1;
     private javax.swing.JComboBox<String> FiltrosP2;
@@ -23339,9 +24296,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTextField RI;
     private javax.swing.JTextField Rembolso;
     private javax.swing.JMenu Reportes;
-    private javax.swing.JTable SHCDAnom;
-    private javax.swing.JTable SHODTnom;
-    private javax.swing.JTable SHPresnom;
     private javax.swing.JTextField Sancion;
     private javax.swing.JTextField ServN;
     private javax.swing.JTextField TACDANOM;
@@ -23494,7 +24448,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -23590,10 +24543,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane17;
-    private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
@@ -23626,7 +24575,6 @@ public final class NominaQ_5 extends javax.swing.JFrame {
     private javax.swing.JTable pago8;
     private javax.swing.JTextField pd;
     private javax.swing.JLabel pds;
-    private javax.swing.JTable share;
     private javax.swing.JTextField sueldo;
     // End of variables declaration//GEN-END:variables
 }

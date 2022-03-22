@@ -1271,22 +1271,22 @@ public final class PresS_5 extends javax.swing.JFrame {
         String FiltroN = FilPDPname.getText();
         String FAP = FilPDPAp.getText();
         String FAM = FilPDPAm.getText();
-        String where = "SELECT * FROM `nomina.pagos.prestamosem`";
+        String where = "SELECT * FROM `nominasem.pagos.prestamosem`";
 
         if (!"".equals(FiltroN)) {
-            where = "SELECT * FROM `nomina.pagos.prestamosem`"
+            where = "SELECT * FROM `nominasem.pagos.prestamosem`"
                     + " where `Nombre(s)` LIKE '%" + FiltroN + "%'";
         } else if (!"".equals(FAP)) {
-            where = "SELECT * FROM `nomina.pagos.prestamosem`"
+            where = "SELECT * FROM `nominasem.pagos.prestamosem`"
                     + " Where `Apellido P` LIKE '%" + FAP + "%'";
         } else if (!"".equals(FAM)) {
-            where = "SELECT * FROM `nomina.pagos.prestamosem`"
+            where = "SELECT * FROM `nominasem.pagos.prestamosem`"
                     + " Where `Apellido M` LIKE '%" + FAM + "%'";
         } else if (!"".equals(NL.getText())) {
-            where = "SELECT * FROM `nomina.pagos.prestamosem`"
+            where = "SELECT * FROM `nominasem.pagos.prestamosem`"
                     + " Where `#Lista` LIKE '%" + NL.getText() + "%'";
         } else if (!"".equals(NP.getText())) {
-            where = "SELECT * FROM `nomina.pagos.prestamosem`"
+            where = "SELECT * FROM `nominasem.pagos.prestamosem`"
                     + " Where `#prestamo` LIKE '%" + NP.getText() + "%'";
         }
 
