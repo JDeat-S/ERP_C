@@ -4616,6 +4616,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         dat.setCURP(CURP.getText());
         dat.setNSS(NSS.getText());
         dat.setRFC(RFC.getText());
+        dat.setFechaDI(FI.getText());
 
         Expedientes_4 regr = new Expedientes_4(usr, LP, dat);
         regr.setVisible(true);

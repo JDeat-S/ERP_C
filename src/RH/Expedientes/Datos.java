@@ -1,4 +1,3 @@
-
 package RH.Expedientes;
 
 /**
@@ -6,6 +5,7 @@ package RH.Expedientes;
  * @author JDeat
  */
 public class Datos {
+
     private String Name;
     private String ApellidoP;
     private String ApellidoM;
@@ -13,7 +13,16 @@ public class Datos {
     private String CURP;
     private String RFC;
     private String NSS;
-    
+    private String FechaDI;
+
+    public String getFechaDI() {
+        return FechaDI;
+    }
+
+    public void setFechaDI(String FechaDI) {
+        this.FechaDI = FechaDI;
+    }
+
     public String getCURP() {
         return CURP;
     }
@@ -37,7 +46,6 @@ public class Datos {
     public void setNSS(String NSS) {
         this.NSS = NSS;
     }
-
 
     public String getNE() {
         return NE;

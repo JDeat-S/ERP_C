@@ -22,6 +22,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.security.auth.login.AppConfigurationEntry;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -75,6 +76,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         CURP.setText(this.dat.getCURP());
         RFC.setText(this.dat.getRFC());
         NSS.setText(this.dat.getNSS());
+        FDI.setText(this.dat.getFechaDI());
         switch (LP.getVDA()) {
             case 0 -> {
                 Mod.setVisible(true);
@@ -95,7 +97,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     }
 
     public void MDMov() {
-        String where = "SELECT * From `rh.empleados.movimientos`  where `Apellido P` LIKE '%" + dat.getApellidoP() + "%' AND `Apellido M` LIKE '%" + dat.getApellidoM() + "%'"
+        String where = "SELECT `#Movimiento`, `tipo de movimiento`, `Fecha inicio`, `Observaciones1`, `Observaciones2` From `rh.empleados.movimientos` where `Apellido P` LIKE '%" + dat.getApellidoP() + "%' AND `Apellido M` LIKE '%" + dat.getApellidoM() + "%'"
                 + "AND `Nombre(s)` LIKE '%" + dat.getName() + "%'";
 
         try {
@@ -121,7 +123,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             modelo.addColumn("# Movimiento");
             modelo.addColumn("Tipo de Movimiento");
             modelo.addColumn("Fecha inicio");//3
-            modelo.addColumn("# Empleado");
+            /*modelo.addColumn("# Empleado");
             modelo.addColumn("Fecha de ingreso");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//6
@@ -144,10 +146,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             modelo.addColumn("Fecha alta IMSS");//3
             modelo.addColumn("Uniforme");//3
             modelo.addColumn("Acuse");//3
-            modelo.addColumn("Obsevaciones 1");//3
+             */ modelo.addColumn("Obsevaciones 1");//3
             modelo.addColumn("Observaciones 2");//3
-            modelo.addColumn("Fecha de registro");//3
-            modelo.addColumn("registrado por");//3
+            //modelo.addColumn("Fecha de registro");//3
+            //modelo.addColumn("registrado por");//3
 
 //Anchos
             int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
@@ -395,15 +397,15 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 5134, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 1695, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -810,13 +812,9 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(ADDreg)
-                            .addComponent(Mod)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(Del))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel25)))
+                            .addComponent(Mod)
+                            .addComponent(Del)
+                            .addComponent(jLabel25))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -974,9 +972,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet RSEXP = RHstatement.executeQuery("SELECT * From `rh.empleados.movimientos`  where `Apellido P` LIKE '%" + dat.getApellidoP() + "%' AND `Apellido M` LIKE '%" + dat.getApellidoM() + "%'"
+            ResultSet RSEXP = RHstatement.executeQuery("SELECT `tipo de movimiento`, `Fecha inicio`,`Observaciones1`, `Observaciones2`"
+                    + " From `rh.empleados.movimientos` where `Apellido P` LIKE '%" + dat.getApellidoP() + "%' AND `Apellido M` LIKE '%" + dat.getApellidoM() + "%'"
                     + "AND `Nombre(s)` LIKE '%" + dat.getName() + "%'");
-            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet("Expediente de empleado");
 
@@ -1009,31 +1008,26 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 Contenido.setBorderTop(XSSFCellStyle.BORDER_THIN);
                 XSSFRow row = spreadsheet.createRow((short) 0);
                 XSSFCell cell = (XSSFCell) row.createCell((short) 0);
-                cell.setCellValue("Expediente de empleado:" + dat.getApellidoP() + " " + dat.getApellidoM() + " " + dat.getName());
+                cell.setCellValue("No. de expediente:");
                 cell.setCellStyle(Encabezado);
-
-                spreadsheet.addMergedRegion(
-                        new CellRangeAddress(
-                                0, //first row (0-based)
-                                0, //last row (0-based)
-                                0, //first column (0-based)
-                                5 //last column (0-based)
-                        )
-                );
+                cell = row.createCell(1);
+                cell.setCellValue(NExp.getText());
+                cell.setCellStyle(Contenido);
                 row = spreadsheet.createRow(1);
                 cell = row.createCell(0);
-                cell.setCellValue("Tipo de registro");
+                cell.setCellValue("Nombre:");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(1);
-                cell.setCellValue("Año");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(2);
-                cell.setCellValue("#Empleado");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(3);
-                cell.setCellValue("Fecha ingreso");
+                cell.setCellValue(APgen.getText() + " " + AMgen.getText() + " " + NameGen.getText());
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(4);
+                cell.setCellValue("Fecha de ingreso");
+                cell.setCellStyle(Contenido);
+                row = spreadsheet.createRow(2);
+                cell = row.createCell(4);
+                cell.setCellValue("No. de credencial");
+                cell.setCellStyle(Contenido);
+                /* cell = row.createCell(4);
                 cell.setCellValue("Apellido P");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(5);
@@ -1107,25 +1101,37 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(28);
                 cell.setCellValue("Registrado por:");
-                cell.setCellStyle(Contenido);
-
-                int i = 2;
+                cell.setCellStyle(Contenido);*/
+                int i = 4;
 
                 while (RSEXP.next()) {
-                    row = spreadsheet.createRow(i);
+                    row = spreadsheet.createRow(3);
                     cell = row.createCell(0);
-                    cell.setCellValue(RSEXP.getString(2));
+                    cell.setCellValue("Movimiento");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(1);
-                    cell.setCellValue(RSEXP.getString(3));
+                    cell.setCellValue("Año");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(2);
-                    cell.setCellValue(RSEXP.getString(4));
+                    cell.setCellValue("Observaciones 1");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(3);
-                    cell.setCellValue(RSEXP.getString(5));
+                    cell.setCellValue("Observaciones 2");
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(4);
+                    row = spreadsheet.createRow(i);
+                    cell = row.createCell(0);
+                    cell.setCellValue(RSEXP.getString(1));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(1);
+                    cell.setCellValue(RSEXP.getString(2));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(2);
+                    cell.setCellValue(RSEXP.getString(3));
+                    cell.setCellStyle(Contenido);
+                    cell = row.createCell(3);
+                    cell.setCellValue(RSEXP.getString(4));
+                    cell.setCellStyle(Contenido);
+                    /*cell = row.createCell(4);
                     cell.setCellValue(RSEXP.getString(6));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(5);
@@ -1200,6 +1206,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     cell = row.createCell(28);
                     cell.setCellValue(RSEXP.getString(30));
                     cell.setCellStyle(Contenido);
+                     */
                     i++;
                 }
 
@@ -1573,7 +1580,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         FDAIMSS.setText("");
         PTU.setText("");
         Actadm.setText("");
-        FDI.setText("");
         OBSPTU.setText("");
         OBSGEN1.setText("");
         OBSGEN2.setText("");
@@ -1638,7 +1644,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             NameGen.setEnabled(false);
             Sueldo.setEnabled(false);
             Bono.setEnabled(false);
-            FDAIMSS.setEnabled(true);
+            FDAIMSS.setEnabled(false);
             FI.setEnabled(false);
             Aguinaldo.setEnabled(false);
             PTU.setEnabled(false);
