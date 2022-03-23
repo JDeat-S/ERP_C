@@ -1,6 +1,5 @@
 package RH.Depositos;
 
-import RH.Depositos.*;
 import RH.Depositos.Santander.*;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
@@ -3755,16 +3754,18 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
         PDDT = new javax.swing.JTextField();
         PDDF = new javax.swing.JTextField();
         PDDFT = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        HE = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        THE = new javax.swing.JTextField();
         FDP = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         deposito = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         PH = new javax.swing.JTextField();
-        HE = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        THE = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        TotalR = new javax.swing.JTextField();
         jScrollPane12 = new javax.swing.JScrollPane();
         PestañasPagos = new javax.swing.JTabbedPane();
         TPagos = new javax.swing.JScrollPane();
@@ -5404,7 +5405,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                             .addComponent(RI)
                             .addComponent(RF)
                             .addComponent(NomISR))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5988,6 +5989,19 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
 
         PDDFT.setText("0");
 
+        jLabel41.setText("Horas extras:");
+
+        HE.setText("0");
+        HE.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                HEKeyReleased(evt);
+            }
+        });
+
+        jLabel42.setText("Total horas extra:");
+
+        THE.setText("0");
+
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
@@ -6009,7 +6023,8 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                             .addComponent(jLabel107)
                             .addComponent(jLabel16)
                             .addComponent(jLabel105)
-                            .addComponent(jLabel20))
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel41))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel18Layout.createSequentialGroup()
@@ -6027,7 +6042,16 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(ADD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel18Layout.createSequentialGroup()
+                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(DO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(FJ, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
                                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel18Layout.createSequentialGroup()
+                                        .addComponent(HE, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel42))
                                     .addGroup(jPanel18Layout.createSequentialGroup()
                                         .addComponent(DFT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -6065,19 +6089,18 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                                             .addComponent(jLabel138, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel104, javax.swing.GroupLayout.Alignment.TRAILING))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(PDDDDSGS, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PCR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pds, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PDDDV, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PDDD, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PDDL, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PDDT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PDDF, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PDDFT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(DO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                                .addComponent(FJ, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))))
+                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(PDDDDSGS, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(PCR, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(pds, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(PDDDV, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(PDDD, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(PDDL, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(PDDT, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(PDDF, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(PDDFT, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                                    .addComponent(THE))
+                                .addGap(1, 1, 1))))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addGap(202, 202, 202)
                         .addComponent(jLabel142)))
@@ -6089,6 +6112,12 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel142)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(HE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel42)
+                    .addComponent(THE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
                     .addComponent(jLabel138)
@@ -6180,25 +6209,18 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
 
         PH.setText("0");
 
-        HE.setText("0");
-        HE.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                HEKeyReleased(evt);
-            }
-        });
-
-        jLabel42.setText("Total horas extra:");
-
-        jLabel41.setText("Horas extras:");
-
-        THE.setText("0");
-
         jButton1.setText("Rembolso");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel12.setText("Pago total:");
+
+        TotalR.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        TotalR.setText("0");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -6222,11 +6244,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel40)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addComponent(jLabel123)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel1)
@@ -6256,25 +6274,30 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                                         .addComponent(MDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(FDP, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(375, 375, 375)
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TotalR))))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(136, 136, 136)
                         .addComponent(jLabel133)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel42))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(THE, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(HE, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(351, Short.MAX_VALUE))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel123)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -6282,20 +6305,19 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel41)
-                                    .addComponent(HE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel42)
-                                    .addComponent(THE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(TotalR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel123)
+                            .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel133)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -6315,10 +6337,6 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                             .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel40)
                             .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel123)
-                            .addComponent(deposito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel102)
@@ -6340,7 +6358,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                             .addComponent(Adddeposito)
                             .addComponent(Adddeposito1)
                             .addComponent(jButton1))))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
 
         jScrollPane10.setViewportView(jPanel9);
@@ -8529,6 +8547,11 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tnom7MouseClicked
 
     private void FAmT6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT6KeyReleased
@@ -8816,6 +8839,11 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tnom6MouseClicked
 
     private void FAmT5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT5KeyReleased
@@ -9103,6 +9131,11 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tnom5MouseClicked
 
     private void FAmT4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT4KeyReleased
@@ -9390,6 +9423,11 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tnom4MouseClicked
 
     private void FAmT3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT3KeyReleased
@@ -9677,6 +9715,11 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tnom3MouseClicked
 
     private void FAmT2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT2KeyReleased
@@ -9964,6 +10007,11 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tnom2MouseClicked
 
     private void FAmTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmTKeyReleased
@@ -10254,6 +10302,11 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_TnomMouseClicked
 
     private void FAmT1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FAmT1KeyReleased
@@ -10541,6 +10594,11 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tnom1MouseClicked
 
     private void buspKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_buspKeyReleased
@@ -13632,6 +13690,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JTable Tnom6;
     private javax.swing.JTable Tnom7;
     private javax.swing.JMenuItem Torteria;
+    private javax.swing.JTextField TotalR;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JTextField Zon;
     private javax.swing.JTextField am;
@@ -13672,6 +13731,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
