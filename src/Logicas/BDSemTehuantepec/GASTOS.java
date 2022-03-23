@@ -4,7 +4,7 @@ package Logicas.BDSemTehuantepec;
  *
  * @author JDeat
  */
-public class Gastos {
+public class GASTOS {
 
     private String Gasto1;
     private String Gasto2;

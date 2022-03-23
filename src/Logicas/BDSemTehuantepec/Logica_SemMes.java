@@ -29,7 +29,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class Logica_SemMes {
 
-    Gastos gast = new Gastos();
+    GASTOS gast = new GASTOS();
     vales val = new vales();
     ConexionSQL cc = new ConexionSQL();
     Connection con = cc.conexion();
