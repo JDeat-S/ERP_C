@@ -2296,63 +2296,64 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Descansos trabajados");
-            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("horas extra");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
-            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Pago de Descansos trabajados");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
-            modelo.addColumn("horas extra");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Pago de dias descansados");
             modelo.addColumn("Total de horas extra");
-            modelo.addColumn("Faltas");
+            modelo.addColumn("Pago real");
+            modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");
             modelo.addColumn("Playera");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");
-            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Deposito");
             modelo.addColumn("Fecha de deposito");
             modelo.addColumn("Mes de pago");
@@ -2364,7 +2365,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
                 /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
-                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50, 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
@@ -2440,63 +2441,64 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Descansos trabajados");
-            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("horas extra");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
-            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Pago de Descansos trabajados");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
-            modelo.addColumn("horas extra");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Pago de dias descansados");
             modelo.addColumn("Total de horas extra");
-            modelo.addColumn("Faltas");
+            modelo.addColumn("Pago real");
+            modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");
             modelo.addColumn("Playera");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");
-            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Deposito");
             modelo.addColumn("Fecha de deposito");
             modelo.addColumn("Mes de pago");
@@ -2508,7 +2510,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
                 /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
-                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50, 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
@@ -2584,63 +2586,64 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Descansos trabajados");
-            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("horas extra");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
-            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Pago de Descansos trabajados");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
-            modelo.addColumn("horas extra");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Pago de dias descansados");
             modelo.addColumn("Total de horas extra");
-            modelo.addColumn("Faltas");
+            modelo.addColumn("Pago real");
+            modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");
             modelo.addColumn("Playera");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");
-            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Deposito");
             modelo.addColumn("Fecha de deposito");
             modelo.addColumn("Mes de pago");
@@ -2652,7 +2655,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
                 /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
-                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50, 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
@@ -2722,69 +2725,70 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-            modelo.addColumn("# Folio");
+modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
             modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Descansos trabajados");
-            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("horas extra");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
-            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Pago de Descansos trabajados");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
-            modelo.addColumn("horas extra");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Pago de dias descansados");
             modelo.addColumn("Total de horas extra");
-            modelo.addColumn("Faltas");
+            modelo.addColumn("Pago real");
+            modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");
             modelo.addColumn("Playera");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");
-            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Deposito");
             modelo.addColumn("Fecha de deposito");
             modelo.addColumn("Mes de pago");
@@ -2796,7 +2800,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
                 /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
-                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50, 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
@@ -2872,63 +2876,64 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Descansos trabajados");
-            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("horas extra");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
-            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Pago de Descansos trabajados");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
-            modelo.addColumn("horas extra");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Pago de dias descansados");
             modelo.addColumn("Total de horas extra");
-            modelo.addColumn("Faltas");
+            modelo.addColumn("Pago real");
+            modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");
             modelo.addColumn("Playera");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");
-            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Deposito");
             modelo.addColumn("Fecha de deposito");
             modelo.addColumn("Mes de pago");
@@ -2940,7 +2945,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
                 /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
-                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50, 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
@@ -3017,63 +3022,64 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Descansos trabajados");
-            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("horas extra");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
-            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Pago de Descansos trabajados");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
-            modelo.addColumn("horas extra");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Pago de dias descansados");
             modelo.addColumn("Total de horas extra");
-            modelo.addColumn("Faltas");
+            modelo.addColumn("Pago real");
+            modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");
             modelo.addColumn("Playera");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");
-            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Deposito");
             modelo.addColumn("Fecha de deposito");
             modelo.addColumn("Mes de pago");
@@ -3085,7 +3091,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
                 /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
-                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50, 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
@@ -3162,63 +3168,64 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Descansos trabajados");
-            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("horas extra");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
-            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Pago de Descansos trabajados");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
-            modelo.addColumn("horas extra");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Pago de dias descansados");
             modelo.addColumn("Total de horas extra");
-            modelo.addColumn("Faltas");
+            modelo.addColumn("Pago real");
+            modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");
             modelo.addColumn("Playera");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");
-            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Deposito");
             modelo.addColumn("Fecha de deposito");
             modelo.addColumn("Mes de pago");
@@ -3230,7 +3237,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
                 /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
-                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50, 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
@@ -3308,63 +3315,64 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");
             modelo.addColumn("Banco");
             modelo.addColumn("Cuenta de banco");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
+            modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("Quincena");
             modelo.addColumn("Año");
-            modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Dias de vacaciones");
-            modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Pago de dias descansados");
+            modelo.addColumn("Por dia");
+            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Descansos trabajados");
-            modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Dias de vacaciones");
+            modelo.addColumn("Dias de incapacidad");
+            modelo.addColumn("Dia festivo");
+            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Dias de descanso");
+            modelo.addColumn("Faltas");
+            modelo.addColumn("horas extra");
             modelo.addColumn("Faltas justificadas");
             modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
-            modelo.addColumn("Pago de dias festivos trabajados");
             modelo.addColumn("Retardos");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Sueldo");
+            modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
+            modelo.addColumn("Pago de dias laborados");
+            modelo.addColumn("Pago de Descansos trabajados");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
-            modelo.addColumn("horas extra");
+            modelo.addColumn("Pago de vacaciones");
+            modelo.addColumn("Pago seguro");
+            modelo.addColumn("Pago de dia festivo");
+            modelo.addColumn("Pago de dias festivos trabajados");
+            modelo.addColumn("Pago de dias de DSGS");
+            modelo.addColumn("Pago de dias descansados");
             modelo.addColumn("Total de horas extra");
-            modelo.addColumn("Faltas");
+            modelo.addColumn("Pago real");
+            modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
+            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Faltantes de boleto");
+            modelo.addColumn("Faltante de efectivo");
+            modelo.addColumn("Boleto perdido");
+            modelo.addColumn("Sancion");
+            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Grua");
+            modelo.addColumn("Descuento imss");
             modelo.addColumn("Infonavit");
             modelo.addColumn("Fonacot");
             modelo.addColumn("ISR");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Faltantes de boleto");
-            modelo.addColumn("Sancion");
-            modelo.addColumn("Chamarra");
-            modelo.addColumn("Chaleco");
-            modelo.addColumn("Faltante de efectivo");
-            modelo.addColumn("Grua");
-            modelo.addColumn("Pantalon");
-            modelo.addColumn("Credencial");
-            modelo.addColumn("Boleto perdido");
             modelo.addColumn("Playera");
+            modelo.addColumn("Chamarra");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Chaleco");
+            modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
-            modelo.addColumn("Orden de taller");
-            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Deposito");
             modelo.addColumn("Fecha de deposito");
             modelo.addColumn("Mes de pago");
@@ -3376,7 +3384,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 /*Zona*/ 50, /*Serv*/ 80, /*Sueldo*/ 50, /*Bono*/ 50, /*PD*/ 30,
                 /*Qdm*/ 75, /*año*/ 40, /*DDI*/ 50, /*PS*/ 50, /*DDV*/ 50,
                 /*PDV*/ 50, /*DDD*/ 50, /*PDDD*/ 50, /*DL*/ 50, /*PDDL*/ 50, 50, 50, 50, 50, 50, 50, 50, 50,
-                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50,
+                /*DT*/ 50, /*PDDT*/ 50, /*DSGS*/ 50, /*PDDDDSGS*/ 50, /*FJ*/ 50, 50,
                 /*DO*/ 50, /*DF*/ 90,/*PDF*/ 90,/*DFT*/ 90,/*PDFT*/ 90, /*RET*/ 50, /*PCRET*/ 50, /*APY*/ 50, /*LUG*/ 50,
                 /*REM*/ 50, /*ADD*/ 50, /*Fal*/ 50, /*DPF*/ 50, /*DI*/ 50,
                 /*FDB*/ 50, /*SAN*/ 50, /*CHAM*/ 50, /*CHAL*/ 50, /*FDE*/ 50,
@@ -8544,7 +8552,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
-                TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
                 + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
                 + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
                 + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
@@ -8836,7 +8844,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
-                TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
                 + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
                 + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
                 + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
@@ -9128,7 +9136,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
-                TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
                 + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
                 + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
                 + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
@@ -9420,7 +9428,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
-                TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
                 + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
                 + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
                 + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
