@@ -1,6 +1,5 @@
 package Logicas.BDRH.DepSemCIMSS;
 
-import Logicas.BDRH.DepCIMSS.*;
 import Logicas.BDRH.Logica_bd_RHIMSS;
 import java.awt.Desktop;
 import java.io.File;
