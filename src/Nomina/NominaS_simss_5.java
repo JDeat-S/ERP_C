@@ -9779,7 +9779,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     public void shareN() {
         String SQL = "SELECT `# Exp`, `Banco`, `Cuenta bancaria`, `Zona`, `Servicio`, `Sueldo`, `Bono` FROM `rh.empleados`"
                 + " where `Status` LIKE '%Vigente%' And `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText() + "%'"
-                + " AND `Nombre(s)` LIKE '%" + name.getText() + "%' AND `Status` LIKE '%Vigente%'";
+                + " AND `Nombre(s)` LIKE '%" + name.getText() + "%'";
 
         try {
             PreparedStatement ps;
@@ -17140,15 +17140,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NominaS_simss_5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
         //</editor-fold>
 
         /* Create and display the form */

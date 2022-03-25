@@ -534,7 +534,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");//5
             modelo.addColumn("Genero");
-            modelo.addColumn("Fecha de incorporacion");//7
+            modelo.addColumn("Fecha de IMSS");//7
             modelo.addColumn("Zona");
             modelo.addColumn("NSS");//9
             modelo.addColumn("RFC");
@@ -1437,6 +1437,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
         jLabel112 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
         FBREimss = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        ADEIMSS = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         deleteimss = new javax.swing.JButton();
@@ -2329,7 +2332,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
         jLabel46.setText("Genero:");
 
-        jLabel47.setText("Fecha de incorporacion:");
+        jLabel47.setText("Fecha IMSS");
 
         jLabel48.setText("Zona:");
 
@@ -2497,7 +2500,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                     .addComponent(jLabel50)
                     .addComponent(rfcimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(curpimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel51))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2537,6 +2540,17 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
         jLabel120.setText("Fecha de baja:");
 
+        jLabel34.setText("Antguedad de empleado:");
+
+        jButton1.setText("Actualizar antiguedad.");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        ADEIMSS.setText("0");
+
         javax.swing.GroupLayout IMSSLayout = new javax.swing.GroupLayout(IMSS);
         IMSS.setLayout(IMSSLayout);
         IMSSLayout.setHorizontalGroup(
@@ -2550,7 +2564,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                         .addComponent(modIMSS)
                         .addGap(18, 18, 18)
                         .addComponent(addimss)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(IMSSLayout.createSequentialGroup()
@@ -2563,12 +2577,17 @@ public final class Empleados_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel112)
-                            .addComponent(jLabel120))
+                            .addComponent(jLabel120)
+                            .addComponent(jLabel34))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(IMSSLayout.createSequentialGroup()
+                                .addComponent(ADEIMSS)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton1))
                             .addComponent(FDREimss, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(FBREimss, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(27, 386, Short.MAX_VALUE))
+                .addGap(27, 377, Short.MAX_VALUE))
         );
         IMSSLayout.setVerticalGroup(
             IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2586,7 +2605,12 @@ public final class Empleados_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel120)
-                            .addComponent(FBREimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(FBREimss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(jButton1)
+                            .addComponent(ADEIMSS)))
                     .addGroup(IMSSLayout.createSequentialGroup()
                         .addGroup(IMSSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4622,6 +4646,25 @@ public final class Empleados_4 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_mod1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (FIimss.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Llena el campo fecha de ingreso con el siguiente formato de fecha: dd/MM/yyyy (01/11/2021)");
+        } else {
+            try {
+
+                DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                LocalDate fechaNac = LocalDate.parse(FIimss.getText(), fmt);
+                LocalDate ahora = LocalDate.now();
+
+                Period periodo = Period.between(fechaNac, ahora);
+                ADEIMSS.setText("" + periodo.getYears() + " Años, " + periodo.getMonths() + " Meses, " + periodo.getDays() + " Dias");
+
+            } catch (DateTimeParseException e) {
+                JOptionPane.showMessageDialog(null, "Llena el campo fecha de ingreso con el siguiente formato de fecha: dd/MM/yyyy (01/11/2021)");
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4652,6 +4695,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AADA;
     private javax.swing.JLabel ADA;
+    private javax.swing.JLabel ADEIMSS;
     private javax.swing.JMenuItem ADMV1;
     private javax.swing.JTextField AMgen;
     private javax.swing.JTextField AMimss;
@@ -4758,6 +4802,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTextField expimss;
     private javax.swing.JComboBox<String> fdp;
     private javax.swing.JComboBox<String> gen;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -4787,6 +4832,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;

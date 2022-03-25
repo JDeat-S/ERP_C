@@ -265,7 +265,7 @@ public class Logica_SemMes {
 
                     Statement DServ1 = connect.createStatement();
                     ResultSet RServ1 = DServ1.executeQuery("SELECT `Importe` FROM `rh.semanal.ptetitla.scc` WHERE `Semanal` = " + spreadsheet.getRow(i).getCell(0) + ""
-                            + " AND `Servicio` LIKE '%puente titla  x 12 hrs%' ");
+                            + " AND `Servicio` LIKE '%Puente titla x 12 hrs%' ");
 
                     while (RServ1.next()) {
                         row = spreadsheet.getRow(i);

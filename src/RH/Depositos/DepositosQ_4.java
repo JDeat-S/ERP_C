@@ -832,7 +832,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 + "`Faltante de efectivo` = ?, `Grua` = ?, `Pantalon` = ?, `Credencial` = ?, `Boleto perdido` = ?,"
                 + " `Playera` = ?, `Corbata` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?, "
                 + "`Adelanto de nomina` = ?, `Deposito` = ?, `Fecha de deposito` = ?, `Mes de pago` = ?, `Forma de pago` = ?, "
-                + "`Observaciones` = ? WHERE `rh.depositos." + Zon.getText() + "`.`#Folio` = ?";
+                + "`Observaciones` = ?, `pago total` = ? WHERE `rh.depositos." + Zon.getText() + "`.`#Folio` = ?";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -904,7 +904,8 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             pst.setString(66, MDP.getSelectedItem().toString());
             pst.setString(67, FDP.getText());
             pst.setString(68, Obsdeposito.getText());
-            pst.setInt(69, Integer.parseInt(NFnom.getText()));
+            pst.setString(69, TotalR.getText());
+            pst.setInt(70, Integer.parseInt(NFnom.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito Modificado.");
@@ -2142,6 +2143,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         RI.setText("0");
         RF.setText("0");
         NomISR.setText("0");
+        TotalR.setText("0");
     }
 
     public void Agregardeposito() {
@@ -2160,10 +2162,10 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 + "`Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`,"
                 + " `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, "
                 + "`Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Deposito`, "
-                + "`Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`) VALUES"
+                + "`Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`, `pago total`) VALUES"
                 + " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
                 + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -2235,6 +2237,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             pst.setString(66, MDP.getSelectedItem().toString());
             pst.setString(67, FDP.getText());
             pst.setString(68, Obsdeposito.getText());
+            pst.setString(69, TotalR.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito agregado.");
@@ -2725,7 +2728,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-modelo.addColumn("# Folio");
+            modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
             modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
@@ -12480,90 +12483,96 @@ modelo.addColumn("# Folio");
             Ap.setText(String.valueOf(Tdep.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tdep.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tdep.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tdep.getValueAt(fila, 8)));
-            Bono.setText(String.valueOf(Tdep.getValueAt(fila, 9)));
-            ban.setText(String.valueOf(Tdep.getValueAt(fila, 10)));
-            cta.setText(String.valueOf(Tdep.getValueAt(fila, 11)));
-            pd.setText(String.valueOf(Tdep.getValueAt(fila, 12)));
-            PH.setText(String.valueOf(Tdep.getValueAt(fila, 13)));
-            String Quinc = model.getValueAt(fila, 14).toString();
+            ban.setText(String.valueOf(Tdep.getValueAt(fila, 6)));
+            cta.setText(String.valueOf(Tdep.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tdep.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tdep.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tdep.getValueAt(fila, 16)));
-            pds.setText(String.valueOf(Tdep.getValueAt(fila, 17)));
-            Ddv.setText(String.valueOf(Tdep.getValueAt(fila, 18)));
-            PDDDV.setText(String.valueOf(Tdep.getValueAt(fila, 19)));
-            DD.setText(String.valueOf(Tdep.getValueAt(fila, 20)));
-            PDDD.setText(String.valueOf(Tdep.getValueAt(fila, 21)));
-            DL.setText(String.valueOf(Tdep.getValueAt(fila, 22)));
-            PDDL.setText(String.valueOf(Tdep.getValueAt(fila, 23)));
-            dt.setText(String.valueOf(Tdep.getValueAt(fila, 24)));
-            PDDT.setText(String.valueOf(Tdep.getValueAt(fila, 25)));
-            DSGS.setText(String.valueOf(Tdep.getValueAt(fila, 26)));
-            PDDDDSGS.setText(String.valueOf(Tdep.getValueAt(fila, 27)));
-            FJ.setText(String.valueOf(Tdep.getValueAt(fila, 28)));
-            DO.setText(String.valueOf(Tdep.getValueAt(fila, 29)));
-            DF.setText(String.valueOf(Tdep.getValueAt(fila, 30)));
-            PDDF.setText(String.valueOf(Tdep.getValueAt(fila, 31)));
-            DFT.setText(String.valueOf(Tdep.getValueAt(fila, 32)));
-            PDDFT.setText(String.valueOf(Tdep.getValueAt(fila, 33)));
-            R.setText(String.valueOf(Tdep.getValueAt(fila, 34)));
-            PCR.setText(String.valueOf(Tdep.getValueAt(fila, 35)));
-            apy.setText(String.valueOf(Tdep.getValueAt(fila, 36)));
-            Lugar.setText(String.valueOf(Tdep.getValueAt(fila, 37)));
-            Rembolso.setText(String.valueOf(Tdep.getValueAt(fila, 38)));
-            ADD.setText(String.valueOf(Tdep.getValueAt(fila, 39)));
-            HE.setText(String.valueOf(Tdep.getValueAt(fila, 40)));
+            pd.setText(String.valueOf(Tdep.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep.getValueAt(fila, 13)));
+            DL.setText(String.valueOf(Tdep.getValueAt(fila, 14)));
+            dt.setText(String.valueOf(Tdep.getValueAt(fila, 15)));
+            Ddv.setText(String.valueOf(Tdep.getValueAt(fila, 16)));
+            Dpi.setText(String.valueOf(Tdep.getValueAt(fila, 17)));
+            DF.setText(String.valueOf(Tdep.getValueAt(fila, 18)));
+            DFT.setText(String.valueOf(Tdep.getValueAt(fila, 19)));
+            DSGS.setText(String.valueOf(Tdep.getValueAt(fila, 20)));
+            DD.setText(String.valueOf(Tdep.getValueAt(fila, 21)));
+            F.setText(String.valueOf(Tdep.getValueAt(fila, 22)));
+            HE.setText(String.valueOf(Tdep.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tdep.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tdep.getValueAt(fila, 25)));
+            R.setText(String.valueOf(Tdep.getValueAt(fila, 26)));
+            sueldo.setText(String.valueOf(Tdep.getValueAt(fila, 27)));
+            Bono.setText(String.valueOf(Tdep.getValueAt(fila, 28)));
+            apy.setText(String.valueOf(Tdep.getValueAt(fila, 29)));
+            Lugar.setText(String.valueOf(Tdep.getValueAt(fila, 20)));
+            PDDL.setText(String.valueOf(Tdep.getValueAt(fila, 31)));
+            PDDT.setText(String.valueOf(Tdep.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tdep.getValueAt(fila, 33)));
+            ADD.setText(String.valueOf(Tdep.getValueAt(fila, 34)));
+            PDDDV.setText(String.valueOf(Tdep.getValueAt(fila, 35)));
+            pds.setText(String.valueOf(Tdep.getValueAt(fila, 36)));
+            PDDF.setText(String.valueOf(Tdep.getValueAt(fila, 37)));
+            PDDFT.setText(String.valueOf(Tdep.getValueAt(fila, 38)));
+            PDDD.setText(String.valueOf(Tdep.getValueAt(fila, 39)));
+            PDDDDSGS.setText(String.valueOf(Tdep.getValueAt(fila, 40)));
             THE.setText(String.valueOf(Tdep.getValueAt(fila, 41)));
-            F.setText(String.valueOf(Tdep.getValueAt(fila, 42)));
-            DPF.setText(String.valueOf(Tdep.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep.getValueAt(fila, 47)));
-            RI.setText(String.valueOf(Tdep.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
-            NomISR.setText(String.valueOf(Tdep.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep.getValueAt(fila, 48)));
-            Sancion.setText(String.valueOf(Tdep.getValueAt(fila, 49)));
-            Chamarra.setText(String.valueOf(Tdep.getValueAt(fila, 50)));
-            Chaleco.setText(String.valueOf(Tdep.getValueAt(fila, 51)));
-            Fde.setText(String.valueOf(Tdep.getValueAt(fila, 52)));
-            Grua.setText(String.valueOf(Tdep.getValueAt(fila, 53)));
-            Pantalon.setText(String.valueOf(Tdep.getValueAt(fila, 54)));
-            Credencial.setText(String.valueOf(Tdep.getValueAt(fila, 55)));
-            Bp.setText(String.valueOf(Tdep.getValueAt(fila, 56)));
+            TotalR.setText(String.valueOf(Tdep.getValueAt(fila, 42)));
+            Odtp.setText(String.valueOf(Tdep.getValueAt(fila, 43)));
+            DPF.setText(String.valueOf(Tdep.getValueAt(fila, 44)));
+            AdN.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
+            Presp.setText(String.valueOf(Tdep.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tdep.getValueAt(fila, 47)));
+            Fde.setText(String.valueOf(Tdep.getValueAt(fila, 48)));
+            Bp.setText(String.valueOf(Tdep.getValueAt(fila, 49)));
+            Sancion.setText(String.valueOf(Tdep.getValueAt(fila, 50)));
+            PCR.setText(String.valueOf(Tdep.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tdep.getValueAt(fila, 52)));
+            DI.setText(String.valueOf(Tdep.getValueAt(fila, 53)));
+            RI.setText(String.valueOf(Tdep.getValueAt(fila, 54)));
+            RF.setText(String.valueOf(Tdep.getValueAt(fila, 55)));
+            NomISR.setText(String.valueOf(Tdep.getValueAt(fila, 56)));
             Playera.setText(String.valueOf(Tdep.getValueAt(fila, 57)));
-            Corbata.setText(String.valueOf(Tdep.getValueAt(fila, 58)));
-            Presp.setText(String.valueOf(Tdep.getValueAt(fila, 59)));
-            cda.setText(String.valueOf(Tdep.getValueAt(fila, 60)));
-            Odtp.setText(String.valueOf(Tdep.getValueAt(fila, 61)));
-            AdN.setText(String.valueOf(Tdep.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tdep.getValueAt(fila, 63)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            Chamarra.setText(String.valueOf(Tdep.getValueAt(fila, 58)));
+            Pantalon.setText(String.valueOf(Tdep.getValueAt(fila, 59)));
+            Corbata.setText(String.valueOf(Tdep.getValueAt(fila, 60)));
+            Chaleco.setText(String.valueOf(Tdep.getValueAt(fila, 61)));
+            Credencial.setText(String.valueOf(Tdep.getValueAt(fila, 62)));
+            cda.setText(String.valueOf(Tdep.getValueAt(fila, 63)));
+            deposito.setText(String.valueOf(Tdep.getValueAt(fila, 64)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 65).toString();
+            String Mes = model.getValueAt(fila, 66).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep.getValueAt(fila, 66)));
-            Obsdeposito.setText(String.valueOf(Tdep.getValueAt(fila, 67)));
+            FDP.setText(String.valueOf(Tdep.getValueAt(fila, 67)));
+            Obsdeposito.setText(String.valueOf(Tdep.getValueAt(fila, 68)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_TdepMousePressed
 
     private void Tdep1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep1MousePressed
-        try {
+          try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep1.getModel();
 
@@ -12574,86 +12583,92 @@ modelo.addColumn("# Folio");
             Ap.setText(String.valueOf(Tdep1.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep1.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep1.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tdep1.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tdep1.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tdep1.getValueAt(fila, 8)));
-            Bono.setText(String.valueOf(Tdep1.getValueAt(fila, 9)));
-            ban.setText(String.valueOf(Tdep1.getValueAt(fila, 10)));
-            cta.setText(String.valueOf(Tdep1.getValueAt(fila, 11)));
-            pd.setText(String.valueOf(Tdep1.getValueAt(fila, 12)));
-            PH.setText(String.valueOf(Tdep1.getValueAt(fila, 13)));
-            String Quinc = model.getValueAt(fila, 14).toString();
+            ban.setText(String.valueOf(Tdep1.getValueAt(fila, 6)));
+            cta.setText(String.valueOf(Tdep1.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tdep1.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tdep1.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tdep1.getValueAt(fila, 16)));
-            pds.setText(String.valueOf(Tdep1.getValueAt(fila, 17)));
-            Ddv.setText(String.valueOf(Tdep1.getValueAt(fila, 18)));
-            PDDDV.setText(String.valueOf(Tdep1.getValueAt(fila, 19)));
-            DD.setText(String.valueOf(Tdep1.getValueAt(fila, 20)));
-            PDDD.setText(String.valueOf(Tdep1.getValueAt(fila, 21)));
-            DL.setText(String.valueOf(Tdep1.getValueAt(fila, 22)));
-            PDDL.setText(String.valueOf(Tdep1.getValueAt(fila, 23)));
-            dt.setText(String.valueOf(Tdep1.getValueAt(fila, 24)));
-            PDDT.setText(String.valueOf(Tdep1.getValueAt(fila, 25)));
-            DSGS.setText(String.valueOf(Tdep1.getValueAt(fila, 26)));
-            PDDDDSGS.setText(String.valueOf(Tdep1.getValueAt(fila, 27)));
-            FJ.setText(String.valueOf(Tdep1.getValueAt(fila, 28)));
-            DO.setText(String.valueOf(Tdep1.getValueAt(fila, 29)));
-            DF.setText(String.valueOf(Tdep1.getValueAt(fila, 30)));
-            PDDF.setText(String.valueOf(Tdep1.getValueAt(fila, 31)));
-            DFT.setText(String.valueOf(Tdep1.getValueAt(fila, 32)));
-            PDDFT.setText(String.valueOf(Tdep1.getValueAt(fila, 33)));
-            R.setText(String.valueOf(Tdep1.getValueAt(fila, 34)));
-            PCR.setText(String.valueOf(Tdep1.getValueAt(fila, 35)));
-            apy.setText(String.valueOf(Tdep1.getValueAt(fila, 36)));
-            Lugar.setText(String.valueOf(Tdep1.getValueAt(fila, 37)));
-            Rembolso.setText(String.valueOf(Tdep1.getValueAt(fila, 38)));
-            ADD.setText(String.valueOf(Tdep1.getValueAt(fila, 39)));
-            HE.setText(String.valueOf(Tdep1.getValueAt(fila, 40)));
+            pd.setText(String.valueOf(Tdep1.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep1.getValueAt(fila, 13)));
+            DL.setText(String.valueOf(Tdep1.getValueAt(fila, 14)));
+            dt.setText(String.valueOf(Tdep1.getValueAt(fila, 15)));
+            Ddv.setText(String.valueOf(Tdep1.getValueAt(fila, 16)));
+            Dpi.setText(String.valueOf(Tdep1.getValueAt(fila, 17)));
+            DF.setText(String.valueOf(Tdep1.getValueAt(fila, 18)));
+            DFT.setText(String.valueOf(Tdep1.getValueAt(fila, 19)));
+            DSGS.setText(String.valueOf(Tdep1.getValueAt(fila, 20)));
+            DD.setText(String.valueOf(Tdep1.getValueAt(fila, 21)));
+            F.setText(String.valueOf(Tdep1.getValueAt(fila, 22)));
+            HE.setText(String.valueOf(Tdep1.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tdep1.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tdep1.getValueAt(fila, 25)));
+            R.setText(String.valueOf(Tdep1.getValueAt(fila, 26)));
+            sueldo.setText(String.valueOf(Tdep1.getValueAt(fila, 27)));
+            Bono.setText(String.valueOf(Tdep1.getValueAt(fila, 28)));
+            apy.setText(String.valueOf(Tdep1.getValueAt(fila, 29)));
+            Lugar.setText(String.valueOf(Tdep1.getValueAt(fila, 20)));
+            PDDL.setText(String.valueOf(Tdep1.getValueAt(fila, 31)));
+            PDDT.setText(String.valueOf(Tdep1.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tdep1.getValueAt(fila, 33)));
+            ADD.setText(String.valueOf(Tdep1.getValueAt(fila, 34)));
+            PDDDV.setText(String.valueOf(Tdep1.getValueAt(fila, 35)));
+            pds.setText(String.valueOf(Tdep1.getValueAt(fila, 36)));
+            PDDF.setText(String.valueOf(Tdep1.getValueAt(fila, 37)));
+            PDDFT.setText(String.valueOf(Tdep1.getValueAt(fila, 38)));
+            PDDD.setText(String.valueOf(Tdep1.getValueAt(fila, 39)));
+            PDDDDSGS.setText(String.valueOf(Tdep1.getValueAt(fila, 40)));
             THE.setText(String.valueOf(Tdep1.getValueAt(fila, 41)));
-            F.setText(String.valueOf(Tdep1.getValueAt(fila, 42)));
-            DPF.setText(String.valueOf(Tdep1.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep1.getValueAt(fila, 47)));
-            RI.setText(String.valueOf(Tdep1.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
-            NomISR.setText(String.valueOf(Tdep1.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep1.getValueAt(fila, 48)));
-            Sancion.setText(String.valueOf(Tdep1.getValueAt(fila, 49)));
-            Chamarra.setText(String.valueOf(Tdep1.getValueAt(fila, 50)));
-            Chaleco.setText(String.valueOf(Tdep1.getValueAt(fila, 51)));
-            Fde.setText(String.valueOf(Tdep1.getValueAt(fila, 52)));
-            Grua.setText(String.valueOf(Tdep1.getValueAt(fila, 53)));
-            Pantalon.setText(String.valueOf(Tdep1.getValueAt(fila, 54)));
-            Credencial.setText(String.valueOf(Tdep1.getValueAt(fila, 55)));
-            Bp.setText(String.valueOf(Tdep1.getValueAt(fila, 56)));
+            TotalR.setText(String.valueOf(Tdep1.getValueAt(fila, 42)));
+            Odtp.setText(String.valueOf(Tdep1.getValueAt(fila, 43)));
+            DPF.setText(String.valueOf(Tdep1.getValueAt(fila, 44)));
+            AdN.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
+            Presp.setText(String.valueOf(Tdep1.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tdep1.getValueAt(fila, 47)));
+            Fde.setText(String.valueOf(Tdep1.getValueAt(fila, 48)));
+            Bp.setText(String.valueOf(Tdep1.getValueAt(fila, 49)));
+            Sancion.setText(String.valueOf(Tdep1.getValueAt(fila, 50)));
+            PCR.setText(String.valueOf(Tdep1.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tdep1.getValueAt(fila, 52)));
+            DI.setText(String.valueOf(Tdep1.getValueAt(fila, 53)));
+            RI.setText(String.valueOf(Tdep1.getValueAt(fila, 54)));
+            RF.setText(String.valueOf(Tdep1.getValueAt(fila, 55)));
+            NomISR.setText(String.valueOf(Tdep1.getValueAt(fila, 56)));
             Playera.setText(String.valueOf(Tdep1.getValueAt(fila, 57)));
-            Corbata.setText(String.valueOf(Tdep1.getValueAt(fila, 58)));
-            Presp.setText(String.valueOf(Tdep1.getValueAt(fila, 59)));
-            cda.setText(String.valueOf(Tdep1.getValueAt(fila, 60)));
-            Odtp.setText(String.valueOf(Tdep1.getValueAt(fila, 61)));
-            AdN.setText(String.valueOf(Tdep1.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tdep1.getValueAt(fila, 63)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            Chamarra.setText(String.valueOf(Tdep1.getValueAt(fila, 58)));
+            Pantalon.setText(String.valueOf(Tdep1.getValueAt(fila, 59)));
+            Corbata.setText(String.valueOf(Tdep1.getValueAt(fila, 60)));
+            Chaleco.setText(String.valueOf(Tdep1.getValueAt(fila, 61)));
+            Credencial.setText(String.valueOf(Tdep1.getValueAt(fila, 62)));
+            cda.setText(String.valueOf(Tdep1.getValueAt(fila, 63)));
+            deposito.setText(String.valueOf(Tdep1.getValueAt(fila, 64)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 65).toString();
+            String Mes = model.getValueAt(fila, 66).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep1.getValueAt(fila, 66)));
-            Obsdeposito.setText(String.valueOf(Tdep1.getValueAt(fila, 67)));
+            FDP.setText(String.valueOf(Tdep1.getValueAt(fila, 67)));
+            Obsdeposito.setText(String.valueOf(Tdep1.getValueAt(fila, 68)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tdep1MousePressed
 
     private void Tdep2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep2MousePressed
@@ -12668,86 +12683,92 @@ modelo.addColumn("# Folio");
             Ap.setText(String.valueOf(Tdep2.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep2.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep2.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tdep2.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tdep2.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tdep2.getValueAt(fila, 8)));
-            Bono.setText(String.valueOf(Tdep2.getValueAt(fila, 9)));
-            ban.setText(String.valueOf(Tdep2.getValueAt(fila, 10)));
-            cta.setText(String.valueOf(Tdep2.getValueAt(fila, 11)));
-            pd.setText(String.valueOf(Tdep2.getValueAt(fila, 12)));
-            PH.setText(String.valueOf(Tdep2.getValueAt(fila, 13)));
-            String Quinc = model.getValueAt(fila, 14).toString();
+            ban.setText(String.valueOf(Tdep2.getValueAt(fila, 6)));
+            cta.setText(String.valueOf(Tdep2.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tdep2.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tdep2.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tdep2.getValueAt(fila, 16)));
-            pds.setText(String.valueOf(Tdep2.getValueAt(fila, 17)));
-            Ddv.setText(String.valueOf(Tdep2.getValueAt(fila, 18)));
-            PDDDV.setText(String.valueOf(Tdep2.getValueAt(fila, 19)));
-            DD.setText(String.valueOf(Tdep2.getValueAt(fila, 20)));
-            PDDD.setText(String.valueOf(Tdep2.getValueAt(fila, 21)));
-            DL.setText(String.valueOf(Tdep2.getValueAt(fila, 22)));
-            PDDL.setText(String.valueOf(Tdep2.getValueAt(fila, 23)));
-            dt.setText(String.valueOf(Tdep2.getValueAt(fila, 24)));
-            PDDT.setText(String.valueOf(Tdep2.getValueAt(fila, 25)));
-            DSGS.setText(String.valueOf(Tdep2.getValueAt(fila, 26)));
-            PDDDDSGS.setText(String.valueOf(Tdep2.getValueAt(fila, 27)));
-            FJ.setText(String.valueOf(Tdep2.getValueAt(fila, 28)));
-            DO.setText(String.valueOf(Tdep2.getValueAt(fila, 29)));
-            DF.setText(String.valueOf(Tdep2.getValueAt(fila, 30)));
-            PDDF.setText(String.valueOf(Tdep2.getValueAt(fila, 31)));
-            DFT.setText(String.valueOf(Tdep2.getValueAt(fila, 32)));
-            PDDFT.setText(String.valueOf(Tdep2.getValueAt(fila, 33)));
-            R.setText(String.valueOf(Tdep2.getValueAt(fila, 34)));
-            PCR.setText(String.valueOf(Tdep2.getValueAt(fila, 35)));
-            apy.setText(String.valueOf(Tdep2.getValueAt(fila, 36)));
-            Lugar.setText(String.valueOf(Tdep2.getValueAt(fila, 37)));
-            Rembolso.setText(String.valueOf(Tdep2.getValueAt(fila, 38)));
-            ADD.setText(String.valueOf(Tdep2.getValueAt(fila, 39)));
-            HE.setText(String.valueOf(Tdep2.getValueAt(fila, 40)));
+            pd.setText(String.valueOf(Tdep2.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep2.getValueAt(fila, 13)));
+            DL.setText(String.valueOf(Tdep2.getValueAt(fila, 14)));
+            dt.setText(String.valueOf(Tdep2.getValueAt(fila, 15)));
+            Ddv.setText(String.valueOf(Tdep2.getValueAt(fila, 16)));
+            Dpi.setText(String.valueOf(Tdep2.getValueAt(fila, 17)));
+            DF.setText(String.valueOf(Tdep2.getValueAt(fila, 18)));
+            DFT.setText(String.valueOf(Tdep2.getValueAt(fila, 19)));
+            DSGS.setText(String.valueOf(Tdep2.getValueAt(fila, 20)));
+            DD.setText(String.valueOf(Tdep2.getValueAt(fila, 21)));
+            F.setText(String.valueOf(Tdep2.getValueAt(fila, 22)));
+            HE.setText(String.valueOf(Tdep2.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tdep2.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tdep2.getValueAt(fila, 25)));
+            R.setText(String.valueOf(Tdep2.getValueAt(fila, 26)));
+            sueldo.setText(String.valueOf(Tdep2.getValueAt(fila, 27)));
+            Bono.setText(String.valueOf(Tdep2.getValueAt(fila, 28)));
+            apy.setText(String.valueOf(Tdep2.getValueAt(fila, 29)));
+            Lugar.setText(String.valueOf(Tdep2.getValueAt(fila, 20)));
+            PDDL.setText(String.valueOf(Tdep2.getValueAt(fila, 31)));
+            PDDT.setText(String.valueOf(Tdep2.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tdep2.getValueAt(fila, 33)));
+            ADD.setText(String.valueOf(Tdep2.getValueAt(fila, 34)));
+            PDDDV.setText(String.valueOf(Tdep2.getValueAt(fila, 35)));
+            pds.setText(String.valueOf(Tdep2.getValueAt(fila, 36)));
+            PDDF.setText(String.valueOf(Tdep2.getValueAt(fila, 37)));
+            PDDFT.setText(String.valueOf(Tdep2.getValueAt(fila, 38)));
+            PDDD.setText(String.valueOf(Tdep2.getValueAt(fila, 39)));
+            PDDDDSGS.setText(String.valueOf(Tdep2.getValueAt(fila, 40)));
             THE.setText(String.valueOf(Tdep2.getValueAt(fila, 41)));
-            F.setText(String.valueOf(Tdep2.getValueAt(fila, 42)));
-            DPF.setText(String.valueOf(Tdep2.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep2.getValueAt(fila, 47)));
-            RI.setText(String.valueOf(Tdep2.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
-            NomISR.setText(String.valueOf(Tdep2.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep2.getValueAt(fila, 48)));
-            Sancion.setText(String.valueOf(Tdep2.getValueAt(fila, 49)));
-            Chamarra.setText(String.valueOf(Tdep2.getValueAt(fila, 50)));
-            Chaleco.setText(String.valueOf(Tdep2.getValueAt(fila, 51)));
-            Fde.setText(String.valueOf(Tdep2.getValueAt(fila, 52)));
-            Grua.setText(String.valueOf(Tdep2.getValueAt(fila, 53)));
-            Pantalon.setText(String.valueOf(Tdep2.getValueAt(fila, 54)));
-            Credencial.setText(String.valueOf(Tdep2.getValueAt(fila, 55)));
-            Bp.setText(String.valueOf(Tdep2.getValueAt(fila, 56)));
+            TotalR.setText(String.valueOf(Tdep2.getValueAt(fila, 42)));
+            Odtp.setText(String.valueOf(Tdep2.getValueAt(fila, 43)));
+            DPF.setText(String.valueOf(Tdep2.getValueAt(fila, 44)));
+            AdN.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
+            Presp.setText(String.valueOf(Tdep2.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tdep2.getValueAt(fila, 47)));
+            Fde.setText(String.valueOf(Tdep2.getValueAt(fila, 48)));
+            Bp.setText(String.valueOf(Tdep2.getValueAt(fila, 49)));
+            Sancion.setText(String.valueOf(Tdep2.getValueAt(fila, 50)));
+            PCR.setText(String.valueOf(Tdep2.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tdep2.getValueAt(fila, 52)));
+            DI.setText(String.valueOf(Tdep2.getValueAt(fila, 53)));
+            RI.setText(String.valueOf(Tdep2.getValueAt(fila, 54)));
+            RF.setText(String.valueOf(Tdep2.getValueAt(fila, 55)));
+            NomISR.setText(String.valueOf(Tdep2.getValueAt(fila, 56)));
             Playera.setText(String.valueOf(Tdep2.getValueAt(fila, 57)));
-            Corbata.setText(String.valueOf(Tdep2.getValueAt(fila, 58)));
-            Presp.setText(String.valueOf(Tdep2.getValueAt(fila, 59)));
-            cda.setText(String.valueOf(Tdep2.getValueAt(fila, 60)));
-            Odtp.setText(String.valueOf(Tdep2.getValueAt(fila, 61)));
-            AdN.setText(String.valueOf(Tdep2.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tdep2.getValueAt(fila, 63)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            Chamarra.setText(String.valueOf(Tdep2.getValueAt(fila, 58)));
+            Pantalon.setText(String.valueOf(Tdep2.getValueAt(fila, 59)));
+            Corbata.setText(String.valueOf(Tdep2.getValueAt(fila, 60)));
+            Chaleco.setText(String.valueOf(Tdep2.getValueAt(fila, 61)));
+            Credencial.setText(String.valueOf(Tdep2.getValueAt(fila, 62)));
+            cda.setText(String.valueOf(Tdep2.getValueAt(fila, 63)));
+            deposito.setText(String.valueOf(Tdep2.getValueAt(fila, 64)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 65).toString();
+            String Mes = model.getValueAt(fila, 66).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep2.getValueAt(fila, 66)));
-            Obsdeposito.setText(String.valueOf(Tdep2.getValueAt(fila, 67)));
+            FDP.setText(String.valueOf(Tdep2.getValueAt(fila, 67)));
+            Obsdeposito.setText(String.valueOf(Tdep2.getValueAt(fila, 68)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tdep2MousePressed
 
     private void Tdep3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep3MousePressed
@@ -12762,86 +12783,92 @@ modelo.addColumn("# Folio");
             Ap.setText(String.valueOf(Tdep3.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep3.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep3.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tdep3.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tdep3.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tdep3.getValueAt(fila, 8)));
-            Bono.setText(String.valueOf(Tdep3.getValueAt(fila, 9)));
-            ban.setText(String.valueOf(Tdep3.getValueAt(fila, 10)));
-            cta.setText(String.valueOf(Tdep3.getValueAt(fila, 11)));
-            pd.setText(String.valueOf(Tdep3.getValueAt(fila, 12)));
-            PH.setText(String.valueOf(Tdep3.getValueAt(fila, 13)));
-            String Quinc = model.getValueAt(fila, 14).toString();
+            ban.setText(String.valueOf(Tdep3.getValueAt(fila, 6)));
+            cta.setText(String.valueOf(Tdep3.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tdep3.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tdep3.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tdep3.getValueAt(fila, 16)));
-            pds.setText(String.valueOf(Tdep3.getValueAt(fila, 17)));
-            Ddv.setText(String.valueOf(Tdep3.getValueAt(fila, 18)));
-            PDDDV.setText(String.valueOf(Tdep3.getValueAt(fila, 19)));
-            DD.setText(String.valueOf(Tdep3.getValueAt(fila, 20)));
-            PDDD.setText(String.valueOf(Tdep3.getValueAt(fila, 21)));
-            DL.setText(String.valueOf(Tdep3.getValueAt(fila, 22)));
-            PDDL.setText(String.valueOf(Tdep3.getValueAt(fila, 23)));
-            dt.setText(String.valueOf(Tdep3.getValueAt(fila, 24)));
-            PDDT.setText(String.valueOf(Tdep3.getValueAt(fila, 25)));
-            DSGS.setText(String.valueOf(Tdep3.getValueAt(fila, 26)));
-            PDDDDSGS.setText(String.valueOf(Tdep3.getValueAt(fila, 27)));
-            FJ.setText(String.valueOf(Tdep3.getValueAt(fila, 28)));
-            DO.setText(String.valueOf(Tdep3.getValueAt(fila, 29)));
-            DF.setText(String.valueOf(Tdep3.getValueAt(fila, 30)));
-            PDDF.setText(String.valueOf(Tdep3.getValueAt(fila, 31)));
-            DFT.setText(String.valueOf(Tdep3.getValueAt(fila, 32)));
-            PDDFT.setText(String.valueOf(Tdep3.getValueAt(fila, 33)));
-            R.setText(String.valueOf(Tdep3.getValueAt(fila, 34)));
-            PCR.setText(String.valueOf(Tdep3.getValueAt(fila, 35)));
-            apy.setText(String.valueOf(Tdep3.getValueAt(fila, 36)));
-            Lugar.setText(String.valueOf(Tdep3.getValueAt(fila, 37)));
-            Rembolso.setText(String.valueOf(Tdep3.getValueAt(fila, 38)));
-            ADD.setText(String.valueOf(Tdep3.getValueAt(fila, 39)));
-            HE.setText(String.valueOf(Tdep3.getValueAt(fila, 40)));
+            pd.setText(String.valueOf(Tdep3.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep3.getValueAt(fila, 13)));
+            DL.setText(String.valueOf(Tdep3.getValueAt(fila, 14)));
+            dt.setText(String.valueOf(Tdep3.getValueAt(fila, 15)));
+            Ddv.setText(String.valueOf(Tdep3.getValueAt(fila, 16)));
+            Dpi.setText(String.valueOf(Tdep3.getValueAt(fila, 17)));
+            DF.setText(String.valueOf(Tdep3.getValueAt(fila, 18)));
+            DFT.setText(String.valueOf(Tdep3.getValueAt(fila, 19)));
+            DSGS.setText(String.valueOf(Tdep3.getValueAt(fila, 20)));
+            DD.setText(String.valueOf(Tdep3.getValueAt(fila, 21)));
+            F.setText(String.valueOf(Tdep3.getValueAt(fila, 22)));
+            HE.setText(String.valueOf(Tdep3.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tdep3.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tdep3.getValueAt(fila, 25)));
+            R.setText(String.valueOf(Tdep3.getValueAt(fila, 26)));
+            sueldo.setText(String.valueOf(Tdep3.getValueAt(fila, 27)));
+            Bono.setText(String.valueOf(Tdep3.getValueAt(fila, 28)));
+            apy.setText(String.valueOf(Tdep3.getValueAt(fila, 29)));
+            Lugar.setText(String.valueOf(Tdep3.getValueAt(fila, 20)));
+            PDDL.setText(String.valueOf(Tdep3.getValueAt(fila, 31)));
+            PDDT.setText(String.valueOf(Tdep3.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tdep3.getValueAt(fila, 33)));
+            ADD.setText(String.valueOf(Tdep3.getValueAt(fila, 34)));
+            PDDDV.setText(String.valueOf(Tdep3.getValueAt(fila, 35)));
+            pds.setText(String.valueOf(Tdep3.getValueAt(fila, 36)));
+            PDDF.setText(String.valueOf(Tdep3.getValueAt(fila, 37)));
+            PDDFT.setText(String.valueOf(Tdep3.getValueAt(fila, 38)));
+            PDDD.setText(String.valueOf(Tdep3.getValueAt(fila, 39)));
+            PDDDDSGS.setText(String.valueOf(Tdep3.getValueAt(fila, 40)));
             THE.setText(String.valueOf(Tdep3.getValueAt(fila, 41)));
-            F.setText(String.valueOf(Tdep3.getValueAt(fila, 42)));
-            DPF.setText(String.valueOf(Tdep3.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep3.getValueAt(fila, 47)));
-            RI.setText(String.valueOf(Tdep3.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
-            NomISR.setText(String.valueOf(Tdep3.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep3.getValueAt(fila, 48)));
-            Sancion.setText(String.valueOf(Tdep3.getValueAt(fila, 49)));
-            Chamarra.setText(String.valueOf(Tdep3.getValueAt(fila, 50)));
-            Chaleco.setText(String.valueOf(Tdep3.getValueAt(fila, 51)));
-            Fde.setText(String.valueOf(Tdep3.getValueAt(fila, 52)));
-            Grua.setText(String.valueOf(Tdep3.getValueAt(fila, 53)));
-            Pantalon.setText(String.valueOf(Tdep3.getValueAt(fila, 54)));
-            Credencial.setText(String.valueOf(Tdep3.getValueAt(fila, 55)));
-            Bp.setText(String.valueOf(Tdep3.getValueAt(fila, 56)));
+            TotalR.setText(String.valueOf(Tdep3.getValueAt(fila, 42)));
+            Odtp.setText(String.valueOf(Tdep3.getValueAt(fila, 43)));
+            DPF.setText(String.valueOf(Tdep3.getValueAt(fila, 44)));
+            AdN.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
+            Presp.setText(String.valueOf(Tdep3.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tdep3.getValueAt(fila, 47)));
+            Fde.setText(String.valueOf(Tdep3.getValueAt(fila, 48)));
+            Bp.setText(String.valueOf(Tdep3.getValueAt(fila, 49)));
+            Sancion.setText(String.valueOf(Tdep3.getValueAt(fila, 50)));
+            PCR.setText(String.valueOf(Tdep3.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tdep3.getValueAt(fila, 52)));
+            DI.setText(String.valueOf(Tdep3.getValueAt(fila, 53)));
+            RI.setText(String.valueOf(Tdep3.getValueAt(fila, 54)));
+            RF.setText(String.valueOf(Tdep3.getValueAt(fila, 55)));
+            NomISR.setText(String.valueOf(Tdep3.getValueAt(fila, 56)));
             Playera.setText(String.valueOf(Tdep3.getValueAt(fila, 57)));
-            Corbata.setText(String.valueOf(Tdep3.getValueAt(fila, 58)));
-            Presp.setText(String.valueOf(Tdep3.getValueAt(fila, 59)));
-            cda.setText(String.valueOf(Tdep3.getValueAt(fila, 60)));
-            Odtp.setText(String.valueOf(Tdep3.getValueAt(fila, 61)));
-            AdN.setText(String.valueOf(Tdep3.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tdep3.getValueAt(fila, 63)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            Chamarra.setText(String.valueOf(Tdep3.getValueAt(fila, 58)));
+            Pantalon.setText(String.valueOf(Tdep3.getValueAt(fila, 59)));
+            Corbata.setText(String.valueOf(Tdep3.getValueAt(fila, 60)));
+            Chaleco.setText(String.valueOf(Tdep3.getValueAt(fila, 61)));
+            Credencial.setText(String.valueOf(Tdep3.getValueAt(fila, 62)));
+            cda.setText(String.valueOf(Tdep3.getValueAt(fila, 63)));
+            deposito.setText(String.valueOf(Tdep3.getValueAt(fila, 64)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 65).toString();
+            String Mes = model.getValueAt(fila, 66).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep3.getValueAt(fila, 66)));
-            Obsdeposito.setText(String.valueOf(Tdep3.getValueAt(fila, 67)));
+            FDP.setText(String.valueOf(Tdep3.getValueAt(fila, 67)));
+            Obsdeposito.setText(String.valueOf(Tdep3.getValueAt(fila, 68)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tdep3MousePressed
 
     private void Tdep4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep4MousePressed
@@ -12856,86 +12883,92 @@ modelo.addColumn("# Folio");
             Ap.setText(String.valueOf(Tdep4.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep4.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep4.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tdep4.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tdep4.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tdep4.getValueAt(fila, 8)));
-            Bono.setText(String.valueOf(Tdep4.getValueAt(fila, 9)));
-            ban.setText(String.valueOf(Tdep4.getValueAt(fila, 10)));
-            cta.setText(String.valueOf(Tdep4.getValueAt(fila, 11)));
-            pd.setText(String.valueOf(Tdep4.getValueAt(fila, 12)));
-            PH.setText(String.valueOf(Tdep4.getValueAt(fila, 13)));
-            String Quinc = model.getValueAt(fila, 14).toString();
+            ban.setText(String.valueOf(Tdep4.getValueAt(fila, 6)));
+            cta.setText(String.valueOf(Tdep4.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tdep4.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tdep4.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tdep4.getValueAt(fila, 16)));
-            pds.setText(String.valueOf(Tdep4.getValueAt(fila, 17)));
-            Ddv.setText(String.valueOf(Tdep4.getValueAt(fila, 18)));
-            PDDDV.setText(String.valueOf(Tdep4.getValueAt(fila, 19)));
-            DD.setText(String.valueOf(Tdep4.getValueAt(fila, 20)));
-            PDDD.setText(String.valueOf(Tdep4.getValueAt(fila, 21)));
-            DL.setText(String.valueOf(Tdep4.getValueAt(fila, 22)));
-            PDDL.setText(String.valueOf(Tdep4.getValueAt(fila, 23)));
-            dt.setText(String.valueOf(Tdep4.getValueAt(fila, 24)));
-            PDDT.setText(String.valueOf(Tdep4.getValueAt(fila, 25)));
-            DSGS.setText(String.valueOf(Tdep4.getValueAt(fila, 26)));
-            PDDDDSGS.setText(String.valueOf(Tdep4.getValueAt(fila, 27)));
-            FJ.setText(String.valueOf(Tdep4.getValueAt(fila, 28)));
-            DO.setText(String.valueOf(Tdep4.getValueAt(fila, 29)));
-            DF.setText(String.valueOf(Tdep4.getValueAt(fila, 30)));
-            PDDF.setText(String.valueOf(Tdep4.getValueAt(fila, 31)));
-            DFT.setText(String.valueOf(Tdep4.getValueAt(fila, 32)));
-            PDDFT.setText(String.valueOf(Tdep4.getValueAt(fila, 33)));
-            R.setText(String.valueOf(Tdep4.getValueAt(fila, 34)));
-            PCR.setText(String.valueOf(Tdep4.getValueAt(fila, 35)));
-            apy.setText(String.valueOf(Tdep4.getValueAt(fila, 36)));
-            Lugar.setText(String.valueOf(Tdep4.getValueAt(fila, 37)));
-            Rembolso.setText(String.valueOf(Tdep4.getValueAt(fila, 38)));
-            ADD.setText(String.valueOf(Tdep4.getValueAt(fila, 39)));
-            HE.setText(String.valueOf(Tdep4.getValueAt(fila, 40)));
+            pd.setText(String.valueOf(Tdep4.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep4.getValueAt(fila, 13)));
+            DL.setText(String.valueOf(Tdep4.getValueAt(fila, 14)));
+            dt.setText(String.valueOf(Tdep4.getValueAt(fila, 15)));
+            Ddv.setText(String.valueOf(Tdep4.getValueAt(fila, 16)));
+            Dpi.setText(String.valueOf(Tdep4.getValueAt(fila, 17)));
+            DF.setText(String.valueOf(Tdep4.getValueAt(fila, 18)));
+            DFT.setText(String.valueOf(Tdep4.getValueAt(fila, 19)));
+            DSGS.setText(String.valueOf(Tdep4.getValueAt(fila, 20)));
+            DD.setText(String.valueOf(Tdep4.getValueAt(fila, 21)));
+            F.setText(String.valueOf(Tdep4.getValueAt(fila, 22)));
+            HE.setText(String.valueOf(Tdep4.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tdep4.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tdep4.getValueAt(fila, 25)));
+            R.setText(String.valueOf(Tdep4.getValueAt(fila, 26)));
+            sueldo.setText(String.valueOf(Tdep4.getValueAt(fila, 27)));
+            Bono.setText(String.valueOf(Tdep4.getValueAt(fila, 28)));
+            apy.setText(String.valueOf(Tdep4.getValueAt(fila, 29)));
+            Lugar.setText(String.valueOf(Tdep4.getValueAt(fila, 20)));
+            PDDL.setText(String.valueOf(Tdep4.getValueAt(fila, 31)));
+            PDDT.setText(String.valueOf(Tdep4.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tdep4.getValueAt(fila, 33)));
+            ADD.setText(String.valueOf(Tdep4.getValueAt(fila, 34)));
+            PDDDV.setText(String.valueOf(Tdep4.getValueAt(fila, 35)));
+            pds.setText(String.valueOf(Tdep4.getValueAt(fila, 36)));
+            PDDF.setText(String.valueOf(Tdep4.getValueAt(fila, 37)));
+            PDDFT.setText(String.valueOf(Tdep4.getValueAt(fila, 38)));
+            PDDD.setText(String.valueOf(Tdep4.getValueAt(fila, 39)));
+            PDDDDSGS.setText(String.valueOf(Tdep4.getValueAt(fila, 40)));
             THE.setText(String.valueOf(Tdep4.getValueAt(fila, 41)));
-            F.setText(String.valueOf(Tdep4.getValueAt(fila, 42)));
-            DPF.setText(String.valueOf(Tdep4.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep4.getValueAt(fila, 47)));
-            RI.setText(String.valueOf(Tdep4.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
-            NomISR.setText(String.valueOf(Tdep4.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep4.getValueAt(fila, 48)));
-            Sancion.setText(String.valueOf(Tdep4.getValueAt(fila, 49)));
-            Chamarra.setText(String.valueOf(Tdep4.getValueAt(fila, 50)));
-            Chaleco.setText(String.valueOf(Tdep4.getValueAt(fila, 51)));
-            Fde.setText(String.valueOf(Tdep4.getValueAt(fila, 52)));
-            Grua.setText(String.valueOf(Tdep4.getValueAt(fila, 53)));
-            Pantalon.setText(String.valueOf(Tdep4.getValueAt(fila, 54)));
-            Credencial.setText(String.valueOf(Tdep4.getValueAt(fila, 55)));
-            Bp.setText(String.valueOf(Tdep4.getValueAt(fila, 56)));
+            TotalR.setText(String.valueOf(Tdep4.getValueAt(fila, 42)));
+            Odtp.setText(String.valueOf(Tdep4.getValueAt(fila, 43)));
+            DPF.setText(String.valueOf(Tdep4.getValueAt(fila, 44)));
+            AdN.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
+            Presp.setText(String.valueOf(Tdep4.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tdep4.getValueAt(fila, 47)));
+            Fde.setText(String.valueOf(Tdep4.getValueAt(fila, 48)));
+            Bp.setText(String.valueOf(Tdep4.getValueAt(fila, 49)));
+            Sancion.setText(String.valueOf(Tdep4.getValueAt(fila, 50)));
+            PCR.setText(String.valueOf(Tdep4.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tdep4.getValueAt(fila, 52)));
+            DI.setText(String.valueOf(Tdep4.getValueAt(fila, 53)));
+            RI.setText(String.valueOf(Tdep4.getValueAt(fila, 54)));
+            RF.setText(String.valueOf(Tdep4.getValueAt(fila, 55)));
+            NomISR.setText(String.valueOf(Tdep4.getValueAt(fila, 56)));
             Playera.setText(String.valueOf(Tdep4.getValueAt(fila, 57)));
-            Corbata.setText(String.valueOf(Tdep4.getValueAt(fila, 58)));
-            Presp.setText(String.valueOf(Tdep4.getValueAt(fila, 59)));
-            cda.setText(String.valueOf(Tdep4.getValueAt(fila, 60)));
-            Odtp.setText(String.valueOf(Tdep4.getValueAt(fila, 61)));
-            AdN.setText(String.valueOf(Tdep4.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tdep4.getValueAt(fila, 63)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            Chamarra.setText(String.valueOf(Tdep4.getValueAt(fila, 58)));
+            Pantalon.setText(String.valueOf(Tdep4.getValueAt(fila, 59)));
+            Corbata.setText(String.valueOf(Tdep4.getValueAt(fila, 60)));
+            Chaleco.setText(String.valueOf(Tdep4.getValueAt(fila, 61)));
+            Credencial.setText(String.valueOf(Tdep4.getValueAt(fila, 62)));
+            cda.setText(String.valueOf(Tdep4.getValueAt(fila, 63)));
+            deposito.setText(String.valueOf(Tdep4.getValueAt(fila, 64)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 65).toString();
+            String Mes = model.getValueAt(fila, 66).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep4.getValueAt(fila, 66)));
-            Obsdeposito.setText(String.valueOf(Tdep4.getValueAt(fila, 67)));
+            FDP.setText(String.valueOf(Tdep4.getValueAt(fila, 67)));
+            Obsdeposito.setText(String.valueOf(Tdep4.getValueAt(fila, 68)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tdep4MousePressed
 
     private void Tdep5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep5MousePressed
@@ -12950,90 +12983,96 @@ modelo.addColumn("# Folio");
             Ap.setText(String.valueOf(Tdep5.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep5.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep5.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tdep5.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tdep5.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tdep5.getValueAt(fila, 8)));
-            Bono.setText(String.valueOf(Tdep5.getValueAt(fila, 9)));
-            ban.setText(String.valueOf(Tdep5.getValueAt(fila, 10)));
-            cta.setText(String.valueOf(Tdep5.getValueAt(fila, 11)));
-            pd.setText(String.valueOf(Tdep5.getValueAt(fila, 12)));
-            PH.setText(String.valueOf(Tdep5.getValueAt(fila, 13)));
-            String Quinc = model.getValueAt(fila, 14).toString();
+            ban.setText(String.valueOf(Tdep5.getValueAt(fila, 6)));
+            cta.setText(String.valueOf(Tdep5.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tdep5.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tdep5.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tdep5.getValueAt(fila, 16)));
-            pds.setText(String.valueOf(Tdep5.getValueAt(fila, 17)));
-            Ddv.setText(String.valueOf(Tdep5.getValueAt(fila, 18)));
-            PDDDV.setText(String.valueOf(Tdep5.getValueAt(fila, 19)));
-            DD.setText(String.valueOf(Tdep5.getValueAt(fila, 20)));
-            PDDD.setText(String.valueOf(Tdep5.getValueAt(fila, 21)));
-            DL.setText(String.valueOf(Tdep5.getValueAt(fila, 22)));
-            PDDL.setText(String.valueOf(Tdep5.getValueAt(fila, 23)));
-            dt.setText(String.valueOf(Tdep5.getValueAt(fila, 24)));
-            PDDT.setText(String.valueOf(Tdep5.getValueAt(fila, 25)));
-            DSGS.setText(String.valueOf(Tdep5.getValueAt(fila, 26)));
-            PDDDDSGS.setText(String.valueOf(Tdep5.getValueAt(fila, 27)));
-            FJ.setText(String.valueOf(Tdep5.getValueAt(fila, 28)));
-            DO.setText(String.valueOf(Tdep5.getValueAt(fila, 29)));
-            DF.setText(String.valueOf(Tdep5.getValueAt(fila, 30)));
-            PDDF.setText(String.valueOf(Tdep5.getValueAt(fila, 31)));
-            DFT.setText(String.valueOf(Tdep5.getValueAt(fila, 32)));
-            PDDFT.setText(String.valueOf(Tdep5.getValueAt(fila, 33)));
-            R.setText(String.valueOf(Tdep5.getValueAt(fila, 34)));
-            PCR.setText(String.valueOf(Tdep5.getValueAt(fila, 35)));
-            apy.setText(String.valueOf(Tdep5.getValueAt(fila, 36)));
-            Lugar.setText(String.valueOf(Tdep5.getValueAt(fila, 37)));
-            Rembolso.setText(String.valueOf(Tdep5.getValueAt(fila, 38)));
-            ADD.setText(String.valueOf(Tdep5.getValueAt(fila, 39)));
-            HE.setText(String.valueOf(Tdep5.getValueAt(fila, 40)));
+            pd.setText(String.valueOf(Tdep5.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep5.getValueAt(fila, 13)));
+            DL.setText(String.valueOf(Tdep5.getValueAt(fila, 14)));
+            dt.setText(String.valueOf(Tdep5.getValueAt(fila, 15)));
+            Ddv.setText(String.valueOf(Tdep5.getValueAt(fila, 16)));
+            Dpi.setText(String.valueOf(Tdep5.getValueAt(fila, 17)));
+            DF.setText(String.valueOf(Tdep5.getValueAt(fila, 18)));
+            DFT.setText(String.valueOf(Tdep5.getValueAt(fila, 19)));
+            DSGS.setText(String.valueOf(Tdep5.getValueAt(fila, 20)));
+            DD.setText(String.valueOf(Tdep5.getValueAt(fila, 21)));
+            F.setText(String.valueOf(Tdep5.getValueAt(fila, 22)));
+            HE.setText(String.valueOf(Tdep5.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tdep5.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tdep5.getValueAt(fila, 25)));
+            R.setText(String.valueOf(Tdep5.getValueAt(fila, 26)));
+            sueldo.setText(String.valueOf(Tdep5.getValueAt(fila, 27)));
+            Bono.setText(String.valueOf(Tdep5.getValueAt(fila, 28)));
+            apy.setText(String.valueOf(Tdep5.getValueAt(fila, 29)));
+            Lugar.setText(String.valueOf(Tdep5.getValueAt(fila, 20)));
+            PDDL.setText(String.valueOf(Tdep5.getValueAt(fila, 31)));
+            PDDT.setText(String.valueOf(Tdep5.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tdep5.getValueAt(fila, 33)));
+            ADD.setText(String.valueOf(Tdep5.getValueAt(fila, 34)));
+            PDDDV.setText(String.valueOf(Tdep5.getValueAt(fila, 35)));
+            pds.setText(String.valueOf(Tdep5.getValueAt(fila, 36)));
+            PDDF.setText(String.valueOf(Tdep5.getValueAt(fila, 37)));
+            PDDFT.setText(String.valueOf(Tdep5.getValueAt(fila, 38)));
+            PDDD.setText(String.valueOf(Tdep5.getValueAt(fila, 39)));
+            PDDDDSGS.setText(String.valueOf(Tdep5.getValueAt(fila, 40)));
             THE.setText(String.valueOf(Tdep5.getValueAt(fila, 41)));
-            F.setText(String.valueOf(Tdep5.getValueAt(fila, 42)));
-            DPF.setText(String.valueOf(Tdep5.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep5.getValueAt(fila, 47)));
-            RI.setText(String.valueOf(Tdep5.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
-            NomISR.setText(String.valueOf(Tdep5.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep5.getValueAt(fila, 48)));
-            Sancion.setText(String.valueOf(Tdep5.getValueAt(fila, 49)));
-            Chamarra.setText(String.valueOf(Tdep5.getValueAt(fila, 50)));
-            Chaleco.setText(String.valueOf(Tdep5.getValueAt(fila, 51)));
-            Fde.setText(String.valueOf(Tdep5.getValueAt(fila, 52)));
-            Grua.setText(String.valueOf(Tdep5.getValueAt(fila, 53)));
-            Pantalon.setText(String.valueOf(Tdep5.getValueAt(fila, 54)));
-            Credencial.setText(String.valueOf(Tdep5.getValueAt(fila, 55)));
-            Bp.setText(String.valueOf(Tdep5.getValueAt(fila, 56)));
+            TotalR.setText(String.valueOf(Tdep5.getValueAt(fila, 42)));
+            Odtp.setText(String.valueOf(Tdep5.getValueAt(fila, 43)));
+            DPF.setText(String.valueOf(Tdep5.getValueAt(fila, 44)));
+            AdN.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
+            Presp.setText(String.valueOf(Tdep5.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tdep5.getValueAt(fila, 47)));
+            Fde.setText(String.valueOf(Tdep5.getValueAt(fila, 48)));
+            Bp.setText(String.valueOf(Tdep5.getValueAt(fila, 49)));
+            Sancion.setText(String.valueOf(Tdep5.getValueAt(fila, 50)));
+            PCR.setText(String.valueOf(Tdep5.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tdep5.getValueAt(fila, 52)));
+            DI.setText(String.valueOf(Tdep5.getValueAt(fila, 53)));
+            RI.setText(String.valueOf(Tdep5.getValueAt(fila, 54)));
+            RF.setText(String.valueOf(Tdep5.getValueAt(fila, 55)));
+            NomISR.setText(String.valueOf(Tdep5.getValueAt(fila, 56)));
             Playera.setText(String.valueOf(Tdep5.getValueAt(fila, 57)));
-            Corbata.setText(String.valueOf(Tdep5.getValueAt(fila, 58)));
-            Presp.setText(String.valueOf(Tdep5.getValueAt(fila, 59)));
-            cda.setText(String.valueOf(Tdep5.getValueAt(fila, 60)));
-            Odtp.setText(String.valueOf(Tdep5.getValueAt(fila, 61)));
-            AdN.setText(String.valueOf(Tdep5.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tdep5.getValueAt(fila, 63)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            Chamarra.setText(String.valueOf(Tdep5.getValueAt(fila, 58)));
+            Pantalon.setText(String.valueOf(Tdep5.getValueAt(fila, 59)));
+            Corbata.setText(String.valueOf(Tdep5.getValueAt(fila, 60)));
+            Chaleco.setText(String.valueOf(Tdep5.getValueAt(fila, 61)));
+            Credencial.setText(String.valueOf(Tdep5.getValueAt(fila, 62)));
+            cda.setText(String.valueOf(Tdep5.getValueAt(fila, 63)));
+            deposito.setText(String.valueOf(Tdep5.getValueAt(fila, 64)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 65).toString();
+            String Mes = model.getValueAt(fila, 66).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep5.getValueAt(fila, 66)));
-            Obsdeposito.setText(String.valueOf(Tdep5.getValueAt(fila, 67)));
+            FDP.setText(String.valueOf(Tdep5.getValueAt(fila, 67)));
+            Obsdeposito.setText(String.valueOf(Tdep5.getValueAt(fila, 68)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tdep5MousePressed
 
     private void Tdep6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep6MousePressed
-        try {
+         try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep6.getModel();
 
@@ -13044,90 +13083,96 @@ modelo.addColumn("# Folio");
             Ap.setText(String.valueOf(Tdep6.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep6.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep6.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tdep6.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tdep6.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tdep6.getValueAt(fila, 8)));
-            Bono.setText(String.valueOf(Tdep6.getValueAt(fila, 9)));
-            ban.setText(String.valueOf(Tdep6.getValueAt(fila, 10)));
-            cta.setText(String.valueOf(Tdep6.getValueAt(fila, 11)));
-            pd.setText(String.valueOf(Tdep6.getValueAt(fila, 12)));
-            PH.setText(String.valueOf(Tdep6.getValueAt(fila, 13)));
-            String Quinc = model.getValueAt(fila, 14).toString();
+            ban.setText(String.valueOf(Tdep6.getValueAt(fila, 6)));
+            cta.setText(String.valueOf(Tdep6.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tdep6.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tdep6.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tdep6.getValueAt(fila, 16)));
-            pds.setText(String.valueOf(Tdep6.getValueAt(fila, 17)));
-            Ddv.setText(String.valueOf(Tdep6.getValueAt(fila, 18)));
-            PDDDV.setText(String.valueOf(Tdep6.getValueAt(fila, 19)));
-            DD.setText(String.valueOf(Tdep6.getValueAt(fila, 20)));
-            PDDD.setText(String.valueOf(Tdep6.getValueAt(fila, 21)));
-            DL.setText(String.valueOf(Tdep6.getValueAt(fila, 22)));
-            PDDL.setText(String.valueOf(Tdep6.getValueAt(fila, 23)));
-            dt.setText(String.valueOf(Tdep6.getValueAt(fila, 24)));
-            PDDT.setText(String.valueOf(Tdep6.getValueAt(fila, 25)));
-            DSGS.setText(String.valueOf(Tdep6.getValueAt(fila, 26)));
-            PDDDDSGS.setText(String.valueOf(Tdep6.getValueAt(fila, 27)));
-            FJ.setText(String.valueOf(Tdep6.getValueAt(fila, 28)));
-            DO.setText(String.valueOf(Tdep6.getValueAt(fila, 29)));
-            DF.setText(String.valueOf(Tdep6.getValueAt(fila, 30)));
-            PDDF.setText(String.valueOf(Tdep6.getValueAt(fila, 31)));
-            DFT.setText(String.valueOf(Tdep6.getValueAt(fila, 32)));
-            PDDFT.setText(String.valueOf(Tdep6.getValueAt(fila, 33)));
-            R.setText(String.valueOf(Tdep6.getValueAt(fila, 34)));
-            PCR.setText(String.valueOf(Tdep6.getValueAt(fila, 35)));
-            apy.setText(String.valueOf(Tdep6.getValueAt(fila, 36)));
-            Lugar.setText(String.valueOf(Tdep6.getValueAt(fila, 37)));
-            Rembolso.setText(String.valueOf(Tdep6.getValueAt(fila, 38)));
-            ADD.setText(String.valueOf(Tdep6.getValueAt(fila, 39)));
-            HE.setText(String.valueOf(Tdep6.getValueAt(fila, 40)));
+            pd.setText(String.valueOf(Tdep6.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep6.getValueAt(fila, 13)));
+            DL.setText(String.valueOf(Tdep6.getValueAt(fila, 14)));
+            dt.setText(String.valueOf(Tdep6.getValueAt(fila, 15)));
+            Ddv.setText(String.valueOf(Tdep6.getValueAt(fila, 16)));
+            Dpi.setText(String.valueOf(Tdep6.getValueAt(fila, 17)));
+            DF.setText(String.valueOf(Tdep6.getValueAt(fila, 18)));
+            DFT.setText(String.valueOf(Tdep6.getValueAt(fila, 19)));
+            DSGS.setText(String.valueOf(Tdep6.getValueAt(fila, 20)));
+            DD.setText(String.valueOf(Tdep6.getValueAt(fila, 21)));
+            F.setText(String.valueOf(Tdep6.getValueAt(fila, 22)));
+            HE.setText(String.valueOf(Tdep6.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tdep6.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tdep6.getValueAt(fila, 25)));
+            R.setText(String.valueOf(Tdep6.getValueAt(fila, 26)));
+            sueldo.setText(String.valueOf(Tdep6.getValueAt(fila, 27)));
+            Bono.setText(String.valueOf(Tdep6.getValueAt(fila, 28)));
+            apy.setText(String.valueOf(Tdep6.getValueAt(fila, 29)));
+            Lugar.setText(String.valueOf(Tdep6.getValueAt(fila, 20)));
+            PDDL.setText(String.valueOf(Tdep6.getValueAt(fila, 31)));
+            PDDT.setText(String.valueOf(Tdep6.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tdep6.getValueAt(fila, 33)));
+            ADD.setText(String.valueOf(Tdep6.getValueAt(fila, 34)));
+            PDDDV.setText(String.valueOf(Tdep6.getValueAt(fila, 35)));
+            pds.setText(String.valueOf(Tdep6.getValueAt(fila, 36)));
+            PDDF.setText(String.valueOf(Tdep6.getValueAt(fila, 37)));
+            PDDFT.setText(String.valueOf(Tdep6.getValueAt(fila, 38)));
+            PDDD.setText(String.valueOf(Tdep6.getValueAt(fila, 39)));
+            PDDDDSGS.setText(String.valueOf(Tdep6.getValueAt(fila, 40)));
             THE.setText(String.valueOf(Tdep6.getValueAt(fila, 41)));
-            F.setText(String.valueOf(Tdep6.getValueAt(fila, 42)));
-            DPF.setText(String.valueOf(Tdep6.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep6.getValueAt(fila, 47)));
-            RI.setText(String.valueOf(Tdep6.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
-            NomISR.setText(String.valueOf(Tdep6.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep6.getValueAt(fila, 48)));
-            Sancion.setText(String.valueOf(Tdep6.getValueAt(fila, 49)));
-            Chamarra.setText(String.valueOf(Tdep6.getValueAt(fila, 50)));
-            Chaleco.setText(String.valueOf(Tdep6.getValueAt(fila, 51)));
-            Fde.setText(String.valueOf(Tdep6.getValueAt(fila, 52)));
-            Grua.setText(String.valueOf(Tdep6.getValueAt(fila, 53)));
-            Pantalon.setText(String.valueOf(Tdep6.getValueAt(fila, 54)));
-            Credencial.setText(String.valueOf(Tdep6.getValueAt(fila, 55)));
-            Bp.setText(String.valueOf(Tdep6.getValueAt(fila, 56)));
+            TotalR.setText(String.valueOf(Tdep6.getValueAt(fila, 42)));
+            Odtp.setText(String.valueOf(Tdep6.getValueAt(fila, 43)));
+            DPF.setText(String.valueOf(Tdep6.getValueAt(fila, 44)));
+            AdN.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
+            Presp.setText(String.valueOf(Tdep6.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tdep6.getValueAt(fila, 47)));
+            Fde.setText(String.valueOf(Tdep6.getValueAt(fila, 48)));
+            Bp.setText(String.valueOf(Tdep6.getValueAt(fila, 49)));
+            Sancion.setText(String.valueOf(Tdep6.getValueAt(fila, 50)));
+            PCR.setText(String.valueOf(Tdep6.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tdep6.getValueAt(fila, 52)));
+            DI.setText(String.valueOf(Tdep6.getValueAt(fila, 53)));
+            RI.setText(String.valueOf(Tdep6.getValueAt(fila, 54)));
+            RF.setText(String.valueOf(Tdep6.getValueAt(fila, 55)));
+            NomISR.setText(String.valueOf(Tdep6.getValueAt(fila, 56)));
             Playera.setText(String.valueOf(Tdep6.getValueAt(fila, 57)));
-            Corbata.setText(String.valueOf(Tdep6.getValueAt(fila, 58)));
-            Presp.setText(String.valueOf(Tdep6.getValueAt(fila, 59)));
-            cda.setText(String.valueOf(Tdep6.getValueAt(fila, 60)));
-            Odtp.setText(String.valueOf(Tdep6.getValueAt(fila, 61)));
-            AdN.setText(String.valueOf(Tdep6.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tdep6.getValueAt(fila, 63)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            Chamarra.setText(String.valueOf(Tdep6.getValueAt(fila, 58)));
+            Pantalon.setText(String.valueOf(Tdep6.getValueAt(fila, 59)));
+            Corbata.setText(String.valueOf(Tdep6.getValueAt(fila, 60)));
+            Chaleco.setText(String.valueOf(Tdep6.getValueAt(fila, 61)));
+            Credencial.setText(String.valueOf(Tdep6.getValueAt(fila, 62)));
+            cda.setText(String.valueOf(Tdep6.getValueAt(fila, 63)));
+            deposito.setText(String.valueOf(Tdep6.getValueAt(fila, 64)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 65).toString();
+            String Mes = model.getValueAt(fila, 66).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep6.getValueAt(fila, 66)));
-            Obsdeposito.setText(String.valueOf(Tdep6.getValueAt(fila, 67)));
+            FDP.setText(String.valueOf(Tdep6.getValueAt(fila, 67)));
+            Obsdeposito.setText(String.valueOf(Tdep6.getValueAt(fila, 68)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tdep6MousePressed
 
     private void Tdep7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep7MousePressed
-        try {
+         try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep7.getModel();
 
@@ -13138,86 +13183,92 @@ modelo.addColumn("# Folio");
             Ap.setText(String.valueOf(Tdep7.getValueAt(fila, 3)));
             am.setText(String.valueOf(Tdep7.getValueAt(fila, 4)));
             name.setText(String.valueOf(Tdep7.getValueAt(fila, 5)));
-            Zon.setText(String.valueOf(Tdep7.getValueAt(fila, 6)));
-            ServN.setText(String.valueOf(Tdep7.getValueAt(fila, 7)));
-            sueldo.setText(String.valueOf(Tdep7.getValueAt(fila, 8)));
-            Bono.setText(String.valueOf(Tdep7.getValueAt(fila, 9)));
-            ban.setText(String.valueOf(Tdep7.getValueAt(fila, 10)));
-            cta.setText(String.valueOf(Tdep7.getValueAt(fila, 11)));
-            pd.setText(String.valueOf(Tdep7.getValueAt(fila, 12)));
-            PH.setText(String.valueOf(Tdep7.getValueAt(fila, 13)));
-            String Quinc = model.getValueAt(fila, 14).toString();
+            ban.setText(String.valueOf(Tdep7.getValueAt(fila, 6)));
+            cta.setText(String.valueOf(Tdep7.getValueAt(fila, 7)));
+            Zon.setText(String.valueOf(Tdep7.getValueAt(fila, 8)));
+            ServN.setText(String.valueOf(Tdep7.getValueAt(fila, 9)));
+            String Quinc = model.getValueAt(fila, 10).toString();
             for (int i = 0; i < Quincenas.getItemCount(); i++) {
                 if (Quincenas.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Quincenas.setSelectedIndex(i);
                 }
             }
-            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 15));
+            Date date = new SimpleDateFormat("yyyy").parse((String) model.getValueAt(fila, 11));
             año.setDate(date);
-            Dpi.setText(String.valueOf(Tdep7.getValueAt(fila, 16)));
-            pds.setText(String.valueOf(Tdep7.getValueAt(fila, 17)));
-            Ddv.setText(String.valueOf(Tdep7.getValueAt(fila, 18)));
-            PDDDV.setText(String.valueOf(Tdep7.getValueAt(fila, 19)));
-            DD.setText(String.valueOf(Tdep7.getValueAt(fila, 20)));
-            PDDD.setText(String.valueOf(Tdep7.getValueAt(fila, 21)));
-            DL.setText(String.valueOf(Tdep7.getValueAt(fila, 22)));
-            PDDL.setText(String.valueOf(Tdep7.getValueAt(fila, 23)));
-            dt.setText(String.valueOf(Tdep7.getValueAt(fila, 24)));
-            PDDT.setText(String.valueOf(Tdep7.getValueAt(fila, 25)));
-            DSGS.setText(String.valueOf(Tdep7.getValueAt(fila, 26)));
-            PDDDDSGS.setText(String.valueOf(Tdep7.getValueAt(fila, 27)));
-            FJ.setText(String.valueOf(Tdep7.getValueAt(fila, 28)));
-            DO.setText(String.valueOf(Tdep7.getValueAt(fila, 29)));
-            DF.setText(String.valueOf(Tdep7.getValueAt(fila, 30)));
-            PDDF.setText(String.valueOf(Tdep7.getValueAt(fila, 31)));
-            DFT.setText(String.valueOf(Tdep7.getValueAt(fila, 32)));
-            PDDFT.setText(String.valueOf(Tdep7.getValueAt(fila, 33)));
-            R.setText(String.valueOf(Tdep7.getValueAt(fila, 34)));
-            PCR.setText(String.valueOf(Tdep7.getValueAt(fila, 35)));
-            apy.setText(String.valueOf(Tdep7.getValueAt(fila, 36)));
-            Lugar.setText(String.valueOf(Tdep7.getValueAt(fila, 37)));
-            Rembolso.setText(String.valueOf(Tdep7.getValueAt(fila, 38)));
-            ADD.setText(String.valueOf(Tdep7.getValueAt(fila, 39)));
-            HE.setText(String.valueOf(Tdep7.getValueAt(fila, 40)));
+            pd.setText(String.valueOf(Tdep7.getValueAt(fila, 12)));
+            PH.setText(String.valueOf(Tdep7.getValueAt(fila, 13)));
+            DL.setText(String.valueOf(Tdep7.getValueAt(fila, 14)));
+            dt.setText(String.valueOf(Tdep7.getValueAt(fila, 15)));
+            Ddv.setText(String.valueOf(Tdep7.getValueAt(fila, 16)));
+            Dpi.setText(String.valueOf(Tdep7.getValueAt(fila, 17)));
+            DF.setText(String.valueOf(Tdep7.getValueAt(fila, 18)));
+            DFT.setText(String.valueOf(Tdep7.getValueAt(fila, 19)));
+            DSGS.setText(String.valueOf(Tdep7.getValueAt(fila, 20)));
+            DD.setText(String.valueOf(Tdep7.getValueAt(fila, 21)));
+            F.setText(String.valueOf(Tdep7.getValueAt(fila, 22)));
+            HE.setText(String.valueOf(Tdep7.getValueAt(fila, 23)));
+            FJ.setText(String.valueOf(Tdep7.getValueAt(fila, 24)));
+            DO.setText(String.valueOf(Tdep7.getValueAt(fila, 25)));
+            R.setText(String.valueOf(Tdep7.getValueAt(fila, 26)));
+            sueldo.setText(String.valueOf(Tdep7.getValueAt(fila, 27)));
+            Bono.setText(String.valueOf(Tdep7.getValueAt(fila, 28)));
+            apy.setText(String.valueOf(Tdep7.getValueAt(fila, 29)));
+            Lugar.setText(String.valueOf(Tdep7.getValueAt(fila, 20)));
+            PDDL.setText(String.valueOf(Tdep7.getValueAt(fila, 31)));
+            PDDT.setText(String.valueOf(Tdep7.getValueAt(fila, 32)));
+            Rembolso.setText(String.valueOf(Tdep7.getValueAt(fila, 33)));
+            ADD.setText(String.valueOf(Tdep7.getValueAt(fila, 34)));
+            PDDDV.setText(String.valueOf(Tdep7.getValueAt(fila, 35)));
+            pds.setText(String.valueOf(Tdep7.getValueAt(fila, 36)));
+            PDDF.setText(String.valueOf(Tdep7.getValueAt(fila, 37)));
+            PDDFT.setText(String.valueOf(Tdep7.getValueAt(fila, 38)));
+            PDDD.setText(String.valueOf(Tdep7.getValueAt(fila, 39)));
+            PDDDDSGS.setText(String.valueOf(Tdep7.getValueAt(fila, 40)));
             THE.setText(String.valueOf(Tdep7.getValueAt(fila, 41)));
-            F.setText(String.valueOf(Tdep7.getValueAt(fila, 42)));
-            DPF.setText(String.valueOf(Tdep7.getValueAt(fila, 43)));
-            DI.setText(String.valueOf(Tdep7.getValueAt(fila, 47)));
-            RI.setText(String.valueOf(Tdep7.getValueAt(fila, 44)));
-            RF.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
-            NomISR.setText(String.valueOf(Tdep7.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep7.getValueAt(fila, 48)));
-            Sancion.setText(String.valueOf(Tdep7.getValueAt(fila, 49)));
-            Chamarra.setText(String.valueOf(Tdep7.getValueAt(fila, 50)));
-            Chaleco.setText(String.valueOf(Tdep7.getValueAt(fila, 51)));
-            Fde.setText(String.valueOf(Tdep7.getValueAt(fila, 52)));
-            Grua.setText(String.valueOf(Tdep7.getValueAt(fila, 53)));
-            Pantalon.setText(String.valueOf(Tdep7.getValueAt(fila, 54)));
-            Credencial.setText(String.valueOf(Tdep7.getValueAt(fila, 55)));
-            Bp.setText(String.valueOf(Tdep7.getValueAt(fila, 56)));
+            TotalR.setText(String.valueOf(Tdep7.getValueAt(fila, 42)));
+            Odtp.setText(String.valueOf(Tdep7.getValueAt(fila, 43)));
+            DPF.setText(String.valueOf(Tdep7.getValueAt(fila, 44)));
+            AdN.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
+            Presp.setText(String.valueOf(Tdep7.getValueAt(fila, 46)));
+            Fdb.setText(String.valueOf(Tdep7.getValueAt(fila, 47)));
+            Fde.setText(String.valueOf(Tdep7.getValueAt(fila, 48)));
+            Bp.setText(String.valueOf(Tdep7.getValueAt(fila, 49)));
+            Sancion.setText(String.valueOf(Tdep7.getValueAt(fila, 50)));
+            PCR.setText(String.valueOf(Tdep7.getValueAt(fila, 51)));
+            Grua.setText(String.valueOf(Tdep7.getValueAt(fila, 52)));
+            DI.setText(String.valueOf(Tdep7.getValueAt(fila, 53)));
+            RI.setText(String.valueOf(Tdep7.getValueAt(fila, 54)));
+            RF.setText(String.valueOf(Tdep7.getValueAt(fila, 55)));
+            NomISR.setText(String.valueOf(Tdep7.getValueAt(fila, 56)));
             Playera.setText(String.valueOf(Tdep7.getValueAt(fila, 57)));
-            Corbata.setText(String.valueOf(Tdep7.getValueAt(fila, 58)));
-            Presp.setText(String.valueOf(Tdep7.getValueAt(fila, 59)));
-            cda.setText(String.valueOf(Tdep7.getValueAt(fila, 60)));
-            Odtp.setText(String.valueOf(Tdep7.getValueAt(fila, 61)));
-            AdN.setText(String.valueOf(Tdep7.getValueAt(fila, 62)));
-            deposito.setText(String.valueOf(Tdep7.getValueAt(fila, 63)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 64));
+            Chamarra.setText(String.valueOf(Tdep7.getValueAt(fila, 58)));
+            Pantalon.setText(String.valueOf(Tdep7.getValueAt(fila, 59)));
+            Corbata.setText(String.valueOf(Tdep7.getValueAt(fila, 60)));
+            Chaleco.setText(String.valueOf(Tdep7.getValueAt(fila, 61)));
+            Credencial.setText(String.valueOf(Tdep7.getValueAt(fila, 62)));
+            cda.setText(String.valueOf(Tdep7.getValueAt(fila, 63)));
+            deposito.setText(String.valueOf(Tdep7.getValueAt(fila, 64)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 65).toString();
+            String Mes = model.getValueAt(fila, 66).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep7.getValueAt(fila, 66)));
-            Obsdeposito.setText(String.valueOf(Tdep7.getValueAt(fila, 67)));
+            FDP.setText(String.valueOf(Tdep7.getValueAt(fila, 67)));
+            Obsdeposito.setText(String.valueOf(Tdep7.getValueAt(fila, 68)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosQ_4.class
+            Logger.getLogger(DepositosQ_SIMSS_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
+        TotalR.setText("" + (Double.parseDouble(THE.getText()) + Double.parseDouble(PCR.getText()) + Double.parseDouble(pds.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(PDDD.getText())
+                + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
+                + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
     }//GEN-LAST:event_Tdep7MousePressed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
