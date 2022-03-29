@@ -1020,7 +1020,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
             modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//30
             modelo.addColumn("Adicionales");
             modelo.addColumn("Faltas");//32
             modelo.addColumn("Descuento por faltas");
@@ -1159,8 +1160,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
-            modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//30
             modelo.addColumn("Adicionales");
             modelo.addColumn("Faltas");//32
             modelo.addColumn("Descuento por faltas");
@@ -1300,7 +1301,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
             modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//30
             modelo.addColumn("Adicionales");
             modelo.addColumn("Faltas");//32
             modelo.addColumn("Descuento por faltas");
@@ -1440,7 +1442,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
             modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//30
             modelo.addColumn("Adicionales");
             modelo.addColumn("Faltas");//32
             modelo.addColumn("Descuento por faltas");
@@ -1580,7 +1583,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
             modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//30
             modelo.addColumn("Adicionales");
             modelo.addColumn("Faltas");//32
             modelo.addColumn("Descuento por faltas");
@@ -1720,7 +1724,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
             modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//30
             modelo.addColumn("Adicionales");
             modelo.addColumn("Faltas");//32
             modelo.addColumn("Descuento por faltas");
@@ -1860,7 +1865,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
             modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//30
             modelo.addColumn("Adicionales");
             modelo.addColumn("Faltas");//32
             modelo.addColumn("Descuento por faltas");
@@ -1999,8 +2005,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             modelo.addColumn("Retardos");//26
             modelo.addColumn("Pago con retardos");
             modelo.addColumn("Apoyo");//28
-            modelo.addColumn("Lugar");
-            modelo.addColumn("Rembolso");//30
+            modelo.addColumn("Rembolso");
+            modelo.addColumn("Lugar");//30
             modelo.addColumn("Adicionales");
             modelo.addColumn("Faltas");//32
             modelo.addColumn("Descuento por faltas");
@@ -4095,11 +4101,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CS2)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
+                        .addGap(0, 0, 0)
                         .addComponent(jLabel65)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosTD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelBE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Nominab, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4260,11 +4266,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel66)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelBE1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4425,11 +4431,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel67)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelBE2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4590,11 +4596,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel14Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel68)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelBE3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4755,11 +4761,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel69)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelBE4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4920,11 +4926,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel20Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel70)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelBE5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5085,11 +5091,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel21Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel71)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelBE6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5250,11 +5256,11 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addGroup(jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel38Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel72)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosTD7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelBE7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Nominab7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6255,24 +6261,21 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addComponent(Datgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel9Layout.createSequentialGroup()
-                                        .addComponent(jLabel89)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel40)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Datgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addContainerGap()
+                                .addComponent(jLabel89)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pd, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel40)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PH, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Semana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -6281,7 +6284,6 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addContainerGap()
                                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel106)
                                     .addComponent(jLabel102)
@@ -6381,7 +6383,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Adddeposito)
                             .addComponent(Adddeposito1))))
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
 
         jScrollPane10.setViewportView(jPanel9);
@@ -10395,8 +10397,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             R.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
             PCR.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
             apy.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
+            Lugar.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
             ADD.setText(String.valueOf(Tnom.getValueAt(fila, 40)));
             F.setText(String.valueOf(Tnom.getValueAt(fila, 41)));
             DPF.setText(String.valueOf(Tnom.getValueAt(fila, 42)));
@@ -10692,8 +10694,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             R.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
             PCR.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
             apy.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
+            Lugar.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
             ADD.setText(String.valueOf(Tnom1.getValueAt(fila, 40)));
             F.setText(String.valueOf(Tnom1.getValueAt(fila, 41)));
             DPF.setText(String.valueOf(Tnom1.getValueAt(fila, 42)));
@@ -10989,8 +10991,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             R.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
             PCR.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
             apy.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
+            Lugar.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
             ADD.setText(String.valueOf(Tnom2.getValueAt(fila, 40)));
             F.setText(String.valueOf(Tnom2.getValueAt(fila, 41)));
             DPF.setText(String.valueOf(Tnom2.getValueAt(fila, 42)));
@@ -11286,8 +11288,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             R.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
             PCR.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
             apy.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
+            Lugar.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
             ADD.setText(String.valueOf(Tnom3.getValueAt(fila, 40)));
             F.setText(String.valueOf(Tnom3.getValueAt(fila, 41)));
             DPF.setText(String.valueOf(Tnom3.getValueAt(fila, 42)));
@@ -11583,8 +11585,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             R.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
             PCR.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
             apy.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
+            Lugar.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
             ADD.setText(String.valueOf(Tnom4.getValueAt(fila, 40)));
             F.setText(String.valueOf(Tnom4.getValueAt(fila, 41)));
             DPF.setText(String.valueOf(Tnom4.getValueAt(fila, 42)));
@@ -11880,8 +11882,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             R.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
             PCR.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
             apy.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
+            Lugar.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
             ADD.setText(String.valueOf(Tnom5.getValueAt(fila, 40)));
             F.setText(String.valueOf(Tnom5.getValueAt(fila, 41)));
             DPF.setText(String.valueOf(Tnom5.getValueAt(fila, 42)));
@@ -12177,8 +12179,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             R.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
             PCR.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
             apy.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
+            Lugar.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
             ADD.setText(String.valueOf(Tnom6.getValueAt(fila, 40)));
             F.setText(String.valueOf(Tnom6.getValueAt(fila, 41)));
             DPF.setText(String.valueOf(Tnom6.getValueAt(fila, 42)));
@@ -12474,8 +12476,8 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             R.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
             PCR.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
             apy.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
-            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
-            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
+            Lugar.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
             ADD.setText(String.valueOf(Tnom7.getValueAt(fila, 40)));
             F.setText(String.valueOf(Tnom7.getValueAt(fila, 41)));
             DPF.setText(String.valueOf(Tnom7.getValueAt(fila, 42)));
@@ -12553,7 +12555,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             sueldo.setText(String.valueOf(Tdep.getValueAt(fila, 27)));
             Bono.setText(String.valueOf(Tdep.getValueAt(fila, 28)));
             apy.setText(String.valueOf(Tdep.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep.getValueAt(fila, 20)));
+            Lugar.setText(String.valueOf(Tdep.getValueAt(fila, 30)));
             PDDL.setText(String.valueOf(Tdep.getValueAt(fila, 31)));
             PDDT.setText(String.valueOf(Tdep.getValueAt(fila, 32)));
             Rembolso.setText(String.valueOf(Tdep.getValueAt(fila, 33)));
@@ -12612,7 +12614,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_TdepMousePressed
 
     private void Tdep1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep1MousePressed
-         try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep1.getModel();
 
@@ -12653,7 +12655,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             sueldo.setText(String.valueOf(Tdep1.getValueAt(fila, 27)));
             Bono.setText(String.valueOf(Tdep1.getValueAt(fila, 28)));
             apy.setText(String.valueOf(Tdep1.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep1.getValueAt(fila, 20)));
+            Lugar.setText(String.valueOf(Tdep1.getValueAt(fila, 30)));
             PDDL.setText(String.valueOf(Tdep1.getValueAt(fila, 31)));
             PDDT.setText(String.valueOf(Tdep1.getValueAt(fila, 32)));
             Rembolso.setText(String.valueOf(Tdep1.getValueAt(fila, 33)));
@@ -12753,7 +12755,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             sueldo.setText(String.valueOf(Tdep2.getValueAt(fila, 27)));
             Bono.setText(String.valueOf(Tdep2.getValueAt(fila, 28)));
             apy.setText(String.valueOf(Tdep2.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep2.getValueAt(fila, 20)));
+            Lugar.setText(String.valueOf(Tdep2.getValueAt(fila, 30)));
             PDDL.setText(String.valueOf(Tdep2.getValueAt(fila, 31)));
             PDDT.setText(String.valueOf(Tdep2.getValueAt(fila, 32)));
             Rembolso.setText(String.valueOf(Tdep2.getValueAt(fila, 33)));
@@ -12853,7 +12855,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             sueldo.setText(String.valueOf(Tdep3.getValueAt(fila, 27)));
             Bono.setText(String.valueOf(Tdep3.getValueAt(fila, 28)));
             apy.setText(String.valueOf(Tdep3.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep3.getValueAt(fila, 20)));
+            Lugar.setText(String.valueOf(Tdep3.getValueAt(fila, 30)));
             PDDL.setText(String.valueOf(Tdep3.getValueAt(fila, 31)));
             PDDT.setText(String.valueOf(Tdep3.getValueAt(fila, 32)));
             Rembolso.setText(String.valueOf(Tdep3.getValueAt(fila, 33)));
@@ -12953,7 +12955,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             sueldo.setText(String.valueOf(Tdep4.getValueAt(fila, 27)));
             Bono.setText(String.valueOf(Tdep4.getValueAt(fila, 28)));
             apy.setText(String.valueOf(Tdep4.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep4.getValueAt(fila, 20)));
+            Lugar.setText(String.valueOf(Tdep4.getValueAt(fila, 30)));
             PDDL.setText(String.valueOf(Tdep4.getValueAt(fila, 31)));
             PDDT.setText(String.valueOf(Tdep4.getValueAt(fila, 32)));
             Rembolso.setText(String.valueOf(Tdep4.getValueAt(fila, 33)));
@@ -13009,7 +13011,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
                 + Double.parseDouble(PDDL.getText()) + Double.parseDouble(PDDT.getText()) + Double.parseDouble(PDDDDSGS.getText())
                 + Double.parseDouble(PDDF.getText()) + Double.parseDouble(PDDFT.getText())
                 + Double.parseDouble(Rembolso.getText()) + Double.parseDouble(ADD.getText()) + Double.parseDouble(apy.getText())));
-        
+
     }//GEN-LAST:event_Tdep4MousePressed
 
     private void Tdep5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep5MousePressed
@@ -13054,7 +13056,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             sueldo.setText(String.valueOf(Tdep5.getValueAt(fila, 27)));
             Bono.setText(String.valueOf(Tdep5.getValueAt(fila, 28)));
             apy.setText(String.valueOf(Tdep5.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep5.getValueAt(fila, 20)));
+            Lugar.setText(String.valueOf(Tdep5.getValueAt(fila, 30)));
             PDDL.setText(String.valueOf(Tdep5.getValueAt(fila, 31)));
             PDDT.setText(String.valueOf(Tdep5.getValueAt(fila, 32)));
             Rembolso.setText(String.valueOf(Tdep5.getValueAt(fila, 33)));
@@ -13154,7 +13156,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             sueldo.setText(String.valueOf(Tdep6.getValueAt(fila, 27)));
             Bono.setText(String.valueOf(Tdep6.getValueAt(fila, 28)));
             apy.setText(String.valueOf(Tdep6.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep6.getValueAt(fila, 20)));
+            Lugar.setText(String.valueOf(Tdep6.getValueAt(fila, 30)));
             PDDL.setText(String.valueOf(Tdep6.getValueAt(fila, 31)));
             PDDT.setText(String.valueOf(Tdep6.getValueAt(fila, 32)));
             Rembolso.setText(String.valueOf(Tdep6.getValueAt(fila, 33)));
@@ -13254,7 +13256,7 @@ public final class DepositosS_SIMSS_4 extends javax.swing.JFrame {
             sueldo.setText(String.valueOf(Tdep7.getValueAt(fila, 27)));
             Bono.setText(String.valueOf(Tdep7.getValueAt(fila, 28)));
             apy.setText(String.valueOf(Tdep7.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep7.getValueAt(fila, 20)));
+            Lugar.setText(String.valueOf(Tdep7.getValueAt(fila, 30)));
             PDDL.setText(String.valueOf(Tdep7.getValueAt(fila, 31)));
             PDDT.setText(String.valueOf(Tdep7.getValueAt(fila, 32)));
             Rembolso.setText(String.valueOf(Tdep7.getValueAt(fila, 33)));

@@ -358,7 +358,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         String SQL = "UPDATE `imss` SET `idimss` = ?, `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, "
                 + "`Genero_imss` = ?, `Fecha_de_incorporacion` = ?, `Zona_Imss` = ?, `servicio` = ?,`nss_imss` = ?, "
                 + "`rfc_imss` = ?, `curp_imss` = ?,`Puesto` = ?, `Salario` = ?, `Status_imss` = ?, `fecha_baja` = ?,"
-                + "`Fecha de reingreso`  = ?, `fecha baja (re)` = ?, `observaciones` = ?"
+                + "`Fecha de reingreso`  = ?, `fecha baja (re)` = ?, `observaciones` = ?, `fecha de antiguedad` = ?"
                 + " WHERE (`idimss` = ?);";
 
         try {
@@ -381,7 +381,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(16, FDREimss.getText());
             pst.setString(17, FBREimss.getText());
             pst.setString(18, obsimss.getText());
-            pst.setInt(19, Integer.parseInt(expimss.getText()));
+            pst.setString(19, ADEIMSS.getText());
+            pst.setInt(20, Integer.parseInt(expimss.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "IMSS Modificado");
@@ -463,7 +464,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Nombre(s)");//5
             modelo.addColumn("Genero");
             modelo.addColumn("Fecha de incorporacion");//7
+            modelo.addColumn("Antguiedad");//7
             modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("NSS");//9
             modelo.addColumn("RFC");
             modelo.addColumn("CURP");//11
@@ -476,8 +479,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Observaciones");
 
 //Anchos
-            int[] anchos = {/*idbd*/10, /*NEXP*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
-                /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
+            int[] anchos = {/*idbd*/10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
+                /*GEN*/ 30, /*FDI*/ 50, 50, /*ZONA*/ 50, /*serv*/ 100, /*NSS*/ 65, /*RFC*/ 60,
                 /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70,
                 /*FRE*/ 70, /*FBRE*/ 70, /*OBS*/ 2000};
 
@@ -503,11 +506,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
     public void FPuestoimss() {
         //Buscar servicio
-        String puesto = PuestoimssF.getSelectedItem().toString();
+        String PST = PuestoimssF.getSelectedItem().toString();
         String where = "select * from imss";
 
-        if (!"".equals(puesto)) {
-            where = " select * from imss WHERE `Puesto` LIKE '%" + puesto + "%'";
+        if (!"".equals(PST)) {
+            where = " select * from imss WHERE `Puesto` LIKE '%" + PST + "%'";
         }
 
         try {
@@ -534,8 +537,10 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");//5
             modelo.addColumn("Genero");
-            modelo.addColumn("Fecha de IMSS");//7
+            modelo.addColumn("Fecha de incorporacion");//7
+            modelo.addColumn("Antguiedad");//7
             modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("NSS");//9
             modelo.addColumn("RFC");
             modelo.addColumn("CURP");//11
@@ -548,8 +553,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Observaciones");
 
 //Anchos
-            int[] anchos = {/*idbd*/10, /*NEXP*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
-                /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
+            int[] anchos = {/*idbd*/10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
+                /*GEN*/ 30, /*FDI*/ 50, 50, /*ZONA*/ 50, /*serv*/ 100, /*NSS*/ 65, /*RFC*/ 60,
                 /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70,
                 /*FRE*/ 70, /*FBRE*/ 70, /*OBS*/ 2000};
 
@@ -602,13 +607,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
             int cantidadColumnas = rsMd.getColumnCount();
 
             modelo.addColumn("# Exp");//1
-            modelo.addColumn("# Exp 2021");
             modelo.addColumn("Apellido P");//3
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");//5
             modelo.addColumn("Genero");
             modelo.addColumn("Fecha de incorporacion");//7
+            modelo.addColumn("Antguiedad");//7
             modelo.addColumn("Zona");
+            modelo.addColumn("Servicio");
             modelo.addColumn("NSS");//9
             modelo.addColumn("RFC");
             modelo.addColumn("CURP");//11
@@ -621,8 +627,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Observaciones");
 
 //Anchos
-            int[] anchos = {/*idbd*/10, /*NEXP*/ 10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
-                /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*NSS*/ 65, /*RFC*/ 60,
+            int[] anchos = {/*idbd*/10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
+                /*GEN*/ 30, /*FDI*/ 50, 50, /*ZONA*/ 50, /*serv*/ 100, /*NSS*/ 65, /*RFC*/ 60,
                 /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70,
                 /*FRE*/ 70, /*FBRE*/ 70, /*OBS*/ 2000};
 
@@ -704,6 +710,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Nombre(s)");//5
             modelo.addColumn("Genero");
             modelo.addColumn("Fecha de incorporacion");//7
+            modelo.addColumn("Antguiedad");//7
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("NSS");//9
@@ -719,7 +726,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
 //Anchos
             int[] anchos = {/*idbd*/10, /*AP*/ 60, /*AM*/ 60, /*NAME*/ 80,
-                /*GEN*/ 30, /*FDI*/ 50, /*ZONA*/ 50, /*serv*/ 100, /*NSS*/ 65, /*RFC*/ 60,
+                /*GEN*/ 30, /*FDI*/ 50, 50, /*ZONA*/ 50, /*serv*/ 100, /*NSS*/ 65, /*RFC*/ 60,
                 /*CURP*/ 60, /*puesto*/ 60, /*salario*/ 50, /*Status*/ 65, /*FDB*/ 70,
                 /*FRE*/ 70, /*FBRE*/ 70, /*OBS*/ 2000};
 
@@ -1163,16 +1170,13 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }
 
     public void AgregarI() {
-        String Item = gen.getSelectedItem().toString();
-        String Item3 = puesto.getSelectedItem().toString();
-        String Item4 = Status1.getSelectedItem().toString();
         String SQL = "INSERT INTO `imss` (`idimss`, "
                 + " `Apellido P`, `Apellido M`, `Nombre(s)`, "
-                + "`Genero_imss`, `Fecha_de_incorporacion`, "
+                + "`Genero_imss`, `Fecha_de_incorporacion`, `fecha de antiguedad`,"
                 + "`Zona_Imss`, `servicio`, `nss_imss`, `rfc_imss`, `curp_imss`,"
                 + " `Puesto`, `Salario`, `Status_imss`, `fecha_baja`,"
                 + " `Fecha de reingreso`, `fecha baja (re)`, `observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -1180,20 +1184,21 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(2, APimss.getText());
             pst.setString(3, AMimss.getText());
             pst.setString(4, nameimss.getText());
-            pst.setString(5, Item);
+            pst.setString(5,  gen.getSelectedItem().toString());
             pst.setString(6, FIimss.getText());
-            pst.setString(7, zona1.getText());
-            pst.setString(8, Servimss.getText());
-            pst.setString(9, nssimss.getText());
-            pst.setString(10, rfcimss.getText());
-            pst.setString(11, curpimss.getText());
-            pst.setString(12, Item3);
-            pst.setString(13, sueldoimss.getText());
-            pst.setString(14, Item4);
-            pst.setString(15, FBimss.getText());
-            pst.setString(16, FDREimss.getText());
-            pst.setString(17, FBREimss.getText());
-            pst.setString(18, obsimss.getText());
+            pst.setString(7, ADEIMSS.getText());
+            pst.setString(8, zona1.getText());
+            pst.setString(9, Servimss.getText());
+            pst.setString(10, nssimss.getText());
+            pst.setString(11, rfcimss.getText());
+            pst.setString(12, curpimss.getText());
+            pst.setString(13, puesto.getSelectedItem().toString());
+            pst.setString(14, sueldoimss.getText());
+            pst.setString(15, Status1.getSelectedItem().toString());
+            pst.setString(16, FBimss.getText());
+            pst.setString(17, FDREimss.getText());
+            pst.setString(18, FBREimss.getText());
+            pst.setString(19, obsimss.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "IMSS agregado.");
@@ -4261,14 +4266,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
             }
 
             //Combo3
-            String combo12 = model.getValueAt(fila, 11).toString();
+            String combo12 = model.getValueAt(fila, 12).toString();
             for (int i = 0; i < puesto.getItemCount(); i++) {
                 if (puesto.getItemAt(i).equalsIgnoreCase(combo12)) {
                     puesto.setSelectedIndex(i);
                 }
             }
             //Combo4
-            String combo13 = model.getValueAt(fila, 13).toString();
+            String combo13 = model.getValueAt(fila, 14).toString();
             for (int i = 0; i < Status1.getItemCount(); i++) {
                 if (Status1.getItemAt(i).equalsIgnoreCase(combo13)) {
                     Status1.setSelectedIndex(i);
@@ -4299,6 +4304,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 FBimss.setText(rs.getString("fecha_baja"));
                 FDREimss.setText(rs.getString("Fecha de reingreso"));
                 FBREimss.setText(rs.getString("fecha baja (re)"));
+                ADEIMSS.setText(rs.getString("fecha de antiguedad"));
             }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());

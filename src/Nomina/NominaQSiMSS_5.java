@@ -1,5 +1,7 @@
 package Nomina;
 
+import Nomina.VentanasDReportes.RepNom_7;
+import Nomina.VentanasDReportes.RepNomSem_7;
 import RH.Depositos.DepositosQ_4;
 import Nomina.Listas.*;
 import Semanal.PT_4;
@@ -11,7 +13,6 @@ import Nomina.ModulosS.PresS_5;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
-import VentanasDReportes.*;
 import Admin.*;
 import RH.*;
 import Logicas.*;

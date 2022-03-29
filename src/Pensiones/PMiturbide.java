@@ -690,7 +690,7 @@ public class PMiturbide extends javax.swing.JFrame {
         if (CbxMes.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Selecciona tipo de reporte");
         }
-        if (CbxMes.getSelectedIndex() == 1) {
+        if (CbxMes.getSelectedIndex() >= 1) {
             Reporte2();
         }
     }//GEN-LAST:event_btnExcelMousePressed
@@ -710,7 +710,7 @@ public class PMiturbide extends javax.swing.JFrame {
         if (CbxMes.getSelectedIndex() == 0) {
             btnExcel.setVisible(false);
         }
-        if (CbxMes.getSelectedIndex() == 1) {
+        if (CbxMes.getSelectedIndex() >= 1) {
             btnExcel.setVisible(true);
         }
 
@@ -732,47 +732,11 @@ public class PMiturbide extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PMiturbide.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PMiturbide.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PMiturbide.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PMiturbide.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {

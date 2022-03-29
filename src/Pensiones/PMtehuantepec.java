@@ -691,7 +691,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
         if (CbxMes.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Selecciona tipo de reporte");
         }
-        if (CbxMes.getSelectedIndex() == 1) {
+        if (CbxMes.getSelectedIndex() >= 1) {
             Reporte2();
         }
     }//GEN-LAST:event_btnExcelMousePressed
@@ -711,7 +711,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
         if (CbxMes.getSelectedIndex() == 0) {
             btnExcel.setVisible(false);
         }
-        if (CbxMes.getSelectedIndex() == 1) {
+        if (CbxMes.getSelectedIndex() >= 1) {
             btnExcel.setVisible(true);
         }
 
