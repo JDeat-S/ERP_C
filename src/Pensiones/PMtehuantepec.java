@@ -414,7 +414,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
                     cell.setCellValue(rs.getString(45));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(45);
-                    cell.setCellValue(rs.getDouble(46));
+                    cell.setCellValue(rs.getString(46));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(46);
                     cell.setCellValue(rs.getDouble(47));

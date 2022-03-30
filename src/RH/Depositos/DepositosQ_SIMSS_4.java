@@ -582,8 +582,8 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                 + " `credencial` = '" + Credencial.getText() + "', `caja de ahorro` = '" + cda.getText() + "',"
                 + " `Deposito` = '" + deposito.getText() + "', `Fecha de deposito` = '" + ((JTextField) FDD.getDateEditor().getUiComponent()).getText() + "',"
                 + " `Mes de pago` = '" + MDP.getSelectedItem().toString() + "', `Forma de pago` = '" + FDP.getText() + "', "
-                + "`Observaciones` = '" + Obsdeposito.getText() + "' WHERE `rh.depositos." + Zon.getSelectedItem().toString()  + ".simss`.`#Folio` = '" + Integer.parseInt(NFnom.getText()) + "'";
-          try {
+                + "`Observaciones` = '" + Obsdeposito.getText() + "' WHERE `rh.depositos." + Zon.getSelectedItem().toString() + ".simss`.`#Folio` = '" + Integer.parseInt(NFnom.getText()) + "'";
+        try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
             pst.executeUpdate();
@@ -6495,7 +6495,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel11MousePressed
 
     private void TdepMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TdepMousePressed
-       try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep.getModel();
 
@@ -6779,7 +6779,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tdep3MousePressed
 
     private void Tdep4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep4MousePressed
-       try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep4.getModel();
 
@@ -6921,7 +6921,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_Tdep5MousePressed
 
     private void Tdep6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tdep6MousePressed
-       try {
+        try {
 
             DefaultTableModel model = (DefaultTableModel) Tdep6.getModel();
 
@@ -7284,7 +7284,8 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             SQL = "SELECT `Dias descansados`, `Dias Laborados`, `Pago de dias descansados`, `Pago de dias laborados`, "
                     + " `Dias de vacaciones`, `Dias de incapacidad`, `Descanso sin goce de sueldo`, `Apoyo`, `Lugar`, `Pago de dias trabajados`, "
-                    + " `Pago de dias festivos`, `Pago de dias festivos trabajados`, `Rembolso`, `Adicionales`, `Pago de dias de vacaciones` "
+                    + " `Pago de dias festivos`, `Pago de dias festivos trabajados`, `Rembolso`, `Adicionales`, `Pago de dias de vacaciones`, "
+                    + "`Dias festivos trabajados`, `Dias festivos` "
                     + "FROM `nomina.detallada." + Zon.getSelectedItem().toString() + ".simss`"
                     + " WHERE `#lista` =" + NDL.getText() + "";
 
@@ -7296,7 +7297,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                 rs = ps.executeQuery();
 
                 while (rs.next()) {
-                    double DDMDL = Double.parseDouble(rs.getString(1)) + Double.parseDouble(rs.getString(2));
+                    double DDMDL = (Double.parseDouble(rs.getString(1)) + Double.parseDouble(rs.getString(2)) + (Double.parseDouble(rs.getString(16)) + Double.parseDouble(rs.getString(17))));
                     DL.setText("" + DDMDL);
                     double PDDMDL = Double.parseDouble(rs.getString(3)) + Double.parseDouble(rs.getString(4));
                     sueldo.setText("" + PDDMDL);
