@@ -2114,9 +2114,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                     .addComponent(jLabel136))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(FJ, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(FJ, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -2137,8 +2135,8 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PCR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(12, Short.MAX_VALUE))))
+                            .addComponent(PCR, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2595,10 +2593,20 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
         jLabel95.setText("Sueldo quincenal:");
 
         sueldo.setText("0");
+        sueldo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                sueldoKeyReleased(evt);
+            }
+        });
 
         jLabel93.setText("Bono:");
 
         Bono.setText("0");
+        Bono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BonoKeyReleased(evt);
+            }
+        });
 
         jLabel5.setText("Dobletes:");
 
@@ -7397,6 +7405,14 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Cleardeposito();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void sueldoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sueldoKeyReleased
+        deposito();
+    }//GEN-LAST:event_sueldoKeyReleased
+
+    private void BonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BonoKeyReleased
+        deposito();
+    }//GEN-LAST:event_BonoKeyReleased
 
     /**
      * @param args the command line arguments

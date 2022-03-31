@@ -2521,10 +2521,20 @@ public final class DepositosS_4 extends javax.swing.JFrame {
         jLabel95.setText("Sueldo semanal:");
 
         sueldo.setText("0");
+        sueldo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                sueldoKeyReleased(evt);
+            }
+        });
 
         jLabel93.setText("Bono:");
 
         Bono.setText("0");
+        Bono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BonoKeyReleased(evt);
+            }
+        });
 
         jLabel5.setText("Dobletes:");
 
@@ -7445,6 +7455,14 @@ public final class DepositosS_4 extends javax.swing.JFrame {
         deposito();
 
     }//GEN-LAST:event_ZonItemStateChanged
+
+    private void sueldoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sueldoKeyReleased
+        deposito();
+    }//GEN-LAST:event_sueldoKeyReleased
+
+    private void BonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BonoKeyReleased
+        deposito();
+    }//GEN-LAST:event_BonoKeyReleased
 
     /**
      * @param args the command line arguments
