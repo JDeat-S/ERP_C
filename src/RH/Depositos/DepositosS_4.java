@@ -295,6 +295,9 @@ public final class DepositosS_4 extends javax.swing.JFrame {
         this.LP = LP;
         FunMD();
         // <editor-fold defaultstate="collapsed" desc="Fil Servicios">
+        FiltrosZonas FSZP8 = new FiltrosZonas();
+        DefaultComboBoxModel modelFSZP8 = new DefaultComboBoxModel(FSZP8.mostrarzonas());
+        Zon.setModel(modelFSZP8);
         FiltrosZonas FSZP7 = new FiltrosZonas();
         DefaultComboBoxModel modelFSZP7 = new DefaultComboBoxModel(FSZP7.mostrarzonas());
         FiltroSZP7.setModel(modelFSZP7);
@@ -551,78 +554,34 @@ public final class DepositosS_4 extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     public void Modeposito() {
-        String SQL = "UPDATE `rh.depositosem." + Zon.getSelectedItem().toString() + "` SET ``#Folio` = ?,"
-                + " `#Lista` = ?, `#Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?, "
-                + "`Nombre(s)` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, `Bono` = ?, "
-                + "`Banco` = ?, `Cuenta de banco` = ?, `Por dia` = ?, `por hora` = ?, "
-                + "`Semana` = ?, `Año` = ?, `Dias de incapacidad` = ?, `Pago seguro` = ?, "
-                + "`Dias de vacaciones` = ?, `Pago de vacaciones` = ?, `Dias de descanso` = ?, "
-                + "`Pago de dias descansados` = ?, `Dias laborados` = ?, `Pago de dias laborados` = ?, "
-                + "`Descansos trabajados` = ?, `Pago de Descansos trabajados` = ?, `DSGS` = ?, "
-                + "`Pago de dias de DSGS` = ?, `Faltas justificadas` = ?, `Descanso otorgado` = ?, "
-                + "`Dias festivos` = ?, `Pago de dias festivos` = ?, `Dias festivos trabajados` = ?, "
-                + "`Pago de dias festivos trabajados` = ?, `Retardos` = ?, `Pago con retardos` = ?, "
-                + "`Apoyo` = ?, `Lugar` = ?, `Rembolso` = ?, `Adicionales` = ?, `horas extra` = ?, "
-                + "`total de horas extra` = ?, `Faltas` = ?, `Descuento por faltas` = ?,"
-                + " `Infonavit` = ?, `Fonacot` = ?, `ISR` = ?, `Descuento imss` = ?, `Faltantes de boleto` = ?, "
-                + "`Sancion` = ?, `Chamarra` = ?, `Chaleco` = ?, `Faltante de efectivo` = ?,"
-                + " `Grua` = ?, `Pantalon` = ?, `Credencial` = ?, `Boleto perdido` = ?, `Playera` = ?,"
-                + " `Corbata` = ?, `Pago de prestamo` = ?, `Caja de ahorro` = ?, `Orden de taller` = ?,"
-                + " `Adelanto de nomina` = ?, `Deposito` = ?, `Fecha de deposito` = ?, `Mes de pago` = ?, "
-                + "`Forma de pago` = ?, `Observaciones` = ?, `pago total` = ? WHERE `rh.depositosem." + Zon.getSelectedItem().toString() + "`.`#Folio` = ?";
+        String SQL = "UPDATE `rh.depositosem." + Zon.getSelectedItem().toString() + "` SET `#Folio` = '" + Integer.parseInt(NFnom.getText()) + "',"
+                + " `#Lista` = '" + NDL.getText() + "', `Apellido P` = '" + Ap.getText() + "',"
+                + " `Apellido M` = '" + am.getText() + "', `Nombre(s)` = '" + name.getText() + "',`Servicio` = '" + ServN.getText() + "',"
+                + " `Semana` = '" + Semana.getSelectedItem().toString() + "',  `Dias laborados` = '" + DL.getText() + "',"
+                + " `Descanso trabajado` = '" + dt.getText() + "', `Dias de vacaciones` = '" + Ddv.getText() + "',"
+                + " `Dias de incapacidades` = '" + Dpi.getText() + "', `Dias de descanso sin goce de sueldo` = '" + DSGS.getText() + "',"
+                + " `Faltas justificadas` = '" + FJ.getText() + "', "
+                + " `Sueldo Semana` = '" + sueldo.getText() + "', `Bono` = '" + Bono.getText() + "', `Apoyo` = '" + apy.getText() + "',"
+                + " `Lugar` = '" + Lugar.getText() + "', `Rembolso` = '" + Rembolso.getText() + "',"
+                + " `Adicionales` = '" + ADD.getText() + "', `Pago de vacaciones` = '" + PDDDV.getText() + "',"
+                + " `Festivo` = '" + PDDF.getText() + "', "
+                + "`Dias de desanso sin goce de sueldo` = '" + PDDDDSGS.getText() + "',"
+                + " `pago real` = '" + TotalR.getText() + "', `Orden de taller` = '" + Odtp.getText() + "',"
+                + " `Faltas` = '" + DPF.getText() + "', `Adelanto de nomina` = '" + ADN.getText() + "',"
+                + " `Prestamo` = '" + Presp.getText() + "', `faltante de boleto` = '" + Fdb.getText() + "',"
+                + " `faltante de efectivo` = '" + Fde.getText() + "', `boleto perdido` = '" + Bp.getText() + "', `sancion` = '" + Sancion.getText() + "',"
+                + " `retardos` = '" + PCR.getText() + "', `grua` = '" + Grua.getText() + "',"
+                + " `IMSS` = '" + DI.getText() + "',`ISR` = '" + ISR.getText() + "',`Fonacot` = '" + RF.getText() + "',`Infonavit` = '" + RI.getText() + "',"
+                + " `playera` = '" + Playera.getText() + "',"
+                + " `chamarra` = '" + Chamarra.getText() + "', `pantalon` = '" + Pantalon.getText() + "', "
+                + "`corbata` = '" + Corbata.getText() + "',"
+                + " `credencial` = '" + Credencial.getText() + "', `caja de ahorro` = '" + cda.getText() + "',"
+                + " `Deposito` = '" + deposito.getText() + "', `Fecha de deposito` = '" + ((JTextField) FDD.getDateEditor().getUiComponent()).getText() + "',"
+                + " `Mes de pago` = '" + MDP.getSelectedItem().toString() + "', `Forma de pago` = '" + FDP.getText() + "', "
+                + "`Observaciones` = '" + Obsdeposito.getText() + "' WHERE `rh.depositos." + Zon.getSelectedItem().toString() + "`.`#Folio` = '" + Integer.parseInt(NFnom.getText()) + "'";
+
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
-            pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NDL.getText());
-            pst.setString(4, Ap.getText());
-            pst.setString(5, am.getText());
-            pst.setString(6, name.getText());
-            pst.setString(7, Zon.getSelectedItem().toString());
-            pst.setString(8, ServN.getText());
-            pst.setString(9, sueldo.getText());
-            pst.setString(10, Bono.getText());
-            pst.setString(15, Semana.getSelectedItem().toString());
-            pst.setString(17, Dpi.getText());
-            pst.setString(19, Ddv.getText());
-            pst.setString(20, PDDDV.getText());
-            pst.setString(23, DL.getText());
-            pst.setString(25, dt.getText());
-            pst.setString(27, DSGS.getText());
-            pst.setString(28, PDDDDSGS.getText());
-            pst.setString(29, FJ.getText());
-            pst.setString(32, PDDF.getText());
-            pst.setString(36, PCR.getText());
-            pst.setString(37, apy.getText());
-            pst.setString(38, Lugar.getText());
-            pst.setString(39, Rembolso.getText());
-            pst.setString(40, ADD.getText());
-            pst.setString(44, DPF.getText());
-            pst.setString(45, RI.getText());
-            pst.setString(46, RF.getText());
-            pst.setString(47, ISR.getText());
-            pst.setString(48, DI.getText());
-            pst.setString(49, Fdb.getText());
-            pst.setString(50, Sancion.getText());
-            pst.setString(51, Chamarra.getText());
-            pst.setString(53, Fde.getText());
-            pst.setString(54, Grua.getText());
-            pst.setString(55, Pantalon.getText());
-            pst.setString(56, Credencial.getText());
-            pst.setString(57, Bp.getText());
-            pst.setString(58, Playera.getText());
-            pst.setString(59, Corbata.getText());
-            pst.setString(60, Presp.getText());
-            pst.setString(61, cda.getText());
-            pst.setString(62, Odtp.getText());
-            pst.setString(63, ADN.getText());
-            pst.setString(64, deposito.getText());
-            pst.setString(65, ((JTextField) FDD.getDateEditor().getUiComponent()).getText());
-            pst.setString(66, MDP.getSelectedItem().toString());
-            pst.setString(67, FDP.getText());
-            pst.setString(68, Obsdeposito.getText());
-            pst.setString(69, TotalR.getText());
-            pst.setInt(70, Integer.parseInt(NFnom.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito Modificado.");
@@ -717,77 +676,28 @@ public final class DepositosS_4 extends javax.swing.JFrame {
     }
 
     public void Agregardeposito() {
-        String SQL = "INSERT INTO `rh.depositosem." + Zon.getSelectedItem().toString() + "`"
-                + " (`#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, "
-                + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`,"
-                + " `Cuenta de banco`, `Por dia`, `por hora`, `Semana`, `Año`, `Dias de incapacidad`,"
-                + " `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, "
-                + "`Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`,"
-                + " `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`,"
-                + " `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`,"
-                + " `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`,"
-                + " `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, "
-                + "`Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, "
-                + "`Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, "
-                + "`Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, "
-                + "`Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, "
-                + "`Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, "
-                + "`Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones``, `pago total`)"
-                + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `rh.depositosem." + Zon.getSelectedItem().toString() + "` (`#Folio`, `#Lista`,"
+                + " `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Semana`,"
+                + " `Dias laborados`, `Dias de vacaciones`, `Dias de incapacidades`, `Dias de descanso sin goce de sueldo`,"
+                + " `Sueldo Semana`, `Bono`, `Apoyo`, `Lugar`, `Descanso trabajado`, `Doblete`, `Festivo`, `Rembolso`, `adicionales`,"
+                + " `Pago de vacaciones`, `Pago real`, `Orden de taller`, `Faltas`, `Faltas Justificadas`, `Dias de desanso sin goce de sueldo`,"
+                + " `Prestamo`, `Adelanto de nomina`, `faltante de boleto`, `faltante de efectivo`, `boleto perdido`, `sancion`, `retardos`, "
+                + "`grua`, `IMSS`, `ISR`,`Fonacot`,`Infonavit`, `playera`, `chamarra`, `corbata`, `pantalon`, `credencial`, `caja de ahorro`, `deposito`, `fecha de deposito`,"
+                + " `mes de pago`, `forma de pago`, `Observaciones`) VALUES (NULL, '" + NDL.getText() + "', '" + Ap.getText() + "',"
+                + " '" + am.getText() + "', '" + name.getText() + "', '" + Zon.getSelectedItem().toString() + "',"
+                + " '" + ServN.getText() + "', '" + Semana.getSelectedItem().toString() + "',"
+                + " '" + DL.getText() + "', '" + Ddv.getText() + "', '" + Dpi.getText() + "', '" + DSGS.getText() + "', '" + sueldo.getText() + "',"
+                + " '" + Bono.getText() + "', '" + apy.getText() + "', '" + Lugar.getText() + "', '" + dt.getText() + "', '" + Dobletes.getText() + "', "
+                + "'" + PDDF.getText() + "', '" + Rembolso.getText() + "', '" + ADD.getText() + "', '" + PDDDV.getText() + "', '" + TotalR.getText() + "',"
+                + " '" + Odtp.getText() + "', '" + DPF.getText() + "', '" + FJ.getText() + "', '" + PDDDDSGS.getText() + "', '" + Presp.getText() + "',"
+                + " '" + ADN.getText() + "', '" + Fdb.getText() + "', '" + Fde.getText() + "', '" + Bp.getText() + "', '" + Sancion.getText() + "',"
+                + " '" + PCR.getText() + "', '" + Grua.getText() + "', '" + DI.getText() + "','" + ISR.getText() + "','" + RF.getText() + "',"
+                + "'" + RI.getText() + "', '" + Playera.getText() + "', '" + Chamarra.getText() + "', '" + Corbata.getText() + "',"
+                + " '" + Pantalon.getText() + "', '" + Credencial.getText() + "', '" + cda.getText() + "', '" + deposito.getText() + "',"
+                + " '" + ((JTextField) FDD.getDateEditor().getUiComponent()).getText() + "', '" + MDP.getSelectedItem().toString() + "'"
+                + ", '" + FDP.getText() + "', '" + Obsdeposito.getText() + "')";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
-
-            pst.setInt(1, Integer.parseInt(NFnom.getText()));
-            pst.setString(2, NDL.getText());
-            pst.setString(4, Ap.getText());
-            pst.setString(5, am.getText());
-            pst.setString(6, name.getText());
-            pst.setString(7, Zon.getSelectedItem().toString());
-            pst.setString(8, ServN.getText());
-            pst.setString(9, sueldo.getText());
-            pst.setString(10, Bono.getText());
-            pst.setString(15, Semana.getSelectedItem().toString());
-            pst.setString(17, Dpi.getText());
-            pst.setString(19, Ddv.getText());
-            pst.setString(20, PDDDV.getText());
-            pst.setString(23, DL.getText());
-            pst.setString(25, dt.getText());
-            pst.setString(27, DSGS.getText());
-            pst.setString(28, PDDDDSGS.getText());
-            pst.setString(29, FJ.getText());
-            pst.setString(32, PDDF.getText());
-            pst.setString(36, PCR.getText());
-            pst.setString(37, apy.getText());
-            pst.setString(38, Lugar.getText());
-            pst.setString(39, Rembolso.getText());
-            pst.setString(40, ADD.getText());
-            pst.setString(44, DPF.getText());
-            pst.setString(45, RI.getText());
-            pst.setString(46, RF.getText());
-            pst.setString(47, ISR.getText());
-            pst.setString(48, DI.getText());
-            pst.setString(49, Fdb.getText());
-            pst.setString(50, Sancion.getText());
-            pst.setString(51, Chamarra.getText());
-            pst.setString(53, Fde.getText());
-            pst.setString(54, Grua.getText());
-            pst.setString(55, Pantalon.getText());
-            pst.setString(56, Credencial.getText());
-            pst.setString(57, Bp.getText());
-            pst.setString(58, Playera.getText());
-            pst.setString(59, Corbata.getText());
-            pst.setString(60, Presp.getText());
-            pst.setString(61, cda.getText());
-            pst.setString(62, Odtp.getText());
-            pst.setString(63, ADN.getText());
-            pst.setString(64, deposito.getText());
-            pst.setString(65, ((JTextField) FDD.getDateEditor().getUiComponent()).getText());
-            pst.setString(66, MDP.getSelectedItem().toString());
-            pst.setString(67, FDP.getText());
-            pst.setString(68, Obsdeposito.getText());
-            pst.setString(69, TotalR.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Deposito agregado.");
@@ -845,66 +755,47 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Descansos trabajados");
             modelo.addColumn("Dias de vacaciones");
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Faltas");
-            modelo.addColumn("horas extra");
-            modelo.addColumn("Faltas justificadas");
-            modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Sueldo");
+            modelo.addColumn("Sueldo Semanal");
             modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Doblete");
+            modelo.addColumn("Festivo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
             modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Pago de dias festivos trabajados");
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Pago real");
             modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Faltante de efectivo");
             modelo.addColumn("Boleto perdido");
             modelo.addColumn("Sancion");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Retardos");
             modelo.addColumn("Grua");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
-            modelo.addColumn("Fonacot");
+            modelo.addColumn("IMSS");
             modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Infonavit");
             modelo.addColumn("Playera");
             modelo.addColumn("Chamarra");
-            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Chaleco");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Deposito");
@@ -990,66 +881,47 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Descansos trabajados");
             modelo.addColumn("Dias de vacaciones");
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Faltas");
-            modelo.addColumn("horas extra");
-            modelo.addColumn("Faltas justificadas");
-            modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Sueldo");
+            modelo.addColumn("Sueldo Semanal");
             modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Doblete");
+            modelo.addColumn("Festivo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
             modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Pago de dias festivos trabajados");
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Pago real");
             modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Faltante de efectivo");
             modelo.addColumn("Boleto perdido");
             modelo.addColumn("Sancion");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Retardos");
             modelo.addColumn("Grua");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
-            modelo.addColumn("Fonacot");
+            modelo.addColumn("IMSS");
             modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Infonavit");
             modelo.addColumn("Playera");
             modelo.addColumn("Chamarra");
-            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Chaleco");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Deposito");
@@ -1135,66 +1007,47 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Descansos trabajados");
             modelo.addColumn("Dias de vacaciones");
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Faltas");
-            modelo.addColumn("horas extra");
-            modelo.addColumn("Faltas justificadas");
-            modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Sueldo");
+            modelo.addColumn("Sueldo Semanal");
             modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Doblete");
+            modelo.addColumn("Festivo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
             modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Pago de dias festivos trabajados");
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Pago real");
             modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Faltante de efectivo");
             modelo.addColumn("Boleto perdido");
             modelo.addColumn("Sancion");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Retardos");
             modelo.addColumn("Grua");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
-            modelo.addColumn("Fonacot");
+            modelo.addColumn("IMSS");
             modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Infonavit");
             modelo.addColumn("Playera");
             modelo.addColumn("Chamarra");
-            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Chaleco");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Deposito");
@@ -1280,66 +1133,47 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Descansos trabajados");
             modelo.addColumn("Dias de vacaciones");
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Faltas");
-            modelo.addColumn("horas extra");
-            modelo.addColumn("Faltas justificadas");
-            modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Sueldo");
+            modelo.addColumn("Sueldo Semanal");
             modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Doblete");
+            modelo.addColumn("Festivo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
             modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Pago de dias festivos trabajados");
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Pago real");
             modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Faltante de efectivo");
             modelo.addColumn("Boleto perdido");
             modelo.addColumn("Sancion");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Retardos");
             modelo.addColumn("Grua");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
-            modelo.addColumn("Fonacot");
+            modelo.addColumn("IMSS");
             modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Infonavit");
             modelo.addColumn("Playera");
             modelo.addColumn("Chamarra");
-            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Chaleco");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Deposito");
@@ -1425,66 +1259,47 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Descansos trabajados");
             modelo.addColumn("Dias de vacaciones");
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Faltas");
-            modelo.addColumn("horas extra");
-            modelo.addColumn("Faltas justificadas");
-            modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Sueldo");
+            modelo.addColumn("Sueldo Semanal");
             modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Doblete");
+            modelo.addColumn("Festivo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
             modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Pago de dias festivos trabajados");
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Pago real");
             modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Faltante de efectivo");
             modelo.addColumn("Boleto perdido");
             modelo.addColumn("Sancion");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Retardos");
             modelo.addColumn("Grua");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
-            modelo.addColumn("Fonacot");
+            modelo.addColumn("IMSS");
             modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Infonavit");
             modelo.addColumn("Playera");
             modelo.addColumn("Chamarra");
-            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Chaleco");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Deposito");
@@ -1571,66 +1386,47 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Descansos trabajados");
             modelo.addColumn("Dias de vacaciones");
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Faltas");
-            modelo.addColumn("horas extra");
-            modelo.addColumn("Faltas justificadas");
-            modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Sueldo");
+            modelo.addColumn("Sueldo Semanal");
             modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Doblete");
+            modelo.addColumn("Festivo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
             modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Pago de dias festivos trabajados");
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Pago real");
             modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Faltante de efectivo");
             modelo.addColumn("Boleto perdido");
             modelo.addColumn("Sancion");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Retardos");
             modelo.addColumn("Grua");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
-            modelo.addColumn("Fonacot");
+            modelo.addColumn("IMSS");
             modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Infonavit");
             modelo.addColumn("Playera");
             modelo.addColumn("Chamarra");
-            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Chaleco");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Deposito");
@@ -1717,66 +1513,47 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Descansos trabajados");
             modelo.addColumn("Dias de vacaciones");
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Faltas");
-            modelo.addColumn("horas extra");
-            modelo.addColumn("Faltas justificadas");
-            modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Sueldo");
+            modelo.addColumn("Sueldo Semanal");
             modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Doblete");
+            modelo.addColumn("Festivo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
             modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Pago de dias festivos trabajados");
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Pago real");
             modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Faltante de efectivo");
             modelo.addColumn("Boleto perdido");
             modelo.addColumn("Sancion");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Retardos");
             modelo.addColumn("Grua");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
-            modelo.addColumn("Fonacot");
+            modelo.addColumn("IMSS");
             modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Infonavit");
             modelo.addColumn("Playera");
             modelo.addColumn("Chamarra");
-            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Chaleco");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Deposito");
@@ -1864,66 +1641,47 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
             modelo.addColumn("# Folio");
             modelo.addColumn("# Lista");
-            modelo.addColumn("# Empleado");
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Banco");
-            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Semana");
-            modelo.addColumn("Año");
-            modelo.addColumn("Por dia");
-            modelo.addColumn("Por hora");
             modelo.addColumn("Dias laborados");
-            modelo.addColumn("Descansos trabajados");
             modelo.addColumn("Dias de vacaciones");
             modelo.addColumn("Dias de incapacidad");
-            modelo.addColumn("Dia festivo");
-            modelo.addColumn("Dia festivo trabajado");
             modelo.addColumn("DSGS");
-            modelo.addColumn("Dias de descanso");
-            modelo.addColumn("Faltas");
-            modelo.addColumn("horas extra");
-            modelo.addColumn("Faltas justificadas");
-            modelo.addColumn("Descanso otorgado");
-            modelo.addColumn("Retardos");
-            modelo.addColumn("Sueldo");
+            modelo.addColumn("Sueldo Semanal");
             modelo.addColumn("Bono");
             modelo.addColumn("Apoyo");
             modelo.addColumn("Lugar");
-            modelo.addColumn("Pago de dias laborados");
             modelo.addColumn("Pago de Descansos trabajados");
+            modelo.addColumn("Doblete");
+            modelo.addColumn("Festivo");
             modelo.addColumn("Rembolso");
             modelo.addColumn("Adicionales");
             modelo.addColumn("Pago de vacaciones");
-            modelo.addColumn("Pago seguro");
-            modelo.addColumn("Pago de dia festivo");
-            modelo.addColumn("Pago de dias festivos trabajados");
-            modelo.addColumn("Pago de dias de DSGS");
-            modelo.addColumn("Pago de dias descansados");
-            modelo.addColumn("Total de horas extra");
             modelo.addColumn("Pago real");
             modelo.addColumn("Orden de taller");
             modelo.addColumn("Descuento por faltas");
-            modelo.addColumn("Adelanto de nomina");
+            modelo.addColumn("Faltas justificadas");
+            modelo.addColumn("DSGS");
             modelo.addColumn("Pago de prestamo");
+            modelo.addColumn("Adelanto de nomina");
             modelo.addColumn("Faltantes de boleto");
             modelo.addColumn("Faltante de efectivo");
             modelo.addColumn("Boleto perdido");
             modelo.addColumn("Sancion");
-            modelo.addColumn("Pago con retardos");
+            modelo.addColumn("Retardos");
             modelo.addColumn("Grua");
-            modelo.addColumn("Descuento imss");
-            modelo.addColumn("Infonavit");
-            modelo.addColumn("Fonacot");
+            modelo.addColumn("IMSS");
             modelo.addColumn("ISR");
+            modelo.addColumn("Fonacot");
+            modelo.addColumn("Infonavit");
             modelo.addColumn("Playera");
             modelo.addColumn("Chamarra");
-            modelo.addColumn("Pantalon");
             modelo.addColumn("Corbata");
-            modelo.addColumn("Chaleco");
+            modelo.addColumn("Pantalon");
             modelo.addColumn("Credencial");
             modelo.addColumn("Caja de ahorro");
             modelo.addColumn("Deposito");
@@ -1967,24 +1725,25 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
     //Calculo de deposito
     public void deposito() {
+        
+        double Pagoreal = (Double.parseDouble(PDDDDSGS.getText())
+                + Double.parseDouble(Bono.getText()) + Double.parseDouble(Rembolso.getText())
+                + Double.parseDouble(ADD.getText())
+                + Double.parseDouble(apy.getText())
+                + Double.parseDouble(PCR.getText())
+                + Double.parseDouble(PDDF.getText())
+                + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(sueldo.getText())
+                + Double.parseDouble(Dobletes.getText()));
+        DecimalFormat PR = new DecimalFormat("#.00");
+        TotalR.setText(PR.format(Pagoreal));
 
-//ingresos
-        double Ingresos = (Double.parseDouble(this.PDDDDSGS.getText())
-                + Double.parseDouble(this.Bono.getText()) + Double.parseDouble(this.Rembolso.getText())
-                + Double.parseDouble(this.ADD.getText())
-                + Double.parseDouble(this.apy.getText())
-                + Double.parseDouble(this.PCR.getText())
-                + Double.parseDouble(this.PDDF.getText())
-                + Double.parseDouble(this.PDDDV.getText()));
-
-        double Egresos = (Double.parseDouble(this.DVT.getText())
-                + Double.parseDouble(this.DI.getText()) + Double.parseDouble(this.Odtp.getText())
-                + Double.parseDouble(this.Presp.getText()) + Double.parseDouble(this.cda.getText())
-                + Double.parseDouble(this.DPF.getText()) + Double.parseDouble(this.RI.getText())
-                + Double.parseDouble(RF.getText()) + Double.parseDouble(ISR.getText()));
+        double Egresos = (Double.parseDouble(DVT.getText())
+                + Double.parseDouble(Odtp.getText())
+                + Double.parseDouble(Presp.getText()) + Double.parseDouble(cda.getText())
+                + Double.parseDouble(DPF.getText()));
 
         DecimalFormat dDeposito = new DecimalFormat("#.00");
-        this.deposito.setText(dDeposito.format(Ingresos - Egresos));
+        this.deposito.setText(dDeposito.format(Pagoreal - Egresos));
 
     }
 
@@ -2586,6 +2345,11 @@ public final class DepositosS_4 extends javax.swing.JFrame {
         jLabel92.setText("Zona:");
 
         Zon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
+        Zon.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ZonItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -2754,7 +2518,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
         jLabel87.setText("Rembolso:");
 
-        jLabel95.setText("Sueldo quincenal:");
+        jLabel95.setText("Sueldo semanal:");
 
         sueldo.setText("0");
 
@@ -2922,7 +2686,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             }
         });
 
-        jLabel61.setText("Ahorro por Qna:");
+        jLabel61.setText("Ahorro por sem:");
 
         jLabel85.setText("Orden de taller:");
 
@@ -4447,7 +4211,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
         LabelBQP7.setText("Buscar semana:");
 
-        FiltroQP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1ra Quincena de Enero", "2da Quincena de Enero", "1ra Quincena de Febrero", "2da Quincena de Febrero", "2da Quincena de Feb B", "1ra Quincena de Marzo", "2da Quincena de Marzo", "1ra Quincena de Abril", "2da Quincena de Abril", "1ra Quincena de Mayo", "2da Quincena de Mayo", "1ra Quincena de Junio", "2da Quincena de Junio", "1ra Quincena de Julio", "2da Quincena de Julio", "1ra Quincena de Agosto", "2da Quincena de Agosto", "1ra Quincena de Septiembre", "2da Quincena de Septiembre", "1ra Quincena de Octubre", "2da Quincena de Octubre", "1ra Quincena de Noviembre", "2da Quincena de Noviembre", "1ra Quincena de Diciembre", "2da Quincena de Diciembre" }));
+        FiltroQP7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1er semana Enero", "2da semana Enero", "3er semana Enero", "4ta semana Enero", "5ta semana Enero", "1er semana Febrero", "2da semana Febrero", "3er semana Febrero", "4ta semana Febrero", "5ta semana Febrero", "1er semana Marzo", "2da semana Marzo", "3er semana Marzo", "4ta semana Marzo", "5ta semana Marzo", "1er semana Abril", "2da semana Abril", "3er semana Abril", "4ta semana Abril", "5ta semana Abril", "1er semana Mayo", "2da semana Mayo", "3er semana Mayo", "4ta semana Mayo", "5ta semana Mayo", "1er semana Junio", "2da semana Junio", "3er semana Junio", "4ta semana Junio", "5ta semana Junio", "1er semana Julio", "2da semana Julio", "3er semana Julio", "4ta semana Julio", "5ta semana Julio", "1er semana Agosto", "2da semana Agosto", "3er semana Agosto", "4ta semana Agosto", "5ta semana Agosto", "1er semana Septiembre", "2da semana Septiembre", "3er semana Septiembre", "4ta semana Septiembre", "5ta semana Septiembre", "1er semana Octubre", "2da semana Octubre", "3er semana Octubre", "4ta semana Octubre", "5ta semana Octubre", "1er semana Noviembre", "2da semana Noviembre", "3er semana Noviembre", "4ta semana Noviembre", "5ta semana Noviembre", "1er semana Diciembre", "2da semana Diciembre", "3er semana Diciembre", "4ta semana Diciembre", "5ta semana Diciembre" }));
         FiltroQP7.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 FiltroQP7ItemStateChanged(evt);
@@ -4524,7 +4288,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS21))
-                        .addGap(0, 7199, Short.MAX_VALUE)))
+                        .addGap(0, 7223, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel35Layout.setVerticalGroup(
@@ -6873,63 +6637,61 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             int fila = Tdep.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tdep.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tdep.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tdep.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tdep.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            Ap.setText(String.valueOf(Tdep.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tdep.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tdep.getValueAt(fila, 4)));
+            ServN.setText(String.valueOf(Tdep.getValueAt(fila, 6)));
+            String Quinc = model.getValueAt(fila, 7).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
                 if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            DL.setText(String.valueOf(Tdep.getValueAt(fila, 14)));
-            dt.setText(String.valueOf(Tdep.getValueAt(fila, 15)));
-            Ddv.setText(String.valueOf(Tdep.getValueAt(fila, 16)));
-            Dpi.setText(String.valueOf(Tdep.getValueAt(fila, 17)));
-            DSGS.setText(String.valueOf(Tdep.getValueAt(fila, 20)));
-            FJ.setText(String.valueOf(Tdep.getValueAt(fila, 24)));
-            sueldo.setText(String.valueOf(Tdep.getValueAt(fila, 27)));
-            Bono.setText(String.valueOf(Tdep.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tdep.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tdep.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tdep.getValueAt(fila, 34)));
-            PDDDV.setText(String.valueOf(Tdep.getValueAt(fila, 35)));
-            PDDF.setText(String.valueOf(Tdep.getValueAt(fila, 37)));
-            PDDDDSGS.setText(String.valueOf(Tdep.getValueAt(fila, 40)));
-            TotalR.setText(String.valueOf(Tdep.getValueAt(fila, 42)));
-            Odtp.setText(String.valueOf(Tdep.getValueAt(fila, 43)));
-            DPF.setText(String.valueOf(Tdep.getValueAt(fila, 44)));
-            ADN.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
-            Presp.setText(String.valueOf(Tdep.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep.getValueAt(fila, 47)));
-            Fde.setText(String.valueOf(Tdep.getValueAt(fila, 48)));
-            Bp.setText(String.valueOf(Tdep.getValueAt(fila, 49)));
-            Sancion.setText(String.valueOf(Tdep.getValueAt(fila, 50)));
-            PCR.setText(String.valueOf(Tdep.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tdep.getValueAt(fila, 52)));
-            DI.setText(String.valueOf(Tdep.getValueAt(fila, 53)));
-            RI.setText(String.valueOf(Tdep.getValueAt(fila, 54)));
-            RF.setText(String.valueOf(Tdep.getValueAt(fila, 55)));
-            ISR.setText(String.valueOf(Tdep.getValueAt(fila, 56)));
-            Playera.setText(String.valueOf(Tdep.getValueAt(fila, 57)));
-            Chamarra.setText(String.valueOf(Tdep.getValueAt(fila, 58)));
-            Pantalon.setText(String.valueOf(Tdep.getValueAt(fila, 59)));
-            Corbata.setText(String.valueOf(Tdep.getValueAt(fila, 60)));
-            Credencial.setText(String.valueOf(Tdep.getValueAt(fila, 62)));
-            cda.setText(String.valueOf(Tdep.getValueAt(fila, 63)));
-            deposito.setText(String.valueOf(Tdep.getValueAt(fila, 64)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
+            DL.setText(String.valueOf(Tdep.getValueAt(fila, 8)));
+            Ddv.setText(String.valueOf(Tdep.getValueAt(fila, 9)));
+            Dpi.setText(String.valueOf(Tdep.getValueAt(fila, 10)));
+            DSGS.setText(String.valueOf(Tdep.getValueAt(fila, 11)));
+            sueldo.setText(String.valueOf(Tdep.getValueAt(fila, 12)));
+            Bono.setText(String.valueOf(Tdep.getValueAt(fila, 13)));
+            apy.setText(String.valueOf(Tdep.getValueAt(fila, 14)));
+            Lugar.setText(String.valueOf(Tdep.getValueAt(fila, 15)));
+            dt.setText(String.valueOf(Tdep.getValueAt(fila, 16)));
+            Dobletes.setText(String.valueOf(Tdep.getValueAt(fila, 17)));
+            PDDF.setText(String.valueOf(Tdep.getValueAt(fila, 18)));
+            Rembolso.setText(String.valueOf(Tdep.getValueAt(fila, 19)));
+            ADD.setText(String.valueOf(Tdep.getValueAt(fila, 20)));
+            PDDDV.setText(String.valueOf(Tdep.getValueAt(fila, 21)));
+            TotalR.setText(String.valueOf(Tdep.getValueAt(fila, 22)));
+            Odtp.setText(String.valueOf(Tdep.getValueAt(fila, 23)));
+            DPF.setText(String.valueOf(Tdep.getValueAt(fila, 24)));
+            FJ.setText(String.valueOf(Tdep.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tdep.getValueAt(fila, 26)));
+            Presp.setText(String.valueOf(Tdep.getValueAt(fila, 27)));
+            ADN.setText(String.valueOf(Tdep.getValueAt(fila, 28)));
+            Fdb.setText(String.valueOf(Tdep.getValueAt(fila, 29)));
+            Fde.setText(String.valueOf(Tdep.getValueAt(fila, 30)));
+            Bp.setText(String.valueOf(Tdep.getValueAt(fila, 31)));
+            Sancion.setText(String.valueOf(Tdep.getValueAt(fila, 32)));
+            PCR.setText(String.valueOf(Tdep.getValueAt(fila, 33)));
+            Grua.setText(String.valueOf(Tdep.getValueAt(fila, 34)));
+            DI.setText(String.valueOf(Tdep.getValueAt(fila, 35)));
+            Playera.setText(String.valueOf(Tdep.getValueAt(fila, 36)));
+            Chamarra.setText(String.valueOf(Tdep.getValueAt(fila, 37)));
+            Corbata.setText(String.valueOf(Tdep.getValueAt(fila, 38)));
+            Pantalon.setText(String.valueOf(Tdep.getValueAt(fila, 39)));
+            Credencial.setText(String.valueOf(Tdep.getValueAt(fila, 40)));
+            cda.setText(String.valueOf(Tdep.getValueAt(fila, 41)));
+            deposito.setText(String.valueOf(Tdep.getValueAt(fila, 42)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 66).toString();
+            String Mes = model.getValueAt(fila, 44).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep.getValueAt(fila, 67)));
-            Obsdeposito.setText(String.valueOf(Tdep.getValueAt(fila, 68)));
+            FDP.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
+            Obsdeposito.setText(String.valueOf(Tdep.getValueAt(fila, 46)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosS_SIMSS_4.class
@@ -6946,63 +6708,61 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             int fila = Tdep1.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep1.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep1.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tdep1.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tdep1.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tdep1.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tdep1.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            Ap.setText(String.valueOf(Tdep1.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tdep1.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tdep1.getValueAt(fila, 4)));
+            ServN.setText(String.valueOf(Tdep1.getValueAt(fila, 6)));
+            String Quinc = model.getValueAt(fila, 7).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
                 if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            DL.setText(String.valueOf(Tdep1.getValueAt(fila, 14)));
-            dt.setText(String.valueOf(Tdep1.getValueAt(fila, 15)));
-            Ddv.setText(String.valueOf(Tdep1.getValueAt(fila, 16)));
-            Dpi.setText(String.valueOf(Tdep1.getValueAt(fila, 17)));
-            DSGS.setText(String.valueOf(Tdep1.getValueAt(fila, 20)));
-            FJ.setText(String.valueOf(Tdep1.getValueAt(fila, 24)));
-            sueldo.setText(String.valueOf(Tdep1.getValueAt(fila, 27)));
-            Bono.setText(String.valueOf(Tdep1.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tdep1.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep1.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tdep1.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tdep1.getValueAt(fila, 34)));
-            PDDDV.setText(String.valueOf(Tdep1.getValueAt(fila, 35)));
-            PDDF.setText(String.valueOf(Tdep1.getValueAt(fila, 37)));
-            PDDDDSGS.setText(String.valueOf(Tdep1.getValueAt(fila, 40)));
-            TotalR.setText(String.valueOf(Tdep1.getValueAt(fila, 42)));
-            Odtp.setText(String.valueOf(Tdep1.getValueAt(fila, 43)));
-            DPF.setText(String.valueOf(Tdep1.getValueAt(fila, 44)));
-            ADN.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
-            Presp.setText(String.valueOf(Tdep1.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep1.getValueAt(fila, 47)));
-            Fde.setText(String.valueOf(Tdep1.getValueAt(fila, 48)));
-            Bp.setText(String.valueOf(Tdep1.getValueAt(fila, 49)));
-            Sancion.setText(String.valueOf(Tdep1.getValueAt(fila, 50)));
-            PCR.setText(String.valueOf(Tdep1.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tdep1.getValueAt(fila, 52)));
-            DI.setText(String.valueOf(Tdep1.getValueAt(fila, 53)));
-            RI.setText(String.valueOf(Tdep1.getValueAt(fila, 54)));
-            RF.setText(String.valueOf(Tdep1.getValueAt(fila, 55)));
-            ISR.setText(String.valueOf(Tdep1.getValueAt(fila, 56)));
-            Playera.setText(String.valueOf(Tdep1.getValueAt(fila, 57)));
-            Chamarra.setText(String.valueOf(Tdep1.getValueAt(fila, 58)));
-            Pantalon.setText(String.valueOf(Tdep1.getValueAt(fila, 59)));
-            Corbata.setText(String.valueOf(Tdep1.getValueAt(fila, 60)));
-            Credencial.setText(String.valueOf(Tdep1.getValueAt(fila, 62)));
-            cda.setText(String.valueOf(Tdep1.getValueAt(fila, 63)));
-            deposito.setText(String.valueOf(Tdep1.getValueAt(fila, 64)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
+            DL.setText(String.valueOf(Tdep1.getValueAt(fila, 8)));
+            Ddv.setText(String.valueOf(Tdep1.getValueAt(fila, 9)));
+            Dpi.setText(String.valueOf(Tdep1.getValueAt(fila, 10)));
+            DSGS.setText(String.valueOf(Tdep1.getValueAt(fila, 11)));
+            sueldo.setText(String.valueOf(Tdep1.getValueAt(fila, 12)));
+            Bono.setText(String.valueOf(Tdep1.getValueAt(fila, 13)));
+            apy.setText(String.valueOf(Tdep1.getValueAt(fila, 14)));
+            Lugar.setText(String.valueOf(Tdep1.getValueAt(fila, 15)));
+            dt.setText(String.valueOf(Tdep1.getValueAt(fila, 16)));
+            Dobletes.setText(String.valueOf(Tdep1.getValueAt(fila, 17)));
+            PDDF.setText(String.valueOf(Tdep1.getValueAt(fila, 18)));
+            Rembolso.setText(String.valueOf(Tdep1.getValueAt(fila, 19)));
+            ADD.setText(String.valueOf(Tdep1.getValueAt(fila, 20)));
+            PDDDV.setText(String.valueOf(Tdep1.getValueAt(fila, 21)));
+            TotalR.setText(String.valueOf(Tdep1.getValueAt(fila, 22)));
+            Odtp.setText(String.valueOf(Tdep1.getValueAt(fila, 23)));
+            DPF.setText(String.valueOf(Tdep1.getValueAt(fila, 24)));
+            FJ.setText(String.valueOf(Tdep1.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tdep1.getValueAt(fila, 26)));
+            Presp.setText(String.valueOf(Tdep1.getValueAt(fila, 27)));
+            ADN.setText(String.valueOf(Tdep1.getValueAt(fila, 28)));
+            Fdb.setText(String.valueOf(Tdep1.getValueAt(fila, 29)));
+            Fde.setText(String.valueOf(Tdep1.getValueAt(fila, 30)));
+            Bp.setText(String.valueOf(Tdep1.getValueAt(fila, 31)));
+            Sancion.setText(String.valueOf(Tdep1.getValueAt(fila, 32)));
+            PCR.setText(String.valueOf(Tdep1.getValueAt(fila, 33)));
+            Grua.setText(String.valueOf(Tdep1.getValueAt(fila, 34)));
+            DI.setText(String.valueOf(Tdep1.getValueAt(fila, 35)));
+            Playera.setText(String.valueOf(Tdep1.getValueAt(fila, 36)));
+            Chamarra.setText(String.valueOf(Tdep1.getValueAt(fila, 37)));
+            Corbata.setText(String.valueOf(Tdep1.getValueAt(fila, 38)));
+            Pantalon.setText(String.valueOf(Tdep1.getValueAt(fila, 39)));
+            Credencial.setText(String.valueOf(Tdep1.getValueAt(fila, 40)));
+            cda.setText(String.valueOf(Tdep1.getValueAt(fila, 41)));
+            deposito.setText(String.valueOf(Tdep1.getValueAt(fila, 42)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 66).toString();
+            String Mes = model.getValueAt(fila, 44).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep1.getValueAt(fila, 67)));
-            Obsdeposito.setText(String.valueOf(Tdep1.getValueAt(fila, 68)));
+            FDP.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
+            Obsdeposito.setText(String.valueOf(Tdep1.getValueAt(fila, 46)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosS_4.class
@@ -7019,63 +6779,61 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             int fila = Tdep2.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep2.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep2.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tdep2.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tdep2.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tdep2.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tdep2.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            Ap.setText(String.valueOf(Tdep2.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tdep2.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tdep2.getValueAt(fila, 4)));
+            ServN.setText(String.valueOf(Tdep2.getValueAt(fila, 6)));
+            String Quinc = model.getValueAt(fila, 7).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
                 if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            DL.setText(String.valueOf(Tdep2.getValueAt(fila, 14)));
-            dt.setText(String.valueOf(Tdep2.getValueAt(fila, 15)));
-            Ddv.setText(String.valueOf(Tdep2.getValueAt(fila, 16)));
-            Dpi.setText(String.valueOf(Tdep2.getValueAt(fila, 17)));
-            DSGS.setText(String.valueOf(Tdep2.getValueAt(fila, 20)));
-            FJ.setText(String.valueOf(Tdep2.getValueAt(fila, 24)));
-            sueldo.setText(String.valueOf(Tdep2.getValueAt(fila, 27)));
-            Bono.setText(String.valueOf(Tdep2.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tdep2.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep2.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tdep2.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tdep2.getValueAt(fila, 34)));
-            PDDDV.setText(String.valueOf(Tdep2.getValueAt(fila, 35)));
-            PDDF.setText(String.valueOf(Tdep2.getValueAt(fila, 37)));
-            PDDDDSGS.setText(String.valueOf(Tdep2.getValueAt(fila, 40)));
-            TotalR.setText(String.valueOf(Tdep2.getValueAt(fila, 42)));
-            Odtp.setText(String.valueOf(Tdep2.getValueAt(fila, 43)));
-            DPF.setText(String.valueOf(Tdep2.getValueAt(fila, 44)));
-            ADN.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
-            Presp.setText(String.valueOf(Tdep2.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep2.getValueAt(fila, 47)));
-            Fde.setText(String.valueOf(Tdep2.getValueAt(fila, 48)));
-            Bp.setText(String.valueOf(Tdep2.getValueAt(fila, 49)));
-            Sancion.setText(String.valueOf(Tdep2.getValueAt(fila, 50)));
-            PCR.setText(String.valueOf(Tdep2.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tdep2.getValueAt(fila, 52)));
-            DI.setText(String.valueOf(Tdep2.getValueAt(fila, 53)));
-            RI.setText(String.valueOf(Tdep2.getValueAt(fila, 54)));
-            RF.setText(String.valueOf(Tdep2.getValueAt(fila, 55)));
-            ISR.setText(String.valueOf(Tdep2.getValueAt(fila, 56)));
-            Playera.setText(String.valueOf(Tdep2.getValueAt(fila, 57)));
-            Chamarra.setText(String.valueOf(Tdep2.getValueAt(fila, 58)));
-            Pantalon.setText(String.valueOf(Tdep2.getValueAt(fila, 59)));
-            Corbata.setText(String.valueOf(Tdep2.getValueAt(fila, 60)));
-            Credencial.setText(String.valueOf(Tdep2.getValueAt(fila, 62)));
-            cda.setText(String.valueOf(Tdep2.getValueAt(fila, 63)));
-            deposito.setText(String.valueOf(Tdep2.getValueAt(fila, 64)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
+            DL.setText(String.valueOf(Tdep2.getValueAt(fila, 8)));
+            Ddv.setText(String.valueOf(Tdep2.getValueAt(fila, 9)));
+            Dpi.setText(String.valueOf(Tdep2.getValueAt(fila, 10)));
+            DSGS.setText(String.valueOf(Tdep2.getValueAt(fila, 11)));
+            sueldo.setText(String.valueOf(Tdep2.getValueAt(fila, 12)));
+            Bono.setText(String.valueOf(Tdep2.getValueAt(fila, 13)));
+            apy.setText(String.valueOf(Tdep2.getValueAt(fila, 14)));
+            Lugar.setText(String.valueOf(Tdep2.getValueAt(fila, 15)));
+            dt.setText(String.valueOf(Tdep2.getValueAt(fila, 16)));
+            Dobletes.setText(String.valueOf(Tdep2.getValueAt(fila, 17)));
+            PDDF.setText(String.valueOf(Tdep2.getValueAt(fila, 18)));
+            Rembolso.setText(String.valueOf(Tdep2.getValueAt(fila, 19)));
+            ADD.setText(String.valueOf(Tdep2.getValueAt(fila, 20)));
+            PDDDV.setText(String.valueOf(Tdep2.getValueAt(fila, 21)));
+            TotalR.setText(String.valueOf(Tdep2.getValueAt(fila, 22)));
+            Odtp.setText(String.valueOf(Tdep2.getValueAt(fila, 23)));
+            DPF.setText(String.valueOf(Tdep2.getValueAt(fila, 24)));
+            FJ.setText(String.valueOf(Tdep2.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tdep2.getValueAt(fila, 26)));
+            Presp.setText(String.valueOf(Tdep2.getValueAt(fila, 27)));
+            ADN.setText(String.valueOf(Tdep2.getValueAt(fila, 28)));
+            Fdb.setText(String.valueOf(Tdep2.getValueAt(fila, 29)));
+            Fde.setText(String.valueOf(Tdep2.getValueAt(fila, 30)));
+            Bp.setText(String.valueOf(Tdep2.getValueAt(fila, 31)));
+            Sancion.setText(String.valueOf(Tdep2.getValueAt(fila, 32)));
+            PCR.setText(String.valueOf(Tdep2.getValueAt(fila, 33)));
+            Grua.setText(String.valueOf(Tdep2.getValueAt(fila, 34)));
+            DI.setText(String.valueOf(Tdep2.getValueAt(fila, 35)));
+            Playera.setText(String.valueOf(Tdep2.getValueAt(fila, 36)));
+            Chamarra.setText(String.valueOf(Tdep2.getValueAt(fila, 37)));
+            Corbata.setText(String.valueOf(Tdep2.getValueAt(fila, 38)));
+            Pantalon.setText(String.valueOf(Tdep2.getValueAt(fila, 39)));
+            Credencial.setText(String.valueOf(Tdep2.getValueAt(fila, 40)));
+            cda.setText(String.valueOf(Tdep2.getValueAt(fila, 41)));
+            deposito.setText(String.valueOf(Tdep2.getValueAt(fila, 42)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 66).toString();
+            String Mes = model.getValueAt(fila, 44).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep2.getValueAt(fila, 67)));
-            Obsdeposito.setText(String.valueOf(Tdep2.getValueAt(fila, 68)));
+            FDP.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
+            Obsdeposito.setText(String.valueOf(Tdep2.getValueAt(fila, 46)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosS_4.class
@@ -7092,63 +6850,61 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             int fila = Tdep3.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep3.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep3.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tdep3.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tdep3.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tdep3.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tdep3.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            Ap.setText(String.valueOf(Tdep3.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tdep3.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tdep3.getValueAt(fila, 4)));
+            ServN.setText(String.valueOf(Tdep3.getValueAt(fila, 6)));
+            String Quinc = model.getValueAt(fila, 7).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
                 if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            DL.setText(String.valueOf(Tdep3.getValueAt(fila, 14)));
-            dt.setText(String.valueOf(Tdep3.getValueAt(fila, 15)));
-            Ddv.setText(String.valueOf(Tdep3.getValueAt(fila, 16)));
-            Dpi.setText(String.valueOf(Tdep3.getValueAt(fila, 17)));
-            DSGS.setText(String.valueOf(Tdep3.getValueAt(fila, 20)));
-            FJ.setText(String.valueOf(Tdep3.getValueAt(fila, 24)));
-            sueldo.setText(String.valueOf(Tdep3.getValueAt(fila, 27)));
-            Bono.setText(String.valueOf(Tdep3.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tdep3.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep3.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tdep3.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tdep3.getValueAt(fila, 34)));
-            PDDDV.setText(String.valueOf(Tdep3.getValueAt(fila, 35)));
-            PDDF.setText(String.valueOf(Tdep3.getValueAt(fila, 37)));
-            PDDDDSGS.setText(String.valueOf(Tdep3.getValueAt(fila, 40)));
-            TotalR.setText(String.valueOf(Tdep3.getValueAt(fila, 42)));
-            Odtp.setText(String.valueOf(Tdep3.getValueAt(fila, 43)));
-            DPF.setText(String.valueOf(Tdep3.getValueAt(fila, 44)));
-            ADN.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
-            Presp.setText(String.valueOf(Tdep3.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep3.getValueAt(fila, 47)));
-            Fde.setText(String.valueOf(Tdep3.getValueAt(fila, 48)));
-            Bp.setText(String.valueOf(Tdep3.getValueAt(fila, 49)));
-            Sancion.setText(String.valueOf(Tdep3.getValueAt(fila, 50)));
-            PCR.setText(String.valueOf(Tdep3.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tdep3.getValueAt(fila, 52)));
-            DI.setText(String.valueOf(Tdep3.getValueAt(fila, 53)));
-            RI.setText(String.valueOf(Tdep3.getValueAt(fila, 54)));
-            RF.setText(String.valueOf(Tdep3.getValueAt(fila, 55)));
-            ISR.setText(String.valueOf(Tdep3.getValueAt(fila, 56)));
-            Playera.setText(String.valueOf(Tdep3.getValueAt(fila, 57)));
-            Chamarra.setText(String.valueOf(Tdep3.getValueAt(fila, 58)));
-            Pantalon.setText(String.valueOf(Tdep3.getValueAt(fila, 59)));
-            Corbata.setText(String.valueOf(Tdep3.getValueAt(fila, 60)));
-            Credencial.setText(String.valueOf(Tdep3.getValueAt(fila, 62)));
-            cda.setText(String.valueOf(Tdep3.getValueAt(fila, 63)));
-            deposito.setText(String.valueOf(Tdep3.getValueAt(fila, 64)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
+            DL.setText(String.valueOf(Tdep3.getValueAt(fila, 8)));
+            Ddv.setText(String.valueOf(Tdep3.getValueAt(fila, 9)));
+            Dpi.setText(String.valueOf(Tdep3.getValueAt(fila, 10)));
+            DSGS.setText(String.valueOf(Tdep3.getValueAt(fila, 11)));
+            sueldo.setText(String.valueOf(Tdep3.getValueAt(fila, 12)));
+            Bono.setText(String.valueOf(Tdep3.getValueAt(fila, 13)));
+            apy.setText(String.valueOf(Tdep3.getValueAt(fila, 14)));
+            Lugar.setText(String.valueOf(Tdep3.getValueAt(fila, 15)));
+            dt.setText(String.valueOf(Tdep3.getValueAt(fila, 16)));
+            Dobletes.setText(String.valueOf(Tdep3.getValueAt(fila, 17)));
+            PDDF.setText(String.valueOf(Tdep3.getValueAt(fila, 18)));
+            Rembolso.setText(String.valueOf(Tdep3.getValueAt(fila, 19)));
+            ADD.setText(String.valueOf(Tdep3.getValueAt(fila, 20)));
+            PDDDV.setText(String.valueOf(Tdep3.getValueAt(fila, 21)));
+            TotalR.setText(String.valueOf(Tdep3.getValueAt(fila, 22)));
+            Odtp.setText(String.valueOf(Tdep3.getValueAt(fila, 23)));
+            DPF.setText(String.valueOf(Tdep3.getValueAt(fila, 24)));
+            FJ.setText(String.valueOf(Tdep3.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tdep3.getValueAt(fila, 26)));
+            Presp.setText(String.valueOf(Tdep3.getValueAt(fila, 27)));
+            ADN.setText(String.valueOf(Tdep3.getValueAt(fila, 28)));
+            Fdb.setText(String.valueOf(Tdep3.getValueAt(fila, 29)));
+            Fde.setText(String.valueOf(Tdep3.getValueAt(fila, 30)));
+            Bp.setText(String.valueOf(Tdep3.getValueAt(fila, 31)));
+            Sancion.setText(String.valueOf(Tdep3.getValueAt(fila, 32)));
+            PCR.setText(String.valueOf(Tdep3.getValueAt(fila, 33)));
+            Grua.setText(String.valueOf(Tdep3.getValueAt(fila, 34)));
+            DI.setText(String.valueOf(Tdep3.getValueAt(fila, 35)));
+            Playera.setText(String.valueOf(Tdep3.getValueAt(fila, 36)));
+            Chamarra.setText(String.valueOf(Tdep3.getValueAt(fila, 37)));
+            Corbata.setText(String.valueOf(Tdep3.getValueAt(fila, 38)));
+            Pantalon.setText(String.valueOf(Tdep3.getValueAt(fila, 39)));
+            Credencial.setText(String.valueOf(Tdep3.getValueAt(fila, 40)));
+            cda.setText(String.valueOf(Tdep3.getValueAt(fila, 41)));
+            deposito.setText(String.valueOf(Tdep3.getValueAt(fila, 42)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 66).toString();
+            String Mes = model.getValueAt(fila, 44).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep3.getValueAt(fila, 67)));
-            Obsdeposito.setText(String.valueOf(Tdep3.getValueAt(fila, 68)));
+            FDP.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
+            Obsdeposito.setText(String.valueOf(Tdep3.getValueAt(fila, 46)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosS_4.class
@@ -7165,63 +6921,61 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             int fila = Tdep4.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep4.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep4.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tdep4.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tdep4.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tdep4.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tdep4.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            Ap.setText(String.valueOf(Tdep4.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tdep4.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tdep4.getValueAt(fila, 4)));
+            ServN.setText(String.valueOf(Tdep4.getValueAt(fila, 6)));
+            String Quinc = model.getValueAt(fila, 7).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
                 if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            DL.setText(String.valueOf(Tdep4.getValueAt(fila, 14)));
-            dt.setText(String.valueOf(Tdep4.getValueAt(fila, 15)));
-            Ddv.setText(String.valueOf(Tdep4.getValueAt(fila, 16)));
-            Dpi.setText(String.valueOf(Tdep4.getValueAt(fila, 17)));
-            DSGS.setText(String.valueOf(Tdep4.getValueAt(fila, 20)));
-            FJ.setText(String.valueOf(Tdep4.getValueAt(fila, 24)));
-            sueldo.setText(String.valueOf(Tdep4.getValueAt(fila, 27)));
-            Bono.setText(String.valueOf(Tdep4.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tdep4.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep4.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tdep4.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tdep4.getValueAt(fila, 34)));
-            PDDDV.setText(String.valueOf(Tdep4.getValueAt(fila, 35)));
-            PDDF.setText(String.valueOf(Tdep4.getValueAt(fila, 37)));
-            PDDDDSGS.setText(String.valueOf(Tdep4.getValueAt(fila, 40)));
-            TotalR.setText(String.valueOf(Tdep4.getValueAt(fila, 42)));
-            Odtp.setText(String.valueOf(Tdep4.getValueAt(fila, 43)));
-            DPF.setText(String.valueOf(Tdep4.getValueAt(fila, 44)));
-            ADN.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
-            Presp.setText(String.valueOf(Tdep4.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep4.getValueAt(fila, 47)));
-            Fde.setText(String.valueOf(Tdep4.getValueAt(fila, 48)));
-            Bp.setText(String.valueOf(Tdep4.getValueAt(fila, 49)));
-            Sancion.setText(String.valueOf(Tdep4.getValueAt(fila, 50)));
-            PCR.setText(String.valueOf(Tdep4.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tdep4.getValueAt(fila, 52)));
-            DI.setText(String.valueOf(Tdep4.getValueAt(fila, 53)));
-            RI.setText(String.valueOf(Tdep4.getValueAt(fila, 54)));
-            RF.setText(String.valueOf(Tdep4.getValueAt(fila, 55)));
-            ISR.setText(String.valueOf(Tdep4.getValueAt(fila, 56)));
-            Playera.setText(String.valueOf(Tdep4.getValueAt(fila, 57)));
-            Chamarra.setText(String.valueOf(Tdep4.getValueAt(fila, 58)));
-            Pantalon.setText(String.valueOf(Tdep4.getValueAt(fila, 59)));
-            Corbata.setText(String.valueOf(Tdep4.getValueAt(fila, 60)));
-            Credencial.setText(String.valueOf(Tdep4.getValueAt(fila, 62)));
-            cda.setText(String.valueOf(Tdep4.getValueAt(fila, 63)));
-            deposito.setText(String.valueOf(Tdep4.getValueAt(fila, 64)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
+            DL.setText(String.valueOf(Tdep4.getValueAt(fila, 8)));
+            Ddv.setText(String.valueOf(Tdep4.getValueAt(fila, 9)));
+            Dpi.setText(String.valueOf(Tdep4.getValueAt(fila, 10)));
+            DSGS.setText(String.valueOf(Tdep4.getValueAt(fila, 11)));
+            sueldo.setText(String.valueOf(Tdep4.getValueAt(fila, 12)));
+            Bono.setText(String.valueOf(Tdep4.getValueAt(fila, 13)));
+            apy.setText(String.valueOf(Tdep4.getValueAt(fila, 14)));
+            Lugar.setText(String.valueOf(Tdep4.getValueAt(fila, 15)));
+            dt.setText(String.valueOf(Tdep4.getValueAt(fila, 16)));
+            Dobletes.setText(String.valueOf(Tdep4.getValueAt(fila, 17)));
+            PDDF.setText(String.valueOf(Tdep4.getValueAt(fila, 18)));
+            Rembolso.setText(String.valueOf(Tdep4.getValueAt(fila, 19)));
+            ADD.setText(String.valueOf(Tdep4.getValueAt(fila, 20)));
+            PDDDV.setText(String.valueOf(Tdep4.getValueAt(fila, 21)));
+            TotalR.setText(String.valueOf(Tdep4.getValueAt(fila, 22)));
+            Odtp.setText(String.valueOf(Tdep4.getValueAt(fila, 23)));
+            DPF.setText(String.valueOf(Tdep4.getValueAt(fila, 24)));
+            FJ.setText(String.valueOf(Tdep4.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tdep4.getValueAt(fila, 26)));
+            Presp.setText(String.valueOf(Tdep4.getValueAt(fila, 27)));
+            ADN.setText(String.valueOf(Tdep4.getValueAt(fila, 28)));
+            Fdb.setText(String.valueOf(Tdep4.getValueAt(fila, 29)));
+            Fde.setText(String.valueOf(Tdep4.getValueAt(fila, 30)));
+            Bp.setText(String.valueOf(Tdep4.getValueAt(fila, 31)));
+            Sancion.setText(String.valueOf(Tdep4.getValueAt(fila, 32)));
+            PCR.setText(String.valueOf(Tdep4.getValueAt(fila, 33)));
+            Grua.setText(String.valueOf(Tdep4.getValueAt(fila, 34)));
+            DI.setText(String.valueOf(Tdep4.getValueAt(fila, 35)));
+            Playera.setText(String.valueOf(Tdep4.getValueAt(fila, 36)));
+            Chamarra.setText(String.valueOf(Tdep4.getValueAt(fila, 37)));
+            Corbata.setText(String.valueOf(Tdep4.getValueAt(fila, 38)));
+            Pantalon.setText(String.valueOf(Tdep4.getValueAt(fila, 39)));
+            Credencial.setText(String.valueOf(Tdep4.getValueAt(fila, 40)));
+            cda.setText(String.valueOf(Tdep4.getValueAt(fila, 41)));
+            deposito.setText(String.valueOf(Tdep4.getValueAt(fila, 42)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 66).toString();
+            String Mes = model.getValueAt(fila, 44).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep4.getValueAt(fila, 67)));
-            Obsdeposito.setText(String.valueOf(Tdep4.getValueAt(fila, 68)));
+            FDP.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
+            Obsdeposito.setText(String.valueOf(Tdep4.getValueAt(fila, 46)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosS_4.class
@@ -7238,63 +6992,61 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             int fila = Tdep5.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep5.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep5.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tdep5.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tdep5.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tdep5.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tdep5.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            Ap.setText(String.valueOf(Tdep5.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tdep5.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tdep5.getValueAt(fila, 4)));
+            ServN.setText(String.valueOf(Tdep5.getValueAt(fila, 6)));
+            String Quinc = model.getValueAt(fila, 7).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
                 if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            DL.setText(String.valueOf(Tdep5.getValueAt(fila, 14)));
-            dt.setText(String.valueOf(Tdep5.getValueAt(fila, 15)));
-            Ddv.setText(String.valueOf(Tdep5.getValueAt(fila, 16)));
-            Dpi.setText(String.valueOf(Tdep5.getValueAt(fila, 17)));
-            DSGS.setText(String.valueOf(Tdep5.getValueAt(fila, 20)));
-            FJ.setText(String.valueOf(Tdep5.getValueAt(fila, 24)));
-            sueldo.setText(String.valueOf(Tdep5.getValueAt(fila, 27)));
-            Bono.setText(String.valueOf(Tdep5.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tdep5.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep5.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tdep5.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tdep5.getValueAt(fila, 34)));
-            PDDDV.setText(String.valueOf(Tdep5.getValueAt(fila, 35)));
-            PDDF.setText(String.valueOf(Tdep5.getValueAt(fila, 37)));
-            PDDDDSGS.setText(String.valueOf(Tdep5.getValueAt(fila, 40)));
-            TotalR.setText(String.valueOf(Tdep5.getValueAt(fila, 42)));
-            Odtp.setText(String.valueOf(Tdep5.getValueAt(fila, 43)));
-            DPF.setText(String.valueOf(Tdep5.getValueAt(fila, 44)));
-            ADN.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
-            Presp.setText(String.valueOf(Tdep5.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep5.getValueAt(fila, 47)));
-            Fde.setText(String.valueOf(Tdep5.getValueAt(fila, 48)));
-            Bp.setText(String.valueOf(Tdep5.getValueAt(fila, 49)));
-            Sancion.setText(String.valueOf(Tdep5.getValueAt(fila, 50)));
-            PCR.setText(String.valueOf(Tdep5.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tdep5.getValueAt(fila, 52)));
-            DI.setText(String.valueOf(Tdep5.getValueAt(fila, 53)));
-            RI.setText(String.valueOf(Tdep5.getValueAt(fila, 54)));
-            RF.setText(String.valueOf(Tdep5.getValueAt(fila, 55)));
-            ISR.setText(String.valueOf(Tdep5.getValueAt(fila, 56)));
-            Playera.setText(String.valueOf(Tdep5.getValueAt(fila, 57)));
-            Chamarra.setText(String.valueOf(Tdep5.getValueAt(fila, 58)));
-            Pantalon.setText(String.valueOf(Tdep5.getValueAt(fila, 59)));
-            Corbata.setText(String.valueOf(Tdep5.getValueAt(fila, 60)));
-            Credencial.setText(String.valueOf(Tdep5.getValueAt(fila, 62)));
-            cda.setText(String.valueOf(Tdep5.getValueAt(fila, 63)));
-            deposito.setText(String.valueOf(Tdep5.getValueAt(fila, 64)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
+            DL.setText(String.valueOf(Tdep5.getValueAt(fila, 8)));
+            Ddv.setText(String.valueOf(Tdep5.getValueAt(fila, 9)));
+            Dpi.setText(String.valueOf(Tdep5.getValueAt(fila, 10)));
+            DSGS.setText(String.valueOf(Tdep5.getValueAt(fila, 11)));
+            sueldo.setText(String.valueOf(Tdep5.getValueAt(fila, 12)));
+            Bono.setText(String.valueOf(Tdep5.getValueAt(fila, 13)));
+            apy.setText(String.valueOf(Tdep5.getValueAt(fila, 14)));
+            Lugar.setText(String.valueOf(Tdep5.getValueAt(fila, 15)));
+            dt.setText(String.valueOf(Tdep5.getValueAt(fila, 16)));
+            Dobletes.setText(String.valueOf(Tdep5.getValueAt(fila, 17)));
+            PDDF.setText(String.valueOf(Tdep5.getValueAt(fila, 18)));
+            Rembolso.setText(String.valueOf(Tdep5.getValueAt(fila, 19)));
+            ADD.setText(String.valueOf(Tdep5.getValueAt(fila, 20)));
+            PDDDV.setText(String.valueOf(Tdep5.getValueAt(fila, 21)));
+            TotalR.setText(String.valueOf(Tdep5.getValueAt(fila, 22)));
+            Odtp.setText(String.valueOf(Tdep5.getValueAt(fila, 23)));
+            DPF.setText(String.valueOf(Tdep5.getValueAt(fila, 24)));
+            FJ.setText(String.valueOf(Tdep5.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tdep5.getValueAt(fila, 26)));
+            Presp.setText(String.valueOf(Tdep5.getValueAt(fila, 27)));
+            ADN.setText(String.valueOf(Tdep5.getValueAt(fila, 28)));
+            Fdb.setText(String.valueOf(Tdep5.getValueAt(fila, 29)));
+            Fde.setText(String.valueOf(Tdep5.getValueAt(fila, 30)));
+            Bp.setText(String.valueOf(Tdep5.getValueAt(fila, 31)));
+            Sancion.setText(String.valueOf(Tdep5.getValueAt(fila, 32)));
+            PCR.setText(String.valueOf(Tdep5.getValueAt(fila, 33)));
+            Grua.setText(String.valueOf(Tdep5.getValueAt(fila, 34)));
+            DI.setText(String.valueOf(Tdep5.getValueAt(fila, 35)));
+            Playera.setText(String.valueOf(Tdep5.getValueAt(fila, 36)));
+            Chamarra.setText(String.valueOf(Tdep5.getValueAt(fila, 37)));
+            Corbata.setText(String.valueOf(Tdep5.getValueAt(fila, 38)));
+            Pantalon.setText(String.valueOf(Tdep5.getValueAt(fila, 39)));
+            Credencial.setText(String.valueOf(Tdep5.getValueAt(fila, 40)));
+            cda.setText(String.valueOf(Tdep5.getValueAt(fila, 41)));
+            deposito.setText(String.valueOf(Tdep5.getValueAt(fila, 42)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 66).toString();
+            String Mes = model.getValueAt(fila, 44).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep5.getValueAt(fila, 67)));
-            Obsdeposito.setText(String.valueOf(Tdep5.getValueAt(fila, 68)));
+            FDP.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
+            Obsdeposito.setText(String.valueOf(Tdep5.getValueAt(fila, 46)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosS_4.class
@@ -7311,66 +7063,64 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             int fila = Tdep6.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep6.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep6.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tdep6.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tdep6.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tdep6.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tdep6.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            Ap.setText(String.valueOf(Tdep6.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tdep6.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tdep6.getValueAt(fila, 4)));
+            ServN.setText(String.valueOf(Tdep6.getValueAt(fila, 6)));
+            String Quinc = model.getValueAt(fila, 7).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
                 if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            DL.setText(String.valueOf(Tdep6.getValueAt(fila, 14)));
-            dt.setText(String.valueOf(Tdep6.getValueAt(fila, 15)));
-            Ddv.setText(String.valueOf(Tdep6.getValueAt(fila, 16)));
-            Dpi.setText(String.valueOf(Tdep6.getValueAt(fila, 17)));
-            DSGS.setText(String.valueOf(Tdep6.getValueAt(fila, 20)));
-            FJ.setText(String.valueOf(Tdep6.getValueAt(fila, 24)));
-            sueldo.setText(String.valueOf(Tdep6.getValueAt(fila, 27)));
-            Bono.setText(String.valueOf(Tdep6.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tdep6.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep6.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tdep6.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tdep6.getValueAt(fila, 34)));
-            PDDDV.setText(String.valueOf(Tdep6.getValueAt(fila, 35)));
-            PDDF.setText(String.valueOf(Tdep6.getValueAt(fila, 37)));
-            PDDDDSGS.setText(String.valueOf(Tdep6.getValueAt(fila, 40)));
-            TotalR.setText(String.valueOf(Tdep6.getValueAt(fila, 42)));
-            Odtp.setText(String.valueOf(Tdep6.getValueAt(fila, 43)));
-            DPF.setText(String.valueOf(Tdep6.getValueAt(fila, 44)));
-            ADN.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
-            Presp.setText(String.valueOf(Tdep6.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep6.getValueAt(fila, 47)));
-            Fde.setText(String.valueOf(Tdep6.getValueAt(fila, 48)));
-            Bp.setText(String.valueOf(Tdep6.getValueAt(fila, 49)));
-            Sancion.setText(String.valueOf(Tdep6.getValueAt(fila, 50)));
-            PCR.setText(String.valueOf(Tdep6.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tdep6.getValueAt(fila, 52)));
-            DI.setText(String.valueOf(Tdep6.getValueAt(fila, 53)));
-            RI.setText(String.valueOf(Tdep6.getValueAt(fila, 54)));
-            RF.setText(String.valueOf(Tdep6.getValueAt(fila, 55)));
-            ISR.setText(String.valueOf(Tdep6.getValueAt(fila, 56)));
-            Playera.setText(String.valueOf(Tdep6.getValueAt(fila, 57)));
-            Chamarra.setText(String.valueOf(Tdep6.getValueAt(fila, 58)));
-            Pantalon.setText(String.valueOf(Tdep6.getValueAt(fila, 59)));
-            Corbata.setText(String.valueOf(Tdep6.getValueAt(fila, 60)));
-            Credencial.setText(String.valueOf(Tdep6.getValueAt(fila, 62)));
-            cda.setText(String.valueOf(Tdep6.getValueAt(fila, 63)));
-            deposito.setText(String.valueOf(Tdep6.getValueAt(fila, 64)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
+            DL.setText(String.valueOf(Tdep6.getValueAt(fila, 8)));
+            Ddv.setText(String.valueOf(Tdep6.getValueAt(fila, 9)));
+            Dpi.setText(String.valueOf(Tdep6.getValueAt(fila, 10)));
+            DSGS.setText(String.valueOf(Tdep6.getValueAt(fila, 11)));
+            sueldo.setText(String.valueOf(Tdep6.getValueAt(fila, 12)));
+            Bono.setText(String.valueOf(Tdep6.getValueAt(fila, 13)));
+            apy.setText(String.valueOf(Tdep6.getValueAt(fila, 14)));
+            Lugar.setText(String.valueOf(Tdep6.getValueAt(fila, 15)));
+            dt.setText(String.valueOf(Tdep6.getValueAt(fila, 16)));
+            Dobletes.setText(String.valueOf(Tdep6.getValueAt(fila, 17)));
+            PDDF.setText(String.valueOf(Tdep6.getValueAt(fila, 18)));
+            Rembolso.setText(String.valueOf(Tdep6.getValueAt(fila, 19)));
+            ADD.setText(String.valueOf(Tdep6.getValueAt(fila, 20)));
+            PDDDV.setText(String.valueOf(Tdep6.getValueAt(fila, 21)));
+            TotalR.setText(String.valueOf(Tdep6.getValueAt(fila, 22)));
+            Odtp.setText(String.valueOf(Tdep6.getValueAt(fila, 23)));
+            DPF.setText(String.valueOf(Tdep6.getValueAt(fila, 24)));
+            FJ.setText(String.valueOf(Tdep6.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tdep6.getValueAt(fila, 26)));
+            Presp.setText(String.valueOf(Tdep6.getValueAt(fila, 27)));
+            ADN.setText(String.valueOf(Tdep6.getValueAt(fila, 28)));
+            Fdb.setText(String.valueOf(Tdep6.getValueAt(fila, 29)));
+            Fde.setText(String.valueOf(Tdep6.getValueAt(fila, 30)));
+            Bp.setText(String.valueOf(Tdep6.getValueAt(fila, 31)));
+            Sancion.setText(String.valueOf(Tdep6.getValueAt(fila, 32)));
+            PCR.setText(String.valueOf(Tdep6.getValueAt(fila, 33)));
+            Grua.setText(String.valueOf(Tdep6.getValueAt(fila, 34)));
+            DI.setText(String.valueOf(Tdep6.getValueAt(fila, 35)));
+            Playera.setText(String.valueOf(Tdep6.getValueAt(fila, 36)));
+            Chamarra.setText(String.valueOf(Tdep6.getValueAt(fila, 37)));
+            Corbata.setText(String.valueOf(Tdep6.getValueAt(fila, 38)));
+            Pantalon.setText(String.valueOf(Tdep6.getValueAt(fila, 39)));
+            Credencial.setText(String.valueOf(Tdep6.getValueAt(fila, 40)));
+            cda.setText(String.valueOf(Tdep6.getValueAt(fila, 41)));
+            deposito.setText(String.valueOf(Tdep6.getValueAt(fila, 42)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 66).toString();
+            String Mes = model.getValueAt(fila, 44).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep6.getValueAt(fila, 67)));
-            Obsdeposito.setText(String.valueOf(Tdep6.getValueAt(fila, 68)));
+            FDP.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
+            Obsdeposito.setText(String.valueOf(Tdep6.getValueAt(fila, 46)));
 
         } catch (ParseException ex) {
-            Logger.getLogger(DepositosS_4.class
+            Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
         }
         desv();
@@ -7384,63 +7134,61 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             int fila = Tdep7.getSelectedRow();
             NFnom.setText(String.valueOf(Tdep7.getValueAt(fila, 0)));
             NDL.setText(String.valueOf(Tdep7.getValueAt(fila, 1)));
-            Ap.setText(String.valueOf(Tdep7.getValueAt(fila, 3)));
-            am.setText(String.valueOf(Tdep7.getValueAt(fila, 4)));
-            name.setText(String.valueOf(Tdep7.getValueAt(fila, 5)));
-            ServN.setText(String.valueOf(Tdep7.getValueAt(fila, 9)));
-            String Quinc = model.getValueAt(fila, 10).toString();
+            Ap.setText(String.valueOf(Tdep7.getValueAt(fila, 2)));
+            am.setText(String.valueOf(Tdep7.getValueAt(fila, 3)));
+            name.setText(String.valueOf(Tdep7.getValueAt(fila, 4)));
+            ServN.setText(String.valueOf(Tdep7.getValueAt(fila, 6)));
+            String Quinc = model.getValueAt(fila, 7).toString();
             for (int i = 0; i < Semana.getItemCount(); i++) {
                 if (Semana.getItemAt(i).equalsIgnoreCase(Quinc)) {
                     Semana.setSelectedIndex(i);
                 }
             }
-            DL.setText(String.valueOf(Tdep7.getValueAt(fila, 14)));
-            dt.setText(String.valueOf(Tdep7.getValueAt(fila, 15)));
-            Ddv.setText(String.valueOf(Tdep7.getValueAt(fila, 16)));
-            Dpi.setText(String.valueOf(Tdep7.getValueAt(fila, 17)));
-            DSGS.setText(String.valueOf(Tdep7.getValueAt(fila, 20)));
-            FJ.setText(String.valueOf(Tdep7.getValueAt(fila, 24)));
-            sueldo.setText(String.valueOf(Tdep7.getValueAt(fila, 27)));
-            Bono.setText(String.valueOf(Tdep7.getValueAt(fila, 28)));
-            apy.setText(String.valueOf(Tdep7.getValueAt(fila, 29)));
-            Lugar.setText(String.valueOf(Tdep7.getValueAt(fila, 30)));
-            Rembolso.setText(String.valueOf(Tdep7.getValueAt(fila, 33)));
-            ADD.setText(String.valueOf(Tdep7.getValueAt(fila, 34)));
-            PDDDV.setText(String.valueOf(Tdep7.getValueAt(fila, 35)));
-            PDDF.setText(String.valueOf(Tdep7.getValueAt(fila, 37)));
-            PDDDDSGS.setText(String.valueOf(Tdep7.getValueAt(fila, 40)));
-            TotalR.setText(String.valueOf(Tdep7.getValueAt(fila, 42)));
-            Odtp.setText(String.valueOf(Tdep7.getValueAt(fila, 43)));
-            DPF.setText(String.valueOf(Tdep7.getValueAt(fila, 44)));
-            ADN.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
-            Presp.setText(String.valueOf(Tdep7.getValueAt(fila, 46)));
-            Fdb.setText(String.valueOf(Tdep7.getValueAt(fila, 47)));
-            Fde.setText(String.valueOf(Tdep7.getValueAt(fila, 48)));
-            Bp.setText(String.valueOf(Tdep7.getValueAt(fila, 49)));
-            Sancion.setText(String.valueOf(Tdep7.getValueAt(fila, 50)));
-            PCR.setText(String.valueOf(Tdep7.getValueAt(fila, 51)));
-            Grua.setText(String.valueOf(Tdep7.getValueAt(fila, 52)));
-            DI.setText(String.valueOf(Tdep7.getValueAt(fila, 53)));
-            RI.setText(String.valueOf(Tdep7.getValueAt(fila, 54)));
-            RF.setText(String.valueOf(Tdep7.getValueAt(fila, 55)));
-            ISR.setText(String.valueOf(Tdep7.getValueAt(fila, 56)));
-            Playera.setText(String.valueOf(Tdep7.getValueAt(fila, 57)));
-            Chamarra.setText(String.valueOf(Tdep7.getValueAt(fila, 58)));
-            Pantalon.setText(String.valueOf(Tdep7.getValueAt(fila, 59)));
-            Corbata.setText(String.valueOf(Tdep7.getValueAt(fila, 60)));
-            Credencial.setText(String.valueOf(Tdep7.getValueAt(fila, 62)));
-            cda.setText(String.valueOf(Tdep7.getValueAt(fila, 63)));
-            deposito.setText(String.valueOf(Tdep7.getValueAt(fila, 64)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 65));
+            DL.setText(String.valueOf(Tdep7.getValueAt(fila, 8)));
+            Ddv.setText(String.valueOf(Tdep7.getValueAt(fila, 9)));
+            Dpi.setText(String.valueOf(Tdep7.getValueAt(fila, 10)));
+            DSGS.setText(String.valueOf(Tdep7.getValueAt(fila, 11)));
+            sueldo.setText(String.valueOf(Tdep7.getValueAt(fila, 12)));
+            Bono.setText(String.valueOf(Tdep7.getValueAt(fila, 13)));
+            apy.setText(String.valueOf(Tdep7.getValueAt(fila, 14)));
+            Lugar.setText(String.valueOf(Tdep7.getValueAt(fila, 15)));
+            dt.setText(String.valueOf(Tdep7.getValueAt(fila, 16)));
+            Dobletes.setText(String.valueOf(Tdep7.getValueAt(fila, 17)));
+            PDDF.setText(String.valueOf(Tdep7.getValueAt(fila, 18)));
+            Rembolso.setText(String.valueOf(Tdep7.getValueAt(fila, 19)));
+            ADD.setText(String.valueOf(Tdep7.getValueAt(fila, 20)));
+            PDDDV.setText(String.valueOf(Tdep7.getValueAt(fila, 21)));
+            TotalR.setText(String.valueOf(Tdep7.getValueAt(fila, 22)));
+            Odtp.setText(String.valueOf(Tdep7.getValueAt(fila, 23)));
+            DPF.setText(String.valueOf(Tdep7.getValueAt(fila, 24)));
+            FJ.setText(String.valueOf(Tdep7.getValueAt(fila, 25)));
+            PDDDDSGS.setText(String.valueOf(Tdep7.getValueAt(fila, 26)));
+            Presp.setText(String.valueOf(Tdep7.getValueAt(fila, 27)));
+            ADN.setText(String.valueOf(Tdep7.getValueAt(fila, 28)));
+            Fdb.setText(String.valueOf(Tdep7.getValueAt(fila, 29)));
+            Fde.setText(String.valueOf(Tdep7.getValueAt(fila, 30)));
+            Bp.setText(String.valueOf(Tdep7.getValueAt(fila, 31)));
+            Sancion.setText(String.valueOf(Tdep7.getValueAt(fila, 32)));
+            PCR.setText(String.valueOf(Tdep7.getValueAt(fila, 33)));
+            Grua.setText(String.valueOf(Tdep7.getValueAt(fila, 34)));
+            DI.setText(String.valueOf(Tdep7.getValueAt(fila, 35)));
+            Playera.setText(String.valueOf(Tdep7.getValueAt(fila, 36)));
+            Chamarra.setText(String.valueOf(Tdep7.getValueAt(fila, 37)));
+            Corbata.setText(String.valueOf(Tdep7.getValueAt(fila, 38)));
+            Pantalon.setText(String.valueOf(Tdep7.getValueAt(fila, 39)));
+            Credencial.setText(String.valueOf(Tdep7.getValueAt(fila, 40)));
+            cda.setText(String.valueOf(Tdep7.getValueAt(fila, 41)));
+            deposito.setText(String.valueOf(Tdep7.getValueAt(fila, 42)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 66).toString();
+            String Mes = model.getValueAt(fila, 44).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep7.getValueAt(fila, 67)));
-            Obsdeposito.setText(String.valueOf(Tdep7.getValueAt(fila, 68)));
+            FDP.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
+            Obsdeposito.setText(String.valueOf(Tdep7.getValueAt(fila, 46)));
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosS_4.class
@@ -7564,6 +7312,139 @@ public final class DepositosS_4 extends javax.swing.JFrame {
     private void RFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RFKeyReleased
         deposito();
     }//GEN-LAST:event_RFKeyReleased
+
+    private void ZonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ZonItemStateChanged
+        if (Semana.getSelectedIndex() == 0) {
+            String SQL = "SELECT `Apellido P`, `Apellido M`, `Nombre(s)`, `Servicio`, `Bono`, `Semana` FROM `nominasem.detallada." + Zon.getSelectedItem().toString() + "`"
+                    + " WHERE `#lista` =" + NDL.getText() + "";
+
+            try {
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(SQL);
+                rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    Ap.setText(rs.getString(1));
+                    am.setText(rs.getString(2));
+                    name.setText(rs.getString(3));
+                    ServN.setText(rs.getString(4));
+                    Bono.setText(rs.getString(5));
+                    for (int i = 0; i < Semana.getItemCount(); i++) {
+                        if (Semana.getItemAt(i).equalsIgnoreCase(rs.getString(6))) {
+                            Semana.setSelectedIndex(i);
+                        }
+                    }
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
+
+            }
+            SQL = "SELECT `Dias descansados`, `Dias Laborados`, `Pago de dias descansados`, `Pago de dias laborados`, "
+                    + " `Dias de vacaciones`, `Dias de incapacidad`, `Dias de DSGS`, `Apoyo`, `Lugar`, `Pago de Descansos trabajados`, "
+                    + " `Pago de dias festivos`, `Pago de dias festivos trabajados`, `Rembolso`, `Adicionales`, `Pago de dias de vacaciones`, "
+                    + "`Dias festivos trabajados`, `Dias festivos` "
+                    + "FROM `nominasem.detallada." + Zon.getSelectedItem().toString() + "`"
+                    + " WHERE `#lista` =" + NDL.getText() + "";
+
+            try {
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(SQL);
+                rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    double DDMDL = (Double.parseDouble(rs.getString(1)) + Double.parseDouble(rs.getString(2)) + (Double.parseDouble(rs.getString(16)) + Double.parseDouble(rs.getString(17))));
+                    DL.setText("" + DDMDL);
+                    double PDDMDL = Double.parseDouble(rs.getString(3)) + Double.parseDouble(rs.getString(4));
+                    sueldo.setText("" + PDDMDL);
+                    Ddv.setText(rs.getString(5));
+                    Dpi.setText(rs.getString(6));
+                    DSGS.setText(rs.getString(7));
+                    apy.setText(rs.getString(8));
+                    Lugar.setText(rs.getString(9));
+                    dt.setText(rs.getString(10));
+                    double PDFMDFT = Double.parseDouble(rs.getString(11)) + Double.parseDouble(rs.getString(12));
+                    PDDF.setText("" + PDFMDFT);
+                    Rembolso.setText(rs.getString(13));
+                    ADD.setText(rs.getString(14));
+                    PDDDV.setText(rs.getString(15));
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
+
+            }
+
+            SQL = "SELECT `Faltantes de boleto`, `Sancion`, `Chamarra`, `Faltante de efectivo`, "
+                    + "`Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina` "
+                    + "FROM `nominasem.detallada." + Zon.getSelectedItem().toString() + "`"
+                    + " WHERE `#lista` =" + NDL.getText() + "";
+
+            try {
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(SQL);
+                rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    Fdb.setText(rs.getString(1));
+                    Sancion.setText(rs.getString(2));
+                    Chamarra.setText(rs.getString(3));
+                    Fde.setText(rs.getString(5));
+                    Grua.setText(rs.getString(6));
+                    Pantalon.setText(rs.getString(6));
+                    Credencial.setText(rs.getString(7));
+                    Bp.setText(rs.getString(8));
+                    Playera.setText(rs.getString(9));
+                    Corbata.setText(rs.getString(10));
+                    ADN.setText(rs.getString(11));
+                    desv();
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
+
+            }
+            SQL = "SELECT `Pago de ODT`, `pago de Dias con faltas`, `Faltas Justificadas`, `Pago de Dias de DSGS`, `Pago de prestamo`, "
+                    + " `Caja de ahorro`, `Pago con retardos` "
+                    + "FROM `nominasem.detallada." + Zon.getSelectedItem().toString() + "`"
+                    + " WHERE `#lista` =" + NDL.getText() + "";
+
+            try {
+                PreparedStatement ps;
+                ResultSet rs;
+
+                ps = con.prepareStatement(SQL);
+                rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    Odtp.setText(rs.getString(1));
+                    DPF.setText(rs.getString(2));
+                    FJ.setText(rs.getString(3));
+                    PDDDDSGS.setText(rs.getString(4));
+                    Presp.setText(rs.getString(5));
+                    cda.setText(rs.getString(6));
+                    PCR.setText(rs.getString(7));
+                }
+                ps.isClosed();
+                rs.isClosed();
+            } catch (SQLException error_sharenom) {
+                JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
+
+            }
+
+        }
+        deposito();
+
+    }//GEN-LAST:event_ZonItemStateChanged
 
     /**
      * @param args the command line arguments

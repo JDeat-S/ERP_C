@@ -784,7 +784,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         }
     }
 
-   public void MODpen() {
+    public void MODpen() {
         double falt = 0.0, tfalt, TPAGADO = 0;
         try {
             PreparedStatement ps;
@@ -1233,69 +1233,71 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         if (tfalt3 <= 0.0) {
 
             if (Mas12.isVisible()) {
-                if (tfalt2 <= 0.0) {
-                    if (tfalt1 <= 0.0) {
-                        if (tfalt <= 0.0) {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
@@ -1344,69 +1346,71 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         } else {
 
             if (Mas12.isVisible()) {
-                if (tfalt2 <= 0.0) {
-                    if (tfalt1 <= 0.0) {
-                        if (tfalt <= 0.0) {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
@@ -1474,100 +1478,103 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         double tpag4 = TPAGADO4 + Double.parseDouble(Importe14.getText());
         if (tfalt4 <= 0.0) {
             if (Mas13.isVisible()) {
-                if (tfalt3 <= 0.0) {
-                    if (tfalt2 <= 0.0) {
-                        if (tfalt1 <= 0.0) {
-                            if (tfalt <= 0.0) {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
@@ -1616,100 +1623,103 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         } else {
 
             if (Mas13.isVisible()) {
-                if (tfalt3 <= 0.0) {
-                    if (tfalt2 <= 0.0) {
-                        if (tfalt1 <= 0.0) {
-                            if (tfalt <= 0.0) {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
@@ -1777,131 +1787,135 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         double tpag5 = TPAGADO5 + Double.parseDouble(Importe15.getText());
         if (tfalt5 <= 0.0) {
             if (Mas14.isVisible()) {
-                if (tfalt4 <= 0.0) {
-                    if (tfalt3 <= 0.0) {
-                        if (tfalt2 <= 0.0) {
-                            if (tfalt1 <= 0.0) {
-                                if (tfalt <= 0.0) {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
@@ -1950,131 +1964,135 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         } else {
 
             if (Mas14.isVisible()) {
-                if (tfalt4 <= 0.0) {
-                    if (tfalt3 <= 0.0) {
-                        if (tfalt2 <= 0.0) {
-                            if (tfalt1 <= 0.0) {
-                                if (tfalt <= 0.0) {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
@@ -2142,162 +2160,166 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         double tpag6 = TPAGADO6 + Double.parseDouble(Importe16.getText());
         if (tfalt6 <= 0.0) {
             if (Mas15.isVisible()) {
-                if (tfalt5 <= 0.0) {
-                    if (tfalt4 <= 0.0) {
-                        if (tfalt3 <= 0.0) {
-                            if (tfalt2 <= 0.0) {
-                                if (tfalt1 <= 0.0) {
-                                    if (tfalt <= 0.0) {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                        }
-                                    } else {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    }
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt5 <= 0.0) {
 
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
@@ -2348,162 +2370,167 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         } else {
 
             if (Mas15.isVisible()) {
-                if (tfalt5 <= 0.0) {
-                    if (tfalt4 <= 0.0) {
-                        if (tfalt3 <= 0.0) {
-                            if (tfalt2 <= 0.0) {
-                                if (tfalt1 <= 0.0) {
-                                    if (tfalt <= 0.0) {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                        }
-                                    } else {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    }
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+
+                if (tfalt5 <= 0.0) {
 
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
@@ -2572,194 +2599,199 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         double tpag7 = TPAGADO7 + Double.parseDouble(Importe17.getText());
         if (tfalt7 <= 0.0) {
             if (Mas16.isVisible()) {
-                if (tfalt6 <= 0.0) {
-                    if (tfalt5 <= 0.0) {
-                        if (tfalt4 <= 0.0) {
-                            if (tfalt3 <= 0.0) {
-                                if (tfalt2 <= 0.0) {
-                                    if (tfalt1 <= 0.0) {
-                                        if (tfalt <= 0.0) {
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                    + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                            }
-                                        } else {
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                    + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        }
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    } else {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    }
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt5 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt6 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
@@ -2808,194 +2840,199 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         } else {
 
             if (Mas16.isVisible()) {
-                if (tfalt6 <= 0.0) {
-                    if (tfalt5 <= 0.0) {
-                        if (tfalt4 <= 0.0) {
-                            if (tfalt3 <= 0.0) {
-                                if (tfalt2 <= 0.0) {
-                                    if (tfalt1 <= 0.0) {
-                                        if (tfalt <= 0.0) {
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                    + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                            }
-                                        } else {
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                    + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        }
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    } else {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    }
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt5 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt6 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
@@ -3064,225 +3101,230 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         if (tfalt8 <= 0.0) {
 
             if (Mas17.isVisible()) {
-                if (tfalt7 <= 0.0) {
-                    if (tfalt6 <= 0.0) {
-                        if (tfalt5 <= 0.0) {
-                            if (tfalt4 <= 0.0) {
-                                if (tfalt3 <= 0.0) {
-                                    if (tfalt2 <= 0.0) {
-                                        if (tfalt1 <= 0.0) {
-                                            if (tfalt <= 0.0) {
-                                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                                try {
-                                                    PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                                    pst.executeUpdate();
-                                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                                } catch (SQLException error_semanal) {
-                                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                                }
-                                            } else {
-                                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                                try {
-                                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                    pst.executeUpdate();
-                                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                                } catch (SQLException error_semanal) {
-                                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                                }
-                                            }
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                    + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        } else {
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                    + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        }
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    } else {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    }
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt5 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt6 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt7 <= 0.0) {
 
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
@@ -3333,225 +3375,230 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         } else {
 
             if (Mas17.isVisible()) {
-                if (tfalt7 <= 0.0) {
-                    if (tfalt6 <= 0.0) {
-                        if (tfalt5 <= 0.0) {
-                            if (tfalt4 <= 0.0) {
-                                if (tfalt3 <= 0.0) {
-                                    if (tfalt2 <= 0.0) {
-                                        if (tfalt1 <= 0.0) {
-                                            if (tfalt <= 0.0) {
-                                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                                try {
-                                                    PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                                    pst.executeUpdate();
-                                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                                } catch (SQLException error_semanal) {
-                                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                                }
-                                            } else {
-                                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                        + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                        + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                                try {
-                                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                    pst.executeUpdate();
-                                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                                } catch (SQLException error_semanal) {
-                                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                                }
-                                            }
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                    + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        } else {
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                    + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        }
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    } else {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    }
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt5 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt6 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt7 <= 0.0) {
 
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
@@ -3623,291 +3670,294 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         double tpag9 = TPAGADO9 + Double.parseDouble(Importe19.getText());
         if (tfalt9 <= 0.0) {
             if (Menos17.isVisible()) {
-                if (tfalt8 <= 0.0) {
-                    if (tfalt7 <= 0.0) {
-                        if (tfalt6 <= 0.0) {
-                            if (tfalt5 <= 0.0) {
-                                if (tfalt4 <= 0.0) {
-                                    if (tfalt3 <= 0.0) {
-                                        if (tfalt2 <= 0.0) {
-                                            if (tfalt1 <= 0.0) {
-                                                if (tfalt <= 0.0) {
-                                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                                    try {
-                                                        PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                                        pst.executeUpdate();
-                                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                                    } catch (SQLException error_semanal) {
-                                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                                    }
-                                                } else {
-                                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                                    try {
-                                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                        pst.executeUpdate();
-                                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                                    } catch (SQLException error_semanal) {
-                                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                                    }
-                                                }
-                                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                                try {
-                                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                    pst.executeUpdate();
-                                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                                } catch (SQLException error_semanal) {
-                                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                                }
-                                            } else {
-                                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                                try {
-                                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                    pst.executeUpdate();
-                                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                                } catch (SQLException error_semanal) {
-                                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                                }
-                                            }
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                    + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        } else {
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                    + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        }
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    } else {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    }
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-                    }
-                    if (Mas17.isVisible()) {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag8 + "', `faltante` = '" + tfalt8 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha18.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron8.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
                 } else {
-                    if (Mas17.isVisible()) {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag8 + "', `faltante` = '" + tfalt8 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha18.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron8.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
 
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                        }
                     }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt5 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt6 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt7 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt8 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag8 + "', `faltante` = '" + tfalt8 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha18.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron8.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag8 + "', `faltante` = '" + tfalt8 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha18.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron8.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+
                 }
                 String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                         + " `Tpagado` = '" + tpag9 + "', `faltante` = '" + tfalt9 + "', "
@@ -3927,258 +3977,264 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         } else {
 
             if (Menos17.isVisible()) {
-                if (tfalt8 <= 0.0) {
-                    if (tfalt7 <= 0.0) {
-                        if (tfalt6 <= 0.0) {
-                            if (tfalt5 <= 0.0) {
-                                if (tfalt4 <= 0.0) {
-                                    if (tfalt3 <= 0.0) {
-                                        if (tfalt2 <= 0.0) {
-                                            if (tfalt1 <= 0.0) {
-                                                if (tfalt <= 0.0) {
-                                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                                    try {
-                                                        PreparedStatement pst = con.prepareStatement(SQL);
+                if (tfalt <= 0.0) {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
 
-                                                        pst.executeUpdate();
-                                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
 
-                                                    } catch (SQLException error_semanal) {
-                                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
 
-                                                    }
-                                                } else {
-                                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
-                                                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
-                                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
-                                                    try {
-                                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                        pst.executeUpdate();
-                                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                                    } catch (SQLException error_semanal) {
-                                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                                    }
-                                                }
-                                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                                try {
-                                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                    pst.executeUpdate();
-                                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                                } catch (SQLException error_semanal) {
-                                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                                }
-                                            } else {
-                                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                        + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
-                                                        + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
-                                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
-                                                try {
-                                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                    pst.executeUpdate();
-                                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                                } catch (SQLException error_semanal) {
-                                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                                }
-                                            }
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                    + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        } else {
-                                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                    + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
-                                                    + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
-                                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
-                                            try {
-                                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                                pst.executeUpdate();
-                                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                            } catch (SQLException error_semanal) {
-                                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                            }
-                                        }
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                                + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    } else {
-                                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                                + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
-                                                + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
-                                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
-                                        try {
-                                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                                            pst.executeUpdate();
-                                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                        } catch (SQLException error_semanal) {
-                                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                        }
-                                    }
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                } else {
-                                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
-                                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
-                                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
-                                    try {
-                                        PreparedStatement pst = con.prepareStatement(SQL);
-
-                                        pst.executeUpdate();
-                                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                    } catch (SQLException error_semanal) {
-                                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                    }
-                                }
-
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                        + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            } else {
-                                String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                        + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
-                                        + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
-                                        + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
-                                try {
-                                    PreparedStatement pst = con.prepareStatement(SQL);
-
-                                    pst.executeUpdate();
-                                    JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                                } catch (SQLException error_semanal) {
-                                    JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                                }
-                            }
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                    + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        } else {
-                            String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                    + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
-                                    + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
-                                    + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
-                            try {
-                                PreparedStatement pst = con.prepareStatement(SQL);
-
-                                pst.executeUpdate();
-                                JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                            } catch (SQLException error_semanal) {
-                                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                            }
-                        }
-
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
-                                + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
-
-                    } else {
-                        String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
-                                + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
-                                + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
-                                + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
-                        try {
-                            PreparedStatement pst = con.prepareStatement(SQL);
-
-                            pst.executeUpdate();
-                            JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
-
-                        } catch (SQLException error_semanal) {
-                            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
-
-                        }
                     }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag + "', `faltante` = '" + tfalt + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha10.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt1 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag1 + "', `faltante` = '" + tfalt1 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha11.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron1.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt2 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag2 + "', `faltante` = '" + tfalt2 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha12.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron2.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt3 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag3 + "', `faltante` = '" + tfalt3 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha13.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron3.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt4 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag4 + "', `faltante` = '" + tfalt4 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha14.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron4.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt5 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag5 + "', `faltante` = '" + tfalt5 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha15.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron5.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt6 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag6 + "', `faltante` = '" + tfalt6 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha16.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron6.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt7 <= 0.0) {
+
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
+                            + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+
+                } else {
+                    String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Debe',"
+                            + " `Tpagado` = '" + tpag7 + "', `faltante` = '" + tfalt7 + "', "
+                            + "`FdPago` = '" + ((JTextField) Fecha17.getDateEditor().getUiComponent()).getText() + "',"
+                            + " `metodo` = 'Efectivo', `cte` = '" + NDS.getText() + "' WHERE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "`.`#padron` LIKE '%" + NPadron7.getText() + "%'";
+                    try {
+                        PreparedStatement pst = con.prepareStatement(SQL);
+
+                        pst.executeUpdate();
+                        JOptionPane.showMessageDialog(null, "Datos de pensiones Actualizados");
+
+                    } catch (SQLException error_semanal) {
+                        JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+                    }
+                }
+                if (tfalt8 <= 0.0) {
+
                     String SQL = "UPDATE `pensiones.puente titla." + Mespen.getSelectedItem().toString() + "` SET `Status` = 'Pagado',"
                             + " `Tpagado` = '" + tpag8 + "', `faltante` = '" + tfalt8 + "', "
                             + "`FdPago` = '" + ((JTextField) Fecha18.getDateEditor().getUiComponent()).getText() + "',"

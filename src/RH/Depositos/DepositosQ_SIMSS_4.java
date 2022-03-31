@@ -7248,42 +7248,6 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             SQL = "SELECT `Dias descansados`, `Dias Laborados`, `Pago de dias descansados`, `Pago de dias laborados`, "
                     + " `Dias de vacaciones`, `Dias de incapacidad`, `Descanso sin goce de sueldo`, `Apoyo`, `Lugar`, `Pago de dias trabajados`, "
-                    + " `Pago de dias festivos`, `Pago de dias festivos trabajados`, `Rembolso`, `Adicionales`, `Pago de dias de vacaciones` "
-                    + "FROM `nomina.detallada." + Zon.getSelectedItem().toString() + ".simss`"
-                    + " WHERE `#lista` =" + NDL.getText() + "";
-
-            try {
-                PreparedStatement ps;
-                ResultSet rs;
-
-                ps = con.prepareStatement(SQL);
-                rs = ps.executeQuery();
-
-                while (rs.next()) {
-                    double DDMDL = Double.parseDouble(rs.getString(1)) + Double.parseDouble(rs.getString(2));
-                    DL.setText("" + DDMDL);
-                    double PDDMDL = Double.parseDouble(rs.getString(3)) + Double.parseDouble(rs.getString(4));
-                    sueldo.setText("" + PDDMDL);
-                    Ddv.setText(rs.getString(5));
-                    Dpi.setText(rs.getString(6));
-                    DSGS.setText(rs.getString(7));
-                    apy.setText(rs.getString(8));
-                    Lugar.setText(rs.getString(9));
-                    dt.setText(rs.getString(10));
-                    double PDFMDFT = Double.parseDouble(rs.getString(11)) + Double.parseDouble(rs.getString(12));
-                    PDDF.setText("" + PDFMDFT);
-                    Rembolso.setText(rs.getString(13));
-                    ADD.setText(rs.getString(14));
-                    PDDDV.setText(rs.getString(15));
-                }
-                ps.isClosed();
-                rs.isClosed();
-            } catch (SQLException error_sharenom) {
-                JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
-
-            }
-            SQL = "SELECT `Dias descansados`, `Dias Laborados`, `Pago de dias descansados`, `Pago de dias laborados`, "
-                    + " `Dias de vacaciones`, `Dias de incapacidad`, `Descanso sin goce de sueldo`, `Apoyo`, `Lugar`, `Pago de dias trabajados`, "
                     + " `Pago de dias festivos`, `Pago de dias festivos trabajados`, `Rembolso`, `Adicionales`, `Pago de dias de vacaciones`, "
                     + "`Dias festivos trabajados`, `Dias festivos` "
                     + "FROM `nomina.detallada." + Zon.getSelectedItem().toString() + ".simss`"
