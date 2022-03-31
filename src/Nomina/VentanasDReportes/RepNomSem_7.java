@@ -1,4 +1,4 @@
-package VentanasDReportes;
+package Nomina.VentanasDReportes;
 
 import Logicas.BDNomQ.Logica_bd_NomODTQ;
 import Filtros.FiltrosZonas;
@@ -7903,10 +7903,10 @@ public class RepNomSem_7 extends javax.swing.JFrame {
                     cell.setCellValue("Fecha de pago");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(30);
-                    cell.setCellValue("Horas extras");
+                    cell.setCellValue("Dias con retardos");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(31);
-                    cell.setCellValue("Total de horas extra");
+                    cell.setCellValue("pago con retardos");
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(32);
                     cell.setCellValue("Retencion infonavit");

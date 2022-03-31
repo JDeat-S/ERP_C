@@ -1,12 +1,13 @@
 package Nomina.ModulosQ;
 
+import Nomina.VentanasDReportes.RepNom_7;
+import Nomina.VentanasDReportes.RepNomSem_7;
 import RH.Depositos.DepositosQ_4;
 import Semanal.PT_4;
 import Semanal.Tehuantepec_4;
 import Semanal.Iturbide_4;
 import Logicas.BDNomQ.Logica_bd_pagosCDAQ;
 import Logicas.BDNomQ.Logica_bd_NomCDAQ;
-import VentanasDReportes.*;
 import Admin.*;
 import RH.*;
 import Conexion.ConexionSQL;

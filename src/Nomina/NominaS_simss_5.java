@@ -1,4 +1,5 @@
 package Nomina;
+
 import Nomina.Prenomina.*;
 
 import RH.Depositos.DepositosQ_4;
@@ -12,7 +13,7 @@ import Nomina.ModulosS.ODTS_5;
 import Nomina.ModulosQ.CDAQ_5;
 import Nomina.ModulosQ.ODTQ_5;
 import Nomina.ModulosQ.PresQ_5;
-import VentanasDReportes.RepNom_7;
+import Nomina.VentanasDReportes.RepNom_7;
 import Admin.*;
 import Conexion.ConexionSQL;
 import RH.*;
@@ -22,7 +23,7 @@ import Inicio.Inicio_1;
 import Logicas.Logica_permisos;
 import Logicas.Logica_usuarios;
 import Nomina.Listas.Semanales.*;
-import VentanasDReportes.RepNomSem_7;
+import Nomina.VentanasDReportes.RepNomSem_7;
 import java.awt.HeadlessException;
 import java.awt.event.ItemEvent;
 import java.awt.print.PrinterException;
@@ -6708,7 +6709,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
     }
 
-   public void shareODTnom() {
+    public void shareODTnom() {
         String SQL = "SELECT `idTaller`,"
                 + " `Por Semana`, `Semanas pagadas`, `Pagado`, `Pendiente` FROM `nominasem.odt`"
                 + "WHERE `Apellido P` LIKE '%" + Ap.getText() + "%' AND `Apellido M` LIKE '%" + am.getText()
@@ -7187,7 +7188,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         }
     }
 
-        public void sharepresnom() {
+    public void sharepresnom() {
 
         String SQL = "SELECT `idprestamos`,"
                 + " `Por semana`, `Semanaspagadas`, `Pagado`, `Pendiente` FROM `nominasem.prestamosem`"
@@ -7215,6 +7216,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
         }
 
     }
+
     public void eliminarnom() {
 
         try {
@@ -7279,7 +7281,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-           modelo.addColumn("# lista");//1
+            modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -7439,7 +7441,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-           modelo.addColumn("# lista");//1
+            modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -7760,7 +7762,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-           modelo.addColumn("# lista");//1
+            modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -8404,7 +8406,7 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
             int cantidadColumnas = rsMd.getColumnCount();
 
-           modelo.addColumn("# lista");//1
+            modelo.addColumn("# lista");//1
             modelo.addColumn("# Empleado");//1
             modelo.addColumn("Nombre(s)");//2
             modelo.addColumn("Apellido P");//3
@@ -9804,7 +9806,6 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
 
         }
     }
-
 
     public void deposito() {
         //por dia
@@ -14254,16 +14255,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom2.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom2.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom2.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom2.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom2.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom2.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tnom2.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom2.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom2.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom2.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom2.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom2.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom2.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom2.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom2.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom2.getValueAt(fila, 79)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
@@ -14358,16 +14359,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom3.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom3.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom3.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom3.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom3.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom3.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tnom3.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom3.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom3.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom3.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom3.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom3.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom3.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom3.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom3.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom3.getValueAt(fila, 79)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
@@ -14462,16 +14463,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom1.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom1.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom1.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom1.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom1.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom1.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tnom1.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom1.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom1.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom1.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom1.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom1.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom1.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom1.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom1.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom1.getValueAt(fila, 79)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
@@ -14566,16 +14567,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tnom.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom.getValueAt(fila, 79)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
@@ -14670,16 +14671,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom4.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom4.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom4.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom4.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom4.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom4.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tnom4.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom4.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom4.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom4.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom4.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom4.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom4.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom4.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom4.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom4.getValueAt(fila, 79)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
@@ -14774,16 +14775,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom5.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom5.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom5.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom5.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom5.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom5.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tnom5.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom5.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom5.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom5.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom5.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom5.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom5.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom5.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom5.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom5.getValueAt(fila, 79)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
@@ -14878,16 +14879,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom6.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom6.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom6.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom6.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom6.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom6.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tnom6.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom6.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom6.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom6.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom6.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom6.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom6.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom6.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom6.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom6.getValueAt(fila, 79)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
@@ -14982,17 +14983,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom7.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom7.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom7.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom7.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom7.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom7.getValueAt(fila, 39)));
-
+            HE.setText(String.valueOf(Tnom7.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom7.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom7.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom7.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom7.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom7.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom7.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom7.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom7.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom7.getValueAt(fila, 79)));
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -15086,16 +15086,16 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
             }
             Date date9 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 29));
             FDP.setDate(date9);
-            HE.setText(String.valueOf(Tnom8.getValueAt(fila, 30)));
-            THE.setText(String.valueOf(Tnom8.getValueAt(fila, 31)));
-            RI.setText(String.valueOf(Tnom8.getValueAt(fila, 32)));
-            ISR.setText(String.valueOf(Tnom.getValueAt(fila, 33)));
-            RF.setText(String.valueOf(Tnom8.getValueAt(fila, 34)));
-            ADN.setText(String.valueOf(Tnom8.getValueAt(fila, 35)));
-            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 36)));
-            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 37)));
-            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 38)));
-            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 39)));
+            HE.setText(String.valueOf(Tnom8.getValueAt(fila, 54)));
+            THE.setText(String.valueOf(Tnom8.getValueAt(fila, 55)));
+            RI.setText(String.valueOf(Tnom8.getValueAt(fila, 59)));
+            ISR.setText(String.valueOf(Tnom8.getValueAt(fila, 61)));
+            RF.setText(String.valueOf(Tnom8.getValueAt(fila, 60)));
+            ADN.setText(String.valueOf(Tnom8.getValueAt(fila, 76)));
+            Presp.setText(String.valueOf(Tnom8.getValueAt(fila, 62)));
+            Rembolso.setText(String.valueOf(Tnom8.getValueAt(fila, 51)));
+            deposito.setText(String.valueOf(Tnom8.getValueAt(fila, 78)));
+            obs.setText(String.valueOf(Tnom8.getValueAt(fila, 79)));
 
         } catch (ParseException ex) {
             Logger.getLogger(NominaS_simss_5.class
@@ -17091,33 +17091,33 @@ public final class NominaS_simss_5 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameKeyReleased
-       sharepresnom();
+        sharepresnom();
         sharecdanom();
         sharepresnom();
         shareODTnom();
         shareN();
         if (name.getText().isEmpty()) {
-                            NODTnom.setText("0");
-                Odtp.setText("0");
-                NSODTnom.setText("0");
-                PagODTnom.setText("0");
-                PenODTnom.setText("0");
-                NumPrenom.setText("0");
-                Presp.setText("0");
-                NSprenom.setText("0");
-                Pagadoprenom.setText("0");
-                Pendienteprenom.setText("0");
-                NCDANom.setText("0");
-                cda.setText("0");
-                QAcdanom.setText("0");
-                TACDANOM.setText("0");
-                NE.setText("0");
-                ban.setText("");
-                cta.setText("");
-                Zon.setText("");
-                ServN.setText("");
-                sueldo.setText("0");
-                Bono1.setText("0");
+            NODTnom.setText("0");
+            Odtp.setText("0");
+            NSODTnom.setText("0");
+            PagODTnom.setText("0");
+            PenODTnom.setText("0");
+            NumPrenom.setText("0");
+            Presp.setText("0");
+            NSprenom.setText("0");
+            Pagadoprenom.setText("0");
+            Pendienteprenom.setText("0");
+            NCDANom.setText("0");
+            cda.setText("0");
+            QAcdanom.setText("0");
+            TACDANOM.setText("0");
+            NE.setText("0");
+            ban.setText("");
+            cta.setText("");
+            Zon.setText("");
+            ServN.setText("");
+            sueldo.setText("0");
+            Bono1.setText("0");
         }
     }//GEN-LAST:event_nameKeyReleased
 

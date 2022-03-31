@@ -414,7 +414,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
                     cell.setCellValue(rs.getString(45));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(45);
-                    cell.setCellValue(rs.getDouble(46));
+                    cell.setCellValue(rs.getString(46));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(46);
                     cell.setCellValue(rs.getDouble(47));
@@ -691,7 +691,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
         if (CbxMes.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Selecciona tipo de reporte");
         }
-        if (CbxMes.getSelectedIndex() == 1) {
+        if (CbxMes.getSelectedIndex() >= 1) {
             Reporte2();
         }
     }//GEN-LAST:event_btnExcelMousePressed
@@ -711,7 +711,7 @@ public class PMtehuantepec extends javax.swing.JFrame {
         if (CbxMes.getSelectedIndex() == 0) {
             btnExcel.setVisible(false);
         }
-        if (CbxMes.getSelectedIndex() == 1) {
+        if (CbxMes.getSelectedIndex() >= 1) {
             btnExcel.setVisible(true);
         }
 

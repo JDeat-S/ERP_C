@@ -1,4 +1,4 @@
-package VentanasDReportes;
+package Nomina.VentanasDReportes;
 
 import Logicas.BDNomQ.Logica_bd_NomODTQ;
 import Filtros.FiltrosZonas;
