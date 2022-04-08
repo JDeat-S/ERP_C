@@ -1,3 +1,5 @@
+Creador del programa Jhovan Alexandro Gallardo Torres
+
 A partir de 05/09/2021 se subiran las actualizaciones al buscar actualizaciones dentro del programa.
 
 

@@ -1725,12 +1725,12 @@ public final class DepositosS_4 extends javax.swing.JFrame {
 
     //Calculo de deposito
     public void deposito() {
-        
+
         double Pagoreal = (Double.parseDouble(PDDDDSGS.getText())
                 + Double.parseDouble(Bono.getText()) + Double.parseDouble(Rembolso.getText())
                 + Double.parseDouble(ADD.getText())
                 + Double.parseDouble(apy.getText())
-                + Double.parseDouble(PCR.getText())
+                + Double.parseDouble(PCR.getText()) + Double.parseDouble(dt.getText())
                 + Double.parseDouble(PDDF.getText())
                 + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(sueldo.getText())
                 + Double.parseDouble(Dobletes.getText()));
@@ -7356,7 +7356,7 @@ public final class DepositosS_4 extends javax.swing.JFrame {
             SQL = "SELECT `Dias descansados`, `Dias Laborados`, `Pago de dias descansados`, `Pago de dias laborados`, "
                     + " `Dias de vacaciones`, `Dias de incapacidad`, `Dias de DSGS`, `Apoyo`, `Lugar`, `Pago de Descansos trabajados`, "
                     + " `Pago de dias festivos`, `Pago de dias festivos trabajados`, `Rembolso`, `Adicionales`, `Pago de dias de vacaciones`, "
-                    + "`Dias festivos trabajados`, `Dias festivos` "
+                    + "`Dias festivos trabajados`, `Dias festivos`, `Descansos Trabajados`"
                     + "FROM `nominasem.detallada." + Zon.getSelectedItem().toString() + "`"
                     + " WHERE `#lista` =" + NDL.getText() + "";
 
@@ -7368,18 +7368,45 @@ public final class DepositosS_4 extends javax.swing.JFrame {
                 rs = ps.executeQuery();
 
                 while (rs.next()) {
-                    double DDMDL = (Double.parseDouble(rs.getString(1)) + Double.parseDouble(rs.getString(2)) + (Double.parseDouble(rs.getString(16)) + Double.parseDouble(rs.getString(17))));
+                    double DDMDL = (Double.parseDouble(rs.getString(1)) + Double.parseDouble(rs.getString(2)) + (Double.parseDouble(rs.getString(16))
+                            + Double.parseDouble(rs.getString(17))) + Double.parseDouble(rs.getString(18)));
                     DL.setText("" + DDMDL);
-                    double PDDMDL = Double.parseDouble(rs.getString(3)) + Double.parseDouble(rs.getString(4));
+                    double DIVDT;
+
+                    if (Double.parseDouble(rs.getString(10)) == 0) {
+                        DIVDT = 0;
+                    } else {
+                        DIVDT = (((Double.parseDouble(rs.getString(10)) / Double.parseDouble(rs.getString(18))) / 2) * Double.parseDouble(rs.getString(18)));
+
+                    }
+                    double DIVDFT;
+
+                    if (Double.parseDouble(rs.getString(12)) == 0) {
+                        DIVDFT = 0;
+
+                    } else {
+                        DIVDFT = (((Double.parseDouble(rs.getString(12)) / Double.parseDouble(rs.getString(16))) / 3) * Double.parseDouble(rs.getString(16)));
+
+                    }
+                    double PDDMDL = (Double.parseDouble(rs.getString(3)) + Double.parseDouble(rs.getString(4)) + DIVDT + DIVDFT + Double.parseDouble(rs.getString(11)));
                     sueldo.setText("" + PDDMDL);
                     Ddv.setText(rs.getString(5));
                     Dpi.setText(rs.getString(6));
                     DSGS.setText(rs.getString(7));
                     apy.setText(rs.getString(8));
                     Lugar.setText(rs.getString(9));
-                    dt.setText(rs.getString(10));
-                    double PDFMDFT = Double.parseDouble(rs.getString(11)) + Double.parseDouble(rs.getString(12));
-                    PDDF.setText("" + PDFMDFT);
+                    if (Double.parseDouble(rs.getString(10)) == 0) {
+                        dt.setText("0");
+
+                    } else {
+                        dt.setText("" + (((Double.parseDouble(rs.getString(10)) / Double.parseDouble(rs.getString(18))) / 2) * Double.parseDouble(rs.getString(18))));
+                    }
+                    if (Double.parseDouble(rs.getString(12)) == 0) {
+                        PDDF.setText("0");
+                    } else {
+                        double PDFMDFT = (((Double.parseDouble(rs.getString(12)) / Double.parseDouble(rs.getString(16))) / 3) * (Double.parseDouble(rs.getString(16)) * 2));
+                        PDDF.setText("" + PDFMDFT);
+                    }
                     Rembolso.setText(rs.getString(13));
                     ADD.setText(rs.getString(14));
                     PDDDV.setText(rs.getString(15));
@@ -7407,8 +7434,8 @@ public final class DepositosS_4 extends javax.swing.JFrame {
                     Fdb.setText(rs.getString(1));
                     Sancion.setText(rs.getString(2));
                     Chamarra.setText(rs.getString(3));
-                    Fde.setText(rs.getString(5));
-                    Grua.setText(rs.getString(6));
+                    Fde.setText(rs.getString(4));
+                    Grua.setText(rs.getString(5));
                     Pantalon.setText(rs.getString(6));
                     Credencial.setText(rs.getString(7));
                     Bp.setText(rs.getString(8));

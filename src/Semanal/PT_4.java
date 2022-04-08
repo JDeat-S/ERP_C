@@ -4323,7 +4323,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Operaciones2() {
         int fila = TSem.getSelectedRow();
-        SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
+       
         TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 5)));
         TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 6)));
         DE.setText(String.valueOf(TSem.getValueAt(fila, 7)));
