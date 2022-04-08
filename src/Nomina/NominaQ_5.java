@@ -2524,13 +2524,13 @@ public final class NominaQ_5 extends javax.swing.JFrame {
 //Modificar nomina
     public void MODN() {
 
-        String SQL = "UPDATE `nomina.detallada." + Zon.getText() + "` SET `#lista` = ?, `#empleado` = ?,"
-                + " `Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Banco` = ?, "
+        String SQL = "UPDATE `nomina.detallada." + Zon.getText() + "` SET `#lista` = ?, `#empleado` = ?, "
+                + "`Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Banco` = ?, "
                 + "`Cuenta de banco` = ?, `Zona` = ?, `Servicio` = ?, `Sueldo` = ?, "
                 + "`Bono` = ?, `por dia` = ?, `por hora` = ?, `quincena del mes` = ?,"
                 + " `año` = ?, `1/16` = ?, `2/17` = ?, `3/18` = ?, `4/19` = ?, `5/20` = ?, "
-                + "`6/21` = ?, `7/22` = ?, `8/23` = ?, `9/24` = ?, `10/25` = ?, `11/26` = ?,"
-                + " `12/27` = ?, `13/28` = ?, `14/29` = ?, `15/30` = ?, `31` = ?, "
+                + "`6/21` = ?, `7/22` = ?, `8/23` = ?, `9/24` = ?, `10/25` = ?, `11/26` = ?, "
+                + "`12/27` = ?, `13/28` = ?, `14/29` = ?, `15/30` = ?, `31` = ?, "
                 + "`Dias de incapacidad` = ?, `Pago de seguro` = ?, `Dias de vacaciones` = ?, "
                 + "`Pago de dias de vacaciones` = ?, `Dias descansados` = ?, `Pago de dias descansados` = ?, "
                 + "`Dias Laborados` = ?, `Pago de dias laborados` = ?, `Descansos Trabajados` = ?,"

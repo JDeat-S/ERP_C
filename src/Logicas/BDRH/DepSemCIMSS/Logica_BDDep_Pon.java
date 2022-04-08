@@ -100,7 +100,7 @@ public class Logica_BDDep_Pon {
                                 5 //last column (0-based)
                         )
                 );
-row = spreadsheet.createRow(1);
+                row = spreadsheet.createRow(1);
                 cell = row.createCell(0);
                 cell.setCellValue("# Folio");
                 cell.setCellStyle(Contenido);
@@ -146,17 +146,17 @@ row = spreadsheet.createRow(1);
                 cell = row.createCell(14);
                 cell.setCellValue("Apoyo");
                 cell.setCellStyle(Contenido);
-                cell = row.createCell(15);
-                cell.setCellValue("Adicionales");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(16);
+               cell = row.createCell(15);
                 cell.setCellValue("Lugar");
                 cell.setCellStyle(Contenido);
-                cell = row.createCell(17);
+                cell = row.createCell(16);
                 cell.setCellValue("Descanso trabajado");
                 cell.setCellStyle(Contenido);
-                cell = row.createCell(18);
+                cell = row.createCell(17);
                 cell.setCellValue("Doblete");
+                cell.setCellStyle(Contenido);
+                cell = row.createCell(18);
+                cell.setCellValue("Festivo");
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(19);
                 cell.setCellValue("Rembolso");
@@ -406,7 +406,7 @@ row = spreadsheet.createRow(1);
                     cell = row.createCell(49);
                     cell.setCellValue(resultSetDep.getString(50));
                     cell.setCellStyle(Contenido);
-                  
+
                     i++;
                 }
 

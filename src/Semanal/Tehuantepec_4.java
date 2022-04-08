@@ -4632,7 +4632,7 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
 
     public void Operaciones2() {
         int fila = TSem.getSelectedRow();
-        SemSl.setText(String.valueOf(TSem.getValueAt(fila, 0)));
+        
         TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 5)));
         TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 6)));
         DE.setText(String.valueOf(TSem.getValueAt(fila, 7)));
@@ -11581,11 +11581,11 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
                         .addComponent(NPadron10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel69)
-                        .addComponent(Mespen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Mespen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton9))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -14844,28 +14844,33 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     }//GEN-LAST:event_Importe41KeyTyped
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        MODSemanal();
-        String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
-        try {
-            PreparedStatement pst = con.prepareStatement(SQL);
-            pst.setInt(1, Integer.parseInt(SemSl.getText()));
-            pst.setString(2, DateFormat.getDateInstance().format(Fecha41.getDate()));
-            pst.setString(3, Servicio21.getText());
-            pst.setString(4, NPadron10.getText());
-            pst.setString(5, Importe41.getText());
-            pst.setString(6, TDIDP.getText());
+        if (NPadron10.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No puedes dejar # Padron en blanco");
 
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
-            Servicio21.setText("");
-            NPadron10.setText("");
-            Importe41.setText("0");
+        } else {
+            MODSemanal();
+            String SQL = "INSERT INTO `rh.semanal.tehuantepec.pen` (`Semanal`, `Fecha`, `Servicio`, `# de padron`, `Importe`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+            try {
+                PreparedStatement pst = con.prepareStatement(SQL);
+                pst.setInt(1, Integer.parseInt(SemSl.getText()));
+                pst.setString(2, DateFormat.getDateInstance().format(Fecha41.getDate()));
+                pst.setString(3, Servicio21.getText());
+                pst.setString(4, NPadron10.getText());
+                pst.setString(5, Importe41.getText());
+                pst.setString(6, TDIDP.getText());
 
-        } catch (SQLException error_semanal) {
-            JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Datos de pensiones agregados");
+                Servicio21.setText("");
+                NPadron10.setText("");
+                Importe41.setText("0");
 
+            } catch (SQLException error_semanal) {
+                JOptionPane.showMessageDialog(null, "Error al agregar datos de pensiones: " + error_semanal);
+
+            }
+            MDsem();
         }
-        MDsem();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -14902,30 +14907,27 @@ public final class Tehuantepec_4 extends javax.swing.JFrame implements Runnable 
     }//GEN-LAST:event_Importe42KeyTyped
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (NPadron10.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "No puedes dejar # Padron en blanco");
 
-        } else {
-            MODSemanal();
-            String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
-            try {
-                PreparedStatement pst = con.prepareStatement(SQL);
-                pst.setInt(1, Integer.parseInt(SemSl.getText()));
-                pst.setString(2, DateFormat.getDateInstance().format(Fecha42.getDate()));
-                pst.setString(3, Concepto10.getText());
-                pst.setString(4, Importe42.getText());
-                pst.setString(5, LDA12.getText());
-                pst.setString(6, TDG.getText());
+        MODSemanal();
+        String SQL = " INSERT INTO `rh.semanal.tehuantepec.gast` ( `Semanal`, `Fecha`, `Concepto`, `Importe`, `#Lista`, `Total`) VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement pst = con.prepareStatement(SQL);
+            pst.setInt(1, Integer.parseInt(SemSl.getText()));
+            pst.setString(2, DateFormat.getDateInstance().format(Fecha42.getDate()));
+            pst.setString(3, Concepto10.getText());
+            pst.setString(4, Importe42.getText());
+            pst.setString(5, LDA12.getText());
+            pst.setString(6, TDG.getText());
 
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos de gastos agregados.");
 
-            } catch (SQLException error_semanal) {
-                JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
+        } catch (SQLException error_semanal) {
+            JOptionPane.showMessageDialog(null, "Error al agregar datos de gastos agregados.: " + error_semanal);
 
-            }
-            MDsem();
         }
+        MDsem();
+
 
     }//GEN-LAST:event_jButton6ActionPerformed
 
