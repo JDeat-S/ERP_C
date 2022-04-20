@@ -439,6 +439,24 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Seguridad."/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Imagenes/IcoCDU.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Cambiar de usuario"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
       </SubComponents>
     </Menu>
   </NonVisualComponents>
@@ -2217,7 +2235,6 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                                                   <Component id="jLabel161" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FiltrosP1" min="-2" max="-2" attributes="0"/>
@@ -2250,7 +2267,7 @@
                                               </Group>
                                               <Component id="CS15" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="7114" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="7194" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -2521,7 +2538,6 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                                                   <Component id="jLabel176" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FiltrosP2" min="-2" max="-2" attributes="0"/>
@@ -2554,7 +2570,7 @@
                                               </Group>
                                               <Component id="CS16" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="7114" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="7194" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -2816,7 +2832,6 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                                           <Component id="jLabel177" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="FiltrosP3" min="-2" max="-2" attributes="0"/>
@@ -3115,7 +3130,6 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                                                   <Component id="jLabel178" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FiltrosP4" min="-2" max="-2" attributes="0"/>
@@ -3148,7 +3162,7 @@
                                               </Group>
                                               <Component id="CS18" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="7114" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="7194" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3412,7 +3426,6 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                                                   <Component id="jLabel179" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FiltrosP5" min="-2" max="-2" attributes="0"/>
@@ -3445,7 +3458,7 @@
                                               </Group>
                                               <Component id="CS19" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="7114" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="7194" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3713,7 +3726,6 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                                                   <Component id="jLabel180" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="FiltrosP6" min="-2" max="-2" attributes="0"/>
@@ -3746,7 +3758,7 @@
                                               </Group>
                                               <Component id="CS20" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="7114" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="7194" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>

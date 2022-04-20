@@ -2,12 +2,9 @@ package RH.Expedientes;
 
 import Conexion.ConexionSQL;
 import Logicas.*;
-import ZyS.Servicios;
-import ZyS.Zonas;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.HeadlessException;
-import java.awt.event.ItemEvent;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,11 +15,13 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -52,9 +51,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     public Expedientes_4() {
         initComponents();
         this.setLocationRelativeTo(null);
-        Zonas zz = new Zonas();
-        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
-        zona.setModel(modelzonas);
+        ndr.setVisible(false);
         MDMov();
     }
 
@@ -63,9 +60,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         this.usr = usr;
         this.LP = LP;
         this.dat = dat;
-        Zonas zz = new Zonas();
-        DefaultComboBoxModel modelzonas = new DefaultComboBoxModel(zz.mostrarzonas());
-        zona.setModel(modelzonas);
         this.setLocationRelativeTo(null);
         NExp.setText(this.dat.getNE());
         APgen.setText(this.dat.getApellidoP());
@@ -75,13 +69,18 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         RFC.setText(this.dat.getRFC());
         NSS.setText(this.dat.getNSS());
         FDI.setText(this.dat.getFechaDI());
+        NDC.setText(this.dat.getNDCrendial());
+        ndr.setVisible(false);
         switch (LP.getVDA()) {
             case 0 -> {
                 Mod.setVisible(true);
                 Del.setVisible(true);
             }
             case 1 -> {
-                Mod.setVisible(false);
+
+                if (LP.getP8() == 0) {
+                    Mod.setEnabled(false);
+                }
                 Del.setVisible(false);
             }
             case 2 -> {
@@ -95,7 +94,8 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     }
 
     public void MDMov() {
-        String where = "SELECT `#Movimiento`, `tipo de movimiento`, `Fecha inicio`, `Observaciones1`, `Observaciones2` From `rh.empleados.movimientos` where `Apellido P` LIKE '%" + dat.getApellidoP() + "%' AND `Apellido M` LIKE '%" + dat.getApellidoM() + "%'"
+        String where = "SELECT `#Movimiento`, `tipo de movimiento`, `Fecha inicio`, `Observaciones1`, `Observaciones2`, `fecha de registro`, "
+                + "`registrado por` From `rh.empleados.movimientos` where `Apellido P` LIKE '%" + dat.getApellidoP() + "%' AND `Apellido M` LIKE '%" + dat.getApellidoM() + "%'"
                 + "AND `Nombre(s)` LIKE '%" + dat.getName() + "%'";
 
         try {
@@ -121,33 +121,10 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             modelo.addColumn("# Movimiento");
             modelo.addColumn("Tipo de Movimiento");
             modelo.addColumn("Fecha inicio");//3
-            /*modelo.addColumn("# Empleado");
-            modelo.addColumn("Fecha de ingreso");
-            modelo.addColumn("Apellido P");
-            modelo.addColumn("Apellido M");//6
-            modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");//9
-            modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//12
-            modelo.addColumn("Aguinaldo");
-            modelo.addColumn("PTU");
-            modelo.addColumn("Observaciones PTU");
-            modelo.addColumn("Vacaciones");//18
-            modelo.addColumn("inicio vacaciones");
-            modelo.addColumn("Fin vacaciones");
-            modelo.addColumn("observacinses de vacaciones");//21
-            modelo.addColumn("re-ingreso");
-            modelo.addColumn("Baja");
-            modelo.addColumn("Tipo de baja");//24
-            modelo.addColumn("Acta administrativa");
-            modelo.addColumn("Fecha alta IMSS");//3
-            modelo.addColumn("Uniforme");//3
-            modelo.addColumn("Acuse");//3
-             */ modelo.addColumn("Obsevaciones 1");//3
+            modelo.addColumn("Obsevaciones 1");//3
             modelo.addColumn("Observaciones 2");//3
-            //modelo.addColumn("Fecha de registro");//3
-            //modelo.addColumn("registrado por");//3
+            modelo.addColumn("Fecha de registro");
+            modelo.addColumn("registrado por");
 
 //Anchos
             int[] anchos = {/*numR*/35,/*numE*/ 35, /*AP*/ 50, /*AM*/ 50, /*NAME*/ 50,/*Fecha baja*/ 50,
@@ -191,53 +168,20 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         APgen = new javax.swing.JTextField();
         AMgen = new javax.swing.JTextField();
         NameGen = new javax.swing.JTextField();
-        Sueldo = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        Bono = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        Serv = new javax.swing.JComboBox<>();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        zona = new javax.swing.JComboBox<>();
-        jLabel66 = new javax.swing.JLabel();
-        FI = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        Aguinaldo = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        Vacaciones = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        PeriodoIni = new com.toedter.calendar.JDateChooser();
-        jLabel11 = new javax.swing.JLabel();
-        PeriodoFin = new com.toedter.calendar.JDateChooser();
-        jLabel16 = new javax.swing.JLabel();
-        PTU = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        Actadm = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         FBaja = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        TDB = new javax.swing.JComboBox<>();
         ADDreg = new javax.swing.JButton();
-        jLabel22 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        Obs = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
         FechaDI = new com.toedter.calendar.JDateChooser();
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         Tmov = new javax.swing.JTable();
-        jLabel24 = new javax.swing.JLabel();
-        FDAIMSS = new javax.swing.JTextField();
         Mod = new javax.swing.JButton();
         Del = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         FDI = new javax.swing.JTextField();
-        jLabel27 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        OBSPTU = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         NSS = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -251,13 +195,12 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         OBSGEN1 = new javax.swing.JTextArea();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         OBSGEN2 = new javax.swing.JTextArea();
-        Uniforme = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        Acuse = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        NDC = new javax.swing.JTextField();
+        ndr = new javax.swing.JTextField();
         btnexit = new javax.swing.JPanel();
         txtbtnexit = new javax.swing.JLabel();
         Harder1 = new javax.swing.JPanel();
@@ -279,7 +222,7 @@ public final class Expedientes_4 extends javax.swing.JFrame {
 
         jLabel1.setText("Tipo de movimiento:");
 
-        TDM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Fecha de ingreso", "Alta imss", "Baja", "Reingreso", "Cambio de salario", "Cambio de zona y/o Servicio", "Aguinaldo", "Vacaciones", "PTU", "Acta administrativa", "Uniforme" }));
+        TDM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Fecha de ingreso", "Alta imss", "Baja", "Reingreso", "Cambio de salario", "Cambio de zona y/o Servicio", "Aguinaldo", "Vacaciones", "PTU", "Acta administrativa", "Uniforme", "Acuse", "Bono especial" }));
         TDM.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 TDMItemStateChanged(evt);
@@ -296,69 +239,9 @@ public final class Expedientes_4 extends javax.swing.JFrame {
 
         NameGen.setEnabled(false);
 
-        Sueldo.setText("0");
-        Sueldo.setEnabled(false);
-
-        jLabel12.setText("Sueldo");
-
-        Bono.setText("0");
-        Bono.setEnabled(false);
-
-        jLabel13.setText("Bono");
-
-        Serv.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
-        Serv.setEnabled(false);
-
-        jLabel14.setText("Zona");
-
-        jLabel15.setText("Servicio");
-
-        zona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "." }));
-        zona.setEnabled(false);
-        zona.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                zonaItemStateChanged(evt);
-            }
-        });
-
-        jLabel66.setText("Fecha re-ingreso:");
-
-        FI.setEnabled(false);
-
-        jLabel2.setText("Vacaciones:");
-
-        Aguinaldo.setEnabled(false);
-
-        jLabel8.setText("Aguinaldo:");
-
-        Vacaciones.setEnabled(false);
-
-        jLabel9.setText("Periodo:");
-
-        jLabel10.setText("Inicio:");
-
-        PeriodoIni.setEnabled(false);
-
-        jLabel11.setText("Fin:");
-
-        PeriodoFin.setEnabled(false);
-
-        jLabel16.setText("PTU:");
-
-        PTU.setEnabled(false);
-
-        jLabel18.setText("Acta administrativa:");
-
-        Actadm.setEnabled(false);
-
         jLabel21.setText("Fecha de baja:");
 
         FBaja.setEnabled(false);
-
-        jLabel19.setText("Tipo de baja:");
-
-        TDB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "BAJA", "BOLETINADO" }));
-        TDB.setEnabled(false);
 
         ADDreg.setText("Agregar registro");
         ADDreg.setEnabled(false);
@@ -367,13 +250,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 ADDregActionPerformed(evt);
             }
         });
-
-        jLabel22.setText("Observaciones:");
-
-        Obs.setColumns(20);
-        Obs.setRows(5);
-        Obs.setEnabled(false);
-        jScrollPane5.setViewportView(Obs);
 
         jLabel23.setText("Fecha inicio");
 
@@ -388,6 +264,11 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tmov.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TmovMouseClicked(evt);
+            }
+        });
         jScrollPane7.setViewportView(Tmov);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -408,10 +289,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         );
 
         jScrollPane6.setViewportView(jPanel1);
-
-        jLabel24.setText("Fecha de alta IMSS:");
-
-        FDAIMSS.setEnabled(false);
 
         Mod.setText("Modificar");
         Mod.addActionListener(new java.awt.event.ActionListener() {
@@ -438,13 +315,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         jLabel26.setText("Fecha de ingreso");
 
         FDI.setEnabled(false);
-
-        jLabel27.setText("Observacioenes");
-
-        OBSPTU.setColumns(20);
-        OBSPTU.setRows(5);
-        OBSPTU.setEnabled(false);
-        jScrollPane4.setViewportView(OBSPTU);
 
         jLabel3.setText("NSS:");
 
@@ -473,20 +343,19 @@ public final class Expedientes_4 extends javax.swing.JFrame {
 
         jLabel29.setText("Observaciones 2:");
 
-        jLabel30.setText("Uniforme:");
-
         OBSGEN2.setColumns(20);
         OBSGEN2.setLineWrap(true);
         OBSGEN2.setRows(5);
         jScrollPane8.setViewportView(OBSGEN2);
 
-        Uniforme.setEnabled(false);
-
-        jLabel31.setText("Acuse");
-
-        Acuse.setEnabled(false);
-
         jLabel32.setText("Todas las fechas escritas deben ir con el siguiente formato de fecha: dd/MM/yyyy (01/11/2021)");
+
+        jLabel2.setText("# Credencial:");
+
+        NDC.setEnabled(false);
+
+        ndr.setEditable(false);
+        ndr.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -510,19 +379,6 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel32))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel4)
-                        .addGap(6, 6, 6)
-                        .addComponent(RFC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel7)
-                        .addGap(6, 6, 6)
-                        .addComponent(NExp, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel5)
-                        .addGap(6, 6, 6)
-                        .addComponent(CURP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(APgen, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
@@ -538,157 +394,94 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                         .addComponent(jLabel20))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel66))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addComponent(jLabel12)))
-                        .addGap(9, 9, 9)
+                            .addComponent(jLabel28))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
                                 .addComponent(TDM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel23)
                                 .addGap(4, 4, 4)
                                 .addComponent(FechaDI, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(FI, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(5, 5, 5)
-                                .addComponent(jLabel24)
-                                .addGap(2, 2, 2)
-                                .addComponent(FDAIMSS, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel19)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(70, 70, 70)
-                                        .addComponent(TDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel28)
-                        .addGap(4, 4, 4)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel29)
-                        .addGap(4, 4, 4)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel13)
-                        .addGap(11, 11, 11)
-                        .addComponent(Bono, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel8)
-                        .addGap(2, 2, 2)
-                        .addComponent(Aguinaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel9))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel14)
-                        .addGap(12, 12, 12)
-                        .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addGap(3, 3, 3)
-                        .addComponent(Vacaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PeriodoIni, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PeriodoFin, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1227, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel15))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(jLabel27))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jLabel16)))
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(138, 138, 138)
-                                        .addComponent(jLabel22)
-                                        .addGap(4, 4, 4)
-                                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel18)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Actadm, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel30)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Uniforme, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel31))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(PTU, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
+                                .addGap(683, 683, 683)
                                 .addComponent(ADDreg)
                                 .addGap(10, 10, 10)
                                 .addComponent(Mod)
                                 .addGap(9, 9, 9)
-                                .addComponent(Del)
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel25))
+                                .addComponent(Del))
                             .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel4)
+                                .addGap(6, 6, 6)
+                                .addComponent(RFC, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel7)
+                                .addGap(6, 6, 6)
+                                .addComponent(NExp, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel5)
+                                .addGap(6, 6, 6)
+                                .addComponent(CURP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Acuse, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 1227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NDC, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ndr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25))))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FDI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(FBaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel32))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
+                        .addGap(6, 6, 6)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel21))))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RFC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NExp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CURP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FDI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(FBaja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel32))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel21))))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RFC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NExp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(CURP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2)
+                                .addComponent(NDC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel5)))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5))))
+                        .addContainerGap()
+                        .addComponent(ndr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(APgen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -703,10 +496,14 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel1)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel28)
+                        .addGap(117, 117, 117)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ADDreg)
+                            .addComponent(Mod)
+                            .addComponent(Del)
+                            .addComponent(jLabel25)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -715,104 +512,11 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(TDM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(FechaDI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FDAIMSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel19))
-                            .addComponent(TDB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel28))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel29))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel13))
-                    .addComponent(Bono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Aguinaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel9)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(zona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Vacaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(PeriodoIni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(PeriodoFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Actadm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Acuse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Uniforme, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel22)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(PTU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel16)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel15)
-                                    .addComponent(Serv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ADDreg)
-                            .addComponent(Mod)
-                            .addComponent(Del)
-                            .addComponent(jLabel25))))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -970,8 +674,8 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     "Confort1022"
             );
             Statement RHstatement = connect.createStatement();
-            ResultSet RSEXP = RHstatement.executeQuery("SELECT `tipo de movimiento`, `Fecha inicio`,`Observaciones1`, `Observaciones2`"
-                    + " From `rh.empleados.movimientos` where `Apellido P` LIKE '%" + dat.getApellidoP() + "%' AND `Apellido M` LIKE '%" + dat.getApellidoM() + "%'"
+            ResultSet RSEXP = RHstatement.executeQuery("SELECT `tipo de movimiento`, `Fecha inicio`,`Observaciones1`, `Observaciones2`, `fecha de registro`, "
+                    + "`registrado por` From `rh.empleados.movimientos` where `Apellido P` LIKE '%" + dat.getApellidoP() + "%' AND `Apellido M` LIKE '%" + dat.getApellidoM() + "%'"
                     + "AND `Nombre(s)` LIKE '%" + dat.getName() + "%'");
             try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
@@ -1019,87 +723,13 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                 cell.setCellValue(APgen.getText() + " " + AMgen.getText() + " " + NameGen.getText());
                 cell.setCellStyle(Contenido);
                 cell = row.createCell(4);
-                cell.setCellValue("Fecha de ingreso");
+                cell.setCellValue("Fecha de ingreso: " + FDI.getText());
                 cell.setCellStyle(Contenido);
                 row = spreadsheet.createRow(2);
                 cell = row.createCell(4);
-                cell.setCellValue("No. de credencial");
+                cell.setCellValue("No. de credencial: " + NDC.getText());
                 cell.setCellStyle(Contenido);
-                /* cell = row.createCell(4);
-                cell.setCellValue("Apellido P");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(5);
-                cell.setCellValue("Apellido M");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(6);
-                cell.setCellValue("Nombre(s)");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(7);
-                cell.setCellValue("Sueldo");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(8);
-                cell.setCellValue("Bono");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(9);
-                cell.setCellValue("Fecha aplicado");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(10);
-                cell.setCellValue("Zona");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(11);
-                cell.setCellValue("Servicio");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(12);
-                cell.setCellValue("Fecha cambio");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(13);
-                cell.setCellValue("Aguinaldo");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(14);
-                cell.setCellValue("Fecha de pago");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(15);
-                cell.setCellValue("PTU");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(16);
-                cell.setCellValue("Fecha PTU");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(17);
-                cell.setCellValue("Vacaciones");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(18);
-                cell.setCellValue("Inicio");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(19);
-                cell.setCellValue("Fin");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(20);
-                cell.setCellValue("Observaciones");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(21);
-                cell.setCellValue("Reingreso");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(22);
-                cell.setCellValue("Baja");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(23);
-                cell.setCellValue("Tipo de baja");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(24);
-                cell.setCellValue("Acta adminitrativa");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(25);
-                cell.setCellValue("Fecha de acta");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(26);
-                cell.setCellValue("Fecha alta imss");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(27);
-                cell.setCellValue("Fecha de registro");
-                cell.setCellStyle(Contenido);
-                cell = row.createCell(28);
-                cell.setCellValue("Registrado por:");
-                cell.setCellStyle(Contenido);*/
+
                 int i = 4;
 
                 while (RSEXP.next()) {
@@ -1116,6 +746,15 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     cell = row.createCell(3);
                     cell.setCellValue("Observaciones 2");
                     cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(4);
+                    cell.setCellValue("Registrado por:");
+                    cell.setCellStyle(Contenido);
+
+                    cell = row.createCell(5);
+                    cell.setCellValue("Fecha de registro");
+                    cell.setCellStyle(Contenido);
+
                     row = spreadsheet.createRow(i);
                     cell = row.createCell(0);
                     cell.setCellValue(RSEXP.getString(1));
@@ -1129,82 +768,12 @@ public final class Expedientes_4 extends javax.swing.JFrame {
                     cell = row.createCell(3);
                     cell.setCellValue(RSEXP.getString(4));
                     cell.setCellStyle(Contenido);
-                    /*cell = row.createCell(4);
-                    cell.setCellValue(RSEXP.getString(6));
+                    cell = row.createCell(4);
+                    cell.setCellValue(RSEXP.getString(5));
                     cell.setCellStyle(Contenido);
                     cell = row.createCell(5);
-                    cell.setCellValue(RSEXP.getString(7));
+                    cell.setCellValue(RSEXP.getString(6));
                     cell.setCellStyle(Contenido);
-                    cell = row.createCell(6);
-                    cell.setCellValue(RSEXP.getString(8));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(7);
-                    cell.setCellValue(RSEXP.getString(9));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(8);
-                    cell.setCellValue(RSEXP.getString(10));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(9);
-                    cell.setCellValue(RSEXP.getString(11));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(10);
-                    cell.setCellValue(RSEXP.getString(12));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(11);
-                    cell.setCellValue(RSEXP.getString(13));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(12);
-                    cell.setCellValue(RSEXP.getString(14));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(13);
-                    cell.setCellValue(RSEXP.getString(15));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(14);
-                    cell.setCellValue(RSEXP.getString(16));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(15);
-                    cell.setCellValue(RSEXP.getString(17));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(16);
-                    cell.setCellValue(RSEXP.getString(18));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(17);
-                    cell.setCellValue(RSEXP.getString(19));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(18);
-                    cell.setCellValue(RSEXP.getString(20));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(19);
-                    cell.setCellValue(RSEXP.getString(21));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(20);
-                    cell.setCellValue(RSEXP.getString(22));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(21);
-                    cell.setCellValue(RSEXP.getString(23));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(22);
-                    cell.setCellValue(RSEXP.getString(24));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(23);
-                    cell.setCellValue(RSEXP.getString(25));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(24);
-                    cell.setCellValue(RSEXP.getString(26));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(25);
-                    cell.setCellValue(RSEXP.getString(27));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(26);
-                    cell.setCellValue(RSEXP.getString(28));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(27);
-                    cell.setCellValue(RSEXP.getString(29));
-                    cell.setCellStyle(Contenido);
-                    cell = row.createCell(28);
-                    cell.setCellValue(RSEXP.getString(30));
-                    cell.setCellStyle(Contenido);
-                     */
                     i++;
                 }
 
@@ -1258,146 +827,38 @@ public final class Expedientes_4 extends javax.swing.JFrame {
         }
         if (TDM.getSelectedIndex() >= 1) {
             DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
-            String SQL = "UPDATE `rh.empleados.movimientos` SET `tipo de movimiento` = ?,"
-                    + " `Fecha inicio` = ?, `#Empleado` = ?, `fecha de ingreso` = ?, "
-                    + "`Apellido P` = ?, `Apellido M` = ?, `Nombre(s)` = ?, `Sueldo` = ?,"
-                    + " `bono` = ?, `Zona` = ?, `Servicio` = ?, `Aguinaldo` = ?, "
-                    + "`PTU` = ?, `observacionesptu` = ?, `Vacaciones` = ?,"
-                    + " `Periodoini` = ?, `periodofin` = ?, `observaciones` = ?,"
-                    + " `reingreso` = ?, `baja` = ?, `tipo de baja` = ?, `Acta administrativa` = ?,"
-                    + " `Fecha alta imss` = ?, `Uniforme` = ?, `Acuse` = ?, `Observaciones1` = ?, "
-                    + "`Observaciones2` = ?, `fecha de registro` = ?, `registrado por` = ?"
-                    + " WHERE `rh.empleados.movimientos`.`#Movimiento` = ?";
-            int fila = Tmov.getSelectedRow();
+            String SQL = "UPDATE `rh.empleados.movimientos` SET `tipo de movimiento` = ?, `Fecha inicio` = ?,"
+                    + " `#Empleado` = ?, `Apellido P` = ?, `Apellido M` = ?,"
+                    + " `Nombre(s)` = ?, `Observaciones1` = ?, `Observaciones2` = ?,"
+                    + " `fecha de registro` = ?, `registrado por` = ? WHERE `rh.empleados.movimientos`.`#Movimiento` = " + Integer.parseInt(ndr.getText()) + "";
+
             try {
                 PreparedStatement pst = con.prepareStatement(SQL);
                 pst.setString(1, TDM.getSelectedItem().toString());
                 pst.setString(2, ((JTextField) FechaDI.getDateEditor().getUiComponent()).getText());
                 pst.setString(3, NExp.getText());
-                pst.setString(4, FDI.getText());
-                pst.setString(5, APgen.getText());
-                pst.setString(6, AMgen.getText());
-                pst.setString(7, NameGen.getText());
-                pst.setString(8, Sueldo.getText());
-                pst.setString(9, Bono.getText());
-                pst.setString(10, zona.getSelectedItem().toString());
-                pst.setString(11, Serv.getSelectedItem().toString());
-                pst.setString(12, Aguinaldo.getText());
-                pst.setString(13, PTU.getText());
-                pst.setString(14, OBSPTU.getText());
-                pst.setString(15, Vacaciones.getText());
-                pst.setString(16, ((JTextField) PeriodoIni.getDateEditor().getUiComponent()).getText());
-                pst.setString(17, ((JTextField) PeriodoFin.getDateEditor().getUiComponent()).getText());
-                pst.setString(18, Obs.getText());
-                pst.setString(19, FBaja.getText());
-                pst.setString(20, TDB.getSelectedItem().toString());
-                pst.setString(21, FI.getText());
-                pst.setString(22, Actadm.getText());
-                pst.setString(23, FDAIMSS.getText());
-                pst.setString(24, Uniforme.getText());
-                pst.setString(25, Acuse.getText());
-                pst.setString(26, OBSGEN1.getText());
-                pst.setString(27, OBSGEN2.getText());
-                pst.setString(28, dtf3.format(LocalDateTime.now()));
-                pst.setString(29, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
-                pst.setInt(30, Integer.parseInt(Tmov.getValueAt(fila, 0).toString()));
+                pst.setString(4, APgen.getText());
+                pst.setString(5, AMgen.getText());
+                pst.setString(6, NameGen.getText());
+                pst.setString(7, OBSGEN1.getText());
+                pst.setString(8, OBSGEN2.getText());
+                pst.setString(9, dtf3.format(LocalDateTime.now()));
+                pst.setString(10, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
 
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "registro agregado.");
                 MDMov();
-                if (TDM.getSelectedIndex() == 1) {
-                    SQL = "UPDATE `rh.empleados` SET `Status` = 'VIGENTE', `Fecha de ingreso` = ? WHERE `rh.empleados`.`# Exp` =?";
 
-                    try {
-                        pst = con.prepareStatement(SQL);
-                        pst.setString(1, FDI.getText());
-                        pst.setInt(2, Integer.parseInt(NExp.getText()));
-                        pst.executeUpdate();
-
-                    } catch (HeadlessException | SQLException e) {
-                        JOptionPane.showMessageDialog(null, "Error al general: \n" + e.getMessage());
-                    }
-                }
-                if (TDM.getSelectedIndex() == 3) {
-                    SQL = "UPDATE `rh.empleados` SET `Status` = ?, `Fecha firma baja` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                    try {
-                        pst = con.prepareStatement(SQL);
-                        pst.setString(1, FBaja.getText());
-                        pst.setString(2, TDB.getSelectedItem().toString());
-                        pst.setInt(3, Integer.parseInt(NExp.getText()));
-                        pst.executeUpdate();
-
-                    } catch (HeadlessException | SQLException e) {
-                        JOptionPane.showMessageDialog(null, "Error al Modificar en general: \n" + e.getMessage());
-                    }
-                }
-                if (TDM.getSelectedIndex() == 4) {
-                    SQL = "UPDATE `rh.empleados` SET `Status` = 'VIGENTE', `Fecha de ingreso` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                    try {
-                        pst = con.prepareStatement(SQL);
-                        pst.setString(1, FI.getText());
-                        pst.setInt(2, Integer.parseInt(NExp.getText()));
-                        pst.executeUpdate();
-
-                    } catch (HeadlessException | SQLException e) {
-                        JOptionPane.showMessageDialog(null, "Error al general: \n" + e.getMessage());
-                    }
-                }
-                if (TDM.getSelectedIndex() == 5) {
-                    SQL = "UPDATE `rh.empleados` SET `Sueldo` = ?, `Bono` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                    try {
-                        pst = con.prepareStatement(SQL);
-                        pst.setString(1, Sueldo.getText());
-                        pst.setString(2, Bono.getText());
-                        pst.setInt(3, Integer.parseInt(NExp.getText()));
-                        pst.executeUpdate();
-
-                    } catch (HeadlessException | SQLException e) {
-                        JOptionPane.showMessageDialog(null, "Error al general: \n" + e.getMessage());
-                    }
-                }
-                if (TDM.getSelectedIndex() == 6) {
-                    SQL = "UPDATE `rh.empleados` SET `Zona` = ?, `Servicio` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                    try {
-                        pst = con.prepareStatement(SQL);
-                        pst.setString(1, zona.getSelectedItem().toString());
-                        pst.setString(2, Serv.getSelectedItem().toString());
-                        pst.setInt(3, Integer.parseInt(NExp.getText()));
-                        pst.executeUpdate();
-
-                    } catch (HeadlessException | SQLException e) {
-                        JOptionPane.showMessageDialog(null, "Error al general: \n" + e.getMessage());
-                    }
-                }
                 FBaja.setText("");
-                TDB.setSelectedIndex(0);
-                FI.setText("");
-                Sueldo.setText("0");
-                Bono.setText("0");
-                Aguinaldo.setText("");
-                zona.setSelectedIndex(0);
-                Serv.setSelectedIndex(0);
-                Vacaciones.setText("");
-                Obs.setText("");
-                PeriodoIni.setDate(null);
-                PeriodoFin.setDate(null);
-                FDAIMSS.setText("");
-                PTU.setText("");
-                Actadm.setText("");
-                OBSPTU.setText("");
+
                 OBSGEN1.setText("");
                 OBSGEN2.setText("");
-                Acuse.setText("");
-                Uniforme.setText("");
 
             } catch (HeadlessException | SQLException e) {
                 JOptionPane.showMessageDialog(null, "Error al registrar: \n" + e.getMessage());
             }
         }
+        MDMov();
     }//GEN-LAST:event_ModActionPerformed
 
     private void ADDregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDregActionPerformed
@@ -1411,138 +872,29 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             if (TDM.getSelectedIndex() >= 1) {
                 DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("yyyy/MMMM/dd HH:mm:ss");
                 String SQL = "INSERT INTO `rh.empleados.movimientos` (`#Movimiento`, `tipo de movimiento`,"
-                        + " `Fecha inicio`, `#Empleado`, `fecha de ingreso`, `Apellido P`, `Apellido M`,"
-                        + " `Nombre(s)`, `Sueldo`, `bono`, `Zona`, `Servicio`, `Aguinaldo`,"
-                        + " `PTU`, `observacionesptu`, `Vacaciones`, `Periodoini`, "
-                        + "`periodofin`, `observaciones`, `reingreso`, `baja`, `tipo de baja`, "
-                        + "`Acta administrativa`, `Fecha alta imss`, `Uniforme`, `Acuse`, "
-                        + "`Observaciones1`, `Observaciones2`, `fecha de registro`, `registrado por`) "
-                        + "VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                        + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        + " `Fecha inicio`, `#Empleado`, `Apellido P`, `Apellido M`, "
+                        + "`Nombre(s)`, `Observaciones1`, `Observaciones2`, `fecha de registro`, "
+                        + "`registrado por`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 try {
                     PreparedStatement pst = con.prepareStatement(SQL);
                     pst.setString(1, TDM.getSelectedItem().toString());
                     pst.setString(2, ((JTextField) FechaDI.getDateEditor().getUiComponent()).getText());
                     pst.setString(3, NExp.getText());
-                    pst.setString(4, FDI.getText());
-                    pst.setString(5, APgen.getText());
-                    pst.setString(6, AMgen.getText());
-                    pst.setString(7, NameGen.getText());
-                    pst.setString(8, Sueldo.getText());
-                    pst.setString(9, Bono.getText());
-                    pst.setString(10, zona.getSelectedItem().toString());
-                    pst.setString(11, Serv.getSelectedItem().toString());
-                    pst.setString(12, Aguinaldo.getText());
-                    pst.setString(13, PTU.getText());
-                    pst.setString(14, OBSPTU.getText());
-                    pst.setString(15, Vacaciones.getText());
-                    pst.setString(16, ((JTextField) PeriodoIni.getDateEditor().getUiComponent()).getText());
-                    pst.setString(17, ((JTextField) PeriodoFin.getDateEditor().getUiComponent()).getText());
-                    pst.setString(18, Obs.getText());
-                    pst.setString(19, FI.getText());
-                    pst.setString(20, FBaja.getText());
-                    pst.setString(21, TDB.getSelectedItem().toString());
-                    pst.setString(22, Actadm.getText());
-                    pst.setString(23, FDAIMSS.getText());
-                    pst.setString(24, Uniforme.getText());
-                    pst.setString(25, Acuse.getText());
-                    pst.setString(26, OBSGEN1.getText());
-                    pst.setString(27, OBSGEN2.getText());
-                    pst.setString(28, dtf3.format(LocalDateTime.now()));
-                    pst.setString(29, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
+                    pst.setString(4, APgen.getText());
+                    pst.setString(5, AMgen.getText());
+                    pst.setString(6, NameGen.getText());
+                    pst.setString(7, OBSGEN1.getText());
+                    pst.setString(8, OBSGEN2.getText());
+                    pst.setString(9, dtf3.format(LocalDateTime.now()));
+                    pst.setString(10, usr.getApellidop() + " " + usr.getApellidoM() + " " + usr.getNombre());
 
                     pst.executeUpdate();
                     JOptionPane.showMessageDialog(null, "registro agregado.");
                     MDMov();
-                    if (TDM.getSelectedIndex() == 1) {
-                        SQL = "UPDATE `rh.empleados` SET `Status` = 'VIGENTE', `Fecha de ingreso` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                        try {
-                            pst = con.prepareStatement(SQL);
-                            pst.setString(1, FDI.getText());
-                            pst.setInt(2, Integer.parseInt(NExp.getText()));
-                            pst.executeUpdate();
-
-                        } catch (HeadlessException | SQLException e) {
-                            JOptionPane.showMessageDialog(null, "Error al general: \n" + e.getMessage());
-                        }
-                    }
-                    if (TDM.getSelectedIndex() == 3) {
-                        SQL = "UPDATE `rh.empleados` SET `Status` = ?, `Fecha firma baja` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                        try {
-                            pst = con.prepareStatement(SQL);
-                            pst.setString(1, FBaja.getText());
-                            pst.setString(2, TDB.getSelectedItem().toString());
-                            pst.setInt(3, Integer.parseInt(NExp.getText()));
-                            pst.executeUpdate();
-
-                        } catch (HeadlessException | SQLException e) {
-                            JOptionPane.showMessageDialog(null, "Error al Modificar en general: \n" + e.getMessage());
-                        }
-                    }
-                    if (TDM.getSelectedIndex() == 4) {
-                        SQL = "UPDATE `rh.empleados` SET `Status` = 'VIGENTE', `Fecha de ingreso` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                        try {
-                            pst = con.prepareStatement(SQL);
-                            pst.setString(1, FI.getText());
-                            pst.setInt(2, Integer.parseInt(NExp.getText()));
-                            pst.executeUpdate();
-
-                        } catch (HeadlessException | SQLException e) {
-                            JOptionPane.showMessageDialog(null, "Error al general: \n" + e.getMessage());
-                        }
-                    }
-                    if (TDM.getSelectedIndex() == 5) {
-                        SQL = "UPDATE `rh.empleados` SET `Sueldo` = ?, `Bono` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                        try {
-                            pst = con.prepareStatement(SQL);
-                            pst.setString(1, Sueldo.getText());
-                            pst.setString(2, Bono.getText());
-                            pst.setInt(3, Integer.parseInt(NExp.getText()));
-                            pst.executeUpdate();
-
-                        } catch (HeadlessException | SQLException e) {
-                            JOptionPane.showMessageDialog(null, "Error al general: \n" + e.getMessage());
-                        }
-                    }
-                    if (TDM.getSelectedIndex() == 6) {
-                        SQL = "UPDATE `rh.empleados` SET `Zona` = ?, `Servicio` = ? WHERE `rh.empleados`.`# Exp` =?";
-
-                        try {
-                            pst = con.prepareStatement(SQL);
-                            pst.setString(1, zona.getSelectedItem().toString());
-                            pst.setString(2, Serv.getSelectedItem().toString());
-                            pst.setInt(3, Integer.parseInt(NExp.getText()));
-                            pst.executeUpdate();
-
-                        } catch (HeadlessException | SQLException e) {
-                            JOptionPane.showMessageDialog(null, "Error al general: \n" + e.getMessage());
-                        }
-                    }
                     FBaja.setText("");
-                    TDB.setSelectedIndex(0);
-                    FI.setText("");
-                    Sueldo.setText("0");
-                    Bono.setText("0");
-                    Aguinaldo.setText("");
-                    zona.setSelectedIndex(0);
-                    Serv.setSelectedIndex(0);
-                    Vacaciones.setText("");
-                    Obs.setText("");
-                    PeriodoIni.setDate(null);
-                    PeriodoFin.setDate(null);
-                    FDAIMSS.setText("");
-                    PTU.setText("");
-                    Actadm.setText("");
-                    OBSPTU.setText("");
                     OBSGEN1.setText("");
                     OBSGEN2.setText("");
-                    Acuse.setText("");
-                    Uniforme.setText("");
 
                 } catch (HeadlessException | SQLException e) {
                     JOptionPane.showMessageDialog(null, "Error al registrar: \n" + e.getMessage());
@@ -1550,349 +902,165 @@ public final class Expedientes_4 extends javax.swing.JFrame {
             }
 
         }
+        MDMov();
     }//GEN-LAST:event_ADDregActionPerformed
-
-    private void zonaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_zonaItemStateChanged
-
-        if (evt.getStateChange() == ItemEvent.SELECTED) {
-            Zonas zon = (Zonas) zona.getSelectedItem();
-            Servicios serv = new Servicios();
-            DefaultComboBoxModel modelServicio = new DefaultComboBoxModel(serv.mostrarservicio(zon.getId()));
-            Serv.setModel(modelServicio);
-        }
-    }//GEN-LAST:event_zonaItemStateChanged
 
     private void TDMItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TDMItemStateChanged
         FBaja.setText("");
-        TDB.setSelectedIndex(0);
-        FI.setText("");
-        Sueldo.setText("0");
-        Bono.setText("0");
-        Aguinaldo.setText("");
-        zona.setSelectedIndex(0);
-        Serv.setSelectedIndex(0);
-        Vacaciones.setText("");
-        Obs.setText("");
-        PeriodoIni.setDate(null);
-        PeriodoFin.setDate(null);
-        FDAIMSS.setText("");
-        PTU.setText("");
-        Actadm.setText("");
-        OBSPTU.setText("");
         OBSGEN1.setText("");
         OBSGEN2.setText("");
-        Acuse.setText("");
-        Uniforme.setText("");
         if (TDM.getSelectedIndex() == 0) {
-            OBSPTU.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
             FDI.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
             ADDreg.setEnabled(false);
-            Obs.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
         }
         if (TDM.getSelectedIndex() == 1) {
-            OBSPTU.setEnabled(false);
             FDI.setEnabled(true);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
         }
         if (TDM.getSelectedIndex() == 2) {
-            OBSPTU.setEnabled(false);
             FDI.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FDAIMSS.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
         }
         if (TDM.getSelectedIndex() == 3) {
             FDI.setEnabled(false);
-            OBSPTU.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
             FBaja.setEnabled(true);
-            TDB.setEnabled(true);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            FDAIMSS.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
         }
         if (TDM.getSelectedIndex() == 4) {
-            OBSPTU.setEnabled(false);
             FDI.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FI.setEnabled(true);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            FDAIMSS.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
         }
         if (TDM.getSelectedIndex() == 5) {
             FDI.setEnabled(false);
-            OBSPTU.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(true);
-            Bono.setEnabled(true);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(true);
-            Serv.setEnabled(true);
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            FDAIMSS.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
         }
         if (TDM.getSelectedIndex() == 6) {
-            OBSPTU.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(true);
-            Serv.setEnabled(true);
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            FDAIMSS.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
+
         }
         if (TDM.getSelectedIndex() == 7) {
-            OBSPTU.setEnabled(false);
+
             FDI.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(true);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
+
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
+
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            FDAIMSS.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
+
         }
         if (TDM.getSelectedIndex() == 8) {
-            OBSPTU.setEnabled(false);
+
             FDI.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(true);
-            PeriodoIni.setEnabled(true);
-            PeriodoFin.setEnabled(true);
-            Obs.setEnabled(true);
+
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
+
             ADDreg.setEnabled(true);
-            FDAIMSS.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
+
         }
         if (TDM.getSelectedIndex() == 9) {
-            OBSPTU.setEnabled(true);
+
             FDI.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(true);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
+
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
+
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            FDAIMSS.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
+
         }
         if (TDM.getSelectedIndex() == 10) {
-            OBSPTU.setEnabled(false);
+
             FDI.setEnabled(false);
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(true);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
+
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
+
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            FDAIMSS.setEnabled(false);
-            Uniforme.setEnabled(false);
-            Acuse.setEnabled(false);
+
         }
         if (TDM.getSelectedIndex() == 11) {
-            OBSPTU.setEnabled(false);
+
             NExp.setEnabled(false);
             APgen.setEnabled(false);
             AMgen.setEnabled(false);
             NameGen.setEnabled(false);
-            Sueldo.setEnabled(false);
-            Bono.setEnabled(false);
+
             FDI.setEnabled(false);
-            FI.setEnabled(false);
-            Aguinaldo.setEnabled(false);
-            PTU.setEnabled(false);
-            Actadm.setEnabled(false);
-            Vacaciones.setEnabled(false);
-            PeriodoIni.setEnabled(false);
-            PeriodoFin.setEnabled(false);
+
             FBaja.setEnabled(false);
-            TDB.setEnabled(false);
-            zona.setEnabled(false);
-            Serv.setEnabled(false);
+
             ADDreg.setEnabled(true);
-            Obs.setEnabled(false);
-            Uniforme.setEnabled(true);
-            Acuse.setEnabled(true);
+
         }
         MDMov();
     }//GEN-LAST:event_TDMItemStateChanged
+
+    private void TmovMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TmovMouseClicked
+        try {
+            DefaultTableModel model = (DefaultTableModel) Tmov.getModel();
+            int fila = Tmov.getSelectedRow();
+            ndr.setText(String.valueOf(Tmov.getValueAt(fila, 0)));
+
+            String combo1 = model.getValueAt(fila, 1).toString();
+            for (int i = 0; i < TDM.getItemCount(); i++) {
+                if (TDM.getItemAt(i).equalsIgnoreCase(combo1)) {
+                    TDM.setSelectedIndex(i);
+                }
+            }
+            Date date = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 2));
+            FechaDI.setDate(date);
+            OBSGEN1.setText(String.valueOf(Tmov.getValueAt(fila, 3)));
+            OBSGEN2.setText(String.valueOf(Tmov.getValueAt(fila, 4)));
+        } catch (ParseException ex) {
+            Logger.getLogger(Expedientes_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TmovMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1927,84 +1095,50 @@ public final class Expedientes_4 extends javax.swing.JFrame {
     private javax.swing.JButton ADDreg;
     private javax.swing.JTextField AMgen;
     private javax.swing.JTextField APgen;
-    private javax.swing.JTextField Actadm;
-    private javax.swing.JTextField Acuse;
-    private javax.swing.JTextField Aguinaldo;
-    private javax.swing.JTextField Bono;
     private javax.swing.JTextField CURP;
     private javax.swing.JButton Del;
     private javax.swing.JTextField FBaja;
-    private javax.swing.JTextField FDAIMSS;
     private javax.swing.JTextField FDI;
-    private javax.swing.JTextField FI;
     private com.toedter.calendar.JDateChooser FechaDI;
     private javax.swing.JPanel Harder1;
     private javax.swing.JButton Mod;
     private javax.swing.JLabel Move;
+    private javax.swing.JTextField NDC;
     private javax.swing.JTextField NExp;
     private javax.swing.JTextField NSS;
     private javax.swing.JTextField NameGen;
     private javax.swing.JTextArea OBSGEN1;
     private javax.swing.JTextArea OBSGEN2;
-    private javax.swing.JTextArea OBSPTU;
-    private javax.swing.JTextArea Obs;
-    private javax.swing.JTextField PTU;
-    private com.toedter.calendar.JDateChooser PeriodoFin;
-    private com.toedter.calendar.JDateChooser PeriodoIni;
     private javax.swing.JTextField RFC;
-    private javax.swing.JComboBox<String> Serv;
-    private javax.swing.JTextField Sueldo;
-    private javax.swing.JComboBox<String> TDB;
     private javax.swing.JComboBox<String> TDM;
     private javax.swing.JTable Tmov;
-    private javax.swing.JTextField Uniforme;
-    private javax.swing.JTextField Vacaciones;
     private javax.swing.JPanel btnexit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField ndr;
     private javax.swing.JLabel txtbtnexit;
-    private javax.swing.JComboBox<String> zona;
     // End of variables declaration//GEN-END:variables
 }

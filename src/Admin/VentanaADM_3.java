@@ -13,6 +13,7 @@ import Nomina.ModulosQ.PresQ_5;
 import RH.*;
 import Nomina.*;
 import Conexion.ConexionSQL;
+import Inicio.Inicio_1;
 import Logicas.*;
 import Nomina.Prenomina.PremonimaQ;
 import Nomina.Prenomina.PrenominaS;
@@ -453,6 +454,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P5RH = new javax.swing.JCheckBox();
         P6RH = new javax.swing.JCheckBox();
         P7RH = new javax.swing.JCheckBox();
+        P8RH = new javax.swing.JCheckBox();
+        P9RH = new javax.swing.JCheckBox();
         jLabel7 = new javax.swing.JLabel();
         PDUadd = new javax.swing.JTextField();
         ADM = new javax.swing.JRadioButton();
@@ -545,6 +548,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         ZYS = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -949,6 +954,12 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P7RH.setText("Modificar empleados y registros de imss.");
         P7RH.setEnabled(false);
 
+        P8RH.setText("Boton modificar en Actualizar empleado.");
+        P8RH.setEnabled(false);
+
+        P9RH.setText("Crear usuarios en sistema");
+        P9RH.setEnabled(false);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -963,21 +974,25 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(P1RH)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(32, 32, 32)
                                 .addComponent(P5RH))
-                            .addComponent(P4RH)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(P2RH)
-                                    .addComponent(P3RH))
+                                    .addComponent(P3RH)
+                                    .addComponent(P4RH))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(P9RH)
                                     .addComponent(P7RH)
                                     .addComponent(P6RH)))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(AAADRH)))
-                .addContainerGap(164, Short.MAX_VALUE))
+                        .addComponent(AAADRH))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(P8RH)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -999,8 +1014,12 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                     .addComponent(P3RH)
                     .addComponent(P7RH))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(P4RH)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(P4RH)
+                    .addComponent(P9RH))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(P8RH)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jLabel7.setText("Nombre de perfil:");
@@ -1139,8 +1158,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(ADM))
@@ -1155,12 +1174,9 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                     .addComponent(ADM))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
@@ -1179,7 +1195,9 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         .addComponent(Btnpduadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnpdumod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         jScrollPane3.setViewportView(jPanel3);
@@ -1754,6 +1772,19 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
         jMenuBar1.add(Menuadm);
 
+        jMenu9.setText("Seguridad.");
+
+        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoCDU.png"))); // NOI18N
+        jMenuItem12.setText("Cambiar de usuario");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem12);
+
+        jMenuBar1.add(jMenu9);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1892,6 +1923,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             P5RH.setSelected(false);
             P6RH.setSelected(false);
             P7RH.setSelected(false);
+            P8RH.setSelected(false);
+            P9RH.setSelected(false);
             P1Nom.setEnabled(true);
             P2Nom.setEnabled(true);
             P3Nom.setEnabled(true);
@@ -1910,6 +1943,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             P5RH.setEnabled(false);
             P6RH.setEnabled(false);
             P7RH.setEnabled(false);
+            P8RH.setEnabled(false);
+            P9RH.setEnabled(false);
         }
     }//GEN-LAST:event_AAADNActionPerformed
 
@@ -2152,6 +2187,11 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P2RH.setSelected(false);
                         P3RH.setSelected(false);
                         P4RH.setSelected(false);
+                        P5RH.setSelected(false);
+                        P6RH.setSelected(false);
+                        P7RH.setSelected(false);
+                        P8RH.setSelected(false);
+                        P9RH.setSelected(false);
                         P1Nom.setEnabled(false);
                         P2Nom.setEnabled(false);
                         P3Nom.setEnabled(false);
@@ -2170,6 +2210,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P5RH.setEnabled(false);
                         P6RH.setEnabled(false);
                         P7RH.setEnabled(false);
+                        P8RH.setEnabled(false);
+                        P9RH.setEnabled(false);
                     }
                     case "1" -> {
                         AAADRH.setSelected(true);
@@ -2230,6 +2272,22 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                             default -> {
                             }
                         }
+                        switch (rs.getString("P8")) {
+                            case "0" ->
+                                P8RH.setSelected(false);
+                            case "1" ->
+                                P8RH.setSelected(true);
+                            default -> {
+                            }
+                        }
+                        switch (rs.getString("P9")) {
+                            case "0" ->
+                                P9RH.setSelected(false);
+                            case "1" ->
+                                P9RH.setSelected(true);
+                            default -> {
+                            }
+                        }
                         P1Nom.setSelected(false);
                         P2Nom.setSelected(false);
                         P3Nom.setSelected(false);
@@ -2259,6 +2317,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P5RH.setEnabled(true);
                         P6RH.setEnabled(true);
                         P7RH.setEnabled(true);
+                        P8RH.setEnabled(true);
+                        P9RH.setEnabled(true);
                         P1PEN.setEnabled(false);
                         P2PEN.setEnabled(false);
                         P3PEN.setEnabled(false);
@@ -2365,6 +2425,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P5RH.setSelected(false);
                         P6RH.setSelected(false);
                         P7RH.setSelected(false);
+                        P8RH.setSelected(false);
+                        P9RH.setSelected(false);
                         P1Nom.setEnabled(true);
                         P2Nom.setEnabled(true);
                         P3Nom.setEnabled(true);
@@ -2383,6 +2445,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P5RH.setEnabled(false);
                         P6RH.setEnabled(false);
                         P7RH.setEnabled(false);
+                        P8RH.setEnabled(false);
+                        P9RH.setEnabled(false);
                         P1PEN.setEnabled(false);
                         P2PEN.setEnabled(false);
                         P3PEN.setEnabled(false);
@@ -2488,6 +2552,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P5RH.setSelected(false);
                         P6RH.setSelected(false);
                         P7RH.setSelected(false);
+                        P8RH.setSelected(false);
+                        P9RH.setSelected(false);
                         P1Nom.setEnabled(false);
                         P2Nom.setEnabled(false);
                         P3Nom.setEnabled(false);
@@ -2520,6 +2586,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                         P5RH.setEnabled(false);
                         P6RH.setEnabled(false);
                         P7RH.setEnabled(false);
+                        P8RH.setEnabled(false);
+                        P9RH.setEnabled(false);
                     }
                     default -> {
                     }
@@ -2527,7 +2595,7 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
                 }
             }
         } catch (SQLException ex) {
-            Logger.getLogger(VentanaADM_3.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Usuarios.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_TrolesMouseClicked
@@ -2730,8 +2798,16 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             } else {
                 P7 = 0;
             }
-            P8 = 0;
-            P9 = 0;
+            if (P8RH.isSelected() == true) {
+                P8 = 1;
+            } else {
+                P8 = 0;
+            }
+            if (P9RH.isSelected() == true) {
+                P9 = 1;
+            } else {
+                P9 = 0;
+            }
             P10 = 0;
             P11 = 0;
 
@@ -2860,6 +2936,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P5RH.setSelected(false);
         P6RH.setSelected(false);
         P7RH.setSelected(false);
+        P8RH.setSelected(false);
+        P9RH.setSelected(false);
         P1Nom.setEnabled(false);
         P2Nom.setEnabled(false);
         P3Nom.setEnabled(false);
@@ -2878,6 +2956,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P5RH.setEnabled(false);
         P6RH.setEnabled(false);
         P7RH.setEnabled(false);
+        P8RH.setEnabled(false);
+        P9RH.setEnabled(false);
         P1PEN.setEnabled(false);
         P2PEN.setEnabled(false);
         P3PEN.setEnabled(false);
@@ -2957,6 +3037,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             P5RH.setSelected(true);
             P6RH.setSelected(true);
             P7RH.setSelected(true);
+            P8RH.setSelected(true);
+            P9RH.setSelected(true);
             P1Nom.setEnabled(false);
             P2Nom.setEnabled(false);
             P3Nom.setEnabled(false);
@@ -2975,6 +3057,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             P5RH.setEnabled(true);
             P6RH.setEnabled(true);
             P7RH.setEnabled(true);
+            P8RH.setEnabled(true);
+            P9RH.setEnabled(true);
             P1PEN.setEnabled(false);
             P2PEN.setEnabled(false);
             P3PEN.setEnabled(false);
@@ -3162,8 +3246,16 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
             } else {
                 P7 = 0;
             }
-            P8 = 0;
-            P9 = 0;
+            if (P8RH.isSelected() == true) {
+                P8 = 1;
+            } else {
+                P8 = 0;
+            }
+            if (P9RH.isSelected() == true) {
+                P9 = 1;
+            } else {
+                P9 = 0;
+            }
             P10 = 0;
             P11 = 0;
             String SQL = "INSERT INTO `admin.tou` (`id_TDO`, `Usuario`,"
@@ -3280,6 +3372,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P5RH.setSelected(false);
         P6RH.setSelected(false);
         P7RH.setSelected(false);
+        P8RH.setSelected(false);
+        P9RH.setSelected(false);
         P1Nom.setEnabled(false);
         P2Nom.setEnabled(false);
         P3Nom.setEnabled(false);
@@ -3298,6 +3392,8 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         P5RH.setEnabled(false);
         P6RH.setEnabled(false);
         P7RH.setEnabled(false);
+        P8RH.setEnabled(false);
+        P9RH.setEnabled(false);
         P1PEN.setEnabled(false);
         P2PEN.setEnabled(false);
         P3PEN.setEnabled(false);
@@ -3530,6 +3626,24 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
 
     private void AADPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AADPActionPerformed
         if (AADP.isSelected() == true) {
+            P1RH.setEnabled(false);
+            P2RH.setEnabled(false);
+            P3RH.setEnabled(false);
+            P4RH.setEnabled(false);
+            P5RH.setEnabled(false);
+            P6RH.setEnabled(false);
+            P7RH.setEnabled(false);
+            P8RH.setEnabled(false);
+            P9RH.setEnabled(false);
+            P1RH.setSelected(false);
+            P2RH.setSelected(false);
+            P3RH.setSelected(false);
+            P4RH.setSelected(false);
+            P5RH.setSelected(false);
+            P6RH.setSelected(false);
+            P7RH.setSelected(false);
+            P8RH.setSelected(false);
+            P9RH.setSelected(false);
             P1Nom.setSelected(false);
             P2Nom.setSelected(false);
             P3Nom.setSelected(false);
@@ -3640,6 +3754,17 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem27ActionPerformed
 
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "El cambiar de usuario cerrara la ventana actual. \n ¿Seguir con esta accion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+
+        }
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3734,7 +3859,9 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JCheckBox P7Nom;
     private javax.swing.JCheckBox P7RH;
     private javax.swing.JCheckBox P8Nom;
+    private javax.swing.JCheckBox P8RH;
     private javax.swing.JCheckBox P9Nom;
+    private javax.swing.JCheckBox P9RH;
     private javax.swing.JLabel PDUMod;
     private javax.swing.JTextField PDUadd;
     private javax.swing.JMenuItem PRESQ;
@@ -3782,10 +3909,12 @@ public final class VentanaADM_3 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;

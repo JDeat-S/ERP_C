@@ -14,6 +14,15 @@ public class Datos {
     private String RFC;
     private String NSS;
     private String FechaDI;
+    private String NDCrendial;
+
+    public String getNDCrendial() {
+        return NDCrendial;
+    }
+
+    public void setNDCrendial(String NDCrendial) {
+        this.NDCrendial = NDCrendial;
+    }
 
     public String getFechaDI() {
         return FechaDI;

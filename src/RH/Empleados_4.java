@@ -49,6 +49,8 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -194,6 +196,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
                     mod.setEnabled(false);
                     modIMSS.setEnabled(false);
                 }
+                if (LP.getP9() == 0) {
+                    Usuarios.setEnabled(false);
+                }
             }
             case 2 -> {
                 Menuadm.setVisible(false);
@@ -277,6 +282,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         FI.setText("");
         UDL.setText("");
         FFB.setText("");
+        NDC.setText("");
     }
 
     public void ModEm() {
@@ -290,8 +296,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 + "`Finiquito` = ?, `Años de antiguedad` = ?, `RFC` = ?, `NSS` = ?, `CURP` = ?,"
                 + " `Correo electronico` = ?, `Calle` = ?, `# Exterior` = ?, `# Interior` = ?, "
                 + "`Colonia` = ?, `DLG o Mun` = ?, `C.P` = ?, `Documentos originales` = ?,"
-                + " `Documentos faltantes` = ?, `Documentos entregados` = ?, `# Recepcion` = ?"
-                + ", `Observaciones` = ? WHERE `rh.empleados`.`# Exp` = ?";
+                + " `Documentos faltantes` = ?, `Documentos entregados` = ?, `# Recepcion` = ?,"
+                + " `#Credencial` = ?, `Observaciones` = ? WHERE `rh.empleados`.`# Exp` = ?";
 
         String EI = "";
         if (EIMSS.isSelected() == true) {
@@ -340,8 +346,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(35, DF.getText());
             pst.setString(36, DE.getText());
             pst.setString(37, NRP.getText());
-            pst.setString(38, Obs.getText());
-            pst.setInt(39, Integer.parseInt(NExp.getText()));
+            pst.setString(38, NDC.getText());
+            pst.setString(39, Obs.getText());
+            pst.setInt(40, Integer.parseInt(NExp.getText()));
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado Modificado");
@@ -668,7 +675,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
         if (!"".equals(NIMSS)) {
             where = " select * from imss WHERE `Nombre(s)` LIKE '%" + NIMSS + "%'";
         } else if (!"".equals(Exp)) {
-            where = " select * from imss Where `#_Exp` LIKE '%" + Exp + "%'";
+            where = " select * from imss Where `idimss` LIKE '%" + Exp + "%'";
         } else if (!"".equals(Ap)) {
             where = "select * from imss Where `Apellido P` LIKE '%" + Ap + "%'";
         } else if (!"".equals(Am)) {
@@ -753,11 +760,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
     public void FstatusGen() {
         //filtro Zonas
 
-        String where = "select * from `rh.empleados`";
+        String SQL = "select * from `rh.empleados`";
         String FiltroStatusGen = FiltroStatus.getSelectedItem().toString();
 
         if (!"".equals(FiltroStatusGen)) {
-            where = "select * from `rh.empleados` Where `Status` LIKE '%" + FiltroStatusGen + "%'";
+            SQL = "select * from `rh.empleados` Where `Status` LIKE '%" + FiltroStatusGen + "%'";
         }
 
         try {
@@ -774,7 +781,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
@@ -783,55 +790,51 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("# Exp");//1
             modelo.addColumn("Entra IMSS");
             modelo.addColumn("Apellido P");
-            modelo.addColumn("Apellido M");//5
+            modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Correo");//7
+            modelo.addColumn("# Celular");
             modelo.addColumn("# Casa");
-            modelo.addColumn("# Recados");//9
-            modelo.addColumn("# Celular");//10
-            modelo.addColumn("RFC");//11
-            modelo.addColumn("NSS");//12
-            modelo.addColumn("CURP");//13
-            modelo.addColumn("Forma de pago");//14
+            modelo.addColumn("# Recados");//8
+            modelo.addColumn("Forma de pago");
             modelo.addColumn("Sueldo");
-            modelo.addColumn("Bono");//16
-            modelo.addColumn("Banco");//18
+            modelo.addColumn("Bono");
+            modelo.addColumn("Banco");//16
+            modelo.addColumn("Cuenta de banco");
             modelo.addColumn("Zona");
-            modelo.addColumn("Servicio");//20
+            modelo.addColumn("Servicio");
             modelo.addColumn("Status");
-            modelo.addColumn("Cuenta de banco");//22
-            modelo.addColumn("Calle");
-            modelo.addColumn("# Exterior");//24
-            modelo.addColumn("# Interior");
-            modelo.addColumn("Colonia");//26
-            modelo.addColumn("DLG o MUN");
-            modelo.addColumn("C.P");//28
-            modelo.addColumn("Doc. Originales");
-            modelo.addColumn("Doc. Faltantes");//30
-            modelo.addColumn("Doc. Entregables");
-            modelo.addColumn("Fecha entrevista");//32
+            modelo.addColumn("Fecha entrevista");
             modelo.addColumn("Fecha ingreso");
-            modelo.addColumn("Fecha ultimo dia laborado");//34
+            modelo.addColumn("Fecha ultimo dia laborado");
             modelo.addColumn("Fecha firma baja");
-            modelo.addColumn("Baja firmada");//36
-            modelo.addColumn("Finiquito");
-            modelo.addColumn("Cambio de Zona");//38
-            modelo.addColumn("Cambio de servicio");
-            modelo.addColumn("Fecha de Re-ingreso (Re)");//40
-            modelo.addColumn("Fecha ultimo dia laborado (Re)");
-            modelo.addColumn("Fecha firma baja (Re)");//42
-            modelo.addColumn("Fecha de baja (Re)");
-            modelo.addColumn("Baja firmada (Re)");//44
-            modelo.addColumn("# recepcion personal");//44
+            modelo.addColumn("Baja firmada");
+            modelo.addColumn("Finiquito");//35
+            modelo.addColumn("Años de antiguedad");//35
+            modelo.addColumn("RFC");
+            modelo.addColumn("NSS");
+            modelo.addColumn("CURP");//12
+            modelo.addColumn("Correo electronico");//12
+            modelo.addColumn("Calle");//21
+            modelo.addColumn("# Exterior");
+            modelo.addColumn("# Interior");
+            modelo.addColumn("Colonia");
+            modelo.addColumn("DLG o MUN");
+            modelo.addColumn("C.P");//26
+            modelo.addColumn("Doc. Originales");
+            modelo.addColumn("Doc. Faltantes");
+            modelo.addColumn("Doc. Entregables");
+            modelo.addColumn("# recepcion personal");
+            modelo.addColumn("# Credencial");
             modelo.addColumn("Observaciones");//44
 
-            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*Exp*/ 50, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70,
-                /*celular*/ 65, /*rfc*/ 60,
-                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35, /*cda*/ 70, /*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
-                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
-                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
-                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
-
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*ap*/ 70, /*am*/ 70, /*name*/ 100,
+                /*celular*/ 65, /*casa*/ 65, /*recados*/ 70, /*fdp*/ 70,
+                /*sueldo*/ 40, /*bono*/ 35, /*banco*/ 55, /*CTA*/ 60, /*zona*/ 60,
+                /*serv*/ 60, /*status*/ 75, /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75,
+                /*ada*/ 80,/*BF*/ 60, /*FIN*/ 70, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*correo*/ 75,
+                /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300, 50,
+                /*NRP*/ 60, /*OBS*/ 2000};
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
                 data.getColumnModel().getColumn(x).setPreferredWidth(anchos[x]);
@@ -855,11 +858,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
     public void FZGen() {
         //filtro Zonas
 
-        String where = "select * from `rh.empleados`";
+        String SQL = "select * from `rh.empleados`";
         String FiltroZGen = FiltroZGe.getSelectedItem().toString();
 
         if (!"".equals(FiltroZGen)) {
-            where = "select * from `rh.empleados` where `Zona` LIKE '%" + FiltroZGen + "%'";
+            SQL = "select * from `rh.empleados` where `Zona` LIKE '%" + FiltroZGen + "%'";
         }
 
         try {
@@ -876,7 +879,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
@@ -887,13 +890,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Correo");
+            modelo.addColumn("# Celular");
             modelo.addColumn("# Casa");
             modelo.addColumn("# Recados");//8
-            modelo.addColumn("# Celular");
-            modelo.addColumn("RFC");
-            modelo.addColumn("NSS");
-            modelo.addColumn("CURP");//12
             modelo.addColumn("Forma de pago");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
@@ -902,6 +901,17 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Status");
+            modelo.addColumn("Fecha entrevista");
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");
+            modelo.addColumn("Finiquito");//35
+            modelo.addColumn("Años de antiguedad");//35
+            modelo.addColumn("RFC");
+            modelo.addColumn("NSS");
+            modelo.addColumn("CURP");//12
+            modelo.addColumn("Correo electronico");//12
             modelo.addColumn("Calle");//21
             modelo.addColumn("# Exterior");
             modelo.addColumn("# Interior");
@@ -911,27 +921,18 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Doc. Originales");
             modelo.addColumn("Doc. Faltantes");
             modelo.addColumn("Doc. Entregables");
-            modelo.addColumn("Fecha entrevista");
-            modelo.addColumn("Fecha ingreso");
-            modelo.addColumn("Fecha ultimo dia laborado");
-            modelo.addColumn("Fecha firma baja");
-            modelo.addColumn("Baja firmada");
-            modelo.addColumn("Finiquito");//35
-            modelo.addColumn("Cambio de Zona");
-            modelo.addColumn("Cambio de servicio");
-            modelo.addColumn("Fecha de Re-ingreso (Re)");
-            modelo.addColumn("Fecha ultimo dia laborado (Re)");
-            modelo.addColumn("Fecha firma baja (Re)");//40
-            modelo.addColumn("Fecha de baja (Re)");
-            modelo.addColumn("Baja firmada (Re)");
             modelo.addColumn("# recepcion personal");
+            modelo.addColumn("# Credencial");
             modelo.addColumn("Observaciones");//44
 
-            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70, /*celular*/ 65, /*rfc*/ 60,
-                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35,/*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
-                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
-                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
-                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*ap*/ 70, /*am*/ 70, /*name*/ 100,
+                /*celular*/ 65, /*casa*/ 65, /*recados*/ 70, /*fdp*/ 70,
+                /*sueldo*/ 40, /*bono*/ 35, /*banco*/ 55, /*CTA*/ 60, /*zona*/ 60,
+                /*serv*/ 60, /*status*/ 75, /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75,
+                /*ada*/ 80,/*BF*/ 60, /*FIN*/ 70, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*correo*/ 75,
+                /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300, 50,
+                /*NRP*/ 60, /*OBS*/ 2000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -956,11 +957,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
     public void FServGen() {
         //filtro servicio
 
-        String where = "select * from `rh.empleados`";
+        String SQL = "select * from `rh.empleados`";
         String FiltroSGen = FiltroServGen.getSelectedItem().toString();
 
         if (!"".equals(FiltroSGen)) {
-            where = "select * from `rh.empleados` Where `Servicio` LIKE '%" + FiltroSGen + "%'";
+            SQL = "select * from `rh.empleados` Where `Servicio` LIKE '%" + FiltroSGen + "%'";
         }
 
         try {
@@ -977,7 +978,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             PreparedStatement ps;
             ResultSet rs;
 
-            ps = con.prepareStatement(where);
+            ps = con.prepareStatement(SQL);
             rs = ps.executeQuery();
 
             ResultSetMetaData rsMd = (ResultSetMetaData) rs.getMetaData();
@@ -988,13 +989,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Apellido P");
             modelo.addColumn("Apellido M");//4
             modelo.addColumn("Nombre(s)");
-            modelo.addColumn("Correo");
+            modelo.addColumn("# Celular");
             modelo.addColumn("# Casa");
             modelo.addColumn("# Recados");//8
-            modelo.addColumn("# Celular");
-            modelo.addColumn("RFC");
-            modelo.addColumn("NSS");
-            modelo.addColumn("CURP");//12
             modelo.addColumn("Forma de pago");
             modelo.addColumn("Sueldo");
             modelo.addColumn("Bono");
@@ -1003,6 +1000,17 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Zona");
             modelo.addColumn("Servicio");
             modelo.addColumn("Status");
+            modelo.addColumn("Fecha entrevista");
+            modelo.addColumn("Fecha ingreso");
+            modelo.addColumn("Fecha ultimo dia laborado");
+            modelo.addColumn("Fecha firma baja");
+            modelo.addColumn("Baja firmada");
+            modelo.addColumn("Finiquito");//35
+            modelo.addColumn("Años de antiguedad");//35
+            modelo.addColumn("RFC");
+            modelo.addColumn("NSS");
+            modelo.addColumn("CURP");//12
+            modelo.addColumn("Correo electronico");//12
             modelo.addColumn("Calle");//21
             modelo.addColumn("# Exterior");
             modelo.addColumn("# Interior");
@@ -1012,27 +1020,18 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Doc. Originales");
             modelo.addColumn("Doc. Faltantes");
             modelo.addColumn("Doc. Entregables");
-            modelo.addColumn("Fecha entrevista");
-            modelo.addColumn("Fecha ingreso");
-            modelo.addColumn("Fecha ultimo dia laborado");
-            modelo.addColumn("Fecha firma baja");
-            modelo.addColumn("Baja firmada");
-            modelo.addColumn("Finiquito");//35
-            modelo.addColumn("Cambio de Zona");
-            modelo.addColumn("Cambio de servicio");
-            modelo.addColumn("Fecha de Re-ingreso (Re)");
-            modelo.addColumn("Fecha ultimo dia laborado (Re)");
-            modelo.addColumn("Fecha firma baja (Re)");//40
-            modelo.addColumn("Fecha de baja (Re)");
-            modelo.addColumn("Baja firmada (Re)");
             modelo.addColumn("# recepcion personal");
+            modelo.addColumn("# Credencial");
             modelo.addColumn("Observaciones");//44
 
-            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*ap*/ 70, /*am*/ 70, /*name*/ 100, /*correo*/ 75, /*casa*/ 65, /*recados*/ 70, /*celular*/ 65, /*rfc*/ 60,
-                /*nss*/ 65, /*curp*/ 70, /*fdp*/ 70, /*sueldo*/ 40, /*bono*/ 35,/*banco*/ 55, /*zona*/ 60, /*serv*/ 60, /*status*/ 75,
-                /*CTA*/ 60, /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
-                /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75, /*BF*/ 60, /*FIN*/ 70, /*CZ*/ 70, /*CS*/ 75, /*FRE*/ 85, /*FUDLRE*/ 75,
-                /*FFBRE*/ 75, /*FDBRE*/ 75, /*FBRE*/ 60, /*NRP*/ 60, /*OBS*/ 2000};
+            int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*ap*/ 70, /*am*/ 70, /*name*/ 100,
+                /*celular*/ 65, /*casa*/ 65, /*recados*/ 70, /*fdp*/ 70,
+                /*sueldo*/ 40, /*bono*/ 35, /*banco*/ 55, /*CTA*/ 60, /*zona*/ 60,
+                /*serv*/ 60, /*status*/ 75, /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75,
+                /*ada*/ 80,/*BF*/ 60, /*FIN*/ 70, /*rfc*/ 60,
+                /*nss*/ 65, /*curp*/ 70, /*correo*/ 75,
+                /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300, 50,
+                /*NRP*/ 60, /*OBS*/ 2000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
                 //Nombre tabla
@@ -1138,6 +1137,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             modelo.addColumn("Doc. Faltantes");
             modelo.addColumn("Doc. Entregables");
             modelo.addColumn("# recepcion personal");
+            modelo.addColumn("# Credencial");
             modelo.addColumn("Observaciones");//44
 
             int[] anchos = {/*idbd*/35, /*entraimms*/ 65, /*ap*/ 70, /*am*/ 70, /*name*/ 100,
@@ -1146,7 +1146,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 /*serv*/ 60, /*status*/ 75, /*FDE*/ 75, /*FDI*/ 75, /*FUDL*/ 75, /*FFB*/ 75,
                 /*ada*/ 80,/*BF*/ 60, /*FIN*/ 70, /*rfc*/ 60,
                 /*nss*/ 65, /*curp*/ 70, /*correo*/ 75,
-                /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300,
+                /*calle*/ 200, /*ext*/ 30, /*int*/ 30, /*colonia*/ 60, /*dlgmun*/ 75, /*cp*/ 85, /*DO*/ 1000, /*DF*/ 300, /*DE*/ 300, 50,
                 /*NRP*/ 60, /*OBS*/ 2000};
 
             for (int x = 0; x < cantidadColumnas; x++) {
@@ -1184,7 +1184,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(2, APimss.getText());
             pst.setString(3, AMimss.getText());
             pst.setString(4, nameimss.getText());
-            pst.setString(5,  gen.getSelectedItem().toString());
+            pst.setString(5, gen.getSelectedItem().toString());
             pst.setString(6, FIimss.getText());
             pst.setString(7, ADEIMSS.getText());
             pst.setString(8, zona1.getText());
@@ -1217,9 +1217,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 + " `Fecha ultimo dia laborado`, `Fecha firma baja`, `Baja Firmada`, `Finiquito`,"
                 + " `Años de antiguedad`, `RFC`, `NSS`, `CURP`, `Correo electronico`, `Calle`,"
                 + " `# Exterior`, `# Interior`, `Colonia`, `DLG o Mun`, `C.P`, `Documentos originales`,"
-                + " `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `Observaciones`)"
+                + " `Documentos faltantes`, `Documentos entregados`, `# Recepcion`, `#Credencial`, `Observaciones`)"
                 + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String EI = "";
         if (EIMSS.isSelected() == true) {
             EI = "Si";
@@ -1267,7 +1267,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
             pst.setString(35, DF.getText());
             pst.setString(36, DE.getText());
             pst.setString(37, NRP.getText());
-            pst.setString(38, Obs.getText());
+            pst.setString(38, NDC.getText());
+            pst.setString(39, Obs.getText());
 
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Empleado agregado.");
@@ -1307,6 +1308,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
         NExp = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
         EIMSS = new javax.swing.JCheckBox();
+        jLabel33 = new javax.swing.JLabel();
+        NDC = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         Sueldo = new javax.swing.JTextField();
@@ -1518,12 +1521,15 @@ public final class Empleados_4 extends javax.swing.JFrame {
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem26 = new javax.swing.JMenuItem();
         jMenuItem27 = new javax.swing.JMenuItem();
+        Usuarios = new javax.swing.JMenuItem();
         Semanales = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem28 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Interface de Recursos Humanos");
@@ -1554,6 +1560,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
         EIMSS.setText("Entra a IMSS");
 
+        jLabel33.setText("N. Credencial:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -1570,8 +1578,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
                                 .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)))
                         .addComponent(jLabel62, javax.swing.GroupLayout.Alignment.TRAILING))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel33)
                             .addComponent(jLabel44)
                             .addComponent(jLabel64)
                             .addComponent(jLabel7)
@@ -1594,7 +1603,8 @@ public final class Empleados_4 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(EIMSS)
                             .addComponent(NExp, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(NDC))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -1646,7 +1656,11 @@ public final class Empleados_4 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(CURP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(NDC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10))
         );
 
         jLabel14.setText("Zona");
@@ -3196,6 +3210,14 @@ public final class Empleados_4 extends javax.swing.JFrame {
 
         jMenu1.add(Depositos);
 
+        Usuarios.setText("Usuarios");
+        Usuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsuariosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Usuarios);
+
         jMenuBar1.add(jMenu1);
 
         Semanales.setText("Semanales");
@@ -3241,6 +3263,19 @@ public final class Empleados_4 extends javax.swing.JFrame {
         Semanales.add(jMenuItem14);
 
         jMenuBar1.add(Semanales);
+
+        jMenu9.setText("Seguridad.");
+
+        jMenuItem28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoCDU.png"))); // NOI18N
+        jMenuItem28.setText("Cambiar de usuario");
+        jMenuItem28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem28ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem28);
+
+        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -3382,8 +3417,9 @@ public final class Empleados_4 extends javax.swing.JFrame {
         DF.setText(String.valueOf(data.getValueAt(fila, 34)));
         DE.setText(String.valueOf(data.getValueAt(fila, 35)));
         NRP.setText(String.valueOf(data.getValueAt(fila, 36)));
-        Obs.setText(String.valueOf(data.getValueAt(fila, 37)));
-        ObsTgen.setText(String.valueOf(data.getValueAt(fila, 37)));
+        NDC.setText(String.valueOf(data.getValueAt(fila, 37)));
+        Obs.setText(String.valueOf(data.getValueAt(fila, 38)));
+        ObsTgen.setText(String.valueOf(data.getValueAt(fila, 38)));
 
         //combobox8
 
@@ -4639,7 +4675,6 @@ public final class Empleados_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem27ActionPerformed
 
     private void mod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mod1ActionPerformed
-        dat.setNE(NExp.getText());
         dat.setApellidoP(APgen.getText());
         dat.setApellidoM(AMgen.getText());
         dat.setName(NameGen.getText());
@@ -4647,6 +4682,33 @@ public final class Empleados_4 extends javax.swing.JFrame {
         dat.setNSS(NSS.getText());
         dat.setRFC(RFC.getText());
         dat.setFechaDI(FI.getText());
+
+        try {
+            PreparedStatement ps;
+            ResultSet rs;
+            ps = con.prepareStatement("Select `Entra a IMSS` from `rh.empleados` WHERE `# Exp` = " + NExp.getText() + "");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                if (rs.getString(1).equals("Si")) {
+                    PreparedStatement pst;
+                    ResultSet rst;
+
+                    pst = con.prepareStatement("Select `idimss` from `imss` WHERE `Apellido P` LIKE '%" + APgen.getText() + "%' "
+                            + "AND `Apellido M` LIKE '%" + AMgen.getText() + "%' AND `Nombre(s)` LIKE '%" + NameGen.getText() + "%'");
+                    rst = pst.executeQuery();
+                    while (rst.next()) {
+                        dat.setNE(rst.getString(1));
+                    }
+
+                } else {
+                    dat.setNE(NExp.getText());
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Empleados_4.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        dat.setNDCrendial(NDC.getText());
 
         Expedientes_4 regr = new Expedientes_4(usr, LP, dat);
         regr.setVisible(true);
@@ -4671,11 +4733,28 @@ public final class Empleados_4 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void UsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuariosActionPerformed
+        Usuarios regr = new Usuarios(usr, LP);
+        regr.setVisible(true);
+    }//GEN-LAST:event_UsuariosActionPerformed
+
+    private void jMenuItem28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem28ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "El cambiar de usuario cerrara la ventana actual. \n ¿Seguir con esta accion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+
+        }
+    }//GEN-LAST:event_jMenuItem28ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the
+        Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -4768,6 +4847,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel LabelF1;
     private javax.swing.JLabel LabelF2;
     private javax.swing.JMenu Menuadm;
+    private javax.swing.JTextField NDC;
     private javax.swing.JTextField NExp;
     private javax.swing.JTextField NRP;
     private javax.swing.JTextField NSS;
@@ -4793,6 +4873,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JTable Timss;
     private javax.swing.JMenuItem Torteria;
     private javax.swing.JTextField UDL;
+    private javax.swing.JMenuItem Usuarios;
     private javax.swing.JMenuItem ZYS;
     private javax.swing.JButton add;
     private javax.swing.JButton addimss;
@@ -4838,6 +4919,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
@@ -4885,6 +4967,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -4906,6 +4989,7 @@ public final class Empleados_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem25;
     private javax.swing.JMenuItem jMenuItem26;
     private javax.swing.JMenuItem jMenuItem27;
+    private javax.swing.JMenuItem jMenuItem28;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;

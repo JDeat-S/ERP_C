@@ -22,6 +22,7 @@ import RH.Depositos.Santander.DepositosSSan_4;
 import RH.Depositos.Santander.DepositosSSan_SIMSS_4;
 import Nomina.*;
 import Conexion.ConexionSQL;
+import Inicio.Inicio_1;
 import Logicas.*;
 import Logicas.BDNomQ.Logica_bd_pagosCDAQ;
 import Logicas.BDNomQ.Logica_bd_pagosODTQ;
@@ -630,6 +631,8 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         ZYS = new javax.swing.JMenuItem();
         ADMV2 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -2197,6 +2200,19 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
 
         jMenuBar1.add(Menuadm);
 
+        jMenu9.setText("Seguridad.");
+
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoCDU.png"))); // NOI18N
+        jMenuItem11.setText("Cambiar de usuario");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem11);
+
+        jMenuBar1.add(jMenu9);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -3349,6 +3365,17 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem20ActionPerformed
 
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "El cambiar de usuario cerrara la ventana actual. \n ¿Seguir con esta accion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+
+        }
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3569,9 +3596,11 @@ public final class EdicionPagos_3 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;

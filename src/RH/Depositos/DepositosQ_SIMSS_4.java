@@ -1696,7 +1696,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                 + Double.parseDouble(ADD.getText())
                 + Double.parseDouble(apy.getText())
                 + Double.parseDouble(PCR.getText())
-                + Double.parseDouble(PDDF.getText())+ Double.parseDouble(dt.getText())
+                + Double.parseDouble(PDDF.getText()) + Double.parseDouble(dt.getText())
                 + Double.parseDouble(PDDDV.getText()) + Double.parseDouble(sueldo.getText())
                 + Double.parseDouble(Dobletes.getText()));
         DecimalFormat PR = new DecimalFormat("#.00");
@@ -2041,6 +2041,8 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem19 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Depositos C/ IMSS");
@@ -4636,6 +4638,19 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
 
         jMenuBar1.add(Semanales);
 
+        jMenu11.setText("Seguridad.");
+
+        jMenuItem19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoCDU.png"))); // NOI18N
+        jMenuItem19.setText("Cambiar de usuario");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu11.add(jMenuItem19);
+
+        jMenuBar1.add(jMenu11);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -6564,6 +6579,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep.getValueAt(fila, 44)));
             Obsdeposito.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_SIMSS_4.class
@@ -6635,6 +6651,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep1.getValueAt(fila, 44)));
             Obsdeposito.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_SIMSS_4.class
@@ -6706,6 +6723,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep2.getValueAt(fila, 44)));
             Obsdeposito.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_SIMSS_4.class
@@ -6777,6 +6795,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep3.getValueAt(fila, 44)));
             Obsdeposito.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_SIMSS_4.class
@@ -6848,6 +6867,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep4.getValueAt(fila, 44)));
             Obsdeposito.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_SIMSS_4.class
@@ -6919,6 +6939,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep5.getValueAt(fila, 44)));
             Obsdeposito.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_SIMSS_4.class
@@ -6990,6 +7011,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep6.getValueAt(fila, 44)));
             Obsdeposito.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_SIMSS_4.class
@@ -7061,6 +7083,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             }
             FDP.setText(String.valueOf(Tdep7.getValueAt(fila, 44)));
             Obsdeposito.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_SIMSS_4.class
@@ -7257,7 +7280,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
             SQL = "SELECT `Dias descansados`, `Dias Laborados`, `Pago de dias descansados`, `Pago de dias laborados`, "
                     + " `Dias de vacaciones`, `Dias de incapacidad`, `Descanso sin goce de sueldo`, `Apoyo`, `Lugar`, `Pago de dias trabajados`, "
                     + " `Pago de dias festivos`, `Pago de dias festivos trabajados`, `Rembolso`, `Adicionales`, `Pago de dias de vacaciones`, "
-                    + "`Dias festivos trabajados`, `Dias festivos`, `Descansos Trabajados`"
+                    + "`Dias festivos trabajados`, `Dias festivos`, `Descansos Trabajados`, `Retardos`"
                     + "FROM `nomina.detallada." + Zon.getSelectedItem().toString() + ".simss`"
                     + " WHERE `#lista` =" + NDL.getText() + "";
 
@@ -7270,7 +7293,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
 
                 while (rs.next()) {
                     double DDMDL = (Double.parseDouble(rs.getString(1)) + Double.parseDouble(rs.getString(2)) + (Double.parseDouble(rs.getString(16))
-                            + Double.parseDouble(rs.getString(17))) + Double.parseDouble(rs.getString(18)));
+                            + Double.parseDouble(rs.getString(17))) + Double.parseDouble(rs.getString(18)) + Double.parseDouble(rs.getString(19)));
                     DL.setText("" + DDMDL);
                     double DIVDT;
 
@@ -7318,7 +7341,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error al mostrar compartir con nomina: " + error_sharenom.getMessage());
 
             }
-            
+
             SQL = "SELECT `Faltantes de boleto`, `Sancion`, `Chamarra`, `Faltante de efectivo`, "
                     + "`Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Adelanto de nomina` "
                     + "FROM `nomina.detallada." + Zon.getSelectedItem().toString() + ".simss`"
@@ -7440,6 +7463,17 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     private void BonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BonoKeyReleased
         deposito();
     }//GEN-LAST:event_BonoKeyReleased
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "El cambiar de usuario cerrara la ventana actual. \n ¿Seguir con esta accion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+
+        }
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -7736,6 +7770,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -7755,6 +7790,7 @@ public final class DepositosQ_SIMSS_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem25;
