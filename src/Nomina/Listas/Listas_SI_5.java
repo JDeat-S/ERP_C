@@ -15,6 +15,7 @@ import Nomina.VentanasDReportes.RepNom_7;
 import Admin.*;
 import Conexion.ConexionSQL;
 import Filtros.FiltrosZonas;
+import Inicio.Inicio_1;
 import RH.*;
 import Logicas.*;
 import Nomina.Listas.LSIMSS.*;
@@ -511,6 +512,8 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Listas de asistencia");
@@ -2151,6 +2154,19 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         Reportes.add(jMenu4);
 
         jMenuBar1.add(Reportes);
+
+        jMenu10.setText("Seguridad.");
+
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoCDU.png"))); // NOI18N
+        jMenuItem3.setText("Cambiar de usuario");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu10);
 
         setJMenuBar(jMenuBar1);
 
@@ -20871,6 +20887,17 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
         regr.setVisible(true);
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "El cambiar de usuario cerrara la ventana actual. \n ¿Seguir con esta accion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+
+        }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -20894,41 +20921,6 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
 
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new Listas_SI_5().setVisible(true);
@@ -21086,6 +21078,7 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -21104,6 +21097,7 @@ public final class Listas_SI_5 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem24;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;

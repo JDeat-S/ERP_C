@@ -1741,7 +1741,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         double Egresos = (Double.parseDouble(DVT.getText())
                 + Double.parseDouble(Odtp.getText())
                 + Double.parseDouble(Presp.getText()) + Double.parseDouble(cda.getText())
-                + Double.parseDouble(DPF.getText()) + Double.parseDouble(DI.getText()));
+                + Double.parseDouble(DPF.getText()) + Double.parseDouble(DI.getText()) + Double.parseDouble(ISR.getText()));
 
         DecimalFormat dDeposito = new DecimalFormat("#.00");
         this.deposito.setText(dDeposito.format(Pagoreal - Egresos));
@@ -2085,6 +2085,8 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Depositos C/ IMSS");
@@ -3250,7 +3252,6 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                     .addGroup(jPanel29Layout.createSequentialGroup()
                         .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel29Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
                                 .addComponent(jLabel161)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3281,7 +3282,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS15))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7194, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
@@ -3424,7 +3425,6 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel30Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
                                 .addComponent(jLabel176)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3455,7 +3455,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS16))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7194, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel30Layout.setVerticalGroup(
@@ -3596,7 +3596,6 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel31Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
                         .addComponent(jLabel177)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FiltrosP3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3771,7 +3770,6 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                     .addGroup(jPanel32Layout.createSequentialGroup()
                         .addGroup(jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel32Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
                                 .addComponent(jLabel178)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3802,7 +3800,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS18))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7194, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel32Layout.setVerticalGroup(
@@ -3946,7 +3944,6 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                     .addGroup(jPanel33Layout.createSequentialGroup()
                         .addGroup(jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel33Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
                                 .addComponent(jLabel179)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3977,7 +3974,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS19))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7194, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel33Layout.setVerticalGroup(
@@ -4120,7 +4117,6 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                     .addGroup(jPanel34Layout.createSequentialGroup()
                         .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel34Layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
                                 .addComponent(jLabel180)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltrosP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4151,7 +4147,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(FiltroQP6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CS20))
-                        .addGap(0, 7114, Short.MAX_VALUE)))
+                        .addGap(0, 7194, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel34Layout.setVerticalGroup(
@@ -4733,6 +4729,19 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
         Semanales.add(jMenuItem4);
 
         jMenuBar1.add(Semanales);
+
+        jMenu7.setText("Seguridad.");
+
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoCDU.png"))); // NOI18N
+        jMenuItem9.setText("Cambiar de usuario");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem9);
+
+        jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
 
@@ -6711,23 +6720,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             PCR.setText(String.valueOf(Tdep.getValueAt(fila, 33)));
             Grua.setText(String.valueOf(Tdep.getValueAt(fila, 34)));
             DI.setText(String.valueOf(Tdep.getValueAt(fila, 35)));
-            Playera.setText(String.valueOf(Tdep.getValueAt(fila, 36)));
-            Chamarra.setText(String.valueOf(Tdep.getValueAt(fila, 37)));
-            Corbata.setText(String.valueOf(Tdep.getValueAt(fila, 38)));
-            Pantalon.setText(String.valueOf(Tdep.getValueAt(fila, 39)));
-            Credencial.setText(String.valueOf(Tdep.getValueAt(fila, 40)));
-            cda.setText(String.valueOf(Tdep.getValueAt(fila, 41)));
-            deposito.setText(String.valueOf(Tdep.getValueAt(fila, 42)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
+            ISR.setText(String.valueOf(Tdep.getValueAt(fila, 36)));
+            RF.setText(String.valueOf(Tdep.getValueAt(fila, 37)));
+            RI.setText(String.valueOf(Tdep.getValueAt(fila, 38)));
+            Playera.setText(String.valueOf(Tdep.getValueAt(fila, 39)));
+            Chamarra.setText(String.valueOf(Tdep.getValueAt(fila, 40)));
+            Corbata.setText(String.valueOf(Tdep.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tdep.getValueAt(fila, 42)));
+            Credencial.setText(String.valueOf(Tdep.getValueAt(fila, 43)));
+            cda.setText(String.valueOf(Tdep.getValueAt(fila, 44)));
+            deposito.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 46));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 44).toString();
+            String Mes = model.getValueAt(fila, 47).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep.getValueAt(fila, 45)));
-            Obsdeposito.setText(String.valueOf(Tdep.getValueAt(fila, 46)));
+            FDP.setText(String.valueOf(Tdep.getValueAt(fila, 48)));
+            Obsdeposito.setText(String.valueOf(Tdep.getValueAt(fila, 49)));
+
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
@@ -6782,23 +6796,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             PCR.setText(String.valueOf(Tdep1.getValueAt(fila, 33)));
             Grua.setText(String.valueOf(Tdep1.getValueAt(fila, 34)));
             DI.setText(String.valueOf(Tdep1.getValueAt(fila, 35)));
-            Playera.setText(String.valueOf(Tdep1.getValueAt(fila, 36)));
-            Chamarra.setText(String.valueOf(Tdep1.getValueAt(fila, 37)));
-            Corbata.setText(String.valueOf(Tdep1.getValueAt(fila, 38)));
-            Pantalon.setText(String.valueOf(Tdep1.getValueAt(fila, 39)));
-            Credencial.setText(String.valueOf(Tdep1.getValueAt(fila, 40)));
-            cda.setText(String.valueOf(Tdep1.getValueAt(fila, 41)));
-            deposito.setText(String.valueOf(Tdep1.getValueAt(fila, 42)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
+            ISR.setText(String.valueOf(Tdep1.getValueAt(fila, 36)));
+            RF.setText(String.valueOf(Tdep1.getValueAt(fila, 37)));
+            RI.setText(String.valueOf(Tdep1.getValueAt(fila, 38)));
+            Playera.setText(String.valueOf(Tdep1.getValueAt(fila, 39)));
+            Chamarra.setText(String.valueOf(Tdep1.getValueAt(fila, 40)));
+            Corbata.setText(String.valueOf(Tdep1.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tdep1.getValueAt(fila, 42)));
+            Credencial.setText(String.valueOf(Tdep1.getValueAt(fila, 43)));
+            cda.setText(String.valueOf(Tdep1.getValueAt(fila, 44)));
+            deposito.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 46));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 44).toString();
+            String Mes = model.getValueAt(fila, 47).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep1.getValueAt(fila, 45)));
-            Obsdeposito.setText(String.valueOf(Tdep1.getValueAt(fila, 46)));
+            FDP.setText(String.valueOf(Tdep1.getValueAt(fila, 48)));
+            Obsdeposito.setText(String.valueOf(Tdep1.getValueAt(fila, 49)));
+
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
@@ -6853,23 +6872,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             PCR.setText(String.valueOf(Tdep2.getValueAt(fila, 33)));
             Grua.setText(String.valueOf(Tdep2.getValueAt(fila, 34)));
             DI.setText(String.valueOf(Tdep2.getValueAt(fila, 35)));
-            Playera.setText(String.valueOf(Tdep2.getValueAt(fila, 36)));
-            Chamarra.setText(String.valueOf(Tdep2.getValueAt(fila, 37)));
-            Corbata.setText(String.valueOf(Tdep2.getValueAt(fila, 38)));
-            Pantalon.setText(String.valueOf(Tdep2.getValueAt(fila, 39)));
-            Credencial.setText(String.valueOf(Tdep2.getValueAt(fila, 40)));
-            cda.setText(String.valueOf(Tdep2.getValueAt(fila, 41)));
-            deposito.setText(String.valueOf(Tdep2.getValueAt(fila, 42)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
+            ISR.setText(String.valueOf(Tdep2.getValueAt(fila, 36)));
+            RF.setText(String.valueOf(Tdep2.getValueAt(fila, 37)));
+            RI.setText(String.valueOf(Tdep2.getValueAt(fila, 38)));
+            Playera.setText(String.valueOf(Tdep2.getValueAt(fila, 39)));
+            Chamarra.setText(String.valueOf(Tdep2.getValueAt(fila, 40)));
+            Corbata.setText(String.valueOf(Tdep2.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tdep2.getValueAt(fila, 42)));
+            Credencial.setText(String.valueOf(Tdep2.getValueAt(fila, 43)));
+            cda.setText(String.valueOf(Tdep2.getValueAt(fila, 44)));
+            deposito.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 46));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 44).toString();
+            String Mes = model.getValueAt(fila, 47).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep2.getValueAt(fila, 45)));
-            Obsdeposito.setText(String.valueOf(Tdep2.getValueAt(fila, 46)));
+            FDP.setText(String.valueOf(Tdep2.getValueAt(fila, 48)));
+            Obsdeposito.setText(String.valueOf(Tdep2.getValueAt(fila, 49)));
+
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
@@ -6923,24 +6947,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             Sancion.setText(String.valueOf(Tdep3.getValueAt(fila, 32)));
             PCR.setText(String.valueOf(Tdep3.getValueAt(fila, 33)));
             Grua.setText(String.valueOf(Tdep3.getValueAt(fila, 34)));
-            DI.setText(String.valueOf(Tdep3.getValueAt(fila, 35)));
-            Playera.setText(String.valueOf(Tdep3.getValueAt(fila, 36)));
-            Chamarra.setText(String.valueOf(Tdep3.getValueAt(fila, 37)));
-            Corbata.setText(String.valueOf(Tdep3.getValueAt(fila, 38)));
-            Pantalon.setText(String.valueOf(Tdep3.getValueAt(fila, 39)));
-            Credencial.setText(String.valueOf(Tdep3.getValueAt(fila, 40)));
-            cda.setText(String.valueOf(Tdep3.getValueAt(fila, 41)));
-            deposito.setText(String.valueOf(Tdep3.getValueAt(fila, 42)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
+            ISR.setText(String.valueOf(Tdep3.getValueAt(fila, 36)));
+            RF.setText(String.valueOf(Tdep3.getValueAt(fila, 37)));
+            RI.setText(String.valueOf(Tdep3.getValueAt(fila, 38)));
+            Playera.setText(String.valueOf(Tdep3.getValueAt(fila, 39)));
+            Chamarra.setText(String.valueOf(Tdep3.getValueAt(fila, 40)));
+            Corbata.setText(String.valueOf(Tdep3.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tdep3.getValueAt(fila, 42)));
+            Credencial.setText(String.valueOf(Tdep3.getValueAt(fila, 43)));
+            cda.setText(String.valueOf(Tdep3.getValueAt(fila, 44)));
+            deposito.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 46));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 44).toString();
+            String Mes = model.getValueAt(fila, 47).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep3.getValueAt(fila, 45)));
-            Obsdeposito.setText(String.valueOf(Tdep3.getValueAt(fila, 46)));
+            FDP.setText(String.valueOf(Tdep3.getValueAt(fila, 48)));
+            Obsdeposito.setText(String.valueOf(Tdep3.getValueAt(fila, 49)));
+
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
@@ -6995,23 +7023,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             PCR.setText(String.valueOf(Tdep4.getValueAt(fila, 33)));
             Grua.setText(String.valueOf(Tdep4.getValueAt(fila, 34)));
             DI.setText(String.valueOf(Tdep4.getValueAt(fila, 35)));
-            Playera.setText(String.valueOf(Tdep4.getValueAt(fila, 36)));
-            Chamarra.setText(String.valueOf(Tdep4.getValueAt(fila, 37)));
-            Corbata.setText(String.valueOf(Tdep4.getValueAt(fila, 38)));
-            Pantalon.setText(String.valueOf(Tdep4.getValueAt(fila, 39)));
-            Credencial.setText(String.valueOf(Tdep4.getValueAt(fila, 40)));
-            cda.setText(String.valueOf(Tdep4.getValueAt(fila, 41)));
-            deposito.setText(String.valueOf(Tdep4.getValueAt(fila, 42)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
+            ISR.setText(String.valueOf(Tdep4.getValueAt(fila, 36)));
+            RF.setText(String.valueOf(Tdep4.getValueAt(fila, 37)));
+            RI.setText(String.valueOf(Tdep4.getValueAt(fila, 38)));
+            Playera.setText(String.valueOf(Tdep4.getValueAt(fila, 39)));
+            Chamarra.setText(String.valueOf(Tdep4.getValueAt(fila, 40)));
+            Corbata.setText(String.valueOf(Tdep4.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tdep4.getValueAt(fila, 42)));
+            Credencial.setText(String.valueOf(Tdep4.getValueAt(fila, 43)));
+            cda.setText(String.valueOf(Tdep4.getValueAt(fila, 44)));
+            deposito.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 46));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 44).toString();
+            String Mes = model.getValueAt(fila, 47).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep4.getValueAt(fila, 45)));
-            Obsdeposito.setText(String.valueOf(Tdep4.getValueAt(fila, 46)));
+            FDP.setText(String.valueOf(Tdep4.getValueAt(fila, 48)));
+            Obsdeposito.setText(String.valueOf(Tdep4.getValueAt(fila, 49)));
+
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
@@ -7066,23 +7099,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             PCR.setText(String.valueOf(Tdep5.getValueAt(fila, 33)));
             Grua.setText(String.valueOf(Tdep5.getValueAt(fila, 34)));
             DI.setText(String.valueOf(Tdep5.getValueAt(fila, 35)));
-            Playera.setText(String.valueOf(Tdep5.getValueAt(fila, 36)));
-            Chamarra.setText(String.valueOf(Tdep5.getValueAt(fila, 37)));
-            Corbata.setText(String.valueOf(Tdep5.getValueAt(fila, 38)));
-            Pantalon.setText(String.valueOf(Tdep5.getValueAt(fila, 39)));
-            Credencial.setText(String.valueOf(Tdep5.getValueAt(fila, 40)));
-            cda.setText(String.valueOf(Tdep5.getValueAt(fila, 41)));
-            deposito.setText(String.valueOf(Tdep5.getValueAt(fila, 42)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
+            ISR.setText(String.valueOf(Tdep5.getValueAt(fila, 36)));
+            RF.setText(String.valueOf(Tdep5.getValueAt(fila, 37)));
+            RI.setText(String.valueOf(Tdep5.getValueAt(fila, 38)));
+            Playera.setText(String.valueOf(Tdep5.getValueAt(fila, 39)));
+            Chamarra.setText(String.valueOf(Tdep5.getValueAt(fila, 40)));
+            Corbata.setText(String.valueOf(Tdep5.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tdep5.getValueAt(fila, 42)));
+            Credencial.setText(String.valueOf(Tdep5.getValueAt(fila, 43)));
+            cda.setText(String.valueOf(Tdep5.getValueAt(fila, 44)));
+            deposito.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 46));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 44).toString();
+            String Mes = model.getValueAt(fila, 47).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep5.getValueAt(fila, 45)));
-            Obsdeposito.setText(String.valueOf(Tdep5.getValueAt(fila, 46)));
+            FDP.setText(String.valueOf(Tdep5.getValueAt(fila, 48)));
+            Obsdeposito.setText(String.valueOf(Tdep5.getValueAt(fila, 49)));
+
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
@@ -7137,23 +7175,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             PCR.setText(String.valueOf(Tdep6.getValueAt(fila, 33)));
             Grua.setText(String.valueOf(Tdep6.getValueAt(fila, 34)));
             DI.setText(String.valueOf(Tdep6.getValueAt(fila, 35)));
-            Playera.setText(String.valueOf(Tdep6.getValueAt(fila, 36)));
-            Chamarra.setText(String.valueOf(Tdep6.getValueAt(fila, 37)));
-            Corbata.setText(String.valueOf(Tdep6.getValueAt(fila, 38)));
-            Pantalon.setText(String.valueOf(Tdep6.getValueAt(fila, 39)));
-            Credencial.setText(String.valueOf(Tdep6.getValueAt(fila, 40)));
-            cda.setText(String.valueOf(Tdep6.getValueAt(fila, 41)));
-            deposito.setText(String.valueOf(Tdep6.getValueAt(fila, 42)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
+            ISR.setText(String.valueOf(Tdep6.getValueAt(fila, 36)));
+            RF.setText(String.valueOf(Tdep6.getValueAt(fila, 37)));
+            RI.setText(String.valueOf(Tdep6.getValueAt(fila, 38)));
+            Playera.setText(String.valueOf(Tdep6.getValueAt(fila, 39)));
+            Chamarra.setText(String.valueOf(Tdep6.getValueAt(fila, 40)));
+            Corbata.setText(String.valueOf(Tdep6.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tdep6.getValueAt(fila, 42)));
+            Credencial.setText(String.valueOf(Tdep6.getValueAt(fila, 43)));
+            cda.setText(String.valueOf(Tdep6.getValueAt(fila, 44)));
+            deposito.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 46));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 44).toString();
+            String Mes = model.getValueAt(fila, 47).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep6.getValueAt(fila, 45)));
-            Obsdeposito.setText(String.valueOf(Tdep6.getValueAt(fila, 46)));
+            FDP.setText(String.valueOf(Tdep6.getValueAt(fila, 48)));
+            Obsdeposito.setText(String.valueOf(Tdep6.getValueAt(fila, 49)));
+
+            deposito();
 
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
@@ -7208,24 +7251,28 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             PCR.setText(String.valueOf(Tdep7.getValueAt(fila, 33)));
             Grua.setText(String.valueOf(Tdep7.getValueAt(fila, 34)));
             DI.setText(String.valueOf(Tdep7.getValueAt(fila, 35)));
-            Playera.setText(String.valueOf(Tdep7.getValueAt(fila, 36)));
-            Chamarra.setText(String.valueOf(Tdep7.getValueAt(fila, 37)));
-            Corbata.setText(String.valueOf(Tdep7.getValueAt(fila, 38)));
-            Pantalon.setText(String.valueOf(Tdep7.getValueAt(fila, 39)));
-            Credencial.setText(String.valueOf(Tdep7.getValueAt(fila, 40)));
-            cda.setText(String.valueOf(Tdep7.getValueAt(fila, 41)));
-            deposito.setText(String.valueOf(Tdep7.getValueAt(fila, 42)));
-            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 43));
+            ISR.setText(String.valueOf(Tdep7.getValueAt(fila, 36)));
+            RF.setText(String.valueOf(Tdep7.getValueAt(fila, 37)));
+            RI.setText(String.valueOf(Tdep7.getValueAt(fila, 38)));
+            Playera.setText(String.valueOf(Tdep7.getValueAt(fila, 39)));
+            Chamarra.setText(String.valueOf(Tdep7.getValueAt(fila, 40)));
+            Corbata.setText(String.valueOf(Tdep7.getValueAt(fila, 41)));
+            Pantalon.setText(String.valueOf(Tdep7.getValueAt(fila, 42)));
+            Credencial.setText(String.valueOf(Tdep7.getValueAt(fila, 43)));
+            cda.setText(String.valueOf(Tdep7.getValueAt(fila, 44)));
+            deposito.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
+            Date date1 = new SimpleDateFormat("d MMM y").parse((String) model.getValueAt(fila, 46));
             FDD.setDate(date1);
-            String Mes = model.getValueAt(fila, 44).toString();
+            String Mes = model.getValueAt(fila, 47).toString();
             for (int i = 0; i < MDP.getItemCount(); i++) {
                 if (MDP.getItemAt(i).equalsIgnoreCase(Mes)) {
                     MDP.setSelectedIndex(i);
                 }
             }
-            FDP.setText(String.valueOf(Tdep7.getValueAt(fila, 45)));
-            Obsdeposito.setText(String.valueOf(Tdep7.getValueAt(fila, 46)));
+            FDP.setText(String.valueOf(Tdep7.getValueAt(fila, 48)));
+            Obsdeposito.setText(String.valueOf(Tdep7.getValueAt(fila, 49)));
 
+            deposito();
         } catch (ParseException ex) {
             Logger.getLogger(DepositosQ_4.class
                     .getName()).log(Level.SEVERE, null, ex);
@@ -7297,9 +7344,14 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        DepositosQ_SIMSS_4 regr = new DepositosQ_SIMSS_4(usr, LP);
-        regr.setVisible(true);
-        this.dispose();
+
+        int i = JOptionPane.showConfirmDialog(this, "El cambiar de usuario cerrara la ventana actual. \n ¿Seguir con esta accion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+
+        }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
@@ -7431,7 +7483,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
             SQL = "SELECT `Dias descansados`, `Dias Laborados`, `Pago de dias descansados`, `Pago de dias laborados`, "
                     + " `Dias de vacaciones`, `Dias de incapacidad`, `Descanso sin goce de sueldo`, `Apoyo`, `Lugar`, `Pago de dias trabajados`, "
                     + " `Pago de dias festivos`, `Pago de dias festivos trabajados`, `Rembolso`, `Adicionales`, `Pago de dias de vacaciones`, "
-                    + "`Dias festivos trabajados`, `Dias festivos`, `Descansos Trabajados`"
+                    + "`Dias festivos trabajados`, `Dias festivos`, `Descansos Trabajados`, `Retardos`"
                     + "FROM `nomina.detallada." + Zon.getSelectedItem().toString() + "`"
                     + " WHERE `#lista` =" + NDL.getText() + "";
 
@@ -7444,7 +7496,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
 
                 while (rs.next()) {
                     double DDMDL = (Double.parseDouble(rs.getString(1)) + Double.parseDouble(rs.getString(2)) + (Double.parseDouble(rs.getString(16))
-                            + Double.parseDouble(rs.getString(17))) + Double.parseDouble(rs.getString(18)));
+                            + Double.parseDouble(rs.getString(17))) + Double.parseDouble(rs.getString(18)) + Double.parseDouble(rs.getString(19)));
                     DL.setText("" + DDMDL);
                     double DIVDT;
 
@@ -7915,6 +7967,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -7939,6 +7992,7 @@ public final class DepositosQ_4 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;

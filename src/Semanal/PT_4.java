@@ -1,5 +1,6 @@
 package Semanal;
 
+import Inicio.Inicio_1;
 import Nomina.Listas.*;
 import Nomina.ModulosS.CDAS_5;
 import Nomina.ModulosS.PresS_5;
@@ -4323,7 +4324,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
     public void Operaciones2() {
         int fila = TSem.getSelectedRow();
-       
+
         TDSYP.setText(String.valueOf(TSem.getValueAt(fila, 5)));
         TMGYV.setText(String.valueOf(TSem.getValueAt(fila, 6)));
         DE.setText(String.valueOf(TSem.getValueAt(fila, 7)));
@@ -4422,7 +4423,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.ptetitla.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
 
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Ingresos y egresos"));
 
@@ -4719,7 +4720,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + Integer.parseInt(NDS.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.ptetitla.nsem` WHERE `#Nsem` = " + Integer.parseInt(NDS.getText()) + "");
 
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
 
@@ -8171,7 +8172,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jLabel26 = new javax.swing.JLabel();
         jLabel68 = new javax.swing.JLabel();
         Mespen = new javax.swing.JComboBox<>();
-        jButton12 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
@@ -8505,6 +8505,8 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Semanal Inturbide");
@@ -9557,13 +9559,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         Mespen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { ".", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
 
-        jButton12.setText("Nueva Pension");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
         Panel2.setLayout(Panel2Layout);
         Panel2Layout.setHorizontalGroup(
@@ -9629,8 +9624,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Menos17))))
                     .addGroup(Panel2Layout.createSequentialGroup()
-                        .addComponent(jButton12)
-                        .addGap(137, 137, 137)
+                        .addGap(233, 233, 233)
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel68)
@@ -9650,8 +9644,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
                             .addComponent(jLabel68)
-                            .addComponent(Mespen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton12))
+                            .addComponent(Mespen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -12382,6 +12375,19 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
 
         jMenuBar1.add(Semanales);
 
+        jMenu9.setText("Seguridad.");
+
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IcoCDU.png"))); // NOI18N
+        jMenuItem2.setText("Cambiar de usuario");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu9);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -13190,7 +13196,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.ptetitla.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
 
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Semanal"));
 
@@ -13913,7 +13919,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             ResultSet val = statementval.executeQuery("SELECT * FROM `rh.semanal.ptetitla.val` WHERE `Semanal` = " + Integer.parseInt(SemSl.getText()) + "");
             ResultSet NSem = statementNsem.executeQuery("SELECT * FROM `rh.semanal.ptetitla.nsem` WHERE `#Nsem` = " + Integer.parseInt(SemSl.getText()) + "");
 
-            try ( FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
+            try (FileOutputStream archivo = new FileOutputStream(archivoXLS)) {
                 XSSFWorkbook libro = new XSSFWorkbook();
                 XSSFSheet spreadsheet = libro.createSheet(("Ingresos y egresos"));
 
@@ -16150,7 +16156,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
             PreparedStatement ps;
             ResultSet rs;
             ps = con.prepareStatement("select `faltante`, `Apellido P`, `Apellido M`, `Nombre(s)`  "
-                    + "FROM `pensiones.iturbide." + Mespen1.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron10.getText() + "%' AND `Status` LIKE '%Debe%'");
+                    + "FROM `pensiones.puente titla." + Mespen1.getSelectedItem().toString() + "` where `#padron` LIKE '%" + NPadron10.getText() + "%' AND `Status` LIKE '%Debe%'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -16167,10 +16173,16 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
         Operaciones2();
     }//GEN-LAST:event_NPadron10KeyReleased
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        AddPensionesVPptetitla_4 RH = new AddPensionesVPptetitla_4(usr, LP);
-        RH.setVisible(true);
-    }//GEN-LAST:event_jButton12ActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+
+        int i = JOptionPane.showConfirmDialog(this, "El cambiar de usuario cerrara la ventana actual. \n ¿Seguir con esta accion?");
+        if (i == 0) {
+            Inicio_1 regr = new Inicio_1();
+            regr.setVisible(true);
+            this.dispose();
+
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -16537,7 +16549,6 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -16623,6 +16634,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -16634,6 +16646,7 @@ public final class PT_4 extends javax.swing.JFrame implements Runnable {
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem25;

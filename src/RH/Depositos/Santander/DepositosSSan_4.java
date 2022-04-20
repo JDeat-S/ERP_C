@@ -562,30 +562,7 @@ public final class DepositosSSan_4 extends javax.swing.JFrame {
     }
 
     public void Agregardeposito() {
-        String SQL = "INSERT INTO `rh.depositosem.corporativo santander semanal.simss`"
-                + " (`#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, "
-                + "`Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, "
-                + "`Cuenta de banco`, `Por dia`, `por hora`, `Semana`, `Año`, "
-                + "`Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`,"
-                + " `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`,"
-                + " `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`,"
-                + " `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`,"
-                + " `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`,"
-                + " `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`,"
-                + " `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, "
-                + "`total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`,"
-                + " `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`,"
-                + " `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`,"
-                + " `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`,"
-                + " `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Fecha de alta`,"
-                + " `SDI`, `Total percepciones`, `Total Gravable`, `Subsidio empleo`,"
-                + " `total deducciones`, `total efectivo`, `neto pagado`, `sueldobruto`,"
-                + " `subsidio`, `carga patronal`, `Sub total`, `Total sin IVA`, `Pago real`,"
-                + " `Otros`, `Inicio semana`, `fin de semana`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`,"
-                + " `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-                + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO `rh.depositosem.corporativo santander semanal.simss` (`#Folio`, `#Lista`, `#Empleado`, `Apellido P`, `Apellido M`, `Nombre(s)`, `Zona`, `Servicio`, `Sueldo`, `Bono`, `Banco`, `Cuenta de banco`, `Por dia`, `por hora`, `Semana`, `Año`, `Dias de incapacidad`, `Pago seguro`, `Dias de vacaciones`, `Pago de vacaciones`, `Dias de descanso`, `Pago de dias descansados`, `Dias laborados`, `Pago de dias laborados`, `Descansos trabajados`, `Pago de Descansos trabajados`, `DSGS`, `Pago de dias de DSGS`, `Faltas justificadas`, `Descanso otorgado`, `Dias festivos`, `Pago de dias festivos`, `Dias festivos trabajados`, `Pago de dias festivos trabajados`, `Retardos`, `Pago con retardos`, `Apoyo`, `Lugar`, `Rembolso`, `Adicionales`, `horas extra`, `total de horas extra`, `Faltas`, `Descuento por faltas`, `Infonavit`, `Fonacot`, `ISR`, `Descuento imss`, `Faltantes de boleto`, `Sancion`, `Chamarra`, `Chaleco`, `Faltante de efectivo`, `Grua`, `Pantalon`, `Credencial`, `Boleto perdido`, `Playera`, `Corbata`, `Pago de prestamo`, `Caja de ahorro`, `Orden de taller`, `Adelanto de nomina`, `Fecha de alta`, `SDI`, `Total percepciones`, `Total Gravable`, `Subsidio empleo`, `total deducciones`, `total efectivo`, `neto pagado`, `sueldobruto`, `subsidio`, `carga patronal`, `Sub total`, `Total sin IVA`, `Pago real`, `Otros`, `Inicio semana`, `fin de semana`, `Deposito`, `Fecha de deposito`, `Mes de pago`, `Forma de pago`, `Observaciones`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pst = con.prepareStatement(SQL);
 
@@ -3109,67 +3086,6 @@ public final class DepositosSSan_4 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ADNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADNKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_ADNKeyReleased
-
-    private void CorbataKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorbataKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_CorbataKeyReleased
-
-    private void PlayeraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PlayeraKeyReleased
-
-        desv();
-        deposito();
-    }//GEN-LAST:event_PlayeraKeyReleased
-
-    private void BpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BpKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_BpKeyReleased
-
-    private void CredencialKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CredencialKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_CredencialKeyReleased
-
-    private void PantalonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PantalonKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_PantalonKeyReleased
-
-    private void GruaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GruaKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_GruaKeyReleased
-
-    private void FdeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdeKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_FdeKeyReleased
-
-    private void ChalecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ChalecoKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_ChalecoKeyReleased
-
-    private void ChamarraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ChamarraKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_ChamarraKeyReleased
-
-    private void SancionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SancionKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_SancionKeyReleased
-
-    private void FdbKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdbKeyReleased
-        desv();
-        deposito();
-    }//GEN-LAST:event_FdbKeyReleased
-
     private void Adddeposito1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Adddeposito1ActionPerformed
         Modeposito();
         FunMD();
@@ -3179,42 +3095,6 @@ public final class DepositosSSan_4 extends javax.swing.JFrame {
         Agregardeposito();
         FunMD();
     }//GEN-LAST:event_AdddepositoActionPerformed
-
-    private void OdtpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OdtpKeyReleased
-        deposito();
-    }//GEN-LAST:event_OdtpKeyReleased
-
-    private void cdaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cdaKeyReleased
-        deposito();
-    }//GEN-LAST:event_cdaKeyReleased
-
-    private void PrespKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrespKeyReleased
-        deposito();
-    }//GEN-LAST:event_PrespKeyReleased
-
-    private void DIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DIKeyReleased
-        deposito();
-    }//GEN-LAST:event_DIKeyReleased
-
-    private void DIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DIActionPerformed
-
-    }//GEN-LAST:event_DIActionPerformed
-
-    private void PDDDDSGSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PDDDDSGSKeyReleased
-        deposito();
-    }//GEN-LAST:event_PDDDDSGSKeyReleased
-
-    private void apyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apyKeyReleased
-        deposito();
-    }//GEN-LAST:event_apyKeyReleased
-
-    private void RembolsoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RembolsoKeyReleased
-        deposito();
-    }//GEN-LAST:event_RembolsoKeyReleased
-
-    private void ADDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADDKeyReleased
-        deposito();
-    }//GEN-LAST:event_ADDKeyReleased
 
     private void ODTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ODTActionPerformed
         ODTQ_5 regr = new ODTQ_5(usr, LP);
@@ -3374,18 +3254,6 @@ public final class DepositosSSan_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_LDA3ActionPerformed
-
-    private void RIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RIKeyReleased
-        deposito();
-    }//GEN-LAST:event_RIKeyReleased
-
-    private void RFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RFKeyReleased
-        deposito();
-    }//GEN-LAST:event_RFKeyReleased
-
-    private void HEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HEKeyReleased
-        deposito();
-    }//GEN-LAST:event_HEKeyReleased
 
     private void busp8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_busp8KeyReleased
         FunMD();
@@ -4163,6 +4031,115 @@ public final class DepositosSSan_4 extends javax.swing.JFrame {
         regr.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem27ActionPerformed
+
+    private void ADNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADNKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_ADNKeyReleased
+
+    private void CorbataKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CorbataKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_CorbataKeyReleased
+
+    private void PlayeraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PlayeraKeyReleased
+
+        desv();
+        deposito();
+    }//GEN-LAST:event_PlayeraKeyReleased
+
+    private void BpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BpKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_BpKeyReleased
+
+    private void CredencialKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CredencialKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_CredencialKeyReleased
+
+    private void PantalonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PantalonKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_PantalonKeyReleased
+
+    private void GruaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GruaKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_GruaKeyReleased
+
+    private void FdeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdeKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_FdeKeyReleased
+
+    private void ChalecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ChalecoKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_ChalecoKeyReleased
+
+    private void ChamarraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ChamarraKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_ChamarraKeyReleased
+
+    private void SancionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SancionKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_SancionKeyReleased
+
+    private void FdbKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FdbKeyReleased
+        desv();
+        deposito();
+    }//GEN-LAST:event_FdbKeyReleased
+
+    private void RFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RFKeyReleased
+        deposito();
+    }//GEN-LAST:event_RFKeyReleased
+
+    private void RIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RIKeyReleased
+        deposito();
+    }//GEN-LAST:event_RIKeyReleased
+
+    private void OdtpKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OdtpKeyReleased
+        deposito();
+    }//GEN-LAST:event_OdtpKeyReleased
+
+    private void cdaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cdaKeyReleased
+        deposito();
+    }//GEN-LAST:event_cdaKeyReleased
+
+    private void PrespKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrespKeyReleased
+        deposito();
+    }//GEN-LAST:event_PrespKeyReleased
+
+    private void DIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DIKeyReleased
+        deposito();
+    }//GEN-LAST:event_DIKeyReleased
+
+    private void DIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DIActionPerformed
+
+    }//GEN-LAST:event_DIActionPerformed
+
+    private void ADDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADDKeyReleased
+        deposito();
+    }//GEN-LAST:event_ADDKeyReleased
+
+    private void RembolsoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RembolsoKeyReleased
+        deposito();
+    }//GEN-LAST:event_RembolsoKeyReleased
+
+    private void apyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_apyKeyReleased
+        deposito();
+    }//GEN-LAST:event_apyKeyReleased
+
+    private void PDDDDSGSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PDDDDSGSKeyReleased
+        deposito();
+    }//GEN-LAST:event_PDDDDSGSKeyReleased
+
+    private void HEKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HEKeyReleased
+        deposito();
+    }//GEN-LAST:event_HEKeyReleased
 
     /**
      * @param args the command line arguments
